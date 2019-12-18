@@ -16,6 +16,7 @@
         .course-manage-body {
             padding: 20px 20px 0 20px;
         }
+
         .course-manage-button {
             width: 120px;
             height: 40px;
@@ -26,81 +27,206 @@
             line-height: 40px;
             cursor: pointer;
         }
+
         .course-manage-flex {
             display: flex;
             margin-top: 20px;
             align-items: center;
         }
+
         .course-manage-flex .course-manage-flex-input {
             width: 120px;
             height: 30px;
             border-radius: 4px;
             margin-left: 20px;
             margin-right: 39px;
+            box-sizing: border-box;
+        }
+
+        .course-manage-flextwo {
+            display: flex;
+            margin-top: 18px;
+        }
+
+        .course-manage-flextwo p:nth-child(1) {
+            width: 70px;
+            height: 26px;
+            border-radius: 4px;
+            background: #71B2EF;
+            text-align: center;
+            line-height: 26px;
+            color: white
+        }
+
+        .course-manage-flextwo p:nth-child(2) {
+            width: 70px;
+            height: 26px;
+            border-radius: 4px;
+            border: 1px solid #BFBFBF;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 26px;
+            color: black;
+            margin-left: 13px;
+        }
+
+        .select-menu {
+            margin-left: 10px;
+            margin-right: 39px;
+            cursor: pointer;
+            width: 120px;
+            height: 32px;
+            box-sizing: border-box;
+        }
+
+        .select-menu-ul {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 120px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .select-menu-ul li {
+            height: 36px;
+            font-size: 16px;
+            padding: 10px 0 10px 15px;
+            line-height: 36px;
+        }
+
+        .select-menu-ul li:hover {
+            background: #f2f2f2;
+        }
+
+        .select-menu-div {
+            position: relative;
+            height: 30px;
+            width: 120px;
+            border: 1px solid #ddd;
+            line-height: 30px;
+            border-radius: 4px;
+        }
+
+        .select-this {
+            background: #71B2EF;
+        }
+
+        .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .select-menu-img {
+            margin-right: 10px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+
+        .select-menu-input {
+            padding-left: 14px;
+            border: 0;
+            width: 50px;
+            height: 29px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px
+        }
+
+        .course-manage-flex-input-one {
+            width: 120px;
+            height: 30px;
+            border-radius: 4px;
+            margin-left: 21px;
+            margin-right: 7px;
+            padding: 13px 0 7px 10px;
+            box-sizing: border-box;
+        }
+
+        .course-manage-flex-input-two {
+            width: 120px;
+            height: 30px;
+            border-radius: 4px;
+            margin-left: 7px;
+            margin-right: 38px;
+            padding: 13px 0 7px 10px;
+            box-sizing: border-box;
+        }
+
+        .course-manage-flex-input-three {
+            width: 80px;
+            height: 30px;
+            border-radius: 4px;
+            margin-left: 21px;
+            margin-right: 6px;
+            box-sizing: border-box;
+        }
+
+        .course-manage-flex-input-four {
+            width: 80px;
+            height: 30px;
+            border-radius: 4px;
+            margin-left: 6px;
+            box-sizing: border-box;
+        }
+
+        .course-manage-table {
+            margin-top: 18px;
+            font-size:12px;
+        }
+
+        .course-manage-table table tr:nth-child(2) td {
+            border-top: none
+        }
+
+        .course-manage-table table td {
+            border-left: 1px dashed black;
+            border-bottom: 1px dashed black;
+            height:35px;
+            text-align: center;
+        }
+
+        .course-manage-table table td:last-child {
+            border-right: 1px dashed black;
+            text-align: center;
+        }
+
+        .course-manage-table table th {
+            background: #D0E8F2;
+            text-align: center;
+            height:35px;
         }
         
-        .select-menu {
-            margin-left:10px;
-            margin-right:39px;
-			cursor: pointer;
-			width:120px;
-			height: 32px;
-		}
-		.select-menu-ul {
-			/* margin-top: 50px; */
-			list-style: none;
-			opacity: 0;
-			display: none;
-			width: 120px;
-			text-align: left;
-			border: 1px solid #ddd;
-			background: #fff;
-			position: absolute;
-			z-index: 1;
-		}
-		.select-menu-ul li {
-            height:36px;
-            font-size:16px;
-            padding:10px 0 10px 15px;
-            line-height: 36px;
-		}
-		.select-menu-ul li:hover {
-			background: #f2f2f2;
-		}
-		.select-menu-div {
-			position: relative;
-			height: 30px;
-			width: 120px;
-			border: 1px solid #ddd;
-			line-height: 30px;
-            border-radius: 4px;
-		}
-		.select-this {
-			background: #71B2EF;
-		}
-		.select-this:hover {
-			background: #71B2EF !important;
-		}
-		.select-menu-img {
-			margin-right: 10px;
-			position: absolute;
-			right: 0;
-			top: 10px;
-		}
-		.select-menu-input {
-            padding-left:14px;
-			border: 0;
-            width:50px;
-			height: 29px;
-			cursor: pointer;
-            user-select: none;
-            font-size:14px
-		}
+        .course-manage-table .course-manage-table-tr td:last-child{
+            cursor: pointer;
+            color:#71B2EF;
+        }
 
+        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(1){
+            margin-right:5px;
+        }
 
-        
-        .table-b table td {
-            border: 1px dashed black
+        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(2){
+            margin-left:5px;
+        }
+
+        .course-manage-table .headingsifting{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .course-manage-table .headingsifting .headingsifting-column{
+            display:flex;
+            flex-direction: column;
+            margin-left:6px;
+        }
+        .course-manage-table .headingsifting .headingsifting-column img:nth-child(2){
+            margin-top:1px
         }
     </style>
 </head>
@@ -109,32 +235,29 @@
     <div class="course-manage-body">
         <div class="course-manage-button">新建课程</div>
         <div class="course-manage-flex">
-            <div>课程名称</div> 
+            <div>课程名称</div>
             <input class="course-manage-flex-input" type="text">
             <div>课程分类</div>
             <div class="course-manage-flex-select-one"></div>
             <div>课程状态</div>
             <div class="course-manage-flex-select-two"></div>
+            <div>创建时间</div>
+            <input type="text" class="course-manage-flex-input-one" placeholder="开始时间">
+            <p>-</p>
+            <input type="text" class="course-manage-flex-input-two" placeholder="结束时间">
+            <div>价格区间</div>
+            <input type="text" class="course-manage-flex-input-three">
+            <p>-</p>
+            <input type="text" class="course-manage-flex-input-four">
         </div>
+        <div class="course-manage-flextwo">
+            <p>查询</p>
+            <p>清除</p>
+        </div>
+        <div class="course-manage-table"></div>
         <!-- <div class="m-style M-box11"></div> -->
         <!-- <div class="table-b">
-            <table width="400" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <th width="105">站名</td>
-                    <th width="181">网址</th>
-                    <th width="112">说明</td>
-                </tr>
-                <tr>
-                    <td>DIVCSS5</td>
-                    <td>www.divcss5.com</td>
-                    <td>CSS学习</td>
-                </tr>
-                <tr>
-                    <td>CSS5</td>
-                    <td>www.css5.com.cn</td>
-                    <td>CSS切图</td>
-                </tr>
-            </table>
+            
         </div> -->
 </body>
 <script src="./jquery-3.4.1.min.js"></script>
@@ -148,14 +271,17 @@
         constructor() {
             this.select_one = $(".course-manage-flex-select-one")
             this.select_two = $(".course-manage-flex-select-two")
+            this.table = $(".course-manage-table")
         }
 
         init() {
-            this.select_all()
+            this.select_all1()
+            this.select_all2()
+            this.table_all()
             this.select_option()
         }
 
-        select_all() {
+        select_all1() {
             var str
             str = `
                 <div class="select-menu">
@@ -173,7 +299,25 @@
                 </div>
             `
             this.select_one.html(str)
-            this.select_two.html(str)
+        }
+
+        select_all2() {
+            var str1
+            str1 = `
+                <div class="select-menu">
+		            <div class="select-menu-div">
+			            <input class="select-menu-input" />
+
+			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+		            </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">全部</li>
+                        <li>已上架</li>
+                        <li>未上架</li>
+                    </ul>
+                </div>
+            `
+            this.select_two.html(str1)
         }
 
         select_option() {
@@ -218,6 +362,35 @@
 
                 });
 
+            }
+        }
+
+        table_all() {
+            var str2 = `
+                <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="35"><input type="checkbox"></input></td>
+                    <th>课程分类</th>
+                    <th>课程名称</th>
+                    <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
+                    <th><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            `
+            for (var i = 0; i < 15; i++) {
+                str2 += `
+                <tr class="course-manage-table-tr">
+                    <td width="42"><input type="checkbox"></td>
+                    <td width="254">莱美课</td>
+                    <td width="254">BODYPUMP</td>
+                    <td width="254">￥99</td>
+                    <td width="254">2019-12-15</td>
+                    <td width="254">下架</td>
+                    <td width="130"><a>编辑</a>|<a></a>上架</td>
+                </tr>
+            `
+                this.table.html(str2)
             }
         }
     }
