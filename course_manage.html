@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./pagination.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="easyui/demo.css">
+    <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+    <script type="text/javascript" src="easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <style>
         * {
             margin: 0;
@@ -18,14 +23,15 @@
         }
 
         .course-manage-button {
-            width: 120px;
-            height: 40px;
+            width: 106px;
+            height: 35px;
             background: #71B2EF;
             color: white;
-            font-size: 21px;
+            font-size: 18px;
             text-align: center;
-            line-height: 40px;
+            line-height: 35px;
             cursor: pointer;
+            border-radius: 4px;
         }
 
         .course-manage-flex {
@@ -35,12 +41,13 @@
         }
 
         .course-manage-flex .course-manage-flex-input {
-            width: 120px;
-            height: 30px;
+            width: 176px;
+            height: 26px;
             border-radius: 4px;
-            margin-left: 20px;
-            margin-right: 39px;
+            margin-left: 18px;
+            margin-right: 34px;
             box-sizing: border-box;
+            border: 1px solid #BFBFBF
         }
 
         .course-manage-flextwo {
@@ -55,7 +62,8 @@
             background: #71B2EF;
             text-align: center;
             line-height: 26px;
-            color: white
+            color: white;
+            font-size: 14px
         }
 
         .course-manage-flextwo p:nth-child(2) {
@@ -68,14 +76,15 @@
             line-height: 26px;
             color: black;
             margin-left: 13px;
+            font-size: 14px
         }
 
         .select-menu {
             margin-left: 10px;
             margin-right: 39px;
             cursor: pointer;
-            width: 120px;
-            height: 32px;
+            width: 106px;
+            height: 26px;
             box-sizing: border-box;
         }
 
@@ -84,7 +93,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 120px;
+            width: 106px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -95,7 +104,8 @@
         .select-menu-ul li {
             height: 36px;
             font-size: 16px;
-            padding: 10px 0 10px 15px;
+            padding: 0 15px;
+            box-sizing: border-box;
             line-height: 36px;
         }
 
@@ -105,11 +115,11 @@
 
         .select-menu-div {
             position: relative;
-            height: 30px;
-            width: 120px;
+            height: 26px;
+            width: 106px;
             border: 1px solid #ddd;
-            line-height: 30px;
             border-radius: 4px;
+            box-sizing: border-box;
         }
 
         .select-this {
@@ -121,6 +131,8 @@
         }
 
         .select-menu-img {
+            width: 11px;
+            height: 8px;
             margin-right: 10px;
             position: absolute;
             right: 0;
@@ -131,52 +143,58 @@
             padding-left: 14px;
             border: 0;
             width: 50px;
-            height: 29px;
+            height: 24px;
             cursor: pointer;
             user-select: none;
             font-size: 14px
         }
 
         .course-manage-flex-input-one {
-            width: 120px;
-            height: 30px;
+            width: 106px;
+            height: 26px;
             border-radius: 4px;
             margin-left: 21px;
             margin-right: 7px;
             padding: 13px 0 7px 10px;
             box-sizing: border-box;
+            font-size: 12px;
+            border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-two {
-            width: 120px;
-            height: 30px;
+            width: 106px;
+            height: 26px;
             border-radius: 4px;
             margin-left: 7px;
             margin-right: 38px;
             padding: 13px 0 7px 10px;
             box-sizing: border-box;
+            font-size: 12px;
+            border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-three {
-            width: 80px;
-            height: 30px;
+            width: 70px;
+            height: 26px;
             border-radius: 4px;
             margin-left: 21px;
             margin-right: 6px;
             box-sizing: border-box;
+            border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-four {
-            width: 80px;
-            height: 30px;
+            width: 70px;
+            height: 26px;
             border-radius: 4px;
             margin-left: 6px;
             box-sizing: border-box;
+            border: 1px solid #BFBFBF
         }
 
         .course-manage-table {
             margin-top: 18px;
-            font-size:12px;
+            font-size: 12px;
         }
 
         .course-manage-table table tr:nth-child(2) td {
@@ -184,49 +202,110 @@
         }
 
         .course-manage-table table td {
-            border-left: 1px dashed black;
-            border-bottom: 1px dashed black;
-            height:35px;
+            border-left: 1px dashed #CCCCCC;
+            border-bottom: 1px dashed #CCCCCC;
+            height: 35px;
             text-align: center;
         }
 
         .course-manage-table table td:last-child {
-            border-right: 1px dashed black;
+            border-right: 1px dashed #CCCCCC;
             text-align: center;
         }
 
         .course-manage-table table th {
             background: #D0E8F2;
             text-align: center;
-            height:35px;
+            height: 35px;
         }
-        
-        .course-manage-table .course-manage-table-tr td:last-child{
+
+        .course-manage-table .course-manage-table-tr td:last-child {
             cursor: pointer;
-            color:#71B2EF;
+            color: #71B2EF;
         }
 
-        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(1){
-            margin-right:5px;
+        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(1) {
+            margin-right: 5px;
         }
 
-        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(2){
-            margin-left:5px;
+        .course-manage-table .course-manage-table-tr td:last-child a:nth-child(2) {
+            margin-left: 5px;
         }
 
-        .course-manage-table .headingsifting{
-            display:flex;
+        .course-manage-table .course-manage-table-checkbox {
+            width: 14px;
+            height: 14px;
+            box-sizing: border-box;
+            border: 1px solid #BFBFBF;
+        }
+
+        .course-manage-table .course-manage-table-checkbox img {
+            width: 14px;
+            height: 14px;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+
+        .course-manage-table .headingsifting {
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .course-manage-table .headingsifting .headingsifting-column{
-            display:flex;
+        .course-manage-table .headingsifting .headingsifting-column {
+            display: flex;
             flex-direction: column;
-            margin-left:6px;
+            margin-left: 6px;
         }
-        .course-manage-table .headingsifting .headingsifting-column img:nth-child(2){
-            margin-top:1px
+
+        .course-manage-table .headingsifting .headingsifting-column img:nth-child(2) {
+            margin-top: 1px
+        }
+
+        .course-manage-footer {
+            display: flex;
+            margin-top: 17px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            padding-left: 14px;
+        }
+
+        .course-manage-table-checkbox {
+            width: 14px;
+            height: 14px;
+            box-sizing: border-box;
+            border: 1px solid #BFBFBF;
+            line-height: 14px;
+        }
+
+        .course-manage-table-checkbox img {
+            width: 14px;
+            height: 14px;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
+        .course-manage-footer .course-manage-footer-pone {
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .course-manage-footer .course-manage-footer-ptwo {
+            width: 80px;
+            height: 26px;
+            border: 1px solid #BFBFBF;
+            margin-left: 9px;
+            font-size: 12px;
+            color: #444444;
+            text-align: center;
+            line-height: 26px;
+            border-radius: 2px;
+        }
+
+        .course-manage-footer .course-manage-footer-pthree{
+            font-size:14px;
+            margin-left:893px;
         }
     </style>
 </head>
@@ -235,17 +314,17 @@
     <div class="course-manage-body">
         <div class="course-manage-button">新建课程</div>
         <div class="course-manage-flex">
-            <div>课程名称</div>
+            <div style="font-size:14px">课程名称</div>
             <input class="course-manage-flex-input" type="text">
-            <div>课程分类</div>
+            <div style="font-size:14px">课程分类</div>
             <div class="course-manage-flex-select-one"></div>
-            <div>课程状态</div>
+            <div style="font-size:14px">课程状态</div>
             <div class="course-manage-flex-select-two"></div>
-            <div>创建时间</div>
+            <div style="font-size:14px">创建时间</div>
             <input type="text" class="course-manage-flex-input-one" placeholder="开始时间">
             <p>-</p>
             <input type="text" class="course-manage-flex-input-two" placeholder="结束时间">
-            <div>价格区间</div>
+            <div style="font-size:14px">价格区间</div>
             <input type="text" class="course-manage-flex-input-three">
             <p>-</p>
             <input type="text" class="course-manage-flex-input-four">
@@ -255,13 +334,19 @@
             <p>清除</p>
         </div>
         <div class="course-manage-table"></div>
+        <div class="course-manage-footer">
+            <div class="course-manage-table-checkbox">
+                <img style="display:none" src="./image/codeallset_btn.png">
+            </div>
+            <div class="course-manage-footer-pone">当页全选</div>
+            <div class="course-manage-footer-ptwo">批量上传</div>
+            <div class="course-manage-footer-ptwo">批量下架</div>
+            <div class="course-manage-footer-pthree"></div>
+        </div>
         <!-- <div class="m-style M-box11"></div> -->
-        <!-- <div class="table-b">
-            
-        </div> -->
+        <div class="box" id="ywyboxpage"></div>
+    </div>
 </body>
-<script src="./jquery-3.4.1.min.js"></script>
-<script src="./jquery.pagination.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         new course_manage().init();
@@ -272,12 +357,14 @@
             this.select_one = $(".course-manage-flex-select-one")
             this.select_two = $(".course-manage-flex-select-two")
             this.table = $(".course-manage-table")
+            this.input_four = $(".course-manage-footer-pthree")
         }
 
         init() {
             this.select_all1()
             this.select_all2()
             this.table_all()
+            this.input_all4()
             this.select_option()
         }
 
@@ -369,7 +456,7 @@
             var str2 = `
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <th width="35"><input type="checkbox"></input></td>
+                    <th width="35"></th>
                     <th>课程分类</th>
                     <th>课程名称</th>
                     <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
@@ -378,10 +465,10 @@
                     <th>操作</th>
                 </tr>
             `
-            for (var i = 0; i < 15; i++) {
+            for (var i = 0; i < 5; i++) {
                 str2 += `
                 <tr class="course-manage-table-tr">
-                    <td width="42"><input type="checkbox"></td>
+                    <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
                     <td width="254">莱美课</td>
                     <td width="254">BODYPUMP</td>
                     <td width="254">￥99</td>
@@ -391,14 +478,51 @@
                 </tr>
             `
                 this.table.html(str2)
+
             }
+            new computed().init()
+        }
+    
+        input_all4(){
+            var obj = {
+                wrapid: 'ywyboxpage', //页面显示分页器容器id
+                total: 2, //总条数
+                pagesize: 15, //每页显示10条
+                currentPage: 2, //当前页
+                onPagechange: 15,
+                //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+            }
+            pagination.init(obj);
+
+            var str3
+            str3=`
+                <p>共20条，每条15条</p>
+            `
+            this.input_four.html(str3)
         }
     }
 
-    // this.select_one = $(".course-manage-flex-select-one")
-    // this.select_one.click(function(){
-    //     alert(111111)
-    // })
+    class computed {
+        constructor() {
+            this.checkbox = $(".course-manage-table-checkbox")
+            //this.checkbox_img = $(".course-manage-table-checkbox img")
+        }
+        init() {
+            this.checkbox_click()
+        }
+
+        checkbox_click() {
+            // console.log(this.checkbox)
+            // console.log(this.checkbox_img)
+            this.checkbox.click(function () {
+                if ($(this).children('img').is(":hidden")) {
+                    $(this).children('img').show()
+                } else {
+                    $(this).children('img').hide()
+                }
+            })
+        }
+    }
 
     $('.M-box11').pagination({
         mode: 'fixed'
