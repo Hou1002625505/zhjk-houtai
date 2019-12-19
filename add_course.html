@@ -237,60 +237,352 @@
             height: 24px
         }
 
-        .add-course-sortone .add-course-sortone-inputfive{
-            width:106px;
-            height:28px;
-            border:1px solid #CCCCCC;
+        .add-course-sortone .add-course-sortone-inputfive {
+            width: 106px;
+            height: 28px;
+            border: 1px solid #CCCCCC;
             border-radius: 3px;
-            margin-left:62px;
-            display:flex;
+            margin-left: 62px;
+            display: flex;
             align-items: center;
         }
 
-        .add-course-sortone .add-course-sortone-inputfive input{
-            border:none;
+        .add-course-sortone .add-course-sortone-inputfive input {
+            border: none;
             outline: none;
-            width:80px;
+            width: 80px;
             box-sizing: border-box;
-            padding-left:20px
+            padding-left: 20px
         }
 
-        .add-course-sortone .add-course-sortone-inputsix{
-            width:334px;
-            height:28px;
-            border:1px solid #CCCCCC;
-            padding-left:18px;
-            margin-left:76px;
+        .add-course-sortone .add-course-sortone-inputsix {
+            width: 334px;
+            height: 28px;
+            border: 1px solid #CCCCCC;
+            padding-left: 18px;
+            margin-left: 76px;
             line-height: 28px;
             border-radius: 3px;
         }
 
-        .add-course-sortone .add-course-sortone-inputsix input{
-            border:none;
+        .add-course-sortone .add-course-sortone-inputsix input {
+            border: none;
             outline: none;
-            width:316px;
+            width: 316px;
         }
 
-        .add-course-sortone .add-course-sortone-inputseven{
-            margin-left:44px;
+        .add-course-sortone .add-course-sortone-inputseven {
+            margin-left: 44px;
+            display: flex;
         }
 
-        .add-course-sortone .add-course-sortone-inputseven .oneinput{
-            width:106px;
-            height:28px;
-            border:1px solid #CCCCCC;
-            margin-left:18px;
+        .add-course-sortone .add-course-sortone-inputseven .oneinput {
+            width: 106px;
+            height: 28px;
+            border: 1px solid #CCCCCC;
+            margin-left: 18px;
             border-radius: 3px;
-            display:flex;
+            display: flex;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .input {
+            width: 61px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu {
+            cursor: pointer;
+            width: 44px;
+            height: 28px;
+            box-sizing: border-box;
+            line-height: 28px;
+            border-right: 1px solid #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-ul {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 44px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-ul li {
+            height: 32px;
+            font-size: 14px;
+            box-sizing: border-box;
+            line-height: 32px;
+            width: 44px;
+            text-align: left;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-ul li:hover {
+            background: #f2f2f2;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-div {
+            position: relative;
+            height: 28px;
+            width: 210px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 40px;
+            line-height: 28px;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-this {
+            background: #71B2EF;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-img {
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-input {
+            border: 0;
+            width: 40px;
+            height: 24px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu {
+            cursor: pointer;
+            width: 44px;
+            height: 28px;
+            box-sizing: border-box;
+            line-height: 28px;
+            border-right: 1px solid #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-ul {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 44px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-ul li {
+            height: 32px;
+            font-size: 14px;
+            box-sizing: border-box;
+            line-height: 32px;
+            width: 44px;
+            text-align: left;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-ul li:hover {
+            background: #f2f2f2;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-div {
+            position: relative;
+            height: 28px;
+            width: 210px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 40px;
+            line-height: 28px;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-this {
+            background: #71B2EF;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-img {
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-input {
+            border: 0;
+            width: 40px;
+            height: 24px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu {
+            cursor: pointer;
+            width: 44px;
+            height: 28px;
+            box-sizing: border-box;
+            line-height: 28px;
+            border-right: 1px solid #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-ul {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 44px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-ul li {
+            height: 32px;
+            font-size: 14px;
+            box-sizing: border-box;
+            line-height: 32px;
+            width: 44px;
+            text-align: left;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-ul li:hover {
+            background: #f2f2f2;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-div {
+            position: relative;
+            height: 28px;
+            width: 210px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 40px;
+            line-height: 28px;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-this {
+            background: #71B2EF;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-img {
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-input {
+            border: 0;
+            width: 40px;
+            height: 24px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu {
+            cursor: pointer;
+            width: 44px;
+            height: 28px;
+            box-sizing: border-box;
+            line-height: 28px;
+            border-right: 1px solid #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-ul {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 44px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-ul li {
+            height: 32px;
+            font-size: 14px;
+            box-sizing: border-box;
+            line-height: 32px;
+            width: 44px;
+            text-align: left;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-ul li:hover {
+            background: #f2f2f2;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-div {
+            position: relative;
+            height: 28px;
+            width: 210px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 40px;
+            line-height: 28px;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-this {
+            background: #71B2EF;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-img {
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: #CCCCCC
+        }
+
+        .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-input {
+            border: 0;
+            width: 40px;
+            height: 24px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 14px
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu {
             cursor: pointer;
-            width:44px;
+            width: 44px;
             height: 28px;
             box-sizing: border-box;
             line-height: 28px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-ul {
@@ -325,7 +617,7 @@
             width: 210px;
             border-radius: 4px;
             box-sizing: border-box;
-            width:40px;
+            width: 40px;
             line-height: 28px;
         }
 
@@ -348,11 +640,40 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-input {
             border: 0;
-            width:40px;
+            width: 40px;
             height: 24px;
             cursor: pointer;
             user-select: none;
             font-size: 14px
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table {
+            width: 600px
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) {
+            height: 35px;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th {
+            border: 1px solid black;
+            border-left: none;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th:nth-child(1) {
+            border: 1px solid black;
+            border-left: 1px solid black
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td {
+            border: 1px solid black;
+            border-top: none;
+            border-left: none;
+            height: 88px;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) {
+            border-left: 1px solid black;
         }
     </style>
 </head>
@@ -437,8 +758,40 @@
             <p style="font-size:14px">课程雷达图</p>
             <div class="add-course-sortone-inputseven">
                 <div class="oneinput">
-                    <div class="add-course-sortone-selectfive"></div>
+                    <div class="add-course-sortone-selectone"></div>
+                    <input class="input" type="text" value="5">
                 </div>
+                <div class="oneinput">
+                    <div class="add-course-sortone-selecttwo"></div>
+                    <input class="input" type="text" value="5">
+                </div>
+                <div class="oneinput">
+                    <div class="add-course-sortone-selectthree"></div>
+                    <input class="input" type="text" value="5">
+                </div>
+                <div class="oneinput">
+                    <div class="add-course-sortone-selectfour"></div>
+                    <input class="input" type="text" value="5">
+                </div>
+                <div class="oneinput">
+                    <div class="add-course-sortone-selectfive"></div>
+                    <input class="input" type="text" value="5">
+                </div>
+            </div>
+        </div>
+
+        <div class="add-course-sorttwo">
+            <p style="font-size:14px">注意事项</p>
+            <div class="add-course-sortone-inputfour">
+                <textarea id="area1" cols="30" rows="10"></textarea>
+                <p class="add-course-sortone-inputfour-position"><span id="text-count1">0</span>/300</p>
+            </div>
+        </div>
+
+        <div class="add-course-sorttwo">
+            <p style="font-size:14px">注意事项</p>
+            <div class="add-course-sortone-inputeight">
+                
             </div>
         </div>
     </div>
@@ -452,15 +805,27 @@
     class add_course {
         constructor() {
             this.acs_select = $(".add-course-sortone-select")
-            this.acs_selectf = $(".add-course-sortone-selectfive")
+            this.acs_select1 = $(".add-course-sortone-selectone")
+            this.acs_select2 = $(".add-course-sortone-selecttwo")
+            this.acs_select3 = $(".add-course-sortone-selectthree")
+            this.acs_select4 = $(".add-course-sortone-selectfour")
+            this.acs_select5 = $(".add-course-sortone-selectfive")
+            this.bn = $('#bn')
+            this.acs_input8 = $(".add-course-sortone-inputeight")
             this.item = $('#rating').find('.rating-item');//获取的所有li
         }
 
         init() {
             this.acsselect_all()
+            this.acsselect_all1()
+            this.acsselect_all2()
+            this.acsselect_all3()
+            this.acsselect_all4()
             this.acsselect_all5()
             this.select_option()
             this.textare_contain()
+            this.textare_contain1()
+            this.table_table()
             this.xingxing()
         }
 
@@ -483,7 +848,7 @@
             this.acs_select.html(str11);
         }
 
-        acsselect_all5(){
+        acsselect_all1() {
             var str12;
             str12 = `
                 <div class="select-menu">
@@ -499,7 +864,83 @@
                     </ul>
                 </div>
             `
-            this.acs_selectf.html(str12)
+            this.acs_select1.html(str12)
+        }
+
+        acsselect_all2() {
+            var str13;
+            str13 = `
+                <div class="select-menu">
+		            <div class="select-menu-div">
+			            <input class="select-menu-input" />
+
+			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+		            </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">柔韧</li>
+                        <li>柔韧</li>
+                        <li>柔韧</li>
+                    </ul>
+                </div>
+            `
+            this.acs_select2.html(str13)
+        }
+
+        acsselect_all3() {
+            var str14;
+            str14 = `
+                <div class="select-menu">
+		            <div class="select-menu-div">
+			            <input class="select-menu-input" />
+
+			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+		            </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">体能</li>
+                        <li>体能</li>
+                        <li>体能</li>
+                    </ul>
+                </div>
+            `
+            this.acs_select3.html(str14)
+        }
+
+        acsselect_all4() {
+            var str15;
+            str15 = `
+                <div class="select-menu">
+		            <div class="select-menu-div">
+			            <input class="select-menu-input" />
+
+			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+		            </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">爆发</li>
+                        <li>爆发</li>
+                        <li>爆发</li>
+                    </ul>
+                </div>
+            `
+            this.acs_select4.html(str15)
+        }
+
+        acsselect_all5() {
+            var str16;
+            str16 = `
+                <div class="select-menu">
+		            <div class="select-menu-div">
+			            <input class="select-menu-input" />
+
+			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+		            </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">协调</li>
+                        <li>协调</li>
+                        <li>协调</li>
+                    </ul>
+                </div>
+            `
+            this.acs_select5.html(str16)
         }
 
         textare_contain() {
@@ -512,6 +953,19 @@
                 }
                 count = $this.val().length;
                 $("#text-count").text(count);
+            });
+        }
+
+        textare_contain1() {
+            $("#area1").on("input propertychange", function () {
+                var $this = $(this),
+                    _val = $this.val(),
+                    count = "";
+                if (_val.length > 300) {
+                    $this.val(_val.substring(0, 300));
+                }
+                count = $this.val().length;
+                $("#text-count1").text(count);
             });
         }
 
@@ -544,10 +998,33 @@
             })
         }
 
+        table_table() {
+            var str22;
+                str22 = `
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>问题</th>
+                        <th>回答</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td style="width:210px">1111</td>
+                        <td style="width:315px">1111</td>
+                        <td style="width:70px"><button id="bn">1</button></td>
+                    </tr>
+            `
+            this.acs_input8.html(str22 + `</table>`)
+            new add_tabletr().init(str22)
+        }
+
         select_option() {
             selectMenu(0);
             selectMenu(1);
             selectMenu(2);
+            selectMenu(3);
+            selectMenu(4);
+            selectMenu(5);
+            selectMenu(6);
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html());//在输入框中自动填充第一个选项的值
                 $(".select-menu-div").eq(index).on("click", function (e) {
@@ -588,6 +1065,30 @@
                 });
 
             }
+        }
+    }
+
+    class add_tabletr {
+        constructor() {
+            this.bn = $('#bn')
+        }
+
+        init(str22) {
+            this.add_tabletr(str22)
+        }
+
+        add_tabletr(str22) {
+            this.bn.click(function () {
+                str22 += `
+                    <tr>
+                        <td style="width:210px">1111</td>
+                        <td style="width:315px">1111</td>
+                        <td style="width:70px"><button id="bn">1</button></td>
+                    </tr>
+                `
+                $(".add-course-sortone-inputeight").html(str22 + `</table>`)
+                console.log(str22 + `</table>`)
+            })
         }
     }
 </script>
