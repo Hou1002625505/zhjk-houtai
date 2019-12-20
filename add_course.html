@@ -9,6 +9,16 @@
     <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./imgui/zyUpload.css" type="text/css">
+    <!-- 引用核心层插件 -->
+    <script src="./imgui/zyFile.js"></script>
+    
+    <!-- 引用控制层插件 -->
+    <script src="./imgui/zyUpload.js"></script>
+    
+    <!-- 引用初始化JS -->
+    <script src="./imgui/jq22.js"></script>
     <style>
         * {
             padding: 0;
@@ -194,7 +204,7 @@
 
         .add-course-sorttwo {
             display: flex;
-            margin-top: 22px;
+            margin-top: 31px;
         }
 
         .add-course-sorttwo .add-course-sortone-inputfour textarea {
@@ -647,33 +657,120 @@
             font-size: 14px
         }
 
+        .add-course-sorttwo .add-course-sortone-inputeight {
+            margin-left: 105px;
+        }
+
         .add-course-sorttwo .add-course-sortone-inputeight table {
-            width: 600px
+            width: 600px;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) {
             height: 35px;
         }
 
-        .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th {
-            border: 1px solid black;
+        .add-course-sorttwo .add-course-sortone-inputeight table th {
+            border: 1px solid #CCCCCC;
             border-left: none;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th:nth-child(1) {
-            border: 1px solid black;
-            border-left: 1px solid black
+            border-left: 1px solid #CCCCCC;
+            width: 208px
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td {
-            border: 1px solid black;
+            border: 1px solid #CCCCCC;
             border-top: none;
             border-left: none;
-            height: 88px;
+            padding: 7.5px 7.5px 5.5px 7.5px;
+            box-sizing: border-box;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) {
-            border-left: 1px solid black;
+            border-left: 1px solid #CCCCCC;
+            width: 211px;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) textarea {
+            width: 194px;
+            height: 71px;
+            border: 1px solid #CCCCCC;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(2) textarea {
+            width: 300px;
+            height: 70px;
+            border: 1px solid #CCCCCC;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(3) {
+            padding: 0 15px;
+            display: flex;
+            height: 88px;
+            align-items: center;
+        }
+
+        .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(3) img {
+            width: 18px;
+            height: 18px
+        }
+
+        .add-course-sortone .add-course-sortone-inputnine {
+            margin-left: 76px;
+            display:flex;
+            align-items: center;
+        }
+
+        .add-course-sortone .add-course-sortone-inputnine div{
+            width:106px;
+            height:28px;
+            background:#71B2EF;
+            font-size:12px;
+            color:white;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .add-course-sortone .add-course-sortone-inputnine p{
+            margin-left:17px
+        }
+
+        .add-course-sorttwo #demo{
+            margin:0;
+            height:160px;
+        }
+        .add-course-sorttwo #preview .upload_preview{
+            border:none;
+            margin:0;
+            flex:1;
+            width:800px;
+            height:320px
+        }
+        .add-course-sorttwo .andArea{
+            border:none;
+            background:#F7F7F7
+        }
+        .add-course-sorttwo .file_del_img{
+            border:none;
+            border-radius: 50%;
+        }
+        .add-course-sorttwo .upload_append_list{
+            width:210px;
+            height:160px
+        }
+
+        .add-course-sorttwo .upload_image{
+            width:100%;
+            height:100%
+        }
+
+        .add-course-sorttwo .upload_main{
+            display:flex
         }
     </style>
 </head>
@@ -789,7 +886,7 @@
         </div>
 
         <div class="add-course-sorttwo">
-            <p style="font-size:14px">注意事项</p>
+            <p style="font-size:14px">FAQ</p>
             <div class="add-course-sortone-inputeight">
                 <table cellspacing="0" cellpadding="0">
                     <tr>
@@ -798,13 +895,27 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td style="width:210px">1111</td>
-                        <td style="width:315px">1111</td>
-                        <td style="width:70px"><input type="button" class="delOneRow" value="删除" /><input type="button"
-                                id="addOneRow" value="添加一行" /></td>
+                        <td><textarea>Q :</textarea></td>
+                        <td><textarea>A :</textarea></td>
+                        <td><img id="addOneRow" style="margin-right:6px" src="./image/add_btn.png" alt="">
+                            <img id="delOneRow" src="./image/del_btn.png" alt="">
+                        </td>
                     </tr>
                 </table>
             </div>
+        </div>
+
+        <div class="add-course-sortone">
+            <p style="font-size:14px">课程视频</p>
+            <div class="add-course-sortone-inputnine">
+                <div>上传视频</div>
+                <p>最多上传1个视频，单个视频不超过20M，视频作品将会展示在团课详情首位</p>
+            </div>
+        </div>
+
+        <div class="add-course-sorttwo">
+            <p style="font-size:14px">课程图片</p>
+            <div id="demo" class="demo"></div>
         </div>
     </div>
 </body>
@@ -838,6 +949,7 @@
             this.textare_contain()
             this.textare_contain1()
             this.table_table()
+            this.upload_video()
             this.xingxing()
         }
 
@@ -1017,7 +1129,7 @@
                 // $("tr:last > td > #name").val("");
                 // $("tr:last > td > #address").val("");
             });
-            $(".delOneRow").click(function () {
+            $("#delOneRow").click(function () {
                 if ($("tr").length < 2) {
                     alert("至少保留一行!");
                 } else {
@@ -1090,29 +1202,9 @@
 
             }
         }
-    }
 
-    class add_tabletr {
-        constructor() {
-            this.bn = $('#bn')
-        }
-
-        init(str22) {
-            this.add_tabletr(str22)
-        }
-
-        add_tabletr(str22) {
-            this.bn.click(function () {
-                str22 += `
-                    <tr>
-                        <td style="width:210px">1111</td>
-                        <td style="width:315px">1111</td>
-                        <td style="width:70px"><button id="bn">1</button></td>
-                    </tr>
-                `
-                $(".add-course-sortone-inputeight").html(str22 + `</table>`)
-                console.log(str22 + `</table>`)
-            })
+        upload_video() {
+            
         }
     }
 </script>
