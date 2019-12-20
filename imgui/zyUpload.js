@@ -79,7 +79,7 @@
 					html += '	</div>';
 					html += '</form>';
 				}else{
-					var imgWidth = parseInt(para.itemWidth.replace("px", ""))-15;
+		// var imgWidth = parseInt(para.itemWidth.replace("px", ""))-15;
 					bar
 					// 创建不带有拖动的html
 					html += '<form id="uploadForm" action="'+para.url+'" method="post" enctype="multipart/form-data">';
@@ -111,7 +111,7 @@
 					html += '</form>';
 				}
 				
-	            $(self).append(html).css({"width":"800px","height":"320px;"});
+	            $(self).append(html).css({"width":"1000px","height":"auto"});
 	            
 	            // 初始化html之后绑定按钮的点击事件
 	            this.addEvent();
