@@ -70,7 +70,7 @@
 		            // html += '					<div class="upload_btn">开始上传</div>';
 		            // html += '				</div>';
 		            // html += '			</div>';
-					html += '			<div id="preview" style="width:800px"></div>';
+					html += '			<p id="preview1"></p>';
 					html += '		</div>';
 					html += '		<div class="upload_submit">';
 					html += '			<button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>';
@@ -93,7 +93,7 @@
 		            html += '					<div class="upload_btn">开始上传</div>';
 		            html += '				</div>';
 		            html += '			</div>';
-					html += '			<div id="preview" style="width:800px">';
+					html += '			<p id="preview1">';
 				    html += '				<div class="add_upload">';
 				    html += '					<a title="点击添加文件" id="rapidAddImg" class="add_imgBox" href="javascript:void(0)">';
 				    html += '						<div class="uploadImg">';
@@ -101,7 +101,7 @@
 				    html += '						</div>';
 				    html += '					</a>';
 				    html += '				</div>';
-					html += '			</div>';
+					html += '			</p>';
 					html += '		</div>';
 					html += '		<div class="upload_submit">';
 					html += '			<button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>';
@@ -111,7 +111,7 @@
 					html += '</form>';
 				}
 				
-	            $(self).append(html).css({"width":para.width,"height":para.height});
+	            $(self).append(html).css({"width":"800px","height":"320px;"});
 	            
 	            // 初始化html之后绑定按钮的点击事件
 	            this.addEvent();
@@ -272,7 +272,7 @@
 						var funAppendPreviewHtml = function(html){
 							// 添加到添加按钮前
 							if(para.dragDrop){
-								$("#preview").append(html);
+								$("#preview1").append(html);
 							}else{
 								$(".add_upload").before(html);
 							}
