@@ -753,7 +753,7 @@
         }
         .add-course-sorttwo .andArea{
             border:none;
-            background:#F7F7F7
+            background:#F7F7F7;
         }
         .add-course-sorttwo .file_del_img{
             border:none;
@@ -762,6 +762,10 @@
         .add-course-sorttwo .upload_append_list{
             width:210px;
             height:160px
+        }
+
+        .add-course-sorttwo .convent_choice{
+            background:#F7F7F7
         }
 
         .add-course-sorttwo .upload_image{
@@ -776,6 +780,10 @@
         .add-course-sorttwo #preview1{
             display:flex;
             flex-wrap: wrap;
+        }
+
+        .add-course-sorttwo .demo{
+            margin-left:58px
         }
     </style>
 </head>
@@ -919,7 +927,7 @@
         </div>
 
         <div class="add-course-sorttwo">
-            <p style="font-size:14px">课程图片</p>
+            <p style="font-size:14px;margin-right:76px">课程图片</p>
             <div id="demo" class="demo"></div>
         </div>
     </div>
@@ -954,7 +962,7 @@
             this.textare_contain()
             this.textare_contain1()
             this.table_table()
-            this.upload_video()
+            // this.upload_video()
             this.xingxing()
         }
 
@@ -1208,9 +1216,9 @@
             }
         }
 
-        upload_video() {
-            
-        }
+        // upload_video() {
+        //     $("#fileImage").val('');
+        // }
     }
 </script>
 

@@ -58,7 +58,10 @@
 					html += '			<div class="upload_choose">';
 	            	html += '				<div class="convent_choice">';
 	            	html += '					<div class="andArea">';
-					html += '						<div class="filePicker"><img src="../image/addapicture_btn.png"></div>';
+					html += '						<div class="filePicker" style="background:#F7F7F7"><img style="margin-top:31px;border-radius:50% ;" src="../image/addapicture_btn.png"></div>';
+					html += '                       <p style="font-size:14px;background:#F7F7F7;margin-top:6px">点击添加图片</p>'
+					html += '                       <p style="font-size:12px;background:#F7F7F7;margin-top:5px">支持jpg/png格式</p>'
+					html += '                       <p style="font-size:12px;background:#F7F7F7;margin-top:3px">RGB格式。不超过5M</p>'
 	            	html += '						<input id="fileImage" type="file" size="30" name="fileselect[]" '+multiple+'>';
 	            	html += '					</div>';
 	            	html += '				</div>';
@@ -70,7 +73,7 @@
 		            // html += '					<div class="upload_btn">开始上传</div>';
 		            // html += '				</div>';
 		            // html += '			</div>';
-					html += '			<p id="preview1"></p>';
+					html += '			<p id="preview1" style="margin-left:18px"></p>';
 					html += '		</div>';
 					html += '		<div class="upload_submit">';
 					html += '			<button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>';
@@ -79,7 +82,8 @@
 					html += '	</div>';
 					html += '</form>';
 				}else{
-		// var imgWidth = parseInt(para.itemWidth.replace("px", ""))-15;
+		var imgWidth = 210;
+		var imgHeight = 160;
 					bar
 					// 创建不带有拖动的html
 					html += '<form id="uploadForm" action="'+para.url+'" method="post" enctype="multipart/form-data">';
@@ -89,15 +93,15 @@
 		            html += '				<div id="status_info" class="info">选中0张文件，共0B。</div>';
 		            html += '				<div class="btns">';
 		            html += '					<input id="fileImage" type="file" size="30" name="fileselect[]" '+multiple+'>';
-		            html += '					<div class="webuploader_pick">选择文件</div>';
-		            html += '					<div class="upload_btn">开始上传</div>';
+		            // html += '					<div class="webuploader_pick">选择文件</div>';
+		            // html += '					<div class="upload_btn">开始上传</div>';
 		            html += '				</div>';
 		            html += '			</div>';
-					html += '			<p id="preview1">';
+					html += '			<p id="preview1" style="margin-left:18px">';
 				    html += '				<div class="add_upload">';
-				    html += '					<a title="点击添加文件" id="rapidAddImg" class="add_imgBox" href="javascript:void(0)">';
-				    html += '						<div class="uploadImg">';
-				    html += '							<img class="upload_image" src="control/images/add_img.png"/>';
+					html += '					<a title="点击添加文件" id="rapidAddImg" style="height:160px" class="add_imgBox" href="javascript:void(0)">';
+				    html += '						<div class="uploadImg" style="height:160px">';
+					html += '							<img class="upload_image" style="height:160px" src="control/images/add_img.png"/>';
 				    html += '						</div>';
 				    html += '					</a>';
 				    html += '				</div>';
@@ -166,7 +170,6 @@
 			 */
 			this.funDisposePreviewHtml = function(file, e){
 				var html = "";
-				var imgWidth = parseInt(para.itemWidth.replace("px", ""))-15;
 				
 				// 处理配置参数删除按钮
 				var delHtml = "";
@@ -196,9 +199,9 @@
 					html += 		delHtml;   // 删除按钮的html
 					html += '		</div>';
 					html += '	</div>';
-					html += '	<a href="#" class="imgBox">';
-					html += '		<div class="uploadImg">';				
-					html += '			<img id="uploadImage_'+file.index+'" class="upload_image" src="' + e.target.result + '" />';                                                                 
+					html += '	<a href="#" class="imgBox" style="height:160px">';
+					html += '		<div class="uploadImg" style="height:160px">';				
+					html += '			<img id="uploadImage_' + file.index +'" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
@@ -214,9 +217,9 @@
 					html += delHtml;   // 删除按钮的html
 					html += '		</div>';
 					html += '	</div>';
-					html += '	<a href="#" class="imgBox">';
-					html += '		<div class="uploadImg">';				
-					html += '			<img id="uploadImage_'+file.index+'" class="upload_image" src="' + fileImgSrc + '" />';                                                                 
+					html += '	<a href="#" class="imgBox" style="height:160px">';
+					html += '		<div class="uploadImg" style="height:160px">';				
+					html += '			<img id="uploadImage_' + file.index +'" style="height:160px" class="upload_image" src="' + fileImgSrc + '" />';                                                                 
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
@@ -322,13 +325,13 @@
 						console.info("剩下的文件");
 						console.info(files);
 					},
-					onProgress: function(file, loaded, total) {
-						var eleProgress = $("#uploadProgress_" + file.index), percent = (loaded / total * 100).toFixed(2) + '%';
-						if(eleProgress.is(":hidden")){
-							eleProgress.show();
-						}
-						eleProgress.css("width",percent);
-					},
+					// onProgress: function(file, loaded, total) {
+					// 	var eleProgress = $("#uploadProgress_" + file.index), percent = (loaded / total * 100).toFixed(2) + '%';
+					// 	if(eleProgress.is(":hidden")){
+					// 		eleProgress.show();
+					// 	}
+					// 	eleProgress.css("width",percent);
+					// },
 					onSuccess: function(file, response) {
 						$("#uploadProgress_" + file.index).hide();
 						$("#uploadSuccess_" + file.index).show();
@@ -341,15 +344,15 @@
 							self.funSetStatusInfo(ZYFILE.funReturnNeedFiles());
 						}
 					},
-					onFailure: function(file) {
-						$("#uploadProgress_" + file.index).hide();
-						$("#uploadSuccess_" + file.index).show();
-						$("#uploadInf").append("<p>文件" + file.name + "上传失败！</p>");	
-						//$("#uploadImage_" + file.index).css("opacity", 0.2);
-					},
-					onComplete: function(response){
-						console.info(response);
-					},
+					// onFailure: function(file) {
+					// 	$("#uploadProgress_" + file.index).hide();
+					// 	$("#uploadSuccess_" + file.index).show();
+					// 	$("#uploadInf").append("<p>文件" + file.name + "上传失败！</p>");	
+					// 	//$("#uploadImage_" + file.index).css("opacity", 0.2);
+					// },
+					// onComplete: function(response){
+					// 	console.info(response);
+					// },
 					onDragOver: function() {
 						$(this).addClass("upload_drag_hover");
 					},
