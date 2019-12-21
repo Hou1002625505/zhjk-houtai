@@ -73,7 +73,7 @@
 		            // html += '					<div class="upload_btn">开始上传</div>';
 		            // html += '				</div>';
 		            // html += '			</div>';
-					html += '			<p id="preview1" style="margin-left:18px"></p>';
+					html += '			<p id="preview1"></p>';
 					html += '		</div>';
 					html += '		<div class="upload_submit">';
 					html += '			<button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>';
@@ -97,7 +97,7 @@
 		            // html += '					<div class="upload_btn">开始上传</div>';
 		            html += '				</div>';
 		            html += '			</div>';
-					html += '			<p id="preview1" style="margin-left:18px">';
+					html += '			<p id="preview1">';
 				    html += '				<div class="add_upload">';
 					html += '					<a title="点击添加文件" id="rapidAddImg" style="height:160px" class="add_imgBox" href="javascript:void(0)">';
 				    html += '						<div class="uploadImg" style="height:160px">';

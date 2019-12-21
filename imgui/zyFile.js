@@ -100,8 +100,8 @@ var ZYFILE = {
 			
 			// 执行选择回调
 			this.onSelect(selectFile, this.uploadFile);
-			console.info("继续选择");
-			console.info(this.uploadFile);
+			// console.info("继续选择");
+			// console.info(this.uploadFile);
 			return this;
 		},
 		// 处理需要删除的文件  isCb代表是否回调onDelete方法  
@@ -128,8 +128,8 @@ var ZYFILE = {
 				self.onDelete(delFile, this.uploadFile);
 			}
 			
-			console.info("还剩这些文件没有上传:");
-			console.info(this.uploadFile);
+			// console.info("还剩这些文件没有上传:");
+			// console.info(this.uploadFile);
 			return true;
 		},
 		// 上传多个文件
