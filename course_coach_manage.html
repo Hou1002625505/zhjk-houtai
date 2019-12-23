@@ -61,7 +61,8 @@
             text-align: center;
             line-height: 26px;
             color: white;
-            font-size: 14px
+            font-size: 14px;
+            cursor: pointer;
         }
 
         .course-coach-manage-flextwo p:nth-child(2) {
@@ -74,7 +75,8 @@
             line-height: 26px;
             color: black;
             margin-left: 13px;
-            font-size: 14px
+            font-size: 14px;
+            cursor: pointer;
         }
 
         .select-menu {
@@ -202,7 +204,7 @@
         .course-coach-manage-table table td {
             border-left: 1px dashed #CCCCCC;
             border-bottom: 1px dashed #CCCCCC;
-            height: 35px;
+            height: 60px;
             text-align: center;
         }
 
@@ -334,7 +336,7 @@
             </div>
         </div>
         <div class="course-coach-manage-table"></div>
-        <div class="course-coach-manage-footer">
+        <!-- <div class="course-coach-manage-footer">
             <div class="course-coach-manage-table-checkbox">
                 <img style="display:none" src="./image/codeallset_btn.png">
             </div>
@@ -342,7 +344,7 @@
             <div class="course-coach-manage-footer-ptwo">批量上传</div>
             <div class="course-coach-manage-footer-ptwo">批量下架</div>
             <div class="course-coach-manage-footer-pthree"></div>
-        </div>
+        </div> -->
         <!-- <div class="m-style M-box11"></div> -->
         <div class="box" id="ywyboxpage"></div>
     </div>
@@ -469,25 +471,25 @@
             var str2 = `
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <th width="35"></th>
-                    <th>课程分类</th>
-                    <th>课程名称</th>
-                    <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
-                    <th><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
-                    <th>状态</th>
+                    <th>序号</th>
+                    <th>员工姓名</th>
+                    <th>员工工号</th>
+                    <th>个人标签</th>
+                    <th>上牌课程</th>
+                    <th>个人简介</th>
                     <th>操作</th>
                 </tr>
             `
             for (var i = 0; i < 5; i++) {
                 str2 += `
                 <tr class="course-coach-manage-table-tr">
-                    <td width="42"><div style="display:flex;justify-content: center;"><div class="course-coach-manage-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                    <td width="254">莱美课</td>
-                    <td width="254">BODYPUMP</td>
-                    <td width="254">￥99</td>
-                    <td width="254">2019-12-15</td>
-                    <td width="254">下架</td>
-                    <td width="130"><a>编辑</a>|<a></a>上架</td>
+                    <td width="42"><div style="display:flex;justify-content: center;">${i+1}</div></td>
+                    <td width="106">刘大伟</td>
+                    <td width="105">66160</td>
+                    <td width="220">塑性、腰腹、心肺训练</td>
+                    <td width="430">BodyButt盛世美臀、BOSYCOMBAT、“秦淮八艳“古典舞、形体舞蹈<br/>舞林漫步、瑜伽、BODY格莱美舞蹈</td>
+                    <td width="430">天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说我们最先衰<br/>老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，<br/>BODYCOMBAT认证教练，UK儿童体适能.</td>
+                    <td width="105"><a>编辑</a></td>
                 </tr>
             `
                 this.table.html(str2)
