@@ -544,31 +544,31 @@
             box-sizing: border-box;
         }
 
-        .course-coach-manage-addtwo .coach-manage-addtwo-flexone{
-            display:flex;
+        .course-coach-manage-addtwo .coach-manage-addtwo-flexone {
+            display: flex;
             justify-content: space-between;
         }
 
-        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo{
-            display:flex
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo {
+            display: flex
         }
 
-        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo img{
-            width:21px;
-            height:21px
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo img {
+            width: 21px;
+            height: 21px
         }
 
-        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo p{
-            font-size:16px;
-            margin-left:13px
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo p {
+            font-size: 16px;
+            margin-left: 13px
         }
 
-        .course-coach-manage-addtwo .coach-manage-addtwo-flexthree{
-            width:502px;
-            height:445px;
-            border:1px solid #71B2EF;
-            background:white;
-            margin-top:17px;
+        .course-coach-manage-addtwo .coach-manage-addtwo-flexthree {
+            width: 502px;
+            height: 445px;
+            border: 1px solid #71B2EF;
+            background: white;
+            margin-top: 17px;
         }
     </style>
 </head>
@@ -605,7 +605,9 @@
             this.select_two = $(".course-coach-manage-flex-select-two")
             this.table = $(".course-coach-manage-table")
             this.input_four = $(".course-coach-manage-footer-pthree")
-            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈', '体态纠正', '心率监控', '功能性训练']
+            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
+                '体态纠正', '心率监控', '功能性训练'
+            ]
             this.data_tags2 = ['舞林漫步', '“秦淮八艳“古典舞', '形体舞蹈', 'BODY格莱美舞蹈', '芭蕾形体']
         }
 
@@ -660,6 +662,7 @@
             selectMenu(0);
             selectMenu(1);
             selectMenu(2);
+
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
                 $(".select-menu-div").eq(index).on("click", function (e) {
@@ -741,7 +744,9 @@
             `
                 this.table.html(str2)
             }
-            new credit().init(this.data_tags1)
+            var data_tags1 = this.data_tags1
+            var data_tags2 = this.data_tags2
+            new credit().init(data_tags1, data_tags2)
         }
 
         input_all4() {
@@ -766,15 +771,15 @@
     class credit {
         constructor() {
             this.coach_manage_a = $(".course-coach-manage-a")
-            // this.data_tags11 = this.data_tags1;
-            // this.data_tags22 = this.data_tags2
         }
 
-        init() {
-            this.ccm_a()
+        init(data_tags1, data_tags2) {
+            this.ccm_a(data_tags1, data_tags2)
         }
 
-        ccm_a() {
+        ccm_a(data_tags1, data_tags2) {
+            console.log(data_tags1)
+            console.log(data_tags2)
             this.coach_manage_a.click(function () {
                 var stradd;
                 stradd = `
@@ -819,8 +824,7 @@
                 </div>
             `
                 $(".course-coach-manage-add").html(stradd)
-                console.log(this.data_tags1)
-                new inputcontain().init(this.data_tags1, this.data_tags2)
+                new inputcontain().init()
             })
         }
     }
@@ -829,7 +833,9 @@
         constructor() {
             // this.data_tags1 = this.data_tags1;
             // this.data_tags2 = this.data_tags2
-            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈', '体态纠正', '心率监控', '功能性训练']
+            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
+                '体态纠正', '心率监控', '功能性训练'
+            ]
             this.data_tags2 = ['舞林漫步', '“秦淮八艳“古典舞', '形体舞蹈', 'BODY格莱美舞蹈', '芭蕾形体']
         }
 
@@ -856,6 +862,7 @@
 
         smallselect() {
             selectMenu(2);
+
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
                 $(".select-menu-div").eq(index).on("click", function (e) {
@@ -968,7 +975,7 @@
             var straddsmall2;
             $('#tianjia1').click(function () {
                 $(this).parent().parent().parent().hide()
-                
+
                 straddsmall1 = `
                 <div class="course-coach-manage-addtwo">
                     <div class="coach-manage-addtwo-flexone">
@@ -982,8 +989,8 @@
                     </div>
                 </div>
             `
-            $(".course-coach-manage-add1").html(straddsmall1)
-            new ashow().init()
+                $(".course-coach-manage-add1").html(straddsmall1)
+                new ashow().init()
             })
         }
     }
@@ -1017,7 +1024,7 @@
                 $(this).parent().hide()
             })
         }
-        addtags11(){
+        addtags11() {
             var addtags11;
             addtags11 = `
 
