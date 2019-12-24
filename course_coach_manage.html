@@ -569,7 +569,33 @@
             border: 1px solid #71B2EF;
             background: white;
             margin-top: 17px;
+            padding: 22px 0 0 4px;
+            box-sizing: border-box;
         }
+
+        .coach-manage-addtwo-flexthree .addtwo-flexfour {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .coach-manage-addtwo-flexthree .flexthree-tags {
+            padding: 8px 13px 8px 13px;
+            border-radius: 4px;
+            background: #F5F5F5;
+            margin-left: 18px;
+            height: 26px;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .coach-manage-addtwo-flexthree .addtwo-flexfour .active {
+            background: #71B2EF;
+            color: white
+        }
+
     </style>
 </head>
 
@@ -592,23 +618,20 @@
         <div class="course-coach-manage-table"></div>
         <div class="box" id="ywyboxpage"></div>
         <div class="course-coach-manage-add"></div>
-        <div class="course-coach-manage-add1"></div>
+        <div class="course-coach-manage-add1" style="opacity: 0;"></div>
     </div>
 </body>
 <script type="text/javascript">
     window.onload = function () {
         new course_manage().init();
     }
+
     class course_manage {
         constructor() {
             this.select_one = $(".course-coach-manage-flex-select-one")
             this.select_two = $(".course-coach-manage-flex-select-two")
             this.table = $(".course-coach-manage-table")
             this.input_four = $(".course-coach-manage-footer-pthree")
-            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
-                '体态纠正', '心率监控', '功能性训练'
-            ]
-            this.data_tags2 = ['舞林漫步', '“秦淮八艳“古典舞', '形体舞蹈', 'BODY格莱美舞蹈', '芭蕾形体']
         }
 
         init() {
@@ -718,6 +741,8 @@
         }
 
         table_all() {
+            var straddsmall1;
+            //整个表格的内容
             var str2 = `
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -742,11 +767,25 @@
                     <td width="105"><a class="course-coach-manage-a">编辑</a></td>
                 </tr>
             `
-                this.table.html(str2)
             }
-            var data_tags1 = this.data_tags1
-            var data_tags2 = this.data_tags2
-            new credit().init(data_tags1, data_tags2)
+            //添加标签窗口的表框
+            straddsmall1 = `
+                    <div class="course-coach-manage-addtwo">
+                        <div class="coach-manage-addtwo-flexone">
+                            <div class="coach-manage-addtwo-flextwo">
+                                <img src="./image/tags_icon.png" alt="">
+                                <p>添加个人标签（多选）</p>
+                            </div>
+                            <img id="addtwo-flexone-chacha" style="width:22px;height:22px" src="./image/popupclose_btn.png" alt="">
+                        </div>
+                        <div class="coach-manage-addtwo-flexthree">
+                            <div class="addtwo-flexfour"></div>
+                        </div>
+                    </div>
+                `
+            this.table.html(str2)
+            $(".course-coach-manage-add1").html(straddsmall1)
+            new credit().init()
         }
 
         input_all4() {
@@ -771,16 +810,18 @@
     class credit {
         constructor() {
             this.coach_manage_a = $(".course-coach-manage-a")
+            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
+                '体态纠正', '心率监控', '功能性训练'
+            ]
         }
 
-        init(data_tags1, data_tags2) {
-            this.ccm_a(data_tags1, data_tags2)
+        init() {
+            this.ccm_a()
         }
 
-        ccm_a(data_tags1, data_tags2) {
-            console.log(data_tags1)
-            console.log(data_tags2)
+        ccm_a() {
             this.coach_manage_a.click(function () {
+                //添加窗口的内容
                 var stradd;
                 stradd = `
                 <div class="course-coach-manage-addone">
@@ -823,19 +864,30 @@
                     </div>
                 </div>
             `
-                $(".course-coach-manage-add").html(stradd)
-                new inputcontain().init()
+            $(".course-coach-manage-add").html(stradd)
+            new inputcontain().init()
             })
+            //添加标签窗口的标签遍历
+            var ad_ft = '';
+            var tags2 = this.data_tags1
+            tags2.forEach(function (item, index) {
+                ad_ft += `
+                    <div class="flexthree-tags">
+                        ${item}
+                    </div>
+                `
+            })
+            $('.addtwo-flexfour').html(ad_ft)
+            $('.addtwo-flexfour').children('.flexthree-tags:first-child').addClass('active')
+            $('.addtwo-flexfour').children('.flexthree-tags:last-child').addClass('active')
         }
     }
 
     class inputcontain {
         constructor() {
-            // this.data_tags1 = this.data_tags1;
-            // this.data_tags2 = this.data_tags2
-            this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
-                '体态纠正', '心率监控', '功能性训练'
-            ]
+            // this.data_tags1 = ['缩肌', '减重', '塑性', '心肺训练', '小团体训练', '燃脂', '有氧', '核心力量', '舞蹈', '瑜伽', '单车', '舞蹈',
+            //     '体态纠正', '心率监控', '功能性训练'
+            // ]
             this.data_tags2 = ['舞林漫步', '“秦淮八艳“古典舞', '形体舞蹈', 'BODY格莱美舞蹈', '芭蕾形体']
         }
 
@@ -844,9 +896,8 @@
             this.add_tags1()
             this.chacha()
             this.smallselect()
-            this.addadd()
         }
-
+        //计算字数
         textare_contain() {
             $("#area").on("input propertychange", function () {
                 var $this = $(this),
@@ -921,17 +972,20 @@
             var straddtags1 = '';
             var straddtags2 = '';
             var straddtags3 = '';
-            var tags1 = this.data_tags1
             var tags2 = this.data_tags2
-            tags1.forEach(function (item, index) {
-                straddtags1 += `
+            var tags11 = $(".active").length
+            var tags1 = $(".active")
+            //添加窗口第一个标签栏
+            for(var i=0;i<tags11;i++){
+                    straddtags1 += `
                 <p class="blocktwo-pfour-p">
-                    ${item}
+                    ${tags1[i].innerText}
                     <a><img src="./image/classdel_btn.png" alt=""></img></a>
                 </p>
             `
-            })
-
+            }
+            console.log(tags1)
+            //添加窗口第二个标签栏
             tags2.forEach(function (item, index) {
                 straddtags2 += `
                 <p class="blocktwo-pfive-p">
@@ -940,6 +994,7 @@
                 </p>
             `
             })
+            //添加窗口的下拉菜单
             straddtags3 = `
                 <div class="select-menu" style="width:176px">
 		            <div class="select-menu-div" style="width:176px">
@@ -961,37 +1016,35 @@
         }
 
         chacha() {
+            //添加窗口点击叉关闭窗口
             $('#addone-flexone-chacha').click(function () {
                 $(this).parent().parent().hide()
             })
-
+            //点击确定或取消关闭窗口
             $('.coach-manage-addone-flexfour').children('p').click(function () {
                 $(this).parent().parent().hide()
             })
-        }
-
-        addadd() {
-            var straddsmall1;
-            var straddsmall2;
+            //点击添加关闭原窗口，打开添加标签窗口
             $('#tianjia1').click(function () {
                 $(this).parent().parent().parent().hide()
-
-                straddsmall1 = `
-                <div class="course-coach-manage-addtwo">
-                    <div class="coach-manage-addtwo-flexone">
-                        <div class="coach-manage-addtwo-flextwo">
-                            <img src="./image/tags_icon.png" alt="">
-                            <p>添加个人标签（多选）</p>
-                        </div>
-                        <img id="addtwo-flexone-chacha" style="width:22px;height:22px" src="./image/popupclose_btn.png" alt="">
-                    </div>
-                    <div class="coach-manage-addtwo-flexthree">
-                    </div>
-                </div>
-            `
-                $(".course-coach-manage-add1").html(straddsmall1)
-                new ashow().init()
+                $('.course-coach-manage-add1').css('opacity', 1)
             })
+            //点击添加标签窗口的叉关闭窗口
+            $('#addtwo-flexone-chacha').click(function () {
+                $('.course-coach-manage-add1').css('opacity', 0)
+                new inputcontain().init()
+                console.log($('.active'))
+            })
+            //点击标签添加active
+            $('.flexthree-tags').click(function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                } else {
+                    $(this).addClass('active')
+                }
+            })
+
+            new ashow().init()
         }
     }
 
@@ -999,9 +1052,8 @@
         init() {
             this.ashow1()
             this.ashow2()
-            this.addtags11()
         }
-
+        //第一个删除添加窗口的标签
         ashow1() {
             $('.blocktwo-pfour-p').mouseover(function () {
                 $(this).children('a').show()
@@ -1013,6 +1065,7 @@
                 $(this).parent().hide()
             })
         }
+        //第二个删除添加窗口标签
         ashow2() {
             $('.blocktwo-pfive-p').mouseover(function () {
                 $(this).children('a').show()
@@ -1023,12 +1076,6 @@
             $('.blocktwo-pfive-p').children('a').click(function () {
                 $(this).parent().hide()
             })
-        }
-        addtags11() {
-            var addtags11;
-            addtags11 = `
-
-            `
         }
     }
 
