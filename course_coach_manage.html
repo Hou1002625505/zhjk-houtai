@@ -537,7 +537,6 @@
             height: 514px;
             top: 20px;
             left: 340px;
-            z-index: 100;
             background: #D0E8F2;
             border-radius: 9px;
             padding: 18px;
@@ -571,6 +570,8 @@
             margin-top: 17px;
             padding: 22px 0 0 4px;
             box-sizing: border-box;
+            position:relative;
+            z-index: -10;
         }
 
         .coach-manage-addtwo-flexthree .addtwo-flexfour {
@@ -596,6 +597,87 @@
             color: white
         }
 
+
+        .coach-manage-addtwo-flexthree .coach-manage-addtwo-flexfour{
+            padding:0 21px 26px 21px;
+            position: absolute;
+            bottom:0px;
+            width:100%;
+            box-sizing: border-box;
+        }
+
+        .coach-manage-addtwo-flexfour .addtwo-flexfour-flex{
+            display:flex;
+            justify-content: center;
+            margin-top:43px
+        }
+
+        .coach-manage-addtwo-flexfour .addtwo-flexfour-flex #flexfour-flex-pone{
+            width:88px;
+            height:35px;
+            background:#71B2EF;
+            color:white;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .coach-manage-addtwo-flexfour .addtwo-flexfour-flex #flexfour-flex-ptwo{
+            width:88px;
+            height:35px;
+            border:1px solid #BFBFBF;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            margin-left:26px;
+            cursor: pointer;
+        }
+
+        .course-coach-manage-body .course-coach-manage-addthree {
+            position: absolute;
+            width: 535px;
+            height: 514px;
+            top: 20px;
+            left: 340px;
+            background: #D0E8F2;
+            border-radius: 9px;
+            padding: 18px;
+            box-sizing: border-box;
+        }
+
+        .course-coach-manage-addtwo .coach-manage-addtwo-flexone {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo {
+            display: flex
+        }
+
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo img {
+            width: 21px;
+            height: 21px
+        }
+
+        .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo p {
+            font-size: 16px;
+            margin-left: 13px
+        }
+
+        .course-coach-manage-addtwo .coach-manage-addtwo-flexthree {
+            width: 502px;
+            height: 445px;
+            border: 1px solid #71B2EF;
+            background: white;
+            margin-top: 17px;
+            padding: 22px 0 0 4px;
+            box-sizing: border-box;
+            position:relative;
+            z-index: -10;
+        }
     </style>
 </head>
 
@@ -619,6 +701,7 @@
         <div class="box" id="ywyboxpage"></div>
         <div class="course-coach-manage-add"></div>
         <div class="course-coach-manage-add1" style="opacity: 0;"></div>
+        <div class="course-coach-manage-add2"></div>
     </div>
 </body>
 <script type="text/javascript">
@@ -742,6 +825,7 @@
 
         table_all() {
             var straddsmall1;
+            var straddsmall2;
             //整个表格的内容
             var str2 = `
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -780,11 +864,40 @@
                         </div>
                         <div class="coach-manage-addtwo-flexthree">
                             <div class="addtwo-flexfour"></div>
+                            <div class="coach-manage-addtwo-flexfour">
+                                <p>注：每个教练最多只能添加10个标签</p>
+                                <div class="addtwo-flexfour-flex">
+                                    <p id="flexfour-flex-pone">确定</p>
+                                    <p id="flexfour-flex-ptwo">取消</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            straddsmall2 = `
+                    <div class="course-coach-manage-addthree">
+                        <div class="coach-manage-addtwo-flexone">
+                            <div class="coach-manage-addtwo-flextwo">
+                                <img src="./image/tags_icon.png" alt="">
+                                <p>添加个人标签（多选）</p>
+                            </div>
+                            <img id="addtwo-flexone-chacha" style="width:22px;height:22px" src="./image/popupclose_btn.png" alt="">
+                        </div>
+                        <div class="coach-manage-addtwo-flexthree">
+                            <div class="addtwo-flexfour"></div>
+                            <div class="coach-manage-addtwo-flexfour">
+                                <p>注：每个教练最多只能添加10个标签</p>
+                                <div class="addtwo-flexfour-flex">
+                                    <p id="flexfour-flex-pone">确定</p>
+                                    <p id="flexfour-flex-ptwo">取消</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `
             this.table.html(str2)
             $(".course-coach-manage-add1").html(straddsmall1)
+            $(".course-coach-manage-add2").html(straddsmall2)
             new credit().init()
         }
 
@@ -984,7 +1097,7 @@
                 </p>
             `
             }
-            console.log(tags1)
+            // console.log(tags1)
             //添加窗口第二个标签栏
             tags2.forEach(function (item, index) {
                 straddtags2 += `
@@ -1028,12 +1141,7 @@
             $('#tianjia1').click(function () {
                 $(this).parent().parent().parent().hide()
                 $('.course-coach-manage-add1').css('opacity', 1)
-            })
-            //点击添加标签窗口的叉关闭窗口
-            $('#addtwo-flexone-chacha').click(function () {
-                $('.course-coach-manage-add1').css('opacity', 0)
-                new inputcontain().init()
-                console.log($('.active'))
+                $('.coach-manage-addtwo-flexthree').css('z-index',10)
             })
             //点击标签添加active
             $('.flexthree-tags').click(function () {
@@ -1061,8 +1169,30 @@
             $('.blocktwo-pfour-p').mouseout(function () {
                 $(this).children('a').hide()
             })
+            
             $('.blocktwo-pfour-p').children('a').click(function () {
                 $(this).parent().hide()
+                for(var i = 0;i< $('.flexthree-tags').length;i++){
+                    if($('.flexthree-tags')[i].innerText == $(this).parent()[0].innerText.replace(/(^\s*)|(\s*$)/g, "")){
+                        $('.addtwo-flexfour').children().eq(i).removeClass('active')
+                    }
+                }
+            })
+
+            //点击添加标签窗口的叉关闭窗口
+            $('#addtwo-flexone-chacha').click(function () {
+                $('.course-coach-manage-add1').css('opacity', 0)
+                window.location.reload()
+            })
+
+            $('#flexfour-flex-pone').click(function(){
+                $('.course-coach-manage-add1').css('opacity', 0)
+                $('.coach-manage-addtwo-flexthree').css('z-index', -10)
+            })
+
+            $('#flexfour-flex-ptwo').click(function () {
+                $('.course-coach-manage-add1').css('opacity', 0)
+                window.location.reload()
             })
         }
         //第二个删除添加窗口标签
