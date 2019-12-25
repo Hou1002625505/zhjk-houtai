@@ -1081,6 +1081,7 @@
             $('.addthree-flexfour').html(ad_ft1)
             $('.addtwo-flexfour').children('.flexthree-tags:first-child').addClass('ac')
             $('.addtwo-flexfour').children('.flexthree-tags:first-child').addClass('active')
+            $('.addthree-flexfour').children('.flexthree-tags1:first-child').addClass('ac1')
             $('.addthree-flexfour').children('.flexthree-tags1:first-child').addClass('active1')
         }
     }
@@ -1176,8 +1177,8 @@
             var straddtags3 = '';
             var tags11 = $(".ac").length
             var tags1 = $(".ac")
-            var tags22 = $(".active1").length
-            var tags2 = $(".active1")
+            var tags22 = $(".ac1").length
+            var tags2 = $(".ac1")
             //添加窗口第一个标签栏
             for (var i = 0; i < tags11; i++) {
                 straddtags1 += `
@@ -1187,7 +1188,7 @@
                 </p>
             `
             }
-            // console.log(tags1)
+            //console.log(tags1)
             //添加窗口第二个标签栏
             for (var i = 0; i < tags22; i++) {
                 straddtags2 += `
@@ -1292,7 +1293,8 @@
             $('.blocktwo-pfour-p').children('a').click(function () {
                 $(this).parent().hide()
                 for (var i = 0; i < $('.flexthree-tags').length; i++) {
-                    if ($('.flexthree-tags')[i].innerText == $(this).parent()[0].innerText.replace(/(^\s*)|(\s*$)/g, "")) {
+                    if ($('.flexthree-tags')[i].innerText == $(this).parent()[0].innerText.replace(
+                            /(^\s*)|(\s*$)/g, "")) {
                         $('.addtwo-flexfour').children().eq(i).removeClass('active')
                     }
                 }
@@ -1302,9 +1304,10 @@
             $('#addtwo-flexone-chacha').click(function () {
                 $('.course-coach-manage-add1').css('opacity', 0)
                 $(".flexthree-tags").each(function () {
-                    // if ($(this).hasClass('ac')) {
-                    //     $(this).addClass('active')
-                    // }
+                    $(this).removeClass('active')
+                    if ($(this).hasClass('ac')) {
+                        $(this).addClass('active')
+                    }
                 })
             })
 
@@ -1315,20 +1318,21 @@
                     if ($(this).hasClass('active')) {
                         $(this).addClass('ac')
                     }
-
                     $(this).removeClass('active')
-                    
+                    if ($(this).hasClass('ac')) {
+                        $(this).addClass('active')
+                    }
                 })
-                //添加窗口第一个标签栏
-                // for (var i = 0; i < tags1; i++) {
-                //     console.log(11111)
-                //     tags1.addClass('ac')
-                // }
             })
 
             $('#flexfour-flex-ptwo').click(function () {
                 $('.course-coach-manage-add1').css('opacity', 0)
-                window.location.reload()
+                $(".flexthree-tags").each(function () {
+                    $(this).removeClass('active')
+                    if ($(this).hasClass('ac')) {
+                        $(this).addClass('active')
+                    }
+                })
             })
         }
         //第二个删除添加窗口标签
@@ -1342,7 +1346,8 @@
             $('.blocktwo-pfive-p').children('a').click(function () {
                 $(this).parent().hide()
                 for (var i = 0; i < $('.flexthree-tags1').length; i++) {
-                    if ($('.flexthree-tags1')[i].innerText == $(this).parent()[0].innerText.replace(/(^\s*)|(\s*$)/g, "")) {
+                    if ($('.flexthree-tags1')[i].innerText == $(this).parent()[0].innerText.replace(
+                            /(^\s*)|(\s*$)/g, "")) {
                         $('.addthree-flexfour').children().eq(i).removeClass('active')
                     }
                 }
@@ -1350,18 +1355,37 @@
 
             //点击添加标签窗口的叉关闭窗口
             $('#addthree-flexone-chacha').click(function () {
-                $('.course-coach-manage-add1').css('opacity', 0)
-                window.location.reload()
+                $('.course-coach-manage-add2').css('opacity', 0)
+                $(".flexthree-tags1").each(function () {
+                    $(this).removeClass('active1')
+                    if ($(this).hasClass('ac1')) {
+                        $(this).addClass('active1')
+                    }
+                })
             })
 
             $('#flexfour-flex-pthree').click(function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
                 $('.course-coach-manage-addthree').css('z-index', -10)
+                $(".flexthree-tags1").each(function () {
+                    if ($(this).hasClass('active1')) {
+                        $(this).addClass('ac1')
+                    }
+                    $(this).removeClass('active1')
+                    if ($(this).hasClass('ac1')) {
+                        $(this).addClass('active1')
+                    }
+                })
             })
 
             $('#flexfour-flex-pfour').click(function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
-                window.location.reload()
+                $(".flexthree-tags1").each(function () {
+                    $(this).removeClass('active1')
+                    if ($(this).hasClass('ac1')) {
+                        $(this).addClass('active1')
+                    }
+                })
             })
         }
     }
