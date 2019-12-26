@@ -892,11 +892,8 @@
                             marginTop: "0",
                             opacity: "0"
                         }, "fast");
-
                     }
-
                 });
-
             }
         }
 
@@ -1317,6 +1314,8 @@
                 $(".flexthree-tags").each(function () {
                     if ($(this).hasClass('active')) {
                         $(this).addClass('ac')
+                    }else{
+                        $(this).removeClass('ac')
                     }
                     $(this).removeClass('active')
                     if ($(this).hasClass('ac')) {
