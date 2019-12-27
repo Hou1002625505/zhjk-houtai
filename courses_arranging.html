@@ -650,6 +650,7 @@
             top: 140px;
             left: 20%;
             z-index: 10;
+            display: none
         }
 
         .edit-course .edit-course-header {
@@ -698,6 +699,38 @@
 
         .edit-course-context-flex #edit-course-context-two {
             margin-left: 53px
+        }
+
+        .edit-course-context-flex #edit-course-context-two {
+            width: 130px;
+            height: 32px;
+            border: 1px solid #BFBFBF;
+            border-right: none;
+            margin-left: 64px;
+            border-radius: 4px 0 0 4px;
+            padding: 9px 0 9px 12px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+        }
+
+        .edit-course-context-flex .edit-course-context-three-pp {
+            width: 35px;
+            height: 32px;
+            background: #71B2EF;
+            border-radius: 0 4px 4px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edit-course-context-flex .edit-course-context-three-pp img {
+            width: 15px;
+            height: 14px
+        }
+
+        #edit-course-context-two .edit-course-context-two-pp {
+            font-size: 12px;
         }
 
         .edit-course-context .edit-course-context-flextwo {
@@ -888,192 +921,344 @@
             display: flex;
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
-            margin-bottom:110px
+            margin-bottom: 110px
         }
 
-        .edit-course-context-flex4 .edit-course-context-flex4-pone{
-            font-size:16px
+        .edit-course-context-flex4 .edit-course-context-flex4-pone {
+            font-size: 16px
         }
 
-        .edit-course-context-flex4 .edit-course-context-flex4-ptwo{
-            width:510px;
-            height:auto;
-            margin-left:46px;
-            display:flex;
+        .edit-course-context-flex4 .edit-course-context-flex4-ptwo {
+            width: 510px;
+            height: auto;
+            margin-left: 46px;
+            display: flex;
             flex-wrap: wrap;
         }
 
-        .edit-course-context-flex4 .edit-course-context-flex4-pthree{
-            width:104px;
-            height:32px;
-            border:1px solid #BFBFBF;
+        .edit-course-context-flex4 .edit-course-context-flex4-pthree {
+            width: 104px;
+            height: 32px;
+            border: 1px solid #BFBFBF;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-left:18px;
-            margin-bottom:13px;
-            display:flex
+            margin-left: 18px;
+            margin-bottom: 13px;
+            display: flex
         }
 
-        .edit-course-context-flex4 .edit-course-context-flex4-pfour{
-            width:60px;
-            height:30px;
+        .edit-course-context-flex4 .edit-course-context-flex4-pfour {
+            width: 60px;
+            height: 30px;
             border-right: 1px solid #BFBFBF;
             text-align: center;
             line-height: 30px;
-            color:#BFBFBF
+            color: #BFBFBF
         }
 
-        .edit-course-context-flex4 .edit-course-context-flex4-pfive{
-            flex:1;
-            height:30px;
+        .edit-course-context-flex4 .edit-course-context-flex4-pfive {
+            flex: 1;
+            height: 30px;
             text-align: center;
             line-height: 30px;
         }
 
-        .course-arranging-body .add-edit-course{
-            position:absolute;
-            top:300px;
-            left:480px;
+        .course-arranging-body .add-edit-course {
+            position: absolute;
+            top: 300px;
+            left: 480px;
             z-index: 100;
-            width:374px;
-            height:330px;
-            background:#E0ECFF;
-            border:1px solid #71B2EF;
+            width: 374px;
+            height: 330px;
+            background: #E0ECFF;
+            border: 1px solid #71B2EF;
             border-radius: 4px;
-            padding:13px;
+            padding: 13px;
             box-sizing: border-box;
-            overflow-y: scroll;
+            display: none
         }
-        .add-edit-course .add-edit-course-header{
-            display:flex;
+
+        .add-edit-course .add-edit-course-header {
+            display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .add-edit-course-header .add-edit-course-header-one{
-            display:flex;
+
+        .add-edit-course-header .add-edit-course-header-one {
+            display: flex;
             align-items: center;
         }
 
-        .add-edit-course-header-pone{
-            margin-left:11px
+        .add-edit-course-header-pone {
+            margin-left: 11px
         }
 
-        .add-edit-course-header-imgone{
-            width:15px;
-            height:15px
+        .add-edit-course-header-imgone {
+            width: 15px;
+            height: 15px
         }
 
-        .add-edit-course-header-context{
-            width:340px;
-            height:277px;
-            border:1px solid #71B2EF;
+        .add-edit-course-header-context {
+            width: 340px;
+            height: 277px;
+            border: 1px solid #71B2EF;
             background: white;
-            margin-top:11px
+            margin-top: 11px;
+            overflow-y: scroll;
         }
-        .add-edit-course-header-context .add-edit-course-header-context-one{
-            height:44px;
-            width:100%;
+
+        .add-edit-course-header-context .add-edit-course-header-context-one {
+            height: 44px;
+            width: 100%;
             border-bottom: 1px solid #BFBFBF;
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .add-edit-course-header-context-one .add-edit-course-header-context-oneflex{
-            width:264px;
-            height:24px;
-            border:1px solid #BFBFBF;
+        .add-edit-course-header-context-one .add-edit-course-header-context-oneflex {
+            width: 264px;
+            height: 24px;
+            border: 1px solid #BFBFBF;
             box-sizing: border-box;
             border-radius: 4px;
-            display:flex;
+            display: flex;
             align-items: center
         }
 
-        .add-edit-course-header-context-one input{
-            width:230px;
-            border:none;
+        .add-edit-course-header-context-one input {
+            width: 230px;
+            border: none;
             outline: none;
-            padding-left:15px;
+            padding-left: 15px;
             box-sizing: border-box;
         }
 
-        .add-edit-course-header-context-oneflex .add-edit-course-header-context-one-blue{
-            flex:1;
-            height:100%;
+        .add-edit-course-header-context-oneflex .add-edit-course-header-context-one-blue {
+            flex: 1;
+            height: 100%;
             background: #71B2EF;
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .add-edit-course-header-context .add-edit-course-header-context-two{
-            height:auto;
-            width:100%;
-            padding:12px 4px 0 4px;
+        .add-edit-course-header-context .add-edit-course-header-context-two {
+            height: auto;
+            width: 100%;
+            padding: 12px 4px 0 4px;
             box-sizing: border-box;
+            margin-bottom: 70px;
         }
 
-        .add-edit-course-header-context-two .add-edit-course-header-context-two-pone{
-            font-size:12px;
-            margin-left:18px
+        .add-edit-course-header-context-two .add-edit-course-header-context-two-pone {
+            font-size: 12px;
+            margin-left: 18px
         }
 
-        .add-edit-course-header-context-two .add-edit-course-header-context-twoflex{
-            margin-top:18px;
-            display:flex;
+        .add-edit-course-header-context-two .add-edit-course-header-context-twoflex {
+            margin-top: 18px;
+            display: flex;
             flex-wrap: wrap;
-            height:auto
+            height: auto
         }
 
-        .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo{
-            width:62px;
-            height:21px;
+        .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo {
+            width: 62px;
+            height: 21px;
             border-radius: 4px;
             text-align: center;
             line-height: 21px;
-            margin-left:18px;
+            margin-left: 18px;
             margin-bottom: 18px;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo img {
+            position: relative;
+            top: -30px;
+            left: 30px;
+            display: none
+        }
+
+        .aechctp-active {
+            border: 1px solid #71B2EF;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-header-context .add-edit-course-header-context-three {
+            width: 324px;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0 15px 0;
+            position: fixed;
+            top: 581px;
+            background: white;
+        }
+
+        .add-edit-course-header-context-three #add-edit-course-header-context-three-pone {
+            width: 67px;
+            height: 26px;
+            background: #71B2EF;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 26px;
+            color: white
+        }
+
+        .add-edit-course-header-context-three #add-edit-course-header-context-three-ptwo {
+            width: 67px;
+            height: 26px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 26px;
+            border: 1px solid #BFBFBF;
+            margin-left: 20px
+        }
+
+        .course-arranging-body .add-course-name {
+            width:600px;
+            height:600px;
+            border:1px solid #71B2EF;
+            position:absolute;
+            left:380px;
+            top:70px;
+            z-index: 200;
+            background:#E0ECFF;
+            padding:18px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display:none
+        }
+
+        .add-course-name .add-course-name-header{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .add-course-name-header .add-course-name-header-left{
+            display:flex;
+            align-items: center;
+        }
+
+        .add-course-name-header .add-course-name-header-left img{
+            width:21px;
+            height:21px
+        }
+
+        .add-course-name-header .add-course-name-header-left p{
+            font-size:16px;
+            margin-left:13px
+        }
+
+        .add-course-name .add-course-name-context{
+            width:560px;
+            height:520px;
+            border:1px solid #71B2EF;
+            margin-top:17px;
+            background:white;
+            padding:22px 22px 22px 4px;
+            box-sizing: border-box;
+        }
+
+        .add-course-name-context .add-course-name-context-flex{
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        .add-course-name-context-p{
+            padding:8px 10px 8px 10px;
+            background:#F5F5F5;
+            border-radius: 4px;
+            margin-left:18px;
+            margin-bottom: 13px;
+        }
+
+        .add-course-name-context-p-active{
+            background:#71B2EF;
+            color:white
+        }
+
+         .add-course-name-context .add-course-name-context-bottom{
+            display:flex;
+            justify-content: center;
+            padding:26px 0 26px 0;
+            box-sizing: border-box;
+            position:fixed;
+            bottom: 310px;
+            left:586px
+         }
+
+         .add-course-name-context-bottom #add-course-name-context-bottom-pone{
+             width:88px;
+             height:35px;
+             background:#71B2EF;
+             border-radius: 4px;
+             font-size:16px;
+             color:white;
+             text-align: center;
+             line-height: 35px;
+         }
+
+         .add-course-name-context-bottom #add-course-name-context-bottom-ptwo{
+             width:88px;
+             height:35px;
+             border-radius: 4px;
+             font-size:16px;
+             text-align: center;
+             line-height: 35px;
+             border:1px solid #BFBFBF;
+             margin-left:26px
+         }
+         .add-edit-course-label{
+            position:absolute;
+            width:540px;
+            height:320px;
+            background:#E0ECFF;
+            z-index: 388;
+            border-radius: 4px;
+            top:280px;
+            left:330px;
+            padding:18px;
             box-sizing: border-box;
          }
 
-         .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo img{
-            position:relative;
-            top:-30px;
-            left:30px;
-            display:none
-         }  
-
-         .aechctp-active{
-             border:1px solid #71B2EF;
-             box-sizing: border-box;
+         .add-edit-course-label .add-edit-course-label-header{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
          }
 
-         .add-edit-course-header-context .add-edit-course-header-context-three{
-            width:338px;
-            display: flex;
-            justify-content: center;
-            padding:15px 0 15px 0;
-            position:fixed;
-            top:581px;
-            background: white;
+         .add-edit-course-label-header .add-edit-course-label-header-flex{
+            display:flex;
+            align-items: center;
          }
 
-         .add-edit-course-header-context-three #add-edit-course-header-context-three-pone{
-            width:67px;
-            height:26px;
-            background:#71B2EF;
-            border-radius: 4px;
-            text-align: center;
-            line-height: 26px;
+         .add-edit-course-label-header .add-edit-course-label-header-flex img{
+            width:19px;
+            height:19px;
+            margin-right:18px
          }
-         .add-edit-course-header-context-three #add-edit-course-header-context-three-ptwo{
-            width:67px;
-            height:26px;
-            border-radius: 4px;
-            text-align: center;
-            line-height: 26px;
-            border:1px solid #BFBFBF;
-            margin-left:20px
+
+         .add-edit-course-label-header .add-edit-course-label-header-flex p{
+            font-size:21px
+         }
+
+         .add-edit-course-label .add-edit-course-label-context{
+            width:500px;
+            height:240px;
+            border:1px solid #71B2EF;
+            margin-top:16px;
+            background:white
+         }
+
+         .add-edit-course-label-context .add-edit-course-label-context-pone{
+            margin-top:26px;
+            font-size:16px
+         }
+
+         .add-edit-course-label-context .add-edit-course-label-context-flexone{
+            display:flex
          }
     </style>
 </head>
@@ -1126,8 +1311,17 @@
 
         </div>
         <div class="add-edit-course">
-        
+
         </div>
+
+        <div class="add-course-name">
+
+        </div>
+
+        <div class="add-edit-course-label">
+
+        </div>
+
         <div class="box" id="ywyboxpage"></div>
     </div>
 </body>
@@ -1153,6 +1347,7 @@
         }
 
         select_all1() {
+            //下拉菜单动态渲染
             var str
             str = `
                 <div class="select-menu">
@@ -1230,6 +1425,7 @@
         }
 
         table_all() {
+            //表格的动态渲染
             var str2 = `
                 <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -1307,6 +1503,9 @@
         edit_course() {
             var editstr;
             var addeditstr;
+            var acn_str;
+            var aecl_str;
+            //新增窗口的动态渲染
             editstr = `
                 <div class="edit-course-header">
                     <div class="edit-course-header-one">
@@ -1318,7 +1517,12 @@
                 <div class="edit-course-context">
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one">课程名称</div>
-                        <div id="edit-course-context-two"></div>
+                        <div id="edit-course-context-two">
+                            <p class="edit-course-context-two-pp">芭蕾形体</p>
+                        </div>
+                        <p class="edit-course-context-three-pp">
+                            <img src="./image/search_btn.png" alt=""/>
+                        </p>
                     </div>
                     <div class="edit-course-context-flextwo">
                         <div class="edit-course-context-one">上课教练</div>
@@ -1329,7 +1533,7 @@
                             <p class="edit-course-context-twoone">11</p>   
                              
                         </div>
-                        <p class="edit-course-context-three">添加</p>
+                        <p class="edit-course-context-three" id="edit-course-addadd">添加</p>
                     </div>
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one">上课日期</div>
@@ -1435,6 +1639,7 @@
                     </div>
                 </div>
             `
+            //添加教练窗口的动态渲染
             addeditstr = `
                 <div class="add-edit-course-header">
                     <div class="add-edit-course-header-one">
@@ -1517,6 +1722,68 @@
                     </div>
                 </div>
             `
+            acn_str = `
+                <div class="add-course-name-header">
+                    <div class="add-course-name-header-left">
+                        <img src="./image/tags_icon.png" alt=""/>
+                        <p>课程名称</p>
+                    </div>
+                    <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                </div>
+                <div class="add-course-name-context">
+                    <div class="add-course-name-context-flex">
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                        <p class="add-course-name-context-p">舞林漫步</p>
+                    </div>
+                    <div class="add-course-name-context-bottom">
+                        <p id="add-course-name-context-bottom-pone">确定</p>
+                        <p id="add-course-name-context-bottom-ptwo">取消</p>
+                    </div>
+                </div>
+            `
+            aecl_str = `
+                <div class="add-edit-course-label-header">
+                    <div class="add-edit-course-label-header-flex">
+                        <img src="./image/tags_icon.png" alt=""/>
+                        <p>贴标</p>
+                    </div>
+                    <img style="width:22px;height:22px" id="label-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                </div>
+                <div class="add-edit-course-label-context">
+                    <p class="add-edit-course-label-context-pone">请对课程进行贴标</p>
+                    <div class="add-edit-course-label-context-flexone">
+                        <p class="" style="margin-right:51px">贴标</p>
+                        <div class="paypaypay">
+                            <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                            <img class="paypaypay-hide" src="./image/paymentnor_btn.png" alt="">
+                        </div>
+                        <p>无</p>
+                        <div class="paypaypay">
+                            <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                            <img class="paypaypay-hide" src="./image/paymentnor_btn.png" alt="">
+                        </div>
+                        <p>热门</p>
+                        <div class="paypaypay">
+                            <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                            <img class="paypaypay-hide" src="./image/paymentnor_btn.png" alt="">
+                        </div>
+                        <p>体验</p>
+                        <div class="paypaypay">
+                            <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                            <img class="paypaypay-hide" src="./image/paymentnor_btn.png" alt="">
+                        </div>
+                        <p>推荐</p>
+                    </div>
+                </div>
+            `
+            $('.add-edit-course-label').html(aecl_str)
+            $('.add-course-name').html(acn_str)
             $('.edit-course').html(editstr)
             $('.add-edit-course').html(addeditstr)
             new computed().init()
@@ -1527,6 +1794,7 @@
         constructor() {
             this.checkbox = $(".course-arranging-table-checkbox")
             this.paypay = $(".paypay")
+            this.paypaypay = $(".paypaypay")
         }
         init() {
             this.checkbox_click()
@@ -1538,6 +1806,7 @@
         }
 
         checkbox_click() {
+            //表格第一列显示或隐藏打钩
             this.checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -1548,10 +1817,12 @@
         }
 
         a_del() {
+            //点击删除按钮事件
             $('.a-del').click(function () {
                 $(this).parent().parent().children().eq(12).children().show()
 
             })
+            //点击编辑按钮事件
             $('.a-add').click(function () {
                 $('.edit-course').show()
 
@@ -1566,25 +1837,10 @@
         }
 
         select_all1() {
-            var strstr
+            //下拉菜单的动态渲染
             var strstrstr
             var strstrstrstr
             var str5
-            strstr = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">2</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
             strstrstr = `
                 <div class="select-menu3">
 		            <div class="select-menu-div">
@@ -1630,17 +1886,16 @@
                     </ul>
                 </div>
             `
-            $('#edit-course-context-two').html(strstr)
             $('#edit-course-context-three').html(strstrstr)
             $('#edit-course-context-four').html(strstrstrstr)
             $('#edit-course-context-five').html(str5)
         }
 
         select_option() {
+            //下拉菜单的动态
             selectMenu(1);
             selectMenu(2);
             selectMenu(3);
-            selectMenu(4);
 
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
@@ -1695,6 +1950,7 @@
         }
 
         pay() {
+            //新增窗口单选框的显示及排他
             this.paypay.children('.paypay-show').hide()
             this.paypay.children('.paypay-hidden').show()
             this.paypay.click(function () {
@@ -1708,20 +1964,79 @@
                     $(this).children('.paypay-show').show()
                 }
             })
+
+            this.paypaypay.children('.paypaypay-show').hide()
+            this.paypaypay.children('.paypaypay-hidden').show()
+            this.paypaypay.click(function () {
+                $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
+                $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
+                if ($(this).children('.paypaypay-hidden').is(":hidden")) {
+                    $(this).children('.paypaypay-hidden').show()
+                    $(this).children('.paypaypay-show').hide()
+                } else {
+                    $(this).children('.paypaypay-hidden').hide()
+                    $(this).children('.paypaypay-show').show()
+                }
+            })
+
         }
 
-        adch_showhide(){
-            $('.add-edit-course-header-context-two-ptwo').mouseover(function(){
+        adch_showhide() {
+            //添加教练鼠标移入事件
+            $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
                 $(this).addClass('aechctp-active')
                 $(this).children('img').show()
             })
+            //添加教练的鼠标移除事件
             $('.add-edit-course-header-context-two-ptwo').mouseout(function () {
                 $(this).removeClass('aechctp-active')
                 $(this).children('img').hide()
             })
-
-            $('.add-edit-course-header-context-two-ptwo').children('img').click(function(){
+            //添加教练的标签，点击叉叉关闭
+            $('.add-edit-course-header-context-two-ptwo').children('img').click(function () {
                 $(this).parent().remove()
+            })
+            //添加教练的叉叉关闭
+            $('#add-edit-course-hide').click(function () {
+                $(this).parent().parent().hide()
+            })
+
+            //添加教练的点击确认事件
+            $('#add-edit-course-header-context-three-pone').click(function () {
+                $(this).parent().parent().parent().hide()
+            })
+            //添加教练的点击取消事件
+            $('#add-edit-course-header-context-three-ptwo').click(function () {
+                $(this).parent().parent().parent().hide()
+            })
+            //点击添加按钮显示添加教练
+            $('#edit-course-addadd').click(function () {
+                $('.add-edit-course').show()
+            })
+            //教练课程的显示隐藏
+            $('.add-course-name-context-p').click(function(){
+                $('.add-course-name-context-p').each(function(){
+                    $(this).removeClass('add-course-name-context-p-active')
+                })
+                $(this).addClass('add-course-name-context-p-active')
+            })
+
+            //课程名称的取消和叉叉关闭页面
+            $('#add-course-name-header-img').click(function(){
+                $(this).parent().parent().hide()
+            })
+
+            $('#add-course-name-context-bottom-pone').click(function(){
+                $(this).parent().parent().parent().hide()
+            })
+            //课程名称的确定按钮事件
+            $('#add-course-name-context-bottom-ptwo').click(function () {
+                $(this).parent().parent().parent().hide()
+            })
+
+            //课程名称页面的显示
+            $('.edit-course-context-three-pp').click(function(){
+                $('.add-course-name').show()
             })
         }
     }
@@ -1731,6 +2046,7 @@
             this.a_del_click()
             this.edit_course_showhide()
         }
+        //删除表格的确定或取消
         a_del_click() {
             $('.td-del-flex-yes').click(function () {
                 $(this).parent().parent().parent().parent().remove()
@@ -1741,6 +2057,7 @@
         }
 
         edit_course_showhide() {
+            //新增窗口的叉叉关闭
             $('#edit-course-hide').click(function () {
                 $(this).parent().parent().hide()
                 $('.paypay').each(function () {
@@ -1748,6 +2065,7 @@
                     $(this).children('.paypay-hide').show()
                 })
             })
+            //新增窗口的取消关闭
             $('#edit-course-footer-ptwo').click(function () {
                 $(this).parent().parent().parent().hide()
                 $('.paypay').each(function () {
@@ -1755,7 +2073,7 @@
                     $(this).children('.paypay-hide').show()
                 })
             })
-
+            //新增窗口的确定按钮
             $('#edit-course-footer-pone').click(function () {
                 $(this).parent().parent().parent().hide()
                 $('.paypay').each(function () {
