@@ -26,19 +26,27 @@
             display: flex
         }
 
-        .course-arranging-header-one-pone {
+        #course-arranging-header-one-pone {
             font-size: 18px;
             color: #444444;
             padding-bottom: 7px;
-            border-bottom: 2px solid #71B2EF;
             margin-left: 18px;
+            cursor: pointer;
         }
 
-        .course-arranging-header-one-ptwo {
+        .course-arranging-header-one-pone-active{
+            border-bottom: 2px solid #71B2EF;
+        }
+
+        #course-arranging-header-one-ptwo {
             font-size: 18px;
             color: #444444;
             margin-left: 34px;
             padding-bottom: 7px;
+            cursor: pointer;
+        }
+
+        .course-arranging-header-one-ptwo-active{
             border-bottom: 2px solid #71B2EF;
         }
 
@@ -1254,27 +1262,68 @@
 
          .add-edit-course-label-context .add-edit-course-label-context-pone{
             margin-top:26px;
-            font-size:16px
+            font-size:16px;
+            display:flex;
+            justify-content: center;
          }
 
          .add-edit-course-label-context .add-edit-course-label-context-flexone{
             display:flex;
             padding:0 27px 0 27px;
             align-items: center;
+            justify-content: center;
+            margin-top:61px
          }
 
          .add-edit-course-label-context-flexone .paypaypay{
-             margin-right:13px
+             margin-right:13px;
+             margin-left:70px;
+         }
+         .add-edit-course-label-context-flexone .paypaypay:nth-child(1){
+             margin-right:13px;
+             margin-left:0
+         }
+
+         .add-edit-course-label-context .add-edit-course-label-context-footer{
+            display:flex;
+            justify-content: center;
+            padding:27px 0 27px 0;
+            box-sizing: border-box;
+            position: absolute;
+            bottom:18px;
+            width:500px;
+         }
+
+         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-pone{
+            width:88px;
+            height:35px;
+            background:#71B2EF;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 35px;
+            font-size: 16px;
+            color:white
+         }
+
+         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-ptwo{
+            width:88px;
+            height:35px;
+            border:1px solid #BFBFBF;
+            box-sizing: border-box;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 35px;
+            margin-left:26px
          }
     </style>
 </head>
 
 <body>
+    <div class="course-arranging-header-one">
+        <p id="course-arranging-header-one-pone" class="course-arranging-header-one-pone-active">待发布</p>
+        <p id="course-arranging-header-one-ptwo">已发布</p>
+    </div>
     <div class="course-arranging-body">
-        <div class="course-arranging-header-one">
-            <p class="course-arranging-header-one-pone">待发布</p>
-            <p class="course-arranging-header-one-ptwo">已发布</p>
-        </div>
         <div class="course-arranging-header-two"></div>
         <div class="course-arranging-header-three">
             <p>导入课程</p>
@@ -1324,11 +1373,14 @@
 
         </div>
 
-        <div class="add-edit-course-label">
+        <div class="add-edit-course-label" style="display:none">
 
         </div>
 
         <div class="box" id="ywyboxpage"></div>
+    </div>
+    <div id="kcwfb" style="display:none;margin-top:30px">
+        还在开发哦！！！！！！！！！！！！！！！
     </div>
 </body>
 <script type="text/javascript">
@@ -1350,6 +1402,7 @@
             this.input_all4()
             this.select_option()
             this.edit_course()
+            this.publishshowhide()
         }
 
         select_all1() {
@@ -1506,6 +1559,25 @@
             this.input_four.html(str3)
         }
 
+        publishshowhide(){
+            $('#course-arranging-header-one-pone').click(function () {
+                $('#course-arranging-header-one-ptwo').removeClass('course-arranging-header-one-ptwo-active')
+                $(this).addClass('course-arranging-header-one-pone-active')
+                setTimeout(() => {
+                    $('#kcwfb').hide()
+                    $('.course-arranging-body').show()
+                }, 100);
+            })
+            $('#course-arranging-header-one-ptwo').click(function(){
+                $('#course-arranging-header-one-pone').removeClass('course-arranging-header-one-pone-active')
+                $(this).addClass('course-arranging-header-one-ptwo-active')
+                setTimeout(() => {
+                    $('#kcwfb').show()
+                    $('.course-arranging-body').hide()
+                }, 100);
+            })
+        }
+
         edit_course() {
             var editstr;
             var addeditstr;
@@ -1537,7 +1609,6 @@
                             <p class="edit-course-context-twoone">11</p> 
                             <p class="edit-course-context-twoone">11</p> 
                             <p class="edit-course-context-twoone">11</p>   
-                             
                         </div>
                         <p class="edit-course-context-three" id="edit-course-addadd">添加</p>
                     </div>
@@ -1784,6 +1855,10 @@
                             <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
                         </div>
                         <p>推荐</p>
+                    </div>
+                    <div class="add-edit-course-label-context-footer">
+                        <p id="add-edit-course-label-context-footer-pone">保存</p>
+                        <p id="add-edit-course-label-context-footer-ptwo">取消</p>
                     </div>
                 </div>
             `
@@ -2042,6 +2117,25 @@
             //课程名称页面的显示
             $('.edit-course-context-three-pp').click(function(){
                 $('.add-course-name').show()
+            })
+
+            //点击贴边按钮显示贴标
+            $('.course-arranging-footer-ptwo').click(function(){
+                $('.add-edit-course-label').show()
+            })
+
+            //贴标点击叉叉和取消关闭页面
+            $('#label-header-imgtwo').click(function(){
+                $(this).parent().parent().hide()
+            })
+
+            $('#add-edit-course-label-context-footer-ptwo').click(function(){
+                $(this).parent().parent().parent().hide()
+            })
+
+            //贴标点击保存按钮
+            $('#add-edit-course-label-context-footer-pone').click(function(){
+                $(this).parent().parent().parent().hide()
             })
         }
     }
