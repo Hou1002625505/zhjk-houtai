@@ -92,6 +92,74 @@
             user-select: none;
             font-size: 14px
         }
+
+        .liuyi .liuyi-table{
+            margin-top:26px
+        }
+
+        .liuyi .liuyi-table table tr th{
+            border:1px solid #BFBFBF;
+            border-left:none;
+            height:36px;
+            font-size:12px;
+            box-sizing: border-box;
+        }
+
+        .liuyi .liuyi-table table tr th:nth-child(1) {
+            border-left:1px solid #BFBFBF;
+            display:flex;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        .liuyi .liuyi-table table tr td{
+            border:1px solid #BFBFBF;
+            border:none;
+            text-align: center;
+            background:#F5F5F5;
+            box-sizing: border-box;
+            padding:0 9px 9px 0;
+        }
+
+        .liuyi .liuyi-table table tr td:last-child{
+            border-right:1px solid #BFBFBF;
+        }
+
+        .liuyi .liuyi-table table tr:nth-child(2) td{
+            padding-top:9px
+        }
+
+        .liuyi-table .bias{
+            width:144px;
+            height:1px;
+            background:#BFBFBF;
+            transform: rotate(193deg);
+            position:absolute;
+            left:-3px;
+            top:16px
+        }
+
+        .liuyi-table .bias-left{
+            margin-left:5px;
+            margin-bottom:5px;
+            font-size:14px;
+            display:flex;
+            align-items: flex-end;
+        }
+
+        .liuyi-table .bias-right{
+            margin-right:5px;
+            margin-top:5px;
+            font-size:14px;
+        }
+
+        .liuyi-table .liuyi-white{
+            width:201px;
+            height:114px;
+            background:white;
+        }
+
+
     </style>
 </head>
 
@@ -101,6 +169,7 @@
             <p>上课门店</p>
             <div class="liuyi-input"></div>
         </div>
+        <div class="liuyi-table"></div>
     </div>
 </body>
 
@@ -114,6 +183,8 @@
         init() {
             this.liuyi()
             this.select_option()
+            // this.ajax()
+            this.liuyi_table()
         }
 
         liuyi() {
@@ -192,6 +263,199 @@
 
             }
         }
+        
+        liuyi_table(){
+            var tablestr;
+            tablestr = `
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th><p class="bias-left">时间</p><p class="bias"></p><p class="bias-right">房间</p></th>
+                        <th colspan="2">中信分店团操课房</th>
+                        <th colspan="2">中信分店瑜伽房</th>
+                        <th colspan="2">中信分店单车房</th>
+                    </tr>
+                    <tr style="height:123px">
+                        <td rowspan="2" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none">表格内容</td>
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none">表格内容</td>
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none">表格内容</td>
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:123px">
+                        <td style="width:211px;padding-left:9px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                        <td style="width:211px">
+                            <div class="liuyi-white"></div>
+                        </td>
+                    </tr>
+                </table>
+            `
+            $('.liuyi-table').html(tablestr)
+        }
+        // ajax(){
+        //     var list = {}
+        //     $.ajax({
+        //         type:'get',
+        //         url:'http://172.16.7.20:8080/rest/leagueCoach/selectLeagueCoachList',
+        //         data: JSON.stringify(list),
+        //         success : function(result){
+        //             console.log(result)
+        //         },
+        //         error : function(e){
+        //             console.log(e.status);
+        //             console.log(e.responseText)
+        //         }
+        //     })
+        // }
     }
 </script>
 
