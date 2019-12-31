@@ -356,6 +356,21 @@
             margin-left: -1px;
         }
 
+        .course-arranging-table-checkbox1 {
+            width: 14px;
+            height: 14px;
+            box-sizing: border-box;
+            border: 1px solid #BFBFBF;
+            line-height: 14px;
+        }
+
+        .course-arranging-table-checkbox1 img {
+            width: 14px;
+            height: 14px;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
         .course-arranging-footer .course-arranging-footer-pone {
             font-size: 12px;
             margin-left: 8px;
@@ -1317,13 +1332,124 @@
             line-height: 35px;
             margin-left: 26px
         }
+
+
+        .add-edit-course-change {
+            position: absolute;
+            width: 546px;
+            height: 525px;
+            background: #E0ECFF;
+            z-index: 488;
+            border-radius: 4px;
+            top: 160px;
+            left: 410px;
+            padding: 18px;
+            box-sizing: border-box;
+            border:1px solid #71B2EF
+        }
+
+        .add-edit-course-change .add-edit-course-change-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex img {
+            width: 19px;
+            height: 19px;
+            margin-right: 18px
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex p {
+            font-size: 18px
+        }
+
+        .add-edit-course-change .add-edit-course-change-context {
+            width: 511px;
+            height: 454px;
+            border: 1px solid #71B2EF;
+            box-sizing: border-box;
+            margin-top: 16px;
+            padding: 0 18px 0 18px;
+            background: white;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-pone {
+            border-bottom: 1px solid #BFBFBF;
+            padding:14px 0 14px 0;
+            font-size: 18px;
+            display:flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo {
+            border-bottom: 1px solid #BFBFBF;
+            display:flex;
+            justify-content: space-between;
+            padding:12px 0 12px 0;
+            
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(1){
+            margin-left:9px;
+            font-size:14px;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(2){
+            margin-right:9px
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-textarea{
+            resize: none;
+            width:475px;
+            height:88px;
+            margin-top:17px;
+            border-radius: 4px;
+            padding:12px 0 0 8px;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-footer{
+            display:flex;
+            justify-content: center;
+            margin-top:18px
+        }
+
+        .add-edit-course-change-context-footer .add-edit-course-change-context-footer-pone{
+            width:88px;
+            height:32px;
+            background: #71B2EF;
+            font-size:16px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 4px;
+            color:white
+        }
+
+        .add-edit-course-change-context-footer .add-edit-course-change-context-footer-ptwo{
+            width:88px;
+            height:32px;
+            font-size:16px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 4px;
+            border:1px solid #BFBFBF;
+            box-sizing: border-box;
+            margin-left:18px
+        }
     </style>
 </head>
 
 <body>
     <div class="course-arranging-header-one">
         <p id="course-arranging-header-one-pone">待发布</p>
-        <p id="course-arranging-header-one-ptwo"  class="course-arranging-header-one-ptwo-active">已发布</p>
+        <p id="course-arranging-header-one-ptwo" class="course-arranging-header-one-ptwo-active">已发布</p>
     </div>
     <div class="course-arranging-body">
         <div class="course-arranging-header-two"></div>
@@ -1376,6 +1502,10 @@
         </div>
 
         <div class="add-edit-course-label" style="display:none">
+
+        </div>
+
+        <div class="add-edit-course-change" style="display:none">
 
         </div>
 
@@ -1521,16 +1651,16 @@
                     <td width="0" style="position:relative;border:none">
                         <div class="td-del" style="display:none">
                             <div class="td-del-flex">
-                                <p>是否删除该课程?</p>
+                                <p>是否下架该课程?</p>
                                 <p class="td-del-flex-yes">确定</p>
                                 <p class="td-del-flex-no">取消</p>
                             </div>
                             <p class="td-del-line"></p>
-                            <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
+                            <p class="td-del-left">下架课表后，教练将不会看到该课程!</p>
                         </div
                     </td>
                     <td width="105">
-                        <a class="a-add">编辑</a>|<a class="a-del">删除</a>
+                        <a class="a-add">变更</a>|<a class="a-del">下架</a>
                     </td>
                 </tr>
             `
@@ -1563,7 +1693,7 @@
                 $('#course-arranging-header-one-ptwo').removeClass('course-arranging-header-one-ptwo-active')
                 $(this).addClass('course-arranging-header-one-pone-active')
                 setTimeout(() => {
-                    window.location.href="http://127.0.0.1:8080/courses_arranging.html"
+                    window.location.href = "http://127.0.0.1:8080/courses_arranging.html"
                 }, 100);
             })
         }
@@ -1573,6 +1703,7 @@
             var addeditstr;
             var acn_str;
             var aecl_str;
+            var change_str;
             //新增窗口的动态渲染
             editstr = `
                 <div class="edit-course-header">
@@ -1852,6 +1983,44 @@
                     </div>
                 </div>
             `
+            change_str = `
+                <div class="add-edit-course-change-header">
+                    <div class="add-edit-course-change-header-flex">
+                        <img src="./image/tags_icon.png" alt=""/>
+                        <p>课程变更</p>
+                    </div>
+                    <img style="width:22px;height:22px" id="change-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                </div>
+                <div class="add-edit-course-change-context">
+                    <p class="add-edit-course-change-context-pone">变更原因</p>
+                    <div class="add-edit-course-change-context-ptwo">
+                        <p>门店停电</p>
+                        <p class="course-arranging-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                    </div>
+                    <div class="add-edit-course-change-context-ptwo">
+                        <p>公司会议</p>
+                        <p class="course-arranging-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                    </div>
+                    <div class="add-edit-course-change-context-ptwo">
+                        <p>身体不适</p>
+                        <p class="course-arranging-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                    </div>
+                    <div class="add-edit-course-change-context-ptwo">
+                        <p>临时有事</p>
+                        <p class="course-arranging-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                    </div>
+                    <div class="add-edit-course-change-context-ptwo">
+                        <p>个人休假</p>
+                        <p class="course-arranging-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                    </div>
+                    <textarea placeholder="其他原因" class="add-edit-course-change-context-textarea"></textarea>
+                    <div class="add-edit-course-change-context-footer">
+                        <p class="add-edit-course-change-context-footer-pone">确定</p>
+                        <p class="add-edit-course-change-context-footer-ptwo">取消</p>
+                    </div>
+                </div>
+            `
+            $('.add-edit-course-change').html(change_str)
             $('.add-edit-course-label').html(aecl_str)
             $('.add-course-name').html(acn_str)
             $('.edit-course').html(editstr)
@@ -1878,6 +2047,18 @@
         checkbox_click() {
             //表格第一列显示或隐藏打钩
             $(".course-arranging-table-checkbox").click(function () {
+                if ($(this).children('img').is(":hidden")) {
+                    setTimeout(() => {
+                        $(this).children('img').show()
+                    }, 50);
+                } else {
+                    setTimeout(() => {
+                        $(this).children('img').hide()
+                    }, 50);
+                }
+            })
+
+            $(".course-arranging-table-checkbox1").click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     setTimeout(() => {
                         $(this).children('img').show()
@@ -2131,6 +2312,23 @@
             $('#add-edit-course-label-context-footer-pone').click(function () {
                 $(this).parent().parent().parent().hide()
             })
+
+
+            //课程变更点击叉叉关闭
+            $('#change-header-imgtwo').click(function(){
+                $(this).parent().parent().hide()
+            })
+
+            //课程变更点击确定关闭
+            $('.add-edit-course-change-context-footer-pone').click(function(){
+                $(this).parent().parent().parent().hide()
+                $('.edit-course').hide()
+            })
+
+            //课程变更点击取消关闭
+            $('.add-edit-course-change-context-footer-ptwo').click(function () {
+                $(this).parent().parent().parent().hide()
+            })
         }
     }
 
@@ -2168,7 +2366,7 @@
             })
             //新增窗口的确定按钮
             $('#edit-course-footer-pone').click(function () {
-                $(this).parent().parent().parent().hide()
+                // $(this).parent().parent().parent().hide()
                 $('.paypay').each(function () {
                     var display = $(this).children('.paypay-show').css('display')
                     $(this).removeClass('xianshi')
@@ -2176,9 +2374,8 @@
                         $(this).addClass('xianshi')
                     }
                 })
+                $('.add-edit-course-change').show()
             })
-
-
         }
     }
 
