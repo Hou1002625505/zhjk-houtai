@@ -1,8 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <base href="<%=basePath%>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -303,9 +311,9 @@
             border-radius: 2px;
         }
 
-        .course-manage-footer .course-manage-footer-pthree{
-            font-size:14px;
-            margin-left:893px;
+        .course-manage-footer .course-manage-footer-pthree {
+            font-size: 14px;
+            margin-left: 893px;
         }
     </style>
 </head>
@@ -336,7 +344,7 @@
         <div class="course-manage-table"></div>
         <div class="course-manage-footer">
             <div class="course-manage-table-checkbox">
-                <img style="display:none" src="./image/codeallset_btn.png">
+                <img style="display:none" src="../images/simage/codeallset_btn.png">
             </div>
             <div class="course-manage-footer-pone">当页全选</div>
             <div class="course-manage-footer-ptwo">批量上传</div>
@@ -375,7 +383,7 @@
 		            <div class="select-menu-div">
 			            <input class="select-menu-input" />
 
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+			            <img class="select-menu-img" src="../images/simage/sifting_icon.png"/>
 		            </div>
                     <ul class="select-menu-ul">
                         <li class="select-this">全部</li>
@@ -395,7 +403,7 @@
 		            <div class="select-menu-div">
 			            <input class="select-menu-input" />
 
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
+			            <img class="select-menu-img" src="../images/simage/sifting_icon.png"/>
 		            </div>
                     <ul class="select-menu-ul">
                         <li class="select-this">全部</li>
@@ -453,53 +461,78 @@
         }
 
         table_all() {
-            var list = {};
-            
+            var list = [];
+            var str2;
+            var that = this
+            var param = {
+                rows: 10
+            }
+
             $.ajax({
-                // type : 'POST',
-                // contentType : 'application/json;charset=UTF-8',
-                url : 'http://test.physicalclub.com/rest/leagueCurriculum/selectLeagueCurriculumList',
-                // dataType : 'text',
-                success : function(result){
-                    console.log(result);
+                method: 'POST',
+                url: 'http://test.physicalclub.com/rest/leagueCurriculum/selectLeagueCurriculumList',
+                contentType: "application/json",
+                data: JSON.stringify(param),
+                success: function (result) {
+                    list = result.results
+                    console.log(list)
+                    str2 = `
+                        <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="35"></th>
+                            <th>课程分类</th>
+                            <th>课程名称</th>
+                            <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                            <th><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    `
+                    $.each(list, function (i, item) {
+                        //console.log($('.course-manage-table-tr').parent().children().eq(i+1).children().eq(5))
+                        if (item.state == 1) {
+                            str2 += `
+                                        <tr class="course-manage-table-tr">
+                                            <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td width="254">`+ item.classifyName + `</td>
+                                            <td width="254">`+ item.name + `</td>
+                                            <td width="254">`+ item.price + `</td>
+                                            <td width="254">`+ item.createDate + `</td>
+                                            <td width="254">上架</td>
+                                            <td width="130"><a>编辑</a>|<a></a>上架</td>
+                                        </tr>
+                                    `
+                        }
+
+                        if(item.state == 2){
+                            str2 += `
+                                        <tr class="course-manage-table-tr">
+                                            <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td width="254">`+ item.classifyName + `</td>
+                                            <td width="254">`+ item.name + `</td>
+                                            <td width="254">`+ item.price + `</td>
+                                            <td width="254">`+ item.createDate + `</td>
+                                            <td width="254">下架</td>
+                                            <td width="130"><a>编辑</a>|<a></a>上架</td>
+                                        </tr>
+                                    `
+                        }
+
+                        that.table.html(str2)
+
+                    })
+
                 },
-                error : function(e){
+                error: function (e) {
                     console.log(e.status);
                     console.log(e.responseText)
                 }
             })
 
-            var str2 = `
-                <table border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <th width="35"></th>
-                    <th>课程分类</th>
-                    <th>课程名称</th>
-                    <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
-                    <th><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="./image/headingsifting_up.png"><img src="./image/headingsifting_down.png"></div></div></th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-            `
-            for (var i = 0; i < 5; i++) {
-                str2 += `
-                <tr class="course-manage-table-tr">
-                    <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                    <td width="254">莱美课</td>
-                    <td width="254">BODYPUMP</td>
-                    <td width="254">￥99</td>
-                    <td width="254">2019-12-15</td>
-                    <td width="254">下架</td>
-                    <td width="130"><a>编辑</a>|<a></a>上架</td>
-                </tr>
-            `
-                this.table.html(str2)
-
-            }
             new computed().init()
         }
-    
-        input_all4(){
+
+        input_all4() {
             var obj = {
                 wrapid: 'ywyboxpage', //页面显示分页器容器id
                 total: 15, //总条数
@@ -511,7 +544,7 @@
             pagination.init(obj);
 
             var str3
-            str3=`
+            str3 = `
                 <p>共20条，每条15条</p>
             `
             this.input_four.html(str3)
