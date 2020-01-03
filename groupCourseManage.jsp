@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%
@@ -11,15 +11,22 @@
 
 <head>
     <base href="<%=basePath%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+
+    <link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
+
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="easyui/moment.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
     <style>
         * {
             margin: 0;
@@ -27,17 +34,17 @@
         }
 
         .course-manage-body {
-            padding: 20px 20px 0 20px;
+            /* padding: 20px 20px 0 20px; */
         }
 
         .course-manage-button {
-            width: 106px;
-            height: 35px;
+            width: 120px;
+            height: 40px;
             background: #71B2EF;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             text-align: center;
-            line-height: 35px;
+            line-height: 40px;
             cursor: pointer;
             border-radius: 4px;
         }
@@ -48,51 +55,51 @@
             align-items: center;
         }
 
-        .course-manage-flex .course-manage-flex-input {
-            width: 176px;
-            height: 26px;
+        .course-manage-flex #course-manage-flex-input {
+            width: 200px;
+            height: 30px;
             border-radius: 4px;
-            margin-left: 18px;
-            margin-right: 34px;
+            margin-left: 20px;
+            margin-right: 39px;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flextwo {
             display: flex;
-            margin-top: 18px;
+            margin-top: 20px;
         }
 
-        .course-manage-flextwo p:nth-child(1) {
-            width: 70px;
-            height: 26px;
+        .course-manage-flextwo #course-manage-flextwo-search {
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             background: #71B2EF;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             color: white;
-            font-size: 14px
+            font-size: 16px
         }
 
-        .course-manage-flextwo p:nth-child(2) {
-            width: 70px;
-            height: 26px;
+        .course-manage-flextwo #course-manage-flextwo-clear {
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             color: black;
             margin-left: 13px;
-            font-size: 14px
+            font-size: 16px
         }
 
         .select-menu {
-            margin-left: 10px;
+            margin-left: 20px;
             margin-right: 39px;
             cursor: pointer;
-            width: 106px;
-            height: 26px;
+            width: 120px;
+            height: 30px;
             box-sizing: border-box;
         }
 
@@ -101,7 +108,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 106px;
+            width: 120px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -123,11 +130,12 @@
 
         .select-menu-div {
             position: relative;
-            height: 26px;
-            width: 106px;
+            height: 30px;
+            width: 120px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+            line-height: 30px;
         }
 
         .select-this {
@@ -158,32 +166,32 @@
         }
 
         .course-manage-flex-input-one {
-            width: 106px;
-            height: 26px;
+            width: 120px;
+            height: 30px;
             border-radius: 4px;
             margin-left: 21px;
             margin-right: 7px;
-            padding: 13px 0 7px 10px;
+            padding: 8px 0 7px 10px;
             box-sizing: border-box;
             font-size: 12px;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-two {
-            width: 106px;
-            height: 26px;
+            width: 120px;
+            height: 30px;
             border-radius: 4px;
             margin-left: 7px;
             margin-right: 38px;
-            padding: 13px 0 7px 10px;
+            padding: 8px 0 7px 10px;
             box-sizing: border-box;
             font-size: 12px;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-three {
-            width: 70px;
-            height: 26px;
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             margin-left: 21px;
             margin-right: 6px;
@@ -192,8 +200,8 @@
         }
 
         .course-manage-flex-input-four {
-            width: 70px;
-            height: 26px;
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             margin-left: 6px;
             box-sizing: border-box;
@@ -212,8 +220,9 @@
         .course-manage-table table td {
             border-left: 1px dashed #CCCCCC;
             border-bottom: 1px dashed #CCCCCC;
-            height: 35px;
+            height: 40px;
             text-align: center;
+            font-size: 14px;
         }
 
         .course-manage-table table td:last-child {
@@ -224,7 +233,8 @@
         .course-manage-table table th {
             background: #D0E8F2;
             text-align: center;
-            height: 35px;
+            height: 40px;
+            font-size: 14px;
         }
 
         .course-manage-table .course-manage-table-tr td:last-child {
@@ -241,15 +251,15 @@
         }
 
         .course-manage-table .course-manage-table-checkbox {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
         }
 
         .course-manage-table .course-manage-table-checkbox img {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             margin-left: -1px;
             margin-top: -1px;
         }
@@ -280,40 +290,60 @@
         }
 
         .course-manage-table-checkbox {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
             line-height: 14px;
         }
 
         .course-manage-table-checkbox img {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             margin-top: -1px;
             margin-left: -1px;
         }
 
         .course-manage-footer .course-manage-footer-pone {
-            font-size: 12px;
+            font-size: 14px;
             margin-left: 8px;
         }
 
         .course-manage-footer .course-manage-footer-ptwo {
-            width: 80px;
-            height: 26px;
+            width: 90px;
+            height: 30px;
             border: 1px solid #BFBFBF;
             margin-left: 9px;
-            font-size: 12px;
+            font-size: 14px;
             color: #444444;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             border-radius: 2px;
         }
 
         .course-manage-footer .course-manage-footer-pthree {
-            font-size: 14px;
+            font-size: 16px;
             margin-left: 893px;
+        }
+
+        .c-datepicker-date-editor {
+            border: 1px solid #CCCCCC;
+            position: relative;
+            top: -24px;
+            width: 220px;
+            height: 36px;
+            cursor: pointer;
+        }
+
+        .c-datepicker-data-input.only-date {
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .c-datepicker-date-table td.disabled .cell,
+        .c-datepicker-month-table td.disabled .cell,
+        .c-datepicker-year-table td.disabled .cell {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -322,24 +352,51 @@
     <div class="course-manage-body">
         <div class="course-manage-button">新建课程</div>
         <div class="course-manage-flex">
-            <div style="font-size:14px">课程名称</div>
-            <input class="course-manage-flex-input" type="text">
-            <div style="font-size:14px">课程分类</div>
-            <div class="course-manage-flex-select-one"></div>
-            <div style="font-size:14px">课程状态</div>
-            <div class="course-manage-flex-select-two"></div>
-            <div style="font-size:14px">创建时间</div>
-            <input type="text" class="course-manage-flex-input-one" placeholder="开始时间">
+            <div style="font-size:16px">课程名称</div>
+            <input id="course-manage-flex-input" type="text">
+            <div style="font-size:16px">课程分类</div>
+            <div class="course-manage-flex-select-one">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input" />
+
+                        <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">全部</li>
+                        <div id="select-li"></div>
+                    </ul>
+                </div>
+            </div>
+            <div style="font-size:16px">课程状态</div>
+            <div class="course-manage-flex-select-two">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input" />
+                
+                        <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul">
+                        <li class="select-this">全部</li>
+                        <li>上架</li>
+                        <li>下架</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="font-size:16px">创建时间</div>
+            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-one " placeholder="开始时间">
+            </div>
             <p>-</p>
-            <input type="text" class="course-manage-flex-input-two" placeholder="结束时间">
-            <div style="font-size:14px">价格区间</div>
+            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-two" placeholder="结束时间">
+            </div>
+            <div style="font-size:16px">价格区间</div>
             <input type="text" class="course-manage-flex-input-three">
             <p>-</p>
             <input type="text" class="course-manage-flex-input-four">
         </div>
         <div class="course-manage-flextwo">
-            <p>查询</p>
-            <p>清除</p>
+            <p id="course-manage-flextwo-search">查询</p>
+            <p id="course-manage-flextwo-clear">清除</p>
         </div>
         <div class="course-manage-table"></div>
         <div class="course-manage-footer">
@@ -355,64 +412,109 @@
         <div class="box" id="ywyboxpage"></div>
     </div>
 </body>
+<script type="text/javascript" src="easyui/datepicker.all.js"></script>
+<script type="text/javascript" src="easyui/datepicker.en.js"></script>
 <script type="text/javascript">
+
     window.onload = function () {
         new course_manage().init();
     }
 
     class course_manage {
         constructor() {
-            this.select_one = $(".course-manage-flex-select-one")
+            this.li_one = $("#select-li")
+            this.li_two = $("#select2-li")
+            this.linot_two = $("#select2-li-not")
             this.select_two = $(".course-manage-flex-select-two")
             this.table = $(".course-manage-table")
             this.input_four = $(".course-manage-footer-pthree")
         }
 
         init() {
-            this.select_all1()
-            this.select_all2()
             this.table_all()
-            this.input_all4()
             this.select_option()
+            this.time()
         }
 
-        select_all1() {
-            var str
-            str = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
+        time() {
+            $('.J-datepicker-day').datePicker({
+                hasShortcut: true,
+                format: 'YYYY-MM-DD',
+                shortcutOptions: [{
+                    name: '今天',
+                    day: '0'
+                }, {
+                    name: '昨天',
+                    day: '-1'
+                }, {
+                    name: '一周前',
+                    day: '-7'
+                }]
+            });
 
-			            <img class="select-menu-img" src="../images/simage/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">全部</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            this.select_one.html(str)
-        }
+            function fchatitylist() {
+                intoPages = 1;
+                visititylist();
+            }
 
-        select_all2() {
-            var str1
-            str1 = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
+            function visititylist() {
+                var status = $("#visitstatus").val();
+                var conditionName = '';//顾问姓名
+                var startDate = $("#selectDate1").val();
+                var endDate = $("#selectDate2").val();
+                //var club = $("#clubId").val();
+                var fangcusname = $("#fangcusname").val();
+                var fangmobile = $("#fangmobile").val();
+                if (startDate != '') {
+                    if (endDate == '') {
+                        alert("请选择结束日期");
+                        return;
+                    }
+                }
+            }
 
-			            <img class="select-menu-img" src="../images/simage/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">全部</li>
-                        <li>已上架</li>
-                        <li>未上架</li>
-                    </ul>
-                </div>
-            `
-            this.select_two.html(str1)
+
+            function getDay(day) {
+
+                var today = new Date();
+
+
+
+                var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+
+
+
+                today.setTime(targetday_milliseconds); //注意，这行是关键代码
+
+
+
+                var tYear = today.getFullYear();
+
+                var tMonth = today.getMonth();
+
+                var tDate = today.getDate();
+
+                tMonth = doHandleMonth(tMonth + 1);
+
+                tDate = doHandleMonth(tDate);
+
+                return tYear + "-" + tMonth + "-" + tDate;
+
+            }
+
+            function doHandleMonth(month) {
+
+                var m = month;
+
+                if (month.toString().length == 1) {
+
+                    m = "0" + month;
+
+                }
+
+                return m;
+
+            }
         }
 
         select_option() {
@@ -462,66 +564,72 @@
 
         table_all() {
             var list = [];
+            var str;
             var str2;
             var that = this
-            var param = {
-                rows: 10
-            }
 
             $.ajax({
-                method: 'POST',
-                url: 'http://test.physicalclub.com/rest/leagueCurriculum/selectLeagueCurriculumList',
-                contentType: "application/json",
-                data: JSON.stringify(param),
+                type: 'GET',
+                url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType',
+                contentType: "application/json;charset=UTF-8",
                 success: function (result) {
-                    list = result.results
-                    console.log(list)
+                    list = result
+
                     str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="35"></th>
-                            <th>课程分类</th>
-                            <th>课程名称</th>
-                            <th><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                            <th><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                            <th>状态</th>
-                            <th>操作</th>
+                            <th width="48"></th>
+                            <th width="288">课程分类</th>
+                            <th width="288">课程名称</th>
+                            <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                            <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                            <th width="288">状态</th>
+                            <th width="148">操作</th>
                         </tr>
                     `
+
                     $.each(list, function (i, item) {
-                        //console.log($('.course-manage-table-tr').parent().children().eq(i+1).children().eq(5))
-                        if (item.state == 1) {
-                            str2 += `
-                                        <tr class="course-manage-table-tr">
-                                            <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                            <td width="254">`+ item.classifyName + `</td>
-                                            <td width="254">`+ item.name + `</td>
-                                            <td width="254">`+ item.price + `</td>
-                                            <td width="254">`+ item.createDate + `</td>
-                                            <td width="254">上架</td>
-                                            <td width="130"><a>编辑</a>|<a></a>上架</td>
-                                        </tr>
-                                    `
-                        }
+                        console.log(item)
+                        $.each(item, function (i) {
+                            str =`
+                            <li>` + item.classifyName + `</li>
+                            `
+                        })
 
-                        if(item.state == 2){
-                            str2 += `
-                                        <tr class="course-manage-table-tr">
-                                            <td width="42"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                            <td width="254">`+ item.classifyName + `</td>
-                                            <td width="254">`+ item.name + `</td>
-                                            <td width="254">`+ item.price + `</td>
-                                            <td width="254">`+ item.createDate + `</td>
-                                            <td width="254">下架</td>
-                                            <td width="130"><a>编辑</a>|<a></a>上架</td>
-                                        </tr>
-                                    `
-                        }
+                        $.each(item.children, function (i, item1) {
+                            console.log(item1)
+                            if (item1.state == 1) {
+                                str2 += `
+                                            <tr class="course-manage-table-tr">
+                                                <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                                <td width="288">`+ item.classifyName + `</td>
+                                                <td width="288">`+ item1.name + `</td>
+                                                <td width="288">`+ item1.price + `</td>
+                                                <td width="288">`+ item1.createDate + `</td>
+                                                <td width="288">上架</td>
+                                                <td width="148"><a>编辑</a>|<a></a>上架</td>
+                                            </tr>
+                                        `
+                            }
 
+                            if (item1.state == 2) {
+                                str2 += `
+                                            <tr class="course-manage-table-tr">
+                                                <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                                <td width="288">`+ item.classifyName + `</td>
+                                                <td width="288">`+ item1.name + `</td>
+                                                <td width="288">`+ item1.price + `</td>
+                                                <td width="288">`+ item1.createDate + `</td>
+                                                <td width="288">下架</td>
+                                                <td width="148"><a>编辑</a>|<a></a>上架</td>
+                                            </tr>
+                                        `
+                            }
+                        })
+
+                        that.li_one.html(str)
                         that.table.html(str2)
-
                     })
-
                 },
                 error: function (e) {
                     console.log(e.status);
@@ -554,15 +662,13 @@
     class computed {
         constructor() {
             this.checkbox = $(".course-manage-table-checkbox")
-            //this.checkbox_img = $(".course-manage-table-checkbox img")
         }
         init() {
             this.checkbox_click()
+            this.search()
         }
 
         checkbox_click() {
-            // console.log(this.checkbox)
-            // console.log(this.checkbox_img)
             this.checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -571,11 +677,29 @@
                 }
             })
         }
+
+        search() {
+            $('#course-manage-flextwo-search').click(function () {
+                var trall = $('.course-manage-table').children('table').children('tbody').children()
+                var trcount = $('.course-manage-table').children('table').children('tbody').children().length
+
+                for (var i = 1; i < trcount; i++) {
+
+                    var val = $('#course-manage-flex-input').val()
+                    var td1 = trall.eq(i).children().eq(1).html()
+
+                    // if (td1 == val) {
+                    //     trall.eq(i).show()
+                    // } else {
+                    //     trall.eq(i).hide()
+                    // }
+
+                }
+            })
+
+        }
     }
 
-    $('.M-box11').pagination({
-        mode: 'fixed'
-    });
 </script>
 
 </html>
