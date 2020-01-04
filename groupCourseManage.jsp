@@ -561,7 +561,10 @@
 
         table_all() {
             var list = [];
-            var listclassifyName = {};
+            var listclassifyName0 = [];
+            var listclassifyName = [];
+            var listclassifyName2 = {};
+            var listclassifyName3 = [];
             var str;
             var str2;
             var that = this
@@ -575,7 +578,7 @@
                     list = result
 
                     $.each(list, function (i, item) {
-                        console.log(item)
+                        //console.log(item)
 
                         str = `
                             <li class="select-this">全部</li>
@@ -587,19 +590,33 @@
 
                         if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
                             list = list
-                        } else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
+                        } 
+                        //等于其他分类名时
+                        else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
                             
                             $.each(item.children, function (i, item2) {
+
                                 if(item2.name == $('#course-manage-flex-input').val()){
-                                    listclassifyName.push(item)
-                                    list = listclassifyName
+                                    listclassifyName3.push(item2)
                                 }
                             })
+
+                            if($('#course-manage-flex-input').val() == ''){
+                                list = list
+                            }else if(listclassifyName3.length > 0){
+                                listclassifyName2.children = listclassifyName3
+                                listclassifyName.push(listclassifyName2)
+                                list = listclassifyName
+                                console.log(list)
+                            }else{
+                                list = []
+                            }
+                            
                         }
 
                     })
 
-                    console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
+                    //console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
 
                     str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
@@ -623,7 +640,7 @@
                                 str2 += `
                                             <tr class="course-manage-table-tr">
                                                 <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                                <td width="288">`+ item.classifyName + `</td>
+                                                <td width="288">`+ item1.classifyName + `</td>
                                                 <td width="288">`+ item1.name + `</td>
                                                 <td width="288">`+ item1.price + `</td>
                                                 <td width="288">`+ item1.createDate + `</td>
