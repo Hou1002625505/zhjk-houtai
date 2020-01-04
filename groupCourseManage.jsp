@@ -158,7 +158,7 @@
         .select-menu-input {
             padding-left: 14px;
             border: 0;
-            width: 50px;
+            width: 60px;
             height: 24px;
             cursor: pointer;
             user-select: none;
@@ -362,9 +362,8 @@
 
                         <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">全部</li>
-                        <div id="select-li"></div>
+                    <ul class="select-menu-ul" id="select-menu-ul1">
+
                     </ul>
                 </div>
             </div>
@@ -373,7 +372,7 @@
                 <div class="select-menu">
                     <div class="select-menu-div">
                         <input class="select-menu-input" />
-                
+
                         <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
                     </div>
                     <ul class="select-menu-ul">
@@ -422,9 +421,7 @@
 
     class course_manage {
         constructor() {
-            this.li_one = $("#select-li")
-            this.li_two = $("#select2-li")
-            this.linot_two = $("#select2-li-not")
+            this.li_one = $("#select-menu-ul1")
             this.select_two = $(".course-manage-flex-select-two")
             this.table = $(".course-manage-table")
             this.input_four = $(".course-manage-footer-pthree")
@@ -564,6 +561,7 @@
 
         table_all() {
             var list = [];
+            var listclassifyName = {};
             var str;
             var str2;
             var that = this
@@ -573,7 +571,35 @@
                 url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType',
                 contentType: "application/json;charset=UTF-8",
                 success: function (result) {
+
                     list = result
+
+                    $.each(list, function (i, item) {
+                        console.log(item)
+
+                        str = `
+                            <li class="select-this">全部</li>
+                        `
+                        str += `
+                            <li>` + item.classifyName + `</li>
+                            `
+                        that.li_one.html(str)
+
+                        if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
+                            list = list
+                        } else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
+                            
+                            $.each(item.children, function (i, item2) {
+                                if(item2.name == $('#course-manage-flex-input').val()){
+                                    listclassifyName.push(item)
+                                    list = listclassifyName
+                                }
+                            })
+                        }
+
+                    })
+
+                    console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
 
                     str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
@@ -589,15 +615,10 @@
                     `
 
                     $.each(list, function (i, item) {
-                        console.log(item)
-                        $.each(item, function (i) {
-                            str =`
-                            <li>` + item.classifyName + `</li>
-                            `
-                        })
+                        //console.log(item)
 
                         $.each(item.children, function (i, item1) {
-                            console.log(item1)
+                            //console.log(item1)
                             if (item1.state == 1) {
                                 str2 += `
                                             <tr class="course-manage-table-tr">
@@ -627,8 +648,13 @@
                             }
                         })
 
-                        that.li_one.html(str)
-                        that.table.html(str2)
+                    })
+                    that.table.html(str2)
+                    that.li_one.one("click", function () {
+                        that.table_all()
+                    })
+                    $('#course-manage-flextwo-search').one("click", function (){
+                        that.table_all()
                     })
                 },
                 error: function (e) {
