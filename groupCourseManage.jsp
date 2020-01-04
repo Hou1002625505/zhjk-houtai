@@ -304,6 +304,21 @@
             margin-left: -1px;
         }
 
+        #course-manage-table-checkbox {
+            width: 16px;
+            height: 16px;
+            box-sizing: border-box;
+            border: 1px solid #BFBFBF;
+            line-height: 14px;
+        }
+
+        #course-manage-table-checkbox img {
+            width: 16px;
+            height: 16px;
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+
         .course-manage-footer .course-manage-footer-pone {
             font-size: 14px;
             margin-left: 8px;
@@ -357,7 +372,7 @@
             <div style="font-size:16px">课程分类</div>
             <div class="course-manage-flex-select-one">
                 <div class="select-menu">
-                    <div class="select-menu-div">
+                    <div class="select-menu-div" id="select-menu-div1">
                         <input class="select-menu-input" />
 
                         <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
@@ -370,12 +385,12 @@
             <div style="font-size:16px">课程状态</div>
             <div class="course-manage-flex-select-two">
                 <div class="select-menu">
-                    <div class="select-menu-div">
+                    <div class="select-menu-div" id="select-menu-div2">
                         <input class="select-menu-input" />
 
                         <img class="select-menu-img" src="../images/simage/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul">
+                    <ul class="select-menu-ul" id="select-menu-ul2">
                         <li class="select-this">全部</li>
                         <li>上架</li>
                         <li>下架</li>
@@ -383,15 +398,17 @@
                 </div>
             </div>
             <div style="font-size:16px">创建时间</div>
-            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-one " placeholder="开始时间">
+            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-one "
+                    id="course-manage-flex-input-one" placeholder="开始时间">
             </div>
             <p>-</p>
-            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-two" placeholder="结束时间">
+            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-two"
+                    id="course-manage-flex-input-two" placeholder="结束时间">
             </div>
             <div style="font-size:16px">价格区间</div>
-            <input type="text" class="course-manage-flex-input-three">
+            <input type="text" class="course-manage-flex-input-three" id="course-manage-flex-input-three">
             <p>-</p>
-            <input type="text" class="course-manage-flex-input-four">
+            <input type="text" class="course-manage-flex-input-four" id="course-manage-flex-input-four">
         </div>
         <div class="course-manage-flextwo">
             <p id="course-manage-flextwo-search">查询</p>
@@ -399,7 +416,7 @@
         </div>
         <div class="course-manage-table"></div>
         <div class="course-manage-footer">
-            <div class="course-manage-table-checkbox">
+            <div id="course-manage-table-checkbox">
                 <img style="display:none" src="../images/simage/codeallset_btn.png">
             </div>
             <div class="course-manage-footer-pone">当页全选</div>
@@ -409,6 +426,7 @@
         </div>
         <!-- <div class="m-style M-box11"></div> -->
         <div class="box" id="ywyboxpage"></div>
+        <div class="dianji">点击</div>
     </div>
 </body>
 <script type="text/javascript" src="easyui/datepicker.all.js"></script>
@@ -431,6 +449,7 @@
             this.table_all()
             this.select_option()
             this.time()
+            this.input_all4()
         }
 
         time() {
@@ -562,61 +581,71 @@
         table_all() {
             var list = [];
             var listclassifyName0 = [];
-            var listclassifyName = [];
-            var listclassifyName2 = {};
-            var listclassifyName3 = [];
+            var smd2input;
             var str;
             var str2;
             var that = this
+            // data: JSON.stringify(data),
+            // var data={
+            //     page:1,
+            //     rows:10,
+            //     name: "课程名称5"
+            // }
 
+            if ($('#select-menu-div2').children('input').val() == "上架") {
+                smd2input = 1
+            } else if ($('#select-menu-div2').children('input').val() == "下架") {
+                smd2input = 2
+            }
+
+            var params = {
+                rows: 10,
+                name: $('#course-manage-flex-input').val(),
+                state: smd2input,
+                minCreateDate: $('#course-manage-flex-input-one').val(),
+                maxCreateDate: $('#course-manage-flex-input-two').val(),
+                minPrice: $('#course-manage-flex-input-three').val(),
+                maxPrice: $('#course-manage-flex-input-four').val()
+            }
             $.ajax({
-                type: 'GET',
-                url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType',
+                type: 'POST',
+                url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
                 contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify(params),
                 success: function (result) {
 
-                    list = result
+                    //console.log($('#select-menu-div2').children('input').val())
+
+                    list = result.results
+
+                    console.log(list)
+
+                    str = `
+                            <li class="select-this">全部</li>
+                            `
+
+                    var newArr = [];
+                    $.each(list, function (i, item) {
+                        if (newArr.indexOf(item.classifyName) == -1) {
+                            newArr.push(item.classifyName)
+                            str += `
+                                <li>` + item.classifyName + `</li>
+                                `
+                        }
+                    })
+                    that.li_one.html(str)
 
                     $.each(list, function (i, item) {
-                        //console.log(item)
-
-                        str = `
-                            <li class="select-this">全部</li>
-                        `
-                        str += `
-                            <li>` + item.classifyName + `</li>
-                            `
-                        that.li_one.html(str)
-
-                        if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
-                            list = list
-                        } 
-                        //等于其他分类名时
-                        else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
-                            
-                            $.each(item.children, function (i, item2) {
-
-                                if(item2.name == $('#course-manage-flex-input').val()){
-                                    listclassifyName3.push(item2)
-                                }
-                            })
-
-                            if($('#course-manage-flex-input').val() == ''){
-                                list = list
-                            }else if(listclassifyName3.length > 0){
-                                listclassifyName2.children = listclassifyName3
-                                listclassifyName.push(listclassifyName2)
-                                list = listclassifyName
-                                console.log(list)
-                            }else{
-                                list = []
-                            }
-                            
+                        if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
+                            listclassifyName0.push(item)
                         }
-
                     })
 
-                    //console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
+                    if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
+                        list = list
+                    } else if (listclassifyName0.length > 0) {
+                        list = listclassifyName0
+                    }
 
                     str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
@@ -632,55 +661,171 @@
                     `
 
                     $.each(list, function (i, item) {
-                        //console.log(item)
 
-                        $.each(item.children, function (i, item1) {
-                            //console.log(item1)
-                            if (item1.state == 1) {
-                                str2 += `
-                                            <tr class="course-manage-table-tr">
-                                                <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                                <td width="288">`+ item1.classifyName + `</td>
-                                                <td width="288">`+ item1.name + `</td>
-                                                <td width="288">`+ item1.price + `</td>
-                                                <td width="288">`+ item1.createDate + `</td>
-                                                <td width="288">上架</td>
-                                                <td width="148"><a>编辑</a>|<a></a>上架</td>
-                                            </tr>
-                                        `
-                            }
+                        if (item.state == 1) {
+                            str2 += `
+                                        <tr class="course-manage-table-tr">
+                                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td width="288">`+ item.classifyName + `</td>
+                                            <td width="288">`+ item.name + `</td>
+                                            <td width="288">`+ item.price + `</td>
+                                            <td width="288">`+ item.createDate + `</td>
+                                            <td width="288">上架</td>
+                                            <td width="148"><a>编辑</a>|<a></a>上架</td>
+                                        </tr>
+                                    `
+                        }
 
-                            if (item1.state == 2) {
-                                str2 += `
-                                            <tr class="course-manage-table-tr">
-                                                <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                                <td width="288">`+ item.classifyName + `</td>
-                                                <td width="288">`+ item1.name + `</td>
-                                                <td width="288">`+ item1.price + `</td>
-                                                <td width="288">`+ item1.createDate + `</td>
-                                                <td width="288">下架</td>
-                                                <td width="148"><a>编辑</a>|<a></a>上架</td>
-                                            </tr>
-                                        `
-                            }
-                        })
-
+                        if (item.state == 2) {
+                            str2 += `
+                                        <tr class="course-manage-table-tr">
+                                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td width="288">`+ item.classifyName + `</td>
+                                            <td width="288">`+ item.name + `</td>
+                                            <td width="288">`+ item.price + `</td>
+                                            <td width="288">`+ item.createDate + `</td>
+                                            <td width="288">下架</td>
+                                            <td width="148"><a>编辑</a>|<a></a>上架</td>
+                                        </tr>
+                                    `
+                        }
                     })
                     that.table.html(str2)
+
+                    var str3
+                    str3 = `
+                                <p>共`+ list.length + `条，每页` + params.rows + `条</p>
+                            `
+                    that.input_four.html(str3)
+
                     that.li_one.one("click", function () {
                         that.table_all()
                     })
-                    $('#course-manage-flextwo-search').one("click", function (){
+                    $('#course-manage-flextwo-search').one("click", function () {
                         that.table_all()
                     })
+                    $('#course-manage-flextwo-clear').one("click", function () {
+                        window.location.reload()
+                    })
+                    new computed().init()
                 },
+
                 error: function (e) {
                     console.log(e.status);
                     console.log(e.responseText)
                 }
             })
 
-            new computed().init()
+            $.ajax({
+                //     type: 'GET',
+                //     url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType',
+                //     contentType: "application/json;charset=UTF-8",
+                //     success: function (result) {
+
+                //         list = result
+
+                //         $.each(list, function (i, item) {
+
+                //             str = `
+                //                 <li class="select-this">全部</li>
+                //             `
+                //             str += `
+                //                 <li>` + item.classifyName + `</li>
+                //                 `
+                //             that.li_one.html(str)
+
+                //             if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
+                //                 list = list
+                //             } 
+                //             //等于其他分类名时
+                //             else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
+
+                //                 $.each(item.children, function (i, item2) {
+
+                //                     if(item2.name == $('#course-manage-flex-input').val()){
+                //                         listclassifyName3.push(item2)
+                //                     }
+                //                 })
+
+                //                 if($('#course-manage-flex-input').val() == ''){
+                //                     list = list
+                //                 }else if(listclassifyName3.length > 0){
+                //                     listclassifyName2.children = listclassifyName3
+                //                     listclassifyName.push(listclassifyName2)
+                //                     list = listclassifyName
+                //                     console.log(list)
+                //                 }else{
+                //                     list = []
+                //                 }
+
+                //             }
+
+                //         })
+
+                //         //console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
+
+                //         str2 = `
+                //             <table border="0" cellspacing="0" cellpadding="0">
+                //             <tr>
+                //                 <th width="48"></th>
+                //                 <th width="288">课程分类</th>
+                //                 <th width="288">课程名称</th>
+                //                 <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                //                 <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                //                 <th width="288">状态</th>
+                //                 <th width="148">操作</th>
+                //             </tr>
+                //         `
+
+                //         $.each(list, function (i, item) {
+                //             //console.log(item)
+
+                //             $.each(item.children, function (i, item1) {
+                //                 //console.log(item1)
+                //                 if (item1.state == 1) {
+                //                     str2 += `
+                //                                 <tr class="course-manage-table-tr">
+                //                                     <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                //                                     <td width="288">`+ item1.classifyName + `</td>
+                //                                     <td width="288">`+ item1.name + `</td>
+                //                                     <td width="288">`+ item1.price + `</td>
+                //                                     <td width="288">`+ item1.createDate + `</td>
+                //                                     <td width="288">上架</td>
+                //                                     <td width="148"><a>编辑</a>|<a></a>上架</td>
+                //                                 </tr>
+                //                             `
+                //                 }
+
+                //                 if (item1.state == 2) {
+                //                     str2 += `
+                //                                 <tr class="course-manage-table-tr">
+                //                                     <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                //                                     <td width="288">`+ item.classifyName + `</td>
+                //                                     <td width="288">`+ item1.name + `</td>
+                //                                     <td width="288">`+ item1.price + `</td>
+                //                                     <td width="288">`+ item1.createDate + `</td>
+                //                                     <td width="288">下架</td>
+                //                                     <td width="148"><a>编辑</a>|<a></a>上架</td>
+                //                                 </tr>
+                //                             `
+                //                 }
+                //             })
+
+                //         })
+                //         that.table.html(str2)
+                //         that.li_one.one("click", function () {
+                //             that.table_all()
+                //         })
+                //         $('#course-manage-flextwo-search').one("click", function (){
+                //             that.table_all()
+                //         })
+                //     },
+
+                //     error: function (e) {
+                //         console.log(e.status);
+                //         console.log(e.responseText)
+                //     }
+            })
         }
 
         input_all4() {
@@ -694,52 +839,44 @@
             }
             pagination.init(obj);
 
-            var str3
-            str3 = `
-                <p>共20条，每条15条</p>
-            `
-            this.input_four.html(str3)
+            // $('.dianji').click(function () {
+            //     window.open("/rest/leagueCurriculum/leagueCurriculumAdd", "_self")
+            // })
+
+            //console.log(window.location.href)
         }
     }
 
     class computed {
         constructor() {
             this.checkbox = $(".course-manage-table-checkbox")
+            this.checkbox1 = $("#course-manage-table-checkbox")
         }
         init() {
             this.checkbox_click()
-            this.search()
         }
 
         checkbox_click() {
+            var that = this
             this.checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
                 } else {
                     $(this).children('img').hide()
-                }
-            })
-        }
-
-        search() {
-            $('#course-manage-flextwo-search').click(function () {
-                var trall = $('.course-manage-table').children('table').children('tbody').children()
-                var trcount = $('.course-manage-table').children('table').children('tbody').children().length
-
-                for (var i = 1; i < trcount; i++) {
-
-                    var val = $('#course-manage-flex-input').val()
-                    var td1 = trall.eq(i).children().eq(1).html()
-
-                    // if (td1 == val) {
-                    //     trall.eq(i).show()
-                    // } else {
-                    //     trall.eq(i).hide()
-                    // }
-
+                    that.checkbox1.children('img').hide()
                 }
             })
 
+
+            this.checkbox1.click(function () {
+                if ($(this).children('img').is(":hidden")) {
+                    $(this).children('img').show()
+                    that.checkbox.children('img').show()
+                } else {
+                    $(this).children('img').hide()
+                    that.checkbox.children('img').hide()
+                }
+            })
         }
     }
 
