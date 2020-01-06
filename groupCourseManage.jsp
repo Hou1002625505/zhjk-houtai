@@ -1173,7 +1173,7 @@
 
         .add-course-sortone .add-course-sortone-inputnine p {
             margin-left: 19px;
-            font-size:14px
+            font-size: 14px
         }
 
         .add-course-sorttwo #demo {
@@ -1281,12 +1281,12 @@
         .add-course-sortthree {
             display: flex;
             margin-top: 10px;
-            height:120px
+            height: 120px
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve {
             margin-top: 14px;
-            height:120px
+            height: 120px
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-flex {
@@ -1392,12 +1392,16 @@
             box-sizing: border-box;
             margin-left: 15px
         }
+
+        #GroupCourseGole{
+            display:flex
+        }
     </style>
 </head>
 
 <body>
-    <div class="course-manage-body" style="display:none">
-        <div class="course-manage-button">新建课程</div>
+    <div class="course-manage-body">
+        <div class="course-manage-button" id="course-manage-button">新建课程</div>
         <div class="course-manage-flex">
             <div style="font-size:16px">课程名称</div>
             <input id="course-manage-flex-input" type="text">
@@ -1460,18 +1464,40 @@
         <div class="box" id="ywyboxpage"></div>
     </div>
 
-    <div class="add-course-body">
-        <p class="add-course-body-pone">返回上一级</p>
+    <div class="add-course-body" style="display:none">
+        <p class="add-course-body-pone" id="add-course-body-pone">返回上一级</p>
         <div class="add-course-body-line"></div>
         <p class="add-course-body-ptwo">基本信息</p>
         <div class="add-course-body-line"></div>
         <div class="add-course-sortone">
             <p style="font-size:16px">课程类型</p>
-            <div class="add-course-sortone-select"></div>
+            <div class="add-course-sortone-select">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input" />
+                
+                        <img class="select-menu-img" src="./image/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul" id="select-menu-ul-GroupType">
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="add-course-sortone">
             <p style="font-size:16px">上课方式</p>
-            <div class="add-course-sortone-select"></div>
+            <div class="add-course-sortone-select">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input"/>
+                
+                        <img class="select-menu-img" src="./image/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul" id="select-menu-ul-GCourseType">
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="add-course-sortone">
             <p style="font-size:16px">课程名称</p>
@@ -1490,11 +1516,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px;margin-right:70px">课程目标</p>
             <div class="add-course-sortone-inputthree">
-                <p class="add-course-sortone-inputthree-p">燃脂</p>
-                <p class="add-course-sortone-inputthree-p">燃脂</p>
-                <p class="add-course-sortone-inputthree-p">燃脂</p>
-                <p class="add-course-sortone-inputthree-p">燃脂</p>
-                <p class="add-course-sortone-inputthree-p">燃脂</p>
+                <div id="GroupCourseGole"></div>
                 <div style="font-size: 12px;color:#444444;margin-left:14px">(可多选)</div>
             </div>
         </div>
@@ -1693,7 +1715,7 @@
         </div>
 
         <div class="add-course-footer">
-            <p>保存</p>
+            <p id="add-course-footer-save">保存</p>
             <p>返回</p>
         </div>
     </div>
@@ -1717,9 +1739,10 @@
 
         init() {
             this.table_all()
-            this.select_option()
+            //this.select_option()
             this.time()
             this.input_all4()
+            this.add_change()
         }
 
         time() {
@@ -1799,51 +1822,6 @@
                 }
 
                 return m;
-
-            }
-        }
-
-        select_option() {
-            selectMenu(0);
-            selectMenu(1);
-            function selectMenu(index) {
-                $(".select-menu-input").eq(index).val($(".select-this").eq(index).html());//在输入框中自动填充第一个选项的值
-                $(".select-menu-div").eq(index).on("click", function (e) {
-                    e.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({ marginTop: "0", opacity: "0" }, "fast");
-                    } else {
-                        $(".select-menu-ul").eq(index).show();
-                        $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({ marginTop: "5px", opacity: "1" }, "fast");
-                    }
-                    for (var i = 0; i < $(".select-menu-ul").length; i++) {
-                        if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
-                            $(".select-menu-ul").eq(i).hide();
-                            $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
-                            $(".select-menu-ul").eq(i).animate({ marginTop: "0", opacity: "0" }, "fast");
-                        }
-                    }
-                });
-                $(".select-menu-ul").eq(index).on("click", "li", function () {//给下拉选项绑定点击事件
-                    $(".select-menu-input").eq(index).val($(this).html());//把被点击的选项的值填入输入框中
-                    $(".select-menu-div").eq(index).click();
-                    $(this).siblings(".select-this").removeClass("select-this");
-                    $(this).addClass("select-this");
-                });
-                $("body").on("click", function (event) {
-                    event.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                        console.log(1);
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({ marginTop: "0", opacity: "0" }, "fast");
-
-                    }
-
-                });
 
             }
         }
@@ -2207,6 +2185,13 @@
 
             //console.log(window.location.href)
         }
+
+        add_change() {
+            $('#course-manage-button').click(function () {
+                $('.course-manage-body').hide()
+                $('.add-course-body').show()
+            })
+        }
     }
 
     class computed {
@@ -2245,39 +2230,31 @@
     class add_course {
         constructor() {
             this.acs_select = $(".add-course-sortone-select")
-            this.acs_select1 = $(".add-course-sortone-selectone")
-            this.acs_select2 = $(".add-course-sortone-selecttwo")
-            this.acs_select3 = $(".add-course-sortone-selectthree")
+            this.acs_select1 = $("#select-menu-ul-GCourseType")
+            this.acs_select2 = $("#select-menu-ul-GroupType")
+            this.acs_select3 = $("#GroupCourseGole")
             this.acs_select4 = $(".add-course-sortone-selectfour")
             this.acs_select5 = $(".add-course-sortone-selectfive")
             this.bn = $('#bn')
             this.acs_input8 = $(".add-course-sortone-inputeight")
             this.item = $('#rating').find('.rating-item'); //获取的所有li
-            this.paypay = $(".paypay")
-            this.it_checkbox = $(".inputtwelve-checkbox")
-            this.zhankai_show = $("#zhankai-show")
-            this.zhankai_hide = $("#zhankai-hide")
-            this.ac_checkboxall = $(".add-course-checkboxall")
         }
 
         init() {
             this.acsselect_all()
-            // this.acsselect_all1()
-            // this.acsselect_all2()
-            // this.acsselect_all3()
-            // this.acsselect_all4()
-            // this.acsselect_all5()
             this.select_option()
             this.textare_contain()
             this.textare_contain1()
             this.textare_contain2()
             this.table_table()
-            this.pay_pay()
             this.xingxing()
             this.acsip()
+            this.show_change()
+            //this.save()
         }
 
         acsselect_all() {
+            var that = this
             var str11;
             str11 = `
                 <div class="select-menu">
@@ -2293,12 +2270,98 @@
                     </ul>
                 </div>
             `
-            this.acs_select.html(str11);
-            this.acs_select1.html(str11)
-            this.acs_select2.html(str11)
-            this.acs_select3.html(str11)
-            this.acs_select4.html(str11)
-            this.acs_select5.html(str11)
+            
+            //课程类型的请求及渲染
+            var paramsGroupType = {
+                typeCode : "GroupType"
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json;charset=UTF-8",
+                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                data: JSON.stringify(paramsGroupType),
+                success: function (result) {
+                    var strGroupType;
+                    console.log(result)
+                    strGroupType = `
+                        <li class="select-this">全部</li>
+                    `
+                    $.each(result.rows, function (i, item) {
+                        strGroupType += `
+                            <li>`+ item.name + `</li>
+                        `
+                    })
+                    that.acs_select2.html(strGroupType)
+                    that.acs_select2.parent().children('.select-menu-div').children('input').val("全部")
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
+
+            //上课类型的请求及渲染
+            var paramsGCourseType = {
+                typeCode: "GCourseType"
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json;charset=UTF-8",
+                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                data: JSON.stringify(paramsGCourseType),
+                success: function (result) {
+                    var strmodel;
+                    console.log(result)
+                    strmodel = `
+                        <li class="select-this">全部</li>
+                    `
+                    $.each(result.rows,function(i,item){
+                        strmodel += `
+                            <li>`+ item.name +`</li>
+                        `
+                    })
+                    that.acs_select1.html(strmodel)
+                    that.acs_select1.parent().children('.select-menu-div').children('input').val("全部")
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
+
+            //团课目标的请求及渲染
+            var paramsGroupCourseGole = {
+                typeCode: "GroupCourseGole"
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json;charset=UTF-8",
+                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                data: JSON.stringify(paramsGroupCourseGole),
+                success: function (result) {
+                    var strmodel = '';
+                    console.log(result)
+                    
+                    $.each(result.rows, function (i, item) {
+                        strmodel += `
+                            <p class="add-course-sortone-inputthree-p">`+ item.name +`</p>
+                        `
+                    })
+                    that.acs_select3.html(strmodel)
+                    that.acs_select3.parent().children('.select-menu-div').children('input').val("全部")
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
+            setTimeout(() => {
+                new paypay().init()
+            }, 50);
+            
         }
 
         textare_contain() {
@@ -2460,6 +2523,28 @@
             }
         }
 
+        show_change() {
+            $('#add-course-body-pone').click(function () {
+                $('.course-manage-body').show()
+                $('.add-course-body').hide()
+            })
+        }
+    }
+
+    class paypay{
+        constructor(){
+            this.paypay = $(".paypay")
+            this.it_checkbox = $(".inputtwelve-checkbox")
+            this.zhankai_show = $("#zhankai-show")
+            this.zhankai_hide = $("#zhankai-hide")
+            this.ac_checkboxall = $(".add-course-checkboxall")
+            this.acsip = $(".add-course-sortone-inputthree-p")
+        }
+
+        init(){
+            this.pay_pay()
+        }
+
         pay_pay() {
             this.paypay.click(function () {
                 if ($(this).children('.paypay-hidden').is(":hidden")) {
@@ -2468,6 +2553,14 @@
                 } else {
                     $(this).children('.paypay-hidden').hide()
                     $(this).children('.paypay-show').show()
+                }
+            })
+
+            this.acsip.click(function(){
+                if($(this).hasClass('add-course-sortone-inputthree-p-active')){
+                    $(this).removeClass('add-course-sortone-inputthree-p-active')
+                }else{
+                    $(this).addClass('add-course-sortone-inputthree-p-active')
                 }
             })
 
