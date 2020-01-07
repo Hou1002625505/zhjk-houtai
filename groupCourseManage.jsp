@@ -663,7 +663,7 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .input {
-            width: 76px;
+            width: 63px;
             border: none;
             outline: none;
             text-align: center;
@@ -672,13 +672,14 @@
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone {
-            width: 44px;
+            width: 55px;
             height: 32px;
+            border-right:1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu {
             cursor: pointer;
-            width: 44px;
+            width: 55px;
             height: 32px;
             box-sizing: border-box;
             line-height: 28px;
@@ -692,7 +693,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 44px;
+            width: 55px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -705,7 +706,7 @@
             font-size: 14px;
             box-sizing: border-box;
             line-height: 32px;
-            width: 44px;
+            width: 55px;
             text-align: left;
             padding: 0
         }
@@ -719,7 +720,7 @@
             height: 32px;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 44px;
+            width: 55px;
             line-height: 32px;
         }
 
@@ -744,25 +745,29 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-input {
             border: 0;
-            width: 42px;
-            height: 31px;
+            width: 55px;
+            height: 32px;
             cursor: pointer;
             user-select: none;
             font-size: 14px;
             padding: 0;
             line-height: 31px;
+            outline:none;
+            margin-top:-2px;
+            margin-left:-1px
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo {
-            width: 44px;
+            width: 55px;
             height: 32px;
+            border-right:1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu {
             cursor: pointer;
-            width: 44px;
+            width: 55px;
             height: 32px;
             box-sizing: border-box;
             line-height: 28px;
@@ -776,7 +781,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 44px;
+            width: 55px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -789,7 +794,7 @@
             font-size: 14px;
             box-sizing: border-box;
             line-height: 32px;
-            width: 44px;
+            width: 55px;
             text-align: left;
             padding: 0
         }
@@ -803,7 +808,7 @@
             height: 32px;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 44px;
+            width: 55px;
             line-height: 32px;
         }
 
@@ -828,25 +833,29 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-input {
             border: 0;
-            width: 42px;
-            height: 31px;
+            width: 55px;
+            height: 32px;
             cursor: pointer;
             user-select: none;
             font-size: 14px;
             padding: 0;
             line-height: 31px;
+            outline:none;
+            margin-top:-2px;
+            margin-left:-1px
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree {
-            width: 44px;
+            width: 55px;
             height: 32px;
+            border-right:1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu {
             cursor: pointer;
-            width: 44px;
+            width: 55px;
             height: 32px;
             box-sizing: border-box;
             line-height: 28px;
@@ -860,7 +869,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 44px;
+            width: 55px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -873,7 +882,7 @@
             font-size: 14px;
             box-sizing: border-box;
             line-height: 32px;
-            width: 44px;
+            width: 55px;
             text-align: left;
             padding: 0
         }
@@ -887,7 +896,7 @@
             height: 32px;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 44px;
+            width: 55px;
             line-height: 32px;
         }
 
@@ -912,25 +921,29 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-input {
             border: 0;
-            width: 42px;
-            height: 31px;
+            width: 55px;
+            height: 32px;
             cursor: pointer;
             user-select: none;
             font-size: 14px;
             padding: 0;
             line-height: 31px;
+            outline:none;
+            margin-top:-2px;
+            margin-left:-1px
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour {
-            width: 44px;
+            width: 55px;
             height: 32px;
+            border-right:1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu {
             cursor: pointer;
-            width: 44px;
+            width: 55px;
             height: 32px;
             box-sizing: border-box;
             line-height: 28px;
@@ -944,7 +957,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 44px;
+            width: 55px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -957,7 +970,7 @@
             font-size: 14px;
             box-sizing: border-box;
             line-height: 32px;
-            width: 44px;
+            width: 55px;
             text-align: left;
             padding: 0
         }
@@ -971,7 +984,7 @@
             height: 32px;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 44px;
+            width: 55px;
             line-height: 32px;
         }
 
@@ -996,25 +1009,29 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-input {
             border: 0;
-            width: 42px;
-            height: 31px;
+            width: 55px;
+            height: 32px;
             cursor: pointer;
             user-select: none;
             font-size: 14px;
             padding: 0;
             line-height: 31px;
+            outline:none;
+            margin-top:-2px;
+            margin-left:-1px
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive {
-            width: 44px;
+            width: 55px;
             height: 32px;
+            border-right:1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu {
             cursor: pointer;
-            width: 44px;
+            width: 55px;
             height: 32px;
             box-sizing: border-box;
             line-height: 28px;
@@ -1028,7 +1045,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 44px;
+            width: 55px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -1041,7 +1058,7 @@
             font-size: 14px;
             box-sizing: border-box;
             line-height: 32px;
-            width: 44px;
+            width: 55px;
             text-align: left;
             padding: 0
         }
@@ -1055,7 +1072,7 @@
             height: 32px;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 44px;
+            width: 55px;
             line-height: 32px;
         }
 
@@ -1080,13 +1097,16 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-input {
             border: 0;
-            width: 42px;
-            height: 31px;
+            width: 55px;
+            height: 32px;
             cursor: pointer;
             user-select: none;
             font-size: 14px;
             padding: 0;
             line-height: 31px;
+            outline:none;
+            margin-top:-2px;
+            margin-left:-1px
         }
 
 
@@ -1393,8 +1413,8 @@
             margin-left: 15px
         }
 
-        #GroupCourseGole{
-            display:flex
+        #GroupCourseGole {
+            display: flex
         }
     </style>
 </head>
@@ -1475,11 +1495,11 @@
                 <div class="select-menu">
                     <div class="select-menu-div">
                         <input class="select-menu-input" />
-                
+
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
                     <ul class="select-menu-ul" id="select-menu-ul-GroupType">
-                        
+
                     </ul>
                 </div>
             </div>
@@ -1489,12 +1509,12 @@
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
-                        <input class="select-menu-input"/>
-                
+                        <input class="select-menu-input" />
+
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
                     <ul class="select-menu-ul" id="select-menu-ul-GCourseType">
-                        
+
                     </ul>
                 </div>
             </div>
@@ -1561,23 +1581,73 @@
             <p style="font-size:16px">课程雷达图</p>
             <div class="add-course-sortone-inputseven">
                 <div class="oneinput">
-                    <div class="add-course-sortone-selectone"></div>
+                    <div class="add-course-sortone-selectone">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
                     <input class="input" type="text" value="5">
                 </div>
                 <div class="oneinput">
-                    <div class="add-course-sortone-selecttwo"></div>
+                    <div class="add-course-sortone-selecttwo">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
                     <input class="input" type="text" value="5">
                 </div>
                 <div class="oneinput">
-                    <div class="add-course-sortone-selectthree"></div>
+                    <div class="add-course-sortone-selectthree">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
                     <input class="input" type="text" value="5">
                 </div>
                 <div class="oneinput">
-                    <div class="add-course-sortone-selectfour"></div>
+                    <div class="add-course-sortone-selectfour">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
                     <input class="input" type="text" value="5">
                 </div>
                 <div class="oneinput">
-                    <div class="add-course-sortone-selectfive"></div>
+                    <div class="add-course-sortone-selectfive">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
                     <input class="input" type="text" value="5">
                 </div>
             </div>
@@ -1650,8 +1720,8 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
-                <input placeholder="请输入课程对应广信编码" type="text">
-                <input type="text">
+                <input placeholder="请输入课程对应广信编码" type="text" id="gxbm">
+                <input type="text" id="gxmc">
             </div>
         </div>
 
@@ -1665,43 +1735,8 @@
         <div class="add-course-sortthree">
             <p style="font-size:16px;margin-right:8px">会员卡口对应编码</p>
             <div class="add-course-sortone-inputtwelve">
-                <div class="inputtwelve-flex">
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
-                    <div class="inputtwelve-checkbox">
-                        <p>（T-20190001）华为健身</p>
-                        <img src="/image/checkset_btn.png" alt="">
-                    </div>
+                <div class="inputtwelve-flex" id="inputtwelve-flex">
+                   
                 </div>
                 <div class="inputtwelve-zhankai" id="zhankai-show">
                     <p>展开</p>
@@ -2233,7 +2268,7 @@
             this.acs_select1 = $("#select-menu-ul-GCourseType")
             this.acs_select2 = $("#select-menu-ul-GroupType")
             this.acs_select3 = $("#GroupCourseGole")
-            this.acs_select4 = $(".add-course-sortone-selectfour")
+            this.acs_select4 = $(".select-menu-ul-GroupRadar")
             this.acs_select5 = $(".add-course-sortone-selectfive")
             this.bn = $('#bn')
             this.acs_input8 = $(".add-course-sortone-inputeight")
@@ -2270,10 +2305,10 @@
                     </ul>
                 </div>
             `
-            
+
             //课程类型的请求及渲染
             var paramsGroupType = {
-                typeCode : "GroupType"
+                typeCode: "GroupType"
             }
 
             $.ajax({
@@ -2317,9 +2352,9 @@
                     strmodel = `
                         <li class="select-this">全部</li>
                     `
-                    $.each(result.rows,function(i,item){
+                    $.each(result.rows, function (i, item) {
                         strmodel += `
-                            <li>`+ item.name +`</li>
+                            <li>`+ item.name + `</li>
                         `
                     })
                     that.acs_select1.html(strmodel)
@@ -2344,10 +2379,10 @@
                 success: function (result) {
                     var strmodel = '';
                     console.log(result)
-                    
+
                     $.each(result.rows, function (i, item) {
                         strmodel += `
-                            <p class="add-course-sortone-inputthree-p">`+ item.name +`</p>
+                            <p class="add-course-sortone-inputthree-p">`+ item.name + `</p>
                         `
                     })
                     that.acs_select3.html(strmodel)
@@ -2358,10 +2393,80 @@
                     console.log(e.responseText)
                 }
             })
+
+            //课程雷达图的请求及渲染
+
+            var paramsGroupRadar = {
+                typeCode: "GroupRadar"
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json;charset=UTF-8",
+                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                data: JSON.stringify(paramsGroupRadar),
+                success: function (result) {
+                    var strGroupRadar = `
+                        <li class="select-this">全部</li>
+                    `;
+                    //console.log(result)
+                    $.each(result.rows, function (i, item) {
+                        strGroupRadar += `
+                            <li>`+ item.name + `</li>
+                        `
+                    })
+                    that.acs_select4.html(strGroupRadar)
+                    that.acs_select4.parent().parent().children('.select-menu-div').children('input').val("全部")
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
+
+            //获取广信编码
+
+            var paramsgxbm = {
+
+            }
+
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json;charset=UTF-8",
+                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/selectGxFitListByCondition",
+                data: JSON.stringify(paramsgxbm),
+                success: function (result) {
+                    var strgxbm = '';
+                    var thatresult = result
+                    console.log(result)
+                    $('#gxbm').blur(function(){
+                        $.each(thatresult.rows,function(i,item){
+                            if(item.mediid == $('#gxbm').val()){
+                                $('#gxmc').val(item.mediname)
+                            }
+                        })
+                    })
+
+                    $.each(thatresult.rows, function (i, item) {
+                        strgxbm += `
+                            <div class="inputtwelve-checkbox">
+                                <p>`+ item.mediid+item.mediname +`</p>
+                                <img src="/image/checkset_btn.png" alt="">
+                            </div>
+                        ` 
+                        $('#inputtwelve-flex').html(strgxbm)
+                    })
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
+
             setTimeout(() => {
                 new paypay().init()
             }, 50);
-            
+
         }
 
         textare_contain() {
@@ -2531,8 +2636,8 @@
         }
     }
 
-    class paypay{
-        constructor(){
+    class paypay {
+        constructor() {
             this.paypay = $(".paypay")
             this.it_checkbox = $(".inputtwelve-checkbox")
             this.zhankai_show = $("#zhankai-show")
@@ -2541,12 +2646,14 @@
             this.acsip = $(".add-course-sortone-inputthree-p")
         }
 
-        init(){
+        init() {
             this.pay_pay()
         }
 
         pay_pay() {
             this.paypay.click(function () {
+                $('.paypay').children('.paypay-show').hide()
+                $('.paypay').children('.paypay-hidden').show()
                 if ($(this).children('.paypay-hidden').is(":hidden")) {
                     $(this).children('.paypay-hidden').show()
                     $(this).children('.paypay-show').hide()
@@ -2556,10 +2663,10 @@
                 }
             })
 
-            this.acsip.click(function(){
-                if($(this).hasClass('add-course-sortone-inputthree-p-active')){
+            this.acsip.click(function () {
+                if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
                     $(this).removeClass('add-course-sortone-inputthree-p-active')
-                }else{
+                } else {
                     $(this).addClass('add-course-sortone-inputthree-p-active')
                 }
             })
