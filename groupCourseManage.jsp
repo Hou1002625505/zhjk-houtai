@@ -2579,7 +2579,7 @@
 
                 for (var i = 0; i < that.paypay.length; i++) {
                     if (that.paypay.eq(i).children('.paypay-show').is(':visible')) {
-                        var payMode = i + 1
+                        var payMode1 = i + 1
                     }
                 }
                 //上课方式的参数
@@ -2587,42 +2587,56 @@
                 for (var i = 1; i < $('#select-menu-ul-GCourseType').children().length; i++) {
                     if ($('#select-menu-ul-GCourseType').children().eq(i).html() == $('#select-menu-input-GCourseType').val()) {
 
-                        var modeId = $('#select-menu-ul-GCourseType').children().eq(i).attr('class').split(' ')[0]
+                        var modeId1 = $('#select-menu-ul-GCourseType').children().eq(i).attr('class').split(' ')[0]
                     }
                 }
 
                 //适合人群参数
 
-                var suitableForCrowd = $('#shrq').val()
+                var suitableForCrowd1 = $('#shrq').val()
 
                 //注意事项参数
 
-                var announcements = $('#area1').val()
+                var announcements1 = $('#area1').val()
 
                 //卡路里参数
 
-                var calorieConsumption = $('#kllxh').val()
+                var calorieConsumption1 = $('#kllxh').val()
 
                 //课程分类id
 
                 for (var i = 1; i < $('#select-menu-ul-GroupType').children().length; i++) {
                     if ($('#select-menu-ul-GroupType').children().eq(i).html() == $('#select-menu-input-GroupType').val()) {
 
-                        var difficultyId = $('#select-menu-ul-GroupType').children().eq(i).attr('class').split(' ')[0]
+                        var classifyId1 = $('#select-menu-ul-GroupType').children().eq(i).attr('class').split(' ')[0]
+                    }
+                }
+
+                //课程难度id
+
+                var difficultyId1 = 5;
+
+                for(var i=0;i< $('#rating').children('li').length;i++){
+                    if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
+                        difficultyId1--
                     }
                 }
 
                 //产品价格参数
 
-                var price = $('#kcbzj').val()
+                var price1 = $('#kcbzj').val()
                 
+                //课程名称
+
+                var name1 = $('#area2').val()
+
                 //课程介绍参数
 
-                var description = $('#area2').val()
+                var description1 = $('#area').val()
 
                 //雷达字典id
                 var ldzdcount = 0;
-                var curriculumEffectList = []
+                var curriculumEffectList1 = []
                 
                 for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++){
                     if($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
@@ -2636,43 +2650,93 @@
                         if($('.select-menu-ul-GroupRadar').children().eq(j).html() == $('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
                             var dictionaryId = $('.select-menu-ul-GroupRadar').children().eq(j).attr('class').split(' ')[0]
                             var effectValue = $('.select-menu-ul-GroupRadar').children().eq(j).parent().parent().parent().parent().parent().children('.input').val()
-                            curriculumEffectList.push({ dictionaryId, effectValue })
+                            curriculumEffectList1.push({ dictionaryId, effectValue })
                         }
                     }
                     
                 }
 
                 //标签字典id
-                var curriculumTagList = []
+                var curriculumTagList1 = []
                 for(var i=0;i< $('#GroupCourseGole').children().length;i++){
                     if($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')){
                         var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
-                        curriculumTagList.push({dictionaryId})
+                        curriculumTagList1.push({dictionaryId})
                     }
                 }
                 
                 //FAQ问题
 
-                var leagueCurriculumFaqList = []
+                var leagueCurriculumFaqList1 = []
 
                 for(var i=1;i< $('#faq').children().children().children().length;i++){
                     var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
                     var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
-                    leagueCurriculumFaqList.push({problem, answer})
+                    leagueCurriculumFaqList1.push({problem, answer})
                 }
                 
                 //广信编码
 
-                var curriculumGuangxinList = []
+                var curriculumGuangxinList1 = []
 
                 for(var i = 0;i< $('#inputtwelve-flex').children().length;i++){
                     if($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')){
 
                         var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
 
-                        curriculumGuangxinList.push({itemId})
+                        curriculumGuangxinList1.push({itemId})
                     }
                 }
+            
+                var payMode
+                var modeId
+                var suitableForCrowd
+                var announcements
+                var calorieConsumption
+                var classifyId
+                var difficultyId
+                var price
+                var description
+                var name
+                var curriculumEffectList
+                var curriculumTagList
+                var leagueCurriculumFaqList
+                var curriculumGuangxinList
+                
+                var paramsadd = {
+                    payMode : payMode1,
+                    modeId : modeId1,
+                    suitableForCrowd : suitableForCrowd1,
+                    announcements : announcements1,
+                    calorieConsumption : calorieConsumption1,
+                    classifyId : classifyId1,
+                    difficultyId : difficultyId1,
+                    price : price1,
+                    description : description1,
+                    name : name1,
+                    curriculumEffectList : curriculumEffectList1,
+                    curriculumTagList : curriculumTagList1,
+                    leagueCurriculumFaqList : leagueCurriculumFaqList1,
+                    curriculumGuangxinList : curriculumGuangxinList1
+                }
+
+                $.ajax({
+                    method : 'POST',
+                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                    dataType: 'json',
+                    data: paramsadd,
+                    ContentType: 'application/x-www-form-urlencoded',  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    cache: false,
+                    processData: false,
+                    success: function (result) {
+                        console.log(result)
+                    },
+                    error: function (e) {
+                        console.log(e.status);
+                        console.log(e.responseText)
+                    }
+                })
+                console.log(paramsadd)
             })
         }
     }
