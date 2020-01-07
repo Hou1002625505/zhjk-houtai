@@ -1636,20 +1636,6 @@
                     </div>
                     <input class="input" type="text" value="5">
                 </div>
-                <!-- <div class="oneinput">
-                    <div class="add-course-sortone-selectfive">
-                        <div class="select-menu">
-                            <div class="select-menu-div">
-                                <input class="select-menu-input" />
-                                <img class="select-menu-img" src="./image/sifting_icon.png" />
-                            </div>
-                            <ul class="select-menu-ul">
-                                <div class="select-menu-ul-GroupRadar"></div>
-                            </ul>
-                        </div>
-                    </div>
-                    <input class="input" type="text" value="5">
-                </div> -->
             </div>
         </div>
 
@@ -1663,7 +1649,7 @@
 
         <div class="add-course-sorttwo">
             <p style="font-size:16px">FAQ</p>
-            <div class="add-course-sortone-inputeight">
+            <div class="add-course-sortone-inputeight" id="faq">
                 <table cellspacing="0" cellpadding="0">
                     <tr>
                         <th>问题</th>
@@ -1671,8 +1657,8 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td><textarea>Q :</textarea></td>
-                        <td><textarea>A :</textarea></td>
+                        <td><textarea placeholder="Q :"></textarea></td>
+                        <td><textarea placeholder="A :"></textarea></td>
                         <td><img id="addOneRow" style="margin-right:6px" src="/image/add_btn.png" alt="">
                             <img id="delOneRow" src="/image/del_btn.png" alt="">
                         </td>
@@ -1868,12 +1854,7 @@
             var str;
             var str2;
             var that = this
-            // data: JSON.stringify(data),
-            // var data={
-            //     page:1,
-            //     rows:10,
-            //     name: "课程名称5"
-            // }
+
 
             if ($('#select-menu-div2').children('input').val() == "上架") {
                 smd2input = 1
@@ -2019,7 +2000,6 @@
                             if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
                                 id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
                             }
-                            //console.log($('.course-manage-table-tr').eq(i).children().eq(0).children().eq(0).children().eq(0).html())
                         }
 
                         var params1 = {
@@ -2095,116 +2075,6 @@
                 }
             })
 
-            $.ajax({
-                //     type: 'GET',
-                //     url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType',
-                //     contentType: "application/json;charset=UTF-8",
-                //     success: function (result) {
-
-                //         list = result
-
-                //         $.each(list, function (i, item) {
-
-                //             str = `
-                //                 <li class="select-this">全部</li>
-                //             `
-                //             str += `
-                //                 <li>` + item.classifyName + `</li>
-                //                 `
-                //             that.li_one.html(str)
-
-                //             if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
-                //                 list = list
-                //             } 
-                //             //等于其他分类名时
-                //             else if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
-
-                //                 $.each(item.children, function (i, item2) {
-
-                //                     if(item2.name == $('#course-manage-flex-input').val()){
-                //                         listclassifyName3.push(item2)
-                //                     }
-                //                 })
-
-                //                 if($('#course-manage-flex-input').val() == ''){
-                //                     list = list
-                //                 }else if(listclassifyName3.length > 0){
-                //                     listclassifyName2.children = listclassifyName3
-                //                     listclassifyName.push(listclassifyName2)
-                //                     list = listclassifyName
-                //                     console.log(list)
-                //                 }else{
-                //                     list = []
-                //                 }
-
-                //             }
-
-                //         })
-
-                //         //console.log(that.li_one.parent().children('.select-menu-div').children('input').val())
-
-                //         str2 = `
-                //             <table border="0" cellspacing="0" cellpadding="0">
-                //             <tr>
-                //                 <th width="48"></th>
-                //                 <th width="288">课程分类</th>
-                //                 <th width="288">课程名称</th>
-                //                 <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                //                 <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                //                 <th width="288">状态</th>
-                //                 <th width="148">操作</th>
-                //             </tr>
-                //         `
-
-                //         $.each(list, function (i, item) {
-                //             //console.log(item)
-
-                //             $.each(item.children, function (i, item1) {
-                //                 //console.log(item1)
-                //                 if (item1.state == 1) {
-                //                     str2 += `
-                //                                 <tr class="course-manage-table-tr">
-                //                                     <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                //                                     <td width="288">`+ item1.classifyName + `</td>
-                //                                     <td width="288">`+ item1.name + `</td>
-                //                                     <td width="288">`+ item1.price + `</td>
-                //                                     <td width="288">`+ item1.createDate + `</td>
-                //                                     <td width="288">上架</td>
-                //                                     <td width="148"><a>编辑</a>|<a></a>上架</td>
-                //                                 </tr>
-                //                             `
-                //                 }
-
-                //                 if (item1.state == 2) {
-                //                     str2 += `
-                //                                 <tr class="course-manage-table-tr">
-                //                                     <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                //                                     <td width="288">`+ item.classifyName + `</td>
-                //                                     <td width="288">`+ item1.name + `</td>
-                //                                     <td width="288">`+ item1.price + `</td>
-                //                                     <td width="288">`+ item1.createDate + `</td>
-                //                                     <td width="288">下架</td>
-                //                                     <td width="148"><a>编辑</a>|<a></a>上架</td>
-                //                                 </tr>
-                //                             `
-                //                 }
-                //             })
-
-                //         })
-                //         that.table.html(str2)
-                //         that.li_one.one("click", function () {
-                //             that.table_all()
-                //         })
-                //         $('#course-manage-flextwo-search').one("click", function (){
-                //             that.table_all()
-                //         })
-                //     },
-
-                //     error: function (e) {
-                //         console.log(e.status);
-                //         console.log(e.responseText)
-                //     }
-            })
         }
 
         input_all4() {
@@ -2318,7 +2188,7 @@
                 data: JSON.stringify(paramsGroupType),
                 success: function (result) {
                     var strGroupType;
-                    console.log(result)
+                    //console.log(result)
                     strGroupType = `
                         <li class="select-this">全部</li>
                     `
@@ -2348,7 +2218,7 @@
                 data: JSON.stringify(paramsGCourseType),
                 success: function (result) {
                     var strmodel;
-                    console.log(result)
+                    //console.log(result)
                     strmodel = `
                         <li class="select-this">全部</li>
                     `
@@ -2378,11 +2248,11 @@
                 data: JSON.stringify(paramsGroupCourseGole),
                 success: function (result) {
                     var strmodel = '';
-                    console.log(result)
+                    //console.log(result)
 
                     $.each(result.rows, function (i, item) {
                         strmodel += `
-                            <p class="add-course-sortone-inputthree-p">`+ item.name + `</p>
+                            <p class="add-course-sortone-inputthree-p `+ item.dictionaryId +`">`+ item.name + `</p>
                         `
                     })
                     that.acs_select3.html(strmodel)
@@ -2407,7 +2277,7 @@
                 data: JSON.stringify(paramsGroupRadar),
                 success: function (result) {
                     var strGroupRadar = '';
-                    console.log(result)
+                    //console.log(result)
                     $.each(result.rows, function (i, item) {
                         strGroupRadar += `
                             <li class="`+ item.dictionaryId +`">`+ item.name + `</li>
@@ -2436,7 +2306,7 @@
                 success: function (result) {
                     var strgxbm = '';
                     var thatresult = result
-                    console.log(result)
+                    //console.log(result)
                     $('#gxbm').blur(function () {
                         $.each(thatresult.rows, function (i, item) {
                             if (item.mediid == $('#gxbm').val()) {
@@ -2650,6 +2520,7 @@
         }
 
         pay_pay() {
+            //广信标签显示隐藏
             this.paypay.click(function () {
                 $('.paypay').children('.paypay-show').hide()
                 $('.paypay').children('.paypay-hidden').show()
@@ -2661,7 +2532,7 @@
                     $(this).children('.paypay-show').show()
                 }
             })
-
+            //课程目标标签显示隐藏
             this.acsip.click(function () {
                 if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
                     $(this).removeClass('add-course-sortone-inputthree-p-active')
@@ -2669,7 +2540,7 @@
                     $(this).addClass('add-course-sortone-inputthree-p-active')
                 }
             })
-
+            
             this.it_checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -2678,13 +2549,13 @@
                     $(this).children('img').hide()
                 }
             })
-
+            //广信标签展开
             this.zhankai_show.click(function () {
                 $(".inputtwelve-flex").css('height', 'auto')
                 $(this).hide()
                 $("#zhankai-hide").show()
             })
-
+            //广信标签闭合
             this.zhankai_hide.click(function () {
                 $(".inputtwelve-flex").css('height', '80px')
                 $(this).hide()
@@ -2751,7 +2622,7 @@
 
                 //雷达字典id
                 var ldzdcount = 0;
-                curriculumEffectList = []
+                var curriculumEffectList = []
                 
                 for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++){
                     if($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
@@ -2771,6 +2642,37 @@
                     
                 }
 
+                //标签字典id
+                var curriculumTagList = []
+                for(var i=0;i< $('#GroupCourseGole').children().length;i++){
+                    if($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')){
+                        var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
+                        curriculumTagList.push({dictionaryId})
+                    }
+                }
+                
+                //FAQ问题
+
+                var leagueCurriculumFaqList = []
+
+                for(var i=1;i< $('#faq').children().children().children().length;i++){
+                    var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
+                    var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
+                    leagueCurriculumFaqList.push({problem, answer})
+                }
+                
+                //广信编码
+
+                var curriculumGuangxinList = []
+
+                for(var i = 0;i< $('#inputtwelve-flex').children().length;i++){
+                    if($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')){
+
+                        var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+
+                        curriculumGuangxinList.push({itemId})
+                    }
+                }
             })
         }
     }
