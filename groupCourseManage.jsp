@@ -468,7 +468,7 @@
         .add-course-sortone .add-course-sortone-select .select-menu-input {
             padding-left: 14px;
             border: 0;
-            width: 50px;
+            width: 80px;
             height: 24px;
             cursor: pointer;
             user-select: none;
@@ -674,7 +674,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone {
             width: 55px;
             height: 32px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu {
@@ -752,9 +752,9 @@
             font-size: 14px;
             padding: 0;
             line-height: 31px;
-            outline:none;
-            margin-top:-2px;
-            margin-left:-1px
+            outline: none;
+            margin-top: -2px;
+            margin-left: -1px
         }
 
 
@@ -762,7 +762,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo {
             width: 55px;
             height: 32px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu {
@@ -840,9 +840,9 @@
             font-size: 14px;
             padding: 0;
             line-height: 31px;
-            outline:none;
-            margin-top:-2px;
-            margin-left:-1px
+            outline: none;
+            margin-top: -2px;
+            margin-left: -1px
         }
 
 
@@ -850,7 +850,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree {
             width: 55px;
             height: 32px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu {
@@ -928,9 +928,9 @@
             font-size: 14px;
             padding: 0;
             line-height: 31px;
-            outline:none;
-            margin-top:-2px;
-            margin-left:-1px
+            outline: none;
+            margin-top: -2px;
+            margin-left: -1px
         }
 
 
@@ -938,7 +938,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour {
             width: 55px;
             height: 32px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu {
@@ -1016,9 +1016,9 @@
             font-size: 14px;
             padding: 0;
             line-height: 31px;
-            outline:none;
-            margin-top:-2px;
-            margin-left:-1px
+            outline: none;
+            margin-top: -2px;
+            margin-left: -1px
         }
 
 
@@ -1026,7 +1026,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive {
             width: 55px;
             height: 32px;
-            border-right:1px solid #CCCCCC
+            border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu {
@@ -1104,9 +1104,9 @@
             font-size: 14px;
             padding: 0;
             line-height: 31px;
-            outline:none;
-            margin-top:-2px;
-            margin-left:-1px
+            outline: none;
+            margin-top: -2px;
+            margin-left: -1px
         }
 
 
@@ -1494,7 +1494,7 @@
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
-                        <input class="select-menu-input" />
+                        <input class="select-menu-input" id="select-menu-input-GroupType"/>
 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
@@ -1509,7 +1509,7 @@
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
-                        <input class="select-menu-input" />
+                        <input class="select-menu-input" id="select-menu-input-GCourseType" />
 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
@@ -1530,7 +1530,7 @@
             <p style="font-size:16px">课程标准价</p>
             <div class="add-course-sortone-inputtwo">
                 <p>￥</p>
-                <input type="text">
+                <input type="text" id="kcbzj">
             </div>
         </div>
         <div class="add-course-sortone">
@@ -1565,7 +1565,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">卡路里消耗</p>
             <div class="add-course-sortone-inputfive">
-                <input type="text">
+                <input type="text" id="kllxh">
                 <p>cal</p>
             </div>
         </div>
@@ -1573,7 +1573,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">适用人群</p>
             <div class="add-course-sortone-inputsix">
-                <input type="text" value="通用">
+                <input type="text" value="通用" id="shrq">
             </div>
         </div>
 
@@ -1636,7 +1636,7 @@
                     </div>
                     <input class="input" type="text" value="5">
                 </div>
-                <div class="oneinput">
+                <!-- <div class="oneinput">
                     <div class="add-course-sortone-selectfive">
                         <div class="select-menu">
                             <div class="select-menu-div">
@@ -1649,7 +1649,7 @@
                         </div>
                     </div>
                     <input class="input" type="text" value="5">
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -1736,7 +1736,7 @@
             <p style="font-size:16px;margin-right:8px">会员卡口对应编码</p>
             <div class="add-course-sortone-inputtwelve">
                 <div class="inputtwelve-flex" id="inputtwelve-flex">
-                   
+
                 </div>
                 <div class="inputtwelve-zhankai" id="zhankai-show">
                     <p>展开</p>
@@ -2324,7 +2324,7 @@
                     `
                     $.each(result.rows, function (i, item) {
                         strGroupType += `
-                            <li>`+ item.name + `</li>
+                            <li class="`+ item.dictionaryId + `">` + item.name + `</li>
                         `
                     })
                     that.acs_select2.html(strGroupType)
@@ -2336,7 +2336,7 @@
                 }
             })
 
-            //上课类型的请求及渲染
+            //上课方式的请求及渲染
             var paramsGCourseType = {
                 typeCode: "GCourseType"
             }
@@ -2354,7 +2354,7 @@
                     `
                     $.each(result.rows, function (i, item) {
                         strmodel += `
-                            <li>`+ item.name + `</li>
+                            <li class="`+ item.dictionaryId + `">` + item.name + `</li>
                         `
                     })
                     that.acs_select1.html(strmodel)
@@ -2406,17 +2406,15 @@
                 url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupRadar),
                 success: function (result) {
-                    var strGroupRadar = `
-                        <li class="select-this">全部</li>
-                    `;
-                    //console.log(result)
+                    var strGroupRadar = '';
+                    console.log(result)
                     $.each(result.rows, function (i, item) {
                         strGroupRadar += `
-                            <li>`+ item.name + `</li>
+                            <li class="`+ item.dictionaryId +`">`+ item.name + `</li>
                         `
                     })
                     that.acs_select4.html(strGroupRadar)
-                    that.acs_select4.parent().parent().children('.select-menu-div').children('input').val("全部")
+                    //that.acs_select4.parent().parent().children('.select-menu-div').children('input').val("全部")
                 },
                 error: function (e) {
                     console.log(e.status);
@@ -2439,9 +2437,9 @@
                     var strgxbm = '';
                     var thatresult = result
                     console.log(result)
-                    $('#gxbm').blur(function(){
-                        $.each(thatresult.rows,function(i,item){
-                            if(item.mediid == $('#gxbm').val()){
+                    $('#gxbm').blur(function () {
+                        $.each(thatresult.rows, function (i, item) {
+                            if (item.mediid == $('#gxbm').val()) {
                                 $('#gxmc').val(item.mediname)
                             }
                         })
@@ -2450,10 +2448,10 @@
                     $.each(thatresult.rows, function (i, item) {
                         strgxbm += `
                             <div class="inputtwelve-checkbox">
-                                <p>`+ item.mediid+item.mediname +`</p>
+                                <p>`+ item.mediid + item.mediname + `</p>
                                 <img src="/image/checkset_btn.png" alt="">
                             </div>
-                        ` 
+                        `
                         $('#inputtwelve-flex').html(strgxbm)
                     })
                 },
@@ -2465,7 +2463,7 @@
 
             setTimeout(() => {
                 new paypay().init()
-            }, 50);
+            }, 500);
 
         }
 
@@ -2648,6 +2646,7 @@
 
         init() {
             this.pay_pay()
+            this.save()
         }
 
         pay_pay() {
@@ -2699,6 +2698,79 @@
                 } else {
                     $(this).children('img').hide()
                 }
+            })
+        }
+
+        save() {
+            var that = this;
+            $('#add-course-footer-save').click(function () {
+                //支付方式的参数
+
+                for (var i = 0; i < that.paypay.length; i++) {
+                    if (that.paypay.eq(i).children('.paypay-show').is(':visible')) {
+                        var payMode = i + 1
+                    }
+                }
+                //上课方式的参数
+
+                for (var i = 1; i < $('#select-menu-ul-GCourseType').children().length; i++) {
+                    if ($('#select-menu-ul-GCourseType').children().eq(i).html() == $('#select-menu-input-GCourseType').val()) {
+
+                        var modeId = $('#select-menu-ul-GCourseType').children().eq(i).attr('class').split(' ')[0]
+                    }
+                }
+
+                //适合人群参数
+
+                var suitableForCrowd = $('#shrq').val()
+
+                //注意事项参数
+
+                var announcements = $('#area1').val()
+
+                //卡路里参数
+
+                var calorieConsumption = $('#kllxh').val()
+
+                //课程分类id
+
+                for (var i = 1; i < $('#select-menu-ul-GroupType').children().length; i++) {
+                    if ($('#select-menu-ul-GroupType').children().eq(i).html() == $('#select-menu-input-GroupType').val()) {
+
+                        var difficultyId = $('#select-menu-ul-GroupType').children().eq(i).attr('class').split(' ')[0]
+                    }
+                }
+
+                //产品价格参数
+
+                var price = $('#kcbzj').val()
+                
+                //课程介绍参数
+
+                var description = $('#area2').val()
+
+                //雷达字典id
+                var ldzdcount = 0;
+                curriculumEffectList = []
+                
+                for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++){
+                    if($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
+                        ldzdcount++
+                    }
+                }
+
+                for(var i =0;i< ldzdcount;i++){
+                    for(var j=0;j< $('.select-menu-ul-GroupRadar').length;j++){
+                        
+                        if($('.select-menu-ul-GroupRadar').children().eq(j).html() == $('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
+                            var dictionaryId = $('.select-menu-ul-GroupRadar').children().eq(j).attr('class').split(' ')[0]
+                            var effectValue = $('.select-menu-ul-GroupRadar').children().eq(j).parent().parent().parent().parent().parent().children('.input').val()
+                            curriculumEffectList.push({ dictionaryId, effectValue })
+                        }
+                    }
+                    
+                }
+
             })
         }
     }
