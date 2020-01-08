@@ -2579,7 +2579,7 @@
 
                 for (var i = 0; i < that.paypay.length; i++) {
                     if (that.paypay.eq(i).children('.paypay-show').is(':visible')) {
-                        var payMode1 = i + 1
+                        var payMode = i + 1
                     }
                 }
                 //上课方式的参数
@@ -2587,56 +2587,56 @@
                 for (var i = 1; i < $('#select-menu-ul-GCourseType').children().length; i++) {
                     if ($('#select-menu-ul-GCourseType').children().eq(i).html() == $('#select-menu-input-GCourseType').val()) {
 
-                        var modeId1 = $('#select-menu-ul-GCourseType').children().eq(i).attr('class').split(' ')[0]
+                        var modeId = $('#select-menu-ul-GCourseType').children().eq(i).attr('class').split(' ')[0]
                     }
                 }
 
                 //适合人群参数
 
-                var suitableForCrowd1 = $('#shrq').val()
+                var suitableForCrowd = $('#shrq').val()
 
                 //注意事项参数
 
-                var announcements1 = $('#area1').val()
+                var announcements = $('#area1').val()
 
                 //卡路里参数
 
-                var calorieConsumption1 = $('#kllxh').val()
+                var calorieConsumption = $('#kllxh').val()
 
                 //课程分类id
 
                 for (var i = 1; i < $('#select-menu-ul-GroupType').children().length; i++) {
                     if ($('#select-menu-ul-GroupType').children().eq(i).html() == $('#select-menu-input-GroupType').val()) {
 
-                        var classifyId1 = $('#select-menu-ul-GroupType').children().eq(i).attr('class').split(' ')[0]
+                        var classifyId = $('#select-menu-ul-GroupType').children().eq(i).attr('class').split(' ')[0]
                     }
                 }
 
                 //课程难度id
 
-                var difficultyId1 = 5;
+                var difficultyId = 5;
 
                 for(var i=0;i< $('#rating').children('li').length;i++){
                     if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
-                        difficultyId1--
+                        difficultyId--
                     }
                 }
 
                 //产品价格参数
 
-                var price1 = $('#kcbzj').val()
+                var price = $('#kcbzj').val()
                 
                 //课程名称
 
-                var name1 = $('#area2').val()
+                var name = $('#area2').val()
 
                 //课程介绍参数
 
-                var description1 = $('#area').val()
+                var description = $('#area').val()
 
                 //雷达字典id
                 var ldzdcount = 0;
-                var curriculumEffectList1 = []
+                var curriculumEffectList = []
                 
                 for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++){
                     if($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
@@ -2650,84 +2650,97 @@
                         if($('.select-menu-ul-GroupRadar').children().eq(j).html() == $('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
                             var dictionaryId = $('.select-menu-ul-GroupRadar').children().eq(j).attr('class').split(' ')[0]
                             var effectValue = $('.select-menu-ul-GroupRadar').children().eq(j).parent().parent().parent().parent().parent().children('.input').val()
-                            curriculumEffectList1.push({ dictionaryId, effectValue })
+                            curriculumEffectList.push({ dictionaryId, effectValue })
                         }
                     }
                     
                 }
 
                 //标签字典id
-                var curriculumTagList1 = []
+                var curriculumTagList = []
                 for(var i=0;i< $('#GroupCourseGole').children().length;i++){
                     if($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')){
                         var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
-                        curriculumTagList1.push({dictionaryId})
+                        curriculumTagList.push({dictionaryId})
                     }
                 }
                 
                 //FAQ问题
 
-                var leagueCurriculumFaqList1 = []
+                var leagueCurriculumFaqList = []
 
                 for(var i=1;i< $('#faq').children().children().children().length;i++){
                     var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
                     var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
-                    leagueCurriculumFaqList1.push({problem, answer})
+                    leagueCurriculumFaqList.push({problem, answer})
                 }
                 
                 //广信编码
 
-                var curriculumGuangxinList1 = []
+                var curriculumGuangxinList = []
 
                 for(var i = 0;i< $('#inputtwelve-flex').children().length;i++){
                     if($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')){
 
                         var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
 
-                        curriculumGuangxinList1.push({itemId})
+                        curriculumGuangxinList.push({itemId})
                     }
                 }
-            
-                var payMode
-                var modeId
-                var suitableForCrowd
-                var announcements
-                var calorieConsumption
-                var classifyId
-                var difficultyId
-                var price
-                var description
-                var name
-                var curriculumEffectList
-                var curriculumTagList
-                var leagueCurriculumFaqList
-                var curriculumGuangxinList
                 
-                var paramsadd = {
-                    payMode : payMode1,
-                    modeId : modeId1,
-                    suitableForCrowd : suitableForCrowd1,
-                    announcements : announcements1,
-                    calorieConsumption : calorieConsumption1,
-                    classifyId : classifyId1,
-                    difficultyId : difficultyId1,
-                    price : price1,
-                    description : description1,
-                    name : name1,
-                    curriculumEffectList : curriculumEffectList1,
-                    curriculumTagList : curriculumTagList1,
-                    leagueCurriculumFaqList : leagueCurriculumFaqList1,
-                    curriculumGuangxinList : curriculumGuangxinList1
+                // var fd = new FormData();
+
+                // fd.append('payMode', payMode);
+                // fd.append('modeId', modeId);
+                // fd.append('suitableForCrowd', suitableForCrowd);
+                // fd.append('announcements', announcements);
+                // fd.append('calorieConsumption', calorieConsumption);
+                // fd.append('classifyId', classifyId);
+                // fd.append('difficultyId', difficultyId);
+                // fd.append('price', $('#kcbzj').val());
+                // fd.append('description', description);
+                // fd.append('name', name);
+                // fd.append('curriculumEffectList', curriculumEffectList);
+                // fd.append('curriculumTagList', curriculumTagList);
+                // fd.append('leagueCurriculumFaqList', leagueCurriculumFaqList);
+                // fd.append('curriculumGuangxinList', curriculumGuangxinList);
+
+                // $.ajax({
+                //     type : 'POST',
+                //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                //     data: fd,
+                //     dataType:'json',
+                //     success: function (result) {
+                //         console.log(JSON.stringify(result))
+                //     },
+                //     error: function (e) {
+                //         console.log(e.status);
+                //         console.log(e.responseText)
+                //     }
+                // })
+
+                var fd ={
+                    payMode: payMode,
+                    modeId: modeId,
+                    suitableForCrowd: suitableForCrowd,
+                    announcements: announcements,
+                    calorieConsumption: calorieConsumption,
+                    classifyId: classifyId,
+                    difficultyId: difficultyId,
+                    price: price,
+                    description: description,
+                    name: name,
+                    curriculumEffectList: curriculumEffectList,
+                    curriculumTagList: curriculumTagList,
+                    leagueCurriculumFaqList: leagueCurriculumFaqList,
+                    curriculumGuangxinList: curriculumGuangxinList
                 }
 
                 $.ajax({
-                    method : 'POST',
+                    type : 'POST',
                     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                    dataType: 'json',
-                    data: paramsadd,
-                    ContentType: 'application/x-www-form-urlencoded',  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                    cache: false,
-                    processData: false,
+                    data: fd,
+                    ContentType: "application/json;charset=UTF-8",  //multipart/form-data;boundary=--xxxxxxx   application/json,
                     success: function (result) {
                         console.log(result)
                     },
@@ -2736,7 +2749,7 @@
                         console.log(e.responseText)
                     }
                 })
-                console.log(paramsadd)
+                console.log(fd)
             })
         }
     }
