@@ -41,8 +41,8 @@
         }
 
         .course-coach-manage-flex .course-coach-manage-flex-input {
-            width: 106px;
-            height: 26px;
+            width: 120px;
+            height: 30px;
             border-radius: 4px;
             margin-left: 18px;
             margin-right: 35px;
@@ -54,29 +54,29 @@
             display: flex;
         }
 
-        .course-coach-manage-flextwo p:nth-child(1) {
-            width: 70px;
-            height: 26px;
+        .course-coach-manage-flextwo #course-coach-manage-flextwo-pone{
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             background: #71B2EF;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             color: white;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .course-coach-manage-flextwo p:nth-child(2) {
-            width: 70px;
-            height: 26px;
+        .course-coach-manage-flextwo #course-coach-manage-flextwo-ptwo{
+            width: 80px;
+            height: 30px;
             border-radius: 4px;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             color: black;
-            margin-left: 13px;
-            font-size: 14px;
+            margin-left: 15px;
+            font-size: 16px;
             cursor: pointer;
         }
 
@@ -84,8 +84,8 @@
             margin-left: 10px;
             margin-right: 39px;
             cursor: pointer;
-            width: 106px;
-            height: 26px;
+            width: 120px;
+            height: 30px;
             box-sizing: border-box;
         }
 
@@ -94,7 +94,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 106px;
+            width: 120px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -116,8 +116,8 @@
 
         .select-menu-div {
             position: relative;
-            height: 26px;
-            width: 106px;
+            height: 30px;
+            width: 120px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
@@ -194,8 +194,8 @@
         }
 
         .course-coach-manage-table {
-            margin-top: 18px;
-            font-size: 12px;
+            margin-top: 20px;
+            font-size: 14px;
         }
 
         .course-coach-manage-table table tr:nth-child(2) td {
@@ -217,7 +217,7 @@
         .course-coach-manage-table table th {
             background: #D0E8F2;
             text-align: center;
-            height: 35px;
+            height: 40px;
         }
 
         .course-coach-manage-table .course-coach-manage-table-tr td:last-child {
@@ -311,8 +311,8 @@
 
         .course-coach-manage-body .course-coach-manage-addone {
             position: absolute;
-            width: 810px;
-            height: 720px;
+            width: 920px;
+            height: 820px;
             top: 20px;
             left: 340px;
             z-index: 100;
@@ -344,8 +344,8 @@
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexthree {
-            width: 775px;
-            height: 650px;
+            width: 880px;
+            height: 738px;
             border: 2px solid #71B2EF;
             box-sizing: border-box;
             margin-top: 10px;
@@ -490,6 +490,8 @@
             width: 70px;
             margin-right: 55px
         }
+
+
 
         .course-coach-manage-addone .coach-manage-addone-flexfour {
             width: 754px;
@@ -761,17 +763,17 @@
 <body>
     <div class="course-coach-manage-body">
         <div class="course-coach-manage-flex">
-            <div style="font-size:14px">员工姓名</div>
+            <div style="font-size:16px">员工姓名</div>
             <input class="course-coach-manage-flex-input" type="text">
-            <div style="font-size:14px">员工工号</div>
+            <div style="font-size:16px">员工工号</div>
             <input class="course-coach-manage-flex-input" type="text">
-            <div style="font-size:14px">课程类型</div>
+            <div style="font-size:16px">课程类型</div>
             <div class="course-coach-manage-flex-select-one"></div>
-            <div style="font-size:14px">课程名称</div>
+            <div style="font-size:16px">课程名称</div>
             <div class="course-coach-manage-flex-select-two"></div>
             <div class="course-coach-manage-flextwo">
-                <p>查询</p>
-                <p>清除</p>
+                <p id="course-coach-manage-flextwo-pone">查询</p>
+                <p id="course-coach-manage-flextwo-ptwo">清除</p>
             </div>
         </div>
         <div class="course-coach-manage-table"></div>
@@ -825,7 +827,7 @@
         select_all2() {
             var str1
             str1 = `
-                <div class="select-menu" style="width:176px">
+                <div class="select-menu" style="width:200px">
 		            <div class="select-menu-div" style="width:176px">
 			            <input class="select-menu-input" />
 
@@ -916,13 +918,13 @@
             for (var i = 0; i < 10; i++) {
                 str2 += `
                 <tr class="course-coach-manage-table-tr">
-                    <td width="42"><div style="display:flex;justify-content: center;">${i + 1}</div></td>
-                    <td width="106">刘大伟</td>
-                    <td width="105">66160</td>
-                    <td width="220">塑性、腰腹、心肺训练</td>
-                    <td width="430">BodyButt盛世美臀、BOSYCOMBAT、“秦淮八艳“古典舞、形体舞蹈<br/>舞林漫步、瑜伽、BODY格莱美舞蹈</td>
-                    <td width="430">天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说我们最先衰<br/>老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，<br/>BODYCOMBAT认证教练，UK儿童体适能.</td>
-                    <td width="105"><a class="course-coach-manage-a">编辑</a></td>
+                    <td width="49"><div style="display:flex;justify-content: center;">${i + 1}</div></td>
+                    <td width="120">刘大伟</td>
+                    <td width="120">66160</td>
+                    <td width="250">塑性、腰腹、心肺训练</td>
+                    <td width="490">BodyButt盛世美臀、BOSYCOMBAT、“秦淮八艳“古典舞、形体舞蹈<br/>舞林漫步、瑜伽、BODY格莱美舞蹈</td>
+                    <td width="488">天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说我们最先衰<br/>老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，<br/>BODYCOMBAT认证教练，UK儿童体适能.</td>
+                    <td width="120"><a class="course-coach-manage-a">编辑</a></td>
                 </tr>
             `
             }
