@@ -1761,7 +1761,6 @@
 
         init() {
             this.table_all()
-            //this.select_option()
             this.time()
             this.add_change()
         }
@@ -1943,7 +1942,7 @@
                         aaaaaa()
 
                         function aaaaaa(page){
-                        //console.log(page)
+
                         var params = {
                             page: page,
                             rows: 10,
@@ -2018,7 +2017,7 @@
                                             <td width="288">`+ item.price + `</td>
                                             <td width="288">`+ item.createDate + `</td>
                                             <td width="288">上架</td>
-                                            <td width="148" class="`+ item.id + `"><a>编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
+                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
                                     }
@@ -2032,7 +2031,7 @@
                                             <td width="288">`+ item.price + `</td>
                                             <td width="288">`+ item.createDate + `</td>
                                             <td width="288">下架</td>
-                                            <td width="148" class="`+ item.id + `"><a>编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
+                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
                                     }
@@ -2042,7 +2041,7 @@
 
                                 var str3
                                 str3 = `
-                                <p>共`+ list.length + `条，每页` + params.rows + `条</p>
+                                <p>共`+ resultall.results.length + `条，每页` + params.rows + `条</p>
                             `
                                 that.input_four.html(str3)
 
@@ -2183,6 +2182,7 @@
         }
         init() {
             this.checkbox_click()
+            this.edit_change()
         }
 
         checkbox_click() {
@@ -2207,6 +2207,38 @@
                 }
             })
         }
+    
+        edit_change() {
+            $('.course-manage-table-tr-edit').click(function () {
+                $('.course-manage-body').hide()
+                $('.add-course-body').show()
+                
+                var a = $(this).parent().parent().children().eq(2).html()
+                //new add_course().init(a)
+                var paramsall = {
+                    rows: 10000
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                    contentType: "application/json;charset=UTF-8",
+                    data: JSON.stringify(paramsall),
+                    success: function (resultall) {
+                        console.log(resultall.results)
+
+                        $.each(resultall.results, function (i, item) {
+                            if (item.name == a) {
+                                $('#select-menu-input-GroupType').val(item.name)
+                                $('#select-menu-input-GCourseType').val(item.modeName)
+
+                            }
+                        })
+
+
+                    }
+                })
+            })
+        }
     }
 
     class add_course {
@@ -2222,7 +2254,7 @@
             this.item = $('#rating').find('.rating-item'); //获取的所有li
         }
 
-        init() {
+        init(a) {
             this.acsselect_all()
             this.select_option()
             this.textare_contain()
