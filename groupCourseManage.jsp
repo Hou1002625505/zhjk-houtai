@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%
@@ -23,11 +23,10 @@
 
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-    <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="easyui/moment.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
-
+    <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="imgui/zyUpload.css" type="text/css">
     <!-- 引用核心层插件 -->
     <script src="imgui/zyFile.js"></script>
@@ -1480,8 +1479,8 @@
             <div class="course-manage-footer-ptwo" id="batchdown">批量下架</div>
             <div class="course-manage-footer-pthree"></div>
         </div>
-        <!-- <div class="m-style M-box11"></div> -->
-        <div class="box" id="ywyboxpage"></div>
+
+        <div class="box" id="boxpage"></div>
     </div>
 
     <div class="add-course-body" style="display:none">
@@ -1494,7 +1493,7 @@
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
-                        <input class="select-menu-input" id="select-menu-input-GroupType"/>
+                        <input class="select-menu-input" id="select-menu-input-GroupType" />
 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
@@ -1743,8 +1742,10 @@
 </body>
 <script type="text/javascript" src="easyui/datepicker.all.js"></script>
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
-<script type="text/javascript">
 
+
+<script type="text/javascript">
+    
     window.onload = function () {
         new course_manage().init();
         new add_course().init()
@@ -1762,7 +1763,6 @@
             this.table_all()
             //this.select_option()
             this.time()
-            this.input_all4()
             this.add_change()
         }
 
@@ -1855,6 +1855,7 @@
             var str2;
             var that = this
 
+            
 
             if ($('#select-menu-div2').children('input').val() == "上架") {
                 smd2input = 1
@@ -1862,70 +1863,154 @@
                 smd2input = 2
             }
 
-            var params = {
-                rows: 10,
-                name: $('#course-manage-flex-input').val(),
-                state: smd2input,
-                minCreateDate: $('#course-manage-flex-input-one').val(),
-                maxCreateDate: $('#course-manage-flex-input-two').val(),
-                minPrice: $('#course-manage-flex-input-three').val(),
-                maxPrice: $('#course-manage-flex-input-four').val()
+            //课程类型的请求及渲染
+            var paramsGroupType = {
+                typeCode: "GroupType"
             }
+
             $.ajax({
                 type: 'POST',
-                url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
                 contentType: "application/json;charset=UTF-8",
-                data: JSON.stringify(params),
+                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                data: JSON.stringify(paramsGroupType),
                 success: function (result) {
-
-                    list = result.results
-                    //两个str都为下菜单的渲染
-                    str = `
-                            <li class="select-this">全部</li>
-                            `
-                    var newArr = [];
-                    $.each(list, function (i, item) {
-                        if (newArr.indexOf(item.classifyName) == -1) {
-                            newArr.push(item.classifyName)
-                            str += `
-                                <li>` + item.classifyName + `</li>
-                                `
-                        }
-                    })
-                    //课程分类下拉菜单渲染
-                    that.li_one.html(str)
-
-                    $.each(list, function (i, item) {
-                        //如果遍历的分类名和菜单中的对应，添加到新数组中
-                        if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
-                            listclassifyName0.push(item)
-                        }
-                    })
-                    //如果菜单显示全部，则list为获取的全部数据
-                    //否则list为添加到新数组中的数据
-                    if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
-                        list = list
-                    } else if (listclassifyName0.length > 0) {
-                        list = listclassifyName0
-                    }
-
-                    str2 = `
-                        <table border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <th width="48"></th>
-                            <th width="288">课程分类</th>
-                            <th width="288">课程名称</th>
-                            <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                            <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                            <th width="288">状态</th>
-                            <th width="148">操作</th>
-                        </tr>
+                    var strGroupType;
+                    //console.log(result)
+                    strGroupType = `
+                        <li class="select-this">全部</li>
                     `
+                    $.each(result.rows, function (i, item) {
+                        strGroupType += `
+                            <li class="`+ item.dictionaryId + `">` + item.name + `</li>
+                        `
+                    })
+                    that.li_one.html(strGroupType)
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
 
-                    $.each(list, function (i, item) {
-                        //通过遍历和if判断上下架的表格行
-                        if (item.state == 1) {
-                            str2 += `
+            setTimeout(() => {
+
+                var classifyId1;
+
+                // if ($('#select-menu-div1').children('input').val() == "全部") {
+                //         classifyId1 = {}
+                //     }
+
+                // for(var i = 1;i< $('#select-menu-ul1').children('li').length;i++){
+                //     //console.log($('#select-menu-ul1').children('li').eq(i).html())
+                //     if($('#select-menu-ul1').children('li').eq(i).html() == $('#select-menu-div1').children('input').val()){
+                //         classifyId1 = $('#select-menu-ul1').children('li').eq(i).attr('class')
+                //     }
+                // }
+
+                
+
+                var paramsall = {
+                    rows : 10000
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                    contentType: "application/json;charset=UTF-8",
+                    data: JSON.stringify(paramsall),
+                    success: function (resultall) {
+
+                        //console.log(resultall.results.length)
+
+                        var onPagechange = function (page) {
+                            //console.log(page)
+                            aaaaaa(page)
+                        }
+
+                        var obj = {
+                            wrapid: 'boxpage', //页面显示分页器容器id
+                            total: resultall.results.length, //总条数
+                            pagesize: 10, //每页显示10条
+                            currentPage: 1, //当前页
+                            onPagechange: onPagechange
+                            //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        }
+
+                        pagination.init(obj);
+
+                        
+                        var page = 1
+                        aaaaaa()
+
+                        function aaaaaa(page){
+                        //console.log(page)
+                        var params = {
+                            page: page,
+                            rows: 10,
+                            name: $('#course-manage-flex-input').val(),
+                            state: smd2input,
+                            minCreateDate: $('#course-manage-flex-input-one').val(),
+                            maxCreateDate: $('#course-manage-flex-input-two').val(),
+                            minPrice: $('#course-manage-flex-input-three').val(),
+                            maxPrice: $('#course-manage-flex-input-four').val()
+                        }
+                        
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                            contentType: "application/json;charset=UTF-8",
+                            data: JSON.stringify(params),
+                            success: function (result) {
+
+                                list = result.results
+                                console.log(list)
+                                //两个str都为下菜单的渲染
+                                // str = `
+                                //         <li class="select-this">全部</li>
+                                //         `
+                                // var newArr = [];
+                                // $.each(list, function (i, item) {
+                                //     if (newArr.indexOf(item.classifyName) == -1) {
+                                //         newArr.push(item.classifyName)
+                                //         str += `
+                                //             <li>` + item.classifyName + `</li>
+                                //             `
+                                //     }
+                                // })
+                                //课程分类下拉菜单渲染
+                                //that.li_one.html(str)
+
+                                // $.each(list, function (i, item) {
+                                //     //如果遍历的分类名和菜单中的对应，添加到新数组中
+                                //     if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
+                                //         listclassifyName0.push(item)
+                                //     }
+                                // })
+                                //如果菜单显示全部，则list为获取的全部数据
+                                //否则list为添加到新数组中的数据
+                                // if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
+                                //     list = list
+                                // } else if (listclassifyName0.length > 0) {
+                                //     list = listclassifyName0
+                                // }
+
+                                str2 = `
+                                            <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th width="48"></th>
+                                                <th width="288">课程分类</th>
+                                                <th width="288">课程名称</th>
+                                                <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                                                <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                                                <th width="288">状态</th>
+                                                <th width="148">操作</th>
+                                            </tr>
+                                        `
+
+                                $.each(list, function (i, item) {
+                                    //通过遍历和if判断上下架的表格行
+                                    if (item.state == 1) {
+                                        str2 += `
                                         <tr class="course-manage-table-tr">
                                             <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
                                             <td width="288">`+ item.classifyName + `</td>
@@ -1936,10 +2021,10 @@
                                             <td width="148" class="`+ item.id + `"><a>编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
-                        }
+                                    }
 
-                        if (item.state == 2) {
-                            str2 += `
+                                    if (item.state == 2) {
+                                        str2 += `
                                         <tr class="course-manage-table-tr">
                                             <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
                                             <td width="288">`+ item.classifyName + `</td>
@@ -1950,145 +2035,137 @@
                                             <td width="148" class="`+ item.id + `"><a>编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
-                        }
-                    })
+                                    }
+                                })
 
-                    that.table.html(str2)
+                                that.table.html(str2)
 
-                    var str3
-                    str3 = `
+                                var str3
+                                str3 = `
                                 <p>共`+ list.length + `条，每页` + params.rows + `条</p>
                             `
-                    that.input_four.html(str3)
+                                that.input_four.html(str3)
 
-                    //批量上架下架
+                                //批量上架下架
 
-                    $('.course-manage-table-tr-up').click(function () {
+                                $('.course-manage-table-tr-up').click(function () {
 
-                        var id = [];
+                                    var id = [];
 
-                        if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
-                            id.push($(this).parent().attr('class'))
+                                    if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
+                                        id.push($(this).parent().attr('class'))
 
-                            var params1 = {
-                                state: 1,
-                                ids: id
-                            }
+                                        var params1 = {
+                                            state: 1,
+                                            ids: id
+                                        }
 
-                            $.ajax({
-                                type: 'POST',
-                                url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
-                                contentType: "application/json;charset=UTF-8",
-                                data: JSON.stringify(params1),
-                                success: function (resule) {
-                                    //console.log(resule)
-                                    //console.log(list)
-                                },
-                                error: function (e) {
-                                    console.log(e.status);
-                                    console.log(e.responseText)
-                                }
-                            })
-                        }
-                        window.location.reload()
-                    })
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                            contentType: "application/json;charset=UTF-8",
+                                            data: JSON.stringify(params1),
+                                            success: function (resule) {
+                                                //console.log(resule)
+                                                //console.log(list)
+                                            },
+                                            error: function (e) {
+                                                console.log(e.status);
+                                                console.log(e.responseText)
+                                            }
+                                        })
+                                    }
+                                    window.location.reload()
+                                })
 
-                    $('#batchup').click(function () {
-                        var id = [];
+                                $('#batchup').click(function () {
+                                    var id = [];
 
-                        for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
-                            if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
-                                id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
-                            }
-                        }
+                                    for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
+                                        if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
+                                            id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
+                                        }
+                                    }
 
-                        var params1 = {
-                            state: 1,
-                            ids: id
-                        }
+                                    var params1 = {
+                                        state: 1,
+                                        ids: id
+                                    }
 
-                        $.ajax({
-                            type: 'POST',
-                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
-                            contentType: "application/json;charset=UTF-8",
-                            data: JSON.stringify(params1),
-                            success: function (resule) {
-                                //console.log(resule)
-                                //console.log(list)
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                        contentType: "application/json;charset=UTF-8",
+                                        data: JSON.stringify(params1),
+                                        success: function (resule) {
+                                            //console.log(resule)
+                                            //console.log(list)
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status);
+                                            console.log(e.responseText)
+                                        }
+                                    })
+
+                                    window.location.reload()
+                                })
+
+                                $('#batchdown').click(function () {
+                                    var id = [];
+
+                                    for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
+                                        if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
+                                            id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
+                                        }
+                                    }
+
+                                    var params1 = {
+                                        state: 2,
+                                        ids: id
+                                    }
+
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                        contentType: "application/json;charset=UTF-8",
+                                        data: JSON.stringify(params1),
+                                        success: function (resule) {
+                                            //console.log(resule)
+                                            //console.log(list)
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status);
+                                            console.log(e.responseText)
+                                        }
+                                    })
+
+                                    window.location.reload()
+                                })
+
+                                that.li_one.one("click", function () {
+                                    that.table_all()
+                                })
+                                $('#course-manage-flextwo-search').one("click", function () {
+                                    that.table_all()
+                                })
+                                $('#course-manage-flextwo-clear').one("click", function () {
+                                    window.location.reload()
+                                })
+
+                                //console.log(pagination.init)
+                                new computed().init()
                             },
+
                             error: function (e) {
                                 console.log(e.status);
                                 console.log(e.responseText)
                             }
                         })
-
-                        window.location.reload()
-                    })
-
-                    $('#batchdown').click(function () {
-                        var id = [];
-
-                        for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
-                            if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
-                                id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
-                            }
+                    
                         }
-
-                        var params1 = {
-                            state: 2,
-                            ids: id
-                        }
-
-                        $.ajax({
-                            type: 'POST',
-                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
-                            contentType: "application/json;charset=UTF-8",
-                            data: JSON.stringify(params1),
-                            success: function (resule) {
-                                //console.log(resule)
-                                //console.log(list)
-                            },
-                            error: function (e) {
-                                console.log(e.status);
-                                console.log(e.responseText)
-                            }
-                        })
-
-                        window.location.reload()
-                    })
-
-                    that.li_one.one("click", function () {
-                        that.table_all()
-                    })
-                    $('#course-manage-flextwo-search').one("click", function () {
-                        that.table_all()
-                    })
-                    $('#course-manage-flextwo-clear').one("click", function () {
-                        window.location.reload()
-                    })
-                    new computed().init()
-                },
-
-                error: function (e) {
-                    console.log(e.status);
-                    console.log(e.responseText)
-                }
-            })
-
-        }
-
-        input_all4() {
-            var obj = {
-                wrapid: 'ywyboxpage', //页面显示分页器容器id
-                total: 15, //总条数
-                pagesize: 15, //每页显示10条
-                currentPage: 2, //当前页
-                onPagechange: 2,
-                //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
-            }
-            pagination.init(obj);
-
-            //console.log(window.location.href)
+                    }
+                })
+            }, 100);
         }
 
         add_change() {
@@ -2252,7 +2329,7 @@
 
                     $.each(result.rows, function (i, item) {
                         strmodel += `
-                            <p class="add-course-sortone-inputthree-p `+ item.dictionaryId +`">`+ item.name + `</p>
+                            <p class="add-course-sortone-inputthree-p `+ item.dictionaryId + `">` + item.name + `</p>
                         `
                     })
                     that.acs_select3.html(strmodel)
@@ -2280,7 +2357,7 @@
                     //console.log(result)
                     $.each(result.rows, function (i, item) {
                         strGroupRadar += `
-                            <li class="`+ item.dictionaryId +`">`+ item.name + `</li>
+                            <li class="`+ item.dictionaryId + `">` + item.name + `</li>
                         `
                     })
                     that.acs_select4.html(strGroupRadar)
@@ -2540,7 +2617,7 @@
                     $(this).addClass('add-course-sortone-inputthree-p-active')
                 }
             })
-            
+
             this.it_checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -2616,7 +2693,7 @@
 
                 var difficultyId = 5;
 
-                for(var i=0;i< $('#rating').children('li').length;i++){
+                for (var i = 0; i < $('#rating').children('li').length; i++) {
                     if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
                         difficultyId--
                     }
@@ -2625,7 +2702,7 @@
                 //产品价格参数
 
                 var price = $('#kcbzj').val()
-                
+
                 //课程名称
 
                 var name = $('#area2').val()
@@ -2637,89 +2714,58 @@
                 //雷达字典id
                 var ldzdcount = 0;
                 var curriculumEffectList = []
-                
-                for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++){
-                    if($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
+
+                for (var i = 0; i < $('.select-menu-ul-GroupRadar').length; i++) {
+                    if ($('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()) {
                         ldzdcount++
                     }
                 }
 
-                for(var i =0;i< ldzdcount;i++){
-                    for(var j=0;j< $('.select-menu-ul-GroupRadar').length;j++){
-                        
-                        if($('.select-menu-ul-GroupRadar').children().eq(j).html() == $('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()){
+                for (var i = 0; i < ldzdcount; i++) {
+                    for (var j = 0; j < $('.select-menu-ul-GroupRadar').length; j++) {
+
+                        if ($('.select-menu-ul-GroupRadar').children().eq(j).html() == $('.select-menu-ul-GroupRadar').eq(i).parent().parent().children('.select-menu-div').children('input').val()) {
                             var dictionaryId = $('.select-menu-ul-GroupRadar').children().eq(j).attr('class').split(' ')[0]
                             var effectValue = $('.select-menu-ul-GroupRadar').children().eq(j).parent().parent().parent().parent().parent().children('.input').val()
                             curriculumEffectList.push({ dictionaryId, effectValue })
                         }
                     }
-                    
+
                 }
 
                 //标签字典id
                 var curriculumTagList = []
-                for(var i=0;i< $('#GroupCourseGole').children().length;i++){
-                    if($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')){
+                for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
+                    if ($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')) {
                         var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
-                        curriculumTagList.push({dictionaryId})
+                        curriculumTagList.push({ dictionaryId })
                     }
                 }
-                
+
                 //FAQ问题
 
                 var leagueCurriculumFaqList = []
 
-                for(var i=1;i< $('#faq').children().children().children().length;i++){
+                for (var i = 1; i < $('#faq').children().children().children().length; i++) {
                     var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
                     var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
-                    leagueCurriculumFaqList.push({problem, answer})
+                    leagueCurriculumFaqList.push({ problem, answer })
                 }
-                
+
                 //广信编码
 
                 var curriculumGuangxinList = []
 
-                for(var i = 0;i< $('#inputtwelve-flex').children().length;i++){
-                    if($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')){
+                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                    if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
 
                         var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
 
-                        curriculumGuangxinList.push({itemId})
+                        curriculumGuangxinList.push({ itemId })
                     }
                 }
-                
-                // var fd = new FormData();
 
-                // fd.append('payMode', payMode);
-                // fd.append('modeId', modeId);
-                // fd.append('suitableForCrowd', suitableForCrowd);
-                // fd.append('announcements', announcements);
-                // fd.append('calorieConsumption', calorieConsumption);
-                // fd.append('classifyId', classifyId);
-                // fd.append('difficultyId', difficultyId);
-                // fd.append('price', $('#kcbzj').val());
-                // fd.append('description', description);
-                // fd.append('name', name);
-                // fd.append('curriculumEffectList', curriculumEffectList);
-                // fd.append('curriculumTagList', curriculumTagList);
-                // fd.append('leagueCurriculumFaqList', leagueCurriculumFaqList);
-                // fd.append('curriculumGuangxinList', curriculumGuangxinList);
-
-                // $.ajax({
-                //     type : 'POST',
-                //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                //     data: fd,
-                //     dataType:'json',
-                //     success: function (result) {
-                //         console.log(JSON.stringify(result))
-                //     },
-                //     error: function (e) {
-                //         console.log(e.status);
-                //         console.log(e.responseText)
-                //     }
-                // })
-
-                var fd ={
+                var fd = {
                     payMode: payMode,
                     modeId: modeId,
                     suitableForCrowd: suitableForCrowd,
@@ -2737,10 +2783,10 @@
                 }
 
                 $.ajax({
-                    type : 'POST',
+                    type: 'POST',
                     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                    data: fd,
-                    ContentType: "application/json;charset=UTF-8",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    data: JSON.stringify(fd),
                     success: function (result) {
                         console.log(result)
                     },
