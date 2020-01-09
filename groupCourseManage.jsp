@@ -1745,7 +1745,7 @@
 
 
 <script type="text/javascript">
-    
+
     window.onload = function () {
         new course_manage().init();
         new add_course().init()
@@ -1854,8 +1854,6 @@
             var str2;
             var that = this
 
-            
-
             if ($('#select-menu-div2').children('input').val() == "上架") {
                 smd2input = 1
             } else if ($('#select-menu-div2').children('input').val() == "下架") {
@@ -1893,43 +1891,21 @@
 
             setTimeout(() => {
 
-                var paramsall = {
-                    rows : 10000,
-                    page : 1
+                var onPagechange = function (page) {
+                    console.log(page)
+                    aaaaaa(page)
+                }
+                for (var i = 1; i < $('#select-menu-ul1').children().length; i++) {
+                    if ($('#select-menu-ul1').children().eq(i).html() == $('#select-menu-div1').children('input').val()) {
+                        var classifyId = $('#select-menu-ul1').children().eq(i).attr('class')
+                    }
                 }
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
-                    contentType: "application/json;charset=UTF-8",
-                    data: JSON.stringify(paramsall),
-                    success: function (resultall) {
+                var page = 1;
+                aaaaaa(page)
 
-                        //console.log(resultall.results.length)
-
-                        var onPagechange = function (page) {
-                            //console.log(page)
-                            
-                            aaaaaa(page)
-                        }
-
-                        var obj = {
-                            wrapid: 'boxpage', //页面显示分页器容器id
-                            total: resultall.results.length, //总条数
-                            pagesize: 10, //每页显示10条
-                            currentPage: 1, //当前页
-                            onPagechange: onPagechange
-                            //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
-                        }
-
-                        pagination.init(obj);
-                        var page = 1;
-                        aaaaaa(page)
-                        
-                        function aaaaaa(page){
-                        
-
-                        
+                function aaaaaa(page) {
+                    if ($('#select-menu-div1').children('input').val() == "全部") {
                         var params = {
                             page: page,
                             rows: 10,
@@ -1941,19 +1917,33 @@
                             minPrice: $('#course-manage-flex-input-three').val(),
                             maxPrice: $('#course-manage-flex-input-four').val()
                         }
-                        
-                        $.ajax({
-                            type: 'POST',
-                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
-                            contentType: "application/json;charset=UTF-8",
-                            data: JSON.stringify(params),
-                            success: function (result) {
+                    } else {
+                        var params = {
+                            page: page,
+                            rows: 10,
+                            classifyId: classifyId,
+                            name: $('#course-manage-flex-input').val(),
+                            state: smd2input,
+                            minCreateDate: $('#course-manage-flex-input-one').val(),
+                            maxCreateDate: $('#course-manage-flex-input-two').val(),
+                            minPrice: $('#course-manage-flex-input-three').val(),
+                            maxPrice: $('#course-manage-flex-input-four').val()
+                        }
+                    }
 
-                                list = result.results
-                                console.log(list)
 
-////////////////////////////////////////////////////////////////////////////
-                                str2 = `
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                        contentType: "application/json;charset=UTF-8",
+                        data: JSON.stringify(params),
+                        success: function (result) {
+                            var result = result
+                            list = result.results
+                            console.log(list)
+
+                            ////////////////////////////////////////////////////////////////////////////
+                            str2 = `
                                             <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <th width="48"></th>
@@ -1966,10 +1956,10 @@
                                             </tr>
                                         `
 
-                                $.each(list, function (i, item) {
-                                    //通过遍历和if判断上下架的表格行
-                                    if (item.state == 1) {
-                                        str2 += `
+                            $.each(list, function (i, item) {
+                                //通过遍历和if判断上下架的表格行
+                                if (item.state == 1) {
+                                    str2 += `
                                         <tr class="course-manage-table-tr">
                                             <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
                                             <td width="288">`+ item.classifyName + `</td>
@@ -1980,10 +1970,10 @@
                                             <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
-                                    }
+                                }
 
-                                    if (item.state == 2) {
-                                        str2 += `
+                                if (item.state == 2) {
+                                    str2 += `
                                         <tr class="course-manage-table-tr">
                                             <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
                                             <td width="288">`+ item.classifyName + `</td>
@@ -1994,57 +1984,36 @@
                                             <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
                                         </tr>
                                     `
-                                    }
-                                })
+                                }
+                            })
 
-                                that.table.html(str2)
+                            that.table.html(str2)
 
-                                var str3
-                                str3 = `
-                                <p>共`+ resultall.results.length + `条，每页` + params.rows + `条</p>
+                            var obj = {
+                                wrapid: 'boxpage', //页面显示分页器容器id
+                                total: result.totalCount, //总条数
+                                pagesize: 10, //每页显示10条
+                                currentPage: page, //当前页
+                                onPagechange: onPagechange
+                                //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                            }
+
+                            pagination.init(obj);
+
+                            var str3
+                            str3 = `
+                                <p>共`+ result.totalCount + `条，每页` + params.rows + `条</p>
                             `
-                                that.input_four.html(str3)
+                            that.input_four.html(str3)
 
-                                //批量上架下架
+                            //批量上架下架
 
-                                $('.course-manage-table-tr-up').click(function () {
+                            $('.course-manage-table-tr-up').click(function () {
 
-                                    var id = [];
+                                var id = [];
 
-                                    if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
-                                        id.push($(this).parent().attr('class'))
-
-                                        var params1 = {
-                                            state: 1,
-                                            ids: id
-                                        }
-
-                                        $.ajax({
-                                            type: 'POST',
-                                            url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
-                                            contentType: "application/json;charset=UTF-8",
-                                            data: JSON.stringify(params1),
-                                            success: function (resule) {
-                                                //console.log(resule)
-                                                //console.log(list)
-                                            },
-                                            error: function (e) {
-                                                console.log(e.status);
-                                                console.log(e.responseText)
-                                            }
-                                        })
-                                    }
-                                    window.location.reload()
-                                })
-
-                                $('#batchup').click(function () {
-                                    var id = [];
-
-                                    for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
-                                        if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
-                                            id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
-                                        }
-                                    }
+                                if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
+                                    id.push($(this).parent().attr('class'))
 
                                     var params1 = {
                                         state: 1,
@@ -2065,65 +2034,96 @@
                                             console.log(e.responseText)
                                         }
                                     })
+                                }
+                                window.location.reload()
+                            })
 
-                                    window.location.reload()
-                                })
+                            $('#batchup').click(function () {
+                                var id = [];
 
-                                $('#batchdown').click(function () {
-                                    var id = [];
-
-                                    for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
-                                        if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
-                                            id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
-                                        }
+                                for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
+                                    if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
+                                        id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
                                     }
+                                }
 
-                                    var params1 = {
-                                        state: 2,
-                                        ids: id
+                                var params1 = {
+                                    state: 1,
+                                    ids: id
+                                }
+
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                    contentType: "application/json;charset=UTF-8",
+                                    data: JSON.stringify(params1),
+                                    success: function (resule) {
+                                        //console.log(resule)
+                                        //console.log(list)
+                                    },
+                                    error: function (e) {
+                                        console.log(e.status);
+                                        console.log(e.responseText)
                                     }
-
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
-                                        contentType: "application/json;charset=UTF-8",
-                                        data: JSON.stringify(params1),
-                                        success: function (resule) {
-                                            //console.log(resule)
-                                            //console.log(list)
-                                        },
-                                        error: function (e) {
-                                            console.log(e.status);
-                                            console.log(e.responseText)
-                                        }
-                                    })
-
-                                    window.location.reload()
                                 })
 
-                                that.li_one.one("click", function () {
-                                    that.table_all()
-                                })
-                                $('#course-manage-flextwo-search').one("click", function () {
-                                    that.table_all()
-                                })
-                                $('#course-manage-flextwo-clear').one("click", function () {
-                                    window.location.reload()
-                                })
-///////////////////////////////////////////////////////////////////////////////////
-                                //console.log(pagination.init)
-                                new computed().init()
-                            },
+                                window.location.reload()
+                            })
 
-                            error: function (e) {
-                                console.log(e.status);
-                                console.log(e.responseText)
-                            }
-                        })
-                    
+                            $('#batchdown').click(function () {
+                                var id = [];
+
+                                for (var i = 0; i < $('.course-manage-table-tr').length; i++) {
+                                    if ($('.course-manage-table-tr').eq(i).children().eq(0).children().children().children().is(':visible')) {
+                                        id.push($('.course-manage-table-tr').eq(i).children().eq(6).attr('class'))
+                                    }
+                                }
+
+                                var params1 = {
+                                    state: 2,
+                                    ids: id
+                                }
+
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                    contentType: "application/json;charset=UTF-8",
+                                    data: JSON.stringify(params1),
+                                    success: function (resule) {
+                                        //console.log(resule)
+                                        //console.log(list)
+                                    },
+                                    error: function (e) {
+                                        console.log(e.status);
+                                        console.log(e.responseText)
+                                    }
+                                })
+
+                                window.location.reload()
+                            })
+
+                            that.li_one.one("click", function () {
+                                that.table_all()
+                            })
+                            $('#course-manage-flextwo-search').one("click", function () {
+                                that.table_all()
+                            })
+                            $('#course-manage-flextwo-clear').one("click", function () {
+                                window.location.reload()
+                            })
+                            ///////////////////////////////////////////////////////////////////////////////////
+                            //console.log(pagination.init)
+                            new computed().init()
+                        },
+
+                        error: function (e) {
+                            console.log(e.status);
+                            console.log(e.responseText)
                         }
-                    }
-                })
+                    })
+
+                }
+
             }, 100);
         }
 
@@ -2173,18 +2173,18 @@
                 }
             })
         }
-    
+
         edit_change() {
             var that = this;
             $('.course-manage-table-tr-edit').click(function () {
                 $('.course-manage-body').hide()
                 $('.add-course-body').show()
-                
+
                 var a = $(this).parent().parent().children().eq(4).html()
                 //new add_course().init(a)
                 var paramsall = {
                     rows: 10000,
-                    page : 1
+                    page: 1
                 }
                 $.ajax({
                     type: 'POST',
@@ -2193,7 +2193,7 @@
                     data: JSON.stringify(paramsall),
                     success: function (resultall) {
                         console.log(resultall.results)
-                        
+
                         $.each(resultall.results, function (i, item) {
                             if (item.createDate == a) {
                                 var id = item.id
@@ -2204,65 +2204,66 @@
                                 $('#kcbzj').val(item.price)
                                 $('#area').val(item.description)
 
-                                for(var i=0;i<$('#GroupCourseGole').children().length;i++){
-                                    for(var j=0;j<item.curriculumTagList.length;j++){
-                                    if($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1] == item.curriculumTagList[j].dictionaryId){
-                                         $('#GroupCourseGole').children().eq(i).addClass('add-course-sortone-inputthree-p-active')
-                                    }
+                                for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
+                                    for (var j = 0; j < item.curriculumTagList.length; j++) {
+                                        if ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1] == item.curriculumTagList[j].dictionaryId) {
+                                            $('#GroupCourseGole').children().eq(i).addClass('add-course-sortone-inputthree-p-active')
+                                        }
                                     }
                                 }
 
-                                for(var i=0;i< item.difficultyId;i++){
+                                for (var i = 0; i < item.difficultyId; i++) {
                                     $('#rating').children().eq(i).css("background-position", "0px 0px")
                                     $('#rating').children().eq(i).children().hide()
                                 }
-                                for(var i = item.difficultyId;i< $('#rating').children().length;i++){
-                                    $('#rating').children().eq(i).css("background-position","0px -58px")
+                                for (var i = item.difficultyId; i < $('#rating').children().length; i++) {
+                                    $('#rating').children().eq(i).css("background-position", "0px -58px")
                                     $('#rating').children().eq(i).children().show()
                                 }
-                            
+
                                 $('#kllxh').val(item.calorieConsumption)
                                 $('#syrq').val(item.suitableForCrowd)
 
-                                for(var i=0;i<item.curriculumEffectList.length;i++){
+                                for (var i = 0; i < item.curriculumEffectList.length; i++) {
                                     $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
                                     $('.oneinput').eq(i).children('.add-course-sortone-selectone').children().children().children('.select-menu-input').val(item.curriculumEffectList[i].name)
                                 }
-                                
+
                                 $('#area1').val(item.announcements)
 
                                 for (var i = 1; i < item.leagueCurriculumFaqList.length; i++) {
-                                   $('#addOneRow').click()
-                                }
-                                
-                                for(var i=0; i < item.leagueCurriculumFaqList.length; i++){
-                                    $('#faq').children().children().children().eq(i+1).children().eq(0).children('textarea').html(item.leagueCurriculumFaqList[i].problem)
-                                    $('#faq').children().children().children().eq(i+1).children().eq(1).children('textarea').html(item.leagueCurriculumFaqList[i].answer)
+                                    $('#addOneRow').click()
                                 }
 
-                                if(item.payMode == 1){
+                                for (var i = 0; i < item.leagueCurriculumFaqList.length; i++) {
+                                    $('#faq').children().children().children().eq(i + 1).children().eq(0).children('textarea').html(item.leagueCurriculumFaqList[i].problem)
+                                    $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').html(item.leagueCurriculumFaqList[i].answer)
+                                }
+
+                                if (item.payMode == 1) {
                                     $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
-                                }else if(item.payMode == 2){
+                                } else if (item.payMode == 2) {
                                     $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
                                 }
 
-                                for(var i=0;i<$('#inputtwelve-flex').children().length;i++){
-                                    for(var j=0;j<item.curriculumGuangxinList.length;j++){
-                                        if(parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumGuangxinList[j].itemId){
+                                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                                    for (var j = 0; j < item.curriculumGuangxinList.length; j++) {
+                                        if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumGuangxinList[j].itemId) {
                                             $('#inputtwelve-flex').children().eq(i).children('img').show()
                                         }
-                                    }                          
+                                    }
                                 }
-                            
-                                
+
                                 new paypay().init(id)
-//////////////////////////////////////////////
-  ///////////////////////////////////////////////                          
-                            }   
+
+                                //////////////////////////////////////////////
+                                ///////////////////////////////////////////////                          
+                            }
                         })
                     }
                 })
             })
+            new paypay().pay_pay()
         }
     }
 
@@ -2287,7 +2288,7 @@
             this.textare_contain2()
             this.table_table()
             this.xingxing()
-            this.acsip()
+            //this.acsip()
             this.show_change()
             //this.save()
         }
@@ -2510,15 +2511,15 @@
             });
         }
 
-        acsip() {
-            $('.add-course-sortone-inputthree-p').click(function () {
-                if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
-                    $(this).removeClass('add-course-sortone-inputthree-p-active')
-                } else {
-                    $(this).addClass('add-course-sortone-inputthree-p-active')
-                }
-            })
-        }
+        // acsip() {
+        //     $('.add-course-sortone-inputthree-p').click(function () {
+        //         if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
+        //             $(this).removeClass('add-course-sortone-inputthree-p-active')
+        //         } else {
+        //             $(this).addClass('add-course-sortone-inputthree-p-active')
+        //         }
+        //     })
+        // }
 
         xingxing() {
             var num = 4; //点亮个数
@@ -2655,26 +2656,39 @@
         }
 
         pay_pay() {
-            //广信标签显示隐藏
-            this.paypay.click(function () {
-                $('.paypay').children('.paypay-show').hide()
-                $('.paypay').children('.paypay-hidden').show()
-                if ($(this).children('.paypay-hidden').is(":hidden")) {
-                    $(this).children('.paypay-hidden').show()
-                    $(this).children('.paypay-show').hide()
-                } else {
-                    $(this).children('.paypay-hidden').hide()
-                    $(this).children('.paypay-show').show()
-                }
+            //支付
+            $(".paypay").one('click', function () {
+                setTimeout(() => {
+                    $('.paypay').children('.paypay-show').hide()
+                    $('.paypay').children('.paypay-hidden').show()
+                    if ($(this).children('.paypay-hidden').is(":hidden")) {
+                        $(this).children('.paypay-hidden').show()
+                        $(this).children('.paypay-show').hide()
+                    } else {
+                        $(this).children('.paypay-hidden').hide()
+                        $(this).children('.paypay-show').show()
+                    }
+                }, 100);
+
             })
-            //课程目标标签显示隐藏
-            this.acsip.click(function () {
-                if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
-                    $(this).removeClass('add-course-sortone-inputthree-p-active')
-                } else {
-                    $(this).addClass('add-course-sortone-inputthree-p-active')
-                }
+
+            //console.log($(".add-course-sortone-inputthree-p"))
+
+            $(".add-course-sortone-inputthree-p").click(function () {
+                    if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
+                        $(this).removeClass('add-course-sortone-inputthree-p-active')
+                    } else {
+                        $(this).addClass('add-course-sortone-inputthree-p-active')
+                    }
             })
+
+            // $('#GroupCourseGole').children('add-course-sortone-inputthree-p').click(function () {
+            //     if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
+            //         $(this).removeClass('add-course-sortone-inputthree-p-active')
+            //     } else {
+            //         $(this).addClass('add-course-sortone-inputthree-p-active')
+            //     }
+            // })
 
             this.it_checkbox.click(function () {
                 if ($(this).children('img').is(":hidden")) {
@@ -2697,6 +2711,7 @@
                 $("#zhankai-show").show()
             })
 
+            //全部取消
             this.ac_checkboxall.click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -2824,9 +2839,9 @@
                         curriculumGuangxinList.push({ itemId })
                     }
                 }
-                if(id){
+                if (id) {
                     var fd = {
-                        id : id,
+                        id: id,
                         payMode: payMode,
                         modeId: modeId,
                         suitableForCrowd: suitableForCrowd,
@@ -2857,42 +2872,42 @@
                         }
                     })
                 }
-                if(!id){
-                var fd = {
-                    payMode: payMode,
-                    modeId: modeId,
-                    suitableForCrowd: suitableForCrowd,
-                    announcements: announcements,
-                    calorieConsumption: calorieConsumption,
-                    classifyId: classifyId,
-                    difficultyId: difficultyId,
-                    price: price,
-                    description: description,
-                    name: name,
-                    curriculumEffectList: curriculumEffectList,
-                    curriculumTagList: curriculumTagList,
-                    leagueCurriculumFaqList: leagueCurriculumFaqList,
-                    curriculumGuangxinList: curriculumGuangxinList
-                }
-
-                $.ajax({
-                    type: 'POST',
-                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                    contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                    data: JSON.stringify(fd),
-                    success: function (result) {
-                        console.log(result)
-                    },
-                    error: function (e) {
-                        console.log(e.status);
-                        console.log(e.responseText)
+                if (!id) {
+                    var fd = {
+                        payMode: payMode,
+                        modeId: modeId,
+                        suitableForCrowd: suitableForCrowd,
+                        announcements: announcements,
+                        calorieConsumption: calorieConsumption,
+                        classifyId: classifyId,
+                        difficultyId: difficultyId,
+                        price: price,
+                        description: description,
+                        name: name,
+                        curriculumEffectList: curriculumEffectList,
+                        curriculumTagList: curriculumTagList,
+                        leagueCurriculumFaqList: leagueCurriculumFaqList,
+                        curriculumGuangxinList: curriculumGuangxinList
                     }
-                })
-                console.log(fd)
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                        data: JSON.stringify(fd),
+                        success: function (result) {
+                            console.log(result)
+                        },
+                        error: function (e) {
+                            console.log(e.status);
+                            console.log(e.responseText)
+                        }
+                    })
+                    console.log(fd)
                 }
             })
         }
-        
+
     }
 
 </script>
