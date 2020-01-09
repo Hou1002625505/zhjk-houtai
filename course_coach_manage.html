@@ -54,7 +54,7 @@
             display: flex;
         }
 
-        .course-coach-manage-flextwo #course-coach-manage-flextwo-pone{
+        .course-coach-manage-flextwo #course-coach-manage-flextwo-pone {
             width: 80px;
             height: 30px;
             border-radius: 4px;
@@ -66,7 +66,7 @@
             cursor: pointer;
         }
 
-        .course-coach-manage-flextwo #course-coach-manage-flextwo-ptwo{
+        .course-coach-manage-flextwo #course-coach-manage-flextwo-ptwo {
             width: 80px;
             height: 30px;
             border-radius: 4px;
@@ -343,6 +343,9 @@
             align-items: center;
         }
 
+
+
+
         .course-coach-manage-addone .coach-manage-addone-flexthree {
             width: 880px;
             height: 738px;
@@ -363,18 +366,27 @@
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone .flexthree-blockone-pone {
-            font-size: 16px
+            font-size: 18px
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone .flexthree-blockone-ptwo {
-            font-size: 12px;
-            margin-left: 70px
+            font-size: 14px;
+            margin-left: 73px
         }
 
-        .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone input {
-            width: 220px;
-            height: 32px;
-            margin-left: 103px
+        .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone #areaborder{
+            width: 250px;
+            height: 36px;
+            margin-left: 110px;
+            border:1px solid #BFBFBF;
+            border-radius: 4px;
+        }
+
+        .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone #area {
+            width: 250px;
+            height: 36px;
+            border: 0;
+            
         }
 
         .coach-manage-addone-flexthree-blockone .flexthree-blockone-inputtwo {
@@ -1019,13 +1031,13 @@
                             <img src="./image/editor_icon.png" alt="">
                             <p>编辑员工</p>
                         </div>
-                        <img id="addone-flexone-chacha" style="width:30px;height:30px" src="./image/popupclose_btn.png" alt="">
+                        <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
                     </div>
                     <div class="coach-manage-addone-flexthree">
                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo">66160</p></div>
                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo">刘大伟</p></div>
                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p><p class="flexthree-blockone-ptwo">66160</p></div>
-                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><input id="area"/><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
+                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                         <div class="coach-manage-addone-flexthree-blockthree">
                             <p class="flexthree-blockthree-pone">工作性质</p>
                             <div class="flexthree-blocktwo-pseven"></div>
@@ -1293,7 +1305,7 @@
                 $(this).parent().hide()
                 for (var i = 0; i < $('.flexthree-tags').length; i++) {
                     if ($('.flexthree-tags')[i].innerText == $(this).parent()[0].innerText.replace(
-                            /(^\s*)|(\s*$)/g, "")) {
+                        /(^\s*)|(\s*$)/g, "")) {
                         $('.addtwo-flexfour').children().eq(i).removeClass('active')
                     }
                 }
@@ -1316,7 +1328,7 @@
                 $(".flexthree-tags").each(function () {
                     if ($(this).hasClass('active')) {
                         $(this).addClass('ac')
-                    }else{
+                    } else {
                         $(this).removeClass('ac')
                     }
                     $(this).removeClass('active')
@@ -1348,7 +1360,7 @@
                 $(this).parent().hide()
                 for (var i = 0; i < $('.flexthree-tags1').length; i++) {
                     if ($('.flexthree-tags1')[i].innerText == $(this).parent()[0].innerText.replace(
-                            /(^\s*)|(\s*$)/g, "")) {
+                        /(^\s*)|(\s*$)/g, "")) {
                         $('.addthree-flexfour').children().eq(i).removeClass('active')
                     }
                 }
