@@ -1684,7 +1684,7 @@
 
         <div class="add-course-sortone">
             <p style="font-size:16px">广信编码</p>
-            <div class="add-course-sortone-inputten">
+            <div class="add-course-sortone-inputten" id="add-course-sortone-inputten">
                 <div class="inputten-paypay">
                     <div class="paypay">
                         <img class="paypay-show" src="/image/payment_btn.png" alt="">
@@ -1893,23 +1893,9 @@
 
             setTimeout(() => {
 
-                var classifyId1;
-
-                // if ($('#select-menu-div1').children('input').val() == "全部") {
-                //         classifyId1 = {}
-                //     }
-
-                // for(var i = 1;i< $('#select-menu-ul1').children('li').length;i++){
-                //     //console.log($('#select-menu-ul1').children('li').eq(i).html())
-                //     if($('#select-menu-ul1').children('li').eq(i).html() == $('#select-menu-div1').children('input').val()){
-                //         classifyId1 = $('#select-menu-ul1').children('li').eq(i).attr('class')
-                //     }
-                // }
-
-                
-
                 var paramsall = {
-                    rows : 10000
+                    rows : 10000,
+                    page : 1
                 }
 
                 $.ajax({
@@ -1923,6 +1909,7 @@
 
                         var onPagechange = function (page) {
                             //console.log(page)
+                            
                             aaaaaa(page)
                         }
 
@@ -1936,16 +1923,17 @@
                         }
 
                         pagination.init(obj);
+                        var page = 1;
+                        aaaaaa(page)
+                        
+                        function aaaaaa(page){
+                        
 
                         
-                        var page = 1
-                        aaaaaa()
-
-                        function aaaaaa(page){
-
                         var params = {
                             page: page,
                             rows: 10,
+                            //classifyId : "52cad9c690fb42a7b50bd28b146dc08e",
                             name: $('#course-manage-flex-input').val(),
                             state: smd2input,
                             minCreateDate: $('#course-manage-flex-input-one').val(),
@@ -1963,36 +1951,8 @@
 
                                 list = result.results
                                 console.log(list)
-                                //两个str都为下菜单的渲染
-                                // str = `
-                                //         <li class="select-this">全部</li>
-                                //         `
-                                // var newArr = [];
-                                // $.each(list, function (i, item) {
-                                //     if (newArr.indexOf(item.classifyName) == -1) {
-                                //         newArr.push(item.classifyName)
-                                //         str += `
-                                //             <li>` + item.classifyName + `</li>
-                                //             `
-                                //     }
-                                // })
-                                //课程分类下拉菜单渲染
-                                //that.li_one.html(str)
 
-                                // $.each(list, function (i, item) {
-                                //     //如果遍历的分类名和菜单中的对应，添加到新数组中
-                                //     if (item.classifyName == that.li_one.parent().children('.select-menu-div').children('input').val()) {
-                                //         listclassifyName0.push(item)
-                                //     }
-                                // })
-                                //如果菜单显示全部，则list为获取的全部数据
-                                //否则list为添加到新数组中的数据
-                                // if (that.li_one.parent().children('.select-menu-div').children('input').val() == "全部") {
-                                //     list = list
-                                // } else if (listclassifyName0.length > 0) {
-                                //     list = listclassifyName0
-                                // }
-
+////////////////////////////////////////////////////////////////////////////
                                 str2 = `
                                             <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
@@ -2150,7 +2110,7 @@
                                 $('#course-manage-flextwo-clear').one("click", function () {
                                     window.location.reload()
                                 })
-
+///////////////////////////////////////////////////////////////////////////////////
                                 //console.log(pagination.init)
                                 new computed().init()
                             },
@@ -2179,6 +2139,12 @@
         constructor() {
             this.checkbox = $(".course-manage-table-checkbox")
             this.checkbox1 = $("#course-manage-table-checkbox")
+            this.paypay = $(".paypay")
+            this.it_checkbox = $(".inputtwelve-checkbox")
+            this.zhankai_show = $("#zhankai-show")
+            this.zhankai_hide = $("#zhankai-hide")
+            this.ac_checkboxall = $(".add-course-checkboxall")
+            this.acsip = $(".add-course-sortone-inputthree-p")
         }
         init() {
             this.checkbox_click()
@@ -2209,14 +2175,16 @@
         }
     
         edit_change() {
+            var that = this;
             $('.course-manage-table-tr-edit').click(function () {
                 $('.course-manage-body').hide()
                 $('.add-course-body').show()
                 
-                var a = $(this).parent().parent().children().eq(2).html()
+                var a = $(this).parent().parent().children().eq(4).html()
                 //new add_course().init(a)
                 var paramsall = {
-                    rows: 10000
+                    rows: 10000,
+                    page : 1
                 }
                 $.ajax({
                     type: 'POST',
@@ -2225,16 +2193,73 @@
                     data: JSON.stringify(paramsall),
                     success: function (resultall) {
                         console.log(resultall.results)
-
+                        
                         $.each(resultall.results, function (i, item) {
-                            if (item.name == a) {
-                                $('#select-menu-input-GroupType').val(item.name)
+                            if (item.createDate == a) {
+                                var id = item.id
+
+                                $('#select-menu-input-GroupType').val(item.classifyName)
                                 $('#select-menu-input-GCourseType').val(item.modeName)
+                                $('#area2').val(item.name)
+                                $('#kcbzj').val(item.price)
+                                $('#area').val(item.description)
 
-                            }
+                                for(var i=0;i<$('#GroupCourseGole').children().length;i++){
+                                    for(var j=0;j<item.curriculumTagList.length;j++){
+                                    if($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1] == item.curriculumTagList[j].dictionaryId){
+                                         $('#GroupCourseGole').children().eq(i).addClass('add-course-sortone-inputthree-p-active')
+                                    }
+                                    }
+                                }
+
+                                for(var i=0;i< item.difficultyId;i++){
+                                    $('#rating').children().eq(i).css("background-position", "0px 0px")
+                                    $('#rating').children().eq(i).children().hide()
+                                }
+                                for(var i = item.difficultyId;i< $('#rating').children().length;i++){
+                                    $('#rating').children().eq(i).css("background-position","0px -58px")
+                                    $('#rating').children().eq(i).children().show()
+                                }
+                            
+                                $('#kllxh').val(item.calorieConsumption)
+                                $('#syrq').val(item.suitableForCrowd)
+
+                                for(var i=0;i<item.curriculumEffectList.length;i++){
+                                    $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
+                                    $('.oneinput').eq(i).children('.add-course-sortone-selectone').children().children().children('.select-menu-input').val(item.curriculumEffectList[i].name)
+                                }
+                                
+                                $('#area1').val(item.announcements)
+
+                                for (var i = 1; i < item.leagueCurriculumFaqList.length; i++) {
+                                   $('#addOneRow').click()
+                                }
+                                
+                                for(var i=0; i < item.leagueCurriculumFaqList.length; i++){
+                                    $('#faq').children().children().children().eq(i+1).children().eq(0).children('textarea').html(item.leagueCurriculumFaqList[i].problem)
+                                    $('#faq').children().children().children().eq(i+1).children().eq(1).children('textarea').html(item.leagueCurriculumFaqList[i].answer)
+                                }
+
+                                if(item.payMode == 1){
+                                    $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+                                }else if(item.payMode == 2){
+                                    $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
+                                }
+
+                                for(var i=0;i<$('#inputtwelve-flex').children().length;i++){
+                                    for(var j=0;j<item.curriculumGuangxinList.length;j++){
+                                        if(parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumGuangxinList[j].itemId){
+                                            $('#inputtwelve-flex').children().eq(i).children('img').show()
+                                        }
+                                    }                          
+                                }
+                            
+                                
+                                new paypay().init(id)
+//////////////////////////////////////////////
+  ///////////////////////////////////////////////                          
+                            }   
                         })
-
-
                     }
                 })
             })
@@ -2609,6 +2634,7 @@
             $('#add-course-body-pone').click(function () {
                 $('.course-manage-body').show()
                 $('.add-course-body').hide()
+                window.location.reload()
             })
         }
     }
@@ -2623,9 +2649,9 @@
             this.acsip = $(".add-course-sortone-inputthree-p")
         }
 
-        init() {
+        init(id) {
             this.pay_pay()
-            this.save()
+            this.save(id)
         }
 
         pay_pay() {
@@ -2681,8 +2707,10 @@
             })
         }
 
-        save() {
+        save(id) {
+            console.log(id)
             var that = this;
+            ////////////////////////////////////////////////////////////////
             $('#add-course-footer-save').click(function () {
                 //支付方式的参数
 
@@ -2796,7 +2824,40 @@
                         curriculumGuangxinList.push({ itemId })
                     }
                 }
+                if(id){
+                    var fd = {
+                        id : id,
+                        payMode: payMode,
+                        modeId: modeId,
+                        suitableForCrowd: suitableForCrowd,
+                        announcements: announcements,
+                        calorieConsumption: calorieConsumption,
+                        classifyId: classifyId,
+                        difficultyId: difficultyId,
+                        price: price,
+                        description: description,
+                        name: name,
+                        curriculumEffectList: curriculumEffectList,
+                        curriculumTagList: curriculumTagList,
+                        leagueCurriculumFaqList: leagueCurriculumFaqList,
+                        curriculumGuangxinList: curriculumGuangxinList
+                    }
 
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
+                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                        data: JSON.stringify(fd),
+                        success: function (result) {
+                            console.log(result)
+                        },
+                        error: function (e) {
+                            console.log(e.status);
+                            console.log(e.responseText)
+                        }
+                    })
+                }
+                if(!id){
                 var fd = {
                     payMode: payMode,
                     modeId: modeId,
@@ -2828,8 +2889,10 @@
                     }
                 })
                 console.log(fd)
+                }
             })
         }
+        
     }
 
 </script>
