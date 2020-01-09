@@ -84,8 +84,8 @@
             margin-left: 10px;
             margin-right: 39px;
             cursor: pointer;
-            width: 120px;
-            height: 30px;
+            width: 250px;
+            height: 36px;
             box-sizing: border-box;
         }
 
@@ -94,7 +94,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 120px;
+            width: 250px;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -116,11 +116,12 @@
 
         .select-menu-div {
             position: relative;
-            height: 30px;
-            width: 120px;
+            height: 36px;
+            width: 250px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
+            line-height: 36px;
         }
 
         .select-this {
@@ -399,7 +400,7 @@
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
             height: auto;
-            padding: 18px 23px 18px 18px;
+            padding: 20px 26px 20px 20px;
             display: flex;
             align-items: center;
         }
@@ -411,53 +412,58 @@
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pthree {
-            width: 53px;
-            height: 26px;
+            width: 60px;
+            height: 30px;
             border: 1px solid #71B2EF;
             color: #71B2EF;
             text-align: center;
-            line-height: 26px;
+            line-height: 30px;
             border-radius: 4px;
             cursor: pointer;
+            font-size:14px;
+            box-sizing: border-box;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pfour {
             display: flex;
             flex-wrap: wrap;
-            width: 496px;
+            width: 572px;
         }
 
         .flexthree-blocktwo-pfour .blocktwo-pfour-p {
-            width: 70px;
-            height: 26px;
+            width: 80px;
+            height: 30px;
             background: #F5F5F5;
             border-radius: 4px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 18px;
+            margin-left: 20px;
             margin-bottom: 10px;
-            position: relative
+            position: relative;
+            font-size:14px
         }
 
         .flexthree-blocktwo-pfour .blocktwo-pfour-p a {
             position: absolute;
             top: -6px;
-            left: 60px;
+            left: 70px;
             display: none;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pfive {
             display: flex;
             flex-wrap: wrap;
-            width: 496px;
+            width: 572px;
         }
 
 
 
         .flexthree-blocktwo-pfive .blocktwo-pfive-p {
-            padding: 0 18px 0 18px;
-            height: 26px;
+            /* padding: 0 18px 0 18px; */
+            height: 30px;
+            width:80px;
+            box-sizing: border-box;
             background: #F5F5F5;
             border-radius: 4px;
             display: flex;
@@ -465,7 +471,8 @@
             align-items: center;
             margin-left: 18px;
             margin-bottom: 10px;
-            position: relative
+            position: relative;
+            font-size:14px
         }
 
         .flexthree-blocktwo-pfive .blocktwo-pfive-p a {
@@ -476,14 +483,15 @@
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-psix {
-            width: 600px;
-            height: 100px;
+            width: 670px;
+            height: 113px;
             display: flex;
             flex-wrap: wrap;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             padding: 13px 8px 0 14px;
             border-radius: 4px;
+            font-size:14px
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockthree {
@@ -499,19 +507,18 @@
         .coach-manage-addone-flexthree-blockthree .flexthree-blockthree-pone {
             font-size: 16px;
             display: flex;
-            width: 70px;
+            width: 83px;
             margin-right: 55px
         }
 
 
 
         .course-coach-manage-addone .coach-manage-addone-flexfour {
-            width: 754px;
+            width: 859px;
             height: 100px;
             box-sizing: border-box;
-            border-top: 1px solid #BFBFBF;
             position: fixed;
-            top: 646px;
+            top: 735px;
             left: 380px;
             background: #FFFFFF;
             display: flex;
@@ -1052,7 +1059,7 @@
                             <p class="flexthree-blocktwo-pfive"></p>
                             <p class="flexthree-blocktwo-pthree" id="tianjia2">添加</p>
                         </div>
-                        <div class="coach-manage-addone-flexthree-blocktwo" style="border-bottom:none;margin-bottom:100px">
+                        <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                             <p class="flexthree-blocktwo-pone">个人简介</p>
                             <p class="flexthree-blocktwo-psix">
                                 天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说，我们最先衰老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，BODYCOMBAT认证教练，UK儿童体适能认证教练，TRX认证教 练，CORESHAPER认证教练，FIGHTING COMBO认证教练，CXWORX认证。
@@ -1211,13 +1218,13 @@
             }
             //添加窗口的下拉菜单
             straddtags3 = `
-                <div class="select-menu" style="width:176px">
-		            <div class="select-menu-div" style="width:176px">
+                <div class="select-menu">
+		            <div class="select-menu-div">
 			            <input class="select-menu-input" />
 
 			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
 		            </div>
-                    <ul class="select-menu-ul" style="width:176px">
+                    <ul class="select-menu-ul">
                         <li class="select-this">全部</li>
                         <li>全职</li>
                         <li>兼职</li>
