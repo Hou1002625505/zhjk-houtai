@@ -2253,7 +2253,7 @@
                                         }
                                     }
                                 }
-
+                                new paypay().pay_pay()
                                 new paypay().init(id)
 
                                 //////////////////////////////////////////////
@@ -2263,7 +2263,7 @@
                     }
                 })
             })
-            new paypay().pay_pay()
+            
         }
     }
 
@@ -2468,8 +2468,9 @@
 
             setTimeout(() => {
                 new paypay().init()
+                // new paypay().pay_pay()
             }, 500);
-
+            
         }
 
         textare_contain() {
