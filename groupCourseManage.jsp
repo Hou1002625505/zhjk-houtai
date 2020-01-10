@@ -2224,9 +2224,12 @@
                                 $('#kllxh').val(item.calorieConsumption)
                                 $('#syrq').val(item.suitableForCrowd)
 
+                                console.log($('.oneinput').eq(0).html())
+
                                 for (var i = 0; i < item.curriculumEffectList.length; i++) {
                                     $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
                                     $('.oneinput').eq(i).children('.add-course-sortone-selectone').children().children().children('.select-menu-input').val(item.curriculumEffectList[i].name)
+                                    //console.log(111)
                                 }
 
                                 $('#area1').val(item.announcements)
