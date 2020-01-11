@@ -1315,6 +1315,128 @@
             line-height: 35px;
             margin-left:26px
          }
+
+         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-ptwo {
+            width: 88px;
+            height: 35px;
+            border: 1px solid #BFBFBF;
+            box-sizing: border-box;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 35px;
+            margin-left: 26px
+        }
+
+
+        .add-edit-course-change {
+            position: absolute;
+            width: 546px;
+            height: 525px;
+            background: #E0ECFF;
+            z-index: 488;
+            border-radius: 4px;
+            top: 160px;
+            left: 460px;
+            padding: 18px;
+            box-sizing: border-box;
+            border:1px solid #71B2EF
+        }
+
+        .add-edit-course-change .add-edit-course-change-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex img {
+            width: 19px;
+            height: 19px;
+            margin-right: 18px
+        }
+
+        .add-edit-course-change-header .add-edit-course-change-header-flex p {
+            font-size: 18px
+        }
+
+        .add-edit-course-change .add-edit-course-change-context {
+            width: 511px;
+            height: 454px;
+            border: 1px solid #71B2EF;
+            box-sizing: border-box;
+            margin-top: 16px;
+            padding: 0 18px 0 18px;
+            background: white;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-pone {
+            border-bottom: 1px solid #BFBFBF;
+            padding:14px 0 14px 0;
+            font-size: 18px;
+            display:flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo {
+            border-bottom: 1px solid #BFBFBF;
+            display:flex;
+            justify-content: space-between;
+            padding:12px 0 12px 0;
+            
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(1){
+            margin-left:9px;
+            font-size:14px;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(2){
+            margin-right:9px
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-textarea{
+            resize: none;
+            width:475px;
+            height:88px;
+            margin-top:17px;
+            border-radius: 4px;
+            padding:12px 0 0 8px;
+            box-sizing: border-box;
+        }
+
+        .add-edit-course-change-context .add-edit-course-change-context-footer{
+            display:flex;
+            justify-content: center;
+            margin-top:18px
+        }
+
+        .add-edit-course-change-context-footer .add-edit-course-change-context-footer-pone{
+            width:88px;
+            height:32px;
+            background: #71B2EF;
+            font-size:16px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 4px;
+            color:white
+        }
+
+        .add-edit-course-change-context-footer .add-edit-course-change-context-footer-ptwo{
+            width:88px;
+            height:32px;
+            font-size:16px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 4px;
+            border:1px solid #BFBFBF;
+            box-sizing: border-box;
+            margin-left:18px
+        }
     </style>
 </head>
 
@@ -1379,10 +1501,73 @@
 
         <div class="box" id="ywyboxpage"></div>
     </div>
+
+    <div class="course-arranging-body">
+        <div class="course-arranging-header-two"></div>
+        <div class="course-arranging-header-three">
+            <p>导入课程</p>
+            <p>新增</p>
+            <p>发布</p>
+        </div>
+        <div class="course-arranging-flex">
+            <div style="font-size:14px">上课门店</div>
+            <input class="course-arranging-flex-input" type="text">
+            <div style="font-size:14px">上课房间</div>
+            <div class="course-arranging-flex-select-one"></div>
+            <div style="font-size:14px">上课教练</div>
+            <div class="course-arranging-flex-select-two"></div>
+            <div style="font-size:14px">教练工号</div>
+            <div class="course-arranging-flex-select-three"></div>
+            <div style="font-size:14px">创建时间</div>
+            <input type="text" class="course-arranging-flex-input-one" placeholder="开始时间">
+            <p>-</p>
+            <input type="text" class="course-arranging-flex-input-two" placeholder="结束时间">
+        </div>
+        <div class="course-arranging-flextwo">
+            <div class="course-arranging-flexthree">
+                <p>查询</p>
+                <p>清除</p>
+            </div>
+            <p class="course-arranging-flextwo-pthree">导出课程</p>
+        </div>
+        <div class="course-arranging-table"></div>
+        <div class="course-arranging-footer">
+            <div class="course-arranging-table-checkbox">
+                <img style="display:none" src="./image/codeallset_btn.png">
+            </div>
+            <div class="course-arranging-footer-pone">当页全选</div>
+            <div class="course-arranging-footer-pone">已选课程<span>115</span></div>
+            <div class="course-arranging-footer-ptwo">贴标</div>
+            <div class="course-arranging-footer-ptwo">删除</div>
+            <div class="course-arranging-footer-pthree"></div>
+        </div>
+        <div class="edit-course">
+
+        </div>
+        <div class="add-edit-course">
+
+        </div>
+
+        <div class="add-course-name">
+
+        </div>
+
+        <div class="add-edit-course-label" style="display:none">
+
+        </div>
+
+        <div class="add-edit-course-change" style="display:none">
+
+        </div>
+
+        <div class="box" id="ywyboxpage"></div>
+    </div>
 </body>
+
 <script type="text/javascript">
     window.onload = function () {
         new course_arranging().init();
+        new course_arranging_not().init();
     }
 
     class course_arranging {
@@ -1399,7 +1584,7 @@
             this.input_all4()
             this.select_option()
             this.edit_course()
-            this.publishshowhide()
+            //this.publishshowhide()
         }
 
         select_all1() {
@@ -1556,15 +1741,15 @@
             this.input_four.html(str3)
         }
 
-        publishshowhide(){
-            $('#course-arranging-header-one-ptwo').click(function(){
-                $('#course-arranging-header-one-pone').removeClass('course-arranging-header-one-pone-active')
-                $(this).addClass('course-arranging-header-one-ptwo-active')
-                setTimeout(() => {
-                    window.location.href="http://127.0.0.1:8080/courses_arranging_not.html"
-                }, 100);
-            })
-        }
+        // publishshowhide(){
+        //     $('#course-arranging-header-one-ptwo').click(function(){
+        //         $('#course-arranging-header-one-pone').removeClass('course-arranging-header-one-pone-active')
+        //         $(this).addClass('course-arranging-header-one-ptwo-active')
+        //         setTimeout(() => {
+        //             window.location.href="http://127.0.0.1:8080/courses_arranging_not.html"
+        //         }, 100);
+        //     })
+        // }
 
         edit_course() {
             var editstr;
