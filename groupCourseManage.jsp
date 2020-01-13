@@ -42,18 +42,22 @@
             padding: 0;
         }
 
+        html{
+            font-size: 100px;
+        }
+
         .course-manage-body {
             /* padding: 20px 20px 0 20px; */
         }
 
         .course-manage-button {
-            width: 120px;
-            height: 40px;
+            width: 1.2rem;
+            height: 0.4rem;
             background: #71B2EF;
             color: white;
-            font-size: 20px;
+            font-size: 0.2rem;
             text-align: center;
-            line-height: 40px;
+            line-height: 0.4rem;
             cursor: pointer;
             border-radius: 4px;
         }
@@ -1745,6 +1749,26 @@
 
 
 <script type="text/javascript">
+
+    // window.addEventListener('load', adaptation);
+    //     window.addEventListener('resize', adaptation);
+    //     function adaptation() {
+    //         var w = document.body.clientWidth;
+    //         var h = document.body.clientHeight;
+    //         var nw = 1920;
+    //         nh = 1080;
+    //         var left, top, scale;
+    //         if (w / h > nw / nh) {
+    //             scale = h / nh;
+    //             top = 0;
+    //             left = (w - nw * scale) / 2;
+    //         } else {
+    //             scale = w / nw;
+    //             left = 0;
+    //             top = (h - nh * scale) / 2;
+    //         }
+    //         document.getElementById('main').setAttribute('style', 'transform: scale(' + scale + ');left:' + left + 'px;top:' + top + 'px;');
+    //     }
 
     window.onload = function () {
         new course_manage().init();
