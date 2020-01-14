@@ -1164,6 +1164,7 @@
         }
 
         ccm_a() {
+            var that = this
             this.coach_manage_a.click(function () {
                 //console.log($(this).parent().parent().children().eq(2).html())
 
@@ -1186,8 +1187,8 @@
                     data: JSON.stringify(paramscoach),
                     success: function (result) {
                         var list = result
-                        console.log(result)
-                        console.log(result.results[0].nickName)                        
+                        // console.log(result)
+                        // console.log(result.results[0].nickName)                        
 
                         //添加窗口的内容
                         var stradd;
@@ -1300,117 +1301,145 @@
 
                         $(".course-coach-manage-add").html(stradd)
 
-                        
-                        
+                        setTimeout(() => {
+                            var ad_ft = '';
 
-                        new inputcontain().init()
+                            //课程标签的请求及渲染
+                            var paramstkCoachIabel = {
+                                typeCode: "tkCoachIabel"
+                            }
+
+                            $.ajax({
+                                type: 'POST',
+                                contentType: "application/json;charset=UTF-8",
+                                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                                data: JSON.stringify(paramstkCoachIabel),
+                                success: function (result) {
+                                    // console.log(list)
+                                    // console.log(result)
+                                    $.each(result.rows, function (i, item) {
+                                        ad_ft += `
+                                                    <div class="flexthree-tags">
+                                                        `+ item.name + `
+                                                    </div>
+                                                `
+                                    })
+                                    $('.addtwo-flexfour').html(ad_ft)
+
+                                    $('.flexthree-tags').click(function () {
+                                        if ($(this).hasClass('active')) {
+                                            setTimeout(() => {
+                                                $(this).removeClass('active')
+                                            }, 50);
+                                        } else {
+                                            setTimeout(() => {
+                                                $(this).addClass('active')
+                                            }, 50);
+                                        }
+                                    })
+
+                                    for (var i = 0; i < result.rows.length; i++) {
+                                        for (var j = 0; j < list.results.length; j++) {
+                                            for (var z = 0; z < list.results[j].coachTagList.length; z++) {
+                                                if (result.rows[i].name == list.results[j].coachTagList[z].name) {
+                                                    $('.addtwo-flexfour').children().eq(i).click()
+                                                }
+                                            }
+
+                                        }
+                                    }
+
+                                },
+                                error: function (e) {
+                                    console.log(e.status);
+                                    console.log(e.responseText)
+                                }
+                            })
+
+                            //添加标签窗口的标签遍历
+
+                            var ad_ft1 = '';
+
+                            //课程名称的请求及渲染
+
+                            $.ajax({
+                                type: 'GET',
+                                contentType: "application/json;charset=UTF-8",
+                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                success: function (result) {
+                                    console.log(result)
+                                    console.log(list)
+                                    for (var i = 0; i < result.length; i++) {
+                                        var ad_str2 = '';
+                                        for (var j = 0; j < result[i].children.length; j++) {
+                                            ad_str2 += `
+                                                <div class="flexthree-tags1">
+                                                    `+ result[i].children[j].name + `
+                                                </div>
+                                            `
+                                        }
+
+                                        ad_ft1 += `
+                                            <div class="coach-manage-addthree-flexthree-flex">
+                                                <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                                <div class="addthree-flexfour">
+                                                `+ ad_str2 + `
+                                                </div>
+                                            </div>  
+                                        `
+
+                                    }
+                                    $('#coach-manage-addthree-flexthree-list').html(ad_ft1)
+
+                                    $('.flexthree-tags1').click(function () {
+                                        if ($(this).hasClass('active1')) {
+                                            setTimeout(() => {
+                                                $(this).removeClass('active1')
+                                            }, 50);
+
+                                        } else {
+                                            setTimeout(() => {
+                                                $(this).addClass('active1')
+                                            }, 50);
+                                        }
+                                    })
+
+                                    for (var i = 0; i < result.length; i++) {
+                                        for (var j = 0; j < result[i].children.length; j++) {
+                                            for (var y = 0; y < list.results.length; y++) {
+                                                for (var z = 0; z < list.results[y].coachSkillList.length; z++) {
+                                                    if (result[i].children[j].name == list.results[y].coachSkillList[z].leagueCurriculumName) {
+                                                        //$('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).click()
+                                                        //console.log($('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).html())
+                                                        $('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
+                                                    }
+                                                }
+                                            }
+                                            // console.log(111)
+                                        }
+                                    }
+                                    //console.log($('#coach-manage-addthree-flexthree-list').html())
+                                },
+                                error: function (e) {
+                                    console.log(e.status);
+                                    console.log(e.responseText)
+                                }
+                            })
+
+                            setTimeout(() => {
+                                new inputcontain().init()
+                            }, 100);
+
+                        }, 100);
+
+
                     },
                     error: function (e) {
                         console.log(e.status);
                         console.log(e.responseText)
                     }
                 })
-            })        
-
-            //添加标签窗口的标签遍历
-            var ad_ft = '';
-            var ad_ft1 = '';
-
-
-            //课程标签的请求及渲染
-            var paramstkCoachIabel = {
-                typeCode: "tkCoachIabel"
-            }
-
-            $.ajax({
-                type: 'POST',
-                contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
-                data: JSON.stringify(paramstkCoachIabel),
-                success: function (result) {
-                    console.log(result)
-                    $.each(result.rows, function (i, item) {
-                        ad_ft += `
-                                <div class="flexthree-tags">
-                                    `+ item.name + `
-                                </div>
-                            `
-                    })
-                    $('.addtwo-flexfour').html(ad_ft)
-
-                    $('.flexthree-tags').click(function () {
-                        if ($(this).hasClass('active')) {
-                            setTimeout(() => {
-                                $(this).removeClass('active')
-                            }, 50);
-                        } else {
-                            setTimeout(() => {
-                                $(this).addClass('active')
-                            }, 50);
-                        }
-                    })
-
-                    $('#addtwo-flexfour').children().eq(0).click()
-
-                    var straddtags1 = '';
-
-                    for (var i = 0; i < $('#addtwo-flexfour').children().length; i++) {
-                        if ($('#addtwo-flexfour').children().eq(i).hasClass('active')) {
-                            straddtags1 += `  
-                                        <p class="blocktwo-pfour-p">
-                                            `+ $('#addtwo-flexfour').children().eq(i).html() + `
-                                            <a><img src="./image/classdel_btn.png" alt=""></img></a>
-                                        </p>`
-                        }
-                    }
-
-                    $('.flexthree-blocktwo-pfour').html(straddtags1)
-
-                },
-                error: function (e) {
-                    console.log(e.status);
-                    console.log(e.responseText)
-                }
             })
-
-            //课程名称的请求及渲染
-
-            $.ajax({
-                type: 'GET',
-                contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
-                success: function (result) {
-                    console.log(result)
-
-                    for (var i = 0; i < result.length; i++) {
-                        var ad_str = '';
-                        for (var j = 0; j < result[i].children.length; j++) {
-                            ad_str += `
-                                    <div class="flexthree-tags1">
-                                        `+ result[i].children[j].name + `
-                                    </div>
-                                `
-                        }
-
-                        ad_ft1 += `
-                                <div class="coach-manage-addthree-flexthree-flex">
-                                    <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
-                                    <div class="addthree-flexfour">
-                                    `+ ad_str + `
-                                    </div>
-                                </div>  
-                            `
-
-                    }
-
-                    $('#coach-manage-addthree-flexthree-list').html(ad_ft1)
-                },
-                error: function (e) {
-                    console.log(e.status);
-                    console.log(e.responseText)
-                }
-            })
-
 
             // tags1.forEach(function (item, index) {
 
@@ -1519,6 +1548,18 @@
         add_tags1() {
             var straddtags1 = '';
             var straddtags2 = '';
+
+            for (var i = 0; i < $('#addtwo-flexfour').children().length; i++) {
+                if ($('#addtwo-flexfour').children().eq(i).hasClass('active')) {
+                    straddtags1 += `  
+                                        <p class="blocktwo-pfour-p">
+                                            `+ $('#addtwo-flexfour').children().eq(i).html() + `
+                                            <a><img src="./image/classdel_btn.png" alt=""></img></a>
+                                        </p>`
+                }
+            }
+
+            $('.flexthree-blocktwo-pfour').html(straddtags1)
             // var straddtags3 = '';
             //添加窗口第一个标签栏
 
@@ -1545,7 +1586,7 @@
                     }
                 }
             }
-            
+
             //console.log($('.addthree-flexfour').eq(0).html())
 
             // for (var i = 0; i < tags22; i++) {
@@ -1573,7 +1614,7 @@
             // `
             //$('.flexthree-blocktwo-pfour').html(straddtags1)
             $('.flexthree-blocktwo-pfive').html(straddtags2)
-            
+
             //$('.flexthree-blocktwo-pseven').html(straddtags3)
             new ashow().init()
         }
