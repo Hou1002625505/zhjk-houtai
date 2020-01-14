@@ -440,7 +440,7 @@
         }
 
         .flexthree-blocktwo-pfour .blocktwo-pfour-p {
-            width: 80px;
+            padding:0 10px 0 10px;
             height: 30px;
             background: #F5F5F5;
             border-radius: 4px;
@@ -470,7 +470,7 @@
 
         .flexthree-blocktwo-pfive .blocktwo-pfive-p {
             height: 30px;
-            width: 80px;
+            padding:0 10px 0 10px;
             box-sizing: border-box;
             background: #F5F5F5;
             border-radius: 4px;
@@ -1192,7 +1192,7 @@
 
                         //添加窗口的内容
                         var stradd;
-                        // if(result.results[0].jobCategory == 1){
+                        if(result.results[0].jobCategory == 1){
                         stradd = `
                                 <div class="course-coach-manage-addone">
                                     <div class="coach-manage-addone-flexone">
@@ -1244,11 +1244,60 @@
                                     </div>
                                 </div>
                             `
-                        //}
-                        // if(result.results[0].jobCategory == 2){
-                        //     stradd = `
-                        //     `
-                        // }
+                        }
+                        if(result.results[0].jobCategory == 2){
+                            stradd = `
+                                <div class="course-coach-manage-addone">
+                                    <div class="coach-manage-addone-flexone">
+                                        <div class="coach-manage-addone-flextwo">
+                                            <img src="./image/editor_icon.png" alt="">
+                                            <p>编辑员工</p>
+                                        </div>
+                                        <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
+                                    </div>
+                                    <div class="coach-manage-addone-flexthree">
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.results[0].userId + `" id="coach-userid">` + result.results[0].userName + `</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.results[0].realName + `</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.results[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
+                                        <div class="coach-manage-addone-flexthree-blockthree">
+                                            <p class="flexthree-blockthree-pone">工作性质</p>
+                                            <div class="flexthree-blocktwo-pseven">
+                                                <div class="select-menu-div">
+                                                    <input class="select-menu-input" />
+
+                                                    <img class="select-menu-img" src="./image/sifting_icon.png" />
+                                                </div>
+                                                <ul class="select-menu-ul `+ result.results[0].jobCategory + `" id="select-menu-ul-state">
+                                                     <li>全职</li>
+                                                     <li class="select-this">兼职</li>
+                                                </ul>    
+                                            </div>
+                                        </div>
+                                        <div class="coach-manage-addone-flexthree-blocktwo">
+                                            <p class="flexthree-blocktwo-pone">个人标签</p>
+                                            <p class="flexthree-blocktwo-pfour" id="coach-tag"></p>
+                                            <p class="flexthree-blocktwo-pthree" id="tianjia1">添加</p>
+                                        </div>
+                                        <div class="coach-manage-addone-flexthree-blocktwo">
+                                            <p class="flexthree-blocktwo-pone">上牌课程</p>
+                                            <p class="flexthree-blocktwo-pfive" id="coach-course"></p>
+                                            <p class="flexthree-blocktwo-pthree" id="tianjia2">添加</p>
+                                        </div>
+                                        <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
+                                            <p class="flexthree-blocktwo-pone">个人简介</p>
+                                            <p class="flexthree-blocktwo-psix" id="coach-introduce">
+                                                `+ result.results[0].introduce +`
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="coach-manage-addone-flexfour">
+                                        <p id="coach-manage-addone-flexfour-save">保存</p>
+                                        <p id="coach-manage-addone-flexfour-quxiao">取消</p>
+                                    </div>
+                                </div>
+                            `
+                        }
 
                         $(".course-coach-manage-add").html(stradd)
 
@@ -1508,7 +1557,9 @@
 
             $('.flexthree-blocktwo-pfive').html(straddtags2)
             console.log(111)
-            new ashow().init()
+            setTimeout(() => {
+                new ashow().init()
+            }, 100);
         }
 
         chacha() {
@@ -1525,7 +1576,7 @@
             //编辑员工的点击确定关闭窗口
 
             $('#coach-manage-addone-flexfour-save').click(function(){
-
+                $(this).parent().parent().hide()
                 var TagList = []
                 var SkillList = []
 
@@ -1702,12 +1753,7 @@
             //点击添加标签窗口的叉关闭窗口
             $('#addtwo-flexone-chacha').click(function () {
                 $('.course-coach-manage-add1').css('opacity', 0)
-                //$(".flexthree-tags").each(function () {
-                //$(this).removeClass('active')
-                // if ($(this).hasClass('ac')) {
-                //     $(this).addClass('active')
-                // }
-                //})
+                
             })
 
             $('#flexfour-flex-pone').one('click',function () {
@@ -1720,12 +1766,9 @@
 
             $('#flexfour-flex-ptwo').click(function () {
                 $('.course-coach-manage-add1').css('opacity', 0)
-                //     $(".flexthree-tags").each(function () {
-                //         $(this).removeClass('active')
-                //         if ($(this).hasClass('ac')) {
-                //             $(this).addClass('active')
-                //         }
-                //     })
+                
+                console.log($('#coach-tag').html())
+                
             })
 
             //$('#addtwo-flexfour').children().eq(0).click()
@@ -1752,26 +1795,13 @@
             //点击添加标签窗口的叉关闭窗口
             $('#addthree-flexone-chacha').click(function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
-                //$(".flexthree-tags1").each(function () {
-                //$(this).removeClass('active1')
-                // if ($(this).hasClass('ac1')) {
-                //     $(this).addClass('active1')
-                // }
-                //})
+                
             })
 
             $('#flexfour-flex-pthree').one('click',function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
                 $('.course-coach-manage-addthree').css('z-index', -10)
-                //     $(".flexthree-tags1").each(function () {
-                //         if ($(this).hasClass('active1')) {
-                //             $(this).addClass('ac1')
-                //         }
-                //         $(this).removeClass('active1')
-                //         if ($(this).hasClass('ac1')) {
-                //             $(this).addClass('active1')
-                //         }
-                //     })
+
                 setTimeout(() => {
                     new inputcontain().add_tags1()
                 }, 100);
@@ -1780,7 +1810,6 @@
             $('#flexfour-flex-pfour').click(function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
                 
-                //$(".course-coach-manage-a").click()
             })
         }
     }
