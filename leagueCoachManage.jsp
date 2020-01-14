@@ -534,7 +534,7 @@
             align-items: center;
         }
 
-        .course-coach-manage-addone .coach-manage-addone-flexfour p:nth-child(1) {
+        .course-coach-manage-addone .coach-manage-addone-flexfour #coach-manage-addone-flexfour-save {
             width: 88px;
             height: 35px;
             background: #71B2EF;
@@ -547,7 +547,7 @@
             cursor: pointer;
         }
 
-        .course-coach-manage-addone .coach-manage-addone-flexfour p:nth-child(2) {
+        .course-coach-manage-addone .coach-manage-addone-flexfour #coach-manage-addone-flexfour-quxiao {
             width: 88px;
             height: 35px;
             font-size: 16px;
@@ -1203,8 +1203,8 @@
                                         <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
                                     </div>
                                     <div class="coach-manage-addone-flexthree">
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo">66160</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo">刘大伟</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.results[0].userId +`" id="coach-userid">`+ result.results[0].userName +`</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.results[0].realName +`</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.results[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                         <div class="coach-manage-addone-flexthree-blockthree">
@@ -1215,7 +1215,7 @@
 
                                                     <img class="select-menu-img" src="./image/sifting_icon.png" />
                                                 </div>
-                                                <ul class="select-menu-ul" id="select-menu-ul-state">
+                                                <ul class="select-menu-ul `+ result.results[0].jobCategory +`" id="select-menu-ul-state">
                                                      <li class="select-this">全职</li>
                                                      <li>兼职</li>
                                                 </ul>    
@@ -1223,79 +1223,30 @@
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blocktwo">
                                             <p class="flexthree-blocktwo-pone">个人标签</p>
-                                            <p class="flexthree-blocktwo-pfour"></p>
+                                            <p class="flexthree-blocktwo-pfour" id="coach-tag"></p>
                                             <p class="flexthree-blocktwo-pthree" id="tianjia1">添加</p>
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blocktwo">
                                             <p class="flexthree-blocktwo-pone">上牌课程</p>
-                                            <p class="flexthree-blocktwo-pfive"></p>
+                                            <p class="flexthree-blocktwo-pfive" id="coach-course"></p>
                                             <p class="flexthree-blocktwo-pthree" id="tianjia2">添加</p>
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                             <p class="flexthree-blocktwo-pone">个人简介</p>
-                                            <p class="flexthree-blocktwo-psix">
-                                                天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说，我们最先衰老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，BODYCOMBAT认证教练，UK儿童体适能认证教练，TRX认证教 练，CORESHAPER认证教练，FIGHTING COMBO认证教练，CXWORX认证。
+                                            <p class="flexthree-blocktwo-psix" id="coach-introduce">
+                                                `+ result.results[0].introduce +`
                                             </p>
                                         </div>
                                     </div>
                                     <div class="coach-manage-addone-flexfour">
-                                        <p>保存</p>
-                                        <p>取消</p>
+                                        <p id="coach-manage-addone-flexfour-save">保存</p>
+                                        <p id="coach-manage-addone-flexfour-quxiao">取消</p>
                                     </div>
                                 </div>
                             `
                         //}
                         // if(result.results[0].jobCategory == 2){
                         //     stradd = `
-                        //         <div class="course-coach-manage-addone">
-                        //             <div class="coach-manage-addone-flexone">
-                        //                 <div class="coach-manage-addone-flextwo">
-                        //                     <img src="./image/editor_icon.png" alt="">
-                        //                     <p>编辑员工</p>
-                        //                 </div>
-                        //                 <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
-                        //             </div>
-                        //             <div class="coach-manage-addone-flexthree">
-                        //                 <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo">66160</p></div>
-                        //                 <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo">刘大伟</p></div>
-                        //                 <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
-                        //                 <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.results[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
-                        //                 <div class="coach-manage-addone-flexthree-blockthree">
-                        //                     <p class="flexthree-blockthree-pone">工作性质</p>
-                        //                     <div class="flexthree-blocktwo-pseven">
-                        //                         <div class="select-menu-div">
-                        //                             <input class="select-menu-input" />
-
-                        //                             <img class="select-menu-img" src="./image/sifting_icon.png" />
-                        //                         </div>
-                        //                         <ul class="select-menu-ul" id="select-menu-ul-state">
-                        //                              <li>全职</li>
-                        //                              <li class="select-this">兼职</li>
-                        //                         </ul>    
-                        //                     </div>
-                        //                 </div>
-                        //                 <div class="coach-manage-addone-flexthree-blocktwo">
-                        //                     <p class="flexthree-blocktwo-pone">个人标签</p>
-                        //                     <p class="flexthree-blocktwo-pfour"></p>
-                        //                     <p class="flexthree-blocktwo-pthree" id="tianjia1">添加</p>
-                        //                 </div>
-                        //                 <div class="coach-manage-addone-flexthree-blocktwo">
-                        //                     <p class="flexthree-blocktwo-pone">上牌课程</p>
-                        //                     <p class="flexthree-blocktwo-pfive"></p>
-                        //                     <p class="flexthree-blocktwo-pthree" id="tianjia2">添加</p>
-                        //                 </div>
-                        //                 <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
-                        //                     <p class="flexthree-blocktwo-pone">个人简介</p>
-                        //                     <p class="flexthree-blocktwo-psix">
-                        //                         天然呆萌，权限运动发烧友。专业能力就是一个小宇宙，他说，我们最先衰老的从来不是容颜，来和他一起保持年轻的荷尔蒙吧~莱美BODYPUMP，BODYCOMBAT认证教练，UK儿童体适能认证教练，TRX认证教 练，CORESHAPER认证教练，FIGHTING COMBO认证教练，CXWORX认证。
-                        //                     </p>
-                        //                 </div>
-                        //             </div>
-                        //             <div class="coach-manage-addone-flexfour">
-                        //                 <p>保存</p>
-                        //                 <p>取消</p>
-                        //             </div>
-                        //         </div>
                         //     `
                         // }
 
@@ -1316,10 +1267,10 @@
                                 data: JSON.stringify(paramstkCoachIabel),
                                 success: function (result) {
                                     // console.log(list)
-                                    // console.log(result)
+                                    console.log(result)
                                     $.each(result.rows, function (i, item) {
                                         ad_ft += `
-                                                    <div class="flexthree-tags">
+                                                    <div class="flexthree-tags `+ item.dictionaryId +`">
                                                         `+ item.name + `
                                                     </div>
                                                 `
@@ -1368,12 +1319,12 @@
                                 url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
                                 success: function (result) {
                                     console.log(result)
-                                    console.log(list)
+                                    //console.log(list)
                                     for (var i = 0; i < result.length; i++) {
                                         var ad_str2 = '';
                                         for (var j = 0; j < result[i].children.length; j++) {
                                             ad_str2 += `
-                                                <div class="flexthree-tags1">
+                                                <div class="flexthree-tags1 `+ result[i].children[j].id +`">
                                                     `+ result[i].children[j].name + `
                                                 </div>
                                             `
@@ -1427,10 +1378,10 @@
                             })
 
                             setTimeout(() => {
-                                new inputcontain().init()
+                                new inputcontain().init(list)
                             }, 100);
 
-                        }, 100);
+                        }, 50);
 
 
                     },
@@ -1440,36 +1391,14 @@
                     }
                 })
             })
-
-            // tags1.forEach(function (item, index) {
-
-            // })
-
-            // tags2.forEach(function (item, index) {
-            //     ad_ft1 += `
-            //         <div class="flexthree-tags1">
-            //             ${item}
-            //         </div>  
-            //     `
-            // })
-
-
-            // $('.addtwo-flexfour').html(ad_ft)
-            // $('.addthree-flexfour').html(ad_ft1)
-
-
-            // $('.addtwo-flexfour').children('.flexthree-tags:first-child').addClass('ac')
-            // $('.addtwo-flexfour').children('.flexthree-tags:first-child').addClass('active')
-            // $('.addthree-flexfour').children('.flexthree-tags1:first-child').addClass('ac1')
-            // $('.addthree-flexfour').children('.flexthree-tags1:first-child').addClass('active1')
         }
     }
 
     class inputcontain {
 
-        init() {
+        init(list) {
             this.textare_contain()
-            this.add_tags1()
+            this.add_tags1(list)
             this.chacha()
             this.smallselect()
             this.select_option()
@@ -1545,14 +1474,16 @@
             }
         }
 
-        add_tags1() {
+        add_tags1(list) {
+            
             var straddtags1 = '';
             var straddtags2 = '';
 
             for (var i = 0; i < $('#addtwo-flexfour').children().length; i++) {
                 if ($('#addtwo-flexfour').children().eq(i).hasClass('active')) {
+
                     straddtags1 += `  
-                                        <p class="blocktwo-pfour-p">
+                                        <p class="blocktwo-pfour-p `+ $('#addtwo-flexfour').children().eq(i).attr('class').split(' ')[1] +`">
                                             `+ $('#addtwo-flexfour').children().eq(i).html() + `
                                             <a><img src="./image/classdel_btn.png" alt=""></img></a>
                                         </p>`
@@ -1560,18 +1491,6 @@
             }
 
             $('.flexthree-blocktwo-pfour').html(straddtags1)
-            // var straddtags3 = '';
-            //添加窗口第一个标签栏
-
-            // for (var i = 0; i < $('#addtwo-flexfour').children().length; i++) {
-            //     if ($('#addtwo-flexfour').children().eq(i).hasClass('active')) {
-            //         straddtags1 += `  
-            //                 <p class="blocktwo-pfour-p">
-            //                     `+ $('#addtwo-flexfour').children().eq(i).html() + `
-            //                     <a><img src="./image/classdel_btn.png" alt=""></img></a>
-            //                 </p>`
-            //     }
-            // }
 
             //添加窗口第二个标签栏
 
@@ -1579,7 +1498,7 @@
                 for (var j = 0; j < $('.addthree-flexfour').eq(i).children().length; j++) {
                     if ($('.addthree-flexfour').eq(i).children().eq(j).hasClass('active1')) {
                         straddtags2 += `  
-                            <p class="blocktwo-pfive-p">
+                            <p class="blocktwo-pfive-p `+ $('.addthree-flexfour').eq(i).children().eq(j).attr('class').split(' ')[1] +`">
                                 `+ $('.addthree-flexfour').eq(i).children().eq(j).html() + `
                                 <a><img src="./image/classdel_btn.png" alt=""></img></a>
                             </p>`
@@ -1587,35 +1506,8 @@
                 }
             }
 
-            //console.log($('.addthree-flexfour').eq(0).html())
-
-            // for (var i = 0; i < tags22; i++) {
-            //     straddtags2 += `
-            //     <p class="blocktwo-pfive-p">
-            //         ${tags2[i].innerText}
-            //         <a><img src="./image/classdel_btn.png" alt=""></img></a>
-            //     </p>
-            // `
-            // }
-            //添加窗口的下拉菜单
-            // straddtags3 = `
-            //     <div class="select-menu">
-            //         <div class="select-menu-div">
-            //             <input class="select-menu-input" />
-
-            //             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-            //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">全部</li>
-            //             <li>全职</li>
-            //             <li>兼职</li>
-            //         </ul>
-            //     </div>
-            // `
-            //$('.flexthree-blocktwo-pfour').html(straddtags1)
             $('.flexthree-blocktwo-pfive').html(straddtags2)
-
-            //$('.flexthree-blocktwo-pseven').html(straddtags3)
+            console.log(111)
             new ashow().init()
         }
 
@@ -1625,24 +1517,78 @@
                 $(this).parent().parent().hide()
             })
 
-            //编辑员工的点击确定或取消关闭窗口
-            $('.coach-manage-addone-flexfour').children('p').click(function () {
+            //编辑员工的点击取消关闭窗口
+            $('#coach-manage-addone-flexfour-quxiao').click(function () {
                 $(this).parent().parent().hide()
+            })
+
+            //编辑员工的点击确定关闭窗口
+
+            $('#coach-manage-addone-flexfour-save').click(function(){
+
+                var TagList = []
+                var SkillList = []
+
+                for(var i=0;i< $('#coach-tag').children().length;i++){
+                    TagList.push({ dictionaryId : $('#coach-tag').children().eq(i).attr('class').split(' ')[1]})
+                }
+
+                for(var j=0;j<$('#coach-course').children().length;j++){
+                    SkillList.push({leagueCurriculumId : $('#coach-course').children().eq(j).attr('class').split(' ')[1]})
+                }
+
+                console.log(TagList)
+                console.log(SkillList)
+
+                // for(var j=0;j<$('#coach-course').children().length)
+
+                var paramcoach = {
+                    id : $('#coach-userid').attr('class').split(' ')[1],
+                    nickName : $('#coach-realName').html(),
+                    jobCategory : $('#select-menu-ul-state').attr('class').split(' ')[1],
+                    introduce : $.trim($('#coach-introduce').html()),
+                    coachTagList : TagList,
+                    coachSkillList : SkillList
+                }
+                //console.log(paramcoach)
+                
+               $.ajax({
+                    type: 'POST',
+                    url: "http://test.physicalclub.com/rest/leagueCoach/updateLeagueCoach",
+                    contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    data: JSON.stringify(paramcoach),
+                    success: function (result) {
+                        console.log(result)
+                    },
+                    error: function (e) {
+                        console.log(e.status);
+                        console.log(e.responseText)
+                    }
+                })
             })
 
             //点击添加关闭原窗口，打开添加标签窗口
             $('#tianjia1').click(function () {
-                $(this).parent().parent().parent().hide()
+                //$(this).parent().parent().parent().hide()
                 $('.course-coach-manage-add1').css('opacity', 1)
-                $('.course-coach-manage-addtwo').css('z-index', 10)
-                $('.coach-manage-addtwo-flexthree').css('z-index', 10)
+                $('.course-coach-manage-addtwo').css('z-index', 999)
+                $('.coach-manage-addtwo-flexthree').css('z-index', 999)
+
+                // for(var i = 0;i<$(this).parent().children('.flexthree-blocktwo-pfour').children().length;i++){
+                //     for(var j=0;j<$('#addtwo-flexfour').children().length;j++){
+                //         if(!$(this).parent().children('.flexthree-blocktwo-pfour').children().eq(i).html() == $('#addtwo-flexfour').children().eq(j).html()){
+                //             $('#addtwo-flexfour').children().eq(j).removeClass('active')
+                //         }
+                //     }   
+                // }
+                
             })
 
             $('#tianjia2').click(function () {
-                $(this).parent().parent().parent().hide()
+                //$(this).parent().parent().parent().hide()
                 $('.course-coach-manage-add2').css('opacity', 1)
-                $('.course-coach-manage-addthree').css('z-index', 10)
-                $('.coach-manage-addthree-flexthree').css('z-index', 10)
+                $('.course-coach-manage-addthree').css('z-index', 999)
+                $('.coach-manage-addthree-flexthree').css('z-index', 999)
             })
 
             //点击标签添加active
@@ -1764,20 +1710,12 @@
                 //})
             })
 
-            $('#flexfour-flex-pone').click(function () {
+            $('#flexfour-flex-pone').one('click',function () {
                 $('.course-coach-manage-add1').css('opacity', 0)
                 $('.course-coach-manage-addtwo').css('z-index', -10)
-                //     $(".flexthree-tags").each(function () {
-                //         if ($(this).hasClass('active')) {
-                //             $(this).addClass('ac')
-                //         } else {
-                //             $(this).removeClass('ac')
-                //         }
-                //         $(this).removeClass('active')
-                //         if ($(this).hasClass('ac')) {
-                //             $(this).addClass('active')
-                //         }
-                //     })
+                setTimeout(() => {
+                    new inputcontain().add_tags1()
+                }, 100);
             })
 
             $('#flexfour-flex-ptwo').click(function () {
@@ -1822,7 +1760,7 @@
                 //})
             })
 
-            $('#flexfour-flex-pthree').click(function () {
+            $('#flexfour-flex-pthree').one('click',function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
                 $('.course-coach-manage-addthree').css('z-index', -10)
                 //     $(".flexthree-tags1").each(function () {
@@ -1834,16 +1772,15 @@
                 //             $(this).addClass('active1')
                 //         }
                 //     })
+                setTimeout(() => {
+                    new inputcontain().add_tags1()
+                }, 100);
             })
 
             $('#flexfour-flex-pfour').click(function () {
                 $('.course-coach-manage-add2').css('opacity', 0)
-                //     $(".flexthree-tags1").each(function () {
-                //         $(this).removeClass('active1')
-                //         if ($(this).hasClass('ac1')) {
-                //             $(this).addClass('active1')
-                //         }
-                //     })
+                
+                //$(".course-coach-manage-a").click()
             })
         }
     }
