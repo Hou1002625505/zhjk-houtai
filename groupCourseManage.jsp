@@ -2685,8 +2685,7 @@
 
         pay_pay() {
             //支付
-            $(".paypay").one('click', function () {
-                setTimeout(() => {
+            $(".paypay").click(function () {
                     $('.paypay').children('.paypay-show').hide()
                     $('.paypay').children('.paypay-hidden').show()
                     if ($(this).children('.paypay-hidden').is(":hidden")) {
@@ -2696,8 +2695,6 @@
                         $(this).children('.paypay-hidden').hide()
                         $(this).children('.paypay-show').show()
                     }
-                }, 100);
-
             })
 
             //console.log($(".add-course-sortone-inputthree-p"))

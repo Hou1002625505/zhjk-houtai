@@ -1,16 +1,11 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+﻿
+
+
+
 <!DOCTYPE html>
 
 <head>
-    <base href="<%=basePath%>">
+    <base href="http://test.physicalclub.com:80/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-    <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <style>
         * {
             margin: 0;
@@ -814,6 +809,14 @@
             overflow-y: scroll;
             box-sizing: border-box;
         }
+        .course-coach-manage-bottom{
+            display:flex;
+            justify-content: center;
+        }
+        #boxpage{
+        	position: relative;
+        	z-index: 100;
+        }
     </style>
 </head>
 
@@ -849,7 +852,9 @@
             </div>
         </div>
         <div class="course-coach-manage-table"></div>
-        <div class="box" id="ywyboxpage"></div>
+        <div class="course-coach-manage-bottom">
+            <div class="box" id="boxpage" style="margin-left:0"></div>
+        </div>
         <div class="course-coach-manage-add"></div>
         <div class="course-coach-manage-add1" style="opacity: 0;"></div>
         <div class="course-coach-manage-add2" style="opacity: 0;"></div>
@@ -872,7 +877,7 @@
             this.select_all1()
             this.select_all2()
             this.table_all()
-            this.input_all4()
+            //this.input_all4()
             this.select_option()
         }
 
@@ -971,19 +976,7 @@
             var straddsmall1;
             var straddsmall2;
 
-            //整个表格的内容
-            var str2 = `
-                    <table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <th width="49">序号</th>
-                        <th width="120">员工姓名</th>
-                        <th width="120">员工工号</th>
-                        <th width="250">个人标签</th>
-                        <th width="490">上牌课程</th>
-                        <th width="488">个人简介</th>
-                        <th width="120">操作</th>
-                    </tr>
-                `
+          
 
             //console.log($('.course-coach-manage-flex-input').val())
 
@@ -993,20 +986,30 @@
                 }
             }
 
+            var onPagechange = function (page) {
+                console.log(page)
+                aaaaaa(page)
+            }
+
+            var page = 1;
+            aaaaaa(page)
+
+            function aaaaaa(page){
+
             if ($('#select-menu-div1').children('input').val() == "全部") {
                 var paramscoach = {
-                    page: 1,
+                    page: page,
                     rows: 10,
                     param: {
                         name: $('#ccmfi1').val(),
                         user: $('#ccmfi2').val(),
                         classifyId: null,
+                        name: $('.course-coach-manage-flex-select-two').children().children().val()
                     },
-                    name: "course6"
                 }
             } else {
                 var paramscoach = {
-                    page: 1,
+                    page: page,
                     rows: 10,
                     param: {
                         name: $('#ccmfi1').val(),
@@ -1059,11 +1062,25 @@
                         }
                         return shuzu
                     }
-
+                      //整个表格的内容
+            var str2 = `
+                    <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th width="49">序号</th>
+                        <th width="120">员工姓名</th>
+                        <th width="120">员工工号</th>
+                        <th width="250">个人标签</th>
+                        <th width="490">上牌课程</th>
+                        <th width="488">个人简介</th>
+                        <th width="120">操作</th>
+                    </tr>
+                `
+//                    console.log("**"+result.results)
                     $.each(result.results, function (i, item) {
+                    	
                         str2 += `
                                         <tr class="course-coach-manage-table-tr">
-                                            <td width="49"><div style="display:flex;justify-content: center;">`+ (i + 1 + (paramscoach.page - 1) * 10) + `</div></td>
+                                            <td width="49"><div style="display:flex;justify-content: center;">`+ (i + 1 + (paramscoach.page - 1) * paramscoach.rows) + `</div></td>
                                             <td width="120">`+ item.realName + `</td>
                                             <td width="120">`+ item.userName + `</td>
                                             <td width="250">`+ biaoqian(item.coachTagList) + `</td>
@@ -1073,8 +1090,9 @@
                                         </tr>
                                     `
                     })
+//                  console.log(str2)
                     that.table.html(str2)
-
+                         
                     //添加标签窗口的表框
                     straddsmall1 = `
                         <div class="course-coach-manage-addtwo">
@@ -1122,6 +1140,23 @@
                     $(".course-coach-manage-add1").html(straddsmall1)
                     $(".course-coach-manage-add2").html(straddsmall2)
 
+                    var obj = {
+                        wrapid: 'boxpage', //页面显示分页器容器id
+                        total: result.totalCount, //总条数
+                        pagesize: 10, //每页显示10条
+                        currentPage: page, //当前页
+                        onPagechange: onPagechange
+                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                    }
+
+                    pagination.init(obj);
+
+                        // var str3
+                        // str3 = `
+                        //         <p>共`+ result.totalCount +`条，每页10条</p>
+                        //     `
+                        // $('#course-coach-manage-page').html(str3)
+
                     new credit().init()
                 },
                 error: function (e) {
@@ -1130,28 +1165,30 @@
                 }
             })
 
+            }
+
             $('#course-coach-manage-flextwo-pone').one('click', function () {
                 that.table_all()
             })
         }
 
-        input_all4() {
-            var obj = {
-                wrapid: 'ywyboxpage', //页面显示分页器容器id
-                total: 15, //总条数
-                pagesize: 15, //每页显示10条
-                currentPage: 2, //当前页
-                onPagechange: 2,
-                //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
-            }
-            pagination.init(obj);
+        // input_all4() {
+        //     var obj = {
+        //         wrapid: 'ywyboxpage', //页面显示分页器容器id
+        //         total: 15, //总条数
+        //         pagesize: 15, //每页显示10条
+        //         currentPage: 2, //当前页
+        //         onPagechange: 2,
+        //         //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+        //     }
+        //     pagination.init(obj);
 
-            var str3
-            str3 = `
-                    <p>共20条，每条15条</p>
-                `
-            this.input_four.html(str3)
-        }
+        //     var str3
+        //     str3 = `
+        //             <p>共20条，每条15条</p>
+        //         `
+        //     this.input_four.html(str3)
+        // }
     }
 
     class credit {
@@ -1814,7 +1851,7 @@
         }
     }
 
-    $('.M-box11').pagination({
+    $('.box').pagination({
         mode: 'fixed'
     });
 </script>
