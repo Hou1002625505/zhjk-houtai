@@ -1594,6 +1594,7 @@
 
             $('.flexthree-blocktwo-pfive').html(straddtags2)
             console.log(111)
+            
             setTimeout(() => {
                 new ashow().init()
             }, 100);

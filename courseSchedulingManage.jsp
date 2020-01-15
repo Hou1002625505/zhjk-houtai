@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-    <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <style>
         * {
             margin: 0;
@@ -1862,7 +1862,7 @@
             </div>
             <p class="course-arranging-flextwo-pthree">导出课程</p>
         </div>
-        <div class="course-arranging-table"></div>
+        <div class="course-arranging-table" id="course-arranging-table"></div>
         <div class="course-arranging-footer">
             <div class="course-arranging-table-checkbox">
                 <img style="display:none" src="./image/codeallset_btn.png">
@@ -1888,7 +1888,7 @@
 
         </div>
 
-        <div class="box" id="ywyboxpage"></div>
+        <div class="box" id="boxpage"></div>
     </div>
 
     <div class="course-arranging-body" id="course-arranging-body-right" style="display:none">
@@ -1919,7 +1919,7 @@
             </div>
             <p class="course-arranging-flextwo-pthree">导出课程</p>
         </div>
-        <div class="course-arranging-table" id="course-arranging-table"></div>
+        <div class="course-arranging-table" id="course-arranging-table2"></div>
         <!-- <div class="course-arranging-footer">
             <div class="course-arranging-not-table-checkbox">
                 <img style="display:none" src="./image/codeallset_btn.png">
@@ -1961,7 +1961,7 @@
         constructor() {
             this.select_one = $(".course-arranging-flex-select-one")
             this.select_two = $(".course-arranging-flex-select-two")
-            this.table = $(".course-arranging-table")
+            this.table = $("#course-arranging-table")
             this.input_four = $(".course-arranging-footer-pthree")
         }
 
@@ -1972,6 +1972,22 @@
             this.select_option()
             this.edit_course()
             this.publishshowhide()
+            this.ajax()
+        }
+
+        ajax(){
+            //选择会所请求
+            $.ajax({
+                url : 'http://test.physicalclub.com/rest/club/getClubInfo',
+                type : 'GET',
+                dataType : 'json',
+                success : function(data){
+                    console.log(data)
+                },
+                error : function(msg){
+                    console.log(msg)
+                }
+            })
         }
 
         select_all1() {
@@ -2072,80 +2088,136 @@
         }
 
         table_all() {
-            //表格的动态渲染
-            var str2 = `
-                <table border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <th width="35"></th>
-                    <th>门店</th>
-                    <th>房间</th>
-                    <th>日期</th>
-                    <th>时间</th>
-                    <th>上课教练</th>
-                    <th>教练工号</th>
-                    <th>课程名称</th>
-                    <th>课程售价</th>
-                    <th>最大人数</th>
-                    <th>开课人数</th>
-                    <th>贴标</th>
-                    <th></th>
-                    <th>操作</th>
-                </tr>
-            `
-            for (var i = 0; i < 10; i++) {
-                str2 += `
-                <tr class="course-arranging-table-tr">
-                    <td width="48"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                    <td width="180">1866健身分店</td>
-                    <td width="180">1866会所有氧操房</td>
-                    <td width="134">2019-12-16</td>
-                    <td width="134">10:00~11:00</td>
-                    <td width="120">刘蓓佳妮</td>
-                    <td width="120">66161</td>
-                    <td width="120">芭蕾形体</td>
-                    <td width="120">￥69.00</td>
-                    <td width="120">30人</td>
-                    <td width="120">2人</td>
-                    <td width="120">推荐</td>
-                    <td width="0" style="position:relative;border:none">
-                        <div class="td-del" style="display:none">
-                            <div class="td-del-flex">
-                                <p>是否删除该课程?</p>
-                                <p class="td-del-flex-yes">确定</p>
-                                <p class="td-del-flex-no">取消</p>
-                            </div>
-                            <p class="td-del-line"></p>
-                            <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
-                        </div
-                    </td>
-                    <td width="120">
-                        <a class="a-add">编辑</a>|<a class="a-del">删除</a>
-                    </td>
-                </tr>
-            `
-                this.table.html(str2)
+            var that = this
+
+            var onPagechange = function (page) {
+                console.log(page)
+                aaaaaa(page)
+            }
+
+            var page = 1;
+            aaaaaa(page)
+
+            function aaaaaa(page){
+
+            //排课管理列表请求
+
+            var SchedulingList = {
+                state : 0,
+                page : page,
+                rows : 10
+            }
+
+            $.ajax({
+                url : 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                type : 'POST',
+                contentType : 'application/json;charset=UTF-8',
+                data : JSON.stringify(SchedulingList),
+                success : function(result){
+                    console.log(result)
+
+                    //表格的动态渲染
+                    var str2 = `
+                        <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="35"></th>
+                            <th>门店</th>
+                            <th>房间</th>
+                            <th>日期</th>
+                            <th>时间</th>
+                            <th>上课教练</th>
+                            <th>教练工号</th>
+                            <th>课程名称</th>
+                            <th>课程售价</th>
+                            <th>最大人数</th>
+                            <th>开课人数</th>
+                            <th>贴标</th>
+                            <th></th>
+                            <th>操作</th>
+                        </tr>
+                    `
+
+                    //教练姓名格式判断
+
+                    function coachname(arr){
+                        var coachname;
+                        if(arr == ''){
+                            return coachname = ''
+                        }
+                        else if(arr){
+                            return coachname = arr[0].realName
+                        }
+                    }
+                    //教练工号格式判断
+
+                    function username(arr) {
+                        var username;
+                        if (arr == '') {
+                            return username = ''
+                        }
+                        else if (arr) {
+                            return username = arr[0].userName
+                        }
+                    }
+
+                    $.each(result.results,function(i,item){
+                        str2 += `
+                        <tr class="course-arranging-table-tr">
+                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td width="180">`+ item.storeName +`</td>
+                            <td width="180">`+ item.roomName +`</td>
+                            <td width="134">`+ item.dateStr +`</td>
+                            <td width="134">`+ item.timeStr +`</td>
+                            <td width="120">`+ coachname(item.courseSchedulingItemList) +`</td>
+                            <td width="120">`+ username(item.courseSchedulingItemList) +`</td>
+                            <td width="120">`+ item.leagueCurriculumName +`</td>
+                            <td width="120">￥`+ item.price +`</td>
+                            <td width="120">`+ item.maxNumber +`人</td>
+                            <td width="120">`+ item.minNumber +`人</td>
+                            <td width="120">推荐</td>
+                            <td width="0" style="position:relative;border:none">
+                                <div class="td-del" style="display:none">
+                                    <div class="td-del-flex">
+                                        <p>是否删除该课程?</p>
+                                        <p class="td-del-flex-yes">确定</p>
+                                        <p class="td-del-flex-no">取消</p>
+                                    </div>
+                                    <p class="td-del-line"></p>
+                                    <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
+                                </div
+                            </td>
+                            <td width="120">
+                                <a class="a-add">编辑</a>|<a class="a-del">删除</a>
+                            </td>
+                        </tr>
+                    `
+                    })
+                    that.table.html(str2)
+
+                    var obj = {
+                        wrapid: 'boxpage', //页面显示分页器容器id
+                        total: result.totalCount, //总条数
+                        pagesize: 10, //每页显示10条
+                        currentPage: page, //当前页
+                        onPagechange: onPagechange
+                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                    }
+
+                    pagination.init(obj);
+
+                    setTimeout(() => {
+                        new computed().init()
+                    }, 100);
+
+                },
+                error : function(e){
+                    console.log(e.status);
+                    console.log(e.responseText)
+                }
+            })
 
             }
-            new computed().init()
         }
-
-        // input_all4() {
-        //     var obj = {
-        //         wrapid: 'ywyboxpage', //页面显示分页器容器id
-        //         total: 15, //总条数
-        //         pagesize: 15, //每页显示10条
-        //         currentPage: 2, //当前页
-        //         onPagechange: 2,
-        //         //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
-        //     }
-        //     pagination.init(obj);
-
-        //     var str3
-        //     str3 = `
-        //         <p>共20条，每条15条</p>
-        //     `
-        //     this.input_four.html(str3)
-        // }
 
         publishshowhide() {
             $('#course-arranging-header-one-ptwo').click(function () {
@@ -2166,7 +2238,7 @@
                 <div class="edit-course-header">
                     <div class="edit-course-header-one">
                         <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
-                        <p class="edit-course-header-pone">新增</p>
+                        <p class="edit-course-header-pone">新增未发布</p>
                     </div>
                     <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                 </div>
@@ -2174,6 +2246,16 @@
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one" style="margin-right:111px">门店</div>
                         <div id="edit-course-context-first">
+                            <div class="select-menu5">
+                                <div class="select-menu-div">
+                                    <input class="select-menu-input" />
+
+                                    <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                                </div>
+                                <ul class="select-menu-ul" id="select-menu-ul-one" style="height:200px;overflow-y:scroll">
+                                    
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="edit-course-context-flex">
@@ -2383,31 +2465,31 @@
                     </div>
                 </div>
             `
-            acn_str = `
-                <div class="add-course-name-header">
-                    <div class="add-course-name-header-left">
-                        <img src="./image/tags_icon.png" alt=""/>
-                        <p>课程名称</p>
-                    </div>
-                    <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
-                </div>
-                <div class="add-course-name-context">
-                    <div class="add-course-name-context-flex">
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                        <p class="add-course-name-context-p">舞林漫步</p>
-                    </div>
-                    <div class="add-course-name-context-bottom">
-                        <p id="add-course-name-context-bottom-pone">确定</p>
-                        <p id="add-course-name-context-bottom-ptwo">取消</p>
-                    </div>
-                </div>
-            `
+            // acn_str = `
+            //     <div class="add-course-name-header">
+            //         <div class="add-course-name-header-left">
+            //             <img src="./image/tags_icon.png" alt=""/>
+            //             <p>课程名称</p>
+            //         </div>
+            //         <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+            //     </div>
+            //     <div class="add-course-name-context">
+            //         <div class="add-course-name-context-flex">
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //             <p class="add-course-name-context-p">舞林漫步</p>
+            //         </div>
+            //         <div class="add-course-name-context-bottom">
+            //             <p id="add-course-name-context-bottom-pone">确定</p>
+            //             <p id="add-course-name-context-bottom-ptwo">取消</p>
+            //         </div>
+            //     </div>
+            // `
             aecl_str = `
                 <div class="add-edit-course-label-header">
                     <div class="add-edit-course-label-header-flex">
@@ -2445,7 +2527,6 @@
             //$('.add-course-name').html(acn_str)
             $('.edit-course').html(editstr)
             $('.add-edit-course').html(addeditstr)
-            new computed().init()
         }
     }
 
@@ -2507,6 +2588,30 @@
             var strfirst;
             var strfirstfirst;
             var strsecond
+
+            //门店列表渲染
+
+            $.ajax({
+                url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    strfirstfirst = `
+                            <li class="select-this">5</li>
+                        `
+                    $.each(data.rows, function (i, item) {
+                        strfirstfirst += `
+                            <li class="`+ item.clubId +`">`+ item.clubName +`</li>
+                        `
+                    })
+
+                    $('#select-menu-ul-one').html(strfirstfirst)
+                },
+                error: function (msg) {
+                    console.log(msg)
+                }
+            })
+
             strstrstr = `
                 <div class="select-menu3">
 		            <div class="select-menu-div">
@@ -2567,21 +2672,7 @@
                     </ul>
                 </div>
             `
-            strfirstfirst = `
-            <div class="select-menu5">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
 
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">5</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
             strsecond = `
             <div class="select-menu5">
 		            <div class="select-menu-div">
@@ -2597,12 +2688,13 @@
                     </ul>
                 </div>
             `
-            $('#edit-course-context-first').html(strfirstfirst)
+            
             $('#edit-course-context-second').html(strsecond)
             $('#edit-course-context-two').html(strfirst)
             $('#edit-course-context-three').html(strstrstr)
             $('#edit-course-context-four').html(strstrstrstr)
             $('#edit-course-context-five').html(str5)
+
         }
 
         select_option() {
@@ -2738,7 +2830,9 @@
                 $(this).addClass('add-course-name-context-p-active')
             })
 
-            //课程名称的取消和叉叉关闭页面
+
+
+            // //课程名称的取消和叉叉关闭页面
             // $('#add-course-name-header-img').click(function () {
             //     $(this).parent().parent().hide()
             // })
@@ -2755,6 +2849,8 @@
             // $('.edit-course-context-three-pp').click(function () {
             //     $('#add-course-name1').show()
             // })
+
+
 
             //点击贴边按钮显示贴标
             $('.course-arranging-footer-ptwo').click(function () {
@@ -2830,7 +2926,7 @@
         constructor() {
             this.select_one = $(".course-arranging-not-flex-select-one")
             //this.select_two = $(".course-arranging-flex-select-two")
-            this.table = $("#course-arranging-table")
+            this.table = $("#course-arranging-table2")
             //this.input_four = $(".course-arranging-footer-pthree")
         }
 
@@ -3036,7 +3132,7 @@
                 <div class="edit-course-header">
                     <div class="edit-course-header-one">
                         <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
-                        <p class="edit-course-header-pone">新增</p>
+                        <p class="edit-course-header-pone">新增发布</p>
                     </div>
                     <img class="edit-course-header-imgone"style="width:22px;height:23px" id="edit-course-not-hide" src="./image/popupclose_btn.png" alt=""/>
                 </div>
@@ -3710,9 +3806,9 @@
 
 
 
-    $('.M-box11').pagination({
-        mode: 'fixed'
-    });
+    $('.box').pagination({
+            mode: 'fixed'
+        });
 </script>
 
 </html>
