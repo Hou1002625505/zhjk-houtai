@@ -725,7 +725,7 @@
         .select-menu5 .select-menu-div .select-menu-input {
             padding-left: 14px;
             border: 0;
-            width: 100px;
+            width: 130px;
             height: 30px;
             cursor: pointer;
             user-select: none;
@@ -848,7 +848,8 @@
         }
 
         .edit-course-context-twoall .edit-course-context-twoone {
-            width: 86px;
+            padding:0 10px 0 10px;
+            box-sizing: border-box;
             height: 36px;
             border: 1px solid #BFBFBF;
             border-radius: 4px;
@@ -1175,17 +1176,19 @@
             margin-bottom: 18px;
             box-sizing: border-box;
             font-size: 14px;
+            position: relative;
         }
 
         .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo img {
-            position: relative;
-            top: -35px;
-            left: 34px;
+            position: absolute;
+            top: -10px;
+            left: 60px;
             display: none
         }
 
         .aechctp-active {
             border: 1px solid #71B2EF;
+            text-align: center;
             box-sizing: border-box;
         }
 
@@ -1793,6 +1796,7 @@
         .add-edit-course-label-context-flexone .paypaypay-not {
             margin-right: 13px;
             margin-left: 70px;
+            
         }
 
         .add-edit-course-label-context-flexone .paypaypay-not:nth-child(1) {
@@ -1822,7 +1826,8 @@
             border-radius: 4px;
             text-align: center;
             line-height: 35px;
-            margin-left: 26px
+            margin-left: 26px;
+            
         }
 
         /* //////////////////////////// */
@@ -1963,6 +1968,8 @@
             this.select_two = $(".course-arranging-flex-select-two")
             this.table = $("#course-arranging-table")
             this.input_four = $(".course-arranging-footer-pthree")
+            this.paypay = $(".paypay")
+            this.paypaypay = $(".paypaypay")
         }
 
         init() {
@@ -1970,9 +1977,9 @@
             this.table_all()
             //this.input_all4()
             this.select_option()
-            this.edit_course()
             this.publishshowhide()
             this.ajax()
+            this.edit_course()
         }
 
         ajax(){
@@ -2115,7 +2122,7 @@
                 data : JSON.stringify(SchedulingList),
                 success : function(result){
                     console.log(result)
-
+                    
                     //表格的动态渲染
                     var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
@@ -2187,7 +2194,7 @@
                                 </div
                             </td>
                             <td width="120">
-                                <a class="a-add">编辑</a>|<a class="a-del">删除</a>
+                                <a class="a-add `+ i +`">编辑</a>|<a class="a-del">删除</a>
                             </td>
                         </tr>
                     `
@@ -2204,9 +2211,12 @@
                     }
 
                     pagination.init(obj);
-
+                    //var cccccccc ="woshiwoshwisowhi"
+                    var list = result
+                    //console.log(list)
                     setTimeout(() => {
                         new computed().init()
+                        new course_arranging().edit_course(list)
                     }, 100);
 
                 },
@@ -2228,7 +2238,33 @@
             })
         }
 
-        edit_course() {
+        edit_course(list) {
+            var that = this
+            
+            setTimeout(() => {
+
+            //点击编辑按钮事件
+            $('.a-add').click(function () {
+                console.log(list)
+                if(list){
+                    var count = $(this).attr('class').split(' ')[1]
+                    //console.log($('.a-add').length)
+
+                    var listdata = list.results[count]
+                }                
+
+                console.log(listdata)
+
+                $('#edit-course1').show()
+
+                //console.log($(this))
+                // $('.paypay').each(function () {
+                //     if ($(this).hasClass('xianshi')) {
+                //         $(this).children('.paypay-hidden').hide()
+                //         $(this).children('.paypay-show').show()
+                //     }
+                // })            
+
             var editstr;
             var addeditstr;
             var acn_str;
@@ -2261,6 +2297,16 @@
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one" style="margin-right:111px">房间</div>
                         <div id="edit-course-context-second">
+                            <div class="select-menu5">
+                                <div class="select-menu-div">
+                                    <input class="select-menu-input" />
+
+                                    <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                                </div>
+                                <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:200px;overflow-y:scroll">
+                                    
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="edit-course-context-flex">
@@ -2271,10 +2317,7 @@
                     <div class="edit-course-context-flextwo">
                         <div class="edit-course-context-one">上课教练</div>
                         <div class="edit-course-context-twoall">
-                            <p class="edit-course-context-twoone">11</p>
-                            <p class="edit-course-context-twoone">11</p>
-                            <p class="edit-course-context-twoone">11</p>
-                            <p class="edit-course-context-twoone">11</p>
+                            
                         </div>
                         <p class="edit-course-context-three" id="edit-course-addadd">添加</p>
                     </div>
@@ -2394,69 +2437,19 @@
                 <div class="add-edit-course-header-context">
                     <div class="add-edit-course-header-context-one">
                         <div class="add-edit-course-header-context-oneflex">
-                            <input />
+                            <input / id="search-value">
                             <div class="add-edit-course-header-context-one-blue">
-                                <img src="./image/search_btn.png" alt=""/>
+                                <img src="./image/search_btn.png" alt=""/ id="search-search">
                             </div>
                         </div>
                     </div>
-                    <div class="add-edit-course-header-context-one">
+                    <div class="add-edit-course-header-context-one" id="coach-show" style="justify-content: left;padding-left:22px">
+
                     </div>
                     <div class="add-edit-course-header-context-two">
                         <p class="add-edit-course-header-context-two-pone">已选择教练</p>
-                        <div class="add-edit-course-header-context-twoflex">
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
-                            <p class="add-edit-course-header-context-two-ptwo">
-                            刘佳蓓妮
-                            <img src="./image/classdel_btn.png" alt=""/>
-                            </p>
+                        <div class="add-edit-course-header-context-twoflex" id="select-coach">
+                            
                         </div>
                     </div>
                     <div class="add-edit-course-header-context-three">
@@ -2527,14 +2520,326 @@
             //$('.add-course-name').html(acn_str)
             $('.edit-course').html(editstr)
             $('.add-edit-course').html(addeditstr)
+
+            //添加教练的叉叉关闭
+            $('#add-edit-course-hide').click(function () {
+                $(this).parent().parent().hide()
+            })
+
+            //添加教练的点击取消事件
+            $('#add-edit-course-header-context-three-ptwo').click(function () {
+                $(this).parent().parent().parent().hide()
+            })
+
+            //教练课程的显示隐藏
+            $('.add-course-name-context-p').click(function () {
+                $('.add-course-name-context-p').each(function () {
+                    $(this).removeClass('add-course-name-context-p-active')
+                })
+                $(this).addClass('add-course-name-context-p-active')
+            })
+            
+            //新增窗口的叉叉关闭
+            $('#edit-course-hide').click(function () {
+                $(this).parent().parent().hide()
+                $('.paypay').each(function () {
+                    $(this).children('.paypay-show').hide()
+                    $(this).children('.paypay-hide').show()
+                })
+            })
+            //新增窗口的取消关闭
+            $('#edit-course-footer-ptwo').click(function () {
+                $(this).parent().parent().parent().hide()
+                $('.paypay').each(function () {
+                    $(this).children('.paypay-show').hide()
+                    $(this).children('.paypay-hide').show()
+                })
+            })
+            //新增窗口的确定按钮
+            $('#edit-course-footer-pone').click(function () {
+                $(this).parent().parent().parent().hide()
+                $('.paypay').each(function () {
+                    var display = $(this).children('.paypay-show').css('display')
+                    $(this).removeClass('xianshi')
+                    if (display == 'inline') {
+                        $(this).addClass('xianshi')
+                    }
+                })
+            })
+            //新增窗口单选框的显示及排他
+            
+            $(".paypay").click(function () {
+                $(this).parent().children('.paypay').children('.paypay-show').hide()
+                $(this).parent().children('.paypay').children('.paypay-hidden').show()
+                if ($(this).children('.paypay-hidden').is(":hidden")) {
+                    $(this).children('.paypay-hidden').show()
+                    $(this).children('.paypay-show').hide()
+                } else {
+                    $(this).children('.paypay-hidden').hide()
+                    $(this).children('.paypay-show').show()
+                }
+            })
+
+            $(".paypaypay").click(function () {
+                $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
+                $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
+                if ($(this).children('.paypaypay-hidden').is(":hidden")) {
+                    $(this).children('.paypaypay-hidden').show()
+                    $(this).children('.paypaypay-show').hide()
+                } else {
+                    $(this).children('.paypaypay-hidden').hide()
+                    $(this).children('.paypaypay-show').show()
+                }
+            })
+            
+            setTimeout(() => {
+                    var strfirstfirst;
+                    //门店列表渲染
+                    $.ajax({
+                        url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (data) {
+                            strfirstfirst = `
+                                <li class="select-this">`+ listdata.storeName +`</li>
+                            `
+                            $.each(data.rows, function (i, item) {
+                                strfirstfirst += `
+                                <li class="`+ item.clubId + `">` + item.clubName + `</li>
+                            `
+                            })
+
+                            $('#select-menu-ul-one').html(strfirstfirst)
+
+
+                        },
+                        error: function (msg) {
+                            console.log(msg)
+                        }
+                    })
+                    //房间下拉菜单渲染
+                    var strsecond;
+                    
+                    var RoomList = { storeId: listdata.storeId }
+
+                    $.ajax({
+                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                        type: 'POST',
+                        contentType: 'application/json;charset=UTF-8',
+                        data: JSON.stringify(RoomList),
+                        success: function (result) {
+                            strsecond = `
+                                <li class="select-this">5</li>
+                            `
+                            for(var i=0;i< result.rows.length;i++){
+                                strsecond += `
+                                    <li>`+ result.rows[i].roomName +`</li>
+                                `
+                            }
+                            
+                            setTimeout(() => {
+                                $('#select-menu-ul-RoomList').html(strsecond)
+                            },100);
+                           
+                        
+                        },
+                        error: function (e) {
+                            console.log(e.status)
+                        }
+                    })
+                    
+                    //课程名称下拉渲染
+                    var strfirst;
+                    strfirst = `
+                    <div class="select-menu5">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+
+                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                            </div>
+                            <ul class="select-menu-ul">
+                                <li class="select-this">5</li>
+                                <li>团操课</li>
+                                <li>莱美课</li>
+                                <li>舞蹈课</li>
+                            </ul>
+                        </div>
+                    `
+                    $('#edit-course-context-two').html(strfirst)
+
+                    //教练名遍历渲染
+                    var strcoach = '';
+                    if(listdata.courseSchedulingItemList){
+                        for (var i = 0; i < listdata.courseSchedulingItemList.length; i++) {
+                            strcoach += `
+                                <p class="edit-course-context-twoone">`+ listdata.courseSchedulingItemList[i].realName + `</p>
+                            `
+                        }
+                    }else{
+                        strcoach = ''
+                    }
+                    //新增未发布教练的渲染
+                    $('.edit-course-context-twoall').html(strcoach)
+
+                    //点击添加按钮显示添加教练
+                    $('#edit-course-addadd').click(function () {
+                        $('#add-edit-course1').show()
+                        //教练选择页面
+                        var strselect
+                        for (var i = 0; i < $('.edit-course-context-twoall').children().length; i++) {
+                            strselect = `
+                            <p class="add-edit-course-header-context-two-ptwo">
+                                `+ $('.edit-course-context-twoall').children().eq(i).html() + `
+                                <img src="./image/classdel_btn.png" alt=""/>
+                            </p>
+                        `
+                        }
+
+                        $('#select-coach').html(strselect)
+
+                        //添加教练鼠标移入事件
+                        $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
+                            $(this).addClass('aechctp-active')
+                            $(this).children('img').show()
+                        })
+                        //添加教练的鼠标移除事件
+                        $('.add-edit-course-header-context-two-ptwo').mouseout(function () {
+                            $(this).removeClass('aechctp-active')
+                            $(this).children('img').hide()
+                        })
+                        //添加教练的标签，点击叉叉关闭
+                        $('.add-edit-course-header-context-two-ptwo').children('img').click(function () {
+                            $(this).parent().remove()
+                        })
+
+                        $('#search-search').click(function(){
+                            setTimeout(() => {
+                                var strcoach = {
+                                    page: 1,
+                                    rows: 10,
+                                    userName: $('#search-value').val()
+                                }
+
+                                $.ajax({
+                                    url: 'http://test.physicalclub.com/rest/ curriculumAnalyze/ selectCoachAnalyzeList',
+                                    type: 'POST',
+                                    contentType: 'application/json;charset=UTF-8',
+                                    data: JSON.stringify(strcoach),
+                                    success: function (result) {
+                                        console.log(result)
+                                        //console.log(strselect)
+
+                                        var strcoachone = `
+                                        <p id="coach-p" style="width:70px;height:24px;border-radius:4px;background:#71B2EF;color:white;text-align:center;line-height:24px">
+                                        `+ result.results[0].realName + `
+                                        </p>
+                                    `
+                                        //点击查询渲染的教练名
+                                        $('#coach-show').html(strcoachone)
+
+                                        $('#coach-p').click(function(){
+                                            strselect += `
+                                                <p class="add-edit-course-header-context-two-ptwo">
+                                                    `+ $(this).html() + `
+                                                    <img src="./image/classdel_btn.png" alt=""/>
+                                                </p>
+                                            `
+                                            setTimeout(() => {
+                                            //点击查询出的教练名进行渲染
+                                            $('#select-coach').html(strselect)
+
+                                            //添加教练鼠标移入事件
+                                            $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
+                                                $(this).addClass('aechctp-active')
+                                                $(this).children('img').show()
+                                            })
+                                            //添加教练的鼠标移除事件
+                                            $('.add-edit-course-header-context-two-ptwo').mouseout(function () {
+                                                $(this).removeClass('aechctp-active')
+                                                $(this).children('img').hide()
+                                            })
+                                            //添加教练的标签，点击叉叉关闭
+                                            $('.add-edit-course-header-context-two-ptwo').children('img').click(function () {
+                                                $(this).parent().remove()
+                                            })
+                                            }, 100);
+                                        })
+
+                                        //添加教练的点击确认事件
+                                        $('#add-edit-course-header-context-three-pone').click(function () {
+                                            $(this).parent().parent().parent().hide()
+                                            var againcoach = ''
+                                            for(var i=0;i<$('#select-coach').children().length;i++){
+                                                againcoach += `
+                                                     <p class="edit-course-context-twoone">`+ $('#select-coach').children().eq(i).text() + `</p>
+                                                `
+                                            }
+                                            $('.edit-course-context-twoall').html(againcoach)
+                                        })
+                                        console.log($('#select-coach').html())
+
+                                    },
+                                    error: function (e) {
+                                        console.log(e.status)
+                                    }
+                                })
+                            }, 100);
+                        })
+                    })
+
+                    //上课日期时间
+                    var strstrstr
+                    var strstrstrstr
+                    strstrstr = `
+                        <div class="select-menu3">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+
+                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                            </div>
+                            <ul class="select-menu-ul">
+                                <li class="select-this">3</li>
+                                <li>团操课</li>
+                                <li>莱美课</li>
+                                <li>舞蹈课</li>
+                            </ul>
+                        </div>
+                    `
+                    strstrstrstr = `
+                        <div class="select-menu4">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+
+                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                            </div>
+                            <ul class="select-menu-ul">
+                                <li class="select-this">4</li>
+                                <li>团操课</li>
+                                <li>莱美课</li>
+                                <li>舞蹈课</li>
+                            </ul>
+                        </div>
+                    `
+                    
+                    $('#edit-course-context-three').html(strstrstr)
+                    $('#edit-course-context-four').html(strstrstrstr)
+                    
+                    setTimeout(() => {
+                        new computed().select_option()
+                    }, 100);
+
+                }, 100);
+            })
+
+            }, 100);
+        
         }
     }
 
     class computed {
         constructor() {
             // this.checkbox = $(".course-arranging-table-checkbox")
-            this.paypay = $(".paypay")
-            this.paypaypay = $(".paypaypay")
+            
         }
         init() {
             this.checkbox_click()
@@ -2566,140 +2871,16 @@
                 $(this).parent().parent().children().eq(12).children().show()
 
             })
-            //点击编辑按钮事件
-            $('.a-add').click(function () {
-                $('#edit-course1').show()
-
-                $('.paypay').each(function () {
-                    if ($(this).hasClass('xianshi')) {
-                        $(this).children('.paypay-hidden').hide()
-                        $(this).children('.paypay-show').show()
-                    }
-                })
-            })
+            
             new a_del().init()
         }
 
         select_all1() {
             //下拉菜单的动态渲染
-            var strstrstr
-            var strstrstrstr
-            var str5
-            var strfirst;
-            var strfirstfirst;
-            var strsecond
-
-            //门店列表渲染
-
-            $.ajax({
-                url: 'http://test.physicalclub.com/rest/club/getClubInfo',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    strfirstfirst = `
-                            <li class="select-this">5</li>
-                        `
-                    $.each(data.rows, function (i, item) {
-                        strfirstfirst += `
-                            <li class="`+ item.clubId +`">`+ item.clubName +`</li>
-                        `
-                    })
-
-                    $('#select-menu-ul-one').html(strfirstfirst)
-                },
-                error: function (msg) {
-                    console.log(msg)
-                }
-            })
-
-            strstrstr = `
-                <div class="select-menu3">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">3</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            strstrstrstr = `
-                <div class="select-menu4">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">4</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            str5 = `
-                <div class="select-menu4">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">5</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            strfirst = `
-            <div class="select-menu5">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">5</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-
-            strsecond = `
-            <div class="select-menu5">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">5</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            
-            $('#edit-course-context-second').html(strsecond)
-            $('#edit-course-context-two').html(strfirst)
-            $('#edit-course-context-three').html(strstrstr)
-            $('#edit-course-context-four').html(strstrstrstr)
-            $('#edit-course-context-five').html(str5)
-
         }
 
         select_option() {
             //下拉菜单的动态
-
             selectMenu(2);
             selectMenu(3);
             selectMenu(4);
@@ -2759,78 +2940,11 @@
         }
 
         pay() {
-            //新增窗口单选框的显示及排他
-            this.paypay.children('.paypay-show').hide()
-            this.paypay.children('.paypay-hidden').show()
-            this.paypay.click(function () {
-                $(this).parent().children('.paypay').children('.paypay-show').hide()
-                $(this).parent().children('.paypay').children('.paypay-hidden').show()
-                if ($(this).children('.paypay-hidden').is(":hidden")) {
-                    $(this).children('.paypay-hidden').show()
-                    $(this).children('.paypay-show').hide()
-                } else {
-                    $(this).children('.paypay-hidden').hide()
-                    $(this).children('.paypay-show').show()
-                }
-            })
-
-            this.paypaypay.children('.paypaypay-show').hide()
-            this.paypaypay.children('.paypaypay-hidden').show()
-            this.paypaypay.click(function () {
-                $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
-                $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
-                if ($(this).children('.paypaypay-hidden').is(":hidden")) {
-                    $(this).children('.paypaypay-hidden').show()
-                    $(this).children('.paypaypay-show').hide()
-                } else {
-                    $(this).children('.paypaypay-hidden').hide()
-                    $(this).children('.paypaypay-show').show()
-                }
-            })
+            
 
         }
 
         adch_showhide() {
-            //添加教练鼠标移入事件
-            $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
-                $(this).addClass('aechctp-active')
-                $(this).children('img').show()
-            })
-            //添加教练的鼠标移除事件
-            $('.add-edit-course-header-context-two-ptwo').mouseout(function () {
-                $(this).removeClass('aechctp-active')
-                $(this).children('img').hide()
-            })
-            //添加教练的标签，点击叉叉关闭
-            $('.add-edit-course-header-context-two-ptwo').children('img').click(function () {
-                $(this).parent().remove()
-            })
-            //添加教练的叉叉关闭
-            $('#add-edit-course-hide').click(function () {
-                $(this).parent().parent().hide()
-            })
-
-            //添加教练的点击确认事件
-            $('#add-edit-course-header-context-three-pone').click(function () {
-                $(this).parent().parent().parent().hide()
-            })
-            //添加教练的点击取消事件
-            $('#add-edit-course-header-context-three-ptwo').click(function () {
-                $(this).parent().parent().parent().hide()
-            })
-            //点击添加按钮显示添加教练
-            $('#edit-course-addadd').click(function () {
-                $('#add-edit-course1').show()
-            })
-            //教练课程的显示隐藏
-            $('.add-course-name-context-p').click(function () {
-                $('.add-course-name-context-p').each(function () {
-                    $(this).removeClass('add-course-name-context-p-active')
-                })
-                $(this).addClass('add-course-name-context-p-active')
-            })
-
-
 
             // //课程名称的取消和叉叉关闭页面
             // $('#add-course-name-header-img').click(function () {
@@ -2890,33 +3004,7 @@
         }
 
         edit_course_showhide() {
-            //新增窗口的叉叉关闭
-            $('#edit-course-hide').click(function () {
-                $(this).parent().parent().hide()
-                $('.paypay').each(function () {
-                    $(this).children('.paypay-show').hide()
-                    $(this).children('.paypay-hide').show()
-                })
-            })
-            //新增窗口的取消关闭
-            $('#edit-course-footer-ptwo').click(function () {
-                $(this).parent().parent().parent().hide()
-                $('.paypay').each(function () {
-                    $(this).children('.paypay-show').hide()
-                    $(this).children('.paypay-hide').show()
-                })
-            })
-            //新增窗口的确定按钮
-            $('#edit-course-footer-pone').click(function () {
-                $(this).parent().parent().parent().hide()
-                $('.paypay').each(function () {
-                    var display = $(this).children('.paypay-show').css('display')
-                    $(this).removeClass('xianshi')
-                    if (display == 'inline') {
-                        $(this).addClass('xianshi')
-                    }
-                })
-            })
+            
 
 
         }
