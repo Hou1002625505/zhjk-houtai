@@ -1748,6 +1748,7 @@
             border-radius: 4px;
             margin-left: 18px;
             margin-bottom: 13px;
+            
         }
 
         .add-course-not-name-context-p-active {
@@ -1827,7 +1828,6 @@
             text-align: center;
             line-height: 35px;
             margin-left: 26px;
-            
         }
 
         /* //////////////////////////// */
@@ -2284,7 +2284,7 @@
                         <div id="edit-course-context-first">
                             <div class="select-menu5">
                                 <div class="select-menu-div">
-                                    <input class="select-menu-input" />
+                                    <input class="select-menu-input" id="select-menu-input-mendian"/>
 
                                     <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                 </div>
@@ -2299,7 +2299,7 @@
                         <div id="edit-course-context-second">
                             <div class="select-menu5">
                                 <div class="select-menu-div">
-                                    <input class="select-menu-input" />
+                                    <input class="select-menu-input" id="select-menu-inputroom"/>
 
                                     <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                 </div>
@@ -2311,8 +2311,7 @@
                     </div>
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one">课程名称</div>
-                        <div id="edit-course-context-two">
-                        </div>
+                        <input id="select-menu-input-coursename" style="margin-left:74px"/>    
                     </div>
                     <div class="edit-course-context-flextwo">
                         <div class="edit-course-context-one">上课教练</div>
@@ -2323,18 +2322,24 @@
                     </div>
                     <div class="edit-course-context-flex">
                         <div class="edit-course-context-one">上课日期</div>
-                        <div id="edit-course-context-three"></div>
+                        <div style="width:150px;height:36px;border:1px solid #BFBFBF;border-radius:4px;margin:0 59px 0 77px">
+                        <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        </div>
                         <p style="font-size:18px;margin-right:18px">上课时间</p>
-                        <div id="edit-course-context-four"></div>
+                        <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
+                        <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        </div>
                         <p style="margin:0 6px 0 6px">-</p>
-                        <div id="edit-course-context-five"></div>
+                        <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
+                        <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        </div>
                     </div>
 
                     <div class="edit-course-context-flex3">
                         <p class="edit-course-context-flex3-pone">课程售价</p>
                         <div class="add-course-sortone-inputtwo">
                             <p>￥</p>
-                            <input type="text">
+                            <input type="text" id="course-price">
                         </div>
                         <p class="edit-course-context-flex3-ptwo">标准价</p>
                         <div class="add-course-sortone-inputthree">
@@ -2346,17 +2351,17 @@
                     <div class="edit-course-context-flex3">
                         <p class="edit-course-context-flex3-pone">开课人数</p>
                         <div class="add-course-sortone-inputtwo">
-                            <input type="text">
+                            <input type="text" id="mincount">
                         </div>
                         <p style="margin-left:-20px;margin-right:8px;">人</p>
                         <p class="edit-course-context-flex3-ptwo">最大人数</p>
-                        <div class="add-course-sortone-inputthree" style="margin-left:17px">
-                            <input type="text">
+                        <div class="add-course-sortone-inputthree" style="margin-left:17px;">
+                            <input type="text" id="maxcount" style="text-decoration:none;color:black">
                         </div>
                         <p style="margin-left:-20px">人</p>
                     </div>
 
-                    <div class="edit-course-context-flex3">
+                    <div class="edit-course-context-flex3" id="is-Queue">
                         <p class="edit-course-context-flex3-pone" style="margin-right:35px">是否排队</p>
                         <div class="paypay">
                             <img class="paypay-show" src="./image/payment_btn.png" alt="">
@@ -2370,7 +2375,7 @@
                         <p style="font-size:14px">否</p>
                     </div>
 
-                    <div class="edit-course-context-flex3">
+                    <div class="edit-course-context-flex3" id="tag-Name">
                         <p class="edit-course-context-flex3-pone" style="margin-right:70px">贴标</p>
                         <div class="paypay">
                             <img class="paypay-show" src="./image/payment_btn.png" alt="">
@@ -2387,35 +2392,11 @@
                             <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                         </div>
                         <p style="font-size:14px">体验</p>
-                        <div class="paypay">
-                            <img class="paypay-show" src="./image/payment_btn.png" alt="">
-                            <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
-                        </div>
-                        <p style="font-size:14px">推荐</p>
                     </div>
                     <div class="edit-course-context-flex4">
                         <p class="edit-course-context-flex4-pone">业绩比例</p>
-                        <div class="edit-course-context-flex4-ptwo">
-                            <div class="edit-course-context-flex4-pthree">
-                                <p class="edit-course-context-flex4-pfour">刘承庆</p>
-                                <p class="edit-course-context-flex4-pfive">0.1</p>
-                            </div>
-                            <div class="edit-course-context-flex4-pthree">
-                                <p class="edit-course-context-flex4-pfour">刘承庆</p>
-                                <p class="edit-course-context-flex4-pfive">0.1</p>
-                            </div>
-                            <div class="edit-course-context-flex4-pthree">
-                                <p class="edit-course-context-flex4-pfour">刘承庆</p>
-                                <p class="edit-course-context-flex4-pfive">0.1</p>
-                            </div>
-                            <div class="edit-course-context-flex4-pthree">
-                                <p class="edit-course-context-flex4-pfour">刘承庆</p>
-                                <p class="edit-course-context-flex4-pfive">0.1</p>
-                            </div>
-                            <div class="edit-course-context-flex4-pthree">
-                                <p class="edit-course-context-flex4-pfour">刘承庆</p>
-                                <p class="edit-course-context-flex4-pfive">0.1</p>
-                            </div>
+                        <div class="edit-course-context-flex4-ptwo" id="coach-performance">
+                            
                         </div>
                     </div>
                     <div class="edit-course-footer">
@@ -2593,44 +2574,39 @@
             })
             
             setTimeout(() => {
-                    var strfirstfirst;
+                    var strfirstfirst = '';
                     //门店列表渲染
                     $.ajax({
                         url: 'http://test.physicalclub.com/rest/club/getClubInfo',
                         type: 'GET',
                         dataType: 'json',
                         success: function (data) {
-                            strfirstfirst = `
-                                <li class="select-this">`+ listdata.storeName +`</li>
-                            `
                             $.each(data.rows, function (i, item) {
                                 strfirstfirst += `
                                 <li class="`+ item.clubId + `">` + item.clubName + `</li>
                             `
                             })
-
-                            $('#select-menu-ul-one').html(strfirstfirst)
-
-
+                            setTimeout(() => {
+                                $('#select-menu-ul-one').html(strfirstfirst)
+                                $('#select-menu-input-mendian').val(listdata.storeName)
+                                console.log(222)
+                            }, 100);
                         },
                         error: function (msg) {
                             console.log(msg)
                         }
                     })
-                    //房间下拉菜单渲染
-                    var strsecond;
                     
+                    //房间下拉菜单渲染
+                    var strsecond = '';                  
                     var RoomList = { storeId: listdata.storeId }
-
                     $.ajax({
                         url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
                         type: 'POST',
                         contentType: 'application/json;charset=UTF-8',
                         data: JSON.stringify(RoomList),
                         success: function (result) {
-                            strsecond = `
-                                <li class="select-this">5</li>
-                            `
+                            
                             for(var i=0;i< result.rows.length;i++){
                                 strsecond += `
                                     <li>`+ result.rows[i].roomName +`</li>
@@ -2639,6 +2615,7 @@
                             
                             setTimeout(() => {
                                 $('#select-menu-ul-RoomList').html(strsecond)
+                                $('#select-menu-inputroom').val(listdata.roomName)
                             },100);
                            
                         
@@ -2649,23 +2626,9 @@
                     })
                     
                     //课程名称下拉渲染
-                    var strfirst;
-                    strfirst = `
-                    <div class="select-menu5">
-                            <div class="select-menu-div">
-                                <input class="select-menu-input" />
-
-                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
-                            </div>
-                            <ul class="select-menu-ul">
-                                <li class="select-this">5</li>
-                                <li>团操课</li>
-                                <li>莱美课</li>
-                                <li>舞蹈课</li>
-                            </ul>
-                        </div>
-                    `
-                    $('#edit-course-context-two').html(strfirst)
+                    setTimeout(() => {
+                        $('#select-menu-input-coursename').val(listdata.leagueCurriculumName)
+                    },100);                  
 
                     //教练名遍历渲染
                     var strcoach = '';
@@ -2678,8 +2641,10 @@
                     }else{
                         strcoach = ''
                     }
+
                     //新增未发布教练的渲染
                     $('.edit-course-context-twoall').html(strcoach)
+
 
                     //点击添加按钮显示添加教练
                     $('#edit-course-addadd').click(function () {
@@ -2787,48 +2752,97 @@
                         })
                     })
 
+
                     //上课日期时间
-                    var strstrstr
-                    var strstrstrstr
-                    strstrstr = `
-                        <div class="select-menu3">
-                            <div class="select-menu-div">
-                                <input class="select-menu-input" />
-
-                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
-                            </div>
-                            <ul class="select-menu-ul">
-                                <li class="select-this">3</li>
-                                <li>团操课</li>
-                                <li>莱美课</li>
-                                <li>舞蹈课</li>
-                            </ul>
-                        </div>
-                    `
-                    strstrstrstr = `
-                        <div class="select-menu4">
-                            <div class="select-menu-div">
-                                <input class="select-menu-input" />
-
-                                <img class="select-menu-img" src="./image/sifting_icon.png"/>
-                            </div>
-                            <ul class="select-menu-ul">
-                                <li class="select-this">4</li>
-                                <li>团操课</li>
-                                <li>莱美课</li>
-                                <li>舞蹈课</li>
-                            </ul>
-                        </div>
-                    `
-                    
-                    $('#edit-course-context-three').html(strstrstr)
-                    $('#edit-course-context-four').html(strstrstrstr)
-                    
                     setTimeout(() => {
-                        new computed().select_option()
+                        $('#edit-course-context-three').val(listdata.dateStr)
+                        $('#edit-course-context-four').val(listdata.timeStr.split('-')[0])
+                        $('#edit-course-context-five').val(listdata.timeStr.split('-')[1])
+                    }, 100);
+
+                    //课程零售价渲染
+                    setTimeout(() => {
+                        $('#course-price').val(listdata.leagueCurriculumPrice)
+                    }, 100);
+
+                    //课程标准价渲染
+                    setTimeout(() => {
+                        $('.add-course-sortone-inputthree-input').html(listdata.price)
+                    }, 100);
+
+                    //开课人数渲染
+                    setTimeout(() => {
+                        $('#mincount').val(listdata.minNumber)
+                    }, 100);
+
+                    //最大开课人数
+                    setTimeout(() => {
+                        $('#maxcount').val(listdata.maxNumber)
+                    }, 100);
+
+                    //是否排队
+                    setTimeout(() => {
+                        if(listdata.isQueue == 1){
+                            $('#is-Queue').children('.paypay').eq(0).click()
+                        }else{
+                            $('#is-Queue').children('.paypay').eq(1).click()
+                        }
+                    }, 100);
+
+                    //贴标
+                    setTimeout(() => {
+                        if(listdata.tagName == "无"){
+                            $('#tag-Name').children('.paypay').eq(0).click()
+                        }
+                        else if(listdata.tagName == "热门"){
+                            $('#tag-Name').children('.paypay').eq(1).click()
+                        }else{
+                            $('#tag-Name').children('.paypay').eq(2).click()
+                        }
+                    }, 100);
+
+                    //业绩比例展示
+                    setTimeout(() => {
+                        var strperformance = ''
+                        if(listdata.courseSchedulingItemList == ''){
+                            strperformance = ''
+                        }else{
+                            for(var i=0;i< listdata.courseSchedulingItemList.length;i++){
+                                strperformance += `
+                                <div class="edit-course-context-flex4-pthree">
+                                    <p class="edit-course-context-flex4-pfour">`+ listdata.courseSchedulingItemList[i].realName +`</p>
+                                    <p class="edit-course-context-flex4-pfive">`+ listdata.courseSchedulingItemList[i].performance +`</p>
+                                </div>
+                            `
+                            }
+                        }
+                        $('#coach-performance').html(strperformance)
+                    }, 100);
+
+                    //发送参数
+
+                        //获取门店id
+                        setTimeout(() => {
+                            for(var i = 0;i<$('#select-menu-ul-one').children().length;i++){
+                                if($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian').val()){
+                                    //console.log($('#select-menu-ul-one').children().eq(i).attr('class'))
+                                    console.log(11)
+                                }
+                            }
+                            console.log($('#select-menu-ul-one').children().eq(0).html())
+                            console.log($('#select-menu-input-mendian').val())
+                        }, 200);                   
+
+                    var paramsrevise = {
+                        storeId : 0
+                    }
+
+                    setTimeout(() => {
+                        new computed().select_option(listdata)
                     }, 100);
 
                 }, 100);
+
             })
 
             }, 100);
@@ -2883,10 +2897,6 @@
             //下拉菜单的动态
             selectMenu(2);
             selectMenu(3);
-            selectMenu(4);
-            selectMenu(5);
-            selectMenu(6);
-            selectMenu(7);
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
                 $(".select-menu-div").eq(index).on("click", function (e) {
@@ -3068,8 +3078,8 @@
         }
 
         select_option() {
-            selectMenu(8);
-            selectMenu(9);
+            selectMenu(4);
+            selectMenu(5);
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
                 $(".select-menu-div").eq(index).on("click", function (e) {
@@ -3661,9 +3671,8 @@
         select_option() {
             //下拉菜单的动态
 
-            selectMenu(10);
-            selectMenu(11);
-            selectMenu(12);
+            selectMenu(6);
+            selectMenu(7);
 
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
