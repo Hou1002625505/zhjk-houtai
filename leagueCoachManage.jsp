@@ -1076,7 +1076,7 @@
                     </tr>
                 `
 //                    console.log("**"+result.results)
-                    $.each(result.results, function (i, item) {
+                    $.each(result.rows, function (i, item) {
                     	
                         str2 += `
                                         <tr class="course-coach-manage-table-tr">
@@ -1229,7 +1229,7 @@
 
                         //添加窗口的内容
                         var stradd;
-                        if(result.results[0].jobCategory == 1){
+                        if(result.rows[0].jobCategory == 1){
                         stradd = `
                                 <div class="course-coach-manage-addone">
                                     <div class="coach-manage-addone-flexone">
@@ -1240,10 +1240,10 @@
                                         <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
                                     </div>
                                     <div class="coach-manage-addone-flexthree">
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.results[0].userId +`" id="coach-userid">`+ result.results[0].userName +`</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.results[0].realName +`</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId +`" id="coach-userid">`+ result.rows[0].userName +`</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName +`</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.results[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                         <div class="coach-manage-addone-flexthree-blockthree">
                                             <p class="flexthree-blockthree-pone">工作性质</p>
                                             <div class="flexthree-blocktwo-pseven">
@@ -1252,7 +1252,7 @@
 
                                                     <img class="select-menu-img" src="./image/sifting_icon.png" />
                                                 </div>
-                                                <ul class="select-menu-ul `+ result.results[0].jobCategory +`" id="select-menu-ul-state">
+                                                <ul class="select-menu-ul `+ result.rows[0].jobCategory +`" id="select-menu-ul-state">
                                                      <li class="select-this">全职</li>
                                                      <li>兼职</li>
                                                 </ul>    
@@ -1271,7 +1271,7 @@
                                         <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                             <p class="flexthree-blocktwo-pone">个人简介</p>
                                             <p class="flexthree-blocktwo-psix" id="coach-introduce">
-                                                `+ result.results[0].introduce +`
+                                                `+ result.rows[0].introduce +`
                                             </p>
                                         </div>
                                     </div>
@@ -1282,7 +1282,7 @@
                                 </div>
                             `
                         }
-                        if(result.results[0].jobCategory == 2){
+                        if(result.rows[0].jobCategory == 2){
                             stradd = `
                                 <div class="course-coach-manage-addone">
                                     <div class="coach-manage-addone-flexone">
@@ -1293,10 +1293,10 @@
                                         <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
                                     </div>
                                     <div class="coach-manage-addone-flexthree">
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.results[0].userId + `" id="coach-userid">` + result.results[0].userName + `</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.results[0].realName + `</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId + `" id="coach-userid">` + result.rows[0].userName + `</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName + `</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.results[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
+                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                         <div class="coach-manage-addone-flexthree-blockthree">
                                             <p class="flexthree-blockthree-pone">工作性质</p>
                                             <div class="flexthree-blocktwo-pseven">
@@ -1305,7 +1305,7 @@
 
                                                     <img class="select-menu-img" src="./image/sifting_icon.png" />
                                                 </div>
-                                                <ul class="select-menu-ul `+ result.results[0].jobCategory + `" id="select-menu-ul-state">
+                                                <ul class="select-menu-ul `+ result.rows[0].jobCategory + `" id="select-menu-ul-state">
                                                      <li>全职</li>
                                                      <li class="select-this">兼职</li>
                                                 </ul>    
@@ -1324,7 +1324,7 @@
                                         <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                             <p class="flexthree-blocktwo-pone">个人简介</p>
                                             <p class="flexthree-blocktwo-psix" id="coach-introduce">
-                                                `+ result.results[0].introduce +`
+                                                `+ result.rows[0].introduce +`
                                             </p>
                                         </div>
                                     </div>
@@ -1376,9 +1376,9 @@
                                     })
 
                                     for (var i = 0; i < result.rows.length; i++) {
-                                        for (var j = 0; j < list.results.length; j++) {
-                                            for (var z = 0; z < list.results[j].coachTagList.length; z++) {
-                                                if (result.rows[i].name == list.results[j].coachTagList[z].name) {
+                                        for (var j = 0; j < list.rows.length; j++) {
+                                            for (var z = 0; z < list.rows[j].coachTagList.length; z++) {
+                                                if (result.rows[i].name == list.rows[j].coachTagList[z].name) {
                                                     $('.addtwo-flexfour').children().eq(i).click()
                                                 }
                                             }
@@ -1403,8 +1403,9 @@
                                 type: 'GET',
                                 contentType: "application/json;charset=UTF-8",
                                 url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
-                                success: function (result) {
-                                    console.log(result)
+                                success: function (results) {
+                                    console.log(results)
+                                    var result = results.rows
                                     //console.log(list)
                                     for (var i = 0; i < result.length; i++) {
                                         var ad_str2 = '';
@@ -1443,9 +1444,9 @@
 
                                     for (var i = 0; i < result.length; i++) {
                                         for (var j = 0; j < result[i].children.length; j++) {
-                                            for (var y = 0; y < list.results.length; y++) {
-                                                for (var z = 0; z < list.results[y].coachSkillList.length; z++) {
-                                                    if (result[i].children[j].name == list.results[y].coachSkillList[z].leagueCurriculumName) {
+                                            for (var y = 0; y < list.rows.length; y++) {
+                                                for (var z = 0; z < list.rows[y].coachSkillList.length; z++) {
+                                                    if (result[i].children[j].name == list.rows[y].coachSkillList[z].leagueCurriculumName) {
                                                         //$('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).click()
                                                         //console.log($('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).html())
                                                         $('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').children().eq(j).click()

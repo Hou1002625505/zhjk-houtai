@@ -1963,7 +1963,7 @@
                         data: JSON.stringify(params),
                         success: function (result) {
                             var result = result
-                            list = result.results
+                            list = result.rows
                             console.log(list)
 
                             ////////////////////////////////////////////////////////////////////////////
@@ -2015,7 +2015,7 @@
 
                             var obj = {
                                 wrapid: 'boxpage', //页面显示分页器容器id
-                                total: result.totalCount, //总条数
+                                total: result.total, //总条数
                                 pagesize: 10, //每页显示10条
                                 currentPage: page, //当前页
                                 onPagechange: onPagechange
@@ -2026,7 +2026,7 @@
 
                             var str3
                             str3 = `
-                                <p>共`+ result.totalCount + `条，每页` + params.rows + `条</p>
+                                <p>共`+ result.total + `条，每页` + params.rows + `条</p>
                             `
                             that.input_four.html(str3)
 
@@ -2216,9 +2216,9 @@
                     contentType: "application/json;charset=UTF-8",
                     data: JSON.stringify(paramsall),
                     success: function (resultall) {
-                        console.log(resultall.results)
+                        console.log(resultall.rrows)
 
-                        $.each(resultall.results, function (i, item) {
+                        $.each(resultall.rows, function (i, item) {
                             if (item.createDate == a) {
                                 var id = item.id
 
