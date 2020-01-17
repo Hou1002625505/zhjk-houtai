@@ -1142,7 +1142,7 @@
 
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
-                        total: result.totalCount, //总条数
+                        total: result.total, //总条数
                         pagesize: 10, //每页显示10条
                         currentPage: page, //当前页
                         onPagechange: onPagechange
