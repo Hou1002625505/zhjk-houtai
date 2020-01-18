@@ -976,8 +976,6 @@
             var straddsmall1;
             var straddsmall2;
 
-          
-
             //console.log($('.course-coach-manage-flex-input').val())
 
             for (var i = 1; i < $('#select-menu-ul-GroupType').children().length; i++) {

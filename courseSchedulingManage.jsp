@@ -18,9 +18,22 @@
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
+    <script type="text/javascript" src="easyui/moment.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="imgui/zyUpload.css" type="text/css">
+    <!-- 引用核心层插件 -->
+    <script src="imgui/zyFile.js"></script>
+    
+    <!-- 引用控制层插件 -->
+    <script src="imgui/zyUpload.js"></script>
+    
+    <!-- 引用初始化JS -->
+    <script src="imgui/jq22.js"></script>
     <style>
         * {
             margin: 0;
@@ -1847,21 +1860,47 @@
         </div>
         <div class="course-arranging-flex">
             <div style="font-size:16px;margin-right:10px">上课门店</div>
-            <div class="course-arranging-flex-select-zero"></div>
+            <div class="course-arranging-flex-select-zero">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input" id="select-menu-input-mendian" style="width:100px"/>
+                
+                        <img class="select-menu-img" src="./image/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul" id="select-menu-ul-pulishmendian" style="height:200px;overflow-y: scroll;">
+
+                    </ul>
+                </div>
+            </div>
             <div style="font-size:16px;margin-right:10px">上课房间</div>
-            <div class="course-arranging-flex-select-one"></div>
+            <div class="course-arranging-flex-select-one">
+                <div class="select-menu">
+                    <div class="select-menu-div" id="select-menu-div-room">
+                        <input class="select-menu-input" id="select-menu-input-room" />
+                
+                        <img class="select-menu-img" src="./image/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul" id="select-menu-ul-room" style="height:200px;overflow-y: scroll;">
+                
+                    </ul>
+                </div>
+            </div>
             <div style="font-size:16px">上课教练</div>
-            <input class="course-arranging-flex-select-two"></input>
+            <input class="course-arranging-flex-select-two" id="teaching-course-coach"></input>
             <div style="font-size:16px">教练工号</div>
-            <input class="course-arranging-flex-select-three"></input>
+            <input class="course-arranging-flex-select-three" id="coach-id"></input>
             <div style="font-size:16px">创建时间</div>
-            <input type="text" class="course-arranging-flex-input-one" placeholder="开始时间">
+            <div class="J-datepicker-day">
+                <input type="text" class="course-arranging-flex-input-one" id="create-course-time" placeholder="开始时间">
+            </div>
             <p>-</p>
-            <input type="text" class="course-arranging-flex-input-two" placeholder="结束时间">
+            <div class="J-datepicker-day">
+                <input type="text" class="course-arranging-flex-input-two" id="end-course-time" placeholder="结束时间">
+            </div>
         </div>
         <div class="course-arranging-flextwo">
             <div class="course-arranging-flexthree">
-                <p>查询</p>
+                <p id="publish-search">查询</p>
                 <p>清除</p>
             </div>
             <p class="course-arranging-flextwo-pthree">导出课程</p>
@@ -1955,6 +1994,8 @@
     </div>
 </body>
 
+<script type="text/javascript" src="easyui/datepicker.all.js"></script>
+<script type="text/javascript" src="easyui/datepicker.en.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         new course_arranging().init();
@@ -1973,12 +2014,14 @@
 
         init() {
             this.select_all1()
-            this.table_all()
+            
             //this.input_all4()
             this.select_option()
             this.publishshowhide()
             this.ajax()
             this.edit_course()
+            this.time()
+            this.table_all()
         }
 
         ajax(){
@@ -2014,44 +2057,153 @@
             // })
         }
 
+        time() {
+            $('.J-datepicker-day').datePicker({
+                hasShortcut: true,
+                format: 'YYYY-MM-DD',
+                shortcutOptions: [{
+                    name: '今天',
+                    day: '0'
+                }, {
+                    name: '昨天',
+                    day: '-1'
+                }, {
+                    name: '一周前',
+                    day: '-7'
+                }]
+            });
+
+            function fchatitylist() {
+                intoPages = 1;
+                visititylist();
+            }
+
+            function visititylist() {
+                var status = $("#visitstatus").val();
+                var conditionName = '';//顾问姓名
+                var startDate = $("#selectDate1").val();
+                var endDate = $("#selectDate2").val();
+                //var club = $("#clubId").val();
+                var fangcusname = $("#fangcusname").val();
+                var fangmobile = $("#fangmobile").val();
+                if (startDate != '') {
+                    if (endDate == '') {
+                        alert("请选择结束日期");
+                        return;
+                    }
+                }
+            }
+
+
+            function getDay(day) {
+
+                var today = new Date();
+
+
+
+                var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+
+
+
+                today.setTime(targetday_milliseconds); //注意，这行是关键代码
+
+
+
+                var tYear = today.getFullYear();
+
+                var tMonth = today.getMonth();
+
+                var tDate = today.getDate();
+
+                tMonth = doHandleMonth(tMonth + 1);
+
+                tDate = doHandleMonth(tDate);
+
+                return tYear + "-" + tMonth + "-" + tDate;
+
+            }
+
+            function doHandleMonth(month) {
+
+                var m = month;
+
+                if (month.toString().length == 1) {
+
+                    m = "0" + month;
+
+                }
+
+                return m;
+
+            }
+        }
+
         select_all1() {
-            //下拉菜单动态渲染
-            var str
-            str = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
+            setTimeout(() => {
+            var pulishmendian = '';
+            //门店列表渲染
+            $.ajax({
+                url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data.rows, function (i, item) {
+                        pulishmendian += `
+                            <li class="`+ item.clubId + `">` + item.clubName + `</li>
+                        `
+                    })          
+                        $('#select-menu-ul-pulishmendian').html(pulishmendian)
+                        $('#select-menu-input-mendian').val("全部")
+                        console.log("diyige")
+                },
+                error: function (msg) {
+                    console.log(msg)
+                }
+            })
+            }, 100);
 
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">全部</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            this.select_one.html(str)
+            //房间下拉菜单渲染
+            $('#select-menu-div-room').click(function(){
+            setTimeout(() => {
+                setTimeout(() => {
+                    var storeId = ''
+                    if($('#select-menu-input-mendian').val() == "全部"){
+                        storeId = ''
+                    }else{
+                        for(var i=0;i<$('#select-menu-ul-pulishmendian').children().length;i++){
+                            if($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()){
+                                storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class')
+                            }
+                        }
+                    var RoomList = { storeId:storeId }
+                    $.ajax({
+                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                        type: 'POST',
+                        contentType: 'application/json;charset=UTF-8',
+                        data: JSON.stringify(RoomList),
+                        success: function (result) {
+                            var strsecond = ''
+                            //console.log(result)
+                            for (var i = 0; i < result.rows.length; i++) {
+                                strsecond += `
+                                        <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
+                                    `
+                            }
+                            setTimeout(() => {
+                                $('#select-menu-ul-room').html(strsecond)
+                            }, 100);
 
-            var str00;
 
-            str00 = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
-
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">全部</li>
-                        <li>团操课</li>
-                        <li>莱美课</li>
-                        <li>舞蹈课</li>
-                    </ul>
-                </div>
-            `
-            $('.course-arranging-flex-select-zero').html(str00)
+                        },
+                        error: function (e) {
+                            console.log(e.status)
+                        }
+                    })
+                    }
+                    
+                }, 100);
+            }, 100);
+            })
         }
 
         select_option() {
@@ -2126,11 +2278,174 @@
 
             //排课管理列表请求
 
+            $('#publish-search').click(function(){
+                var storeId = ''
+                var roomId = ''
+                var realName = ''
+                var userName = ''
+                var startDate = ''
+                var endDate = ''
+
+                if($('#select-menu-input-mendian').val() == "全部"){
+                            storeId = ''
+                }else{
+                    for(var i=0;i<$('#select-menu-ul-pulishmendian').children().length;i++){
+                        if($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()){
+                            storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
+                        }
+                    }
+                }
+                
+                if($('#select-menu-input-room').val() == ''){
+                    roomId = ''
+                }else{
+                    for(var i=0;i< $('#select-menu-ul-room').children().length;i++){
+                        if($('#select-menu-ul-room').children().eq(i).html() == $('#select-menu-input-room').val()){
+                            roomId = $('#select-menu-ul-room').children().eq(i).attr('class')
+                            //roomId = "c0f6b689-0375-4d7c-b1f8-01b86d55e57a"
+                        }
+                    }
+                }
+
+                realName = $('#teaching-course-coach').val()
+
+                userName = $('#coach-id').val()
+
+                startDate = $('#create-course-time').val()
+
+                endDate = $('#end-course-time').val()
+
+                console.log(roomId)
+                SchedulingList = {
+                    state: 0,
+                    page: page,
+                    rows: 10,
+                    storeId : storeId,
+                    roomId : roomId,
+                    realName : realName,
+                    userName : userName,
+                    startDate : startDate,
+                    endDate : endDate
+                }
+
+                $.ajax({
+                    url: 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                    type: 'POST',
+                    contentType: 'application/json;charset=UTF-8',
+                    data: JSON.stringify(SchedulingList),
+                    success: function (result) {
+                        console.log(result)
+
+                        //表格的动态渲染
+                        var str2 = `
+                        <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="48"></th>
+                            <th width="180">门店</th>
+                            <th width="180">房间</th>
+                            <th width="134">日期</th>
+                            <th width="134">时间</th>
+                            <th width="120">上课教练</th>
+                            <th width="120">教练工号</th>
+                            <th width="120">课程名称</th>
+                            <th width="120">课程售价</th>
+                            <th width="120">最大人数</th>
+                            <th width="120">开课人数</th>
+                            <th width="120">贴标</th>
+                            <th></th>
+                            <th width="120">操作</th>
+                        </tr>
+                    `
+
+                        //教练姓名格式判断
+
+                        function coachname(arr) {
+                            var coachname;
+                            if (arr == '') {
+                                return coachname = ''
+                            }
+                            else if (arr) {
+                                return coachname = arr[0].realName
+                            }
+                        }
+                        //教练工号格式判断
+
+                        function username(arr) {
+                            var username;
+                            if (arr == '') {
+                                return username = ''
+                            }
+                            else if (arr) {
+                                return username = arr[0].userName
+                            }
+                        }
+
+                        $.each(result.rows, function (i, item) {
+                            str2 += `
+                        <tr class="course-arranging-table-tr">
+                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td width="180">`+ item.storeName + `</td>
+                            <td width="180">`+ item.roomName + `</td>
+                            <td width="134">`+ item.dateStr + `</td>
+                            <td width="134">`+ item.timeStr + `</td>
+                            <td width="120">`+ coachname(item.courseSchedulingItemList) + `</td>
+                            <td width="120">`+ username(item.courseSchedulingItemList) + `</td>
+                            <td width="120">`+ item.leagueCurriculumName + `</td>
+                            <td width="120">￥`+ item.price + `</td>
+                            <td width="120">`+ item.maxNumber + `人</td>
+                            <td width="120">`+ item.minNumber + `人</td>
+                            <td width="120">推荐</td>
+                            <td width="0" style="position:relative;border:none">
+                                <div class="td-del" style="display:none">
+                                    <div class="td-del-flex">
+                                        <p>是否删除该课程?</p>
+                                        <p class="td-del-flex-yes">确定</p>
+                                        <p class="td-del-flex-no">取消</p>
+                                    </div>
+                                    <p class="td-del-line"></p>
+                                    <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
+                                </div
+                            </td>
+                            <td width="120">
+                                <a class="a-add `+ i + `">编辑</a>|<a class="a-del">删除</a>
+                            </td>
+                        </tr>
+                    `
+                        })
+                        that.table.html(str2)
+
+                        var obj = {
+                            wrapid: 'boxpage', //页面显示分页器容器id
+                            total: result.total, //总条数
+                            pagesize: 10, //每页显示10条
+                            currentPage: page, //当前页
+                            onPagechange: onPagechange
+                            //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        }
+
+                        pagination.init(obj);
+                        //var cccccccc ="woshiwoshwisowhi"
+                        var list = result
+                        //console.log(list)
+                        setTimeout(() => {
+                            new computed().init()
+                            new course_arranging().edit_course(list)
+                        }, 100);
+
+                    },
+                    error: function (e) {
+                        console.log(e.status);
+                        console.log(e.responseText)
+                    }
+                })
+
+            })
+
             var SchedulingList = {
-                state : 0,
-                page : page,
-                rows : 10
-            }
+                    state: 0,
+                    page: page,
+                    rows: 10
+                } 
 
             $.ajax({
                 url : 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
@@ -2144,20 +2459,20 @@
                     var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="35"></th>
-                            <th>门店</th>
-                            <th>房间</th>
-                            <th>日期</th>
-                            <th>时间</th>
-                            <th>上课教练</th>
-                            <th>教练工号</th>
-                            <th>课程名称</th>
-                            <th>课程售价</th>
-                            <th>最大人数</th>
-                            <th>开课人数</th>
-                            <th>贴标</th>
+                            <th width="48"></th>
+                            <th width="180">门店</th>
+                            <th width="180">房间</th>
+                            <th width="134">日期</th>
+                            <th width="134">时间</th>
+                            <th width="120">上课教练</th>
+                            <th width="120">教练工号</th>
+                            <th width="120">课程名称</th>
+                            <th width="120">课程售价</th>
+                            <th width="120">最大人数</th>
+                            <th width="120">开课人数</th>
+                            <th width="120">贴标</th>
                             <th></th>
-                            <th>操作</th>
+                            <th width="120">操作</th>
                         </tr>
                     `
 
@@ -2259,6 +2574,7 @@
             var that = this
             
             setTimeout(() => {
+
             //点击新建
             $('#addaddadd').click(function(){
 
@@ -2532,61 +2848,65 @@
                 })
                 
                 setTimeout(() => {
-                    var strfirstfirst = '';
+                    
                     //门店列表渲染
-                    $.ajax({
-                        url: 'http://test.physicalclub.com/rest/club/getClubInfo',
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function (data) {
-                            $.each(data.rows, function (i, item) {
-                                strfirstfirst += `
+                    setTimeout(() => {
+                        var strfirstfirst = '';
+                        $.ajax({
+                            url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function (data) {
+                                $.each(data.rows, function (i, item) {
+                                    strfirstfirst += `
                                     <li class="`+ item.clubId + `">` + item.clubName + `</li>
                                 `
-                            })
-                            setTimeout(() => {
-                                $('#select-menu-ul-one').html(strfirstfirst)
-                                //console.log(222)
+                                })
+                                setTimeout(() => {
+                                    $('#select-menu-ul-one').html(strfirstfirst)
+                                    //console.log(222)
 
-                                for(var i=0;i<$('#select-menu-ul-one').children().length;i++){
-                                    if($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian').val()){
-                                        var storeId = $('#select-menu-ul-one').children().eq(i).attr('class')
+                                    for (var i = 0; i < $('#select-menu-ul-one').children().length; i++) {
+                                        if ($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+                                            var storeId = $('#select-menu-ul-one').children().eq(i).attr('class')
+                                        }
                                     }
-                                }
 
-                                //房间下拉菜单渲染
-                                var strsecond = '';
-                                var RoomList = { storeId: storeId }
-                                $.ajax({
-                                    url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
-                                    type: 'POST',
-                                    contentType: 'application/json;charset=UTF-8',
-                                    data: JSON.stringify(RoomList),
-                                    success: function (result) {
-                                        //console.log(result)
-                                        for (var i = 0; i < result.rows.length; i++) {
-                                            strsecond += `
+                                    //房间下拉菜单渲染
+                                    var strsecond = '';
+                                    var RoomList = { storeId: storeId }
+                                    $.ajax({
+                                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                                        type: 'POST',
+                                        contentType: 'application/json;charset=UTF-8',
+                                        data: JSON.stringify(RoomList),
+                                        success: function (result) {
+                                            //console.log(result)
+                                            for (var i = 0; i < result.rows.length; i++) {
+                                                strsecond += `
                                         <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
                                     `
+                                            }
+
+                                            setTimeout(() => {
+                                                $('#select-menu-ul-RoomList').html(strsecond)
+                                            }, 100);
+
+
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status)
                                         }
+                                    })
+                                }, 100);
+                            },
+                            error: function (msg) {
+                                console.log(msg)
+                            }
+                        })
 
-                                        setTimeout(() => {
-                                            $('#select-menu-ul-RoomList').html(strsecond)
-                                        }, 100);
-
-
-                                    },
-                                    error: function (e) {
-                                        console.log(e.status)
-                                    }
-                                })
-                            }, 100);
-                        },
-                        error: function (msg) {
-                            console.log(msg)
-                        }
-                    })
-
+                    }, 100);
+                    
                     //课程名称下拉渲染
                     setTimeout(() => {
                         $('#select-menu-input-coursename').val("课程名称")
@@ -2793,9 +3113,60 @@
                     // }, 100);
 
                     setTimeout(() => {
-                        setTimeout(() => {
-                           new computed().select_option() 
-                        }, 100);
+                        //下拉菜单的动态
+                        selectMenu(2);
+                        selectMenu(3);
+
+                        function selectMenu(index) {
+                            $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
+                            $(".select-menu-div").eq(index).on("click", function (e) {
+                                e.stopPropagation();
+                                if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                    $(".select-menu-ul").eq(index).hide();
+                                    $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+                                    $(".select-menu-ul").eq(index).animate({
+                                        marginTop: "0",
+                                        opacity: "0"
+                                    }, "fast");
+                                } else {
+                                    $(".select-menu-ul").eq(index).show();
+                                    $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
+                                    $(".select-menu-ul").eq(index).animate({
+                                        marginTop: "5px",
+                                        opacity: "1"
+                                    }, "fast");
+                                }
+                                for (var i = 0; i < $(".select-menu-ul").length; i++) {
+                                    if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
+                                        $(".select-menu-ul").eq(i).hide();
+                                        $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
+                                        $(".select-menu-ul").eq(i).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+                                    }
+                                }
+                            });
+                            $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
+                                $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
+                                $(".select-menu-div").eq(index).click();
+                                $(this).siblings(".select-this").removeClass("select-this");
+                                $(this).addClass("select-this");
+                            });
+                            $("body").on("click", function (event) {
+                                event.stopPropagation();
+                                if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                    console.log(1);
+                                    $(".select-menu-ul").eq(index).hide();
+                                    $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+                                    $(".select-menu-ul").eq(index).animate({
+                                        marginTop: "0",
+                                        opacity: "0"
+                                    }, "fast");
+
+                                }
+                            });
+                        }
                         
                     }, 100);
 
@@ -2836,7 +3207,7 @@
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
-                                        <input class="select-menu-input" id="select-menu-input-mendian"/>
+                                        <input class="select-menu-input" id="select-menu-input-mendian1"/>
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
@@ -3132,7 +3503,7 @@
                                 })
                                 setTimeout(() => {
                                     $('#select-menu-ul-one').html(strfirstfirst)
-                                    $('#select-menu-input-mendian').val(listdata.storeName)
+                                    $('#select-menu-input-mendian1').val(listdata.storeName)
                                     //console.log(222)
                                 }, 100);
                             },
@@ -3375,7 +3746,61 @@
                         }, 100);
 
                         setTimeout(() => {
-                            new computed().select_option(listdata)
+                            //下拉菜单的动态
+                            selectMenu(2);
+                            selectMenu(3);
+
+                            function selectMenu(index) {
+                                $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
+                                $(".select-menu-div").eq(index).on("click", function (e) {
+                                    e.stopPropagation();
+                                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                        $(".select-menu-ul").eq(index).hide();
+                                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+                                        $(".select-menu-ul").eq(index).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+                                    } else {
+                                        $(".select-menu-ul").eq(index).show();
+                                        $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
+                                        $(".select-menu-ul").eq(index).animate({
+                                            marginTop: "5px",
+                                            opacity: "1"
+                                        }, "fast");
+                                    }
+                                    for (var i = 0; i < $(".select-menu-ul").length; i++) {
+                                        if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
+                                            $(".select-menu-ul").eq(i).hide();
+                                            $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
+                                            $(".select-menu-ul").eq(i).animate({
+                                                marginTop: "0",
+                                                opacity: "0"
+                                            }, "fast");
+                                        }
+                                    }
+                                });
+                                $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
+                                    $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
+                                    $(".select-menu-div").eq(index).click();
+                                    $(this).siblings(".select-this").removeClass("select-this");
+                                    $(this).addClass("select-this");
+                                });
+                                $("body").on("click", function (event) {
+                                    event.stopPropagation();
+                                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                        console.log(1);
+                                        $(".select-menu-ul").eq(index).hide();
+                                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+                                        $(".select-menu-ul").eq(index).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+
+                                    }
+                                });
+                            }
+                            
                         }, 100);
 
                     }, 100);
@@ -3592,6 +4017,7 @@
                     }
                 });
             }
+        
         }
 
         pay() {
