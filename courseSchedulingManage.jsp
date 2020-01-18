@@ -1907,12 +1907,14 @@
         </div>
         <div class="course-arranging-table" id="course-arranging-table"></div>
         <div class="course-arranging-footer">
-            <div class="course-arranging-table-checkbox">
+            <div class="course-arranging-table-checkbox" id="course-arranging-table-checkbox-all">
                 <img style="display:none" src="./image/codeallset_btn.png">
             </div>
             <div class="course-arranging-footer-pone">当页全选</div>
-            <div class="course-arranging-footer-pone">已选课程<span>115</span></div>
-            <div class="course-arranging-footer-ptwo">贴标</div>
+            <div class="course-arranging-footer-pone">已选课程<span></span></div>
+            <div class="course-arranging-footer-ptwo" id="recommended">推荐</div>
+            <div class="course-arranging-footer-ptwo" id="qx-recommended">取消推荐</div>
+            <div class="course-arranging-footer-ptwo" id="tiebiao-show">贴标</div>
             <div class="course-arranging-footer-ptwo">删除</div>
             <div class="course-arranging-footer-pthree"></div>
         </div>
@@ -2380,11 +2382,21 @@
                             }
                         }
 
+                        //贴标判断
+                        function tiebiao(arr) {
+                            var tiebiao = '';
+                            if (!arr) {
+                                return tiebiao = ''
+                            } else {
+                                return tiebiao = arr
+                            }
+                        }
+
                         $.each(result.rows, function (i, item) {
                             str2 += `
                         <tr class="course-arranging-table-tr">
-                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180">`+ item.storeName + `</td>
+                            <td width="48" class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td width="180" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
                             <td width="180">`+ item.roomName + `</td>
                             <td width="134">`+ item.dateStr + `</td>
                             <td width="134">`+ item.timeStr + `</td>
@@ -2394,7 +2406,7 @@
                             <td width="120">￥`+ item.price + `</td>
                             <td width="120">`+ item.maxNumber + `人</td>
                             <td width="120">`+ item.minNumber + `人</td>
-                            <td width="120">推荐</td>
+                            <td width="120">`+ tiebiao(item.tagName) +`</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -2499,11 +2511,21 @@
                         }
                     }
 
+                    //贴标判断
+                    function tiebiao(arr){
+                        var tiebiao = '';
+                        if(!arr){
+                            return tiebiao = ''
+                        }else{
+                            return tiebiao = arr
+                        }
+                    }
+
                     $.each(result.rows,function(i,item){
                         str2 += `
                         <tr class="course-arranging-table-tr">
-                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180">`+ item.storeName +`</td>
+                            <td width="48" class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td width="180" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
                             <td width="180">`+ item.roomName +`</td>
                             <td width="134">`+ item.dateStr +`</td>
                             <td width="134">`+ item.timeStr +`</td>
@@ -2513,7 +2535,7 @@
                             <td width="120">￥`+ item.price +`</td>
                             <td width="120">`+ item.maxNumber +`人</td>
                             <td width="120">`+ item.minNumber +`人</td>
-                            <td width="120">推荐</td>
+                            <td width="120">`+ tiebiao(item.tagName) +`</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -2832,18 +2854,6 @@
                         $(this).children('.paypay-hidden').hide()
                         $(this).children('.paypay-show').show()
                         $(this).addClass('1')
-                    }
-                })
-
-                $(".paypaypay").click(function () {
-                    $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
-                    $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
-                    if ($(this).children('.paypaypay-hidden').is(":hidden")) {
-                        $(this).children('.paypaypay-hidden').show()
-                        $(this).children('.paypaypay-show').hide()
-                    } else {
-                        $(this).children('.paypaypay-hidden').hide()
-                        $(this).children('.paypaypay-show').show()
                     }
                 })
                 
@@ -3191,7 +3201,6 @@
                 var editstr;
                 var addeditstr;
                 var acn_str;
-                var aecl_str;
                 //新增窗口的动态渲染
                 editstr = `
                     <div class="edit-course-header">
@@ -3387,40 +3396,7 @@
             //         </div>
             //     </div>
             // `
-                aecl_str = `
-                    <div class="add-edit-course-label-header">
-                        <div class="add-edit-course-label-header-flex">
-                            <img src="./image/tags_icon.png" alt=""/>
-                            <p>贴标</p>
-                        </div>
-                        <img style="width:24px;height:24px" id="label-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
-                    </div>
-                    <div class="add-edit-course-label-context">
-                        <p class="add-edit-course-label-context-pone">请对课程进行贴标</p>
-                        <div class="add-edit-course-label-context-flexone">
-                            <div class="paypaypay">
-                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
-                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
-                            </div>
-                            <p>无</p>
-                            <div class="paypaypay">
-                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
-                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
-                            </div>
-                            <p>热门</p>
-                            <div class="paypaypay">
-                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
-                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
-                            </div>
-                            <p>体验</p>
-                        </div>
-                        <div class="add-edit-course-label-context-footer">
-                            <p id="add-edit-course-label-context-footer-pone">保存</p>
-                            <p id="add-edit-course-label-context-footer-ptwo">取消</p>
-                        </div>
-                    </div>
-                `
-                $('.add-edit-course-label').html(aecl_str)
+                
                 //$('.add-course-name').html(acn_str)
                 $('.edit-course').html(editstr)
                 $('.add-edit-course').html(addeditstr)
@@ -3475,18 +3451,6 @@
                             $(this).addClass('1')
                         }
                     })
-
-                $(".paypaypay").click(function () {
-                    $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
-                    $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
-                    if ($(this).children('.paypaypay-hidden').is(":hidden")) {
-                        $(this).children('.paypaypay-hidden').show()
-                        $(this).children('.paypaypay-show').hide()
-                    } else {
-                        $(this).children('.paypaypay-hidden').hide()
-                        $(this).children('.paypaypay-show').show()
-                    }
-                })
             
                 setTimeout(() => {
                         var strfirstfirst = '';
@@ -3735,12 +3699,12 @@
 
                         //贴标
                         setTimeout(() => {
-                            if(listdata.tagName == "无"){
+                            if(!listdata.tagName){
                                 $('#tag-Name').children('.paypay').eq(0).click()
                             }
                             else if(listdata.tagName == "热门"){
                                 $('#tag-Name').children('.paypay').eq(1).click()
-                            }else{
+                            }else if(listdata.tagName == "体验"){
                                 $('#tag-Name').children('.paypay').eq(2).click()
                             }
                         }, 100);
@@ -3915,7 +3879,176 @@
                 })
                 
             }, 100);
+
+            //点击贴边按钮显示贴标
+            $('#tiebiao-show').click(function () {
+                setTimeout(() => {
+                $('#add-edit-course-label1').show()
+                var aecl_str;
+                aecl_str = `
+                    <div class="add-edit-course-label-header">
+                        <div class="add-edit-course-label-header-flex">
+                            <img src="./image/tags_icon.png" alt=""/>
+                            <p>贴标</p>
+                        </div>
+                        <img style="width:24px;height:24px" id="label-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                    </div>
+                    <div class="add-edit-course-label-context">
+                        <p class="add-edit-course-label-context-pone">请对课程进行贴标</p>
+                        <div class="add-edit-course-label-context-flexone">
+                            <div class="paypaypay">
+                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
+                            </div>
+                            <p>无</p>
+                            <div class="paypaypay">
+                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
+                            </div>
+                            <p>热门</p>
+                            <div class="paypaypay">
+                                <img class="paypaypay-show" src="./image/payment_btn.png" alt="">
+                                <img class="paypaypay-hidden" src="./image/paymentnor_btn.png" alt="">
+                            </div>
+                            <p>体验</p>
+                        </div>
+                        <div class="add-edit-course-label-context-footer">
+                            <p id="add-edit-course-label-context-footer-pone">保存</p>
+                            <p id="add-edit-course-label-context-footer-ptwo">取消</p>
+                        </div>
+                    </div>
+                `
+                $('.add-edit-course-label').html(aecl_str)
+
+                $(".paypaypay").click(function () {
+                    $(this).parent().children('.paypaypay').removeClass('2')
+                    $(this).parent().children('.paypaypay').children('.paypaypay-show').hide()
+                    $(this).parent().children('.paypaypay').children('.paypaypay-hidden').show()
+                    if ($(this).children('.paypaypay-hidden').is(":hidden")) {
+                        $(this).children('.paypaypay-hidden').show()
+                        $(this).children('.paypaypay-show').hide()
+                    } else {
+                        $(this).children('.paypaypay-hidden').hide()
+                        $(this).children('.paypaypay-show').show()
+                        $(this).addClass('2')
+                    }
+                })
+
+                $(".paypaypay").eq(0).click()
+
+                //console.log($('#course-arranging-table'))
+
+                //贴标点击叉叉和取消关闭页面
+                $('#label-header-imgtwo').click(function () {
+                    $(this).parent().parent().hide()
+                })
+
+                //贴标点击取消关闭页面
+                $('#add-edit-course-label-context-footer-ptwo').click(function () {
+                    $(this).parent().parent().parent().hide()
+                })
+
+                //贴标点击保存按钮
+                $('#add-edit-course-label-context-footer-pone').click(function () {
+
+                    for (var i = 0; i < $('#course-arranging-table').children().children().children().length; i++) {
+                        if ($('#course-arranging-table').children().children().children().eq(i).children().eq(0).children().children().children().is(':visible')) {
+                            var ids = $('#course-arranging-table').children().children().children().eq(i).children().eq(0).attr('class')
+                        }
+                    } 
+
+                    var tagId = ''
+                    $(this).parent().parent().parent().hide()
+                    for(var i=0;i<$(this).parent().parent().children().eq(1).children('.paypaypay').length;i++){
+                        if($(this).parent().parent().children().eq(1).children('.paypaypay').eq(i).hasClass('2')){
+                            if(i == 0){
+                                tagId = 0
+                            }else if(i == 1){
+                                tagId = '8222a8d209a24520b116747a047529b3'
+                            }else{
+                                tagId = "941660f44ced4aefa8b5b24809a0d43b"
+                            }
+                        }
+                    }
+                
+                    var taglist = {
+                        operationType : 2,
+                        ids : ids,
+                        tagId : tagId
+                    }
+
+                    $.ajax({
+                        url : 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                        type : 'POST',
+                        contentType : 'application/json;charset=UTF-8',
+                        data : JSON.stringify(taglist),
+                        success : function(result){
+                            console.log(result)
+                            window.location.reload()
+                        },
+                        error : function(e){
+                            console.log(e.status)
+                        }
+                    })
+                })
             
+            }, 100);
+            })
+        
+            $('#recommended').click(function(){
+                for (var i = 0; i < $('#course-arranging-table').children().children().children().length; i++) {
+                    if ($('#course-arranging-table').children().children().children().eq(i).children().eq(0).children().children().children().is(':visible')) {
+                        var ids = $('#course-arranging-table').children().children().children().eq(i).children().eq(0).attr('class')
+                        $('#course-arranging-table').children().children().children().eq(i).children().eq(1).children('img').show()
+                        //console.log(ids)
+                    }
+                }
+
+                var recommended = {
+                    operationType : 3,
+                    ids : ids
+                }
+
+                $.ajax({
+                    url : 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                    type : 'POST',
+                    contentType : 'application/json;charset=UTF-8',
+                    data : JSON.stringify(ids),
+                    success : function(result){
+                        console.log(result)
+                    },
+                    error : function(e){
+                        console.log(e.status)
+                    }
+                })
+            })
+
+            $('#qx-recommended').click(function(){
+                for (var i = 0; i < $('#course-arranging-table').children().children().children().length; i++) {
+                    if ($('#course-arranging-table').children().children().children().eq(i).children().eq(0).children().children().children().is(':visible')) {
+                        var ids = $('#course-arranging-table').children().children().children().eq(i).children().eq(0).attr('class')
+                        $('#course-arranging-table').children().children().children().eq(i).children().eq(1).children('img').hide()
+                    }
+                }
+
+                var recommended = {
+                    operationType: 3,
+                    ids: ids
+                }
+
+                $.ajax({
+                    url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                    type: 'POST',
+                    contentType: 'application/json;charset=UTF-8',
+                    data: JSON.stringify(ids),
+                    success: function (result) {
+                        console.log(result)
+                    },
+                    error: function (e) {
+                        console.log(e.status)
+                    }
+                })
+            })
         }
     }
 
@@ -3943,10 +4076,21 @@
                 } else {
                     setTimeout(() => {
                         $(this).children('img').hide()
+                        $('#course-arranging-table-checkbox-all').children('img').hide()
                     }, 50);
                 }
             })
+
+            $('#course-arranging-table-checkbox-all').click(function(){
+                if($(this).children('img').is(':hidden')){
+                    $(".course-arranging-table-checkbox").children('img').show()
+                }else{
+                    $(".course-arranging-table-checkbox").children('img').hide()
+                }
+            })
         }
+
+        
 
         a_del() {
             //点击删除按钮事件
@@ -4044,28 +4188,6 @@
             // $('.edit-course-context-three-pp').click(function () {
             //     $('#add-course-name1').show()
             // })
-
-
-
-            //点击贴边按钮显示贴标
-            $('.course-arranging-footer-ptwo').click(function () {
-                $('#add-edit-course-label1').show()
-            })
-
-            //贴标点击叉叉和取消关闭页面
-            $('#label-header-imgtwo').click(function () {
-                $(this).parent().parent().hide()
-            })
-
-            //贴标点击取消关闭页面
-            $('#add-edit-course-label-context-footer-ptwo').click(function () {
-                $(this).parent().parent().parent().hide()
-            })
-
-            //贴标点击保存按钮
-            $('#add-edit-course-label-context-footer-pone').click(function () {
-                $(this).parent().parent().parent().hide()
-            })
         }
     }
 
@@ -4078,16 +4200,38 @@
         a_del_click() {
             $('.td-del-flex-yes').click(function () {
                 $(this).parent().parent().parent().parent().remove()
+                //if($(this).parent().parent().parent().parent())
+                console.log($(this).parent().parent().parent().parent().children().eq(0).attr('class'))
+                var idsstr = {
+                    operationType : 1,
+                    ids : $(this).parent().parent().parent().parent().children().eq(0).attr('class')
+                }
+
+                $.ajax({
+                    url : 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                    type : 'POST',
+                    contentType : 'application/json;charset=UTF-8',
+                    data : JSON.stringify(idsstr),
+                    success : function(result){
+                        console.log(result)
+                    },
+                    error : function(e){
+                        console.log(e.status)
+                    }
+                })
+
+                setTimeout(() => {
+                    window.location.reload()
+                }, 100);
             })
             $('.td-del-flex-no').click(function () {
                 $(this).parent().parent().hide()
+                //console.log($(this).parent().parent().parent().parent().children().eq(0).attr('class'))
             })
         }
 
         edit_course_showhide() {
             
-
-
         }
     }
 
@@ -4617,7 +4761,6 @@
             //点击删除按钮事件
             $('.a-not-del').click(function () {
                 $(this).parent().parent().children().eq(12).children().show()
-
             })
             //点击编辑按钮事件
             $('.a-not-add').click(function () {
