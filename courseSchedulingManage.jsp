@@ -749,14 +749,14 @@
 
         .edit-course {
             width: 800px;
-            height: 725px;
+            height: 760px;
             border: 1px solid #71B2EF;
             background: #E0ECFF;
             border-radius: 4px;
             padding: 18px;
             box-sizing: border-box;
             position: absolute;
-            top: 40px;
+            top: -40px;
             left: 20%;
             z-index: 10;
             display: none
@@ -785,7 +785,7 @@
 
         .edit-course .edit-course-context {
             width: 756px;
-            height: 642px;
+            height: 680px;
             border: 1px solid #71B2EF;
             background: #FFFFFF;
             overflow-y: scroll;
@@ -993,13 +993,13 @@
         }
 
         .edit-course-context .edit-course-footer {
-            width: 741px;
+            width: 738px;
             display: flex;
             justify-content: center;
             padding: 27px 0 27px 0;
             box-sizing: border-box;
             position: fixed;
-            bottom: 5%;
+            bottom: 10%;
             background: white
         }
 
@@ -1277,12 +1277,12 @@
         }
 
         .course-arranging-body .add-course-name {
-            width: 600px;
-            height: 600px;
+            width: 688px;
+            height: 678px;
             border: 1px solid #71B2EF;
             position: absolute;
-            left: 380px;
-            top: 70px;
+            left: 32px;
+            top: 2px;
             z-index: 200;
             background: #E0ECFF;
             padding: 18px;
@@ -1312,13 +1312,15 @@
         }
 
         .add-course-name .add-course-name-context {
-            width: 560px;
-            height: 520px;
+            width: 650px;
+            height: 600px;
             border: 1px solid #71B2EF;
             margin-top: 17px;
             background: white;
             padding: 22px 22px 22px 4px;
             box-sizing: border-box;
+            position : relative;
+            overflow-y: scroll;
         }
 
         .add-course-name-context .add-course-name-context-flex {
@@ -1489,10 +1491,10 @@
             width: 620px;
             height: 597px;
             background: #E0ECFF;
-            z-index: 488;
+            z-index: 9999;
             border-radius: 4px;
-            top: 160px;
-            left: 460px;
+            top: 40px;
+            left: 74px;
             padding: 18px;
             box-sizing: border-box;
             border: 1px solid #71B2EF
@@ -1883,6 +1885,86 @@
         }
 
         /* //////////////////////////// */
+
+        .coach-manage-addthree-flexthree-flex {
+            padding: 25px 25px 0 7px;
+            box-sizing: border-box;
+        }
+
+        .coach-manage-addthree-flexthree-flex-p {
+            margin: 0 0 20px 18px;
+            font-size: 18px;
+            color: black
+        }
+
+        .addthree-flexfour {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flexthree-tags1 {
+            padding: 10px;
+            border-radius: 4px;
+            background: #F5F5F5;
+            margin-left: 18px;
+            height: 30px;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 14px
+        }
+
+        .active1 {
+            background: #71B2EF;
+            color: white
+        }
+
+        .add-course-name-context-bottom1{
+            width:627px;
+            background: white;
+            top:651px;
+            display: flex;
+            justify-content: center;
+            padding: 26px 0 26px 0;
+            box-sizing: border-box;
+            position: fixed;
+        }
+
+        .add-course-name-context-bottom1 #add-course-name-context-bottom-pone {
+            width: 88px;
+            height: 35px;
+            background: #71B2EF;
+            border-radius: 4px;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .add-course-name-context-bottom1 #add-course-name-context-bottom-ptwo {
+            width: 88px;
+            height: 35px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+            border: 1px solid #BFBFBF;
+            margin-left: 26px
+        }
+
+        /* .add-course-name-context-flex{
+            height: 600px;
+            padding-bottom: 100px;
+            overflow-y: scroll;
+            box-sizing: border-box;
+        } */
+
+        #add-course-name-context-flex-coursename{
+            padding-bottom:100px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 
@@ -1962,10 +2044,6 @@
 
         </div>
         <div class="add-edit-course" id="add-edit-course1">
-
-        </div>
-
-        <div class="add-course-name" id="add-course-name1">
 
         </div>
 
@@ -2056,9 +2134,9 @@
 
         </div>
 
-        <div class="add-edit-course-change" id="add-edit-course-change" style="display:none">
+        <!-- <div class="add-edit-course-change" id="add-edit-course-change" style="display:none">
 
-        </div>
+        </div> -->
 
         <div class="box" id="boxpage1"></div>
     </div>
@@ -2125,6 +2203,8 @@
             //         console.log(e.responseText)
             //     }
             // })
+
+
         }
 
         time() {
@@ -2804,6 +2884,7 @@
                                 
                             </div>
                         </div>
+
                         <div class="edit-course-footer">
                             <p id="edit-course-footer-pone">保存</p>
                             <p id="edit-course-footer-ptwo">取消</p>
@@ -2844,35 +2925,39 @@
                         </div>
                     </div>
                 `
-                // acn_str = `
-                //     <div class="add-course-name-header">
-                //         <div class="add-course-name-header-left">
-                //             <img src="./image/tags_icon.png" alt=""/>
-                //             <p>课程名称</p>
-                //         </div>
-                //         <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
-                //     </div>
-                //     <div class="add-course-name-context">
-                //         <div class="add-course-name-context-flex">
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //             <p class="add-course-name-context-p">舞林漫步</p>
-                //         </div>
-                //         <div class="add-course-name-context-bottom">
-                //             <p id="add-course-name-context-bottom-pone">确定</p>
-                //             <p id="add-course-name-context-bottom-ptwo">取消</p>
-                //         </div>
-                //     </div>
-                // `
-                
-                //$('.add-course-name').html(acn_str)
-                $('.edit-course').html(editstr)
-                $('.add-edit-course').html(addeditstr)
+                acn_str = `
+                    <div class="add-course-name-header">
+                        <div class="add-course-name-header-left">
+                            <img src="./image/tags_icon.png" alt=""/>
+                            <p>课程名称</p>
+                        </div>
+                        <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                    </div>
+                    <div class="add-course-name-context">
+                        <div class="add-course-name-context-flex">
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                            <p class="add-course-name-context-p">舞林漫步</p>
+                        </div>
+                        <div class="add-course-name-context-bottom">
+                            <p id="add-course-name-context-bottom-pone">确定</p>
+                            <p id="add-course-name-context-bottom-ptwo">取消</p>
+                        </div>
+                    </div>
+                `                          
+
+                $('#edit-course1').html(editstr)
+                $('#add-edit-course1').html(addeditstr)
+                //$('#add-course-name1').html(acn_str)
+
+                // $('#select-menu-input-coursename').click(function(){
+                //     $('#add-course-name1').show()
+                // })
 
                 //添加教练的叉叉关闭
                 $('#add-edit-course-hide').click(function () {
@@ -3278,7 +3363,7 @@
                         </div>
                         <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                     </div>
-                    <div class="edit-course-context">
+                    <div class="edit-course-context" style="position:relative">
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one" style="margin-right:111px">门店</div>
                             <div id="edit-course-context-first">
@@ -3399,6 +3484,9 @@
                                 
                             </div>
                         </div>
+                        <div class="add-course-name" id="add-course-name1">
+
+                        </div>
                         <div class="edit-course-footer">
                             <p id="edit-course-footer-pone">保存</p>
                             <p id="edit-course-footer-ptwo">取消</p>
@@ -3439,35 +3527,103 @@
                         </div>
                     </div>
                 `
-            // acn_str = `
-            //     <div class="add-course-name-header">
-            //         <div class="add-course-name-header-left">
-            //             <img src="./image/tags_icon.png" alt=""/>
-            //             <p>课程名称</p>
-            //         </div>
-            //         <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
-            //     </div>
-            //     <div class="add-course-name-context">
-            //         <div class="add-course-name-context-flex">
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //             <p class="add-course-name-context-p">舞林漫步</p>
-            //         </div>
-            //         <div class="add-course-name-context-bottom">
-            //             <p id="add-course-name-context-bottom-pone">确定</p>
-            //             <p id="add-course-name-context-bottom-ptwo">取消</p>
-            //         </div>
-            //     </div>
-            // `
+                acn_str = `
+                    <div class="add-course-name-header">
+                        <div class="add-course-name-header-left">
+                            <img src="./image/tags_icon.png" alt=""/>
+                            <p>课程名称</p>
+                        </div>
+                        <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                    </div>
+                    <div class="add-course-name-context">
+                        <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename">
+                            
+                        </div>
+                        <div class="add-course-name-context-bottom1">
+                            <p id="add-course-name-context-bottom-pone">确定</p>
+                            <p id="add-course-name-context-bottom-ptwo">取消</p>
+                        </div>
+                    </div>
+                `
                 
-                //$('.add-course-name').html(acn_str)
                 $('.edit-course').html(editstr)
                 $('.add-edit-course').html(addeditstr)
+                $('.add-course-name').html(acn_str)
+
+                //课程名称的请求及渲染
+
+                var ad_ft1 = '';
+
+                $.ajax({
+                    type: 'GET',
+                    contentType: "application/json;charset=UTF-8",
+                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                    success: function (results) {
+                        console.log(results)
+                        var result = results.rows
+                        //console.log(list)
+                        for (var i = 0; i < result.length; i++) {
+                            var ad_str2 = '';
+                            for (var j = 0; j < result[i].children.length; j++) {
+                                ad_str2 += `
+                                                <div class="flexthree-tags1 `+ result[i].children[j].id + `">
+                                                    `+ result[i].children[j].name + `
+                                                </div>
+                                            `
+                            }
+
+                            ad_ft1 += `
+                                            <div class="coach-manage-addthree-flexthree-flex">
+                                                <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                                <div class="addthree-flexfour">
+                                                `+ ad_str2 + `
+                                                </div>
+                                            </div>  
+                                        `
+
+                        }
+                        setTimeout(() => {
+                            $('#add-course-name-context-flex-coursename').html(ad_ft1)
+
+                            $('.flexthree-tags1').click(function () {
+                                if ($(this).hasClass('active1')) {
+                                    setTimeout(() => {
+                                        $(this).removeClass('active1')
+                                    }, 50);
+
+                                } else {
+                                    setTimeout(() => {
+                                        $(this).addClass('active1')
+                                    }, 50);
+                                }
+                            })
+                        }, 100);
+
+                        // for (var i = 0; i < result.length; i++) {
+                        //     for (var j = 0; j < result[i].children.length; j++) {
+                        //         for (var y = 0; y < list.rows.length; y++) {
+                        //             for (var z = 0; z < list.rows[y].coachSkillList.length; z++) {
+                        //                 if (result[i].children[j].name == list.rows[y].coachSkillList[z].leagueCurriculumName) {
+                        //                     //$('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).click()
+                        //                     //console.log($('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).html())
+                        //                     $('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
+                        //                 }
+                        //             }
+                        //         }
+                        //         // console.log(111)
+                        //     }
+                        // }
+                        //console.log($('#coach-manage-addthree-flexthree-list').html())
+                    },
+                    error: function (e) {
+                        console.log(e.status);
+                        console.log(e.responseText)
+                    }
+                })
+
+                $('#select-menu-input-coursename').click(function(){
+                    $('#add-course-name1').show()
+                })
 
                 //添加教练的叉叉关闭
                 $('#add-edit-course-hide').click(function () {
@@ -5013,7 +5169,42 @@
                             <p class="edit-course-footer-pone" id="edit-course-footer-pone2">保存</p>
                             <p class="edit-course-footer-ptwo" id="edit-course-footer-ptwo2">取消</p>
                         </div>
-                        </div>
+                        <div class="add-edit-course-change" id="add-edit-course-change" style="display:none">
+                            <div class="add-edit-course-change-header">
+                                <div class="add-edit-course-change-header-flex">
+                                    <img src="./image/tags_icon.png" alt=""/>
+                                    <p>课程变更</p>
+                                </div>
+                                <img style="width:22px;height:22px" id="change-header-not-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                            </div>
+                            <div class="add-edit-course-change-context">
+                                <p class="add-edit-course-change-context-pone">变更原因</p>
+                                <div class="add-edit-course-change-context-ptwo">
+                                    <p>门店停电</p>
+                                    <p class="course-arranging-not-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                                </div>
+                                <div class="add-edit-course-change-context-ptwo">
+                                    <p>公司会议</p>
+                                    <p class="course-arranging-not-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                                </div>
+                                <div class="add-edit-course-change-context-ptwo">
+                                    <p>身体不适</p>
+                                    <p class="course-arranging-not-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                                </div>
+                                <div class="add-edit-course-change-context-ptwo">
+                                    <p>临时有事</p>
+                                    <p class="course-arranging-not-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                                </div>
+                                <div class="add-edit-course-change-context-ptwo">
+                                    <p>个人休假</p>
+                                    <p class="course-arranging-not-table-checkbox1"><img style="display:none" src="./image/codeallset_btn.png"></p>
+                                </div>
+                                <textarea placeholder="其他原因" class="add-edit-course-change-context-textarea"></textarea>
+                                <div class="add-edit-course-change-context-footer">
+                                    <p class="add-edit-course-change-context-footer-pone">确定</p>
+                                    <p class="add-edit-course-change-context-footer-ptwo">取消</p>
+                                </div>
+                            </div>
                     </div>
                 `
                     //添加教练窗口的动态渲染
@@ -5451,7 +5642,9 @@
                     //发送参数
                     $('#edit-course-footer-pone2').click(function () {
                         setTimeout(() => {
-                            $(this).parent().parent().parent().hide()
+                            $('#add-edit-course-change').show()
+
+                            //$(this).parent().parent().parent().hide()
                             //获取门店id
                             for (var i = 0; i < $('#select-menu-ul-one1').children().length; i++) {
                                 if ($('#select-menu-ul-one1').children().eq(i).html() == $('#select-menu-input-mendian1').val()) {
@@ -5462,7 +5655,7 @@
 
                             //获取房间id
                             for (var i = 0; i < $('#select-menu-ul-RoomList1').children().length; i++) {
-                                if ($('#select-menu-ul-RoomList1').children().eq(i).html() == $('#select-menu-inputroom2').val()) {
+                                if ($('#select-menu-ul-RoomList1').children().eq(i).html() == $('#select-menu-inputroom3').val()) {
                                     var roomId = $('#select-menu-ul-RoomList1').children().eq(i).attr('class')
                                     //console.log("mendiandm")
                                 }
@@ -5514,39 +5707,100 @@
                                     courseSchedulingItemList.push({ coachId: $('#coach-performance2').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val() })
                                 }
                             }
+                            
+                            //课程变更点击叉叉关闭
+                            $('#change-header-not-imgtwo').click(function () {
+                                $(this).parent().parent().hide()
+                            })
 
+                            //课程变更点击取消关闭
+                            $('.add-edit-course-change-context-footer-ptwo').click(function () {
+                                $(this).parent().parent().parent().hide()
+                            })
 
-
-                            setTimeout(() => {
-                                var paramsrevise = {
-                                    storeId: storeId,
-                                    roomId: roomId,
-                                    leagueCurriculumId: leagueCurriculumId,
-                                    startDate: startDate,
-                                    endDate: endDate,
-                                    price: price,
-                                    maxNumber: maxNumber,
-                                    minNumber: minNumber,
-                                    isQueue: isQueue,
-                                    tagId: tagId,
-                                    courseSchedulingItemList: courseSchedulingItemList,
-                                    id: listdata.id
+                            $(".course-arranging-not-table-checkbox1").click(function () {
+                                $(this).parent().parent().children('.add-edit-course-change-context-ptwo').children('.course-arranging-not-table-checkbox1').children('img').hide()
+                                $(this).parent().parent().children('.add-edit-course-change-context-ptwo').children('.course-arranging-not-table-checkbox1').removeClass('3')
+                                if ($(this).children('img').is(":hidden")) {
+                                    setTimeout(() => {
+                                        $(this).children('img').show()
+                                        $(this).addClass('3')
+                                    }, 50);
+                                } else {
+                                    setTimeout(() => {
+                                        $(this).children('img').hide()
+                                    }, 50);
                                 }
-                                console.log(paramsrevise)
 
-                                // $.ajax({
-                                //     url: 'http://test.physicalclub.com/rest/courseScheduling/ updateCourseScheduling',
-                                //     type: 'POST',
-                                //     contentType: 'application/json;charset=UTF-8',
-                                //     data: JSON.stringify(paramsrevise),
-                                //     success: function (result) {
-                                //         console.log(result)
-                                //     },
-                                //     error: function (e) {
-                                //         console.log(e.status)
-                                //     }
-                                // })
-                            }, 200);
+                                $('.add-edit-course-change-context-textarea').focus(function(){
+                                    $('.add-edit-course-change-context-ptwo').children('.course-arranging-not-table-checkbox1').children('img').hide()
+                                })
+                            })
+
+                            //课程变更点击确定关闭
+                            $('.add-edit-course-change-context-footer-pone').click(function () {
+                                $(this).parent().parent().parent().hide()
+                                $('.edit-course').hide()
+
+                                var changeReasonId = ''
+
+                                //获取变更原因
+                                if($('.add-edit-course-change-context-ptwo').eq(0).children('.course-arranging-not-table-checkbox1').hasClass('3')){
+                                    changeReasonId = "门店停电"
+                                }
+                                else if($('.add-edit-course-change-context-ptwo').eq(1).children('.course-arranging-not-table-checkbox1').hasClass('3')){
+                                    changeReasonId = "公司会议"
+                                }
+                                else if($('.add-edit-course-change-context-ptwo').eq(2).children('.course-arranging-not-table-checkbox1').hasClass('3')){
+                                    changeReasonId = "身体不适"
+                                }
+                                else if($('.add-edit-course-change-context-ptwo').eq(3).children('.course-arranging-not-table-checkbox1').hasClass('3')){
+                                    changeReasonId = "临时有事"
+                                }
+                                else if($('.add-edit-course-change-context-ptwo').eq(4).children('.course-arranging-not-table-checkbox1').hasClass('3')){
+                                    changeReasonId = "个人休假"
+                                }
+                                else{
+                                    changeReasonId = $('.add-edit-course-change-context-textarea').val()
+                                }
+                                
+                                setTimeout(() => {
+                                    var paramsrevise = {
+                                        storeId: storeId,
+                                        roomId: roomId,
+                                        leagueCurriculumId: leagueCurriculumId,
+                                        startDate: startDate,
+                                        endDate: endDate,
+                                        price: price,
+                                        maxNumber: maxNumber,
+                                        minNumber: minNumber,
+                                        isQueue: isQueue,
+                                        tagId: tagId,
+                                        courseSchedulingItemList: courseSchedulingItemList,
+                                        id: listdata.id,
+                                        changeReasonId : changeReasonId
+                                    }
+                                    //console.log($('.course-arranging-not-table-checkbox1').length)
+                                    console.log(paramsrevise)
+
+                                    // $.ajax({
+                                    //     url: 'http://test.physicalclub.com/rest/courseScheduling/ updateCourseScheduling',
+                                    //     type: 'POST',
+                                    //     contentType: 'application/json;charset=UTF-8',
+                                    //     data: JSON.stringify(paramsrevise),
+                                    //     success: function (result) {
+                                    //         console.log(result)
+                                    //     },
+                                    //     error: function (e) {
+                                    //         console.log(e.status)
+                                    //     }
+                                    // })
+
+                                }, 200);
+
+                            })
+
+                            
 
                         }, 200);
 
@@ -5896,23 +6150,6 @@
 
             // //贴标点击保存按钮
             // $('#add-edit-course-label-not-context-footer-pone').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-
-
-            // //课程变更点击叉叉关闭
-            // $('#change-header-not-imgtwo').click(function () {
-            //     $(this).parent().parent().hide()
-            // })
-
-            // //课程变更点击确定关闭
-            // $('.add-edit-course-change-context-footer-pone').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            //     $('.edit-course').hide()
-            // })
-
-            // //课程变更点击取消关闭
-            // $('.add-edit-course-change-context-footer-ptwo').click(function () {
             //     $(this).parent().parent().parent().hide()
             // })
         }
