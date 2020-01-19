@@ -1373,6 +1373,28 @@
             margin-left: 26px
         }
 
+        .add-course-name-context-bottom1 #add-course-name-context-bottom-pone2 {
+            width: 88px;
+            height: 35px;
+            background: #71B2EF;
+            border-radius: 4px;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .add-course-name-context-bottom1 #add-course-name-context-bottom-ptwo2 {
+            width: 88px;
+            height: 35px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+            border: 1px solid #BFBFBF;
+            margin-left: 26px
+        }
+
         .add-edit-course-label {
             position: absolute;
             width: 467px;
@@ -2885,6 +2907,10 @@
                             </div>
                         </div>
 
+                        <div class="add-course-name" id="add-course-name1">
+
+                        </div>
+
                         <div class="edit-course-footer">
                             <p id="edit-course-footer-pone">保存</p>
                             <p id="edit-course-footer-ptwo">取消</p>
@@ -2934,17 +2960,10 @@
                         <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-course-name-context">
-                        <div class="add-course-name-context-flex">
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
-                            <p class="add-course-name-context-p">舞林漫步</p>
+                        <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename">
+                            
                         </div>
-                        <div class="add-course-name-context-bottom">
+                        <div class="add-course-name-context-bottom1">
                             <p id="add-course-name-context-bottom-pone">确定</p>
                             <p id="add-course-name-context-bottom-ptwo">取消</p>
                         </div>
@@ -2953,7 +2972,7 @@
 
                 $('#edit-course1').html(editstr)
                 $('#add-edit-course1').html(addeditstr)
-                //$('#add-course-name1').html(acn_str)
+                $('#add-course-name1').html(acn_str)
 
                 // $('#select-menu-input-coursename').click(function(){
                 //     $('#add-course-name1').show()
@@ -3075,6 +3094,112 @@
                         $('#select-menu-input-coursename').val("课程名称")
                         $('#select-menu-input-coursename').addClass("2dc05bb1-854e-41c6-8584-44b9b37d8470")
                     }, 100);
+
+                    //课程名称的请求及渲染
+                    $('#select-menu-input-coursename').click(function () {
+                        $('#add-course-name1').show()
+
+                        var ad_ft1 = '';
+
+                        $.ajax({
+                            type: 'GET',
+                            contentType: "application/json;charset=UTF-8",
+                            url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                            success: function (results) {
+                                console.log(results)
+                                var result = results.rows
+                                //console.log(list)
+                                for (var i = 0; i < result.length; i++) {
+                                    var ad_str2 = '';
+                                    for (var j = 0; j < result[i].children.length; j++) {
+                                        ad_str2 += `
+                                                    <div class="flexthree-tags1 `+ result[i].children[j].id + `">
+                                                        `+ result[i].children[j].name + `
+                                                    </div>
+                                                `
+                                    }
+
+                                    ad_ft1 += `
+                                                <div class="coach-manage-addthree-flexthree-flex">
+                                                    <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                                    <div class="addthree-flexfour">
+                                                    `+ ad_str2 + `
+                                                    </div>
+                                                </div>  
+                                            `
+
+                                }
+                                setTimeout(() => {
+                                    $('#add-course-name-context-flex-coursename').html(ad_ft1)
+
+                                    $('.flexthree-tags1').click(function () {
+                                        $('#add-course-name-context-flex-coursename').children().children('.addthree-flexfour').children('.flexthree-tags1').removeClass('active1')
+                                        if ($(this).hasClass('active1')) {
+                                            setTimeout(() => {
+                                                $(this).removeClass('active1')
+                                            }, 50);
+
+                                        } else {
+                                            setTimeout(() => {
+                                                $(this).addClass('active1')
+                                            }, 50);
+                                        }
+                                    })
+
+                                    console.log(list)
+                                    console.log(result)
+                                    for (var i = 0; i < result.length; i++) {
+                                        for (var j = 0; j < result[i].children.length; j++) {
+                                            if (result[i].children[j].name == $('#select-menu-input-coursename').val()) {
+                                                $('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
+
+                                            }
+                                            // console.log(111)
+                                        }
+                                    }
+
+                                    $('#add-course-name-context-bottom-pone').click(function () {
+                                        $(this).parent().parent().parent().hide()
+                                        //$('#select-menu-input-coursename').val($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html())
+                                        //$('#select-menu-input-coursename').addClass($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+
+                                        for (var i = 0; i < $('#add-course-name-context-flex-coursename').children().length; i++) {
+                                            for (var j = 0; j < $('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().length; j++) {
+                                                if ($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).hasClass('active1')) {
+                                                    $('#select-menu-input-coursename').val($.trim($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                    $('#select-menu-input-coursename').addClass($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+                                                    //console.log($.trim($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                }
+                                            }
+                                        }
+
+                                    })
+
+                                }, 100);
+
+                                //课程名称的取消和叉叉关闭页面
+                                $('#add-course-name-header-img').click(function () {
+                                    $(this).parent().parent().hide()
+                                })
+
+                                // //课程名称的取消按钮事件
+                                $('#add-course-name-context-bottom-ptwo').click(function () {
+                                    $(this).parent().parent().parent().hide()
+                                })
+
+                                // //课程名称页面的显示
+                                // $('.edit-course-context-three-pp').click(function () {
+                                //     $('#add-course-name1').show()
+                                // })
+
+                                // console.log($('#coach-manage-addthree-flexthree-list').html())
+                            },
+                            error: function (e) {
+                                console.log(e.status);
+                                console.log(e.responseText)
+                            }
+                        })
+                    })
 
                     //教练名遍历渲染
                     // var strcoach = '';
@@ -3550,81 +3675,6 @@
                 $('.add-edit-course').html(addeditstr)
                 $('.add-course-name').html(acn_str)
 
-                //课程名称的请求及渲染
-
-                var ad_ft1 = '';
-
-                $.ajax({
-                    type: 'GET',
-                    contentType: "application/json;charset=UTF-8",
-                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
-                    success: function (results) {
-                        console.log(results)
-                        var result = results.rows
-                        //console.log(list)
-                        for (var i = 0; i < result.length; i++) {
-                            var ad_str2 = '';
-                            for (var j = 0; j < result[i].children.length; j++) {
-                                ad_str2 += `
-                                                <div class="flexthree-tags1 `+ result[i].children[j].id + `">
-                                                    `+ result[i].children[j].name + `
-                                                </div>
-                                            `
-                            }
-
-                            ad_ft1 += `
-                                            <div class="coach-manage-addthree-flexthree-flex">
-                                                <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
-                                                <div class="addthree-flexfour">
-                                                `+ ad_str2 + `
-                                                </div>
-                                            </div>  
-                                        `
-
-                        }
-                        setTimeout(() => {
-                            $('#add-course-name-context-flex-coursename').html(ad_ft1)
-
-                            $('.flexthree-tags1').click(function () {
-                                if ($(this).hasClass('active1')) {
-                                    setTimeout(() => {
-                                        $(this).removeClass('active1')
-                                    }, 50);
-
-                                } else {
-                                    setTimeout(() => {
-                                        $(this).addClass('active1')
-                                    }, 50);
-                                }
-                            })
-                        }, 100);
-
-                        // for (var i = 0; i < result.length; i++) {
-                        //     for (var j = 0; j < result[i].children.length; j++) {
-                        //         for (var y = 0; y < list.rows.length; y++) {
-                        //             for (var z = 0; z < list.rows[y].coachSkillList.length; z++) {
-                        //                 if (result[i].children[j].name == list.rows[y].coachSkillList[z].leagueCurriculumName) {
-                        //                     //$('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).click()
-                        //                     //console.log($('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').eq(j).html())
-                        //                     $('#coach-manage-addthree-flexthree-list').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
-                        //                 }
-                        //             }
-                        //         }
-                        //         // console.log(111)
-                        //     }
-                        // }
-                        //console.log($('#coach-manage-addthree-flexthree-list').html())
-                    },
-                    error: function (e) {
-                        console.log(e.status);
-                        console.log(e.responseText)
-                    }
-                })
-
-                $('#select-menu-input-coursename').click(function(){
-                    $('#add-course-name1').show()
-                })
-
                 //添加教练的叉叉关闭
                 $('#add-edit-course-hide').click(function () {
                     $(this).parent().parent().hide()
@@ -3733,6 +3783,112 @@
                             $('#select-menu-input-coursename').val(listdata.leagueCurriculumName)
                             $('#select-menu-input-coursename').addClass(listdata.leagueCurriculumId)
                         },100);                  
+
+                        //课程名称的请求及渲染
+                        $('#select-menu-input-coursename').click(function () {
+                            $('#add-course-name1').show()
+
+                            var ad_ft1 = '';
+
+                            $.ajax({
+                                type: 'GET',
+                                contentType: "application/json;charset=UTF-8",
+                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                success: function (results) {
+                                    console.log(results)
+                                    var result = results.rows
+                                    //console.log(list)
+                                    for (var i = 0; i < result.length; i++) {
+                                        var ad_str2 = '';
+                                        for (var j = 0; j < result[i].children.length; j++) {
+                                            ad_str2 += `
+                                                    <div class="flexthree-tags1 `+ result[i].children[j].id + `">
+                                                        `+ result[i].children[j].name + `
+                                                    </div>
+                                                `
+                                        }
+
+                                        ad_ft1 += `
+                                                <div class="coach-manage-addthree-flexthree-flex">
+                                                    <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                                    <div class="addthree-flexfour">
+                                                    `+ ad_str2 + `
+                                                    </div>
+                                                </div>  
+                                            `
+
+                                    }
+                                    setTimeout(() => {
+                                        $('#add-course-name-context-flex-coursename').html(ad_ft1)
+
+                                        $('.flexthree-tags1').click(function () {
+                                            $('#add-course-name-context-flex-coursename').children().children('.addthree-flexfour').children('.flexthree-tags1').removeClass('active1')
+                                            if ($(this).hasClass('active1')) {
+                                                setTimeout(() => {
+                                                    $(this).removeClass('active1')
+                                                }, 50);
+
+                                            } else {
+                                                setTimeout(() => {
+                                                    $(this).addClass('active1')
+                                                }, 50);
+                                            }
+                                        })
+
+                                        console.log(list)
+                                        console.log(result)
+                                        for (var i = 0; i < result.length; i++) {
+                                            for (var j = 0; j < result[i].children.length; j++) {
+                                                if (result[i].children[j].name == $('#select-menu-input-coursename').val()) {
+                                                    $('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
+                                                    
+                                                }
+                                                // console.log(111)
+                                            }
+                                        }
+
+                                        $('#add-course-name-context-bottom-pone').click(function () {
+                                            $(this).parent().parent().parent().hide()
+                                            //$('#select-menu-input-coursename').val($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html())
+                                            //$('#select-menu-input-coursename').addClass($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+                                            
+                                            for(var i=0;i< $('#add-course-name-context-flex-coursename').children().length;i++){
+                                                for(var j=0;j< $('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().length;j++){
+                                                    if($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).hasClass('active1')){
+                                                        $('#select-menu-input-coursename').val($.trim($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                        $('#select-menu-input-coursename').addClass($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+                                                        //console.log($.trim($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                    }
+                                                }
+                                            }
+                                            
+                                        })
+
+                                    }, 100);
+
+                                    //课程名称的取消和叉叉关闭页面
+                                    $('#add-course-name-header-img').click(function () {
+                                        $(this).parent().parent().hide()
+                                    })
+
+                                    // //课程名称的取消按钮事件
+                                    $('#add-course-name-context-bottom-ptwo').click(function () {
+                                        $(this).parent().parent().parent().hide()
+                                    })
+
+                                    // //课程名称页面的显示
+                                    // $('.edit-course-context-three-pp').click(function () {
+                                    //     $('#add-course-name1').show()
+                                    // })
+                                    
+                                    // console.log($('#coach-manage-addthree-flexthree-list').html())
+                                },
+                                error: function (e) {
+                                    console.log(e.status);
+                                    console.log(e.responseText)
+                                }
+                            })
+                        })
 
                         //教练名遍历渲染
                         var strcoach = '';
@@ -5165,6 +5321,11 @@
                                 
                             </div>
                         </div>
+
+                        <div class="add-course-name" id="add-course-name3">
+
+                        </div>
+
                         <div class="edit-course-footer">
                             <p class="edit-course-footer-pone" id="edit-course-footer-pone2">保存</p>
                             <p class="edit-course-footer-ptwo" id="edit-course-footer-ptwo2">取消</p>
@@ -5240,35 +5401,28 @@
                         </div>
                     </div>
                 `
-                    // acn_str = `
-                    //     <div class="add-course-name-header">
-                    //         <div class="add-course-name-header-left">
-                    //             <img src="./image/tags_icon.png" alt=""/>
-                    //             <p>课程名称</p>
-                    //         </div>
-                    //         <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
-                    //     </div>
-                    //     <div class="add-course-name-context">
-                    //         <div class="add-course-name-context-flex">
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //             <p class="add-course-name-context-p">舞林漫步</p>
-                    //         </div>
-                    //         <div class="add-course-name-context-bottom">
-                    //             <p id="add-course-name-context-bottom-pone">确定</p>
-                    //             <p id="add-course-name-context-bottom-ptwo">取消</p>
-                    //         </div>
-                    //     </div>
-                    // `
 
-                    //$('.add-course-name').html(acn_str)
+                    acn_str = `
+                    <div class="add-course-name-header">
+                        <div class="add-course-name-header-left">
+                            <img src="./image/tags_icon.png" alt=""/>
+                            <p>课程名称</p>
+                        </div>
+                        <img style="width:22px;height:22px" id="add-course-name-header-img2" src="./image/popupclose_btn.png" alt=""/>
+                    </div>
+                    <div class="add-course-name-context">
+                        <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename3">
+                            
+                        </div>
+                        <div class="add-course-name-context-bottom1">
+                            <p id="add-course-name-context-bottom-pone2">确定</p>
+                            <p id="add-course-name-context-bottom-ptwo2">取消</p>
+                        </div>
+                    </div>
+                `
                     $('#edit-course2').html(editstr)
                     $('#add-edit-course2').html(addeditstr)
+                    $('#add-course-name3').html(acn_str)
 
                     //添加教练的叉叉关闭
                     $('#add-edit-course-hide2').click(function () {
@@ -5379,6 +5533,112 @@
                             $('#select-menu-input-coursename2').val(listdata.leagueCurriculumName)
                             $('#select-menu-input-coursename2').addClass(listdata.leagueCurriculumId)
                         }, 100);
+
+                        //课程名称的请求及渲染
+                        $('#select-menu-input-coursename2').click(function () {
+                            $('#add-course-name3').show()
+
+                            var ad_ft1 = '';
+
+                            $.ajax({
+                                type: 'GET',
+                                contentType: "application/json;charset=UTF-8",
+                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                success: function (results) {
+                                    console.log(results)
+                                    var result = results.rows
+                                    //console.log(list)
+                                    for (var i = 0; i < result.length; i++) {
+                                        var ad_str2 = '';
+                                        for (var j = 0; j < result[i].children.length; j++) {
+                                            ad_str2 += `
+                                                    <div class="flexthree-tags1 `+ result[i].children[j].id + `">
+                                                        `+ result[i].children[j].name + `
+                                                    </div>
+                                                `
+                                        }
+
+                                        ad_ft1 += `
+                                                <div class="coach-manage-addthree-flexthree-flex">
+                                                    <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                                    <div class="addthree-flexfour">
+                                                    `+ ad_str2 + `
+                                                    </div>
+                                                </div>  
+                                            `
+
+                                    }
+                                    setTimeout(() => {
+                                        $('#add-course-name-context-flex-coursename3').html(ad_ft1)
+
+                                        $('.flexthree-tags1').click(function () {
+                                            $('#add-course-name-context-flex-coursename3').children().children('.addthree-flexfour').children('.flexthree-tags1').removeClass('active1')
+                                            if ($(this).hasClass('active1')) {
+                                                setTimeout(() => {
+                                                    $(this).removeClass('active1')
+                                                }, 50);
+
+                                            } else {
+                                                setTimeout(() => {
+                                                    $(this).addClass('active1')
+                                                }, 50);
+                                            }
+                                        })
+
+                                        console.log(list)
+                                        console.log(result)
+                                        for (var i = 0; i < result.length; i++) {
+                                            for (var j = 0; j < result[i].children.length; j++) {
+                                                if (result[i].children[j].name == $('#select-menu-input-coursename2').val()) {
+                                                    $('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).click()
+
+                                                }
+                                                // console.log(111)
+                                            }
+                                        }
+
+                                        $('#add-course-name-context-bottom-pone2').click(function () {
+                                            $(this).parent().parent().parent().hide()
+                                            //$('#select-menu-input-coursename2').val($('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).html())
+                                            //$('#select-menu-input-coursename2').addClass($('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+
+                                            for (var i = 0; i < $('#add-course-name-context-flex-coursename3').children().length; i++) {
+                                                for (var j = 0; j < $('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().length; j++) {
+                                                    if ($('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).hasClass('active1')) {
+                                                        $('#select-menu-input-coursename2').val($.trim($('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                        $('#select-menu-input-coursename2').addClass($('#add-course-name-context-flex-coursename3').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
+                                                        //console.log($.trim($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html()))
+                                                    }
+                                                }
+                                            }
+
+                                        })
+
+                                    }, 100);
+
+                                    //课程名称的取消和叉叉关闭页面
+                                    $('#add-course-name-header-img2').click(function () {
+                                        $(this).parent().parent().hide()
+                                    })
+
+                                    // //课程名称的取消按钮事件
+                                    $('#add-course-name-context-bottom-ptwo2').click(function () {
+                                        $(this).parent().parent().parent().hide()
+                                    })
+
+                                    // //课程名称页面的显示
+                                    // $('.edit-course-context-three-pp').click(function () {
+                                    //     $('#add-course-name1').show()
+                                    // })
+
+                                    // console.log($('#coach-manage-addthree-flexthree-list').html())
+                                },
+                                error: function (e) {
+                                    console.log(e.status);
+                                    console.log(e.responseText)
+                                }
+                            })
+                        })
 
                         //教练名遍历渲染
                         var strcoach = '';
