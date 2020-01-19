@@ -1987,6 +1987,17 @@
             padding-bottom:100px;
             box-sizing: border-box;
         }
+
+        .select-menu-input-coursename-div{
+            width:250px;
+            height:36px;
+            border-radius: 4px;
+            border:1px solid #BFBFBF;
+            margin-left:74px;
+            display:flex;
+            justify-content: left;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -2818,7 +2829,9 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">课程名称</div>
-                            <input id="select-menu-input-coursename" style="margin-left:74px"/>    
+                            <div class="select-menu-input-coursename-div">
+                                <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px"/>   
+                            </div> 
                         </div>
                         <div class="edit-course-context-flextwo">
                             <div class="edit-course-context-one">上课教练</div>
@@ -3521,7 +3534,9 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">课程名称</div>
-                            <input id="select-menu-input-coursename" style="margin-left:74px"/>    
+                            <div class="select-menu-input-coursename-div">
+                                <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px"/>   
+                            </div>    
                         </div>
                         <div class="edit-course-context-flextwo">
                             <div class="edit-course-context-one">上课教练</div>
@@ -5232,8 +5247,10 @@
                             </div>
                         </div>
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one">课程名称</div>
-                            <input id="select-menu-input-coursename2" style="margin-left:74px"/>    
+                            <div class="edit-course-context-one">课程名称</div>  
+                            <div class="select-menu-input-coursename-div">
+                                <input id="select-menu-input-coursename2" style="margin-left:10px;border:0;font-size:14px"/>   
+                            </div> 
                         </div>
                         <div class="edit-course-context-flextwo">
                             <div class="edit-course-context-one">上课教练</div>
