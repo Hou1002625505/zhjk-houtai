@@ -54,7 +54,8 @@
         }
     
         .liuyi-flex .liuyi-input {
-            margin-left: 1rem
+            margin-left: 1rem;
+            margin-right:1.65rem;
         }
     
         .select-menu {
@@ -117,7 +118,7 @@
         .select-menu-input {
             padding-left: 0.7rem;
             border: 0;
-            width: 5rem;
+            width: 7rem;
             height: 1.3rem;
             cursor: pointer;
             user-select: none;
@@ -190,14 +191,60 @@
             height: 6.5rem;
             background: white;
         }
+
+        .liuyi .liuyi-flex .liuyi-flex-right{
+            display:flex;
+        }
+
+        .liuyi-flex .liuyi-flex-right .liuyi-flex-right-p{
+            width:7.5rem;
+            height:2.3rem;
+            border-radius: 0.2rem;
+            background:#F5F5F5;
+            margin-left:0.5rem;
+            font-size:0.9rem;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding:0 0.9rem 0 0.9rem;
+            box-sizing: border-box;
+        }
+
+        .liuyi-flex .liuyi-flex-right-p1{
+            width:7.5rem;
+            height:2.3rem;
+            border-radius: 0.2rem;
+            background:#FAA262;
+            color:black;
+            margin-left:0.5rem;
+            font-size:0.9rem;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding:0 0.9rem 0 0.9rem;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 
 <body>
     <div class="liuyi">
         <div class="liuyi-flex">
-            <p>上课门店</p>
-            <div class="liuyi-input"></div>
+            <p style="font-size:0.8rem">上课门店</p>
+            <div class="liuyi-input">
+                <div class="select-menu">
+                    <div class="select-menu-div">
+                        <input class="select-menu-input" id="select-menu-input"/>
+                
+                        <img class="select-menu-img" src="./image/sifting_icon.png" />
+                    </div>
+                    <ul class="select-menu-ul" id="select-menu-ul" style="height:10rem;overflow-y: scroll;">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="liuyi-flex-right"></div>
+            <p class="liuyi-flex-right-p1">下一周</p>
         </div>
         <div class="liuyi-table"></div>
     </div>
@@ -208,6 +255,8 @@
     window.onload = function () {
             new liuyi().init()
         }
+
+        
 
         class liuyi {
             init() {
@@ -220,48 +269,88 @@
 
             ajax(){
 
-                var list = {
-                    storeId: "c0f6b689-0375-4d7c-b1f8-01b86d55e57a",
-                    week: 0
-                }
-
-                $.ajax({
-                    url : 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
-                    type : 'POST',
-                    contentType : 'application/json;charset=UTF-8',
-                    data : JSON.stringify(list),
-                    success : function(result){
-                        console.log(result)
-                    },
-                    error : function(e){
-                        console.log(e.status)
-                    }
-                })
             }
 
             liuyi() {
-                var liuyistr
-                liuyistr = `
-                <div class="select-menu">
-		            <div class="select-menu-div">
-			            <input class="select-menu-input" />
 
-			            <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		            </div>
-                    <ul class="select-menu-ul">
-                        <li class="select-this">中信分店</li>
-                        <li>分店</li>
-                        <li>分店</li>
-                        <li>分店</li>
-                    </ul>
-                </div>
-            `
-                $('.liuyi-input').html(liuyistr)
+                //门店列表和选择时间渲染
+                
+                    $.ajax({
+                    url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        var liuyistr = ''
+
+                        liuyistr = `<li class="select-this" style="display:none"></li>`
+
+                        $.each(data.rows,function(i,item){
+                            liuyistr += `                           
+                                <li class="`+ item.clubId +`">`+ item.clubName +`</li>
+                            `
+                        })
+                        setTimeout(() => {
+                            $('#select-menu-ul').html(liuyistr)
+                        }, 100);
+                    },
+                    error: function (msg) {
+                        console.log(msg)
+                    }
+                })
+                
+
+                //门店选择时间渲染
+                setTimeout(() => {
+
+                    var list = {
+                        storeId: "16",
+                        week: 0
+                    }
+
+
+                    $.ajax({
+                    url: 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
+                    type: 'POST',
+                    contentType: 'application/json;charset=UTF-8',
+                    data: JSON.stringify(list),
+                    success: function (result) {
+                        console.log(result)
+
+                        var liuyitime = ''         
+
+                        $.each(result.rows, function(i,item){
+                            liuyitime += `
+                                <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')'+`</p>
+                            `
+                        })
+
+                        $('.liuyi-flex-right').html(liuyitime)
+
+                        //选择时间的高亮
+
+                        $('.liuyi-flex-right-p').click(function(){
+
+                            $(this).parent().children('.liuyi-flex-right-p').css('background', '#F5F5F5')
+                            $(this).parent().children('.liuyi-flex-right-p').css('color', 'black')
+
+                            $(this).css('background', '#71B2EF')
+                            $(this).css('color', 'white')
+                        })
+
+                    },
+                    error: function (e) {
+                        console.log(e.status)
+                    }
+                })
+
+                }, 100);
+            
+                
             }
 
             select_option() {
                 selectMenu(0);
-
                 function selectMenu(index) {
                     $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
                     $(".select-menu-div").eq(index).on("click", function (e) {
@@ -317,7 +406,7 @@
             }
 
             liuyi_table() {
-                var tablestr;
+                var tablestr = ''
                 tablestr = `
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -327,7 +416,12 @@
                         <th colspan="2">中信分店单车房</th>
                     </tr>
                     <tr style="height:6.5rem">
-                        <td rowspan="2" style="width:7.9rem;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">表格内容</td>
+                        <td rowspan="2" style="width:7.9rem;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                            上午
+                            <br>
+                            <br>
+                            8:00-11:59
+                        </td>
                         <td style="width:11.4rem;padding-left:0.5rem">
                             <div class="liuyi-white"></div>
                         </td>
@@ -368,7 +462,12 @@
                         </td>
                     </tr>
                     <tr style="height:6.5rem">
-                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">表格内容</td>
+                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                            下午
+                            <br>
+                            <br>
+                            12:00-17:59
+                        </td>
                         <td style="width:11.4rem;padding-left:0.5rem">
                             <div class="liuyi-white"></div>
                         </td>
@@ -449,7 +548,12 @@
                         </td>
                     </tr>
                     <tr style="height:6.5rem">
-                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">表格内容</td>
+                        <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                            晚上
+                            <br>
+                            <br>
+                            18:00-21:30
+                        </td>
                         <td style="width:11.4rem;padding-left:0.5rem">
                             <div class="liuyi-white"></div>
                         </td>
