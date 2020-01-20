@@ -275,7 +275,7 @@
 
                 //门店列表和选择时间渲染
                 
-                    $.ajax({
+                $.ajax({
                     url: 'http://test.physicalclub.com/rest/club/getClubInfo',
                     type: 'GET',
                     dataType: 'json',
@@ -299,7 +299,6 @@
                     }
                 })
                 
-
                 //门店选择时间渲染
                 setTimeout(() => {
 
@@ -307,7 +306,6 @@
                         storeId: "16",
                         week: 0
                     }
-
 
                     $.ajax({
                     url: 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
@@ -344,9 +342,50 @@
                     }
                 })
 
+                    $('.liuyi-flex-right-p1').click(function () {
+                        var list = {
+                            storeId: "16",
+                            week: 1
+                        }
+
+                        $.ajax({
+                            url: 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
+                            type: 'POST',
+                            contentType: 'application/json;charset=UTF-8',
+                            data: JSON.stringify(list),
+                            success: function (result) {
+                                console.log(result)
+
+                                var liuyitime = ''
+
+                                $.each(result.rows, function (i, item) {
+                                    liuyitime += `
+                                <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                            `
+                                })
+
+                                $('.liuyi-flex-right').html(liuyitime)
+
+                                //选择时间的高亮
+
+                                $('.liuyi-flex-right-p').click(function () {
+
+                                    $(this).parent().children('.liuyi-flex-right-p').css('background', '#F5F5F5')
+                                    $(this).parent().children('.liuyi-flex-right-p').css('color', 'black')
+
+                                    $(this).css('background', '#71B2EF')
+                                    $(this).css('color', 'white')
+                                })
+
+                            },
+                            error: function (e) {
+                                console.log(e.status)
+                            }
+                        })
+
+                    })
                 }, 100);
             
-                
             }
 
             select_option() {
