@@ -37,13 +37,14 @@
     <!-- 引用初始化JS -->
     <script src="imgui/jq22.js"></script>
     <style>
+
+        html{
+            font-size:calc(100vw / 88.11);
+        }
+
         * {
             margin: 0;
             padding: 0;
-        }
-
-        html{
-            font-size: 100px;
         }
 
         .course-manage-body {
@@ -51,68 +52,68 @@
         }
 
         .course-manage-button {
-            width: 1.2rem;
-            height: 0.4rem;
+            width: 6rem;
+            height: 1.5rem;
             background: #71B2EF;
             color: white;
-            font-size: 0.2rem;
+            font-size: 1rem;
             text-align: center;
-            line-height: 0.4rem;
+            line-height: 1.5rem;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 0.2px;
         }
 
         .course-manage-flex {
             display: flex;
-            margin-top: 20px;
+            margin-top: 1px;
             align-items: center;
         }
 
         .course-manage-flex #course-manage-flex-input {
-            width: 200px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 20px;
-            margin-right: 39px;
+            width: 10px;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 1rem;
+            margin-right: 2rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flextwo {
             display: flex;
-            margin-top: 20px;
+            margin-top: 1rem;
         }
 
         .course-manage-flextwo #course-manage-flextwo-search {
-            width: 80px;
-            height: 30px;
+            width: 4rem;
+            height: 1.5rem;
             border-radius: 4px;
             background: #71B2EF;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: white;
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .course-manage-flextwo #course-manage-flextwo-clear {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: black;
-            margin-left: 13px;
-            font-size: 16px
+            margin-left: 0.65rem;
+            font-size: 0.8rem
         }
 
         .select-menu {
-            margin-left: 20px;
-            margin-right: 39px;
+            margin-left: 1rem;
+            margin-right: 2rem;
             cursor: pointer;
-            width: 120px;
-            height: 30px;
+            width: 6rem;
+            height: 1.5rem;
             box-sizing: border-box;
         }
 
@@ -121,7 +122,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 120px;
+            width: 6rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -130,11 +131,11 @@
         }
 
         .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.6rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .select-menu-ul li:hover {
@@ -143,12 +144,12 @@
 
         .select-menu-div {
             position: relative;
-            height: 30px;
-            width: 120px;
+            height: 1.5rem;
+            width: 6rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            line-height: 30px;
+            line-height: 1.5rem;
         }
 
         .select-this {
@@ -160,70 +161,70 @@
         }
 
         .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.45rem;
             margin-right: 10px;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 60px;
-            height: 24px;
+            width: 3rem;
+            height: 1.2rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .course-manage-flex-input-one {
-            width: 120px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 7px;
-            padding: 8px 0 7px 10px;
+            width: 6rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.35rem;
+            padding: 0.4rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
-            font-size: 12px;
+            font-size: 0.6rem;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-two {
-            width: 120px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 7px;
-            margin-right: 38px;
-            padding: 8px 0 7px 10px;
+            width: 6rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 0.35rem;
+            margin-right: 1.9rem;
+            padding: 0.4rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
-            font-size: 12px;
+            font-size: 0.6rem;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-three {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 6px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-flex-input-four {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 6px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-manage-table {
-            margin-top: 18px;
-            font-size: 12px;
+            margin-top: 0.9rem;
+            font-size: 0.6rem;
         }
 
         .course-manage-table table tr:nth-child(2) td {
@@ -233,9 +234,9 @@
         .course-manage-table table td {
             border-left: 1px dashed #CCCCCC;
             border-bottom: 1px dashed #CCCCCC;
-            height: 40px;
+            height: 2rem;
             text-align: center;
-            font-size: 14px;
+            font-size: 0.7rem;
         }
 
         .course-manage-table table td:last-child {
@@ -246,8 +247,8 @@
         .course-manage-table table th {
             background: #D0E8F2;
             text-align: center;
-            height: 40px;
-            font-size: 14px;
+            height: 2rem;
+            font-size: 0.7rem;
         }
 
         .course-manage-table .course-manage-table-tr td:last-child {
@@ -256,23 +257,23 @@
         }
 
         .course-manage-table .course-manage-table-tr td:last-child a:nth-child(1) {
-            margin-right: 5px;
+            margin-right: 0.25rem;
         }
 
         .course-manage-table .course-manage-table-tr td:last-child a:nth-child(2) {
-            margin-left: 5px;
+            margin-left: 0.25rem;
         }
 
         .course-manage-table .course-manage-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
         }
 
         .course-manage-table .course-manage-table-checkbox img {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             margin-left: -1px;
             margin-top: -1px;
         }
@@ -286,7 +287,7 @@
         .course-manage-table .headingsifting .headingsifting-column {
             display: flex;
             flex-direction: column;
-            margin-left: 6px;
+            margin-left: 0.3rem;
         }
 
         .course-manage-table .headingsifting .headingsifting-column img:nth-child(2) {
@@ -295,77 +296,77 @@
 
         .course-manage-footer {
             display: flex;
-            margin-top: 17px;
-            height: 26px;
+            margin-top: 0.85rem;
+            height: 1.3rem;
             display: flex;
             align-items: center;
-            padding-left: 14px;
+            padding-left: 0.7rem;
         }
 
         .course-manage-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .course-manage-table-checkbox img {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             margin-top: -1px;
             margin-left: -1px;
         }
 
         #course-manage-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         #course-manage-table-checkbox img {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             margin-top: -1px;
             margin-left: -1px;
         }
 
         .course-manage-footer .course-manage-footer-pone {
-            font-size: 14px;
-            margin-left: 8px;
+            font-size: 0.7rem;
+            margin-left: 0.4rem;
         }
 
         .course-manage-footer .course-manage-footer-ptwo {
-            width: 90px;
-            height: 30px;
+            width: 4.5rem;
+            height: 1.5rem;
             border: 1px solid #BFBFBF;
-            margin-left: 9px;
+            margin-left: 0.45rem;
             font-size: 14px;
             color: #444444;
             text-align: center;
-            line-height: 30px;
-            border-radius: 2px;
+            line-height: 1.5rem;
+            border-radius: 0.1rem;
         }
 
         .course-manage-footer .course-manage-footer-pthree {
-            font-size: 16px;
-            margin-left: 893px;
+            font-size: 0.8rem;
+            margin-left: 44.65rem;
         }
 
         .c-datepicker-date-editor {
             border: 1px solid #CCCCCC;
             position: relative;
-            top: -24px;
-            width: 220px;
-            height: 36px;
+            top: -1.2rem;
+            width: 11rem;
+            height: 1.8rem;
             cursor: pointer;
         }
 
         .c-datepicker-data-input.only-date {
             width: 100%;
-            font-size: 18px;
+            font-size: 0.9rem;
         }
 
         .c-datepicker-date-table td.disabled .cell,
@@ -388,29 +389,29 @@
         } */
 
         .add-course-body .add-course-body-pone {
-            font-size: 16px;
+            font-size: 0.8rem;
             color: #71B2EF
         }
 
         .add-course-body .add-course-body-line {
             height: 1px;
             background: #BFBFBF;
-            margin-top: 20px
+            margin-top: 1rem
         }
 
         .add-course-body .add-course-body-ptwo {
-            font-size: 18px;
+            font-size: 0.9rem;
             color: #444444;
-            margin-left: 13px;
-            margin-top: 20px;
+            margin-left: 0.65rem;
+            margin-top: 1rem;
         }
 
         .add-course-sortone .add-course-sortone-select .select-menu {
-            margin-left: 10px;
-            margin-right: 39px;
+            margin-left: 0.5rem;
+            margin-right: 2rem;
             cursor: pointer;
-            width: 240px;
-            height: 32px;
+            width: 12rem;
+            height: 1.6rem;
             box-sizing: border-box;
         }
 
@@ -419,7 +420,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 240px;
+            width: 12rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -428,12 +429,12 @@
         }
 
         .add-course-sortone .add-course-sortone-select .select-menu-ul li {
-            height: 32px;
-            font-size: 16px;
-            padding: 0 15px;
+            height: 1.6rem;
+            font-size: 0.8rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 240px;
+            line-height: 1.6rem;
+            width: 12rem;
         }
 
         .add-course-sortone .add-course-sortone-select .select-menu-ul li:hover {
@@ -442,12 +443,12 @@
 
         .add-course-sortone .add-course-sortone-select .select-menu-div {
             position: relative;
-            height: 32px;
-            width: 240px;
+            height: 1.6rem;
+            width: 12rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-select .select-this {
@@ -459,49 +460,49 @@
         }
 
         .add-course-sortone .add-course-sortone-select .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.6rem;
+            height: 0.45rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-select .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 80px;
-            height: 24px;
+            width: 4rem;
+            height: 1.2rem;
             cursor: pointer;
             user-select: none;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 0.8rem;
+            line-height: 1.2rem;
         }
 
         .add-course-sortone {
             display: flex;
-            margin-top: 24px;
+            margin-top: 1.2rem;
             align-items: center;
         }
 
         .add-course-sortone .add-course-sortone-select {
-            margin-left: 76px
+            margin-left: 3.8rem
         }
 
         .add-course-sortone .add-course-sortone-inputone {
-            width: 380px;
-            height: 32px;
+            width: 19rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            margin-left: 86px;
-            padding-left: 17px;
-            font-size: 14px;
+            margin-left: 4.3rem;
+            padding-left: 0.85rem;
+            font-size: 0.7rem;
             border: 1px solid #CCCCCC;
-            line-height: 28px;
-            border-radius: 4px;
+            line-height: 1.4rem;
+            border-radius: 0.2rem;
             display: flex;
             justify-content: space-between;
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .add-course-sortone .add-course-sortone-inputone input {
@@ -511,23 +512,23 @@
         }
 
         .add-course-sortone .add-course-sortone-inputone p {
-            margin-right: 9px;
+            margin-right: 0.45rem;
         }
 
         .add-course-sortone .add-course-sortone-inputtwo {
             display: flex;
-            width: 120px;
-            height: 32px;
+            width: 6rem;
+            height: 1.6rem;
             border: 1px solid #CCCCCC;
-            margin-left: 70px;
-            border-radius: 4px;
+            margin-left: 3.5rem;
+            border-radius: 0.2rem;
         }
 
         .add-course-sortone .add-course-sortone-inputtwo p {
-            width: 18px;
-            height: 32px;
+            width: 0.9rem;
+            height: 1.6rem;
             background: #CCCCCC;
-            line-height: 32px;
+            line-height: 1.6rem;
             text-align: center;
         }
 
@@ -535,8 +536,8 @@
             border: none;
             outline: none;
             -webkit-appearance: none;
-            width: 88px;
-            padding-left: 5px;
+            width: 4.4rem;
+            padding-left: 0.25rem;
             box-sizing: border-box;
         }
 
@@ -546,14 +547,14 @@
         }
 
         .add-course-sortone .add-course-sortone-inputthree-p {
-            width: 80px;
-            height: 32px;
+            width: 4rem;
+            height: 1.6rem;
             border: 1px solid #71B2EF;
-            border-radius: 3px;
+            border-radius: 0.15rem;
             text-align: center;
-            line-height: 32px;
-            font-size: 14px;
-            margin-left: 18px;
+            line-height: 1.6rem;
+            font-size: 0.7rem;
+            margin-left: 0.9rem;
             box-sizing: border-box;
         }
 
@@ -568,25 +569,25 @@
 
         .add-course-sorttwo {
             display: flex;
-            margin-top: 31px;
+            margin-top: 1.55rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputfour textarea {
-            width: 680px;
-            height: 160px;
+            width: 34rem;
+            height: 8rem;
             border: 1px solid #CCCCCC;
-            border-radius: 3px;
-            margin-left: 90px;
+            border-radius: 0.15rem;
+            margin-left: 4.5rem;
             resize: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            padding: 10px 0 0 20px;
+            padding: 0.5rem 0 0 1rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputfour .add-course-sortone-inputfour-position {
-            margin-left: 710px;
-            margin-top: -25px;
-            font-size: 14px
+            margin-left: 35.5rem;
+            margin-top: -1.25rem;
+            font-size: 0.7rem
         }
 
         .add-course-sortone .rating li {
@@ -594,79 +595,79 @@
         }
 
         .add-course-sortone .rating {
-            width: 300px;
-            height: 26px;
-            margin-left: 73px;
+            width: 15rem;
+            height: 1.3rem;
+            margin-left: 3.65rem;
         }
 
         .add-course-sortone .rating .rating-item {
             float: left;
-            width: 28px;
-            height: 27px;
+            width: 1.4rem;
+            height: 1.35rem;
             background: url(./image/star_set.png) no-repeat center center;
-            background-size: 25px 24px;
-            background-position: 0 -58px;
+            background-size: 1.25rem 1.2rem;
+            background-position: 0 -2.9rem;
             overflow: hidden;
-            margin-left: 13px;
+            margin-left: 0.65rem;
         }
 
         .add-course-sortone .rating .rating-item img {
-            width: 28px;
-            height: 27px
+            width: 1.4rem;
+            height: 1.35rem
         }
 
         .add-course-sortone .add-course-sortone-inputfive {
-            width: 120px;
-            height: 32px;
+            width: 6rem;
+            height: 1.6rem;
             border: 1px solid #CCCCCC;
-            border-radius: 3px;
-            margin-left: 72px;
+            border-radius: 0.15rem;
+            margin-left: 3.6rem;
             display: flex;
             align-items: center;
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .add-course-sortone .add-course-sortone-inputfive input {
             border: none;
             outline: none;
-            width: 80px;
+            width: 4rem;
             box-sizing: border-box;
-            padding-left: 20px
+            padding-left: 1rem
         }
 
         .add-course-sortone .add-course-sortone-inputsix {
-            width: 380px;
-            height: 32px;
+            width: 19rem;
+            height: 1.6rem;
             border: 1px solid #CCCCCC;
-            padding-left: 18px;
-            margin-left: 86px;
-            line-height: 32px;
-            border-radius: 3px;
+            padding-left: 0.9rem;
+            margin-left: 4.3rem;
+            line-height: 1.6rem;
+            border-radius: 0.15rem;
         }
 
         .add-course-sortone .add-course-sortone-inputsix input {
             border: none;
             outline: none;
-            width: 316px;
-            font-size: 14px
+            width: 15.8rem;
+            font-size: 0.7rem
         }
 
         .add-course-sortone .add-course-sortone-inputseven {
-            margin-left: 54px;
+            margin-left: 27rem;
             display: flex;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput {
-            width: 120px;
-            height: 32px;
+            width: 6rem;
+            height: 1.6rem;
             border: 1px solid #CCCCCC;
-            margin-left: 18px;
-            border-radius: 3px;
+            margin-left: 0.9rem;
+            border-radius: 0.15rem;
             display: flex;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .input {
-            width: 63px;
+            width: 3.15rem;
             border: none;
             outline: none;
             text-align: center;
@@ -675,17 +676,17 @@
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone {
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu {
             cursor: pointer;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            line-height: 28px;
+            line-height: 1.4rem;
             border-right: 1px solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
@@ -696,7 +697,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 55px;
+            width: 2.75rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -705,11 +706,11 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
+            height: 1.6rem;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 55px;
+            line-height: 1.6rem;
+            width: 2.75rem;
             text-align: left;
             padding: 0
         }
@@ -720,11 +721,11 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-div {
             position: relative;
-            height: 32px;
-            border-radius: 4px;
+            height: 1.6rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            width: 55px;
-            line-height: 32px;
+            width: 2.75rem;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-this {
@@ -737,43 +738,43 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.45rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC;
             margin: 0
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu-input {
             border: 0;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 0.6rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             padding: 0;
-            line-height: 31px;
+            line-height: 1.55rem;
             outline: none;
-            margin-top: -2px;
-            margin-left: -1px
+            margin-top: -0.1rem;
+            margin-left: -0.05rem
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo {
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu {
             cursor: pointer;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            line-height: 28px;
+            line-height: 1.4rem;
             border-right: 1px solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
@@ -784,7 +785,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 55px;
+            width: 2.75rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -793,11 +794,11 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
+            height: 1.6rem;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 55px;
+            line-height: 1.6rem;
+            width: 2.75rem;
             text-align: left;
             padding: 0
         }
@@ -808,11 +809,11 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-div {
             position: relative;
-            height: 32px;
-            border-radius: 4px;
+            height: 1.6rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            width: 55px;
-            line-height: 32px;
+            width: 2.75rem;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-this {
@@ -825,43 +826,43 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.4rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC;
             margin: 0
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu-input {
             border: 0;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             padding: 0;
-            line-height: 31px;
+            line-height: 1.55rem;
             outline: none;
-            margin-top: -2px;
-            margin-left: -1px
+            margin-top: -0.1rem;
+            margin-left: -0.05rem
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree {
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu {
             cursor: pointer;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            line-height: 28px;
+            line-height: 1.4rem;
             border-right: 1px solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
@@ -872,7 +873,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 55px;
+            width: 2.75rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -881,11 +882,11 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
+            height: 1.6rem;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 55px;
+            line-height: 1.6rem;
+            width: 2.75rem;
             text-align: left;
             padding: 0
         }
@@ -896,11 +897,11 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-div {
             position: relative;
-            height: 32px;
-            border-radius: 4px;
+            height: 1.6rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            width: 55px;
-            line-height: 32px;
+            width: 2.75rem;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-this {
@@ -913,8 +914,8 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.45rem;
             position: absolute;
             right: 0;
             top: 10px;
@@ -924,32 +925,32 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu-input {
             border: 0;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             padding: 0;
-            line-height: 31px;
+            line-height: 1.55rem;
             outline: none;
-            margin-top: -2px;
-            margin-left: -1px
+            margin-top: -0.1rem;
+            margin-left: -0.05rem
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour {
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu {
             cursor: pointer;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            line-height: 28px;
+            line-height: 1.4rem;
             border-right: 1px solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
@@ -960,7 +961,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 55px;
+            width: 2.75rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -969,11 +970,11 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
+            height: 1.6rem;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 55px;
+            line-height: 1.6rem;
+            width: 2.75rem;
             text-align: left;
             padding: 0
         }
@@ -984,11 +985,11 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-div {
             position: relative;
-            height: 32px;
-            border-radius: 4px;
+            height: 1.6rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            width: 55px;
-            line-height: 32px;
+            width: 2.75rem;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-this {
@@ -1001,43 +1002,43 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.45rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC;
             margin: 0
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu-input {
             border: 0;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             padding: 0;
-            line-height: 31px;
+            line-height: 1.55rem;
             outline: none;
-            margin-top: -2px;
-            margin-left: -1px
+            margin-top: -0.1rem;
+            margin-left: -0.05rem
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive {
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             border-right: 1px solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu {
             cursor: pointer;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             box-sizing: border-box;
-            line-height: 28px;
+            line-height: 1.4rem;
             border-right: 1px solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
@@ -1048,7 +1049,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 55px;
+            width: 2.75rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -1057,11 +1058,11 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
+            height: 1.6rem;
+            font-size: 0.7rem;
             box-sizing: border-box;
-            line-height: 32px;
-            width: 55px;
+            line-height: 1.6rem;
+            width: 2.75rem;
             text-align: left;
             padding: 0
         }
@@ -1072,11 +1073,11 @@
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-div {
             position: relative;
-            height: 32px;
+            height: 1.6rem;
             border-radius: 4px;
             box-sizing: border-box;
-            width: 55px;
-            line-height: 32px;
+            width: 2.75rem;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-this {
@@ -1089,41 +1090,41 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.4rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC;
             margin: 0
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-input {
             border: 0;
-            width: 55px;
-            height: 32px;
+            width: 2.75rem;
+            height: 1.6rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px;
+            font-size: 0.7rem;
             padding: 0;
-            line-height: 31px;
+            line-height: 1.55rem;
             outline: none;
-            margin-top: -2px;
-            margin-left: -1px
+            margin-top: -0.1rem;
+            margin-left: -0.05rem
         }
 
 
 
         .add-course-sorttwo .add-course-sortone-inputeight {
-            margin-left: 120px;
+            margin-left: 6rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table {
-            width: 680px;
+            width: 34rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) {
-            height: 40px;
+            height: 2rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table th {
@@ -1133,33 +1134,33 @@
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th:nth-child(1) {
             border-left: 1px solid #CCCCCC;
-            width: 240px
+            width: 12rem
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td {
             border: 1px solid #CCCCCC;
             border-top: none;
             border-left: none;
-            padding: 7.5px 7.5px 5.5px 7.5px;
+            padding: 0.375rem 0.375rem 0.275rem 0.375rem;
             box-sizing: border-box;
             height: 100px
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) {
             border-left: 1px solid #CCCCCC;
-            width: 240px;
+            width: 12rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) textarea {
-            width: 220px;
-            height: 80px;
+            width: 11rem;
+            height: 4rem;
             border: 1px solid #CCCCCC;
             resize: none;
             box-sizing: border-box;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(2) textarea {
-            width: 340px;
+            width: 17rem;
             height: 80px;
             border: 1px solid #CCCCCC;
             resize: none;
@@ -2290,7 +2291,7 @@
                     }
                 })
             })
-            
+
         }
     }
 
@@ -2497,7 +2498,7 @@
                 new paypay().init()
                 // new paypay().pay_pay()
             }, 500);
-            
+
         }
 
         textare_contain() {
@@ -2686,25 +2687,25 @@
         pay_pay() {
             //支付
             $(".paypay").click(function () {
-                    $('.paypay').children('.paypay-show').hide()
-                    $('.paypay').children('.paypay-hidden').show()
-                    if ($(this).children('.paypay-hidden').is(":hidden")) {
-                        $(this).children('.paypay-hidden').show()
-                        $(this).children('.paypay-show').hide()
-                    } else {
-                        $(this).children('.paypay-hidden').hide()
-                        $(this).children('.paypay-show').show()
-                    }
+                $('.paypay').children('.paypay-show').hide()
+                $('.paypay').children('.paypay-hidden').show()
+                if ($(this).children('.paypay-hidden').is(":hidden")) {
+                    $(this).children('.paypay-hidden').show()
+                    $(this).children('.paypay-show').hide()
+                } else {
+                    $(this).children('.paypay-hidden').hide()
+                    $(this).children('.paypay-show').show()
+                }
             })
 
             //console.log($(".add-course-sortone-inputthree-p"))
 
             $(".add-course-sortone-inputthree-p").click(function () {
-                    if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
-                        $(this).removeClass('add-course-sortone-inputthree-p-active')
-                    } else {
-                        $(this).addClass('add-course-sortone-inputthree-p-active')
-                    }
+                if ($(this).hasClass('add-course-sortone-inputthree-p-active')) {
+                    $(this).removeClass('add-course-sortone-inputthree-p-active')
+                } else {
+                    $(this).addClass('add-course-sortone-inputthree-p-active')
+                }
             })
 
             // $('#GroupCourseGole').children('add-course-sortone-inputthree-p').click(function () {
