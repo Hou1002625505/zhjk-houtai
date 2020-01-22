@@ -855,7 +855,7 @@
         }
 
         .edit-course-context-flextwo .edit-course-context-twoall {
-            width: 27.5rem;
+            width: 22.5rem;
             display: flex;
             flex-wrap: wrap;
             margin-top: 0.6rem
@@ -1004,7 +1004,7 @@
             padding: 1.35rem 0 1.35rem 0;
             box-sizing: border-box;
             position: fixed;
-            bottom: 10%;
+            bottom: 5rem;
             background: white
         }
 
@@ -1015,7 +1015,7 @@
             background: #71B2EF;
             font-size: 0.9rem;
             text-align: center;
-            line-height: 2.75rem;
+            line-height: 2rem;
             color: white
         }
 
@@ -1237,7 +1237,7 @@
             justify-content: center;
             padding: 0.75rem 0 0.75rem 0;
             position: fixed;
-            top: 661px;
+            top: 33.05rem;
             background: white;
         }
 
@@ -1436,93 +1436,93 @@
 
         .add-edit-course-label .add-edit-course-label-context {
             width: 21.35rem;
-            height: 282px;
+            height: 14.1rem;
             border: 1px solid #71B2EF;
-            margin-top: 16px;
+            margin-top: 0.8rem;
             background: white
         }
 
         .add-edit-course-label-context .add-edit-course-label-context-pone {
-            margin-top: 26px;
-            font-size: 18px;
+            margin-top: 1.3rem;
+            font-size: 0.9rem;
             display: flex;
             justify-content: center;
         }
 
         .add-edit-course-label-context .add-edit-course-label-context-flexone {
             display: flex;
-            padding: 0 27px 0 27px;
+            padding: 0 1.35rem 0 1.35rem;
             align-items: center;
             justify-content: center;
-            margin-top: 61px
+            margin-top: 3.05rem
         }
 
         .add-edit-course-label-context-flexone .paypaypay {
-            width: 24px;
-            height: 24px;
-            margin-right: 13px;
-            margin-left: 70px;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.65rem;
+            margin-left: 3.5rem;
         }
 
         .add-edit-course-label-context-flexone .paypaypay:nth-child(1) {
-            margin-right: 13px;
+            margin-right: 0.65rem;
             margin-left: 0
         }
 
         .add-edit-course-label-context .add-edit-course-label-context-footer {
             display: flex;
             justify-content: center;
-            padding: 27px 0 27px 0;
+            padding: 1.35rem 0 1.35rem 0;
             box-sizing: border-box;
             position: absolute;
-            bottom: 15px;
-            width: 427px;
+            bottom: 0.75rem;
+            width: 21.35rem;
         }
 
         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-pone {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 35px;
-            font-size: 16px;
+            line-height: 1.75rem;
+            font-size: 0.8rem;
             color: white
         }
 
         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-ptwo {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 35px;
-            margin-left: 26px
+            line-height: 1.75rem;
+            margin-left: 1.3rem
         }
 
         .add-edit-course-label-context-footer #add-edit-course-label-context-footer-ptwo {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 35px;
-            margin-left: 26px
+            line-height: 1.75rem;
+            margin-left: 1.3rem
         }
 
 
         .add-edit-course-change {
             position: absolute;
-            width: 620px;
-            height: 597px;
+            width: 31rem;
+            height: 29.85rem;
             background: #E0ECFF;
             z-index: 9999;
-            border-radius: 4px;
-            top: 40px;
-            left: 74px;
-            padding: 18px;
+            border-radius:0.2rem;
+            top: 2rem;
+            left: 3.7rem;
+            padding: 0.9rem;
             box-sizing: border-box;
             border: 1px solid #71B2EF
         }
@@ -1539,29 +1539,29 @@
         }
 
         .add-edit-course-change-header .add-edit-course-change-header-flex img {
-            width: 19px;
-            height: 19px;
-            margin-right: 18px
+            width: 0.95rem;
+            height: 0.95rem;
+            margin-right: 0.9rem
         }
 
         .add-edit-course-change-header .add-edit-course-change-header-flex p {
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .add-edit-course-change .add-edit-course-change-context {
-            width: 580px;
-            height: 516px;
+            width: 29rem;
+            height: 25.8rem;
             border: 1px solid #71B2EF;
             box-sizing: border-box;
-            margin-top: 16px;
-            padding: 0 18px 0 18px;
+            margin-top: 0.8rem;
+            padding: 0 0.9rem 0 0.9rem;
             background: white;
         }
 
         .add-edit-course-change-context .add-edit-course-change-context-pone {
             border-bottom: 1px solid #BFBFBF;
-            padding: 14px 0 14px 0;
-            font-size: 20px;
+            padding: 0.7rem 0 0.7rem 0;
+            font-size: 1rem;
             display: flex;
             justify-content: center;
             box-sizing: border-box;
@@ -1571,124 +1571,124 @@
             border-bottom: 1px solid #BFBFBF;
             display: flex;
             justify-content: space-between;
-            padding: 12px 0 12px 0;
+            padding: 0.6rem 0 0.6rem 0;
         }
 
         .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(1) {
-            margin-left: 9px;
-            font-size: 16px;
+            margin-left: 0.45rem;
+            font-size: 0.8rem;
         }
 
         .add-edit-course-change-context .add-edit-course-change-context-ptwo p:nth-child(2) {
-            margin-right: 9px
+            margin-right: 0.45rem
         }
 
         .add-edit-course-change-context .add-edit-course-change-context-textarea {
             resize: none;
-            width: 540px;
-            height: 100px;
-            margin-top: 17px;
-            border-radius: 4px;
-            padding: 12px 0 0 8px;
+            width: 27rem;
+            height: 5rem;
+            margin-top: 0.85rem;
+            border-radius: 0.2rem;
+            padding: 0.6rem 0 0 0.4rem;
             box-sizing: border-box;
         }
 
         .add-edit-course-change-context .add-edit-course-change-context-footer {
             display: flex;
             justify-content: center;
-            margin-top: 18px
+            margin-top: 0.9rem
         }
 
         .add-edit-course-change-context-footer .add-edit-course-change-context-footer-pone {
-            width: 100px;
-            height: 36px;
+            width: 5rem;
+            height: 1.8rem;
             background: #71B2EF;
-            font-size: 18px;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 36px;
-            border-radius: 4px;
+            line-height: 1.8rem;
+            border-radius: 0.2;
             color: white
         }
 
         .add-edit-course-change-context-footer .add-edit-course-change-context-footer-ptwo {
-            width: 100px;
-            height: 36px;
-            font-size: 18px;
+            width: 5rem;
+            height: 1.8rem;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 36px;
-            border-radius: 4px;
+            line-height: 1.8rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            margin-left: 18px
+            margin-left: 0.9rem
         }
 
         /* /////////////////////////////////////////////////////////表单的第一个按钮 */
         .course-arranging-table .course-arranging-not-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
         }
 
         .course-arranging-table .course-arranging-not-table-checkbox img {
-            width: 16px;
-            height: 16px;
-            margin-left: -1px;
-            margin-top: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: -0.05rem;
+            margin-top: -0.05rem;
         }
 
         .course-arranging-footer {
             display: flex;
-            margin-top: 17px;
-            height: 26px;
+            margin-top: 0.85rem;
+            height: 1.3rem;
             display: flex;
             align-items: center;
-            padding-left: 14px;
+            padding-left: 0.7rem;
         }
 
         .course-arranging-not-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .course-arranging-not-table-checkbox img {
-            width: 16px;
-            height: 16px;
-            margin-top: -1px;
-            margin-left: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-top: -0.05rem;
+            margin-left: -0.05rem;
         }
 
         .course-arranging-not-table-checkbox1 {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .course-arranging-not-table-checkbox1 img {
-            width: 16px;
-            height: 16px;
-            margin-top: -1px;
-            margin-left: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-top: -0.05rem;
+            margin-left: -0.05rem;
         }
 
         /* ///////////////////////////////////////////// */
 
         /* 111111111111111111111111 */
         .course-arranging-footer .course-arranging-not-footer-ptwo {
-            width: 80px;
-            height: 26px;
+            width: 4rem;
+            height: 1.3rem;
             border: 1px solid #BFBFBF;
-            margin-left: 9px;
-            font-size: 12px;
+            margin-left: 0.45rem;
+            font-size: 0.6rem;
             color: #444444;
             text-align: center;
-            line-height: 26px;
-            border-radius: 2px;
+            line-height: 1.3rem;
+            border-radius: 0.1rem;
         }
 
         /* ////////////////////////////////// */
@@ -1715,20 +1715,20 @@
 
 
         .edit-course-context-flex3 .paypay-not {
-            width: 21px;
-            height: 21px;
-            margin-left: 44px;
-            margin-right: 18px
+            width: 1.05rem;
+            height:1.05rem;
+            margin-left: 2.2rem;
+            margin-right: 0.9rem
         }
 
         .edit-course-context-flex3 .paypay-not .paypay-not-show {
-            width: 21px;
-            height: 21px
+            width: 1.05rem;
+            height: 1.05rem
         }
 
         .edit-course-context-flex3 .paypay-not .paypay-not-hidden {
-            width: 21px;
-            height: 21px;
+            width: 1.05rem;
+            height: 1.05rem;
             display: none;
         }
 
@@ -1737,25 +1737,25 @@
 
         /* 111111111111111111111111111 */
         .edit-course-footer #edit-course-not-footer-pone {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius: 0.2rem;
             background: #71B2EF;
-            font-size: 16px;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             color: white
         }
 
         .edit-course-footer #edit-course-not-footer-ptwo {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
-            font-size: 16px;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
-            margin-left: 26px
+            line-height: 1.75rem;
+            margin-left: 1.3rem
         }
 
         /* /////////////////////////// */
@@ -1763,20 +1763,20 @@
         /* //////////////////////////////////////// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
 
         .add-edit-course-header-context-twoflex .add-edit-course-not-header-context-two-ptwo {
-            width: 62px;
-            height: 21px;
-            border-radius: 4px;
+            width: 3.1rem;
+            height: 1.05rem;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 21px;
-            margin-left: 18px;
-            margin-bottom: 18px;
+            line-height: 1.05rem;
+            margin-left: 0.9rem;
+            margin-bottom: 0.9rem;
             box-sizing: border-box;
         }
 
         .add-edit-course-header-context-twoflex .add-edit-course-not-header-context-two-ptwo img {
             position: relative;
-            top: -30px;
-            left: 30px;
+            top: -1.5rem;
+            left: 1.5rem;
             display: none
         }
 
@@ -1801,34 +1801,34 @@
 
         /* /////////////////////////////////////222222222222222222 */
         .add-edit-course-header-context-three #add-edit-course-header-not-context-three-pone {
-            width: 67px;
-            height: 26px;
+            width: 3.35rem;
+            height: 1.3rem;
             background: #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             color: white
         }
 
         .add-edit-course-header-context-three #add-edit-course-header-context-not-three-ptwo {
-            width: 67px;
-            height: 26px;
-            border-radius: 4px;
+            width: 3.35rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             border: 1px solid #BFBFBF;
-            margin-left: 20px
+            margin-left: 1rem
         }
 
         /* /////////////////////////////////// */
 
         /* ////////////////////////////////ppppppppppppppppp */
         .add-course-not-name-context-p {
-            padding: 8px 10px 8px 10px;
+            padding: 0.4rem 0.5rem 0.4rem 0.5rem;
             background: #F5F5F5;
-            border-radius: 4px;
-            margin-left: 18px;
-            margin-bottom: 13px;
+            border-radius: 0.2rem;
+            margin-left: 0.9rem;
+            margin-bottom: 0.65rem;
             
         }
 
@@ -1841,34 +1841,34 @@
         .add-course-name-context .add-course-name-context-bottom {
             display: flex;
             justify-content: center;
-            padding: 26px 0 26px 0;
+            padding: 1.3rem 0 1.3rem 0;
             box-sizing: border-box;
             position: fixed;
-            bottom: 310px;
-            left: 586px
+            bottom: 15.5rem;
+            left: 29.3rem
         }
 
         /* ///////////////////////111111111111111111111111111 */
         .add-course-name-context-bottom #add-course-not-name-context-bottom-pone {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             color: white;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
         }
 
         .add-course-name-context-bottom #add-course-not-name-context-bottom-ptwo {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius:0.2rem;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             border: 1px solid #BFBFBF;
-            margin-left: 26px
+            margin-left: 1.3rem
         }
 
         /* ///////////////////////// */
@@ -1876,13 +1876,13 @@
         /* ////////////////////////////////////////////////// paypaypay*/
 
         .add-edit-course-label-context-flexone .paypaypay-not {
-            margin-right: 13px;
-            margin-left: 70px;
+            margin-right: 0.65rem;
+            margin-left: 3.5rem;
             
         }
 
         .add-edit-course-label-context-flexone .paypaypay-not:nth-child(1) {
-            margin-right: 13px;
+            margin-right: 0.65rem;
             margin-left: 0
         }
 
@@ -1890,37 +1890,37 @@
 
         /* 111111111111111111111111 */
         .add-edit-course-label-context-footer #add-edit-course-label-not-context-footer-pone {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 35px;
-            font-size: 16px;
+            line-height: 1.75rem;
+            font-size: 0.8rem;
             color: white
         }
 
         .add-edit-course-label-context-footer #add-edit-course-label-not-context-footer-ptwo {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 35px;
-            margin-left: 26px;
+            line-height: 1.75rem;
+            margin-left: 1.3rem;
         }
 
         /* //////////////////////////// */
 
         .coach-manage-addthree-flexthree-flex {
-            padding: 25px 25px 0 7px;
+            padding: 1.25rem 1.25rem 0 0.35rem;
             box-sizing: border-box;
         }
 
         .coach-manage-addthree-flexthree-flex-p {
-            margin: 0 0 20px 18px;
-            font-size: 18px;
+            margin: 0 0 1rem 0.9rem;
+            font-size: 0.9rem;
             color: black
         }
 
@@ -1930,17 +1930,17 @@
         }
 
         .flexthree-tags1 {
-            padding: 10px;
-            border-radius: 4px;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
             background: #F5F5F5;
-            margin-left: 18px;
-            height: 30px;
+            margin-left: 0.9rem;
+            height: 1.5rem;
             box-sizing: border-box;
-            margin-bottom: 18px;
+            margin-bottom: 0.9rem;
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .active1 {
@@ -1949,36 +1949,36 @@
         }
 
         .add-course-name-context-bottom1{
-            width:627px;
+            width:31.35rem;
             background: white;
-            top:651px;
+            top:32.55rem;
             display: flex;
             justify-content: center;
-            padding: 26px 0 26px 0;
+            padding: 1.3rem 0 1.3rem 0;
             box-sizing: border-box;
             position: fixed;
         }
 
         .add-course-name-context-bottom1 #add-course-name-context-bottom-pone {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             color: white;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
         }
 
         .add-course-name-context-bottom1 #add-course-name-context-bottom-ptwo {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             border: 1px solid #BFBFBF;
-            margin-left: 26px
+            margin-left: 1.3rem
         }
 
         /* .add-course-name-context-flex{
@@ -1989,16 +1989,16 @@
         } */
 
         #add-course-name-context-flex-coursename{
-            padding-bottom:100px;
+            padding-bottom:5rem;
             box-sizing: border-box;
         }
 
         .select-menu-input-coursename-div{
-            width:250px;
-            height:36px;
-            border-radius: 4px;
+            width:12.5rem;
+            height:1.8rem;
+            border-radius: 0.2rem;
             border:1px solid #BFBFBF;
-            margin-left:74px;
+            margin-left:3.7rem;
             display:flex;
             justify-content: left;
             align-items: center;
@@ -2023,16 +2023,16 @@
             <div class="course-arranging-flex-select-zero">
                 <div class="select-menu">
                     <div class="select-menu-div">
-                        <input class="select-menu-input" id="select-menu-input-mendian" style="width:100px"/>
+                        <input class="select-menu-input" id="select-menu-input-mendian" style="width:5rem"/>
                 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul" id="select-menu-ul-pulishmendian" style="height:200px;overflow-y: scroll;">
+                    <ul class="select-menu-ul" id="select-menu-ul-pulishmendian" style="height:10rem;overflow-y: scroll;">
 
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px;margin-right:10px">上课房间</div>
+            <div style="font-size:0.8rem;margin-right:0.5rem">上课房间</div>
             <div class="course-arranging-flex-select-one">
                 <div class="select-menu">
                     <div class="select-menu-div" id="select-menu-div-room">
@@ -2040,16 +2040,16 @@
                 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul" id="select-menu-ul-room" style="height:200px;overflow-y: scroll;">
+                    <ul class="select-menu-ul" id="select-menu-ul-room" style="height:10rem;overflow-y: scroll;">
                 
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px">上课教练</div>
+            <div style="font-size:0.8rem">上课教练</div>
             <input class="course-arranging-flex-select-two" id="teaching-course-coach"></input>
-            <div style="font-size:16px">教练工号</div>
+            <div style="font-size:0.8rem">教练工号</div>
             <input class="course-arranging-flex-select-three" id="coach-id"></input>
-            <div style="font-size:16px">创建时间</div>
+            <div style="font-size:0.8rem">创建时间</div>
             <div class="J-datepicker-day">
                 <input type="text" class="course-arranging-flex-input-one" id="create-course-time" placeholder="开始时间">
             </div>
@@ -2100,20 +2100,20 @@
             <p>发布</p>
         </div>
         <div class="course-arranging-flex">
-            <div style="font-size:16px;margin-right:10px">上课门店</div>
+            <div style="font-size:0.8rem;margin-right:0.5rem">上课门店</div>
             <div id="course-arranging-not-flex-select-one">
                 <div class="select-menu" id="select-menu">
                     <div class="select-menu-div" id="select-menu-div1">
-                        <input class="select-menu-input" id="select-menu-input-mendian2" style="width:100px" />
+                        <input class="select-menu-input" id="select-menu-input-mendian2" style="width:5rem" />
                 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul" id="select-menu-ul-pulishmendian1" style="height:200px;overflow-y: scroll;">
+                    <ul class="select-menu-ul" id="select-menu-ul-pulishmendian1" style="height:10rem;overflow-y: scroll;">
                 
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px;margin-right:10px">上课房间</div>
+            <div style="font-size:0.8rem;margin-right:0.5rem">上课房间</div>
             <div class="course-arranging-not-flex-select-one">
                 <div class="select-menu">
                     <div class="select-menu-div" id="select-menu-div-room1">
@@ -2121,16 +2121,16 @@
                 
                         <img class="select-menu-img" src="./image/sifting_icon.png" />
                     </div>
-                    <ul class="select-menu-ul" id="select-menu-ul-room1" style="height:200px;overflow-y: scroll;">
+                    <ul class="select-menu-ul" id="select-menu-ul-room1" style="height:10rem;overflow-y: scroll;">
                 
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px">上课教练</div>
+            <div style="font-size:0.8rem">上课教练</div>
             <input class="course-arranging-flex-select-two" id="teaching-course-coach1"/>
-            <div style="font-size:16px">教练工号</div>
+            <div style="font-size:0.8rem">教练工号</div>
             <input class="course-arranging-flex-select-three" id="coach-id1"/>
-            <div style="font-size:16px">创建时间</div>
+            <div style="font-size:0.8rem">创建时间</div>
             <div class="J-datepicker-day1">
                 <input type="text" class="course-arranging-flex-input-one" id="create-course-time1" placeholder="开始时间">
             </div>
@@ -2528,20 +2528,20 @@
                         var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="48"></th>
-                            <th width="180">门店</th>
-                            <th width="180">房间</th>
-                            <th width="134">日期</th>
-                            <th width="134">时间</th>
-                            <th width="120">上课教练</th>
-                            <th width="120">教练工号</th>
-                            <th width="120">课程名称</th>
-                            <th width="120">课程售价</th>
-                            <th width="120">最大人数</th>
-                            <th width="120">开课人数</th>
-                            <th width="120">贴标</th>
+                            <th style="width:2.4rem"></th>
+                            <th style="width:9rem">门店</th>
+                            <th style="width:9rem">房间</th>
+                            <th style="width:6.7rem">日期</th>
+                            <th style="width:6.7rem">时间</th>
+                            <th style="width:6rem">上课教练</th>
+                            <th style="width:6rem">教练工号</th>
+                            <th style="width:6rem">课程名称</th>
+                            <th style="width:6rem">课程售价</th>
+                            <th style="width:6rem">最大人数</th>
+                            <th style="width:6rem">开课人数</th>
+                            <th style="width:6rem">贴标</th>
                             <th></th>
-                            <th width="120">操作</th>
+                            <th style="width:6rem">操作</th>
                         </tr>
                     `
 
@@ -2581,18 +2581,18 @@
                         $.each(result.rows, function (i, item) {
                             str2 += `
                         <tr class="course-arranging-table-tr">
-                            <td width="48" class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
-                            <td width="180">`+ item.roomName + `</td>
-                            <td width="134">`+ item.dateStr + `</td>
-                            <td width="134">`+ item.timeStr + `</td>
-                            <td width="120">`+ coachname(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ username(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ item.leagueCurriculumName + `</td>
-                            <td width="120">￥`+ item.price + `</td>
-                            <td width="120">`+ item.maxNumber + `人</td>
-                            <td width="120">`+ item.minNumber + `人</td>
-                            <td width="120">`+ tiebiao(item.tagName) +`</td>
+                            <td style="width:2.4rem" class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td style="width:9rem" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:6.7rem;top:0px;display:none" src="image/recommended_img.png"></td>
+                            <td style="width:9rem">`+ item.roomName + `</td>
+                            <td style="width:6.7rem">`+ item.dateStr + `</td>
+                            <td style="width:6.7rem">`+ item.timeStr + `</td>
+                            <td style="width:6rem">`+ coachname(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ username(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ item.leagueCurriculumName + `</td>
+                            <td style="width:6rem">￥`+ item.price + `</td>
+                            <td style="width:6rem">`+ item.maxNumber + `人</td>
+                            <td style="width:6rem">`+ item.minNumber + `人</td>
+                            <td style="width:6rem">`+ tiebiao(item.tagName) +`</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -2604,7 +2604,7 @@
                                     <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
                                 </div
                             </td>
-                            <td width="120">
+                            <td style="width:6rem">
                                 <a class="a-add `+ i + `">编辑</a>|<a class="a-del">删除</a>
                             </td>
                         </tr>
@@ -2657,20 +2657,20 @@
                     var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="48"></th>
-                            <th width="180">门店</th>
-                            <th width="180">房间</th>
-                            <th width="134">日期</th>
-                            <th width="134">时间</th>
-                            <th width="120">上课教练</th>
-                            <th width="120">教练工号</th>
-                            <th width="120">课程名称</th>
-                            <th width="120">课程售价</th>
-                            <th width="120">最大人数</th>
-                            <th width="120">开课人数</th>
-                            <th width="120">贴标</th>
+                            <th style="width:2.4rem"></th>
+                            <th style="width:9rem">门店</th>
+                            <th style="width:9rem">房间</th>
+                            <th style="width:6.7rem">日期</th>
+                            <th style="width:6.7rem">时间</th>
+                            <th style="width:6rem">上课教练</th>
+                            <th style="width:6rem">教练工号</th>
+                            <th style="width:6rem">课程名称</th>
+                            <th style="width:6rem">课程售价</th>
+                            <th style="width:6rem">最大人数</th>
+                            <th style="width:6rem">开课人数</th>
+                            <th style="width:6rem">贴标</th>
                             <th></th>
-                            <th width="120">操作</th>
+                            <th style="width:6rem">操作</th>
                         </tr>
                     `
 
@@ -2710,18 +2710,18 @@
                     $.each(result.rows,function(i,item){
                         str2 += `
                         <tr class="course-arranging-table-tr">
-                            <td width="48" class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
-                            <td width="180">`+ item.roomName +`</td>
-                            <td width="134">`+ item.dateStr +`</td>
-                            <td width="134">`+ item.timeStr +`</td>
-                            <td width="120">`+ coachname(item.courseSchedulingItemList) +`</td>
-                            <td width="120">`+ username(item.courseSchedulingItemList) +`</td>
-                            <td width="120">`+ item.leagueCurriculumName +`</td>
-                            <td width="120">￥`+ item.price +`</td>
-                            <td width="120">`+ item.maxNumber +`人</td>
-                            <td width="120">`+ item.minNumber +`人</td>
-                            <td width="120">`+ tiebiao(item.tagName) +`</td>
+                            <td style="width:2.4rem class="`+ item.id +`"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td style="width:9rem" style="position:relative">`+ item.storeName +`<img style="position:absolute;left:6.7rem;top:0px;display:none" src="image/recommended_img.png"></td>
+                            <td style="width:9rem">`+ item.roomName +`</td>
+                            <td style="width:6.7rem">`+ item.dateStr +`</td>
+                            <td style="width:6.7rem">`+ item.timeStr +`</td>
+                            <td style="width:6rem">`+ coachname(item.courseSchedulingItemList) +`</td>
+                            <td style="width:6rem">`+ username(item.courseSchedulingItemList) +`</td>
+                            <td style="width:6rem">`+ item.leagueCurriculumName +`</td>
+                            <td style="width:6rem">￥`+ item.price +`</td>
+                            <td style="width:6rem">`+ item.maxNumber +`人</td>
+                            <td style="width:6rem">`+ item.minNumber +`人</td>
+                            <td style="width:6rem">`+ tiebiao(item.tagName) +`</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -2733,7 +2733,7 @@
                                     <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
                                 </div
                             </td>
-                            <td width="120">
+                            <td style="width:6rem">
                                 <a class="a-add `+ i +`">编辑</a>|<a class="a-del">删除</a>
                             </td>
                         </tr>
@@ -2799,11 +2799,11 @@
                             <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
                             <p class="edit-course-header-pone">新增未发布</p>
                         </div>
-                        <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
+                        <img class="edit-course-header-imgone" style="width:1.1rem;height:1.15rem" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="edit-course-context">
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">门店</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
@@ -2811,14 +2811,14 @@
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-one" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-one" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">房间</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
@@ -2826,7 +2826,7 @@
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
@@ -2835,7 +2835,7 @@
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">课程名称</div>
                             <div class="select-menu-input-coursename-div">
-                                <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px"/>   
+                                <input id="select-menu-input-coursename" style="margin-left:0.5rem;border:0;font-size:0.7rem"/>   
                             </div> 
                         </div>
                         <div class="edit-course-context-flextwo">
@@ -2847,16 +2847,16 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
-                            <div style="width:150px;height:36px;border:1px solid #BFBFBF;border-radius:4px;margin:0 59px 0 77px">
-                            <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <div style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
+                            <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="font-size:18px;margin-right:18px">上课时间</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-four" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="margin:0 6px 0 6px">-</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="margin:0 0.3rem 0 0.3rem">-</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-five" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                         </div>
 
@@ -2878,45 +2878,45 @@
                             <div class="add-course-sortone-inputtwo">
                                 <input type="text" id="mincount">
                             </div>
-                            <p style="margin-left:-20px;margin-right:8px;">人</p>
+                            <p style="margin-left:-1rem;margin-right:0.4rem;">人</p>
                             <p class="edit-course-context-flex3-ptwo">最大人数</p>
-                            <div class="add-course-sortone-inputthree" style="margin-left:17px;">
+                            <div class="add-course-sortone-inputthree" style="margin-left:0.85rem;">
                                 <input type="text" id="maxcount" style="text-decoration:none;color:black">
                             </div>
-                            <p style="margin-left:-20px">人</p>
+                            <p style="margin-left:-1rem">人</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="is-Queue">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:35px">是否排队</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:1.75rem">是否排队</p>
                             <div class="paypay paypayisQueue">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">是</p>
+                            <p style="font-size:0.7rem">是</p>
                             <div class="paypay paypayisQueue">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">否</p>
+                            <p style="font-size:0.7rem">否</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="tag-Name">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:70px">贴标</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:3.5rem">贴标</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">无</p>
+                            <p style="font-size:0.7rem">无</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">热门</p>
+                            <p style="font-size:0.7rem">热门</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">体验</p>
+                            <p style="font-size:0.7rem">体验</p>
                         </div>
                         <div class="edit-course-context-flex4">
                             <p class="edit-course-context-flex4-pone">业绩比例</p>
@@ -2954,7 +2954,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="add-edit-course-header-context-one" id="coach-show" style="justify-content: left;padding-left:22px">
+                        <div class="add-edit-course-header-context-one" id="coach-show" style="justify-content: left;padding-left:1.1rem">
 
                         </div>
                         <div class="add-edit-course-header-context-two">
@@ -2975,7 +2975,7 @@
                             <img src="./image/tags_icon.png" alt=""/>
                             <p>课程名称</p>
                         </div>
-                        <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                        <img style="width:1.1rem;height:1.1rem" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-course-name-context">
                         <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename">
@@ -3294,7 +3294,7 @@
                                         //console.log(strselect)
 
                                         var strcoachone = `
-                                            <p id="coach-p" class="`+ result.userName + `" style="width:70px;height:24px;border-radius:4px;background:#71B2EF;color:white;text-align:center;line-height:24px">
+                                            <p id="coach-p" class="`+ result.userName + `" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem">
                                             `+ result.realName + `
                                             </p>
                                         `
@@ -3504,11 +3504,11 @@
                             <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
                             <p class="edit-course-header-pone">新增未发布</p>
                         </div>
-                        <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
+                        <img class="edit-course-header-imgone" style="width:1.1rem;height:1.15rem" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="edit-course-context" style="position:relative">
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">门店</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
@@ -3516,14 +3516,14 @@
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-one" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-one" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">房间</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
@@ -3531,7 +3531,7 @@
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
@@ -3540,7 +3540,7 @@
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">课程名称</div>
                             <div class="select-menu-input-coursename-div">
-                                <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px"/>   
+                                <input id="select-menu-input-coursename" style="margin-left:0.5rem;border:0;font-size:0.7rem"/>   
                             </div>    
                         </div>
                         <div class="edit-course-context-flextwo">
@@ -3552,16 +3552,16 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
-                            <div style="width:150px;height:36px;border:1px solid #BFBFBF;border-radius:4px;margin:0 59px 0 77px">
-                            <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <div style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
+                            <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="font-size:18px;margin-right:18px">上课时间</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-four" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="margin:0 6px 0 6px">-</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="margin:0 0.3rem 0 0.3rem">-</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-five" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                         </div>
 
@@ -3583,45 +3583,45 @@
                             <div class="add-course-sortone-inputtwo">
                                 <input type="text" id="mincount">
                             </div>
-                            <p style="margin-left:-20px;margin-right:8px;">人</p>
+                            <p style="margin-left:-1rem;margin-right:0.4rem;">人</p>
                             <p class="edit-course-context-flex3-ptwo">最大人数</p>
-                            <div class="add-course-sortone-inputthree" style="margin-left:17px;">
+                            <div class="add-course-sortone-inputthree" style="margin-left:0.85rem;">
                                 <input type="text" id="maxcount" style="text-decoration:none;color:black">
                             </div>
-                            <p style="margin-left:-20px">人</p>
+                            <p style="margin-left:-1rem">人</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="is-Queue">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:35px">是否排队</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:1.75rem">是否排队</p>
                             <div class="paypay paypayisQueue">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">是</p>
+                            <p style="font-size:0.7rem">是</p>
                             <div class="paypay paypayisQueue">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">否</p>
+                            <p style="font-size:0.7rem">否</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="tag-Name">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:70px">贴标</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:3.5rem">贴标</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">无</p>
+                            <p style="font-size:0.7rem">无</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">热门</p>
+                            <p style="font-size:0.7rem">热门</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">体验</p>
+                            <p style="font-size:0.7rem">体验</p>
                         </div>
                         <div class="edit-course-context-flex4">
                             <p class="edit-course-context-flex4-pone">业绩比例</p>
@@ -3657,7 +3657,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="add-edit-course-header-context-one" id="coach-show" style="justify-content: left;padding-left:22px">
+                        <div class="add-edit-course-header-context-one" id="coach-show" style="justify-content: left;padding-left:1.1rem">
 
                         </div>
                         <div class="add-edit-course-header-context-two">
@@ -3678,7 +3678,7 @@
                             <img src="./image/tags_icon.png" alt=""/>
                             <p>课程名称</p>
                         </div>
-                        <img style="width:22px;height:22px" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                        <img style="width:1.1rem;height:1.1rem" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-course-name-context">
                         <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename">
@@ -3985,7 +3985,7 @@
                                             //console.log(strselect)
 
                                             var strcoachone = `
-                                            <p id="coach-p" class="`+ result.rows[0].userName +`" style="width:70px;height:24px;border-radius:4px;background:#71B2EF;color:white;text-align:center;line-height:24px">
+                                            <p id="coach-p" class="`+ result.rows[0].userName +`" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem">
                                             `+ result.rows[0].realName + `
                                             </p>
                                         `
@@ -4291,7 +4291,7 @@
                             <img src="./image/tags_icon.png" alt=""/>
                             <p>贴标</p>
                         </div>
-                        <img style="width:24px;height:24px" id="label-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                        <img style="width:1.2rem;height:1.2rem" id="label-header-imgtwo" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-edit-course-label-context">
                         <p class="add-edit-course-label-context-pone">请对课程进行贴标</p>
@@ -4940,20 +4940,20 @@
                         var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="48"></th>
-                            <th width="180">门店</th>
-                            <th width="180">房间</th>
-                            <th width="134">日期</th>
-                            <th width="134">时间</th>
-                            <th width="120">上课教练</th>
-                            <th width="120">教练工号</th>
-                            <th width="120">课程名称</th>
-                            <th width="120">课程售价</th>
-                            <th width="120">最大人数</th>
-                            <th width="120">开课人数</th>
-                            <th width="120">贴标</th>
+                            <th style="width:2.4rem"></th>
+                            <th style="width:9rem">门店</th>
+                            <th style="width:9rem">房间</th>
+                            <th style="width:6.7rem">日期</th>
+                            <th style="width:6.7rem">时间</th>
+                            <th style="width:6rem">上课教练</th>
+                            <th style="width:6rem">教练工号</th>
+                            <th style="width:6rem">课程名称</th>
+                            <th style="width:6rem">课程售价</th>
+                            <th style="width:6rem">最大人数</th>
+                            <th style="width:6rem">开课人数</th>
+                            <th style="width:6rem">贴标</th>
                             <th></th>
-                            <th width="120">操作</th>
+                            <th style="width:6rem">操作</th>
                         </tr>
                     `
 
@@ -4993,18 +4993,18 @@
                             $.each(result.rows, function (i, item) {
                             str2 += `
                             <tr class="course-arranging-table-tr">
-                            <td width="48" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180" style="position:relative">`+ item.storeName + `<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
-                            <td width="180">`+ item.roomName + `</td>
-                            <td width="134">`+ item.dateStr + `</td>
-                            <td width="134">`+ item.timeStr + `</td>
-                            <td width="120">`+ coachname(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ username(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ item.leagueCurriculumName + `</td>
-                            <td width="120">￥`+ item.price + `</td>
-                            <td width="120">`+ item.maxNumber + `人</td>
-                            <td width="120">`+ item.minNumber + `人</td>
-                            <td width="120">`+ tiebiao(item.tagName) + `</td>
+                            <td style="width:2.4rem" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td style="width:9rem" style="position:relative">`+ item.storeName + `<img style="position:absolute;left:6.7rem;top:0px;display:none" src="image/recommended_img.png"></td>
+                            <td style="width:9rem">`+ item.roomName + `</td>
+                            <td style="width:6.7rem">`+ item.dateStr + `</td>
+                            <td style="width:6.7rem">`+ item.timeStr + `</td>
+                            <td style="width:6rem">`+ coachname(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ username(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ item.leagueCurriculumName + `</td>
+                            <td style="width:6rem">￥`+ item.price + `</td>
+                            <td style="width:6rem">`+ item.maxNumber + `人</td>
+                            <td style="width:6rem">`+ item.minNumber + `人</td>
+                            <td style="width:6rem">`+ tiebiao(item.tagName) + `</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -5016,7 +5016,7 @@
                                     <p class="td-del-left">移除课表后，教练将不会看到该课程!</p>
                                 </div
                             </td>
-                            <td width="120">
+                            <td style="width:6rem">
                                 <a class="a-add1 `+ i + `">编辑</a>|<a class="a-del">删除</a>
                             </td>
                         </tr>
@@ -5069,20 +5069,20 @@
                     var str2 = `
                         <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th width="48"></th>
-                            <th width="180">门店</th>
-                            <th width="180">房间</th>
-                            <th width="134">日期</th>
-                            <th width="134">时间</th>
-                            <th width="120">上课教练</th>
-                            <th width="120">教练工号</th>
-                            <th width="120">课程名称</th>
-                            <th width="120">课程售价</th>
-                            <th width="120">最大人数</th>
-                            <th width="120">开课人数</th>
-                            <th width="120">贴标</th>
+                            <th style="width:2.4rem"></th>
+                            <th style="width:9rem">门店</th>
+                            <th style="width:9rem">房间</th>
+                            <th style="width:6.7rem">日期</th>
+                            <th style="width:6.7rem">时间</th>
+                            <th style="width:6rem">上课教练</th>
+                            <th style="width:6rem">教练工号</th>
+                            <th style="width:6rem">课程名称</th>
+                            <th style="width:6rem">课程售价</th>
+                            <th style="width:6rem">最大人数</th>
+                            <th style="width:6rem">开课人数</th>
+                            <th style="width:6rem">贴标</th>
                             <th></th>
-                            <th width="120">操作</th>
+                            <th style="width:6rem">操作</th>
                         </tr>
                     `
 
@@ -5122,18 +5122,18 @@
                     $.each(result.rows, function (i, item) {
                         str2 += `
                         <tr class="course-arranging-table-tr">
-                            <td width="48" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td width="180" style="position:relative">`+ item.storeName + `<img style="position:absolute;left:134px;top:0px;display:none" src="image/recommended_img.png"></td>
-                            <td width="180">`+ item.roomName + `</td>
-                            <td width="134">`+ item.dateStr + `</td>
-                            <td width="134">`+ item.timeStr + `</td>
-                            <td width="120">`+ coachname(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ username(item.courseSchedulingItemList) + `</td>
-                            <td width="120">`+ item.leagueCurriculumName + `</td>
-                            <td width="120">￥`+ item.price + `</td>
-                            <td width="120">`+ item.maxNumber + `人</td>
-                            <td width="120">`+ item.minNumber + `人</td>
-                            <td width="120">`+ tiebiao(item.tagName) + `</td>
+                            <td style="width:2.4rem" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
+                            <td tyle="width:9rem" style="position:relative">`+ item.storeName + `<img style="position:absolute;left:6.7rem;top:0px;display:none" src="image/recommended_img.png"></td>
+                            <td tyle="width:9rem">`+ item.roomName + `</td>
+                            <td style="width:6.7rem">`+ item.dateStr + `</td>
+                            <td style="width:6.7rem">`+ item.timeStr + `</td>
+                            <td style="width:6rem">`+ coachname(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ username(item.courseSchedulingItemList) + `</td>
+                            <td style="width:6rem">`+ item.leagueCurriculumName + `</td>
+                            <td style="width:6rem">￥`+ item.price + `</td>
+                            <td style="width:6rem">`+ item.maxNumber + `人</td>
+                            <td style="width:6rem">`+ item.minNumber + `人</td>
+                            <td style="width:6rem">`+ tiebiao(item.tagName) + `</td>
                             <td width="0" style="position:relative;border:none">
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
@@ -5145,7 +5145,7 @@
                                     <p class="td-del-left">变更课表后，将不会看到该课程!</p>
                                 </div
                             </td>
-                            <td width="120">
+                            <td style="width:6rem">
                                 <a class="a-add1 `+ i + `">变更</a>|<a class="a-del">下架</a>
                             </td>
                         </tr>
@@ -5219,11 +5219,11 @@
                             <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
                             <p class="edit-course-header-pone">新增发布发布</p>
                         </div>
-                        <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide2" src="./image/popupclose_btn.png" alt=""/>
+                        <img class="edit-course-header-imgone" style="width:1.1rem;height:1.15rem" id="edit-course-hide2" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="edit-course-context">
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">门店</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
@@ -5231,21 +5231,21 @@
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-one1" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-one1" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="edit-course-context-flex">
-                            <div class="edit-course-context-one" style="margin-right:111px">房间</div>
+                            <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
                                     <div class="select-menu-div">
                                         <input class="select-menu-input" id="select-menu-inputroom3"/>
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList1" style="height:200px;overflow-y:scroll">
+                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList1" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
@@ -5254,7 +5254,7 @@
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">课程名称</div>  
                             <div class="select-menu-input-coursename-div">
-                                <input id="select-menu-input-coursename2" style="margin-left:10px;border:0;font-size:14px"/>   
+                                <input id="select-menu-input-coursename2" style="margin-left:0.5rem;border:0;font-size:0.7rem"/>   
                             </div> 
                         </div>
                         <div class="edit-course-context-flextwo">
@@ -5266,16 +5266,16 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
-                            <div style="width:150px;height:36px;border:1px solid #BFBFBF;border-radius:4px;margin:0 59px 0 77px">
-                            <input id="edit-course-context-three2" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <div style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
+                            <input id="edit-course-context-three2" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="font-size:18px;margin-right:18px">上课时间</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-four2" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-four2" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
-                            <p style="margin:0 6px 0 6px">-</p>
-                            <div style="width:120px;height:36px;border:1px solid #BFBFBF;border-radius:4px;">
-                            <input id="edit-course-context-five2" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                            <p style="margin:0 0.3rem 0 0.3rem">-</p>
+                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-five2" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                         </div>
 
@@ -5297,45 +5297,45 @@
                             <div class="add-course-sortone-inputtwo">
                                 <input type="text" id="mincount2">
                             </div>
-                            <p style="margin-left:-20px;margin-right:8px;">人</p>
+                            <p style="margin-left:-1rem;margin-right:0.4rem;">人</p>
                             <p class="edit-course-context-flex3-ptwo">最大人数</p>
-                            <div class="add-course-sortone-inputthree" style="margin-left:17px;">
+                            <div class="add-course-sortone-inputthree" style="margin-left:0.85rem;">
                                 <input type="text" id="maxcount2" style="text-decoration:none;color:black">
                             </div>
-                            <p style="margin-left:-20px">人</p>
+                            <p style="margin-left:-1rem">人</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="is-Queue2">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:35px">是否排队</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:1.75rem">是否排队</p>
                             <div class="paypay paypayisQueue2">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">是</p>
+                            <p style="font-size:0.7rem">是</p>
                             <div class="paypay paypayisQueue2">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">否</p>
+                            <p style="font-size:0.7rem">否</p>
                         </div>
 
                         <div class="edit-course-context-flex3" id="tag-Name2">
-                            <p class="edit-course-context-flex3-pone" style="margin-right:70px">贴标</p>
+                            <p class="edit-course-context-flex3-pone" style="margin-right:3.5rem">贴标</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">无</p>
+                            <p style="font-size:0.7rem">无</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">热门</p>
+                            <p style="font-size:0.7rem">热门</p>
                             <div class="paypay">
                                 <img class="paypay-show" src="./image/payment_btn.png" alt="">
                                 <img class="paypay-hidden" src="./image/paymentnor_btn.png" alt="">
                             </div>
-                            <p style="font-size:14px">体验</p>
+                            <p style="font-size:0.7rem">体验</p>
                         </div>
                         <div class="edit-course-context-flex4">
                             <p class="edit-course-context-flex4-pone">业绩比例</p>
@@ -5358,7 +5358,7 @@
                                     <img src="./image/tags_icon.png" alt=""/>
                                     <p>课程变更</p>
                                 </div>
-                                <img style="width:22px;height:22px" id="change-header-not-imgtwo" src="./image/popupclose_btn.png" alt=""/>
+                                <img style="width:1.1rem;height:1.1rem" id="change-header-not-imgtwo" src="./image/popupclose_btn.png" alt=""/>
                             </div>
                             <div class="add-edit-course-change-context">
                                 <p class="add-edit-course-change-context-pone">变更原因</p>
@@ -5408,7 +5408,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="add-edit-course-header-context-one" id="coach-show2" style="justify-content: left;padding-left:22px">
+                        <div class="add-edit-course-header-context-one" id="coach-show2" style="justify-content: left;padding-left:1.1rem">
 
                         </div>
                         <div class="add-edit-course-header-context-two">
@@ -5430,7 +5430,7 @@
                             <img src="./image/tags_icon.png" alt=""/>
                             <p>课程名称</p>
                         </div>
-                        <img style="width:22px;height:22px" id="add-course-name-header-img2" src="./image/popupclose_btn.png" alt=""/>
+                        <img style="width:1.1rem;height:1.1rem" id="add-course-name-header-img2" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-course-name-context">
                         <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename3">
@@ -5737,7 +5737,7 @@
                                             //console.log(strselect)
 
                                             var strcoachone = `
-                                            <p id="coach-p2" class="`+ result.rows[0].userName + `" style="width:70px;height:24px;border-radius:4px;background:#71B2EF;color:white;text-align:center;line-height:24px">
+                                            <p id="coach-p2" class="`+ result.rows[0].userName + `" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem">
                                             `+ result.rows[0].realName + `
                                             </p>
                                         `
