@@ -2094,11 +2094,6 @@
 
     <div class="course-arranging-body" id="course-arranging-body-right" style="display:none">
         <div class="course-arranging-header-two"></div>
-        <div class="course-arranging-header-three">
-            <p>导入课程</p>
-            <p>新增</p>
-            <p>发布</p>
-        </div>
         <div class="course-arranging-flex">
             <div style="font-size:0.8rem;margin-right:0.5rem">上课门店</div>
             <div id="course-arranging-not-flex-select-one">
