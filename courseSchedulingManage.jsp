@@ -2202,7 +2202,7 @@
             this.select_all1()
             
             //this.input_all4()
-            this.select_option()
+            //this.select_option()
             this.publishshowhide()
             this.ajax()
             this.edit_course()
@@ -2806,7 +2806,7 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div">
+                                    <div class="select-menu-div" id="select-menu-div-mendian">
                                         <input class="select-menu-input" id="select-menu-input-mendian"/>
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
@@ -2821,7 +2821,7 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div">
+                                    <div class="select-menu-div" id="select-menu-div-inputroom2">
                                         <input class="select-menu-input" id="select-menu-inputroom2"/>
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
@@ -3084,8 +3084,8 @@
                                             //console.log(result)
                                             for (var i = 0; i < result.rows.length; i++) {
                                                 strsecond += `
-                                        <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
-                                    `
+                                                    <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
+                                                `
                                             }
 
                                             setTimeout(() => {
@@ -3419,61 +3419,132 @@
                     // }, 100);
 
                     setTimeout(() => {
-                        //下拉菜单的动态
-                        selectMenu(2);
-                        selectMenu(3);
-
-                        function selectMenu(index) {
-                            $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
-                            $(".select-menu-div").eq(index).on("click", function (e) {
-                                e.stopPropagation();
-                                if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                                    $(".select-menu-ul").eq(index).hide();
-                                    $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                                    $(".select-menu-ul").eq(index).animate({
+                        //第一个下拉菜单的动态
+                        $("#select-menu-input-mendian").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                        $("#select-menu-div-mendian").eq(0).on("click", function (e) {
+                            e.stopPropagation();
+                            if ($("#select-menu-ul-one").eq(0).css("display") === "block") {
+                                setTimeout(() => {
+                                    $("#select-menu-ul-one").eq(0).hide();
+                                    $("#select-menu-div-mendian").eq(0).find("i").removeClass("select-menu-i");
+                                    $("#select-menu-ul-one").eq(0).animate({
                                         marginTop: "0",
                                         opacity: "0"
                                     }, "fast");
-                                } else {
-                                    $(".select-menu-ul").eq(index).show();
-                                    $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
-                                    $(".select-menu-ul").eq(index).animate({
+                                }, 50);
+                                
+                            } else {
+                                setTimeout(() => {
+                                   $("#select-menu-ul-one").eq(0).show();
+                                    $("#select-menu-div-mendian").eq(0).find("i").addClass("select-menu-i");
+                                    $("#select-menu-ul-one").eq(0).animate({
                                         marginTop: "5px",
                                         opacity: "1"
-                                    }, "fast");
-                                }
-                                for (var i = 0; i < $(".select-menu-ul").length; i++) {
-                                    if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
-                                        $(".select-menu-ul").eq(i).hide();
-                                        $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
-                                        $(".select-menu-ul").eq(i).animate({
+                                    }, "fast"); 
+                                }, 50);
+                                
+                            }
+                            for (var i = 0; i < $("#select-menu-ul-one").length; i++) {
+                                if (i !== 0 && $("#select-menu-ul-one").eq(i).css("display") === "block") {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-one").eq(i).hide();
+                                        $("#select-menu-div-mendian").eq(i).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-one").eq(i).animate({
                                             marginTop: "0",
                                             opacity: "0"
                                         }, "fast");
-                                    }
+                                    }, 50);
                                 }
-                            });
-                            $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
-                                $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
-                                $(".select-menu-div").eq(index).click();
+                            }
+                        });
+                        $("#select-menu-ul-one").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                            setTimeout(() => {
+                                $("#select-menu-input-mendian").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                                $("#select-menu-div-mendian").eq(0).click();
                                 $(this).siblings(".select-this").removeClass("select-this");
                                 $(this).addClass("select-this");
-                            });
-                            $("body").on("click", function (event) {
+                            }, 50);
+                            
+                        });
+                        $("body").on("click", function (event) {
+                            setTimeout(() => {
                                 event.stopPropagation();
-                                if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                if ($("#select-menu-ul-one").eq(0).css("display") === "block") {
                                     console.log(1);
-                                    $(".select-menu-ul").eq(index).hide();
-                                    $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                                    $(".select-menu-ul").eq(index).animate({
+                                    $("#select-menu-ul-one").eq(0).hide();
+                                    $("#select-menu-div-mendian").eq(0).find("i").removeClass("select-menu-i");
+                                    $("#select-menu-ul-one").eq(0).animate({
                                         marginTop: "0",
                                         opacity: "0"
                                     }, "fast");
 
                                 }
+                            }, 50);
                             });
-                        }
-                        
+                      
+                        //第二个下拉菜单的动态
+                        $("#select-menu-inputroom2").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                        $("#select-menu-div-inputroom2").eq(0).on("click", function (e) {
+                            e.stopPropagation();
+                            if ($("#select-menu-ul-RoomList").eq(0).css("display") === "block") {
+                                setTimeout(() => {
+                                    $("#select-menu-ul-RoomList").eq(0).hide();
+                                    $("#select-menu-div-inputroom2").eq(0).find("i").removeClass("select-menu-i");
+                                    $("#select-menu-ul-RoomList").eq(0).animate({
+                                        marginTop: "0",
+                                        opacity: "0"
+                                    }, "fast");
+                                }, 50);
+
+                            } else {
+                                setTimeout(() => {
+                                    $("#select-menu-ul-RoomList").eq(0).show();
+                                    $("#select-menu-div-inputroom2").eq(0).find("i").addClass("select-menu-i");
+                                    $("#select-menu-ul-RoomList").eq(0).animate({
+                                        marginTop: "5px",
+                                        opacity: "1"
+                                    }, "fast");
+                                }, 50);
+
+                            }
+                            for (var i = 0; i < $("#select-menu-ul-RoomList").length; i++) {
+                                if (i !== 0 && $("#select-menu-ul-RoomList").eq(i).css("display") === "block") {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-RoomList").eq(i).hide();
+                                        $("#select-menu-div-inputroom2").eq(i).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-RoomList").eq(i).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+                                    }, 50);
+                                }
+                            }
+                        });
+                        $("#select-menu-ul-RoomList").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                            setTimeout(() => {
+                                $("#select-menu-inputroom2").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                                $("#select-menu-div-inputroom2").eq(0).click();
+                                $(this).siblings(".select-this").removeClass("select-this");
+                                $(this).addClass("select-this");
+                            }, 50);
+
+                        });
+                        $("body").on("click", function (event) {
+                            setTimeout(() => {
+                                event.stopPropagation();
+                                if ($("#select-menu-ul-RoomList").eq(0).css("display") === "block") {
+                                    console.log(1);
+                                    $("#select-menu-ul-RoomList").eq(0).hide();
+                                    $("#select-menu-div-inputroom2").eq(0).find("i").removeClass("select-menu-i");
+                                    $("#select-menu-ul-RoomList").eq(0).animate({
+                                        marginTop: "0",
+                                        opacity: "0"
+                                    }, "fast");
+
+                                }
+                            }, 50);
+                        });
+
                     }, 100);
 
                 }, 100);
@@ -4461,7 +4532,7 @@
             this.checkbox_click()
             this.a_del()
             this.select_all1()
-            this.select_option()
+            //this.select_option()
             this.pay()
             this.adch_showhide()
         }
@@ -4504,62 +4575,62 @@
             //下拉菜单的动态渲染
         }
 
-        select_option() {
-            //下拉菜单的动态
-            selectMenu(2);
-            selectMenu(3);
-            function selectMenu(index) {
-                $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
-                $(".select-menu-div").eq(index).on("click", function (e) {
-                    e.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
-                            marginTop: "0",
-                            opacity: "0"
-                        }, "fast");
-                    } else {
-                        $(".select-menu-ul").eq(index).show();
-                        $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
-                            marginTop: "5px",
-                            opacity: "1"
-                        }, "fast");
-                    }
-                    for (var i = 0; i < $(".select-menu-ul").length; i++) {
-                        if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
-                            $(".select-menu-ul").eq(i).hide();
-                            $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
-                            $(".select-menu-ul").eq(i).animate({
-                                marginTop: "0",
-                                opacity: "0"
-                            }, "fast");
-                        }
-                    }
-                });
-                $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
-                    $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
-                    $(".select-menu-div").eq(index).click();
-                    $(this).siblings(".select-this").removeClass("select-this");
-                    $(this).addClass("select-this");
-                });
-                $("body").on("click", function (event) {
-                    event.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                        console.log(1);
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
-                            marginTop: "0",
-                            opacity: "0"
-                        }, "fast");
+        // select_option() {
+        //     //下拉菜单的动态
+        //     selectMenu(2);
+        //     selectMenu(3);
+        //     function selectMenu(index) {
+        //         $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
+        //         $(".select-menu-div").eq(index).on("click", function (e) {
+        //             e.stopPropagation();
+        //             if ($(".select-menu-ul").eq(index).css("display") === "block") {
+        //                 $(".select-menu-ul").eq(index).hide();
+        //                 $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+        //                 $(".select-menu-ul").eq(index).animate({
+        //                     marginTop: "0",
+        //                     opacity: "0"
+        //                 }, "fast");
+        //             } else {
+        //                 $(".select-menu-ul").eq(index).show();
+        //                 $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
+        //                 $(".select-menu-ul").eq(index).animate({
+        //                     marginTop: "5px",
+        //                     opacity: "1"
+        //                 }, "fast");
+        //             }
+        //             for (var i = 0; i < $(".select-menu-ul").length; i++) {
+        //                 if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
+        //                     $(".select-menu-ul").eq(i).hide();
+        //                     $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
+        //                     $(".select-menu-ul").eq(i).animate({
+        //                         marginTop: "0",
+        //                         opacity: "0"
+        //                     }, "fast");
+        //                 }
+        //             }
+        //         });
+        //         $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
+        //             $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
+        //             $(".select-menu-div").eq(index).click();
+        //             $(this).siblings(".select-this").removeClass("select-this");
+        //             $(this).addClass("select-this");
+        //         });
+        //         $("body").on("click", function (event) {
+        //             event.stopPropagation();
+        //             if ($(".select-menu-ul").eq(index).css("display") === "block") {
+        //                 console.log(1);
+        //                 $(".select-menu-ul").eq(index).hide();
+        //                 $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
+        //                 $(".select-menu-ul").eq(index).animate({
+        //                     marginTop: "0",
+        //                     opacity: "0"
+        //                 }, "fast");
 
-                    }
-                });
-            }
+        //             }
+        //         });
+        //     }
         
-        }
+        // }
 
         pay() {
             
@@ -4807,60 +4878,132 @@
         }
 
         select_option() {
-            selectMenu(4);
-            selectMenu(5);
-            function selectMenu(index) {
-                $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
-                $(".select-menu-div").eq(index).on("click", function (e) {
-                    e.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
+            //第一个下拉菜单的动态
+            $("#select-menu-input-mendian2").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+            $("#select-menu-div1").eq(0).on("click", function (e) {
+                e.stopPropagation();
+                if ($("#select-menu-ul-pulishmendian1").eq(0).css("display") === "block") {
+                    setTimeout(() => {
+                        $("#select-menu-ul-pulishmendian1").eq(0).hide();
+                        $("#select-menu-div1").eq(0).find("i").removeClass("select-menu-i");
+                        $("#select-menu-ul-pulishmendian1").eq(0).animate({
                             marginTop: "0",
                             opacity: "0"
                         }, "fast");
-                    } else {
-                        $(".select-menu-ul").eq(index).show();
-                        $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
+                    }, 50);
+
+                } else {
+                    setTimeout(() => {
+                        $("#select-menu-ul-pulishmendian1").eq(0).show();
+                        $("#select-menu-div1").eq(0).find("i").addClass("select-menu-i");
+                        $("#select-menu-ul-pulishmendian1").eq(0).animate({
                             marginTop: "5px",
                             opacity: "1"
                         }, "fast");
-                    }
-                    for (var i = 0; i < $(".select-menu-ul").length; i++) {
-                        if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
-                            $(".select-menu-ul").eq(i).hide();
-                            $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
-                            $(".select-menu-ul").eq(i).animate({
+                    }, 50);
+
+                }
+                for (var i = 0; i < $("#select-menu-ul-pulishmendian1").length; i++) {
+                    if (i !== 0 && $("#select-menu-ul-pulishmendian1").eq(i).css("display") === "block") {
+                        setTimeout(() => {
+                            $("#select-menu-ul-pulishmendian1").eq(i).hide();
+                            $("#select-menu-div1").eq(i).find("i").removeClass("select-menu-i");
+                            $("#select-menu-ul-pulishmendian1").eq(i).animate({
                                 marginTop: "0",
                                 opacity: "0"
                             }, "fast");
-                        }
+                        }, 50);
                     }
-                });
-                $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
-                    $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
-                    $(".select-menu-div").eq(index).click();
+                }
+            });
+            $("#select-menu-ul-pulishmendian1").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                setTimeout(() => {
+                    $("#select-menu-input-mendian2").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                    $("#select-menu-div1").eq(0).click();
                     $(this).siblings(".select-this").removeClass("select-this");
                     $(this).addClass("select-this");
-                });
-                $("body").on("click", function (event) {
+                }, 50);
+
+            });
+            $("body").on("click", function (event) {
+                setTimeout(() => {
                     event.stopPropagation();
-                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                    if ($("#select-menu-ul-pulishmendian1").eq(0).css("display") === "block") {
                         console.log(1);
-                        $(".select-menu-ul").eq(index).hide();
-                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                        $(".select-menu-ul").eq(index).animate({
+                        $("#select-menu-ul-pulishmendian1").eq(0).hide();
+                        $("#select-menu-div1").eq(0).find("i").removeClass("select-menu-i");
+                        $("#select-menu-ul-pulishmendian1").eq(0).animate({
                             marginTop: "0",
                             opacity: "0"
                         }, "fast");
 
                     }
+                }, 50);
+            });
 
-                });
+            //第二个下拉菜单的动态
+            $("#select-menu-input-room1").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+            $("#select-menu-div-room1").eq(0).on("click", function (e) {
+                e.stopPropagation();
+                if ($("#select-menu-ul-room1").eq(0).css("display") === "block") {
+                    setTimeout(() => {
+                        $("#select-menu-ul-room1").eq(0).hide();
+                        $("#select-menu-div-room1").eq(0).find("i").removeClass("select-menu-i");
+                        $("#select-menu-ul-room1").eq(0).animate({
+                            marginTop: "0",
+                            opacity: "0"
+                        }, "fast");
+                    }, 50);
 
-            }
+                } else {
+                    setTimeout(() => {
+                        $("#select-menu-ul-room1").eq(0).show();
+                        $("#select-menu-div-room1").eq(0).find("i").addClass("select-menu-i");
+                        $("#select-menu-ul-room1").eq(0).animate({
+                            marginTop: "5px",
+                            opacity: "1"
+                        }, "fast");
+                    }, 50);
+
+                }
+                for (var i = 0; i < $("#select-menu-ul-room1").length; i++) {
+                    if (i !== 0 && $("#select-menu-ul-room1").eq(i).css("display") === "block") {
+                        setTimeout(() => {
+                            $("#select-menu-ul-room1").eq(i).hide();
+                            $("#select-menu-div-room1").eq(i).find("i").removeClass("select-menu-i");
+                            $("#select-menu-ul-room1").eq(i).animate({
+                                marginTop: "0",
+                                opacity: "0"
+                            }, "fast");
+                        }, 50);
+                    }
+                }
+            });
+            $("#select-menu-ul-room1").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                setTimeout(() => {
+                    $("#select-menu-input-room1").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                    $("#select-menu-div-room1").eq(0).click();
+                    $(this).siblings(".select-this").removeClass("select-this");
+                    $(this).addClass("select-this");
+                }, 50);
+
+            });
+            $("body").on("click", function (event) {
+                setTimeout(() => {
+                    event.stopPropagation();
+                    if ($("#select-menu-ul-room1").eq(0).css("display") === "block") {
+                        console.log(1);
+                        $("#select-menu-ul-room1").eq(0).hide();
+                        $("#select-menu-div-room1").eq(0).find("i").removeClass("select-menu-i");
+                        $("#select-menu-ul-room1").eq(0).animate({
+                            marginTop: "0",
+                            opacity: "0"
+                        }, "fast");
+
+                    }
+                }, 50);
+            });
+
         }
 
         table_all() {
@@ -5226,7 +5369,7 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div">
+                                    <div class="select-menu-div" id="select-menu-div-mendian3">
                                         <input class="select-menu-input" id="select-menu-input-mendian3"/>
 
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
@@ -5241,7 +5384,7 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div">
+                                    <div class="select-menu-div" id="select-menu-div-inputroom3">
                                         <input class="select-menu-input" id="select-menu-inputroom3"/>
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
@@ -5862,60 +6005,131 @@
                         }, 100);
 
                         setTimeout(() => {
-                            //下拉菜单的动态
-                            selectMenu(6);
-                            selectMenu(7);
-
-                            function selectMenu(index) {
-                                $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
-                                $(".select-menu-div").eq(index).on("click", function (e) {
-                                    e.stopPropagation();
-                                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
-                                        $(".select-menu-ul").eq(index).hide();
-                                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                                        $(".select-menu-ul").eq(index).animate({
+                           //第一个下拉菜单的动态
+                            $("#select-menu-input-mendian3").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                            $("#select-menu-div-mendian3").eq(0).on("click", function (e) {
+                                e.stopPropagation();
+                                if ($("#select-menu-ul-one1").eq(0).css("display") === "block") {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-one1").eq(0).hide();
+                                        $("#select-menu-div-mendian3").eq(0).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-one1").eq(0).animate({
                                             marginTop: "0",
                                             opacity: "0"
                                         }, "fast");
-                                    } else {
-                                        $(".select-menu-ul").eq(index).show();
-                                        $(".select-menu-div").eq(index).find("i").addClass("select-menu-i");
-                                        $(".select-menu-ul").eq(index).animate({
+                                    }, 50);
+
+                                } else {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-one1").eq(0).show();
+                                        $("#select-menu-div-mendian3").eq(0).find("i").addClass("select-menu-i");
+                                        $("#select-menu-ul-one1").eq(0).animate({
                                             marginTop: "5px",
                                             opacity: "1"
                                         }, "fast");
-                                    }
-                                    for (var i = 0; i < $(".select-menu-ul").length; i++) {
-                                        if (i !== index && $(".select-menu-ul").eq(i).css("display") === "block") {
-                                            $(".select-menu-ul").eq(i).hide();
-                                            $(".select-menu-div").eq(i).find("i").removeClass("select-menu-i");
-                                            $(".select-menu-ul").eq(i).animate({
+                                    }, 50);
+
+                                }
+                                for (var i = 0; i < $("#select-menu-ul-one1").length; i++) {
+                                    if (i !== 0 && $("#select-menu-ul-one1").eq(i).css("display") === "block") {
+                                        setTimeout(() => {
+                                            $("#select-menu-ul-one1").eq(i).hide();
+                                            $("#select-menu-div-mendian3").eq(i).find("i").removeClass("select-menu-i");
+                                            $("#select-menu-ul-one1").eq(i).animate({
                                                 marginTop: "0",
                                                 opacity: "0"
                                             }, "fast");
-                                        }
+                                        }, 50);
                                     }
-                                });
-                                $(".select-menu-ul").eq(index).on("click", "li", function () { //给下拉选项绑定点击事件
-                                    $(".select-menu-input").eq(index).val($(this).html()); //把被点击的选项的值填入输入框中
-                                    $(".select-menu-div").eq(index).click();
+                                }
+                            });
+                            $("#select-menu-ul-one1").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                                setTimeout(() => {
+                                    $("#select-menu-input-mendian3").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                                    $("#select-menu-div-mendian3").eq(0).click();
                                     $(this).siblings(".select-this").removeClass("select-this");
                                     $(this).addClass("select-this");
-                                });
-                                $("body").on("click", function (event) {
+                                }, 50);
+
+                            });
+                            $("body").on("click", function (event) {
+                                setTimeout(() => {
                                     event.stopPropagation();
-                                    if ($(".select-menu-ul").eq(index).css("display") === "block") {
+                                    if ($("#select-menu-ul-one1").eq(0).css("display") === "block") {
                                         console.log(1);
-                                        $(".select-menu-ul").eq(index).hide();
-                                        $(".select-menu-div").eq(index).find("i").removeClass("select-menu-i");
-                                        $(".select-menu-ul").eq(index).animate({
+                                        $("#select-menu-ul-one1").eq(0).hide();
+                                        $("#select-menu-div-mendian3").eq(0).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-one1").eq(0).animate({
                                             marginTop: "0",
                                             opacity: "0"
                                         }, "fast");
 
                                     }
-                                });
-                            }
+                                }, 50);
+                            });
+
+                            //第二个下拉菜单的动态
+                            $("#select-menu-inputroom3").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                            $("#select-menu-div-inputroom3").eq(0).on("click", function (e) {
+                                e.stopPropagation();
+                                if ($("#select-menu-ul-RoomList1").eq(0).css("display") === "block") {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-RoomList1").eq(0).hide();
+                                        $("#select-menu-div-inputroom3").eq(0).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-RoomList1").eq(0).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+                                    }, 50);
+
+                                } else {
+                                    setTimeout(() => {
+                                        $("#select-menu-ul-RoomList1").eq(0).show();
+                                        $("#select-menu-div-inputroom3").eq(0).find("i").addClass("select-menu-i");
+                                        $("#select-menu-ul-RoomList1").eq(0).animate({
+                                            marginTop: "5px",
+                                            opacity: "1"
+                                        }, "fast");
+                                    }, 50);
+
+                                }
+                                for (var i = 0; i < $("#select-menu-ul-RoomList1").length; i++) {
+                                    if (i !== 0 && $("#select-menu-ul-RoomList1").eq(i).css("display") === "block") {
+                                        setTimeout(() => {
+                                            $("#select-menu-ul-RoomList1").eq(i).hide();
+                                            $("#select-menu-div-inputroom3").eq(i).find("i").removeClass("select-menu-i");
+                                            $("#select-menu-ul-RoomList1").eq(i).animate({
+                                                marginTop: "0",
+                                                opacity: "0"
+                                            }, "fast");
+                                        }, 50);
+                                    }
+                                }
+                            });
+                            $("#select-menu-ul-RoomList1").eq(0).on("click", "li", function () { //给下拉选项绑定点击事件
+                                setTimeout(() => {
+                                    $("#select-menu-inputroom3").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
+                                    $("#select-menu-div-inputroom3").eq(0).click();
+                                    $(this).siblings(".select-this").removeClass("select-this");
+                                    $(this).addClass("select-this");
+                                }, 50);
+
+                            });
+                            $("body").on("click", function (event) {
+                                setTimeout(() => {
+                                    event.stopPropagation();
+                                    if ($("#select-menu-ul-RoomList1").eq(0).css("display") === "block") {
+                                        console.log(1);
+                                        $("#select-menu-ul-RoomList1").eq(0).hide();
+                                        $("#select-menu-div-inputroom3").eq(0).find("i").removeClass("select-menu-i");
+                                        $("#select-menu-ul-RoomList1").eq(0).animate({
+                                            marginTop: "0",
+                                            opacity: "0"
+                                        }, "fast");
+
+                                    }
+                                }, 50);
+                            });
 
                         }, 100);
 
@@ -6111,7 +6325,7 @@
             this.checkbox_click()
             this.a_del()
             this.select_all1()
-            this.select_option()
+            //this.select_option()
             this.pay()
             this.adch_showhide()
         }
