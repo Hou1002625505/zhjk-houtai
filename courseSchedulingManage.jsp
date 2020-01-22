@@ -35,6 +35,11 @@
     <!-- 引用初始化JS -->
     <script src="imgui/jq22.js"></script>
     <style>
+
+        html{
+            font-size:calc(100vw / 88.11);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -49,35 +54,35 @@
         }
 
         #course-arranging-header-one-pone {
-            font-size: 20px;
+            font-size: 1rem;
             color: #444444;
-            padding-bottom: 7px;
-            margin-left: 23px;
+            padding-bottom: 0.35rem;
+            margin-left: 1.15rem;
             cursor: pointer;
         }
 
         .course-arranging-header-one-pone-active {
-            border-bottom: 2px solid #71B2EF;
+            border-bottom: 0.1rem solid #71B2EF;
         }
 
         #course-arranging-header-one-ptwo {
-            font-size: 20px;
+            font-size: 1rem;
             color: #444444;
-            margin-left: 39px;
-            padding-bottom: 7px;
+            margin-left: 2rem;
+            padding-bottom: 0.35rem;
             cursor: pointer;
         }
 
         .course-arranging-header-one-ptwo-active {
-            border-bottom: 2px solid #71B2EF;
+            border-bottom: 0.1rem solid #71B2EF;
         }
 
         .course-arranging-header-two {
             height: 1px;
             background: #BFBFBF;
-            padding: 0 18px 0 18px;
+            padding: 0 0.9rem 0 0.9rem;
             box-sizing: border-box;
-            margin-bottom: 18px
+            margin-bottom: 0.9rem
         }
 
         .course-arranging-header-three {
@@ -85,28 +90,28 @@
         }
 
         .course-arranging-header-three p:nth-child(1) {
-            width: 100px;
-            height: 30px;
+            width: 5rem;
+            height: 1.5rem;
             background: #71B2EF;
             color: white;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             margin-left: 0;
-            font-size: 16px;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
         }
 
         .course-arranging-header-three p {
-            width: 100px;
-            height: 30px;
+            width: 5rem;
+            height: 1.5rem;
             background: #71B2EF;
             color: white;
-            border-radius: 4px;
-            margin-left: 18px;
-            font-size: 16px;
+            border-radius: 0.2rem;
+            margin-left: 0.9rem;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 30px;
-            margin-bottom: 20px
+            line-height: 1.5rem;
+            margin-bottom: 1rem
         }
 
         .course-arranging-flex {
@@ -126,7 +131,7 @@
 
         .course-arranging-flextwo {
             display: flex;
-            margin-top: 18px;
+            margin-top: 0.9rem;
             justify-content: space-between;
         }
 
@@ -135,47 +140,47 @@
         }
 
         .course-arranging-flexthree p:nth-child(1) {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
             background: #71B2EF;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: white;
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .course-arranging-flexthree p:nth-child(2) {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: black;
-            margin-left: 15px;
-            font-size: 16px
+            margin-left: 0.75rem;
+            font-size: 0.8rem
         }
 
         .course-arranging-flextwo .course-arranging-flextwo-pthree {
-            width: 80px;
-            height: 30px;
+            width: 4rem;
+            height: 1.5rem;
             color: white;
             background: #71B2EF;
             text-align: center;
-            line-height: 30px;
-            border-radius: 4px;
-            margin-right: 200px;
-            font-size: 16px;
+            line-height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-right: 10rem;
+            font-size: 0.8rem;
         }
 
         .select-menu {
-            margin-left: 10px;
-            margin-right: 39px;
+            margin-left: 0.5rem;
+            margin-right: 2rem;
             cursor: pointer;
-            width: 176px;
-            height: 26px;
+            width: 8.8rem;
+            height: 1.3rem;
             box-sizing: border-box;
         }
 
@@ -184,7 +189,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 106px;
+            width: 5.3rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -193,11 +198,11 @@
         }
 
         .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.6rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .select-menu-ul li:hover {
@@ -206,10 +211,10 @@
 
         .select-menu-div {
             position: relative;
-            height: 26px;
-            width: 176px;
+            height: 1.3rem;
+            width: 8.8rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
         }
 
@@ -222,90 +227,90 @@
         }
 
         .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.6rem;
+            height: 0.45rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 50px;
-            height: 24px;
+            width: 2.25rem;
+            height: 2.2rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .course-arranging-flex-select-two {
-            width: 120px;
-            height: 30px;
+            width: 6rem;
+            height: 1.5rem;
             border: 1px solid #BFBFBF;
-            border-radius: 4px;
-            margin-left: 20px;
-            margin-right: 40px
+            border-radius: 0.2rem;
+            margin-left: 1rem;
+            margin-right: 2rem
         }
 
         .course-arranging-flex-select-three {
-            width: 120px;
-            height: 30px;
+            width: 6rem;
+            height: 1.5rem;
             border: 1px solid #BFBFBF;
-            border-radius: 4px;
-            margin-left: 20px;
-            margin-right: 40px
+            border-radius: 0.2rem;
+            margin-left: 1rem;
+            margin-right: 2rem
         }
 
         .course-arranging-flex-input-one {
-            width: 120px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 7px;
-            padding: 0 0 0 10px;
+            width: 6rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.35rem;
+            padding: 0 0 0 0.5rem;
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 0.7rem;
             border: 1px solid #BFBFBF;
-            line-height: 30px;
+            line-height: 1.5rem;
         }
 
         .course-arranging-flex-input-two {
-            width: 120px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 7px;
-            margin-right: 38px;
-            padding: 0 0 0 10px;
+            width: 6rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left:0.35rem;
+            margin-right: 1.9rem;
+            padding: 0 0 0 0.5rem;
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 0.7rem;
             border: 1px solid #BFBFBF;
-            line-height: 30px;
+            line-height: 1.5rem;
         }
 
         .course-arranging-flex-input-three {
-            width: 70px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 6px;
+            width: 3.5rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-arranging-flex-input-four {
-            width: 70px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 6px;
+            width: 3.5rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-arranging-table {
-            margin-top: 18px;
-            font-size: 14px;
+            margin-top: 0.9rem;
+            font-size: 0.7rem;
         }
 
         .course-arranging-table table tr:nth-child(2) td {
@@ -315,7 +320,7 @@
         .course-arranging-table table td {
             border-left: 1px dashed #CCCCCC;
             border-bottom: 1px dashed #CCCCCC;
-            height: 40px;
+            height: 2rem;
             text-align: center;
         }
 
@@ -327,7 +332,7 @@
         .course-arranging-table table th {
             background: #D0E8F2;
             text-align: center;
-            height: 40px;
+            height: 2rem;
         }
 
         .course-arranging-table .course-arranging-table-tr td:last-child {
@@ -336,83 +341,83 @@
         }
 
         .course-arranging-table .course-arranging-table-tr td:last-child a:nth-child(1) {
-            margin-right: 5px;
+            margin-right: 0.25rem;
         }
 
         .course-arranging-table .course-arranging-table-tr td:last-child a:nth-child(2) {
-            margin-left: 5px;
+            margin-left: 0.25rem;
         }
 
         .course-arranging-table .course-arranging-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
         }
 
         .course-arranging-table .course-arranging-table-checkbox img {
-            width: 16px;
-            height: 16px;
-            margin-left: -1px;
-            margin-top: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: -0.05rem;
+            margin-top: -0.05rem;
         }
 
         .course-arranging-footer {
             display: flex;
-            margin-top: 17px;
-            height: 26px;
+            margin-top: 0.85rem;
+            height: 1.3rem;
             display: flex;
             align-items: center;
-            padding-left: 14px;
+            padding-left: 0.7rem;
         }
 
         .course-arranging-table-checkbox {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .course-arranging-table-checkbox img {
-            width: 16px;
-            height: 16px;
-            margin-top: -1px;
-            margin-left: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-top: -0.05rem;
+            margin-left: -0.05rem;
         }
 
         .course-arranging-footer .course-arranging-footer-pone {
-            font-size: 14px;
-            margin-left: 8px;
+            font-size: 0.7rem;
+            margin-left: 0.4rem;
         }
 
         .course-arranging-footer .course-arranging-footer-ptwo {
-            width: 70px;
-            height: 30px;
+            width: 3.5rem;
+            height: 1.5rem;
             border: 1px solid #BFBFBF;
-            margin-left: 9px;
-            font-size: 14px;
+            margin-left: 0.45rem;
+            font-size: 0.7rem;
             color: #444444;
             text-align: center;
-            line-height: 30px;
-            border-radius: 2px;
+            line-height: 1.5rem;
+            border-radius: 0.1rem;
         }
 
         .course-arranging-footer .course-arranging-footer-pthree {
-            font-size: 14px;
-            margin-left: 893px;
+            font-size: 0.7rem;
+            margin-left: 44.65rem;
         }
 
         .td-del {
-            width: 326px;
-            height: 97px;
-            border-radius: 4px;
+            width: 16.3rem;
+            height: 4.85rem;
+            border-radius: 0.2rem;
             background: white;
             position: absolute;
-            left: -300px;
+            left: -15rem;
             top: -0px;
             z-index: 10;
-            padding: 18px 0 0 18px
+            padding: 0.9rem 0 0 0.9rem
         }
 
         .td-del .td-del-flex {
@@ -422,30 +427,30 @@
         }
 
         .td-del .td-del-flex p:nth-child(1) {
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .td-del .td-del-flex p:nth-child(2) {
-            width: 62px;
-            height: 32px;
+            width: 3.1rem;
+            height: 1.6rem;
             background: #71B2EF;
             color: white;
-            font-size: 14px;
+            font-size: 0.7rem;
             text-align: center;
-            line-height: 32px;
-            border-radius: 4px;
-            margin-left: 26px;
-            margin-right: 13px;
+            line-height: 1.6rem;
+            border-radius: 0.2rem;
+            margin-left: 1.3rem;
+            margin-right: 0.65rem;
             cursor: pointer;
         }
 
         .td-del .td-del-flex p:nth-child(3) {
-            width: 62px;
-            height: 32px;
-            font-size: 14px;
+            width: 3.1rem;
+            height: 1.6rem;
+            font-size: 0.7rem;
             text-align: center;
-            line-height: 32px;
-            border-radius: 4px;
+            line-height: 1.6rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
             cursor: pointer;
         }
@@ -453,9 +458,9 @@
         .td-del .td-del-line {
             height: 1px;
             background: #BFBFBF;
-            padding: 0 18px 0 18px;
-            margin-top: 9px;
-            margin-bottom: 8px
+            padding: 0 0.9rem 0 0.9rem;
+            margin-top: 0.45rem;
+            margin-bottom: 0.4rem
         }
 
         .td-del .td-del-left {
@@ -465,10 +470,10 @@
         }
 
         .select-menu {
-            margin-right: 39px;
+            margin-right: 2rem;
             cursor: pointer;
-            width: 200px;
-            height: 30px;
+            width: 10rem;
+            height: 1.5rem;
             box-sizing: border-box;
         }
 
@@ -477,7 +482,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 200px;
+            width: 10rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -486,11 +491,11 @@
         }
 
         .select-menu-ul li {
-            height: 30px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.5rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .select-menu-ul li:hover {
@@ -499,10 +504,10 @@
 
         .select-menu-div {
             position: relative;
-            height: 30px;
-            width: 200px;
+            height: 1.5rem;
+            width: 10rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
         }
 
@@ -515,33 +520,33 @@
         }
 
         .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.6rem;
+            height: 0.4rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 50px;
-            height: 28px;
+            width: 2.5rem;
+            height: 1.4rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
 
 
         .select-menu3 {
             cursor: pointer;
-            width: 150px;
-            height: 36px;
+            width: 7.5rem;
+            height: 1.8rem;
             box-sizing: border-box;
-            margin-left: 77px;
-            margin-right: 59px
+            margin-left: 3.85rem;
+            margin-right: 3rem
         }
 
         .select-menu3 .select-menu-ul {
@@ -549,7 +554,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 150px;
+            width: 7.5rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -558,11 +563,11 @@
         }
 
         .select-menu3 .select-menu-ul .select-menu-ul li {
-            height: 36px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.8rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 36px;
+            line-height: 1.8rem;
         }
 
         .select-menu3 .select-menu-ul li:hover {
@@ -571,10 +576,10 @@
 
         .select-menu3 .select-menu-div {
             position: relative;
-            height: 36px;
-            width: 150px;
+            height: 1.8rem;
+            width: 7.5rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
         }
 
@@ -587,30 +592,30 @@
         }
 
         .select-menu3 .select-menu-div .select-menu-img {
-            width: 11px;
-            height: 8px;
+            width: 0.6rem;
+            height: 0.45rem;
             margin-right: 10px;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu3 .select-menu-div .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 50px;
-            height: 30px;
+            width: 2.5rem;
+            height: 1.5rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
 
 
         .select-menu4 {
             cursor: pointer;
-            width: 120px;
-            height: 36px;
+            width: 6rem;
+            height: 1.8rem;
             box-sizing: border-box;
         }
 
@@ -619,7 +624,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 120px;
+            width: 6rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -628,11 +633,11 @@
         }
 
         .select-menu4 .select-menu-ul .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.6rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .select-menu4 .select-menu-ul li:hover {
@@ -641,10 +646,10 @@
 
         .select-menu4 .select-menu-div {
             position: relative;
-            height: 36px;
-            width: 120px;
+            height: 1.8rem;
+            width: 6rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
         }
 
@@ -657,29 +662,29 @@
         }
 
         .select-menu4 .select-menu-div .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.6rem;
+            height: 0.4rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu4 .select-menu-div .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 50px;
-            height: 30px;
+            width: 2.5rem;
+            height: 1.5rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
 
         .select-menu5 {
             cursor: pointer;
-            width: 250px;
-            height: 36px;
+            width: 12.5rem;
+            height: 1.8rem;
             box-sizing: border-box;
         }
 
@@ -688,7 +693,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 250px;
+            width: 12.5rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -697,11 +702,11 @@
         }
 
         .select-menu5 .select-menu-ul li {
-            height: 36px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.8rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 36px;
+            line-height: 1.8rem;
         }
 
         .select-menu5 .select-menu-ul li:hover {
@@ -710,12 +715,12 @@
 
         .select-menu5 .select-menu-div {
             position: relative;
-            height: 36px;
-            width: 250px;
+            height: 1.8rem;
+            width: 12.5rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            line-height: 36px;
+            line-height: 1.8rem;
         }
 
         .select-menu5 .select-menu-ul .select-this {
@@ -727,36 +732,36 @@
         }
 
         .select-menu5 .select-menu-div .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.6rem;
+            height: 0.4rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
         }
 
         .select-menu5 .select-menu-div .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 130px;
-            height: 30px;
+            width: 6.5rem;
+            height: 1.5rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
 
 
         .edit-course {
-            width: 800px;
-            height: 760px;
+            width: 40rem;
+            height: 38rem;
             border: 1px solid #71B2EF;
             background: #E0ECFF;
-            border-radius: 4px;
-            padding: 18px;
+            border-radius: 0.2rem;
+            padding: 0.9rem;
             box-sizing: border-box;
             position: absolute;
-            top: -40px;
+            top: -2rem;
             left: 20%;
             z-index: 10;
             display: none
@@ -765,7 +770,7 @@
         .edit-course .edit-course-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 16px
+            margin-bottom: 0.8rem
         }
 
         .edit-course-header .edit-course-header-one {
@@ -774,18 +779,18 @@
         }
 
         .edit-course-header-one .edit-course-header-imgone {
-            width: 22px;
-            height: 21px
+            width: 1.1rem;
+            height: 1.05rem
         }
 
         .edit-course-header-one .edit-course-header-pone {
-            font-size: 24px;
-            margin-left: 15px
+            font-size: 1.2rem;
+            margin-left: 0.75rem
         }
 
         .edit-course .edit-course-context {
-            width: 756px;
-            height: 680px;
+            width: 37.8rem;
+            height: 34rem;
             border: 1px solid #71B2EF;
             background: #FFFFFF;
             overflow-y: scroll;
@@ -794,7 +799,7 @@
 
         .edit-course-context .edit-course-context-flex {
             width: 100%;
-            height: 60px;
+            height: 3rem;
             display: flex;
             box-sizing: border-box;
             align-items: center;
@@ -802,36 +807,36 @@
         }
 
         .edit-course-context-flex .edit-course-context-one {
-            padding: 0 0 0 19px;
-            font-size: 18px
+            padding: 0 0 0 1rem;
+            font-size: 0.9rem
         }
 
         .edit-course-context-flex #edit-course-context-two {
-            width: 250px;
-            height: 36px;
+            width: 12.5rem;
+            height: 1.8rem;
             border: 1px solid #BFBFBF;
             border-right: none;
-            margin-left: 74px;
-            border-radius: 4px 0 0 4px;
-            padding: 9px 0 9px 0;
+            margin-left: 3.7rem;
+            border-radius: 0.2rem 0 0 0.2rem;
+            padding: 0.45rem 0 0.45rem 0;
             box-sizing: border-box;
             display: flex;
             align-items: center;
         }
 
         .edit-course-context-flex .edit-course-context-three-pp {
-            width: 40px;
-            height: 36px;
+            width: 2rem;
+            height: 1.8rem;
             background: #71B2EF;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 0.2rem 0.2rem 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .edit-course-context-flex .edit-course-context-three-pp img {
-            width: 18px;
-            height: 17px
+            width: 0.9rem;
+            height: 0.85rem
         }
 
         /* #edit-course-context-two .edit-course-context-two-pp {
@@ -846,48 +851,48 @@
             align-items: center;
             border-bottom: 1px solid #BFBFBF;
             justify-content: space-between;
-            padding: 0 20px 0 20px;
+            padding: 0 1rem 0 1rem;
         }
 
         .edit-course-context-flextwo .edit-course-context-twoall {
-            width: 450px;
+            width: 27.5rem;
             display: flex;
             flex-wrap: wrap;
-            margin-top: 12px
+            margin-top: 0.6rem
         }
 
         .edit-course-context-flextwo .edit-course-context-one {
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .edit-course-context-twoall .edit-course-context-twoone {
-            padding:0 10px 0 10px;
+            padding:0 0.5rem 0 0.5rem;
             box-sizing: border-box;
-            height: 36px;
+            height: 1.8rem;
             border: 1px solid #BFBFBF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 32px;
-            margin-left: 18px;
-            margin-bottom: 18px;
-            font-size: 14px;
+            line-height: 1.6rem;
+            margin-left: 0.9rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.7rem;
         }
 
         .edit-course-context-flextwo .edit-course-context-three {
-            width: 60px;
-            height: 36px;
+            width: 3rem;
+            height: 1.8rem;
             border: 1px solid #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             color: #71B2EF;
             text-align: center;
-            line-height: 36px;
-            font-size: 14px
+            line-height: 1.8rem;
+            font-size: 0.7rem
         }
 
         .edit-course-context-flex3 {
-            padding: 11px 0 11px 20px;
+            padding: 0.55rem 0 0.55rem 1rem;
             width: 100%;
-            height: 53px;
+            height: 2.65rem;
             display: flex;
             box-sizing: border-box;
             align-items: center;
@@ -896,29 +901,29 @@
 
         .edit-course-context-flex3 .add-course-sortone-inputtwo {
             display: flex;
-            width: 150px;
-            height: 36px;
+            width: 7.5rem;
+            height: 1.8rem;
             border: 1px solid #CCCCCC;
-            margin-left: 77px;
-            border-radius: 4px;
+            margin-left: 3.85rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
         }
 
         .edit-course-context-flex3-pone {
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .edit-course-context-flex3-ptwo {
-            font-size: 18px;
-            margin-left: 59px
+            font-size: 0.9rem;
+            margin-left: 3rem
         }
 
         .edit-course-context-flex3 .add-course-sortone-inputtwo p {
-            width: 20px;
-            height: 34px;
+            width: 1rem;
+            height: 1.7rem;
             background: #F7F7F7;
             border-right: 1px solid #CCCCCC;
-            line-height: 34px;
+            line-height: 1.7rem;
             text-align: center;
         }
 
@@ -926,27 +931,27 @@
             border: none;
             outline: none;
             -webkit-appearance: none;
-            width: 88px;
-            padding-left: 5px;
+            width: 4.4rem;
+            padding-left: 0.25rem;
             box-sizing: border-box;
         }
 
         .edit-course-context-flex3 .add-course-sortone-inputthree {
             display: flex;
-            width: 120px;
-            height: 36px;
+            width: 6rem;
+            height: 1.8rem;
             border: 1px solid #CCCCCC;
-            margin-left: 35px;
-            border-radius: 4px;
+            margin-left: 1.75rem;
+            border-radius: 0.2rem;
         }
 
         .edit-course-context-flex3 .add-course-sortone-inputthree p {
-            width: 20px;
-            height: 36px;
+            width: 1rem;
+            height: 1.8rem;
             background: #F7F7F7;
             border-right: 1px solid #CCCCCC;
             box-sizing: border-box;
-            line-height: 36px;
+            line-height: 1.8rem;
             text-align: center;
         }
 
@@ -954,49 +959,49 @@
             border: none;
             outline: none;
             -webkit-appearance: none;
-            width: 88px;
-            padding-left: 5px;
+            width: 4.4rem;
+            padding-left: 0.25rem;
             box-sizing: border-box;
             background: #F7F7F7;
             text-decoration: line-through;
             color: #BFBFBF;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .edit-course-context-flex3 .add-course-sortone-inputthree input {
             border: none;
             outline: none;
             -webkit-appearance: none;
-            width: 88px;
-            padding-left: 5px;
+            width: 4.4rem;
+            padding-left: 0.25rem;
             box-sizing: border-box;
             text-decoration: line-through;
             color: #BFBFBF
         }
 
         .edit-course-context-flex3 .paypay {
-            width: 24px;
-            height: 24px;
-            margin-left: 44px;
-            margin-right: 18px
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-left: 2.2rem;
+            margin-right: 0.9rem
         }
 
         .edit-course-context-flex3 .paypay .paypay-show {
-            width: 24px;
-            height: 24px
+            width: 1.2rem;
+            height: 1.2rem
         }
 
         .edit-course-context-flex3 .paypay .paypay-hidden {
-            width: 24px;
-            height: 24px;
+            width: 1.2rem;
+            height: 1.2rem;
             display: none;
         }
 
         .edit-course-context .edit-course-footer {
-            width: 738px;
+            width: 36.9rem;
             display: flex;
             justify-content: center;
-            padding: 27px 0 27px 0;
+            padding: 1.35rem 0 1.35rem 0;
             box-sizing: border-box;
             position: fixed;
             bottom: 10%;
@@ -1004,111 +1009,111 @@
         }
 
         .edit-course-footer #edit-course-footer-pone {
-            width: 100px;
-            height: 40px;
-            border-radius: 4px;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 0.2rem;
             background: #71B2EF;
-            font-size: 18px;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 2.75rem;
             color: white
         }
 
         .edit-course-footer #edit-course-footer-ptwo {
-            width: 100px;
-            height: 40px;
-            border-radius: 4px;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
-            font-size: 18px;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 40px;
-            margin-left: 26px
+            line-height: 2rem;
+            margin-left: 1.3rem
         }
 
         .edit-course-footer .edit-course-footer-pone {
-            width: 100px;
-            height: 40px;
-            border-radius: 4px;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 0.2rem;
             background: #71B2EF;
-            font-size: 18px;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             color: white
         }
 
         .edit-course-footer .edit-course-footer-ptwo {
-            width: 100px;
-            height: 40px;
-            border-radius: 4px;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
-            font-size: 18px;
+            font-size: 0.9rem;
             text-align: center;
-            line-height: 40px;
-            margin-left: 26px
+            line-height: 2rem;
+            margin-left: 1.3rem
         }
 
         .edit-course-context-flex4 {
-            padding: 11px 0 11px 20px;
+            padding: 0.55rem 0 0.55rem 1rem;
             width: 100%;
             height: auto;
             display: flex;
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
-            margin-bottom: 110px
+            margin-bottom: 5.5rem
         }
 
         .edit-course-context-flex4 .edit-course-context-flex4-pone {
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .edit-course-context-flex4 .edit-course-context-flex4-ptwo {
-            width: 510px;
+            width: 25.5rem;
             height: auto;
-            margin-left: 66px;
+            margin-left: 3.3rem;
             display: flex;
             flex-wrap: wrap;
         }
 
         .edit-course-context-flex4 .edit-course-context-flex4-pthree {
-            width: 120px;
-            height: 36px;
+            width: 6rem;
+            height: 1.8rem;
             border: 1px solid #BFBFBF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            margin-left: 18px;
-            margin-bottom: 13px;
+            margin-left: 0.9rem;
+            margin-bottom: 0.65rem;
             display: flex;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .edit-course-context-flex4 .edit-course-context-flex4-pfour {
-            width: 68px;
-            height: 36px;
+            width: 3.4rem;
+            height: 1.8rem;
             border-right: 1px solid #BFBFBF;
             text-align: center;
-            line-height: 36px;
+            line-height: 1.8rem;
             color: #BFBFBF
         }
 
         .edit-course-context-flex4 .edit-course-context-flex4-pfive {
-            width:50px;
-            height: 33px;
+            width:2.5rem;
+            height: 1.65rem;
             text-align: center;
-            line-height: 36px;
+            line-height: 1.8rem;
             border:0
         }
 
         .course-arranging-body .add-edit-course {
             position: absolute;
-            top: 300px;
-            left: 480px;
+            top: 15rem;
+            left: 24rem;
             z-index: 100;
-            width: 421px;
-            height: 376px;
+            width: 21.05rem;
+            height: 18.8rem;
             background: #E0ECFF;
             border: 1px solid #71B2EF;
-            border-radius: 4px;
-            padding: 13px;
+            border-radius: 0.2rem;
+            padding: 0.65rem;
             box-sizing: border-box;
             display: none
         }
@@ -1125,26 +1130,26 @@
         }
 
         .add-edit-course-header-pone {
-            margin-left: 11px;
-            font-size: 18px;
+            margin-left: 0.55rem;
+            font-size: 0.9rem;
         }
 
         .add-edit-course-header-imgone {
-            width: 23px;
-            height: 22px
+            width: 1.15rem;
+            height: 1.1rem
         }
 
         .add-edit-course-header-context {
-            width: 391px;
-            height: 314px;
+            width: 19.55rem;
+            height: 15.7rem;
             border: 1px solid #71B2EF;
             background: white;
-            margin-top: 11px;
+            margin-top: 0.55rem;
             overflow-y: scroll;
         }
 
         .add-edit-course-header-context .add-edit-course-header-context-one {
-            height: 50px;
+            height: 2.5rem;
             width: 100%;
             border-bottom: 1px solid #BFBFBF;
             display: flex;
@@ -1154,20 +1159,20 @@
         }
 
         .add-edit-course-header-context-one .add-edit-course-header-context-oneflex {
-            width: 300px;
-            height: 27px;
+            width: 15rem;
+            height: 1.75rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             display: flex;
             align-items: center
         }
 
         .add-edit-course-header-context-one input {
-            width: 260px;
+            width: 13rem;
             border: none;
             outline: none;
-            padding-left: 15px;
+            padding-left: 0.75rem;
             box-sizing: border-box;
         }
 
@@ -1183,40 +1188,40 @@
         .add-edit-course-header-context .add-edit-course-header-context-two {
             height: auto;
             width: 100%;
-            padding: 12px 4px 0 4px;
+            padding: 0.6rem 0.2rem 0 0.2rem;
             box-sizing: border-box;
-            margin-bottom: 70px;
+            margin-bottom: 3.5rem;
         }
 
         .add-edit-course-header-context-two .add-edit-course-header-context-two-pone {
-            font-size: 14px;
-            margin-left: 18px
+            font-size: 0.7rem;
+            margin-left: 0.9rem
         }
 
         .add-edit-course-header-context-two .add-edit-course-header-context-twoflex {
-            margin-top: 18px;
+            margin-top: 0.9rem;
             display: flex;
             flex-wrap: wrap;
             height: auto
         }
 
         .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo {
-            width: 70px;
-            height: 24px;
-            border-radius: 4px;
+            width: 3.5rem;
+            height: 1.2rem;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 24px;
-            margin-left: 18px;
-            margin-bottom: 18px;
+            line-height: 1.2rem;
+            margin-left: 0.9rem;
+            margin-bottom: 0.9rem;
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 0.7rem;
             position: relative;
         }
 
         .add-edit-course-header-context-twoflex .add-edit-course-header-context-two-ptwo img {
             position: absolute;
-            top: -10px;
-            left: 60px;
+            top: -0.5rem;
+            left: 3rem;
             display: none
         }
 
@@ -1227,66 +1232,66 @@
         }
 
         .add-edit-course-header-context .add-edit-course-header-context-three {
-            width: 375px;
+            width: 18.75rem;
             display: flex;
             justify-content: center;
-            padding: 15px 0 15px 0;
+            padding: 0.75rem 0 0.75rem 0;
             position: fixed;
             top: 661px;
             background: white;
         }
 
         .add-edit-course-header-context-three #add-edit-course-header-context-three-pone {
-            width: 67px;
-            height: 26px;
+            width: 3.35rem;
+            height: 1.3rem;
             background: #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             color: white
         }
 
         .add-edit-course-header-context-three #add-edit-course-header-context-three-ptwo {
-            width: 67px;
-            height: 26px;
-            border-radius: 4px;
+            width: 3.35rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             border: 1px solid #BFBFBF;
-            margin-left: 20px
+            margin-left: 1rem
         }
 
         .add-edit-course-header-context-three .add-edit-course-header-context-three-pone {
-            width: 67px;
-            height: 26px;
+            width: 3.35rem;
+            height: 1.3rem;
             background: #71B2EF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             color: white
         }
 
         .add-edit-course-header-context-three .add-edit-course-header-context-three-ptwo {
-            width: 67px;
-            height: 26px;
-            border-radius: 4px;
+            width: 3.35rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
             text-align: center;
-            line-height: 26px;
+            line-height: 1.3rem;
             border: 1px solid #BFBFBF;
-            margin-left: 20px
+            margin-left: 1rem
         }
 
         .course-arranging-body .add-course-name {
-            width: 688px;
-            height: 678px;
+            width: 34.4rem;
+            height: 33.9rem;
             border: 1px solid #71B2EF;
             position: absolute;
-            left: 32px;
-            top: 2px;
+            left: 1.6rem;
+            top: 0.1rem;
             z-index: 200;
             background: #E0ECFF;
-            padding: 18px;
-            border-radius: 4px;
+            padding: 0.9rem;
+            border-radius: 0.2rem;
             box-sizing: border-box;
             display: none
         }
@@ -1302,22 +1307,22 @@
         }
 
         .add-course-name-header .add-course-name-header-left img {
-            width: 21px;
-            height: 21px
+            width: 1.05rem;
+            height: 1.05rem
         }
 
         .add-course-name-header .add-course-name-header-left p {
-            font-size: 16px;
-            margin-left: 13px
+            font-size: 0.8rem;
+            margin-left: 0.65rem
         }
 
         .add-course-name .add-course-name-context {
-            width: 650px;
-            height: 600px;
+            width: 32.5rem;
+            height: 30rem;
             border: 1px solid #71B2EF;
-            margin-top: 17px;
+            margin-top: 8.5rem;
             background: white;
-            padding: 22px 22px 22px 4px;
+            padding: 1.1rem 1.1rem 1.1rem 0.2rem;
             box-sizing: border-box;
             position : relative;
             overflow-y: scroll;
@@ -1329,11 +1334,11 @@
         }
 
         .add-course-name-context-p {
-            padding: 8px 10px 8px 10px;
+            padding: 0.4rem 0.5rem 0.4rem 0.5rem;
             background: #F5F5F5;
-            border-radius: 4px;
-            margin-left: 18px;
-            margin-bottom: 13px;
+            border-radius: 0.2rem;
+            margin-left: 0.9rem;
+            margin-bottom: 0.65rem;
         }
 
         .add-course-name-context-p-active {
@@ -1344,67 +1349,67 @@
         .add-course-name-context .add-course-name-context-bottom {
             display: flex;
             justify-content: center;
-            padding: 26px 0 26px 0;
+            padding: 1.3rem 0 1.3rem 0;
             box-sizing: border-box;
             position: fixed;
-            bottom: 310px;
-            left: 586px
+            bottom: 15.5rem;
+            left: 29.3rem
         }
 
         .add-course-name-context-bottom #add-course-name-context-bottom-pone {
-            width: 88px;
-            height: 35px;
-            background: #71B2EF;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            background: rgb(8, 8, 8);
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             color: white;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
         }
 
         .add-course-name-context-bottom #add-course-name-context-bottom-ptwo {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             border: 1px solid #BFBFBF;
-            margin-left: 26px
+            margin-left: 1.3rem
         }
 
         .add-course-name-context-bottom1 #add-course-name-context-bottom-pone2 {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             color: white;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
         }
 
         .add-course-name-context-bottom1 #add-course-name-context-bottom-ptwo2 {
-            width: 88px;
-            height: 35px;
-            border-radius: 4px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            border-radius: 0.2rem;
+            font-size: 0.8rem;
             text-align: center;
-            line-height: 35px;
+            line-height: 1.75rem;
             border: 1px solid #BFBFBF;
-            margin-left: 26px
+            margin-left: 1.3rem
         }
 
         .add-edit-course-label {
             position: absolute;
-            width: 467px;
-            height: 363px;
+            width: 23.35rem;
+            height: 18.15rem;
             background: #E0ECFF;
             z-index: 388;
-            border-radius: 4px;
-            top: 240px;
-            left: 566px;
-            padding: 18px;
+            border-radius: 0.2rem;
+            top: 12rem;
+            left: 28.3rem;
+            padding: 0.9rem;
             box-sizing: border-box;
         }
 
@@ -1420,17 +1425,17 @@
         }
 
         .add-edit-course-label-header .add-edit-course-label-header-flex img {
-            width: 22px;
-            height: 22px;
-            margin-right: 18px
+            width: 1.1rem;
+            height: 1.1rem;
+            margin-right: 0.9rem
         }
 
         .add-edit-course-label-header .add-edit-course-label-header-flex p {
-            font-size: 24px
+            font-size: 1.2rem
         }
 
         .add-edit-course-label .add-edit-course-label-context {
-            width: 427px;
+            width: 21.35rem;
             height: 282px;
             border: 1px solid #71B2EF;
             margin-top: 16px;
