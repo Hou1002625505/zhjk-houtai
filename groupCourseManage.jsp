@@ -70,7 +70,7 @@
         }
 
         .course-manage-flex #course-manage-flex-input {
-            width: 10px;
+            width: 10rem;
             height: 1.5rem;
             border-radius: 0.2rem;
             margin-left: 1rem;
@@ -653,7 +653,7 @@
         }
 
         .add-course-sortone .add-course-sortone-inputseven {
-            margin-left: 27rem;
+            margin-left: 2.7rem;
             display: flex;
         }
 
@@ -1143,7 +1143,7 @@
             border-left: none;
             padding: 0.375rem 0.375rem 0.275rem 0.375rem;
             box-sizing: border-box;
-            height: 100px
+            height: 5rem
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) {
@@ -1161,56 +1161,56 @@
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(2) textarea {
             width: 17rem;
-            height: 80px;
+            height: 4rem;
             border: 1px solid #CCCCCC;
             resize: none;
             box-sizing: border-box;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(3) {
-            padding: 0 15px;
+            padding: 0 0.75rem;
             display: flex;
-            height: 100px;
+            height: 5rem;
             align-items: center;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(3) img {
-            width: 20px;
-            height: 20px
+            width: 1rem;
+            height: 1rem
         }
 
         .add-course-sortone .add-course-sortone-inputnine {
-            margin-left: 90px;
+            margin-left: 4.5rem;
             display: flex;
             align-items: center;
         }
 
         .add-course-sortone .add-course-sortone-inputnine div {
-            width: 120px;
-            height: 32px;
+            width: 6rem;
+            height: 1.6rem;
             background: #71B2EF;
             font-size: 14px;
             color: white;
             text-align: center;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .add-course-sortone .add-course-sortone-inputnine p {
-            margin-left: 19px;
-            font-size: 14px
+            margin-left: 0.95rem;
+            font-size: 0.7rem
         }
 
         .add-course-sorttwo #demo {
             margin: 0;
-            height: 182px;
+            height: 9.1rem;
         }
 
         .add-course-sorttwo #preview .upload_preview {
             border: none;
             margin: 0;
             flex: 1;
-            width: 800px;
-            height: 320px
+            width: 40rem;
+            height: 16rem
         }
 
         .add-course-sorttwo .andArea {
@@ -1224,8 +1224,8 @@
         }
 
         .add-course-sorttwo .upload_append_list {
-            width: 210px;
-            height: 160px
+            width: 10.5rem;
+            height: 8rem
         }
 
         .add-course-sorttwo .convent_choice {
@@ -1247,14 +1247,14 @@
         }
 
         .add-course-sorttwo .demo {
-            margin-left: 58px
+            margin-left: 2.9rem
         }
 
 
 
         .add-course-sortone .add-course-sortone-inputten {
             display: flex;
-            margin-left: 50px
+            margin-left: 2.5rem
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay {
@@ -1262,20 +1262,20 @@
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay {
-            width: 24px;
-            height: 24px;
-            margin-left: 44px;
-            margin-right: 18px
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-left: 2.2rem;
+            margin-right: 0.9rem
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-show {
-            width: 21px;
-            height: 21px
+            width: 1.05rem;
+            height: 1.05rem
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-hidden {
-            width: 21px;
-            height: 21px;
+            width: 1.05rem;
+            height: 1.05rem;
             display: none;
         }
 
@@ -1286,135 +1286,135 @@
         }
 
         .add-course-sortone .add-course-sortone-inputeleven input:nth-child(1) {
-            width: 240px;
-            height: 32px;
-            margin-left: 64px;
-            font-size: 14px;
-            line-height: 32px;
-            padding-left: 18px;
+            width: 12rem;
+            height: 1.6rem;
+            margin-left: 3.2rem;
+            font-size: 0.7rem;
+            line-height: 1.6rem;
+            padding-left: 0.9rem;
             box-sizing: border-box;
         }
 
         .add-course-sortone .add-course-sortone-inputeleven input:nth-child(2) {
-            width: 410px;
-            height: 32px;
-            margin-left: 20px;
+            width: 20.5rem;
+            height: 1.6rem;
+            margin-left: 1rem;
             box-sizing: border-box;
         }
 
         .add-course-sortthree {
             display: flex;
-            margin-top: 10px;
-            height: 120px
+            margin-top: 0.5rem;
+            height: 6rem
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve {
-            margin-top: 14px;
-            height: 120px
+            margin-top: 0.7rem;
+            height: 6rem
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-flex {
             display: flex;
-            width: 696px;
-            height: 90px;
+            width: 34.8rem;
+            height: 4.5rem;
             flex-wrap: wrap;
             overflow: hidden;
-            margin-left: 4px
+            margin-left: 0.2rem
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-checkbox {
-            width: 210px;
-            height: 32px;
+            width: 10.5rem;
+            height: 1.6rem;
             border: 1px solid #CCCCCC;
-            font-size: 12px;
+            font-size: 0.6rem;
             text-align: center;
-            line-height: 32px;
+            line-height: 1.6rem;
             position: relative;
             cursor: pointer;
-            margin-left: 20px;
-            border-radius: 3px;
-            margin-bottom: 18px
+            margin-left: 1rem;
+            border-radius: 0.15rem;
+            margin-bottom: 0.9rem
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-checkbox img {
             position: absolute;
-            left: 190px;
-            top: 14px;
+            left: 9.5rem;
+            top: 0.7rem;
             display: none
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-zhankai {
             display: flex;
             align-items: center;
-            margin-left: 650px
+            margin-left: 32.5rem
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-zhankai p {
-            font-size: 14px;
+            font-size: 0.7rem;
             color: #71B2EF
         }
 
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-zhankai img {
-            width: 13px;
-            height: 7px;
-            margin-left: 4px
+            width: 0.65rem;
+            height: 0.35rem;
+            margin-left: 0.2rem
         }
 
         .add-course-check {
             display: flex;
             align-items: center;
-            margin-left: 752px;
-            margin-top: 15px
+            margin-left: 37.6rem;
+            margin-top: 0.75rem
         }
 
         .add-course-check p {
             color: #71B2EF;
-            font-size: 14px;
-            margin-left: 8px
+            font-size: 0.7rem;
+            margin-left: 0.4rem
         }
 
         .add-course-check .add-course-checkboxall {
-            width: 16px;
-            height: 16px;
+            width: 0.8rem;
+            height: 0.8rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .add-course-check .add-course-checkboxall img {
-            width: 16px;
-            height: 16px;
-            margin-left: -1px;
-            margin-top: -1px;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: -0.05rem;
+            margin-top: -0.05rem;
         }
 
         .add-course-footer {
             display: flex;
-            margin-top: 60px;
-            margin-bottom: 30px;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .add-course-footer p:nth-child(1) {
-            width: 110px;
-            height: 40px;
+            width: 5.5rem;
+            height: 2rem;
             background: #71B2EF;
             color: white;
-            font-size: 14px;
+            font-size: 0.7rem;
             text-align: center;
-            line-height: 40px;
-            border-radius: 4px;
+            line-height: 2rem;
+            border-radius: 0.2rem;
         }
 
         .add-course-footer p:nth-child(2) {
-            width: 110px;
-            height: 40px;
-            font-size: 14px;
+            width: 5.5rem;
+            height: 2rem;
+            font-size: 0.7rem;
             text-align: center;
-            line-height: 40px;
-            border-radius: 4px;
+            line-height: 2rem;
+            border-radius: 0.2rem;
             border: 1px solid #71B2EF;
             box-sizing: border-box;
-            margin-left: 15px
+            margin-left: 0.75rem
         }
 
         #GroupCourseGole {
