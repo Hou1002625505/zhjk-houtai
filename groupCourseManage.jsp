@@ -2897,19 +2897,19 @@
                         ]
                     }
 
-                    $.ajax({
-                        type: 'POST',
-                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
-                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                        data: JSON.stringify(fd),
-                        success: function (result) {
-                            console.log(result)
-                        },
-                        error: function (e) {
-                            console.log(e.status);
-                            console.log(e.responseText)
-                        }
-                    })
+                    // $.ajax({
+                    //     type: 'POST',
+                    //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
+                    //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    //     data: JSON.stringify(fd),
+                    //     success: function (result) {
+                    //         console.log(result)
+                    //     },
+                    //     error: function (e) {
+                    //         console.log(e.status);
+                    //         console.log(e.responseText)
+                    //     }
+                    // })
                 }
                 if (!id) {
                     var fd = {
@@ -2930,20 +2930,46 @@
                         ]
                     }
 
-                    $.ajax({
-                        type: 'POST',
-                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                        data: JSON.stringify(fd),
-                        success: function (result) {
-                            console.log(result)
-                        },
-                        error: function (e) {
-                            console.log(e.status);
-                            console.log(e.responseText)
+                    // $.ajax({
+                    //     type: 'POST',
+                    //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                    //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                    //     data: JSON.stringify(fd),
+                    //     success: function (result) {
+                    //         console.log(result)
+                    //     },
+                    //     error: function (e) {
+                    //         console.log(e.status);
+                    //         console.log(e.responseText)
+                    //     }
+                    // })
+                    //console.log(fd)
+
+                    upload()
+
+                    function upload() {
+                        if ($("#fileImage").val() == '') {
+                            return;
                         }
-                    })
-                    console.log(fd)
+                        var formData = new FormData();
+                        formData.append('file', document.getElementById('fileImage').files[0]);
+                        formData.append('fileType',1);
+                        $.ajax({
+                            url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
+                            type: "post",
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            success: function (data) {
+                                console.log(data)
+                            },
+                            error: function (data) {
+                                alert("上传失败")
+                            }
+                        });
+                    }
+
+                    //console.log(document.getElementById('fileImage').files[0])
                 }
             })
         }
