@@ -2268,17 +2268,15 @@
                                     $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').html(item.leagueCurriculumFaqList[i].answer)
                                 }
 
-                                if (item.payMode == 1) {
+                                if (item.curriculumPayTypeList[0].payTypeName == '付现') {
                                     $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
-                                } else if (item.payMode == 2) {
+                                } else if (item.curriculumPayTypeList[0].payTypeName == '会员卡扣') {
                                     $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
                                 }
 
                                 for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                                    for (var j = 0; j < item.curriculumGuangxinList.length; j++) {
-                                        if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumGuangxinList[j].itemId) {
-                                            $('#inputtwelve-flex').children().eq(i).children('img').show()
-                                        }
+                                    if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[0].curriculumGuangxinList[0].itemId) {
+                                        $('#inputtwelve-flex').children().eq(i).children('img').show()
                                     }
                                 }
                                 new paypay().pay_pay()
@@ -2717,6 +2715,7 @@
             // })
 
             this.it_checkbox.click(function () {
+                $(".inputtwelve-checkbox").children('img').hide()
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
                     $(".add-course-checkboxall").children('img').hide()
@@ -2727,12 +2726,15 @@
             //广信标签展开
             this.zhankai_show.click(function () {
                 $(".inputtwelve-flex").css('height', 'auto')
+                //$('#inputtwelve-flex').css('overflow','visible')
+                $('.add-course-sortone-inputtwelve').css('height','auto')
+                $('.add-course-sortthree').css('height', 'auto')
                 $(this).hide()
                 $("#zhankai-hide").show()
             })
             //广信标签闭合
             this.zhankai_hide.click(function () {
-                $(".inputtwelve-flex").css('height', '80px')
+                $(".inputtwelve-flex").css('height', '4rem')
                 $(this).hide()
                 $("#zhankai-show").show()
             })
@@ -2760,6 +2762,16 @@
                         var payMode = i + 1
                     }
                 }
+
+                var payTypeId = ''
+
+                if(payMode == 1){
+                    payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+                }
+                else if(payMode == 2){
+                    payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+                }
+
                 //上课方式的参数
 
                 for (var i = 1; i < $('#select-menu-ul-GCourseType').children().length; i++) {
@@ -2868,7 +2880,6 @@
                 if (id) {
                     var fd = {
                         id: id,
-                        payMode: payMode,
                         modeId: modeId,
                         suitableForCrowd: suitableForCrowd,
                         announcements: announcements,
@@ -2881,7 +2892,9 @@
                         curriculumEffectList: curriculumEffectList,
                         curriculumTagList: curriculumTagList,
                         leagueCurriculumFaqList: leagueCurriculumFaqList,
-                        curriculumGuangxinList: curriculumGuangxinList
+                        curriculumPayTypeList: [
+                            { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
+                        ]
                     }
 
                     $.ajax({
@@ -2900,7 +2913,6 @@
                 }
                 if (!id) {
                     var fd = {
-                        payMode: payMode,
                         modeId: modeId,
                         suitableForCrowd: suitableForCrowd,
                         announcements: announcements,
@@ -2913,7 +2925,9 @@
                         curriculumEffectList: curriculumEffectList,
                         curriculumTagList: curriculumTagList,
                         leagueCurriculumFaqList: leagueCurriculumFaqList,
-                        curriculumGuangxinList: curriculumGuangxinList
+                        curriculumPayTypeList : [
+                            {payTypeId : payTypeId , curriculumGuangxinList: curriculumGuangxinList}
+                        ]
                     }
 
                     $.ajax({
