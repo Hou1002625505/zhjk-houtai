@@ -27,15 +27,15 @@
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
     <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="imgui/zyUpload.css" type="text/css">
+    <link rel="stylesheet" href="easyui/zyUpload.css" type="text/css">
     <!-- 引用核心层插件 -->
-    <script src="imgui/zyFile.js"></script>
+    <script type="text/javascript" src="easyui/zyFile.js"></script>
 
     <!-- 引用控制层插件 -->
-    <script src="imgui/zyUpload.js"></script>
+    <script type="text/javascript" src="easyui/zyUpload.js"></script>
 
     <!-- 引用初始化JS -->
-    <script src="imgui/jq22.js"></script>
+    <script type="text/javascript" src="easyui/jq22.js"></script>
     <style>
 
         html{
@@ -1640,6 +1640,20 @@
                     </div>
                     <input class="input" type="text" value="5">
                 </div>
+                <div class="oneinput">
+                    <div class="add-course-sortone-selectfive">
+                        <div class="select-menu">
+                            <div class="select-menu-div">
+                                <input class="select-menu-input" />
+                                <img class="select-menu-img" src="./image/sifting_icon.png" />
+                            </div>
+                            <ul class="select-menu-ul">
+                                <div class="select-menu-ul-GroupRadar"></div>
+                            </ul>
+                        </div>
+                    </div>
+                    <input class="input" type="text" value="5">
+                </div>
             </div>
         </div>
 
@@ -1674,8 +1688,11 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">课程视频</p>
             <div class="add-course-sortone-inputnine">
-                <div>上传视频</div>
+                <div id="scsp">上传视频</div>
                 <p>最多上传1个视频，单个视频不超过20M，视频作品将会展示在团课详情首位</p>
+            </div>
+            <div>
+                <input id="photoFile" style="display:none" type="file" onchange="upload()">
             </div>
         </div>
 
@@ -1770,6 +1787,65 @@
     //         }
     //         document.getElementById('main').setAttribute('style', 'transform: scale(' + scale + ');left:' + left + 'px;top:' + top + 'px;');
     //     }
+
+    function imageimage(){
+        if ($("#fileImage").val() == '') {
+            return;
+        }
+        var formData = new FormData();
+        // for (var i = 0; i < $('#preview1').children().length; i++) {
+        formData.append('file', document.getElementById('fileImage').files[0])
+        // }
+        formData.append('fileType', 1);
+        $.ajax({
+            url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(data)
+                //var img = data
+                //return data
+                $('#demo').addClass(data.rows[0].path)
+            },
+            error: function (data) {
+                alert("上传失败")
+            }
+        });
+    }
+
+    function upload() {
+            console.log('yidingyaoxing a ')
+            uploadvideo()
+
+            function uploadvideo() {
+                if ($("#photoFile").val() == '') {
+                    return;
+                }
+                var formData = new FormData();
+                // for (var i = 0; i < $('#preview1').children().length; i++) {
+                formData.append('file', document.getElementById('photoFile').files[0]);
+                //}
+                formData.append('fileType', 2);
+                $.ajax({
+                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
+                    type: "post",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        console.log(data)
+                        //var img = data
+                        //return data
+                        $('#photoFile').addClass(data.rows[0].path)
+                    },
+                    error: function (data) {
+                        alert("上传失败")
+                    }
+                });
+            }
+        }
 
     window.onload = function () {
         new course_manage().init();
@@ -2492,6 +2568,10 @@
                 }
             })
 
+            $('#scsp').click(function(){
+                $("#photoFile").click();
+            })
+
             setTimeout(() => {
                 new paypay().init()
                 // new paypay().pay_pay()
@@ -2603,6 +2683,7 @@
             selectMenu(6);
             selectMenu(7);
             selectMenu(8);
+            selectMenu(9);
 
             function selectMenu(index) {
                 $(".select-menu-input").eq(index).val($(".select-this").eq(index).html()); //在输入框中自动填充第一个选项的值
@@ -2877,41 +2958,66 @@
                         curriculumGuangxinList.push({ itemId })
                     }
                 }
-                if (id) {
-                    var fd = {
-                        id: id,
-                        modeId: modeId,
-                        suitableForCrowd: suitableForCrowd,
-                        announcements: announcements,
-                        calorieConsumption: calorieConsumption,
-                        classifyId: classifyId,
-                        difficultyId: difficultyId,
-                        price: price,
-                        description: description,
-                        name: name,
-                        curriculumEffectList: curriculumEffectList,
-                        curriculumTagList: curriculumTagList,
-                        leagueCurriculumFaqList: leagueCurriculumFaqList,
-                        curriculumPayTypeList: [
-                            { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
-                        ]
-                    }
 
-                    // $.ajax({
-                    //     type: 'POST',
-                    //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
-                    //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                    //     data: JSON.stringify(fd),
-                    //     success: function (result) {
-                    //         console.log(result)
-                    //     },
-                    //     error: function (e) {
-                    //         console.log(e.status);
-                    //         console.log(e.responseText)
-                    //     }
-                    // })
+                //视频上传
+
+                var videos = []
+
+                if($('#photoFile').attr('class')){
+                    var videos1 = $('#photoFile').attr('class')
+                    videos.push({ videoUrl : videos1})
                 }
+
+                //图片上传
+
+                var Imgs = ''
+
+                if($('#demo').attr('class')){
+                    //Imgs.push($('#demo').attr('class'))
+                    //console.log($('#demo').attr('class'))
+                    var ImgsImgs = ''
+                    ImgsImgs = $('#demo').attr('class').split(' ')
+                    Imgs = ImgsImgs.slice(1)
+                }
+
+                // if (id) {
+                //     var fd = {
+                //         id: id,
+                //         modeId: modeId,
+                //         suitableForCrowd: suitableForCrowd,
+                //         announcements: announcements,
+                //         calorieConsumption: calorieConsumption,
+                //         classifyId: classifyId,
+                //         difficultyId: difficultyId,
+                //         price: price,
+                //         description: description,
+                //         name: name,
+                //         curriculumEffectList: curriculumEffectList,
+                //         curriculumTagList: curriculumTagList,
+                //         leagueCurriculumFaqList: leagueCurriculumFaqList,
+                //         curriculumPayTypeList: [
+                //             { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
+                //         ],
+                //         videos : videos
+                //     }
+
+                // $.ajax({
+                //     type: 'POST',
+                //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
+                //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                //     data: JSON.stringify(fd),
+                //     success: function (result) {
+                //         console.log(result)
+                //     },
+                //     error: function (e) {
+                //         console.log(e.status);
+                //         console.log(e.responseText)
+                //     }
+                // })
+                
+                //}
                 if (!id) {
+
                     var fd = {
                         modeId: modeId,
                         suitableForCrowd: suitableForCrowd,
@@ -2927,49 +3033,28 @@
                         leagueCurriculumFaqList: leagueCurriculumFaqList,
                         curriculumPayTypeList : [
                             {payTypeId : payTypeId , curriculumGuangxinList: curriculumGuangxinList}
-                        ]
+                        ],
+                        leagueCurriculumVideoList: videos,
+                        //leagueCurriculumImgList : Imgs
                     }
 
-                    // $.ajax({
-                    //     type: 'POST',
-                    //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
-                    //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                    //     data: JSON.stringify(fd),
-                    //     success: function (result) {
-                    //         console.log(result)
-                    //     },
-                    //     error: function (e) {
-                    //         console.log(e.status);
-                    //         console.log(e.responseText)
-                    //     }
-                    // })
-                    //console.log(fd)
+                    console.log(fd)
 
-                    upload()
-
-                    function upload() {
-                        if ($("#fileImage").val() == '') {
-                            return;
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                        data: JSON.stringify(fd),
+                        success: function (result) {
+                            console.log(result)
+                        },
+                        error: function (e) {
+                            console.log(e.status);
+                            console.log(e.responseText)
                         }
-                        var formData = new FormData();
-                        formData.append('file', document.getElementById('fileImage').files[0]);
-                        formData.append('fileType',1);
-                        $.ajax({
-                            url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
-                            type: "post",
-                            data: formData,
-                            contentType: false,
-                            processData: false,
-                            success: function (data) {
-                                console.log(data)
-                            },
-                            error: function (data) {
-                                alert("上传失败")
-                            }
-                        });
-                    }
+                    })
 
-                    //console.log(document.getElementById('fileImage').files[0])
+
                 }
             })
         }
