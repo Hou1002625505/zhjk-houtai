@@ -2970,14 +2970,16 @@
 
                 //图片上传
 
-                var Imgs = ''
+                var Imgs = []
 
                 if($('#demo').attr('class')){
                     //Imgs.push($('#demo').attr('class'))
                     //console.log($('#demo').attr('class'))
                     var ImgsImgs = ''
                     ImgsImgs = $('#demo').attr('class').split(' ')
-                    Imgs = ImgsImgs.slice(1)
+                    for(var i=0;i< ImgsImgs.slice(1).length;i++){
+                        Imgs.push({ imgUrl : ImgsImgs.slice(1)[i]})
+                    }
                 }
 
                 // if (id) {
@@ -3035,7 +3037,7 @@
                             {payTypeId : payTypeId , curriculumGuangxinList: curriculumGuangxinList}
                         ],
                         leagueCurriculumVideoList: videos,
-                        //leagueCurriculumImgList : Imgs
+                        leagueCurriculumImgList : Imgs
                     }
 
                     console.log(fd)
