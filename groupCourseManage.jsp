@@ -1699,6 +1699,7 @@
         <div class="add-course-sorttwo">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <div id="demo" class="demo"></div>
+            <input type="file" id="xnmkes">
         </div>
 
         <p style="font-size:16px;font-weight:bold;margin-top:53px">课程详情</p>
@@ -1808,6 +1809,7 @@
                 //var img = data
                 //return data
                 $('#demo').addClass(data.rows[0].path)
+                $('#preview1').children('div:last-child').addClass(data.rows[0].path)
             },
             error: function (data) {
                 alert("上传失败")
@@ -2293,7 +2295,7 @@
                     contentType: "application/json;charset=UTF-8",
                     data: JSON.stringify(paramsall),
                     success: function (resultall) {
-                        console.log(resultall.rrows)
+                        console.log(resultall.rows)
 
                         $.each(resultall.rows, function (i, item) {
                             if (item.createDate == a) {
@@ -2325,7 +2327,7 @@
                                 $('#kllxh').val(item.calorieConsumption)
                                 $('#syrq').val(item.suitableForCrowd)
 
-                                console.log($('.oneinput').eq(0).html())
+                                //console.log($('.oneinput').eq(0).html())
 
                                 for (var i = 0; i < item.curriculumEffectList.length; i++) {
                                     $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
@@ -2355,6 +2357,23 @@
                                         $('#inputtwelve-flex').children().eq(i).children('img').show()
                                     }
                                 }
+                                
+                                //图片的渲染
+
+                                console.log(item)
+                                var html = ''
+                                for(var i=0;i<item.leagueCurriculumImgList.length;i++){
+                                    var index = i
+                                    
+                                    html += '		<div class="zhegeshenmedoumeiyou '+ item.leagueCurriculumImgList[index].imgUrl +'" style="position:relative">';
+                                    html += '           <img style="position:absolute;top:0.15rem;left:10rem" src="../image/palyitdel_btn.png">'
+                                    html += '			<img style="height:8rem;width:10.25rem;margin-left:1rem" src="images/'+item.leagueCurriculumImgList[index].imgUrl+'" />';
+                                    html += '		</div>';
+
+                                }
+
+                                $('#preview1').html(html)
+
                                 new paypay().pay_pay()
                                 new paypay().init(id)
 
@@ -2972,52 +2991,54 @@
 
                 var Imgs = []
 
-                if($('#demo').attr('class')){
-                    //Imgs.push($('#demo').attr('class'))
-                    //console.log($('#demo').attr('class'))
-                    var ImgsImgs = ''
-                    ImgsImgs = $('#demo').attr('class').split(' ')
-                    for(var i=0;i< ImgsImgs.slice(1).length;i++){
-                        Imgs.push({ imgUrl : ImgsImgs.slice(1)[i]})
+                if($('#preview1').children()){
+                    for(var i=0;i< $('#preview1').children().length;i++){
+                        if($('#preview1').children().eq(i).is(':hidden')){
+
+                        }else{
+                            Imgs.push({ imgUrl: $('#preview1').children().eq(i).attr('class').split(' ')[1] })
+                        }
+                        
                     }
                 }
 
-                // if (id) {
-                //     var fd = {
-                //         id: id,
-                //         modeId: modeId,
-                //         suitableForCrowd: suitableForCrowd,
-                //         announcements: announcements,
-                //         calorieConsumption: calorieConsumption,
-                //         classifyId: classifyId,
-                //         difficultyId: difficultyId,
-                //         price: price,
-                //         description: description,
-                //         name: name,
-                //         curriculumEffectList: curriculumEffectList,
-                //         curriculumTagList: curriculumTagList,
-                //         leagueCurriculumFaqList: leagueCurriculumFaqList,
-                //         curriculumPayTypeList: [
-                //             { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
-                //         ],
-                //         videos : videos
-                //     }
+                if (id) {
+                    var fd = {
+                        id: id,
+                        modeId: modeId,
+                        suitableForCrowd: suitableForCrowd,
+                        announcements: announcements,
+                        calorieConsumption: calorieConsumption,
+                        classifyId: classifyId,
+                        difficultyId: difficultyId,
+                        price: price,
+                        description: description,
+                        name: name,
+                        curriculumEffectList: curriculumEffectList,
+                        curriculumTagList: curriculumTagList,
+                        leagueCurriculumFaqList: leagueCurriculumFaqList,
+                        curriculumPayTypeList: [
+                            { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
+                        ],
+                        leagueCurriculumVideoList: videos,
+                        leagueCurriculumImgList: Imgs
+                    }
 
-                // $.ajax({
-                //     type: 'POST',
-                //     url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
-                //     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                //     data: JSON.stringify(fd),
-                //     success: function (result) {
-                //         console.log(result)
-                //     },
-                //     error: function (e) {
-                //         console.log(e.status);
-                //         console.log(e.responseText)
-                //     }
-                // })
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
+                        contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+                        data: JSON.stringify(fd),
+                        success: function (result) {
+                            console.log(result)
+                        },
+                        error: function (e) {
+                            console.log(e.status);
+                            console.log(e.responseText)
+                        }
+                    })
                 
-                //}
+                }
                 if (!id) {
 
                     var fd = {
