@@ -2366,13 +2366,24 @@
                                     var index = i
                                     
                                     html += '		<div class="zhegeshenmedoumeiyou '+ item.leagueCurriculumImgList[index].imgUrl +'" style="position:relative">';
-                                    html += '           <img style="position:absolute;top:0.15rem;left:10rem" src="../image/palyitdel_btn.png">'
+                                    html += '           <img id="deldel" style="position:absolute;top:0.15rem;left:10rem;display:none" src="../image/palyitdel_btn.png">'
                                     html += '			<img style="height:8rem;width:10.25rem;margin-left:1rem" src="images/'+item.leagueCurriculumImgList[index].imgUrl+'" />';
                                     html += '		</div>';
 
                                 }
 
                                 $('#preview1').html(html)
+
+                                $('.zhegeshenmedoumeiyou').hover(function(){
+                                    $(this).children('#deldel').show()
+                                },function(){
+                                    $(this).children('#deldel').hide()
+                                })
+
+                                $('.zhegeshenmedoumeiyou').children('#deldel').click(function(){
+                                    $(this).parent().css('display','none')
+                                    $(this).parent().attr('class','')
+                                })
 
                                 new paypay().pay_pay()
                                 new paypay().init(id)
