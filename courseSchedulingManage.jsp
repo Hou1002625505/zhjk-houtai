@@ -4241,11 +4241,13 @@
                         $(this).parent().parent().parent().hide()
                         //获取门店id
                         for (var i = 0; i < $('#select-menu-ul-one').children().length; i++) {
-                            if ($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+                            if ($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian1').val()) {
                                 var storeId = $('#select-menu-ul-one').children().eq(i).attr('class')
+                                //console.log(111)
                             }
+                            //console.log($('#select-menu-input-mendian1').val())
                         }
-                        //console.log(storeId)
+                        console.log(storeId)
 
                         //获取房间id
                         for (var i = 0; i < $('#select-menu-ul-RoomList').children().length; i++) {
