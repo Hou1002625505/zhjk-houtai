@@ -1696,10 +1696,20 @@
             </div>
         </div>
 
+        <div id="videoshow" style="margin-left:7.6rem;margin-top:1.25rem;display:none;">
+            <div style="display:flex;align-items:center;">
+                <img style="width:1.6rem;height:1.6rem;" src="image/playit_icon.png" alt="">
+                <p id="videovideo" style="font-size:0.7rem;margin-left:0.4rem;"></p>
+                <p style="font-size:0.7rem;margin-left:5rem">上传成功</p>
+                <div style="margin-left:1rem;width:12rem;height:0.4rem;border-radius: 0.2rem;background:#71B2EF"></div>
+                <img id="videohide" style="margin-left:1rem" src="image/palyitdel_btn.png" alt="">
+            </div>
+            
+        </div>
+
         <div class="add-course-sorttwo">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <div id="demo" class="demo"></div>
-            <input type="file" id="xnmkes">
         </div>
 
         <p style="font-size:16px;font-weight:bold;margin-top:53px">课程详情</p>
@@ -1841,6 +1851,28 @@
                         //var img = data
                         //return data
                         $('#photoFile').addClass(data.rows[0].path)
+                        $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
+
+                        $('#videoshow').show()
+
+                        $('#videovideo').click(function(){
+                            openVideo('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
+                        })
+
+                        $('#videohide').click(function(){
+                            $(this).parent().hide()
+                            $('#photoFile').attr('class','')
+                        })
+
+                         function openVideo(src) {
+
+                            var page = window.open();
+
+                            var html = "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='"+src+ "'></video> </div></body > "
+
+                            page.document.write(html);
+
+                        }
                     },
                     error: function (data) {
                         alert("上传失败")
@@ -2384,6 +2416,36 @@
                                     $(this).parent().css('display','none')
                                     $(this).parent().attr('class','')
                                 })
+
+                                //视频展示
+
+                                if(item.leagueCurriculumVideoList == ''){
+
+                                }else{
+                                    $('#photoFile').addClass(item.leagueCurriculumVideoList[0].videoUrl)
+                                    $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + item.leagueCurriculumVideoList[0].videoUrl)
+
+                                    $('#videoshow').show()
+
+                                    $('#videovideo').click(function () {
+                                        openVideo('http://test.physicalclub.com/crm/videos/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                    })
+
+                                    $('#videohide').click(function () {
+                                        $(this).parent().hide()
+                                        $('#photoFile').attr('class', '')
+                                    })
+
+                                    function openVideo(src) {
+
+                                        var page = window.open();
+
+                                        var html = "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
+
+                                        page.document.write(html);
+
+                                    }
+                                }
 
                                 new paypay().pay_pay()
                                 new paypay().init(id)
@@ -3090,6 +3152,9 @@
 
 
                 }
+            
+                window.location.reload()
+                
             })
         }
 
