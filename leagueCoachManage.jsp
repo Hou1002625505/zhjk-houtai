@@ -17,6 +17,11 @@
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <style>
+
+        html{
+            font-size:calc(100vw / 88.11);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -45,11 +50,11 @@
         }
 
         .course-coach-manage-flex .course-coach-manage-flex-input {
-            width: 120px;
-            height: 30px;
-            border-radius: 4px;
-            margin-left: 18px;
-            margin-right: 35px;
+            width: 6rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
+            margin-left: 0.9rem;
+            margin-right: 1.75rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
@@ -59,37 +64,37 @@
         }
 
         .course-coach-manage-flextwo #course-coach-manage-flextwo-pone {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
             background: #71B2EF;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: white;
-            font-size: 16px;
+            font-size: 0.8rem;
             cursor: pointer;
         }
 
         .course-coach-manage-flextwo #course-coach-manage-flextwo-ptwo {
-            width: 80px;
-            height: 30px;
-            border-radius: 4px;
+            width: 4rem;
+            height: 1.5rem;
+            border-radius: 0.2rem;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
-            line-height: 30px;
+            line-height: 1.5rem;
             color: black;
-            margin-left: 15px;
-            font-size: 16px;
+            margin-left: 0.75rem;
+            font-size: 0.8rem;
             cursor: pointer;
         }
 
         .select-menu {
-            margin-left: 10px;
-            margin-right: 39px;
+            margin-left: 0.5rem;
+            margin-right: 1.95rem;
             cursor: pointer;
-            width: 250px;
-            height: 36px;
+            width: 12.5rem;
+            height: 1.8rem;
             box-sizing: border-box;
         }
 
@@ -98,7 +103,7 @@
             list-style: none;
             opacity: 0;
             display: none;
-            width: 250px;
+            width: 12.5rem;
             text-align: left;
             border: 1px solid #ddd;
             background: #fff;
@@ -107,11 +112,11 @@
         }
 
         .select-menu-ul li {
-            height: 32px;
-            font-size: 14px;
-            padding: 0 15px;
+            height: 1.6rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
             box-sizing: border-box;
-            line-height: 32px;
+            line-height: 1.6rem;
         }
 
         .select-menu-ul li:hover {
@@ -120,12 +125,12 @@
 
         .select-menu-div {
             position: relative;
-            height: 36px;
-            width: 250px;
+            height: 1.8rem;
+            width: 12.5rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
-            line-height: 36px;
+            line-height: 1.8rem;
         }
 
         .select-this {
@@ -137,70 +142,70 @@
         }
 
         .select-menu-img {
-            width: 11px;
-            height: 8px;
-            margin-right: 10px;
+            width: 0.55rem;
+            height: 0.4rem;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
-            top: 14px;
+            top: 0.7rem;
         }
 
         .select-menu-input {
-            padding-left: 14px;
+            padding-left: 0.7rem;
             border: 0;
-            width: 50px;
-            height: 24px;
+            width: 2.5rem;
+            height: 1.2rem;
             cursor: pointer;
             user-select: none;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .course-coach-manage-flex-input-one {
-            width: 106px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 7px;
-            padding: 13px 0 7px 10px;
+            width: 5.3rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.35rem;
+            padding: 0.65rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
-            font-size: 12px;
+            font-size: 0.6rem;
             border: 1px solid #BFBFBF
         }
 
         .course-coach-manage-flex-input-two {
-            width: 106px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 7px;
-            margin-right: 38px;
-            padding: 13px 0 7px 10px;
+            width: 5.3rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 0.35rem;
+            margin-right: 1.9rem;
+            padding: 0.65rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
-            font-size: 12px;
+            font-size: 0.6rem;
             border: 1px solid #BFBFBF
         }
 
         .course-coach-manage-flex-input-three {
-            width: 70px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 21px;
-            margin-right: 6px;
+            width: 3.5rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 1.05rem;
+            margin-right: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-coach-manage-flex-input-four {
-            width: 70px;
-            height: 26px;
-            border-radius: 4px;
-            margin-left: 6px;
+            width: 3.5rem;
+            height: 1.3rem;
+            border-radius: 0.2rem;
+            margin-left: 0.3rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF
         }
 
         .course-coach-manage-table {
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 1rem;
+            font-size: 0.7rem;
         }
 
         .course-coach-manage-table table tr:nth-child(2) td {
@@ -210,7 +215,7 @@
         .course-coach-manage-table table td {
             border-left: 1px dashed #CCCCCC;
             border-bottom: 1px dashed #CCCCCC;
-            height: 60px;
+            height: 3rem;
             text-align: center;
         }
 
@@ -222,7 +227,7 @@
         .course-coach-manage-table table th {
             background: #D0E8F2;
             text-align: center;
-            height: 40px;
+            height: 2rem;
         }
 
         .course-coach-manage-table .course-coach-manage-table-tr td:last-child {
@@ -231,23 +236,23 @@
         }
 
         .course-coach-manage-table .course-coach-manage-table-tr td:last-child a:nth-child(1) {
-            margin-right: 5px;
+            margin-right: 0.25rem;
         }
 
         .course-coach-manage-table .course-coach-manage-table-tr td:last-child a:nth-child(2) {
-            margin-left: 5px;
+            margin-left: 0.25rem;
         }
 
         .course-coach-manage-table .course-coach-manage-table-checkbox {
-            width: 14px;
-            height: 14px;
+            width: 0.7rem;
+            height: 0.7rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
         }
 
         .course-coach-manage-table .course-coach-manage-table-checkbox img {
-            width: 14px;
-            height: 14px;
+            width: 0.7rem;
+            height: 0.7rem;
             margin-left: -1px;
             margin-top: -1px;
         }
@@ -261,7 +266,7 @@
         .course-coach-manage-table .headingsifting .headingsifting-column {
             display: flex;
             flex-direction: column;
-            margin-left: 6px;
+            margin-left: 0.3rem;
         }
 
         .course-coach-manage-table .headingsifting .headingsifting-column img:nth-child(2) {
@@ -270,60 +275,60 @@
 
         .course-coach-manage-footer {
             display: flex;
-            margin-top: 17px;
-            height: 26px;
+            margin-top: 0.85rem;
+            height: 1.3rem;
             display: flex;
             align-items: center;
-            padding-left: 14px;
+            padding-left: 0.7rem;
         }
 
         .course-coach-manage-table-checkbox {
-            width: 14px;
-            height: 14px;
+            width: 0.7rem;
+            height: 0.7rem;
             box-sizing: border-box;
             border: 1px solid #BFBFBF;
-            line-height: 14px;
+            line-height: 0.7rem;
         }
 
         .course-coach-manage-table-checkbox img {
-            width: 14px;
-            height: 14px;
+            width: 0.7rem;
+            height: 0.7rem;
             margin-top: -1px;
             margin-left: -1px;
         }
 
         .course-coach-manage-footer .course-coach-manage-footer-pone {
-            font-size: 12px;
-            margin-left: 8px;
+            font-size: 0.6rem;
+            margin-left: 0.4rem;
         }
 
         .course-coach-manage-footer .course-coach-manage-footer-ptwo {
-            width: 80px;
-            height: 26px;
+            width: 4rem;
+            height: 1.3rem;
             border: 1px solid #BFBFBF;
-            margin-left: 9px;
-            font-size: 12px;
+            margin-left: 0.45rem;
+            font-size: 0.6rem;
             color: #444444;
             text-align: center;
-            line-height: 26px;
-            border-radius: 2px;
+            line-height: 1.3rem;
+            border-radius: 0.1rem;
         }
 
         .course-coach-manage-footer .course-coach-manage-footer-pthree {
-            font-size: 14px;
-            margin-left: 893px;
+            font-size: 0.7rem;
+            margin-left: 44.65rem;
         }
 
         .course-coach-manage-body .course-coach-manage-addone {
             position: absolute;
-            width: 920px;
-            height: 820px;
-            top: -5px;
-            left: 340px;
+            width: 46rem;
+            height: 41rem;
+            top: -0.25rem;
+            left: 17rem;
             z-index: 100;
             background: #D0E8F2;
-            border-radius: 9px;
-            padding: 18px;
+            border-radius: 0.45rem;
+            padding: 0.9rem;
             box-sizing: border-box;
         }
 
@@ -334,13 +339,13 @@
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexone img {
-            width: 24px;
-            height: 23px
+            width: 1.2rem;
+            height: 1.15rem
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexone p {
-            font-size: 24px;
-            margin-left: 12px
+            font-size: 1.2rem;
+            margin-left: 0.6rem
         }
 
         .course-coach-manage-addone .coach-manage-addone-flextwo {
@@ -352,11 +357,11 @@
 
 
         .course-coach-manage-addone .coach-manage-addone-flexthree {
-            width: 880px;
-            height: 738px;
+            width: 44rem;
+            height: 36.9rem;
             border: 2px solid #71B2EF;
             box-sizing: border-box;
-            margin-top: 10px;
+            margin-top: 0.5rem;
             background: #FFFFFF;
             overflow-y: scroll;
         }
@@ -364,38 +369,38 @@
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone {
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
-            height: 55px;
-            padding: 18px 0 18px 18px;
+            height: 2.75rem;
+            padding: 0.9rem 0 0.9rem 0.9rem;
             display: flex;
             align-items: center;
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone .flexthree-blockone-pone {
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone .flexthree-blockone-ptwo {
-            font-size: 14px;
-            margin-left: 73px
+            font-size: 0.7rem;
+            margin-left: 3.65rem
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone #areaborder {
-            width: 250px;
-            height: 36px;
-            margin-left: 110px;
+            width: 12.5rem;
+            height: 1.8rem;
+            margin-left: 5.5rem;
             border: 1px solid #BFBFBF;
-            border-radius: 4px;
+            border-radius: 0.2rem;
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockone #area {
-            width: 250px;
-            height: 36px;
+            width: 12.5rem;
+            height: 1.8rem;
             border: 0;
 
         }
 
         .coach-manage-addone-flexthree-blockone .flexthree-blockone-inputtwo {
-            margin-left: -24px
+            margin-left: -1.2rem
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blocktwo {
@@ -404,97 +409,97 @@
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
             height: auto;
-            padding: 20px 26px 20px 20px;
+            padding: 1rem 1.3rem 1rem 1rem;
             display: flex;
             align-items: center;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pone {
-            font-size: 16px;
+            font-size: 0.8rem;
             display: flex;
-            width: 70px
+            width: 3.5rem
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pthree {
-            width: 60px;
-            height: 30px;
+            width: 3rem;
+            height: 1.5rem;
             border: 1px solid #71B2EF;
             color: #71B2EF;
             text-align: center;
-            line-height: 30px;
-            border-radius: 4px;
+            line-height: 1.5rem;
+            border-radius: 0.2rem;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 0.7rem;
             box-sizing: border-box;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pfour {
             display: flex;
             flex-wrap: wrap;
-            width: 572px;
+            width: 28.6rem;
         }
 
         .flexthree-blocktwo-pfour .blocktwo-pfour-p {
-            padding:0 10px 0 10px;
-            height: 30px;
+            padding:0 0.5rem 0 0.5rem;
+            height: 1.5rem;
             background: #F5F5F5;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 20px;
-            margin-bottom: 10px;
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
             position: relative;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .flexthree-blocktwo-pfour .blocktwo-pfour-p a {
             position: absolute;
-            top: -6px;
-            left: 70px;
+            top: -0.3rem;
+            left: 3.5rem;
             display: none;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-pfive {
             display: flex;
             flex-wrap: wrap;
-            width: 572px;
+            width: 28.6rem;
         }
 
 
 
         .flexthree-blocktwo-pfive .blocktwo-pfive-p {
-            height: 30px;
-            padding:0 10px 0 10px;
+            height: 1.5rem;
+            padding:0 0.5rem 0 0.5rem;
             box-sizing: border-box;
             background: #F5F5F5;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 18px;
-            margin-bottom: 10px;
+            margin-left: 0.9rem;
+            margin-bottom: 0.5rem;
             position: relative;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .flexthree-blocktwo-pfive .blocktwo-pfive-p a {
             position: absolute;
-            top: -6px;
-            left: 75px;
+            top: -0.3rem;
+            left: 3.75rem;
             display: none;
         }
 
         .coach-manage-addone-flexthree-blocktwo .flexthree-blocktwo-psix {
-            width: 670px;
-            height: 113px;
+            width: 33.5rem;
+            height: 5.65rem;
             display: flex;
             flex-wrap: wrap;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            padding: 13px 8px 0 14px;
-            border-radius: 4px;
-            font-size: 14px
+            padding: 0.65rem 0.4rem 0 0.7rem;
+            border-radius: 0.2rem;
+            font-size: 0.7rem
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blockthree {
@@ -502,27 +507,27 @@
             box-sizing: border-box;
             border-bottom: 1px solid #BFBFBF;
             height: auto;
-            padding: 18px 23px 18px 18px;
+            padding: 0.9rem 1.15rem 0.9rem 0.9rem;
             display: flex;
             align-items: center;
         }
 
         .coach-manage-addone-flexthree-blockthree .flexthree-blockthree-pone {
-            font-size: 16px;
+            font-size: 0.8rem;
             display: flex;
-            width: 83px;
-            margin-right: 62px
+            width: 4.15rem;
+            margin-right: 3.1rem
         }
 
 
 
         .course-coach-manage-addone .coach-manage-addone-flexfour {
-            width: 859px;
-            height: 100px;
+            width: 42.95rem;
+            height: 5rem;
             box-sizing: border-box;
             position: fixed;
-            top: 715px;
-            left: 380px;
+            top: 35.75rem;
+            left: 19rem;
             background: #FFFFFF;
             display: flex;
             justify-content: center;
@@ -530,41 +535,41 @@
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexfour #coach-manage-addone-flexfour-save {
-            width: 88px;
-            height: 35px;
+            width: 4.4rem;
+            height: 1.75rem;
             background: #71B2EF;
             color: white;
-            font-size: 16px;
+            font-size: 0.8rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             cursor: pointer;
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexfour #coach-manage-addone-flexfour-quxiao {
-            width: 88px;
-            height: 35px;
-            font-size: 16px;
+            width: 4.4rem;
+            height: 1.75rem;
+            font-size: 0.8rem;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid #BFBFBF;
             box-sizing: border-box;
-            border-radius: 4px;
-            margin-left: 26px;
+            border-radius: 0.2rem;
+            margin-left: 1.3rem;
             cursor: pointer;
         }
 
         .course-coach-manage-body .course-coach-manage-addtwo {
             position: absolute;
-            width: 608px;
-            height: 584px;
-            top: 175px;
-            left: 530px;
+            width: 30.4rem;
+            height: 29.2rem;
+            top: 8.75rem;
+            left: 26.5rem;
             background: #D0E8F2;
-            border-radius: 9px;
-            padding: 18px;
+            border-radius: 0.45rem;
+            padding: 0.9rem;
             box-sizing: border-box;
         }
 
@@ -578,22 +583,22 @@
         }
 
         .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo img {
-            width: 24px;
-            height: 24px
+            width: 1.2rem;
+            height: 1.2rem
         }
 
         .coach-manage-addtwo-flexone .coach-manage-addtwo-flextwo p {
-            font-size: 18px;
-            margin-left: 15px
+            font-size: 0.9rem;
+            margin-left: 0.75rem
         }
 
         .course-coach-manage-addtwo .coach-manage-addtwo-flexthree {
-            width: 570px;
-            height: 505px;
+            width: 28.5rem;
+            height: 25.25rem;
             border: 1px solid #71B2EF;
             background: white;
-            margin-top: 17px;
-            padding: 22px 0 0 4px;
+            margin-top: 0.85rem;
+            padding: 1.1rem 0 0 0.2rem;
             box-sizing: border-box;
             position: relative;
             z-index: -10;
@@ -606,17 +611,17 @@
 
         .coach-manage-addtwo-flexthree .flexthree-tags {
             /* padding: 8px 13px 8px 13px; */
-            width: 80px;
-            border-radius: 4px;
+            width: 4rem;
+            border-radius: 0.2rem;
             background: #F5F5F5;
-            margin-left: 18px;
-            height: 30px;
+            margin-left: 0.9rem;
+            height: 1.5rem;
             box-sizing: border-box;
-            margin-bottom: 18px;
+            margin-bottom: 0.9rem;
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 0.7rem;
             justify-content: center;
         }
 
@@ -627,7 +632,7 @@
 
 
         .coach-manage-addtwo-flexthree .coach-manage-addtwo-flexfour {
-            padding: 0 21px 26px 21px;
+            padding: 0 1.05rem 1.3rem 1.05rem;
             position: absolute;
             bottom: 0px;
             width: 100%;
@@ -635,50 +640,50 @@
         }
 
         .coach-manage-addtwo-flexthree .coach-manage-addtwo-flexfour p {
-            font-size: 16px
+            font-size: 0.8rem
         }
 
         .coach-manage-addtwo-flexfour .addtwo-flexfour-flex {
             display: flex;
             justify-content: center;
-            margin-top: 43px
+            margin-top: 2.15rem
         }
 
         .coach-manage-addtwo-flexfour .addtwo-flexfour-flex #flexfour-flex-pone {
-            width: 100px;
-            height: 40px;
+            width: 5rem;
+            height: 2rem;
             background: #71B2EF;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             cursor: pointer;
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .coach-manage-addtwo-flexfour .addtwo-flexfour-flex #flexfour-flex-ptwo {
-            width: 100px;
-            height: 40px;
+            width: 5rem;
+            height: 2rem;
             border: 1px solid #BFBFBF;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 4px;
-            margin-left: 26px;
+            border-radius: 0.2rem;
+            margin-left: 1.3rem;
             cursor: pointer;
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .course-coach-manage-body .course-coach-manage-addthree {
             position: absolute;
-            width: 688px;
-            height: 678px;
-            top: 140px;
-            left: 485px;
+            width: 34.4rem;
+            height: 33.9rem;
+            top: 7rem;
+            left: 24.25rem;
             background: #D0E8F2;
-            border-radius: 9px;
-            padding: 18px;
+            border-radius: 0.45rem;
+            padding: 0.9rem;
             box-sizing: border-box;
         }
 
@@ -693,21 +698,21 @@
         }
 
         .coach-manage-addthree-flexone .coach-manage-addthree-flextwo img {
-            width: 24px;
-            height: 24px
+            width: 1.2rem;
+            height: 1.2rem
         }
 
         .coach-manage-addthree-flexone .coach-manage-addthree-flextwo p {
-            font-size: 18px;
-            margin-left: 13px
+            font-size: 0.9rem;
+            margin-left: 0.65rem
         }
 
         .course-coach-manage-addthree .coach-manage-addthree-flexthree {
-            width: 650px;
-            height: 600px;
+            width: 32.5rem;
+            height: 30rem;
             border: 1px solid #71B2EF;
             background: white;
-            margin-top: 17px;
+            margin-top: 0.85rem;
             box-sizing: border-box;
             position: relative;
             z-index: -10;
@@ -719,41 +724,41 @@
         }
 
         .coach-manage-addthree-flexthree .coach-manage-addthree-flexthree-flex {
-            padding: 25px 25px 0 7px;
+            padding: 1.25rem 1.25rem 0 0.35rem;
             box-sizing: border-box;
         }
 
         .coach-manage-addthree-flexthree-flex .coach-manage-addthree-flexthree-flex-p {
-            margin: 0 0 20px 18px;
-            font-size: 18px;
+            margin: 0 0 1rem 0.9rem;
+            font-size: 0.9rem;
             color: black
         }
 
         .coach-manage-addthree-flexthree .flexthree-tags {
-            width: 80px;
-            border-radius: 4px;
+            width: 4rem;
+            border-radius: 0.2rem;
             background: #F5F5F5;
-            margin-left: 18px;
-            height: 30px;
+            margin-left: 0.9rem;
+            height: 1.5rem;
             box-sizing: border-box;
-            margin-bottom: 18px;
+            margin-bottom: 0.9rem;
             display: flex;
             align-items: center;
             cursor: pointer;
         }
 
         .coach-manage-addthree-flexthree .flexthree-tags1 {
-            padding: 10px;
-            border-radius: 4px;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
             background: #F5F5F5;
-            margin-left: 18px;
-            height: 30px;
+            margin-left: 0.9rem;
+            height: 1.5rem;
             box-sizing: border-box;
-            margin-bottom: 18px;
+            margin-bottom: 0.9rem;
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-size: 14px
+            font-size: 0.7rem
         }
 
         .coach-manage-addthree-flexthree .addthree-flexfour .active1 {
@@ -763,7 +768,7 @@
 
 
         .coach-manage-addthree-flexthree .coach-manage-addthree-flexfour {
-            padding: 0 21px 26px 21px;
+            padding: 0 1.05rem 1.3rem 1.05rem;
             position: absolute;
             bottom: 0px;
             width: 97%;
@@ -774,38 +779,38 @@
         .coach-manage-addthree-flexfour .addthree-flexfour-flex {
             display: flex;
             justify-content: center;
-            margin-top: 43px
+            margin-top: 2.15rem
         }
 
         .coach-manage-addthree-flexfour .addthree-flexfour-flex #flexfour-flex-pthree {
-            width: 100px;
-            height: 40px;
+            width: 5rem;
+            height: 2rem;
             background: #71B2EF;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             cursor: pointer;
-            font-size: 18px
+            font-size: 0.9rem
         }
 
         .coach-manage-addthree-flexfour .addthree-flexfour-flex #flexfour-flex-pfour {
-            width: 100px;
-            height: 40px;
+            width: 5rem;
+            height: 2rem;
             border: 1px solid #BFBFBF;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 4px;
-            margin-left: 26px;
+            border-radius: 0.2rem;
+            margin-left: 1.3rem;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 0.9rem;
         }
 
         #coach-manage-addthree-flexthree-list {
-            height: 600px;
-            padding-bottom: 100px;
+            height: 30rem;
+            padding-bottom: 5rem;
             overflow-y: scroll;
             box-sizing: border-box;
         }
@@ -823,11 +828,11 @@
 <body>
     <div class="course-coach-manage-body">
         <div class="course-coach-manage-flex">
-            <div style="font-size:16px">员工姓名</div>
+            <div style="font-size:0.8rem">员工姓名</div>
             <input class="course-coach-manage-flex-input" id="ccmfi1" type="text">
-            <div style="font-size:16px">员工工号</div>
+            <div style="font-size:0.8rem">员工工号</div>
             <input class="course-coach-manage-flex-input" id="ccmfi2" type="text">
-            <div style="font-size:16px">课程类型</div>
+            <div style="font-size:0.8rem">课程类型</div>
             <div class="course-coach-manage-flex-select-one">
                 <div class="select-menu">
                     <div class="select-menu-div" id="select-menu-div1">
@@ -840,10 +845,10 @@
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px">课程名称</div>
+            <div style="font-size:0.8rem">课程名称</div>
             <div class="course-coach-manage-flex-select-two">
-                <div style="width:200px;height:30px;border:1px solid #BFBFBF;border-radius: 4px;margin:0 30px 0 20px">
-                    <input style="width:200px;height:30px;border:0;" />
+                <div style="width:10rem;height:1.5rem;border:1px solid #BFBFBF;border-radius: 0.2rem;margin:0 1.5rem 0 1rem">
+                    <input style="width:10rem;height:1.5rem;border:0;" />
                 </div>
             </div>
             <div class="course-coach-manage-flextwo">
@@ -1064,13 +1069,13 @@
             var str2 = `
                     <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <th width="49">序号</th>
-                        <th width="120">员工姓名</th>
-                        <th width="120">员工工号</th>
-                        <th width="250">个人标签</th>
-                        <th width="490">上牌课程</th>
-                        <th width="488">个人简介</th>
-                        <th width="120">操作</th>
+                        <th style="width:2.45rem">序号</th>
+                        <th style="width:6rem">员工姓名</th>
+                        <th style="width:6rem">员工工号</th>
+                        <th style="width:12.5rem">个人标签</th>
+                        <th style="width:24.5rem">上牌课程</th>
+                        <th style="width:24.4rem">个人简介</th>
+                        <th style="width:6rem">操作</th>
                     </tr>
                 `
 //                    console.log("**"+result.results)
@@ -1078,13 +1083,13 @@
                     	
                         str2 += `
                                         <tr class="course-coach-manage-table-tr">
-                                            <td width="49"><div style="display:flex;justify-content: center;">`+ (i + 1 + (paramscoach.page - 1) * paramscoach.rows) + `</div></td>
-                                            <td width="120">`+ item.realName + `</td>
-                                            <td width="120">`+ item.userName + `</td>
-                                            <td width="250">`+ biaoqian(item.coachTagList) + `</td>
-                                            <td width="490">`+ kecheng(item.coachSkillList) + `</td>
-                                            <td width="488">`+ introduce(item) + `</td>
-                                            <td width="120"><a class="course-coach-manage-a">编辑</a></td>
+                                            <td style="width:2.45rem"><div style="display:flex;justify-content: center;">`+ (i + 1 + (paramscoach.page - 1) * paramscoach.rows) + `</div></td>
+                                            <td style="width:6rem">`+ item.realName + `</td>
+                                            <td style="width:6rem">`+ item.userName + `</td>
+                                            <td style="width:12.5rem">`+ biaoqian(item.coachTagList) + `</td>
+                                            <td style="width:24.5rem">`+ kecheng(item.coachSkillList) + `</td>
+                                            <td style="width:24.4rem">`+ introduce(item) + `</td>
+                                            <td style="width:6rem"><a class="course-coach-manage-a">编辑</a></td>
                                         </tr>
                                     `
                     })
@@ -1099,7 +1104,7 @@
                                     <img src="./image/tags_icon.png" alt="">
                                     <p>添加个人标签（多选）</p>
                                 </div>
-                                <img id="addtwo-flexone-chacha" style="width:25px;height:25px" src="./image/popupclose_btn.png" alt="">
+                                <img id="addtwo-flexone-chacha" style="width:1.25rem;height:1.25rem" src="./image/popupclose_btn.png" alt="">
                             </div>
                             <div class="coach-manage-addtwo-flexthree">
                                 <div class="addtwo-flexfour" id="addtwo-flexfour"></div>
@@ -1120,7 +1125,7 @@
                                     <img src="./image/tags_icon.png" alt="">
                                     <p>添加个人标签（多选）</p>
                                 </div>
-                                <img id="addthree-flexone-chacha" style="width:25px;height:25px" src="./image/popupclose_btn.png" alt="">
+                                <img id="addthree-flexone-chacha" style="width:1.25rem;height:1.25rem" src="./image/popupclose_btn.png" alt="">
                             </div>
                             <div class="coach-manage-addthree-flexthree">
                                 
@@ -1235,7 +1240,7 @@
                                             <img src="./image/editor_icon.png" alt="">
                                             <p>编辑员工</p>
                                         </div>
-                                        <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
+                                        <img id="addone-flexone-chacha" style="width:1.8rem;height:1.8rem" src="./image/popupclose_btn.png" alt="">
                                     </div>
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId +`" id="coach-userid">`+ result.rows[0].userName +`</p></div>
@@ -1288,7 +1293,7 @@
                                             <img src="./image/editor_icon.png" alt="">
                                             <p>编辑员工</p>
                                         </div>
-                                        <img id="addone-flexone-chacha" style="width:36px;height:36px" src="./image/popupclose_btn.png" alt="">
+                                        <img id="addone-flexone-chacha" style="width:1.8rem;height:1.8rem" src="./image/popupclose_btn.png" alt="">
                                     </div>
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId + `" id="coach-userid">` + result.rows[0].userName + `</p></div>
