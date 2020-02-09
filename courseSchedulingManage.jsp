@@ -6172,7 +6172,7 @@
                             //$(this).parent().parent().parent().hide()
                             //获取门店id
                             for (var i = 0; i < $('#select-menu-ul-one1').children().length; i++) {
-                                if ($('#select-menu-ul-one1').children().eq(i).html() == $('#select-menu-input-mendian1').val()) {
+                                if ($('#select-menu-ul-one1').children().eq(i).html() == $('#select-menu-input-mendian3').val()) {
                                     var storeId = $('#select-menu-ul-one1').children().eq(i).attr('class')
                                 }
                             }
@@ -6225,14 +6225,20 @@
 
                             //获取员工工号及比例
                             var courseSchedulingItemList = []
-                            if ($('#coach-performance2').html() == '') {
-                                courseSchedulingItemList.push({ coachId: $('#all-coach').children().eq(0).attr('class').split(' ')[1], performance: 1 })
-                            } else {
+
+                            //console.log($('#coach-performance2'))
+
+                            if ($('#coach-performance2')[0].innerText == '') {
+                                courseSchedulingItemList.push({ coachId : $('#all-coach2').children().eq(0).attr('class').split(' ')[1], performance: 1 })
+                                console.log('weishenm')
+                            } 
+                            else {
                                 for (var i = 0; i < $('#coach-performance2').children().length; i++) {
-                                    courseSchedulingItemList.push({ coachId: $('#coach-performance2').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val() })
+                                    courseSchedulingItemList.push({ coachId: $('#coach-performance2').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance2').children().eq(i).children('input').val() })
                                 }
                             }
-                            
+                            //console.log(courseSchedulingItemList)
+
                             //课程变更点击叉叉关闭
                             $('#change-header-not-imgtwo').click(function () {
                                 $(this).parent().parent().hide()
@@ -6306,20 +6312,20 @@
                                         changeReasonId : changeReasonId
                                     }
                                     //console.log($('.course-arranging-not-table-checkbox1').length)
-                                    console.log(paramsrevise)
+                                    // console.log(paramsrevise)
 
-                                    // $.ajax({
-                                    //     url: 'http://test.physicalclub.com/rest/courseScheduling/ updateCourseScheduling',
-                                    //     type: 'POST',
-                                    //     contentType: 'application/json;charset=UTF-8',
-                                    //     data: JSON.stringify(paramsrevise),
-                                    //     success: function (result) {
-                                    //         console.log(result)
-                                    //     },
-                                    //     error: function (e) {
-                                    //         console.log(e.status)
-                                    //     }
-                                    // })
+                                    $.ajax({
+                                        url: 'http://test.physicalclub.com/rest/courseScheduling/updateCourseScheduling',
+                                        type: 'POST',
+                                        contentType: 'application/json;charset=UTF-8',
+                                        data: JSON.stringify(paramsrevise),
+                                        success: function (result) {
+                                            console.log(result)
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status)
+                                        }
+                                    })
 
                                 }, 200);
 
@@ -6406,109 +6412,7 @@
         }
 
         select_all1() {
-            //下拉菜单的动态渲染
-            // var strstrstr
-            // var strstrstrstr
-            // var str5
-            // var strthird;
-            // var strfouth;
-            // var strfivety;
-            // strstrstr = `
-            //     <div class="select-menu3">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">3</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // strstrstrstr = `
-            //     <div class="select-menu4">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">4</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // str5 = `
-            //     <div class="select-menu4">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">5</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // strthird = `
-            //     <div class="select-menu5">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">5</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // strfouth = `
-            //     <div class="select-menu5">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">5</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // strfivety = `
-            //     <div class="select-menu5">
-		    //         <div class="select-menu-div">
-			//             <input class="select-menu-input" />
-
-			//             <img class="select-menu-img" src="./image/sifting_icon.png"/>
-		    //         </div>
-            //         <ul class="select-menu-ul">
-            //             <li class="select-this">5</li>
-            //             <li>团操课</li>
-            //             <li>莱美课</li>
-            //             <li>舞蹈课</li>
-            //         </ul>
-            //     </div>
-            // `
-            // $('#edit-course-context-third').html(strthird)
-            // $('#edit-course-context-fourth').html(strfouth)
-            // $('#edit-course-context-fivety').html(strfivety)
-            // $('#edit-course-not-context-three').html(strstrstr)
-            // $('#edit-course-not-context-four').html(strstrstrstr)
-            // $('#edit-course-not-context-five').html(str5)
+            
         }
 
         select_option() {
@@ -6602,81 +6506,7 @@
         }
 
         adch_showhide() {
-            //添加教练鼠标移入事件
-            // $('.add-edit-course-not-header-context-two-ptwo').mouseover(function () {
-            //     $(this).addClass('aechctp-not-active')
-            //     $(this).children('img').show()
-            // })
-            // //添加教练的鼠标移除事件
-            // $('.add-edit-course-not-header-context-two-ptwo').mouseout(function () {
-            //     $(this).removeClass('aechctp-not-active')
-            //     $(this).children('img').hide()
-            // })
-            // //添加教练的标签，点击叉叉关闭
-            // $('.add-edit-course-not-header-context-two-ptwo').children('img').click(function () {
-            //     $(this).parent().remove()
-            // })
-            // //添加教练的叉叉关闭
-            // $('#add-edit-course-not-hide').click(function () {
-            //     $(this).parent().parent().hide()
-            // })
-
-            // //添加教练的点击确认事件
-            // $('#add-edit-course-header-not-context-three-pone').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-            // //添加教练的点击取消事件
-            // $('#add-edit-course-header-context-not-three-ptwo').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-            // //点击添加按钮显示添加教练
-            // $('#edit-course-not-addadd').click(function () {
-            //     $('#add-edit-course').show()
-            // })
-            // //教练课程的显示隐藏
-            // $('.add-course-not-name-context-p').click(function () {
-            //     $('.add-course-not-name-context-p').each(function () {
-            //         $(this).removeClass('add-course-not-name-context-p-active')
-            //     })
-            //     $(this).addClass('add-course-not-name-context-p-active')
-            // })
-
-            // //课程名称的取消和叉叉关闭页面
-            // $('#add-course-not-name-header-img').click(function () {
-            //     $(this).parent().parent().hide()
-            // })
-
-            // $('#add-course-not-name-context-bottom-pone').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-            // //课程名称的确定按钮事件
-            // $('#add-course-not-name-context-bottom-ptwo').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-
-            // //课程名称页面的显示
-            // $('.edit-course-not-context-three-pp').click(function () {
-            //     $('#add-course-name').show()
-            // })
-
-            // //点击贴边按钮显示贴标
-            // $('.course-arranging-not-footer-ptwo').click(function () {
-            //     $('#add-edit-course-label').show()
-            // })
-
-            // //贴标点击叉叉和取消关闭页面
-            // $('#label-header-not-imgtwo').click(function () {
-            //     $(this).parent().parent().hide()
-            // })
-
-            // $('#add-edit-course-label-not-context-footer-ptwo').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
-
-            // //贴标点击保存按钮
-            // $('#add-edit-course-label-not-context-footer-pone').click(function () {
-            //     $(this).parent().parent().parent().hide()
-            // })
+            
         }
     }
 
