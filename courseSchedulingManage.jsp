@@ -2061,7 +2061,7 @@
         <div class="course-arranging-flextwo">
             <div class="course-arranging-flexthree">
                 <p id="publish-search">查询</p>
-                <p>清除</p>
+                <p id="cxsx">清除</p>
             </div>
             <p class="course-arranging-flextwo-pthree">导出课程</p>
         </div>
@@ -2137,7 +2137,7 @@
         <div class="course-arranging-flextwo">
             <div class="course-arranging-flexthree">
                 <p id="publish-search1">查询</p>
-                <p>清除</p>
+                <p id="cxsx2">清除</p>
             </div>
             <p class="course-arranging-flextwo-pthree">导出课程</p>
         </div>
@@ -3205,6 +3205,14 @@
         })
     })
 
+    $('#cxsx').click(function(){
+        window.location.reload()
+    })
+
+    $('#cxsx2').click(function(){
+        window.location.reload()
+    })
+
     window.onload = function () {
         new course_arranging().init();
         new course_arranging_not().init();
@@ -3526,7 +3534,7 @@
                 endDate = $('#end-course-time').val()
 
                 console.log(roomId)
-                SchedulingList = {
+                var SchedulingList = {
                     state: 0,
                     page: page,
                     rows: 10,
@@ -3537,7 +3545,6 @@
                     startDate : startDate,
                     endDate : endDate
                 }
-
                 $.ajax({
                     url: 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
                     type: 'POST',
@@ -4890,7 +4897,6 @@
                                     }
                                     setTimeout(() => {
                                         $('#select-menu-ul-room1').html(strsecond)
-                                        $('#select-menu-input-room1').val('')
                                     }, 100);
 
 
@@ -5056,11 +5062,11 @@
                     var startDate = ''
                     var endDate = ''
 
-                    if ($('#select-menu-input-mendian1').val() == "全部") {
+                    if ($('#select-menu-input-mendian2').val() == "全部") {
                         storeId = ''
                     } else {
                         for (var i = 0; i < $('#select-menu-ul-pulishmendian1').children().length; i++) {
-                            if ($('#select-menu-ul-pulishmendian1').children().eq(i).html() == $('#select-menu-input-mendian1').val()) {
+                            if ($('#select-menu-ul-pulishmendian1').children().eq(i).html() == $('#select-menu-input-mendian2').val()) {
                                 storeId = $('#select-menu-ul-pulishmendian1').children().eq(i).attr('class').split(' ')[0]
                             }
                         }
@@ -5086,7 +5092,7 @@
                     endDate = $('#end-course-time1').val()
 
                     console.log(roomId)
-                    SchedulingList = {
+                    var SchedulingList = {
                         state: 1,
                         page: page,
                         rows: 10,
