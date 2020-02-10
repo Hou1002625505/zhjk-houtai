@@ -2458,49 +2458,64 @@
                                     <li class="`+ item.clubId + `">` + item.clubName + `</li>
                                 `
                             })
-                            setTimeout(() => {
+                            
                                 $('#select-menu-ul-one').html(strfirstfirst)
                                 //console.log(222)
-
-                                for (var i = 0; i < $('#select-menu-ul-one').children().length; i++) {
-                                    if ($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
-                                        var storeId = $('#select-menu-ul-one').children().eq(i).attr('class')
-                                    }
-                                }
-
-                                //房间下拉菜单渲染
-                                var strsecond = '';
-                                var RoomList = { storeId: storeId }
-                                $.ajax({
-                                    url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
-                                    type: 'POST',
-                                    contentType: 'application/json;charset=UTF-8',
-                                    data: JSON.stringify(RoomList),
-                                    success: function (result) {
-                                        //console.log(result)
-                                        for (var i = 0; i < result.rows.length; i++) {
-                                            strsecond += `
-                                                    <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
-                                                `
-                                        }
-
-                                        setTimeout(() => {
-                                            $('#select-menu-ul-RoomList').html(strsecond)
-                                        }, 100);
-
-
-                                    },
-                                    error: function (e) {
-                                        console.log(e.status)
-                                    }
-                                })
-                            }, 100);
                         },
                         error: function (msg) {
                             console.log(msg)
                         }
                     })
 
+                }, 100);
+
+                //房间列表渲染
+
+                setTimeout(() => {
+
+                    $('#select-menu-div-inputroom2').click(function(){
+                        console.log(11)
+                            setTimeout(() => {
+                                var storeId = ''
+                                if ($('#select-menu-input-mendian11').val() == "全部") {
+                                    storeId = ''
+                                } else {
+                                    for (var i = 0; i < $('#select-menu-ul-one').children().length; i++) {
+                                        if ($('#select-menu-ul-one').children().eq(i).html() == $('#select-menu-input-mendian11').val()) {
+                                            storeId = $('#select-menu-ul-one').children().eq(i).attr('class')
+                                            var storeId1 = storeId.split(' ')[0]
+                                        }
+                                    }
+                                    var RoomList = { clubId: storeId1 }
+                                    console.log(RoomList)
+                                    $.ajax({
+                                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                                        type: 'POST',
+                                        contentType: 'application/json;charset=UTF-8',
+                                        data: JSON.stringify(RoomList),
+                                        success: function (result) {
+                                            console.log(result)
+                                            var strsecond = ''
+
+                                            for (var i = 0; i < result.rows.length; i++) {
+                                                strsecond += `
+                                                                    <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
+                                                                `
+                                            }
+
+                                            setTimeout(() => {
+                                                $('#select-menu-ul-RoomList').html(strsecond)
+                                            }, 100);
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status)
+                                        }
+                                    })
+                                }
+
+                            }, 100);
+                    })
+                    
                 }, 100);
 
                 //课程名称的请求及渲染
@@ -4119,7 +4134,7 @@
                         
                         //房间下拉菜单渲染
                         var strsecond = '';                  
-                        var RoomList = { storeId: listdata.storeId }
+                        var RoomList = { clubId : listdata.storeId }
                         $.ajax({
                             url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
                             type: 'POST',
@@ -4877,45 +4892,47 @@
             }, 100);
 
             //房间下拉菜单渲染
+
             $('#select-menu-div-room1').click(function () {
+                console.log(11)
                 setTimeout(() => {
-                    setTimeout(() => {
-                        var storeId = ''
-                        if ($('#select-menu-input-mendian1').val() == "全部") {
-                            storeId = ''
-                        } else {
-                            for (var i = 0; i < $('#select-menu-ul-pulishmendian1').children().length; i++) {
-                                if ($('#select-menu-ul-pulishmendian1').children().eq(i).html() == $('#select-menu-input-mendian1').val()) {
-                                    storeId = $('#select-menu-ul-pulishmendian1').children().eq(i).attr('class')
-                                }
+                    var storeId = ''
+                    if ($('#select-menu-input-mendian2').val() == "全部") {
+                        storeId = ''
+                    } else {
+                        for (var i = 0; i < $('#select-menu-ul-pulishmendian1').children().length; i++) {
+                            if ($('#select-menu-ul-pulishmendian1').children().eq(i).html() == $('#select-menu-input-mendian2').val()) {
+                                storeId = $('#select-menu-ul-pulishmendian1').children().eq(i).attr('class')
+                                var storeId1 = storeId.split(' ')[0]
                             }
-                            var RoomList = { storeId: storeId }
-                            $.ajax({
-                                url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
-                                type: 'POST',
-                                contentType: 'application/json;charset=UTF-8',
-                                data: JSON.stringify(RoomList),
-                                success: function (result) {
-                                    var strsecond = ''
-                                    //console.log(result)
-                                    for (var i = 0; i < result.rows.length; i++) {
-                                        strsecond += `
+                        }
+                        var RoomList = { clubId: storeId1 }
+                        console.log(RoomList)
+                        $.ajax({
+                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                            type: 'POST',
+                            contentType: 'application/json;charset=UTF-8',
+                            data: JSON.stringify(RoomList),
+                            success: function (result) {
+                                console.log(result)
+                                var strsecond = ''
+
+                                for (var i = 0; i < result.rows.length; i++) {
+                                    strsecond += `
                                         <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
                                     `
-                                    }
-                                    setTimeout(() => {
-                                        $('#select-menu-ul-room1').html(strsecond)
-                                    }, 100);
-
-
-                                },
-                                error: function (e) {
-                                    console.log(e.status)
                                 }
-                            })
-                        }
 
-                    }, 100);
+                                setTimeout(() => {
+                                    $('#select-menu-ul-room1').html(strsecond)
+                                }, 100);
+                            },
+                            error: function (e) {
+                                console.log(e.status)
+                            }
+                        })
+                    }
+
                 }, 100);
             })
         }
@@ -5709,7 +5726,7 @@
 
                         //房间下拉菜单渲染
                         var strsecond = '';
-                        var RoomList = { storeId: listdata.storeId }
+                        var RoomList = { clubId: listdata.storeId }
                         $.ajax({
                             url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
                             type: 'POST',
