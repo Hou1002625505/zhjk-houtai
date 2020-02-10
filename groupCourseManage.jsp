@@ -1425,7 +1425,7 @@
 
 <body>
     <div class="course-manage-body">
-        <div class="course-manage-button" id="course-manage-button">新建课程</div>
+        <div class="course-manage-button" id="course-manage-button" style="margin-bottom:1rem">新建课程</div>
         <div class="course-manage-flex">
             <div style="font-size:16px">课程名称</div>
             <input id="course-manage-flex-input" type="text">

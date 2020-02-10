@@ -3242,36 +3242,42 @@
 
         ajax(){
             //选择会所请求
-            $.ajax({
-                url : 'http://test.physicalclub.com/rest/club/getClubInfo',
-                type : 'GET',
-                dataType : 'json',
-                success : function(data){
-                    console.log(data)
-                },
-                error : function(msg){
-                    console.log(msg)
-                }
-            })
-
-            // var paramsGroupType = {
-            //     typeCode: "CourseTag"
-            // }
-
             // $.ajax({
-            //     type: 'POST',
-            //     contentType: "application/json;charset=UTF-8",
-            //     url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
-            //     data: JSON.stringify(paramsGroupType),
-            //     success: function (result) {
-            //         console.log(result)
+            //     url : 'http://test.physicalclub.com/rest/club/getClubInfo',
+            //     type : 'GET',
+            //     dataType : 'json',
+            //     success : function(data){
+            //         console.log(data)
             //     },
-            //     error: function (e) {
-            //         console.log(e.status);
-            //         console.log(e.responseText)
+            //     error : function(msg){
+            //         console.log(msg)
             //     }
             // })
 
+            // var RoomList = { storeId: 19 }
+            // $.ajax({
+            //     url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+            //     type: 'POST',
+            //     contentType: 'application/json;charset=UTF-8',
+            //     data: JSON.stringify(RoomList),
+            //     success: function (result) {
+            //         // var strsecond = ''
+            //         // //console.log(result)
+            //         // for (var i = 0; i < result.rows.length; i++) {
+            //         //     strsecond += `
+            //         //                     <li class="`+ result.rows[i].roomId + `">` + result.rows[i].roomName + `</li>
+            //         //                 `
+            //         // }
+            //         // setTimeout(() => {
+            //         //     $('#select-menu-ul-room1').html(strsecond)
+            //         // }, 100);
+
+            //         console.log(result)
+            //     },
+            //     error: function (e) {
+            //         console.log(e.status)
+            //     }
+            // })
 
         }
 
@@ -3391,15 +3397,17 @@
                         for(var i=0;i<$('#select-menu-ul-pulishmendian').children().length;i++){
                             if($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()){
                                 storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class')
+                                var storeId1 = storeId.split(' ')[0]
                             }
                         }
-                    var RoomList = { storeId:storeId }
+                    var RoomList = { clubId: storeId1 }
                     $.ajax({
                         url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
                         type: 'POST',
                         contentType: 'application/json;charset=UTF-8',
                         data: JSON.stringify(RoomList),
                         success: function (result) {
+                            console.log(result)
                             var strsecond = ''
                             //console.log(result)
                             for (var i = 0; i < result.rows.length; i++) {
@@ -3417,7 +3425,7 @@
                             console.log(e.status)
                         }
                     })
-                    }
+                     }
                     
                 }, 100);
             }, 100);
