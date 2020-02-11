@@ -192,38 +192,20 @@
 				
 				// 图片上传的是图片还是其他类型文件
 				console.log(file)
-				if (file){
+				if (!file){
 					html = ''
 				}
-				// else{
-				// 	html += '<div id="uploadList_'+ file.index +'" class="upload_append_list">';
-				// 	html += '	<div class="file_bar">';
-				// 	html += '		<div>';
-				// 	html += '			<p class="file_name" style="color:red"></p>';
-				// 	html += 		delHtml;   // 删除按钮的html
-				// 	html += '		</div>';
-				// 	html += '	</div>';
-				// 	html += '	<a href="#" class="imgBox" style="height:160px">';
-				// 	html += '		<div class="uploadImg" style="height:160px">';				
-				// 	html += '			<img id="uploadImage_' + file.index +'" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
-				// 	html += '		</div>';
-				// 	html += '	</a>';
-				// 	html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
-				// 	html += '	<p id="uploadFailure_'+file.index+'" class="file_failure">上传失败，请重试</p>';
-				// 	html += '	<p id="uploadSuccess_'+file.index+'" class="file_success"></p>';
-				// 	html += '</div>';
-				// }
 				else{
-					html += '<div id="uploadList_'+ file.index +'" class="upload_append_list" >';
+					html += '<div id="uploadList_'+ file.index +'" class="upload_append_list">';
 					html += '	<div class="file_bar">';
-					html += '		<div style="padding:5px;">';
-					html += '			<p class="file_name">' + file.name + '</p>';
-					html += delHtml;   // 删除按钮的html
+					html += '		<div>';
+					html += '			<p class="file_name" style="color:red"></p>';
+					html += 		delHtml;   // 删除按钮的html
 					html += '		</div>';
 					html += '	</div>';
 					html += '	<a href="#" class="imgBox" style="height:160px">';
 					html += '		<div class="uploadImg" style="height:160px">';				
-					html += '			<img id="uploadImage_' + file.index + '" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
+					html += '			<img id="uploadImage_' + file.index +'" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
@@ -231,6 +213,24 @@
 					html += '	<p id="uploadSuccess_'+file.index+'" class="file_success"></p>';
 					html += '</div>';
 				}
+				// else{
+				// 	html += '<div id="uploadList_'+ file.index +'" class="upload_append_list" >';
+				// 	html += '	<div class="file_bar">';
+				// 	html += '		<div style="padding:5px;">';
+				// 	html += '			<p class="file_name">' + file.name + '</p>';
+				// 	html += delHtml;   // 删除按钮的html
+				// 	html += '		</div>';
+				// 	html += '	</div>';
+				// 	html += '	<a href="#" class="imgBox" style="height:160px">';
+				// 	html += '		<div class="uploadImg" style="height:160px">';				
+				// 	html += '			<img id="uploadImage_' + file.index + '" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
+				// 	html += '		</div>';
+				// 	html += '	</a>';
+				// 	html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
+				// 	html += '	<p id="uploadFailure_'+file.index+'" class="file_failure">上传失败，请重试</p>';
+				// 	html += '	<p id="uploadSuccess_'+file.index+'" class="file_success"></p>';
+				// 	html += '</div>';
+				// }
 				
 				return html;
 			};
