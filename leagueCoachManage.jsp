@@ -866,6 +866,30 @@
     </div>
 </body>
 <script type="text/javascript">
+
+    function upload() {
+            if ($("#photoFile").val() == '') {
+                return;
+            }
+            var formData = new FormData();
+            formData.append('file', document.getElementById('photoFile').files[0]);
+            $.ajax({
+                url: "http://test.physicalclub.com/crm/rest/leagueCoach/uploadLeagueCoachFile",
+                type: "post",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                    $("#preview_photo").attr("src", 'images/'+data.rows[0].path)
+                    $('#photoFile').attr('class', data.rows[0].path)
+                },
+                error: function (data) {
+                    alert("上传失败")
+                }
+            });
+        }
+
     window.onload = function () {
         new course_manage().init();
     }
@@ -1245,11 +1269,24 @@
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId +`" id="coach-userid">`+ result.rows[0].userName +`</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName +`</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone">
-                                            <p class="flexthree-blockone-pone">员工头像</p>
-                                            <div id="imageimage"></div>
-                                            <div>
-                                                <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" onclick="uploadPhoto()">选择图片</p>
+                                        <div class="coach-manage-addone-flexthree-blockone" style="height:auto">
+                                            <p class="flexthree-blockone-pone" style="margin-right:5.75rem">头像</p>
+                                            <div id="imageimage" style="display:flex;justify-content:space-between;width:33rem">
+                                                <img style="width:2.5rem;height:2.5rem" src="images/`+ result.rows[0].pictures +`">  
+                                                <div id="imageimage1" style="display:flex"><p style="margin-right:0.5rem;font-size:0.7rem;color:#71B2EF">编辑</p><image style="style="width:1rem;height:0.8rem"" src="image/pulldown_btn.png"></div>
+                                            </div>
+                                            <div id="imageimage11" style="display:none">
+                                                <div style="display:flex;justify-content:space-between;width:32.5rem">
+                                                    <div style="display:flex">
+                                                        <img id="preview_photo" src="images/`+ result.rows[0].pictures +`" style="width:6.5rem;height:7.4rem">
+                                                        <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" id="clickclick">上传头像</p>
+                                                        <input type="file" class="" id="photoFile" style="display: none;" onchange="upload()">
+                                                    </div>
+                                                    <div id="shouqishouqi" style="display:flex">
+                                                        <p style="font-size:0.7rem;color:#71B2EF;margin-right:0.5rem">收起</p>    
+                                                        <img style="width:1rem;height:0.8rem" src="image/pullup_btn.png">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
@@ -1302,11 +1339,24 @@
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId + `" id="coach-userid">` + result.rows[0].userName + `</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName + `</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone">
-                                            <p class="flexthree-blockone-pone">员工头像</p>
-                                            <div id="imageimage"></div>
-                                            <div>
-                                                <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" onclick="uploadPhoto()">选择图片</p>
+                                        <div class="coach-manage-addone-flexthree-blockone" style="height:auto">
+                                            <p class="flexthree-blockone-pone" style="margin-right:5.75rem">头像</p>
+                                            <div id="imageimage" style="display:flex;justify-content:space-between;width:33rem">
+                                                <img style="width:2.5rem;height:2.5rem" src="images/`+ result.rows[0].pictures +`"> 
+                                                <div id="imageimage1" style="display:flex"><p style="margin-right:0.5rem;font-size:0.7rem;color:#71B2EF">编辑</p><image style="width:1rem;height:0.8rem" src="image/pulldown_btn.png"></div>
+                                            </div>
+                                            <div id="imageimage11" style="display:none">
+                                                <div style="display:flex;justify-content:space-between;width:32.5rem">
+                                                    <div style="display:flex">
+                                                        <img id="preview_photo" src="images/`+ result.rows[0].pictures +`" style="width:6.5rem;height:7.4rem">
+                                                        <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" id="clickclick">上传头像</p>
+                                                        <input type="file" class="" id="photoFile" style="display: none;" onchange="upload()">
+                                                    </div>
+                                                    <div id="shouqishouqi" style="display:flex">
+                                                        <p style="font-size:0.7rem;color:#71B2EF;margin-right:0.5rem">收起</p>    
+                                                        <img style="width:1rem;height:0.8rem" src="image/pullup_btn.png">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
@@ -1473,6 +1523,20 @@
                                     console.log(e.status);
                                     console.log(e.responseText)
                                 }
+                            })
+
+                            $('#clickclick').click(function(){
+                                $("#photoFile").click()
+                            })
+
+                            $('#imageimage1').click(function () {
+                                $('#imageimage').hide()
+                                $('#imageimage11').show()
+                            })
+
+                            $('#shouqishouqi').click(function(){
+                                $('#imageimage').show()
+                                $('#imageimage11').hide()
                             })
 
                             setTimeout(() => {
@@ -1657,7 +1721,8 @@
                     jobCategory : jobCategory,
                     introduce : $.trim($('#coach-introduce').val()),
                     coachTagList : TagList,
-                    coachSkillList : SkillList
+                    coachSkillList : SkillList,
+                    pictures : $('#photoFile').attr('class')
                 }
                 console.log(paramcoach)
 

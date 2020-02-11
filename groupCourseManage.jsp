@@ -1843,6 +1843,14 @@
                 if ($("#photoFile").val() == '') {
                     return;
                 }
+
+                let file = $("#photoFile").val()
+                let filename = file.substr(file.lastIndexOf("."));
+                if (filename != '.MP4') {
+                    alert("请上传mp4格式的文件");
+                    return;
+                }
+
                 var formData = new FormData();
                 // for (var i = 0; i < $('#preview1').children().length; i++) {
                 formData.append('file', document.getElementById('photoFile').files[0]);
@@ -1858,7 +1866,7 @@
                         console.log(data)
                         //var img = data
                         //return data
-                        $('#photoFile').addClass(data.rows[0].path)
+                        $('#photoFile').attr('class',data.rows[0].path)
                         $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
 
                         $('#videoshow').show()
@@ -1868,7 +1876,7 @@
                         })
 
                         $('#videohide').click(function(){
-                            $(this).parent().hide()
+                            $(this).parent().parent().hide()
                             $('#photoFile').attr('class','')
                         })
 

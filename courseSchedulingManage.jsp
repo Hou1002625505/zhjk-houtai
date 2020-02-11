@@ -3415,12 +3415,10 @@
                                 var storeId1 = storeId.split(' ')[0]
                             }
                         }
-                    var RoomList = { clubId: storeId1 }
+                    //var RoomList = { clubId = storeId1 }
                     $.ajax({
-                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
                         type: 'POST',
-                        contentType: 'application/json;charset=UTF-8',
-                        data: JSON.stringify(RoomList),
                         success: function (result) {
                             console.log(result)
                             var strsecond = ''
@@ -4134,12 +4132,10 @@
                         
                         //房间下拉菜单渲染
                         var strsecond = '';                  
-                        var RoomList = { clubId : listdata.storeId }
+                        //var RoomList = { clubId : listdata.storeId }
                         $.ajax({
-                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+listdata.storeId,
                             type: 'POST',
-                            contentType: 'application/json;charset=UTF-8',
-                            data: JSON.stringify(RoomList),
                             success: function (result) {
                                 //console.log(result)
                                 for(var i=0;i< result.rows.length;i++){
@@ -4906,13 +4902,11 @@
                                 var storeId1 = storeId.split(' ')[0]
                             }
                         }
-                        var RoomList = { clubId: storeId1 }
-                        console.log(RoomList)
+                        //var RoomList = { clubId: storeId1 }
+                        //console.log(RoomList)
                         $.ajax({
-                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
                             type: 'POST',
-                            contentType: 'application/json;charset=UTF-8',
-                            data: JSON.stringify(RoomList),
                             success: function (result) {
                                 console.log(result)
                                 var strsecond = ''
