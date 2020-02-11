@@ -2014,7 +2014,8 @@
     <div class="course-arranging-body" id="course-arranging-body-left">
         <div class="course-arranging-header-two"></div>
         <div class="course-arranging-header-three">
-            <p>导入课程</p>
+            <p id="leadlead">导入课程</p>
+            <input id="filelead" style="display:none" accept=".xlsx,.xls" type="file" onchange="filelead()">
             <p id="addaddadd">新增</p>
             <p id='publishpublish'>发布</p>
         </div>
@@ -2063,7 +2064,7 @@
                 <p id="publish-search">查询</p>
                 <p id="cxsx">清除</p>
             </div>
-            <p class="course-arranging-flextwo-pthree">导出课程</p>
+            <p class="course-arranging-flextwo-pthree" id='derivederive'>导出课程</p>
         </div>
         <div class="course-arranging-table" id="course-arranging-table"></div>
         <div class="course-arranging-footer">
@@ -2139,7 +2140,7 @@
                 <p id="publish-search1">查询</p>
                 <p id="cxsx2">清除</p>
             </div>
-            <p class="course-arranging-flextwo-pthree">导出课程</p>
+            <p class="course-arranging-flextwo-pthree" id='derivederive11'>导出课程</p>
         </div>
         <div class="course-arranging-table" id="course-arranging-table2"></div>
         <!-- <div class="course-arranging-footer">
@@ -2179,6 +2180,84 @@
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
 <script type="text/javascript">
 
+    $('#derivederive').click(function(){
+        var storeId = ''
+        var roomId = ''
+        var realName = ''
+        var userName = ''
+        var startDate = ''
+        var endDate = ''
+
+        if ($('#select-menu-input-mendian').val() == "全部") {
+            alert('请选择门店')
+            return;
+        } else {
+            for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
+                if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+                    storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
+                }
+            }
+        }
+
+        // var derivederive = {
+        //     storeId : storeId,
+        //     roomId : roomId,
+        //     realName : realName,
+        //     userName : userName,
+        //     startDate : startDate,
+        //     endDate : endDate
+        // }
+
+        $.ajax({
+            url: 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId,
+            type: 'GET',
+            success: function (result) {
+                console.log(result)
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+    })
+
+    $('#leadlead').click(function(){
+        $('#filelead').click()
+    })
+
+    function filelead(){
+        if ($("#filelead").val() == '') {
+            return;
+        }
+
+        let file = $("#filelead").val()
+        let filename = file.substr(file.lastIndexOf("."));
+        if (filename != '.xlsx' && filename != '.xls') {
+            alert("请上传excel格式的文件");
+            return;
+        }
+
+        var formData = new FormData();
+        // for (var i = 0; i < $('#preview1').children().length; i++) {
+        formData.append('file', document.getElementById('filelead').files[0])
+        // }
+        $.ajax({
+            url: "http://test.physicalclub.com/rest/courseScheduling/insertImportCourseScheduling",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(data)
+                //var img = data
+                //return data
+                console.log(data)
+            },
+            error: function (data) {
+                alert("上传失败")
+            }
+        });
+    }
+
     //新增
     $('#addaddadd').click(function () {
 
@@ -2203,8 +2282,7 @@
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
                                     <div class="select-menu-div" id="select-menu-div-mendian">
-                                        <input class="select-menu-input" id="select-menu-input-mendian11"/>
-
+                                        <input class="select-menu-input" id="select-menu-input-mendian11" value=""/>
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
                                     <ul class="select-menu-ul" id="select-menu-ul-one" style="height:10rem;overflow-y:scroll">
@@ -2218,8 +2296,7 @@
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
                                     <div class="select-menu-div" id="select-menu-div-inputroom2">
-                                        <input class="select-menu-input" id="select-menu-inputroom2"/>
-
+                                        <input class="select-menu-input" id="select-menu-inputroom2" value=''/>
                                         <img class="select-menu-img" src="./image/sifting_icon.png"/>
                                     </div>
                                     <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:10rem;overflow-y:scroll">
@@ -2442,6 +2519,16 @@
                     $(this).addClass('1')
                 }
             })
+            console.log($('#select-menu-input-mendian11').val())
+            setTimeout(() => {
+                console.log($('#select-menu-input-mendian11').val())
+                setTimeout(() => {
+                    $('#select-menu-input-mendian11').val(' ')
+                    $('#select-menu-inputroom2').val(' ')
+                }, 100);
+                
+            }, 100);
+            
 
             setTimeout(() => {
 
@@ -2473,7 +2560,7 @@
 
                 setTimeout(() => {
 
-                    $('#select-menu-div-inputroom2').click(function(){
+                $('#select-menu-div-inputroom2').click(function(){
                         console.log(11)
                             setTimeout(() => {
                                 var storeId = ''
@@ -2486,13 +2573,11 @@
                                             var storeId1 = storeId.split(' ')[0]
                                         }
                                     }
-                                    var RoomList = { clubId: storeId1 }
-                                    console.log(RoomList)
+                                    // var RoomList = { clubId: storeId1 }
+                                    // console.log(RoomList)
                                     $.ajax({
-                                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
                                         type: 'POST',
-                                        contentType: 'application/json;charset=UTF-8',
-                                        data: JSON.stringify(RoomList),
                                         success: function (result) {
                                             console.log(result)
                                             var strsecond = ''
@@ -2630,7 +2715,7 @@
                     //教练选择页面
                     var strselect = ''
                     for (var i = 0; i < $('#all-coach').children().length; i++) {
-                        strselect += `
+                        strselect = `
                                 <p class="add-edit-course-header-context-two-ptwo `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
                                     `+ $('#all-coach').children().eq(i).html() + `
                                     <img src="./image/classdel_btn.png" alt=""/>
@@ -2673,17 +2758,46 @@
                                     //点击查询渲染的教练名
                                     $('#coach-show').html(strcoachone)
 
+                                    //var strselect = ''
                                     $('#coach-p').click(function () {
+                                        //console.log(strselect)
+                                        //console.log($('#select-coach').html())
+
+                                        for (var i = 0; i < $('#select-coach').children().length; i++) {
+                                            if ($.trim($('#coach-p').html()) == $.trim($('#select-coach').children().eq(i).text())) {
+                                                return;
+                                            }
+                                            //console.log($.trim($('#select-coach').children().eq(i).text()))
+                                        }
+
+                                        if($.trim($('#select-coach').html()) == ''){
+                                            strselect = ''
+                                        }
+
                                         strselect += `
                                                     <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
                                                         `+ $(this).html() + `
                                                         <img src="./image/classdel_btn.png" alt=""/>
                                                     </p>
                                                 `
-                                        setTimeout(() => {
+                                        
                                             //点击查询出的教练名进行渲染
                                             $('#select-coach').html(strselect)
+                                            
+                                            //console.log($('#select-coach').html())
 
+                                            //console.log($('#select-coach').html())
+                                            for(var j=0;j< $('#select-coach').children().length;j++){
+                                                for (var i = 1; i < $('#select-coach').children().length; i++) {
+                                                    if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
+                                                        $('#select-coach').children().eq(i).remove()
+                                                    }
+                                                }
+                                            }
+
+                                            //console.log($('#select-coach').html())
+
+                                            setTimeout(() => {
                                             //添加教练鼠标移入事件
                                             $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
                                                 $(this).addClass('aechctp-active')
@@ -4351,15 +4465,38 @@
                                             $('#coach-show').html(strcoachone)
 
                                             $('#coach-p').click(function(){
+
+                                                //console.log($('#select-coach').html())
+
+                                                for(var i=0;i< $('#select-coach').children().length;i++){
+                                                    if($.trim($('#coach-p').html()) == $.trim($('#select-coach').children().eq(i).text())){
+                                                        return;
+                                                    }
+                                                    //console.log($.trim($('#select-coach').children().eq(i).text()))
+                                                }
+                                                //console.log($('#coach-p').html())
+                                                if ($.trim($('#select-coach').html()) == '') {
+                                                    strselect = ''
+                                                }
+
                                                 strselect += `
                                                     <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') +`">
                                                         `+ $(this).html() + `
                                                         <img src="./image/classdel_btn.png" alt=""/>
                                                     </p>
                                                 `
-                                                setTimeout(() => {
                                                 //点击查询出的教练名进行渲染
                                                 $('#select-coach').html(strselect)
+
+                                                for (var j = 0; j < $('#select-coach').children().length; j++) {
+                                                    for (var i = 1; i < $('#select-coach').children().length; i++) {
+                                                        if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
+                                                            $('#select-coach').children().eq(i).remove()
+                                                        }
+                                                    }
+                                                }
+
+                                                setTimeout(() => {
 
                                                 //添加教练鼠标移入事件
                                                 $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
