@@ -192,7 +192,7 @@
 				
 				// 图片上传的是图片还是其他类型文件
 				console.log(file)
-				if (!file){
+				if (file.type.split('/')[0] !== 'image'){
 					html = ''
 				}
 				else{
