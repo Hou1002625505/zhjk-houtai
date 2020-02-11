@@ -5193,7 +5193,7 @@
                                 }
                             }
 
-                            $.each(result.rows, function (i, item) {
+                            $.each(result.rows, function (i, item){
                             str2 += `
                             <tr class="course-arranging-table-tr">
                             <td style="width:2.4rem" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
@@ -5220,7 +5220,7 @@
                                 </div
                             </td>
                             <td style="width:6rem">
-                                <a class="a-add1 `+ i + `">编辑</a>|<a class="a-del">删除</a>
+                                <a class="a-add1 `+ i + `" style="display:none">编辑</a><a class="a-del">删除</a>
                             </td>
                         </tr>
                     `
@@ -5349,7 +5349,8 @@
                                 </div
                             </td>
                             <td style="width:6rem">
-                                <a class="a-add1 `+ i + `">变更</a>|<a class="a-del">下架</a>
+                                <a class="a-add1 `+ i + `" style="display:none">变更</a>
+                                <a class="a-del">下架</a>
                             </td>
                         </tr>
                     `

@@ -1712,11 +1712,11 @@
             <div id="demo" class="demo"></div>
         </div>
 
-        <p style="font-size:16px;font-weight:bold;margin-top:53px">课程详情</p>
+        <p style="font-size:16px;font-weight:bold;margin-top:53px">扣课方式及项目关联</p>
         <div class="add-course-body-line"></div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">广信编码</p>
+            <p style="font-size:16px">付款方式</p>
             <div class="add-course-sortone-inputten" id="add-course-sortone-inputten">
                 <div class="inputten-paypay">
                     <div class="paypay">
@@ -1803,6 +1803,14 @@
         if ($("#fileImage").val() == '') {
             return;
         }
+
+        let file = $("#fileImage").val()
+        let filename = file.substr(file.lastIndexOf("."));
+        if(filename != '.png' && filename != '.jpeg' && filename != '.jpg'){
+             alert("请上传图片格式的文件");
+             return;
+        }
+
         var formData = new FormData();
         // for (var i = 0; i < $('#preview1').children().length; i++) {
         formData.append('file', document.getElementById('fileImage').files[0])
@@ -2102,7 +2110,7 @@
                                             <td width="288">`+ item.price + `</td>
                                             <td width="288">`+ item.createDate + `</td>
                                             <td width="288">上架</td>
-                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
+                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-down">下架</a></td>
                                         </tr>
                                     `
                                 }
@@ -2152,6 +2160,35 @@
 
                                     var params1 = {
                                         state: 1,
+                                        ids: id
+                                    }
+
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                        contentType: "application/json;charset=UTF-8",
+                                        data: JSON.stringify(params1),
+                                        success: function (resule) {
+                                            //console.log(resule)
+                                            //console.log(list)
+                                        },
+                                        error: function (e) {
+                                            console.log(e.status);
+                                            console.log(e.responseText)
+                                        }
+                                    })
+                                }
+                                window.location.reload()
+                            })
+
+                            $('.course-manage-table-tr-down').click(function(){
+                                var id = [];
+
+                                if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
+                                    id.push($(this).parent().attr('class'))
+
+                                    var params1 = {
+                                        state: 2,
                                         ids: id
                                     }
 
@@ -2647,7 +2684,7 @@
                     $.each(thatresult.rows, function (i, item) {
                         strgxbm += `
                             <div class="inputtwelve-checkbox">
-                                <p>`+ item.mediid + item.mediname + `</p>
+                                <p>`+ item.mediid + ' ' +'|' + ' ' +item.mediname + `</p>
                                 <img src="/image/checkset_btn.png" alt="">
                             </div>
                         `
@@ -2753,6 +2790,8 @@
             $("#addOneRow").click(function () {
                 var tempTr = $(this).parent().parent().clone(true);
                 $(this).parent().parent().parent().children("tr:last").after(tempTr);
+                $(this).parent().parent().parent().children("tr:last").children().eq(0).children().html(' ')
+                $(this).parent().parent().parent().children("tr:last").children().eq(1).children().html(' ')
             });
             $("#delOneRow").click(function () {
                 if ($(this).parent().parent().parent().children("tr").length < 2) {
