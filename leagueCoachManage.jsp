@@ -1227,7 +1227,7 @@
                     data: JSON.stringify(paramscoach),
                     success: function (result) {
                         var list = result
-                        // console.log(result)
+                        console.log(result)
                         // console.log(result.results[0].nickName)                        
 
                         //添加窗口的内容
@@ -1245,7 +1245,13 @@
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId +`" id="coach-userid">`+ result.rows[0].userName +`</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName +`</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone">
+                                            <p class="flexthree-blockone-pone">员工头像</p>
+                                            <div id="imageimage"></div>
+                                            <div>
+                                                <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" onclick="uploadPhoto()">选择图片</p>
+                                            </div>
+                                        </div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                         <div class="coach-manage-addone-flexthree-blockthree">
                                             <p class="flexthree-blockthree-pone">工作性质</p>
@@ -1273,9 +1279,7 @@
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                             <p class="flexthree-blocktwo-pone">个人简介</p>
-                                            <p class="flexthree-blocktwo-psix" id="coach-introduce">
-                                                `+ result.rows[0].introduce +`
-                                            </p>
+                                            <textarea class="flexthree-blocktwo-psix" id="coach-introduce">`+$.trim(result.rows[0].introduce)+`</textarea>
                                         </div>
                                     </div>
                                     <div class="coach-manage-addone-flexfour">
@@ -1298,17 +1302,23 @@
                                     <div class="coach-manage-addone-flexthree">
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工工号</p><p class="flexthree-blockone-ptwo `+ result.rows[0].userId + `" id="coach-userid">` + result.rows[0].userName + `</p></div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工姓名</p><p class="flexthree-blockone-ptwo" id="coach-realName">`+ result.rows[0].realName + `</p></div>
-                                        <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">员工头像</p></div>
+                                        <div class="coach-manage-addone-flexthree-blockone">
+                                            <p class="flexthree-blockone-pone">员工头像</p>
+                                            <div id="imageimage"></div>
+                                            <div>
+                                                <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" onclick="uploadPhoto()">选择图片</p>
+                                            </div>
+                                        </div>
                                         <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                         <div class="coach-manage-addone-flexthree-blockthree">
                                             <p class="flexthree-blockthree-pone">工作性质</p>
                                             <div class="flexthree-blocktwo-pseven">
                                                 <div class="select-menu-div">
-                                                    <input class="select-menu-input" />
+                                                    <input class="select-menu-input" id="qzajz"/>
 
                                                     <img class="select-menu-img" src="./image/sifting_icon.png" />
                                                 </div>
-                                                <ul class="select-menu-ul `+ result.rows[0].jobCategory + `" id="select-menu-ul-state">
+                                                <ul class="select-menu-ul" id="select-menu-ul-state">
                                                      <li>全职</li>
                                                      <li class="select-this">兼职</li>
                                                 </ul>    
@@ -1326,9 +1336,7 @@
                                         </div>
                                         <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                             <p class="flexthree-blocktwo-pone">个人简介</p>
-                                            <p class="flexthree-blocktwo-psix" id="coach-introduce">
-                                                `+ result.rows[0].introduce +`
-                                            </p>
+                                            <textarea class="flexthree-blocktwo-psix" id="coach-introduce" style="resize: none;">`+result.rows[0].introduce+`</textarea>
                                         </div>
                                     </div>
                                     <div class="coach-manage-addone-flexfour">
@@ -1630,6 +1638,14 @@
                     SkillList.push({leagueCurriculumId : $('#coach-course').children().eq(j).attr('class').split(' ')[1]})
                 }
 
+                var jobCategory = ''
+
+                if($('#qzajz').val() == '全职'){
+                    jobCategory = 1
+                }else{
+                    jobCategory = 2
+                }
+
                 console.log(TagList)
                 console.log(SkillList)
 
@@ -1637,14 +1653,14 @@
 
                 var paramcoach = {
                     id : $('#coach-userid').attr('class').split(' ')[1],
-                    nickName : $('#coach-realName').html(),
-                    jobCategory : $('#select-menu-ul-state').attr('class').split(' ')[1],
-                    introduce : $.trim($('#coach-introduce').html()),
+                    nickName : $('#areaborder').children().val(),
+                    jobCategory : jobCategory,
+                    introduce : $.trim($('#coach-introduce').val()),
                     coachTagList : TagList,
                     coachSkillList : SkillList
                 }
-                //console.log(paramcoach)
-                
+                console.log(paramcoach)
+
                $.ajax({
                     type: 'POST',
                     url: "http://test.physicalclub.com/rest/leagueCoach/updateLeagueCoach",

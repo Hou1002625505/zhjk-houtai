@@ -223,7 +223,7 @@
 					html += '	</div>';
 					html += '	<a href="#" class="imgBox" style="height:160px">';
 					html += '		<div class="uploadImg" style="height:160px">';				
-					html += '			<img id="uploadImage_' + file.index +'" style="height:160px" class="upload_image" src="' + fileImgSrc + '" />';                                                                 
+					html += '			<img id="uploadImage_' + file.index + '" style="height:160px" class="upload_image" src="' + e.target.result + '" />';                                                                 
 					html += '		</div>';
 					html += '	</a>';
 					html += '	<p id="uploadProgress_'+file.index+'" class="file_progress"></p>';
