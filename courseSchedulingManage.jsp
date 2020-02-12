@@ -2087,6 +2087,7 @@
             <input id="filelead" style="display:none" accept=".xlsx,.xls" type="file" onchange="filelead()">
             <p id="addaddadd">新增</p>
             <p id='publishpublish'>发布</p>
+            <p id="publishpublishall">全部发布</p>
         </div>
         <div class="course-arranging-flex">
             <div style="font-size:16px;margin-right:10px">上课门店</div>
@@ -2428,7 +2429,7 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
-                            <div style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
+                            <div class="J-datepicker-day" style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
                             <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
@@ -2572,6 +2573,89 @@
             $('#edit-course1').html(editstr)
             $('#add-edit-course1').html(addeditstr)
             $('#add-course-name1').html(acn_str)
+
+            time()
+
+            function time() {
+            $('.J-datepicker-day').datePicker({
+                hasShortcut: true,
+                format: 'YYYY-MM-DD',
+                shortcutOptions: [{
+                    name: '今天',
+                    day: '0'
+                }, {
+                    name: '昨天',
+                    day: '-1'
+                }, {
+                    name: '一周前',
+                    day: '-7'
+                }]
+            });
+
+            function fchatitylist() {
+                intoPages = 1;
+                visititylist();
+            }
+
+            function visititylist() {
+                var status = $("#visitstatus").val();
+                var conditionName = '';//顾问姓名
+                var startDate = $("#selectDate1").val();
+                var endDate = $("#selectDate2").val();
+                //var club = $("#clubId").val();
+                var fangcusname = $("#fangcusname").val();
+                var fangmobile = $("#fangmobile").val();
+                if (startDate != '') {
+                    if (endDate == '') {
+                        alert("请选择结束日期");
+                        return;
+                    }
+                }
+            }
+
+
+            function getDay(day) {
+
+                var today = new Date();
+
+
+
+                var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+
+
+
+                today.setTime(targetday_milliseconds); //注意，这行是关键代码
+
+
+
+                var tYear = today.getFullYear();
+
+                var tMonth = today.getMonth();
+
+                var tDate = today.getDate();
+
+                tMonth = doHandleMonth(tMonth + 1);
+
+                tDate = doHandleMonth(tDate);
+
+                return tYear + "-" + tMonth + "-" + tDate;
+
+            }
+
+            function doHandleMonth(month) {
+
+                var m = month;
+
+                if (month.toString().length == 1) {
+
+                    m = "0" + month;
+
+                }
+
+                return m;
+
+            }
+        }
 
             // $('#select-menu-input-coursename').click(function(){
             //     $('#add-course-name1').show()
@@ -3213,6 +3297,8 @@
                             data: JSON.stringify(addcfpone),
                             success: function (result) {
                                 console.log(result)
+                                alert(result.message)
+                                window.location.reload()
                             },
                             error: function (e) {
                                 console.log(e.status)
@@ -3466,6 +3552,43 @@
             data: JSON.stringify(recommended),
             success: function (result) {
                 console.log(result)
+                alert(result.message)
+                window.location.reload()
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+
+        })
+    })
+
+    //全部发布
+
+    $('#publishpublishall').click(function(){
+        var ids = []
+        var data = new Date()
+        for (var i = 1; i < $('#course-arranging-table').children().children().children().length; i++) {
+            if($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && $('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[1] >= (data.getMonth() + 1) && $('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[2] >= data.getDate()){
+                var ids1 = $('#course-arranging-table').children().children().children().eq(i+1).children().eq(0).attr('class')
+                // //console.log(ids)
+                ids.push(ids1)
+            }
+        }
+
+        var recommended = {
+            operationType: 4,
+            ids: ids,
+            state: 1
+        }
+
+        $.ajax({
+            url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(recommended),
+            success: function (result) {
+                console.log(result)
+                alert(result.message)
                 window.location.reload()
             },
             error: function (e) {
@@ -4167,7 +4290,7 @@
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
-                            <div style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
+                            <div class="J-datepicker-day" style="width:7.5rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;margin:0 2.95rem 0 3.85rem">
                             <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
@@ -4309,6 +4432,89 @@
                 $('.edit-course').html(editstr)
                 $('.add-edit-course').html(addeditstr)
                 $('.add-course-name').html(acn_str)
+
+                time()
+
+                function time() {
+                    $('.J-datepicker-day').datePicker({
+                        hasShortcut: true,
+                        format: 'YYYY-MM-DD',
+                        shortcutOptions: [{
+                            name: '今天',
+                            day: '0'
+                        }, {
+                            name: '昨天',
+                            day: '-1'
+                        }, {
+                            name: '一周前',
+                            day: '-7'
+                        }]
+                    });
+
+                    function fchatitylist() {
+                        intoPages = 1;
+                        visititylist();
+                    }
+
+                    function visititylist() {
+                        var status = $("#visitstatus").val();
+                        var conditionName = '';//顾问姓名
+                        var startDate = $("#selectDate1").val();
+                        var endDate = $("#selectDate2").val();
+                        //var club = $("#clubId").val();
+                        var fangcusname = $("#fangcusname").val();
+                        var fangmobile = $("#fangmobile").val();
+                        if (startDate != '') {
+                            if (endDate == '') {
+                                alert("请选择结束日期");
+                                return;
+                            }
+                        }
+                    }
+
+
+                    function getDay(day) {
+
+                        var today = new Date();
+
+
+
+                        var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+
+
+
+                        today.setTime(targetday_milliseconds); //注意，这行是关键代码
+
+
+
+                        var tYear = today.getFullYear();
+
+                        var tMonth = today.getMonth();
+
+                        var tDate = today.getDate();
+
+                        tMonth = doHandleMonth(tMonth + 1);
+
+                        tDate = doHandleMonth(tDate);
+
+                        return tYear + "-" + tMonth + "-" + tDate;
+
+                    }
+
+                    function doHandleMonth(month) {
+
+                        var m = month;
+
+                        if (month.toString().length == 1) {
+
+                            m = "0" + month;
+
+                        }
+
+                        return m;
+
+                    }
+                }
 
                 //添加教练的叉叉关闭
                 $('#add-edit-course-hide').click(function () {
@@ -4906,6 +5112,8 @@
                                 data : JSON.stringify(paramsrevise),
                                 success : function(result){
                                     console.log(result)
+                                    alert(result.message)
+                                    window.location.reload()
                                 },
                                 error : function(e){
                                     console.log(e.status)
