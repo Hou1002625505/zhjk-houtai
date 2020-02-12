@@ -3568,9 +3568,10 @@
         var ids = []
         var data = new Date()
         for (var i = 1; i < $('#course-arranging-table').children().children().children().length; i++) {
-            if($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && $('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[1] >= (data.getMonth() + 1) && $('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[2] >= data.getDate()){
-                var ids1 = $('#course-arranging-table').children().children().children().eq(i+1).children().eq(0).attr('class')
-                // //console.log(ids)
+            if(($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[1]) > (data.getMonth() + 1)) || (($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[1]) == (data.getMonth() + 1) && Number($('#course-arranging-table').children().children().children().eq(i).children().eq(3).html().split('-')[2]) > data.getDate()))){
+                
+                var ids1 = $('#course-arranging-table').children().children().children().eq(i).children().eq(0).attr('class')
+
                 ids.push(ids1)
             }
         }
