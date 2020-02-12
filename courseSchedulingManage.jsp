@@ -2250,23 +2250,92 @@
 <script type="text/javascript">
 
     $('#derivederive').click(function(){
-        var storeId = ''
-        var roomId = ''
-        var realName = ''
-        var userName = ''
-        var startDate = ''
-        var endDate = ''
 
-        if ($('#select-menu-input-mendian').val() == "全部") {
-            alert('请选择门店')
-            return;
-        } else {
-            for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
-                if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
-                    storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
-                }
+            // var clubid = $('#clubId').val()
+            // var userCode = $('#usernum').val();
+            // var userName = $('#username').val();
+            // var data = {
+            //     club: clubid,
+            //     user: userCode,
+            //     name: userName
+            // }
+
+            // var storeId = ''
+
+            // if ($('#select-menu-input-mendian').val() == "全部") {
+            //     alert('请选择门店')
+            //     return;
+            // } else {
+            //     for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
+            //         if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+            //             storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
+            //         }
+            //     }
+            // }
+
+            startDate = $('#create-course-time').val()
+
+            endDate = $('#end-course-time').val()
+
+            console.log(startDate,endDate)
+
+            // var clubid = $('#clubId').val()
+            // var userCode = $('#usernum').val();
+            // var userName = $('#username').val();
+            var data = {
+                strParam3 : startDate,
+                strParam4 : endDate
             }
-        }
+            $.ajax({
+                type: "post",
+                url: "https://test.physicalclub.com/crm/rest/coach/coursetime/exportReport",
+                async: false,
+                //contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                data: data,
+                success: function (res) {
+                    if (res.status) {
+                        window.open(res.message);
+                    }
+                },
+                error: function (res) {
+                    console.log(res)
+                }
+            });
+
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId="+storeId,
+            //     async: false,
+            //     //contentType: "application/json;charset=UTF-8",
+            //     dataType: "json",
+            //     success: function (res) {
+            //         if (res.status) {
+            //             window.open(res.message);
+            //         }
+            //     },
+            //     error: function (res) {
+            //         console.log(res)
+            //     }
+            // });
+
+        // var storeId = ''
+        // var roomId = ''
+        // var realName = ''
+        // var userName = ''
+        // var startDate = ''
+        // var endDate = ''
+
+        // if ($('#select-menu-input-mendian').val() == "全部") {
+        //     alert('请选择门店')
+        //     return;
+        // } else {
+        //     for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
+        //         if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+        //             storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
+        //         }
+        //     }
+        // }
 
         // if ($('#select-menu-input-room').val() == '') {
         //     roomId = ''
@@ -2287,7 +2356,7 @@
 
         // endDate = $('#end-course-time').val()
 
-        location.href = 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId
+        //location.href = 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId
 
         // var derivederive = {
         //     storeId : storeId,

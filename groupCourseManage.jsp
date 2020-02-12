@@ -352,7 +352,7 @@
 
         .course-manage-footer .course-manage-footer-pthree {
             font-size: 0.8rem;
-            margin-left: 44.65rem;
+            margin-left: 50.65rem;
         }
 
         .c-datepicker-date-editor {
@@ -520,7 +520,7 @@
             width: 6rem;
             height: 1.6rem;
             border: 1px solid #CCCCCC;
-            margin-left: 3.5rem;
+            margin-left: 3.55rem;
             border-radius: 0.2rem;
         }
 
@@ -1283,22 +1283,20 @@
 
         .add-course-sortone .add-course-sortone-inputeleven {
             /* margin-top: 14px */
+            display:flex
         }
 
         .add-course-sortone .add-course-sortone-inputeleven input:nth-child(1) {
             width: 12rem;
             height: 1.6rem;
-            margin-left: 3.2rem;
             font-size: 0.7rem;
             line-height: 1.6rem;
-            padding-left: 0.9rem;
             box-sizing: border-box;
         }
 
         .add-course-sortone .add-course-sortone-inputeleven input:nth-child(2) {
             width: 20.5rem;
             height: 1.6rem;
-            margin-left: 1rem;
             box-sizing: border-box;
         }
 
@@ -1427,9 +1425,9 @@
     <div class="course-manage-body">
         <div class="course-manage-button" id="course-manage-button" style="margin-bottom:1rem">新建课程</div>
         <div class="course-manage-flex">
-            <div style="font-size:16px">课程名称</div>
+            <div style="font-size:0.8rem">课程名称</div>
             <input id="course-manage-flex-input" type="text">
-            <div style="font-size:16px">课程分类</div>
+            <div style="font-size:0.8rem">课程分类</div>
             <div class="course-manage-flex-select-one">
                 <div class="select-menu">
                     <div class="select-menu-div" id="select-menu-div1">
@@ -1442,7 +1440,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px">课程状态</div>
+            <div style="font-size:0.8rem">课程状态</div>
             <div class="course-manage-flex-select-two">
                 <div class="select-menu">
                     <div class="select-menu-div" id="select-menu-div2">
@@ -1457,7 +1455,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="font-size:16px">创建时间</div>
+            <div style="font-size:0.8rem">创建时间</div>
             <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-one "
                     id="course-manage-flex-input-one" placeholder="开始时间">
             </div>
@@ -1465,7 +1463,7 @@
             <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-two"
                     id="course-manage-flex-input-two" placeholder="结束时间">
             </div>
-            <div style="font-size:16px">价格区间</div>
+            <div style="font-size:0.8rem">价格区间</div>
             <input type="text" class="course-manage-flex-input-three" id="course-manage-flex-input-three">
             <p>-</p>
             <input type="text" class="course-manage-flex-input-four" id="course-manage-flex-input-four">
@@ -1483,9 +1481,10 @@
             <div class="course-manage-footer-ptwo" id="batchup">批量上传</div>
             <div class="course-manage-footer-ptwo" id="batchdown">批量下架</div>
             <div class="course-manage-footer-pthree"></div>
+            <div class="box" id="boxpage" style="margin-left:1.5rem;margin-top:0"></div>
         </div>
 
-        <div class="box" id="boxpage"></div>
+        
     </div>
 
     <div class="add-course-body" style="display:none">
@@ -1494,7 +1493,7 @@
         <p class="add-course-body-ptwo">基本信息</p>
         <div class="add-course-body-line"></div>
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程类型</p>
+            <p style="font-size:0.8rem">课程类型</p>
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
@@ -1509,7 +1508,7 @@
             </div>
         </div>
         <div class="add-course-sortone">
-            <p style="font-size:16px">上课方式</p>
+            <p style="font-size:0.8rem">上课方式</p>
             <div class="add-course-sortone-select">
                 <div class="select-menu">
                     <div class="select-menu-div">
@@ -1524,39 +1523,39 @@
             </div>
         </div>
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程名称</p>
+            <p style="font-size:0.8rem">课程名称</p>
             <div class="add-course-sortone-inputone">
                 <input type="text" value="BODYBLANCE" id="area2">
                 <p><span id="text-count2">0</span>/22</p>
             </div>
         </div>
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程标准价</p>
+            <p style="font-size:0.8rem">课程标准价</p>
             <div class="add-course-sortone-inputtwo">
                 <p>￥</p>
                 <input type="text" id="kcbzj">
             </div>
         </div>
         <div class="add-course-sortone">
-            <p style="font-size:16px;margin-right:70px">课程目标</p>
+            <p style="font-size:0.8rem;margin-right:3.5rem">课程目标</p>
             <div class="add-course-sortone-inputthree">
                 <div id="GroupCourseGole"></div>
-                <div style="font-size: 12px;color:#444444;margin-left:14px">(可多选)</div>
+                <div style="font-size:0.6rem;color:#444444;margin-left:0.7rem">(可多选)</div>
             </div>
         </div>
         <div class="add-course-sorttwo">
-            <p style="font-size:16px">课程简介</p>
+            <p style="font-size:0.8rem">课程简介</p>
             <div class="add-course-sortone-inputfour">
                 <textarea id="area" cols="30" rows="10" placeholder="请输入本节课简介"></textarea>
                 <p class="add-course-sortone-inputfour-position"><span id="text-count">0</span>/300</p>
             </div>
         </div>
 
-        <p style="font-size:18px;font-weight:bold;margin-top:53px">课程详情</p>
+        <p style="font-size:0.9rem;font-weight:bold;margin-top:2.65rem">课程详情</p>
         <div class="add-course-body-line"></div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程难度</p>
+            <p style="font-size:0.8rem">课程难度</p>
             <ul class="rating" id="rating">
                 <li class="rating-item" title="很不好"><img src="/image/star_nor.png" alt=""></li>
                 <li class="rating-item" title="不好"><img src="/image/star_nor.png" alt=""></li>
@@ -1567,7 +1566,7 @@
         </div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">卡路里消耗</p>
+            <p style="font-size:0.8rem">卡路里消耗</p>
             <div class="add-course-sortone-inputfive">
                 <input type="text" id="kllxh">
                 <p>cal</p>
@@ -1575,14 +1574,14 @@
         </div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">适用人群</p>
+            <p style="font-size:0.8rem">适用人群</p>
             <div class="add-course-sortone-inputsix">
                 <input type="text" value="通用" id="shrq">
             </div>
         </div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程雷达图</p>
+            <p style="font-size:0.8rem">课程雷达图</p>
             <div class="add-course-sortone-inputseven">
                 <div class="oneinput">
                     <div class="add-course-sortone-selectone">
@@ -1658,7 +1657,7 @@
         </div>
 
         <div class="add-course-sorttwo">
-            <p style="font-size:16px">注意事项</p>
+            <p style="font-size:0.8rem">注意事项</p>
             <div class="add-course-sortone-inputfour">
                 <textarea id="area1" cols="30" rows="10"></textarea>
                 <p class="add-course-sortone-inputfour-position"><span id="text-count1">0</span>/300</p>
@@ -1666,7 +1665,7 @@
         </div>
 
         <div class="add-course-sorttwo">
-            <p style="font-size:16px">FAQ</p>
+            <p style="font-size:0.8rem">FAQ</p>
             <div class="add-course-sortone-inputeight" id="faq">
                 <table cellspacing="0" cellpadding="0">
                     <tr>
@@ -1677,7 +1676,7 @@
                     <tr>
                         <td><textarea placeholder="Q :"></textarea></td>
                         <td><textarea placeholder="A :"></textarea></td>
-                        <td><img id="addOneRow" style="margin-right:6px" src="/image/add_btn.png" alt="">
+                        <td><img id="addOneRow" style="margin-right:0.3rem" src="/image/add_btn.png" alt="">
                             <img id="delOneRow" src="/image/del_btn.png" alt="">
                         </td>
                     </tr>
@@ -1686,7 +1685,7 @@
         </div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程视频</p>
+            <p style="font-size:0.8rem">课程视频</p>
             <div class="add-course-sortone-inputnine">
                 <div id="scsp">上传视频</div>
                 <p>最多上传1个视频，单个视频不超过20M，视频作品将会展示在团课详情首位</p>
@@ -1708,38 +1707,43 @@
         </div>
 
         <div class="add-course-sorttwo">
-            <p style="font-size:16px;margin-right:90px">课程图片</p>
+            <p style="font-size:0.8rem;margin-right:4.5rem">课程图片</p>
             <div id="demo" class="demo"></div>
         </div>
 
-        <p style="font-size:16px;font-weight:bold;margin-top:53px">扣课方式及项目关联</p>
+        <p style="font-size:0.8rem;font-weight:bold;margin-top:2.65rem">扣课方式及项目关联</p>
         <div class="add-course-body-line"></div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">付款方式</p>
+            <p style="font-size:0.8rem">付款方式</p>
             <div class="add-course-sortone-inputten" id="add-course-sortone-inputten">
                 <div class="inputten-paypay">
                     <div class="paypay">
                         <img class="paypay-show" src="/image/payment_btn.png" alt="">
                         <img class="paypay-hidden" src="/image/paymentnor_btn.png" alt="">
                     </div>
-                    <p style="font-size: 14px;">付现</p>
+                    <p style="font-size: 0.7rem;">付现</p>
                 </div>
                 <div class="inputten-paypay">
                     <div class="paypay">
                         <img class="paypay-show" src="/image/payment_btn.png" alt="">
                         <img class="paypay-hidden" src="/image/paymentnor_btn.png" alt="">
                     </div>
-                    <p style="font-size: 14px;">会员卡扣</p>
+                    <p style="font-size: 0.7rem;">会员卡扣</p>
                 </div>
             </div>
         </div>
 
         <div class="add-course-sortone">
-            <p style="font-size:16px">课程对应编码</p>
+            <p style="font-size:0.8rem">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
-                <input placeholder="请输入课程对应广信编码" type="text" id="gxbm">
-                <input type="text" id="gxmc">
+                <div style="width:12rem;height:1.6rem;border:1px solid #CCCCCC;margin-left:3.1rem">
+                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none">
+                </div>
+                <div style="width:20.5rem;height:1.6rem;border:1px solid #CCCCCC;margin-left:1rem">
+                    <input type="text" id="gxmc" style="border:none">
+                </div>
+                
             </div>
         </div>
 
@@ -1751,7 +1755,7 @@
         </div>
 
         <div class="add-course-sortthree">
-            <p style="font-size:16px;margin-right:8px">会员卡口对应编码</p>
+            <p style="font-size:0.8rem;margin-right:0.4rem">会员卡口对应编码</p>
             <div class="add-course-sortone-inputtwelve">
                 <div class="inputtwelve-flex" id="inputtwelve-flex">
 
@@ -2097,13 +2101,13 @@
                             str2 = `
                                             <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <th width="48"></th>
-                                                <th width="288">课程分类</th>
-                                                <th width="288">课程名称</th>
-                                                <th width="288"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                                                <th width="288"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
-                                                <th width="288">状态</th>
-                                                <th width="148">操作</th>
+                                                <th style="width:2.4rem"></th>
+                                                <th style="width:14.4rem">课程分类</th>
+                                                <th style="width:14.4rem">课程名称</th>
+                                                <th style="width:14.4rem"><div class="headingsifting">课程价格<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                                                <th style="width:14.4rem"><div class="headingsifting">创建时间<div class="headingsifting-column"><img src="../images/simage/headingsifting_up.png"><img src="../images/simage/headingsifting_down.png"></div></div></th>
+                                                <th style="width:14.4rem">状态</th>
+                                                <th style="width:7.4rem">操作</th>
                                             </tr>
                                         `
 
@@ -2112,13 +2116,13 @@
                                 if (item.state == 1) {
                                     str2 += `
                                         <tr class="course-manage-table-tr">
-                                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                            <td width="288">`+ item.classifyName + `</td>
-                                            <td width="288">`+ item.name + `</td>
-                                            <td width="288">`+ item.price + `</td>
-                                            <td width="288">`+ item.createDate + `</td>
-                                            <td width="288">上架</td>
-                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-down">下架</a></td>
+                                            <td style="width:2.4rem"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td style="width:14.4rem">`+ item.classifyName + `</td>
+                                            <td style="width:14.4rem">`+ item.name + `</td>
+                                            <td style="width:14.4rem">`+ item.price + `</td>
+                                            <td style="width:14.4rem">`+ item.createDate + `</td>
+                                            <td style="width:14.4rem">上架</td>
+                                            <td style="width:7.4rem" class="`+ item.id + `"><a class="course-manage-table-tr-edit" style="color:#71B2EF">编辑</a>|<a class="course-manage-table-tr-down" style="color:#71B2EF">下架</a></td>
                                         </tr>
                                     `
                                 }
@@ -2126,13 +2130,13 @@
                                 if (item.state == 2) {
                                     str2 += `
                                         <tr class="course-manage-table-tr">
-                                            <td width="48"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
-                                            <td width="288">`+ item.classifyName + `</td>
-                                            <td width="288">`+ item.name + `</td>
-                                            <td width="288">`+ item.price + `</td>
-                                            <td width="288">`+ item.createDate + `</td>
-                                            <td width="288">下架</td>
-                                            <td width="148" class="`+ item.id + `"><a class="course-manage-table-tr-edit">编辑</a>|<a class="course-manage-table-tr-up">上架</a></td>
+                                            <td style="width:2.4rem"><div style="display:flex;justify-content: center;"><div class="course-manage-table-checkbox"><img style="display:none" src="../images/simage/codeallset_btn.png"></div></div></td>
+                                            <td style="width:14.4rem">`+ item.classifyName + `</td>
+                                            <td style="width:14.4rem">`+ item.name + `</td>
+                                            <td style="width:14.4rem">`+ item.price + `</td>
+                                            <td style="width:14.4rem">`+ item.createDate + `</td>
+                                            <td style="width:14.4rem">下架</td>
+                                            <td style="width:7.4rem" class="`+ item.id + `"><a class="course-manage-table-tr-edit" style="color:#71B2EF">编辑</a>|<a class="course-manage-table-tr-up" style="color:#71B2EF">上架</a></td>
                                         </tr>
                                     `
                                 }
