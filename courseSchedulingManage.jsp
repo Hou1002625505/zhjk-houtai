@@ -2249,134 +2249,83 @@
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
 <script type="text/javascript">
 
+    //导出课程
     $('#derivederive').click(function(){
+            var storeId = ''
 
-            // var clubid = $('#clubId').val()
-            // var userCode = $('#usernum').val();
-            // var userName = $('#username').val();
-            // var data = {
-            //     club: clubid,
-            //     user: userCode,
-            //     name: userName
-            // }
+            if ($('#select-menu-input-mendian').val() == "全部") {
+                alert('请选择门店')
+                return;
+            } else {
+                for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
+                    if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
+                        storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
+                    }
+                }
+            }
 
-            // var storeId = ''
+            if ($('#select-menu-input-room').val() == '') {
+            roomId = ''
+            } else {
+                for (var i = 0; i < $('#select-menu-ul-room').children().length; i++) {
+                    if ($('#select-menu-ul-room').children().eq(i).html() == $('#select-menu-input-room').val()) {
+                        roomId = $('#select-menu-ul-room').children().eq(i).attr('class')
+                        //roomId = "c0f6b689-0375-4d7c-b1f8-01b86d55e57a"
+                    }
+                }
+            }
 
-            // if ($('#select-menu-input-mendian').val() == "全部") {
-            //     alert('请选择门店')
-            //     return;
-            // } else {
-            //     for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
-            //         if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
-            //             storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
-            //         }
-            //     }
-            // }
+            realName = $('#teaching-course-coach').val()
+
+            userName = $('#coach-id').val()
 
             startDate = $('#create-course-time').val()
 
             endDate = $('#end-course-time').val()
 
-            console.log(startDate,endDate)
+            location.href = "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId="+storeId+'&roomId='+roomId+'&realName='+realName+'&userName='+userName+'&startDate='+startDate+'&endDate='+endDate
+    })
 
-            // var clubid = $('#clubId').val()
-            // var userCode = $('#usernum').val();
-            // var userName = $('#username').val();
-            var data = {
-                strParam3 : startDate,
-                strParam4 : endDate
-            }
-            $.ajax({
-                type: "post",
-                url: "https://test.physicalclub.com/crm/rest/coach/coursetime/exportReport",
-                async: false,
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                data: data,
-                success: function (res) {
-                    if (res.status) {
-                        window.open(res.message);
-                    }
-                },
-                error: function (res) {
-                    console.log(res)
+    //导出课程
+
+    $('#derivederive11').click(function(){
+        var storeId = ''
+        var roomId = ''
+        var realName = ''
+        var userName = ''
+        var startDate = ''
+        var endDate = ''
+
+        if ($('#select-menu-input-mendian2').val() == "全部") {
+            storeId = ''
+        } else {
+            for (var i = 0; i < $('#select-menu-ul-pulishmendian1').children().length; i++) {
+                if ($('#select-menu-ul-pulishmendian1').children().eq(i).html() == $('#select-menu-input-mendian2').val()) {
+                    storeId = $('#select-menu-ul-pulishmendian1').children().eq(i).attr('class').split(' ')[0]
                 }
-            });
+            }
+        }
+        console.log(storeId)
+        if ($('#select-menu-input-room1').val() == '') {
+            roomId = ''
+        } else {
+            for (var i = 0; i < $('#select-menu-ul-room1').children().length; i++) {
+                if ($('#select-menu-ul-room1').children().eq(i).html() == $('#select-menu-input-room1').val()) {
+                    roomId = $('#select-menu-ul-room1').children().eq(i).attr('class')
+                    //roomId = "c0f6b689-0375-4d7c-b1f8-01b86d55e57a"
+                }
+            }
+        }
 
-            // $.ajax({
-            //     type: "get",
-            //     url: "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId="+storeId,
-            //     async: false,
-            //     //contentType: "application/json;charset=UTF-8",
-            //     dataType: "json",
-            //     success: function (res) {
-            //         if (res.status) {
-            //             window.open(res.message);
-            //         }
-            //     },
-            //     error: function (res) {
-            //         console.log(res)
-            //     }
-            // });
+        realName = $('#teaching-course-coach1').val()
 
-        // var storeId = ''
-        // var roomId = ''
-        // var realName = ''
-        // var userName = ''
-        // var startDate = ''
-        // var endDate = ''
+        userName = $('#coach-id1').val()
 
-        // if ($('#select-menu-input-mendian').val() == "全部") {
-        //     alert('请选择门店')
-        //     return;
-        // } else {
-        //     for (var i = 0; i < $('#select-menu-ul-pulishmendian').children().length; i++) {
-        //         if ($('#select-menu-ul-pulishmendian').children().eq(i).html() == $('#select-menu-input-mendian').val()) {
-        //             storeId = $('#select-menu-ul-pulishmendian').children().eq(i).attr('class').split(' ')[0]
-        //         }
-        //     }
-        // }
+        startDate = $('#create-course-time1').val()
 
-        // if ($('#select-menu-input-room').val() == '') {
-        //     roomId = ''
-        // } else {
-        //     for (var i = 0; i < $('#select-menu-ul-room').children().length; i++) {
-        //         if ($('#select-menu-ul-room').children().eq(i).html() == $('#select-menu-input-room').val()) {
-        //             roomId = $('#select-menu-ul-room').children().eq(i).attr('class')
-        //             //roomId = "c0f6b689-0375-4d7c-b1f8-01b86d55e57a"
-        //         }
-        //     }
-        // }
+        endDate = $('#end-course-time1').val()
 
-        // realName = $('#teaching-course-coach').val()
-
-        // userName = $('#coach-id').val()
-
-        // startDate = $('#create-course-time').val()
-
-        // endDate = $('#end-course-time').val()
-
-        //location.href = 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId
-
-        // var derivederive = {
-        //     storeId : storeId,
-        //     roomId : roomId,
-        //     realName : realName,
-        //     userName : userName,
-        //     startDate : startDate,
-        //     endDate : endDate
-        // }
-
-        // $.ajax({
-        //     url: 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId,
-        //     type: 'GET',
-        //     success: function (result) {
-        //         console.log(result)
-        //     },
-        //     error: function (e) {
-        //         console.log(e.status)
-        //     }
-        // })
+        location.href = "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId=" + storeId + '&roomId=' + roomId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
     })
 
     $('#leadlead').click(function(){
@@ -6916,8 +6865,6 @@
         }
 
     }
-
-
 
     $('.box').pagination({
             mode: 'fixed'
