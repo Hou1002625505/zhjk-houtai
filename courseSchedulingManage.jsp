@@ -2003,6 +2003,75 @@
             justify-content: left;
             align-items: center;
         }
+
+        .select-menu5 {
+            cursor: pointer;
+            width: 12.5rem;
+            height: 1.8rem;
+            box-sizing: border-box;
+        }
+
+        .select-menu5 .select-menu-ul1 {
+            /* margin-top: 50px; */
+            list-style: none;
+            opacity: 0;
+            display: none;
+            width: 12.5rem;
+            text-align: left;
+            border: 1px solid #ddd;
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .select-menu5 .select-menu-ul1 li {
+            height: 1.8rem;
+            font-size: 0.7rem;
+            padding: 0 0.75rem;
+            box-sizing: border-box;
+            line-height: 1.8rem;
+        }
+
+        .select-menu5 .select-menu-ul1 li:hover {
+            background: #f2f2f2;
+        }
+
+        .select-menu5 .select-menu-div1 {
+            position: relative;
+            height: 1.8rem;
+            width: 12.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.2rem;
+            box-sizing: border-box;
+            line-height: 1.8rem;
+        }
+
+        .select-menu5 .select-menu-ul1 .select-this1 {
+            background: #71B2EF;
+        }
+
+        .select-menu5 .select-menu-ul1 .select-this:hover {
+            background: #71B2EF !important;
+        }
+
+        .select-menu5 .select-menu-div1 .select-menu-img1 {
+            width: 0.6rem;
+            height: 0.4rem;
+            margin-right: 0.5rem;
+            position: absolute;
+            right: 0;
+            top: 0.5rem;
+        }
+
+        .select-menu5 .select-menu-div1 .select-menu-input1 {
+            padding-left: 0.7rem;
+            border: 0;
+            width: 6.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            font-size: 0.7rem
+        }
     </style>
 </head>
 
@@ -2199,6 +2268,27 @@
             }
         }
 
+        // if ($('#select-menu-input-room').val() == '') {
+        //     roomId = ''
+        // } else {
+        //     for (var i = 0; i < $('#select-menu-ul-room').children().length; i++) {
+        //         if ($('#select-menu-ul-room').children().eq(i).html() == $('#select-menu-input-room').val()) {
+        //             roomId = $('#select-menu-ul-room').children().eq(i).attr('class')
+        //             //roomId = "c0f6b689-0375-4d7c-b1f8-01b86d55e57a"
+        //         }
+        //     }
+        // }
+
+        // realName = $('#teaching-course-coach').val()
+
+        // userName = $('#coach-id').val()
+
+        // startDate = $('#create-course-time').val()
+
+        // endDate = $('#end-course-time').val()
+
+        location.href = 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId
+
         // var derivederive = {
         //     storeId : storeId,
         //     roomId : roomId,
@@ -2208,16 +2298,16 @@
         //     endDate : endDate
         // }
 
-        $.ajax({
-            url: 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId,
-            type: 'GET',
-            success: function (result) {
-                console.log(result)
-            },
-            error: function (e) {
-                console.log(e.status)
-            }
-        })
+        // $.ajax({
+        //     url: 'http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId='+storeId,
+        //     type: 'GET',
+        //     success: function (result) {
+        //         console.log(result)
+        //     },
+        //     error: function (e) {
+        //         console.log(e.status)
+        //     }
+        // })
     })
 
     $('#leadlead').click(function(){
@@ -2281,11 +2371,11 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">门店</div>
                             <div id="edit-course-context-first">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div" id="select-menu-div-mendian">
-                                        <input class="select-menu-input" id="select-menu-input-mendian11" value=""/>
-                                        <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                                    <div class="select-menu-div1" id="select-menu-div-mendian">
+                                        <input class="select-menu-input1" id="select-menu-input-mendian11" value=""/>
+                                        <img class="select-menu-img1" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-one" style="height:10rem;overflow-y:scroll">
+                                    <ul class="select-menu-ul1" id="select-menu-ul-one" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
@@ -2295,11 +2385,11 @@
                             <div class="edit-course-context-one" style="margin-right:5.55rem">房间</div>
                             <div id="edit-course-context-second">
                                 <div class="select-menu5">
-                                    <div class="select-menu-div" id="select-menu-div-inputroom2">
-                                        <input class="select-menu-input" id="select-menu-inputroom2" value=''/>
-                                        <img class="select-menu-img" src="./image/sifting_icon.png"/>
+                                    <div class="select-menu-div1" id="select-menu-div-inputroom2">
+                                        <input class="select-menu-input1" id="select-menu-inputroom2" value=''/>
+                                        <img class="select-menu-img1" src="./image/sifting_icon.png"/>
                                     </div>
-                                    <ul class="select-menu-ul" id="select-menu-ul-RoomList" style="height:10rem;overflow-y:scroll">
+                                    <ul class="select-menu-ul1" id="select-menu-ul-RoomList" style="height:10rem;overflow-y:scroll">
                                         
                                     </ul>
                                 </div>
@@ -2767,37 +2857,65 @@
                                             if ($.trim($('#coach-p').html()) == $.trim($('#select-coach').children().eq(i).text())) {
                                                 return;
                                             }
-                                            //console.log($.trim($('#select-coach').children().eq(i).text()))
+                                            else{
+                                                var strselect = ''
+                                                for (var j = 0; j < $('#select-coach').children().length; j++) {
+                                                    strselect += `
+                                                        <p class="add-edit-course-header-context-two-ptwo `+ $('#select-coach').children().eq(j).attr('class').split(' ')[1] +`"> `+$.trim($('#select-coach').children().eq(j).text())+`<img src="./image/classdel_btn.png" alt=""/></p>
+                                                    `
+                                                }
+                                            }
+                                            
                                         }
 
                                         if($.trim($('#select-coach').html()) == ''){
                                             strselect = ''
                                         }
 
+                                        // for (var i = 0; i < $('#select-coach').children().length; i++) {
+                                        //     if ($.trim($('#coach-p').html()) !== $.trim($('#select-coach').children().eq(i).text())) {
+                                        //         var strselect111 = ''
+                                        //         for (var j = 0; j < $('#select-coach').children().length; j++) {
+                                        //             strselect111 += `
+                                        //                 <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
+                                        //                     `+ $.trim($('#select-coach').children().eq(j).text()) + `
+                                        //                     <img src="./image/classdel_btn.png" alt=""/>
+                                        //                 </p>
+                                        //             `
+                                        //         }
+                                        //         var strselect = strselect111
+                                        //         console.log(strselect)
+                                        //     }
+                                        //     //console.log($.trim($('#select-coach').children().eq(i).text()))
+                                        // }
+                                        
+                                        console.log(strselect)
                                         strselect += `
-                                                    <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
+                                                    <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') +`">
                                                         `+ $(this).html() + `
                                                         <img src="./image/classdel_btn.png" alt=""/>
                                                     </p>
                                                 `
-                                        
+                                        console.log(strselect)
                                             //点击查询出的教练名进行渲染
+                                            setTimeout(() => {
                                             $('#select-coach').html(strselect)
                                             
                                             //console.log($('#select-coach').html())
 
                                             //console.log($('#select-coach').html())
-                                            for(var j=0;j< $('#select-coach').children().length;j++){
-                                                for (var i = 1; i < $('#select-coach').children().length; i++) {
-                                                    if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
-                                                        $('#select-coach').children().eq(i).remove()
-                                                    }
-                                                }
-                                            }
+
+                                            // for(var j=0;j< $('#select-coach').children().length;j++){
+                                            //     for (var i = 1; i < $('#select-coach').children().length; i++) {
+                                            //         if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
+                                            //             $('#select-coach').children().eq(i).remove()
+                                            //         }
+                                            //     }
+                                            // }
 
                                             //console.log($('#select-coach').html())
 
-                                            setTimeout(() => {
+                                            
                                             //添加教练鼠标移入事件
                                             $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
                                                 $(this).addClass('aechctp-active')
@@ -2858,7 +2976,7 @@
 
                 setTimeout(() => {
                     //第一个下拉菜单的动态
-                    $("#select-menu-input-mendian11").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                    $("#select-menu-input-mendian11").eq(0).val($(".select-this1").eq(0).html()); //在输入框中自动填充第一个选项的值
                     $("#select-menu-div-mendian").eq(0).on("click", function (e) {
                         e.stopPropagation();
                         if ($("#select-menu-ul-one").eq(0).css("display") === "block") {
@@ -2899,8 +3017,8 @@
                         setTimeout(() => {
                             $("#select-menu-input-mendian11").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
                             $("#select-menu-div-mendian").eq(0).click();
-                            $(this).siblings(".select-this").removeClass("select-this");
-                            $(this).addClass("select-this");
+                            $(this).siblings(".select-this1").removeClass("select-this1");
+                            $(this).addClass("select-this1");
                         }, 50);
 
                     });
@@ -2921,7 +3039,7 @@
                     });
 
                     //第二个下拉菜单的动态
-                    $("#select-menu-inputroom2").eq(0).val($(".select-this").eq(0).html()); //在输入框中自动填充第一个选项的值
+                    $("#select-menu-inputroom2").eq(0).val($(".select-this1").eq(0).html()); //在输入框中自动填充第一个选项的值
                     $("#select-menu-div-inputroom2").eq(0).on("click", function (e) {
                         e.stopPropagation();
                         if ($("#select-menu-ul-RoomList").eq(0).css("display") === "block") {
@@ -2962,7 +3080,7 @@
                         setTimeout(() => {
                             $("#select-menu-inputroom2").eq(0).val($(this).html()); //把被点击的选项的值填入输入框中
                             $("#select-menu-div-inputroom2").eq(0).click();
-                            $(this).siblings(".select-this").removeClass("select-this");
+                            $(this).siblings(".select-this").removeClass("select-this1");
                             $(this).addClass("select-this");
                         }, 50);
 
@@ -4251,7 +4369,7 @@
                             url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+listdata.storeId,
                             type: 'POST',
                             success: function (result) {
-                                //console.log(result)
+                                console.log(result)
                                 for(var i=0;i< result.rows.length;i++){
                                     strsecond += `
                                         <li class="`+ result.rows[i].roomId +`">`+ result.rows[i].roomName +`</li>
@@ -4387,7 +4505,7 @@
                         if(listdata.courseSchedulingItemList){
                             for (var i = 0; i < listdata.courseSchedulingItemList.length; i++) {
                                 strcoach += `
-                                    <p class="edit-course-context-twoone `+ listdata.courseSchedulingItemList[i].userName +`">`+ listdata.courseSchedulingItemList[i].realName + `</p>
+                                    <p class="edit-course-context-twoone `+ listdata.courseSchedulingItemList[i].userName + ' ' + listdata.courseSchedulingItemList[i].performance +`">`+ listdata.courseSchedulingItemList[i].realName + `</p>
                                 `
                             }
                         }else{
@@ -4404,8 +4522,8 @@
                                 for (var i = 0; i < $('#all-coach').children().length; i++) {
                                     strperformance += `
                                         <div class="edit-course-context-flex4-pthree">
-                                            <p class="edit-course-context-flex4-pfour">`+ $('#all-coach').children().eq(i).html() + `</p>
-                                            <input class="edit-course-context-flex4-pfive" />
+                                            <p class="edit-course-context-flex4-pfour `+$('#all-coach').children().eq(i).attr('class').split(' ')[1] +`">`+ $('#all-coach').children().eq(i).html() + `</p>
+                                            <input class="edit-course-context-flex4-pfive" value="`+ $('#all-coach').children().eq(i).attr('class').split(' ')[2] +`"/>
                                         </div>
                                     `
                                 }
@@ -4471,6 +4589,13 @@
                                                 for(var i=0;i< $('#select-coach').children().length;i++){
                                                     if($.trim($('#coach-p').html()) == $.trim($('#select-coach').children().eq(i).text())){
                                                         return;
+                                                    }else{
+                                                        var strselect = ''
+                                                        for (var j = 0; j < $('#select-coach').children().length; j++) {
+                                                            strselect += `
+                                                        <p class="add-edit-course-header-context-two-ptwo `+ $('#select-coach').children().eq(j).attr('class').split(' ')[1] + `"> ` + $.trim($('#select-coach').children().eq(j).text()) + `<img src="./image/classdel_btn.png" alt=""/></p>
+                                                    `
+                                                        }
                                                     }
                                                     //console.log($.trim($('#select-coach').children().eq(i).text()))
                                                 }
@@ -4485,18 +4610,19 @@
                                                         <img src="./image/classdel_btn.png" alt=""/>
                                                     </p>
                                                 `
+                                                setTimeout(() => {
                                                 //点击查询出的教练名进行渲染
                                                 $('#select-coach').html(strselect)
 
-                                                for (var j = 0; j < $('#select-coach').children().length; j++) {
-                                                    for (var i = 1; i < $('#select-coach').children().length; i++) {
-                                                        if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
-                                                            $('#select-coach').children().eq(i).remove()
-                                                        }
-                                                    }
-                                                }
+                                                // for (var j = 0; j < $('#select-coach').children().length; j++) {
+                                                //     for (var i = 1; i < $('#select-coach').children().length; i++) {
+                                                //         if ($.trim($('#select-coach').children().eq(j).text()) == $.trim($('#select-coach').children().eq(i).text())) {
+                                                //             $('#select-coach').children().eq(i).remove()
+                                                //         }
+                                                //     }
+                                                // }
 
-                                                setTimeout(() => {
+                                                
 
                                                 //添加教练鼠标移入事件
                                                 $('.add-edit-course-header-context-two-ptwo').mouseover(function () {
@@ -4681,7 +4807,7 @@
                         //获取房间id
                         for (var i = 0; i < $('#select-menu-ul-RoomList').children().length; i++) {
                             if ($('#select-menu-ul-RoomList').children().eq(i).html() == $('#select-menu-inputroom').val()) {
-                                var roomId = $('#select-menu-ul-RoomList').children().eq(i).attr('class')
+                                var roomId = $('#select-menu-ul-RoomList').children().eq(i).attr('class').split(' ')[0]
                                 //console.log("mendiandm")
                             }
                         }
@@ -4729,7 +4855,7 @@
                             courseSchedulingItemList.push({ coachId : $('#all-coach').children().eq(0).attr('class').split(' ')[1], performance : 1})
                         }else{
                             for (var i = 0; i < $('#coach-performance').children().length; i++) {
-                            courseSchedulingItemList.push({ coachId: $('#coach-performance').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val()})
+                            courseSchedulingItemList.push({ coachId: $('#coach-performance').children().eq(i).children().eq(0).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val()})
                             }
                         }                
 
@@ -4751,7 +4877,7 @@
                             console.log(paramsrevise)
 
                             $.ajax({
-                                url : 'http://test.physicalclub.com/rest/courseScheduling/ updateCourseScheduling',
+                                url : 'http://test.physicalclub.com/rest/courseScheduling/updateCourseScheduling',
                                 type : 'POST',
                                 contentType : 'application/json;charset=UTF-8',
                                 data : JSON.stringify(paramsrevise),
