@@ -959,7 +959,7 @@
             border: none;
             outline: none;
             -webkit-appearance: none;
-            width: 4.4rem;
+            width: 5rem;
             padding-left: 0.25rem;
             box-sizing: border-box;
             background: #F7F7F7;

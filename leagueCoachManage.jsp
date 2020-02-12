@@ -770,8 +770,8 @@
         .coach-manage-addthree-flexthree .coach-manage-addthree-flexfour {
             padding: 0 1.05rem 1.3rem 1.05rem;
             position: absolute;
-            bottom: 0px;
-            width: 97%;
+            bottom: 0.2rem;
+            width: 36.35rem;
             box-sizing: border-box;
             background: white
         }
