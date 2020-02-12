@@ -1004,7 +1004,7 @@
             padding: 1.35rem 0 1.35rem 0;
             box-sizing: border-box;
             position: fixed;
-            bottom: 5rem;
+            bottom: 12%;
             background: white
         }
 
@@ -2424,7 +2424,7 @@
                             <div class="edit-course-context-twoall" id="all-coach">
                                 
                             </div>
-                            <p class="edit-course-context-three" id="edit-course-addadd">添加</p>
+                            <p class="edit-course-context-three" id="edit-course-addadd" style="margin:0.25rem 0">添加</p>
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>
@@ -2627,6 +2627,11 @@
                     $(this).addClass('1')
                 }
             })
+
+            $('#is-Queue').children('.paypay').eq(0).click()
+
+            $('#tag-Name').children('.paypay').eq(0).click()
+
             console.log($('#select-menu-input-mendian11').val())
             setTimeout(() => {
                 console.log($('#select-menu-input-mendian11').val())
@@ -4158,7 +4163,7 @@
                             <div class="edit-course-context-twoall" id="all-coach">
                                 
                             </div>
-                            <p class="edit-course-context-three" id="edit-course-addadd">添加</p>
+                            <p class="edit-course-context-three" id="edit-course-addadd" style="margin:0.25rem 0">添加</p>
                         </div>
                         <div class="edit-course-context-flex">
                             <div class="edit-course-context-one">上课日期</div>

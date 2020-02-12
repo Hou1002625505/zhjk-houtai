@@ -215,7 +215,7 @@
             height:2.3rem;
             border-radius: 0.2rem;
             background:#FAA262;
-            color:black;
+            color:white;
             margin-left:0.5rem;
             font-size:0.9rem;
             display:flex;
@@ -325,6 +325,9 @@
 
                         $('.liuyi-flex-right').html(liuyitime)
 
+                        var myDate = new Date()
+                        console.log(myDate.getMonth(), myDate.getDate())
+                    
                         //选择时间的高亮
 
                         $('.liuyi-flex-right-p').click(function(){
@@ -335,6 +338,15 @@
                             $(this).css('background', '#71B2EF')
                             $(this).css('color', 'white')
                         })
+
+                        for (var i = 0; i < $('.liuyi-flex-right').children().length; i++) {
+                            //console.log($('.liuyi-flex-right').children().eq(i).html().split('(')[0])
+                            if ((myDate.getMonth() + 1) == Number($('.liuyi-flex-right').children().eq(i).html().split('(')[0].split('-')[0]) && myDate.getDate() == $('.liuyi-flex-right').children().eq(i).html().split('(')[0].split('-')[1]) {
+                                $('.liuyi-flex-right').children().eq(i).click()
+                                console.log(i)
+                            }
+                            //console.log(Number($('.liuyi-flex-right').children().eq(i).html().split('(')[0].split('-')[0]))
+                        }
 
                     },
                     error: function (e) {
@@ -450,9 +462,9 @@
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <th><p class="bias-left">时间</p><p class="bias"></p><p class="bias-right">房间</p></th>
-                        <th colspan="2">中信分店团操课房</th>
-                        <th colspan="2">中信分店瑜伽房</th>
-                        <th colspan="2">中信分店单车房</th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
                     </tr>
                     <tr style="height:6.5rem">
                         <td rowspan="2" style="width:7.9rem;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">

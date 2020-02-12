@@ -344,7 +344,7 @@
 
     <div class="footer-flex">
         <div class="count"></div>
-        <div class="box" id="boxpage" style="margin-top:0"></div>
+        <div class="box" id="boxpage" style="margin-top:0;margin-left:1.5rem"></div>
     </div>
     
 </body>
