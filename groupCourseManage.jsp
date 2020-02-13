@@ -1830,6 +1830,7 @@
                 console.log(data)
                 //var img = data
                 //return data
+                alert(data.message)
                 $('#demo').addClass(data.rows[0].path)
                 $('#preview1').children('div:last-child').addClass(data.rows[0].path)
             },
@@ -1840,7 +1841,6 @@
     }
 
     function upload() {
-            console.log('yidingyaoxing a ')
             uploadvideo()
 
             function uploadvideo() {
@@ -1870,6 +1870,7 @@
                         console.log(data)
                         //var img = data
                         //return data
+                        alert(data.message)
                         $('#photoFile').attr('class',data.rows[0].path)
                         $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
 
@@ -2183,6 +2184,7 @@
                                         success: function (resule) {
                                             //console.log(resule)
                                             //console.log(list)
+                                            alert(resule.message)
                                         },
                                         error: function (e) {
                                             console.log(e.status);
@@ -2212,6 +2214,7 @@
                                         success: function (resule) {
                                             //console.log(resule)
                                             //console.log(list)
+                                            alert(resule.message)
                                         },
                                         error: function (e) {
                                             console.log(e.status);
@@ -2244,6 +2247,7 @@
                                     success: function (resule) {
                                         //console.log(resule)
                                         //console.log(list)
+                                        alert(resule.message)
                                     },
                                     error: function (e) {
                                         console.log(e.status);
@@ -2276,6 +2280,7 @@
                                     success: function (resule) {
                                         //console.log(resule)
                                         //console.log(list)
+                                        alert(resule.message)
                                     },
                                     error: function (e) {
                                         console.log(e.status);
@@ -3155,6 +3160,7 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
+                            alert(result.message)
                         },
                         error: function (e) {
                             console.log(e.status);
@@ -3194,6 +3200,7 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
+                            alert(result.message)
                         },
                         error: function (e) {
                             console.log(e.status);

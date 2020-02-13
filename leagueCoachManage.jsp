@@ -883,6 +883,7 @@
                     console.log(data)
                     $("#preview_photo").attr("src", 'images/'+data.rows[0].path)
                     $('#photoFile').attr('class', data.rows[0].path)
+                    alert(data.message)
                 },
                 error: function (data) {
                     alert("上传失败")
@@ -1229,6 +1230,7 @@
 
         ccm_a() {
             var that = this
+            //编辑员工点击
             this.coach_manage_a.click(function () {
                 //console.log($(this).parent().parent().children().eq(2).html())
 
@@ -1280,7 +1282,7 @@
                                                     <div style="display:flex">
                                                         <img id="preview_photo" src="images/`+ result.rows[0].pictures +`" style="width:6.5rem;height:7.4rem">
                                                         <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" id="clickclick">上传头像</p>
-                                                        <input type="file" class="" id="photoFile" style="display: none;" onchange="upload()">
+                                                        <input type="file" class="`+ result.rows[0].pictures +`" id="photoFile" style="display: none;" onchange="upload()">
                                                     </div>
                                                     <div id="shouqishouqi" style="display:flex">
                                                         <p style="font-size:0.7rem;color:#71B2EF;margin-right:0.5rem">收起</p>    
@@ -1350,7 +1352,7 @@
                                                     <div style="display:flex">
                                                         <img id="preview_photo" src="images/`+ result.rows[0].pictures +`" style="width:6.5rem;height:7.4rem">
                                                         <p style="width:4rem;height:1.5rem;background:#71B2EF;color:white;text-align:center;line-height:1.5rem;border-radius:0.2rem" id="clickclick">上传头像</p>
-                                                        <input type="file" class="" id="photoFile" style="display: none;" onchange="upload()">
+                                                        <input type="file" class="`+ result.rows[0].pictures +`" id="photoFile" style="display: none;" onchange="upload()">
                                                     </div>
                                                     <div id="shouqishouqi" style="display:flex">
                                                         <p style="font-size:0.7rem;color:#71B2EF;margin-right:0.5rem">收起</p>    
