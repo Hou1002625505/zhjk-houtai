@@ -3186,8 +3186,8 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
-                            alert(result.message)
-                            //window.location.reload()
+                            //alert(result.message)
+                            window.location.reload()
                         },
                         error: function (e) {
                             console.log(e.status);
@@ -3227,8 +3227,8 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
-                            alert(result.message)
-                            //window.location.reload()
+                            //alert(result.message)
+                            window.location.reload()
                         },
                         error: function (e) {
                             console.log(e.status);
