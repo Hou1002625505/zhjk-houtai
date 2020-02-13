@@ -456,7 +456,7 @@
         .flexthree-blocktwo-pfour .blocktwo-pfour-p a {
             position: absolute;
             top: -0.3rem;
-            left: 3.5rem;
+            left: 100%;
             display: none;
         }
 
@@ -486,7 +486,7 @@
         .flexthree-blocktwo-pfive .blocktwo-pfive-p a {
             position: absolute;
             top: -0.3rem;
-            left: 3.75rem;
+            left: 100%;
             display: none;
         }
 
