@@ -19,12 +19,15 @@
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
     <link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
+    <link rel="stylesheet" href="easyui/datouwang.com.css">
+    
     <script type="text/javascript" src="easyui/moment.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="easyui/dateTime.min.js"></script>
     <!-- <link rel="stylesheet" href="imgui/zyUpload.css" type="text/css"> -->
     <!-- 引用核心层插件 -->
     <!-- <script src="imgui/zyFile.js"></script> -->
@@ -2433,11 +2436,11 @@
                             <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
-                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <div class="mycontainer" style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
                             <input id="edit-course-context-four" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="margin:0 0.3rem 0 0.3rem">-</p>
-                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <div class="mycontainer" style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
                             <input id="edit-course-context-five" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                         </div>
@@ -2656,6 +2659,16 @@
 
             }
         }
+
+            $("#edit-course-context-four").datetime({
+                type: "time",
+                value: [12, 28]
+            })
+
+            $("#edit-course-context-five").datetime({
+                type: "time",
+                value: [12, 28]
+            })
 
             // $('#select-menu-input-coursename').click(function(){
             //     $('#add-course-name1').show()
@@ -4295,12 +4308,12 @@
                             <input id="edit-course-context-three" style="width:7.5rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="font-size:0.9rem;margin-right:0.9rem">上课时间</p>
-                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
-                            <input id="edit-course-context-four" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
+                            <div class="mycontainer" style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-four" class='edit-course-context-four111' style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                             <p style="margin:0 0.3rem 0 0.3rem">-</p>
-                            <div style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
-                            <input id="edit-course-context-five" style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
+                            <div class="mycontainer" style="width:6rem;height:1.8rem;border:1px solid #BFBFBF;border-radius:0.2rem;">
+                            <input id="edit-course-context-five" class='edit-course-context-five111' style="width:6rem;height:1.8rem;border:0;padding-left:0.5rem;box-sizing:border-box"></input>
                             </div>
                         </div>
 
@@ -4516,6 +4529,16 @@
 
                     }
                 }
+
+                $(".edit-course-context-four111").datetime({
+                    type: "time",
+                    value: [12, 28]
+                })
+
+                $(".edit-course-context-five111").datetime({
+                    type: "time",
+                    value: [12, 28]
+                })
 
                 //添加教练的叉叉关闭
                 $('#add-edit-course-hide').click(function () {

@@ -13,9 +13,11 @@
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+    
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    
     <style>
 
         html{
