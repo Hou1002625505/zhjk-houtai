@@ -256,8 +256,6 @@
             new liuyi().init()
         }
 
-        
-
         class liuyi {
             init() {
                 this.liuyi()
@@ -301,6 +299,10 @@
                 
                 //门店选择时间渲染
                 setTimeout(() => {
+
+                    if($('#select-menu-input').val() == ''){
+                        console.log(111)
+                    }
 
                     var list = {
                         storeId: "16",

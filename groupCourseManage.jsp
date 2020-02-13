@@ -1902,6 +1902,52 @@
             }
         }
 
+    //支付
+        $(".paypay").click(function () {
+            $('.paypay').children('.paypay-show').hide()
+            $('.paypay').children('.paypay-hidden').show()
+            $(this).parent().parent().children().children('.paypay').removeClass('11')
+            if ($(this).children('.paypay-hidden').is(":hidden")) {
+                $(this).children('.paypay-hidden').show()
+                $(this).children('.paypay-show').hide()
+            } else {
+                $(this).children('.paypay-hidden').hide()
+                $(this).children('.paypay-show').show()
+                $(this).addClass('11')
+            }
+        })
+
+    $('#add-course-sortone-inputten').children().children('.paypay').click(function () {
+            $(".inputtwelve-checkbox").unbind()
+            woyaowoyao()
+            console.log(111111111)
+        })
+
+    woyaowoyao()
+
+    function woyaowoyao() {
+            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+                $(".inputtwelve-checkbox").click(function () {
+                    $(".inputtwelve-checkbox").children('img').hide()
+                    if ($(this).children('img').is(":hidden")) {
+                        $(this).children('img').show()
+                        $(".add-course-checkboxall").children('img').hide()
+                    } else {
+                        $(this).children('img').hide()
+                    }
+                })
+            } else {
+                $(".inputtwelve-checkbox").click(function () {
+                    if ($(this).children('img').is(":hidden")) {
+                        $(this).children('img').show()
+                        $(".add-course-checkboxall").children('img').hide()
+                    } else {
+                        $(this).children('img').hide()
+                    }
+                })
+            }
+        }
+
     window.onload = function () {
         new course_manage().init();
         new add_course().init()
@@ -2168,7 +2214,6 @@
 
                                 var id = [];
 
-                                if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
                                     id.push($(this).parent().attr('class'))
 
                                     var params1 = {
@@ -2191,14 +2236,12 @@
                                             console.log(e.responseText)
                                         }
                                     })
-                                }
                                 window.location.reload()
                             })
 
                             $('.course-manage-table-tr-down').click(function(){
                                 var id = [];
 
-                                if ($(this).parent().parent().children().eq(0).children().children().children().is(':visible')) {
                                     id.push($(this).parent().attr('class'))
 
                                     var params1 = {
@@ -2221,7 +2264,6 @@
                                             console.log(e.responseText)
                                         }
                                     })
-                                }
                                 window.location.reload()
                             })
 
@@ -2912,18 +2954,7 @@
         }
 
         pay_pay() {
-            //支付
-            $(".paypay").click(function () {
-                $('.paypay').children('.paypay-show').hide()
-                $('.paypay').children('.paypay-hidden').show()
-                if ($(this).children('.paypay-hidden').is(":hidden")) {
-                    $(this).children('.paypay-hidden').show()
-                    $(this).children('.paypay-show').hide()
-                } else {
-                    $(this).children('.paypay-hidden').hide()
-                    $(this).children('.paypay-show').show()
-                }
-            })
+            
 
             //console.log($(".add-course-sortone-inputthree-p"))
 
@@ -2942,16 +2973,11 @@
             //         $(this).addClass('add-course-sortone-inputthree-p-active')
             //     }
             // })
+            
+            // if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+                
+            // }
 
-            this.it_checkbox.click(function () {
-                $(".inputtwelve-checkbox").children('img').hide()
-                if ($(this).children('img').is(":hidden")) {
-                    $(this).children('img').show()
-                    $(".add-course-checkboxall").children('img').hide()
-                } else {
-                    $(this).children('img').hide()
-                }
-            })
             //广信标签展开
             this.zhankai_show.click(function () {
                 $(".inputtwelve-flex").css('height', 'auto')
@@ -3161,6 +3187,7 @@
                         success: function (result) {
                             console.log(result)
                             alert(result.message)
+                            //window.location.reload()
                         },
                         error: function (e) {
                             console.log(e.status);
@@ -3201,6 +3228,7 @@
                         success: function (result) {
                             console.log(result)
                             alert(result.message)
+                            //window.location.reload()
                         },
                         error: function (e) {
                             console.log(e.status);
@@ -3211,7 +3239,7 @@
 
                 }
             
-                window.location.reload()
+                //window.location.reload()
                 
             })
         }
