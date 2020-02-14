@@ -295,8 +295,229 @@
 
                         $(this).css('background', '#71B2EF')
                         $(this).css('color', 'white')
-                    })
 
+                        function panduan(i, j) {
+                            var str
+                            if (i == '') {
+                                return str = ''
+                            } else if (i.length < j + 1) {
+                                return str = ''
+                            } else {
+                                return str = i[j].roomName
+                            }
+                        }
+
+                        function content(i, j, k, h) {
+                            var str
+                            if (i == '') {
+                                return str = ''
+                            } else if (i.length < j + 1) {
+                                return str = ''
+                            } else if (!i[j].children[k].children) {
+                                return str = ''
+                            } else if (i[j].children[k].children.length < h + 1) {
+                                return str = ''
+                            } else {
+                                return str = `<p style="font-size:0.8rem">` + i[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem">` + i[j].children[k].children[h].timeStr + `<p>`
+                            }
+                        }
+
+                        for (var i = 0; i < result.rows.length; i++) {
+                            if ($(this).html().split('(')[0] == result.rows[i].monthDayStr) {
+                                var tablestr = ''
+                                tablestr = `
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <th><p class="bias-left">时间</p><p class="bias"></p><p class="bias-right">房间</p></th>
+                                                <th colspan="2">`+ panduan(result.rows[i].children, 0) + `</th>
+                                                <th colspan="2">`+ panduan(result.rows[i].children, 1) + `</th>
+                                                <th colspan="2">`+ panduan(result.rows[i].children, 2) + `</th>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td rowspan="2" style="width:7.9rem;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                                                    上午
+                                                    <br>
+                                                    <br>
+                                                    8:00-11:59
+                                                </td>
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 1) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 3) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                                                    下午
+                                                    <br>
+                                                    <br>
+                                                    12:00-17:59
+                                                </td>
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 1) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 3) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 4) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 5) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 4) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 5) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 4) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 5) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 6) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 7) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 6) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 7) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 6) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 7) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td rowspan="4" style="width:140px;background:white;border:1px solid #BFBFBF;border-top:none;font-size:0.9rem">
+                                                    晚上
+                                                    <br>
+                                                    <br>
+                                                    18:00-21:30
+                                                </td>
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 1) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 0) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 1) + `</div>
+                                                </td>
+                                            </tr>
+                                            <tr style="height:6.5rem">
+                                                <td style="width:11.4rem;padding-left:0.5rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 3) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 2) + `</div>
+                                                </td>
+                                                <td style="width:11.4rem">
+                                                    <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 3) + `</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    `
+                                $('.liuyi-table').html(tablestr)
+                            }
+                        }
+                    })
+                    //new liuyi().init()
                 },
                 error: function (e) {
                     console.log(e.status)
@@ -628,6 +849,7 @@
                                     $('.liuyi-table').html(tablestr)
                                 }
                             }
+                        
                         })
 
                         for (var i = 0; i < $('.liuyi-flex-right').children().length; i++) {
@@ -711,21 +933,8 @@
             liuyi_table() {
                 
             }
-            // ajax(){
-            //     var list = {}
-            //     $.ajax({
-            //         type:'get',
-            //         url:'http://172.16.7.20:8080/rest/leagueCoach/selectLeagueCoachList',
-            //         data: JSON.stringify(list),
-            //         success : function(result){
-            //             console.log(result)
-            //         },
-            //         error : function(e){
-            //             console.log(e.status);
-            //             console.log(e.responseText)
-            //         }
-            //     })
-            // }
+            
+            
         }
 
 </script>
