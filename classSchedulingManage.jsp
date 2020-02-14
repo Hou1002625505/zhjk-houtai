@@ -252,7 +252,7 @@
 <script type="text/javascript" src="easyui/datepicker.all.js"></script>
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
 <script type="text/javascript">
-
+    var weekweek = 0
     $('.liuyi-flex-right-p1').click(function () {
             var storeId = ''
             for(var i=0;i<$('#select-menu-ul').children().length;i++){
@@ -261,9 +261,11 @@
                 }
             }
 
+
+            weekweek++
             var list = {
                 storeId: storeId,
-                week: 1
+                week: weekweek
             }
 
             $.ajax({
