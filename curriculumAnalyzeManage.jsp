@@ -463,7 +463,7 @@
                     var pulishmendian = '';
                     //门店列表渲染
                     $.ajax({
-                        url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                        url: 'rest/club/getClubInfo',
                         type: 'GET',
                         dataType: 'json',
                         success: function (data) {
@@ -489,7 +489,7 @@
                     }
                     //课程列表渲染
                     $.ajax({
-                        url : 'http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist',
+                        url : 'rest/wx/dictionnary/getdictionnarylist',
                         type: 'POST',
                         contentType: 'application/json;charset=UTF-8',
                         data: JSON.stringify(courselist),
@@ -633,7 +633,7 @@
                             }
 
                             $.ajax({
-                                url: 'http://test.physicalclub.com/rest/curriculumAnalyze/selectCurriculumAnalyzeList',
+                                url: 'rest/curriculumAnalyze/selectCurriculumAnalyzeList',
                                 type: 'POST',
                                 contentType: 'application/json;charset=UTF-8',
                                 data: JSON.stringify(list),
@@ -717,7 +717,7 @@
                             }
 
                         $.ajax({
-                            url: 'http://test.physicalclub.com/rest/curriculumAnalyze/selectStudentAnalyzeList',
+                            url: 'rest/curriculumAnalyze/selectStudentAnalyzeList',
                             type: 'POST',
                             contentType: 'application/json;charset=UTF-8',
                             data: JSON.stringify(list),
@@ -825,7 +825,7 @@
                             }
 
                             $.ajax({
-                                url: 'http://test.physicalclub.com/rest/curriculumAnalyze/selectCoachAnalyzeList',
+                                url: 'rest/curriculumAnalyze/selectCoachAnalyzeList',
                                 type: 'POST',
                                 contentType: 'application/json;charset=UTF-8',
                                 data: JSON.stringify(list),

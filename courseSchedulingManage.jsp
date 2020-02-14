@@ -2287,7 +2287,7 @@
 
             endDate = $('#end-course-time').val()
 
-            location.href = "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId="+storeId+'&roomId='+roomId+'&realName='+realName+'&userName='+userName+'&startDate='+startDate+'&endDate='+endDate
+            location.href = "rest/courseScheduling/exportCourseScheduling?storeId="+storeId+'&roomId='+roomId+'&realName='+realName+'&userName='+userName+'&startDate='+startDate+'&endDate='+endDate
     })
 
     //导出课程
@@ -2329,7 +2329,7 @@
 
         endDate = $('#end-course-time1').val()
 
-        location.href = "http://test.physicalclub.com/rest/courseScheduling/exportCourseScheduling?storeId=" + storeId + '&roomId=' + roomId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
+        location.href = "rest/courseScheduling/exportCourseScheduling?storeId=" + storeId + '&roomId=' + roomId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
     })
 
     $('#leadlead').click(function(){
@@ -2353,7 +2353,7 @@
         formData.append('file', document.getElementById('filelead').files[0])
         // }
         $.ajax({
-            url: "http://test.physicalclub.com/rest/courseScheduling/insertImportCourseScheduling",
+            url: "rest/courseScheduling/insertImportCourseScheduling",
             type: "post",
             data: formData,
             contentType: false,
@@ -2746,7 +2746,7 @@
                 setTimeout(() => {
                     var strfirstfirst = '';
                     $.ajax({
-                        url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                        url: 'rest/club/getClubInfo',
                         type: 'GET',
                         dataType: 'json',
                         success: function (data) {
@@ -2786,7 +2786,7 @@
                                     // var RoomList = { clubId: storeId1 }
                                     // console.log(RoomList)
                                     $.ajax({
-                                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
+                                        url: 'rest/club/getClubRoomList?clubId='+storeId1,
                                         type: 'POST',
                                         success: function (result) {
                                             console.log(result)
@@ -2822,7 +2822,7 @@
                     $.ajax({
                         type: 'GET',
                         contentType: "application/json;charset=UTF-8",
-                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                        url: "rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
                         success: function (results) {
                             console.log(results)
                             var result = results.rows
@@ -2953,7 +2953,7 @@
                     $('#search-search').click(function () {
                         setTimeout(() => {
                             $.ajax({
-                                url: 'http://test.physicalclub.com/crm/rest/leagueCoach/getLeagueCoachByJobNumber/' + $('#search-value').val(),
+                                url: 'rest/leagueCoach/getLeagueCoachByJobNumber/' + $('#search-value').val(),
                                 type: 'GET',
                                 dataType: 'json',
                                 success: function (result) {
@@ -3304,7 +3304,7 @@
                         console.log(addcfpone)
 
                         $.ajax({
-                            url: 'http://test.physicalclub.com/rest/courseScheduling/insertCourseScheduling',
+                            url: 'rest/courseScheduling/insertCourseScheduling',
                             type: 'POST',
                             contentType: 'application/json;charset=UTF-8',
                             data: JSON.stringify(addcfpone),
@@ -3342,7 +3342,7 @@
         }
         console.log(recommended)
         $.ajax({
-            url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
@@ -3374,7 +3374,7 @@
         }
 
         $.ajax({
-        url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+        url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
         type: 'POST',
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify(recommended),
@@ -3492,7 +3492,7 @@
                     console.log(taglist)
 
                     $.ajax({
-                        url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                        url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
                         type: 'POST',
                         contentType: 'application/json;charset=UTF-8',
                         data: JSON.stringify(taglist),
@@ -3526,7 +3526,7 @@
         }
 
         $.ajax({
-            url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
@@ -3559,7 +3559,7 @@
         }
 
         $.ajax({
-            url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
@@ -3596,7 +3596,7 @@
         }
 
         $.ajax({
-            url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
@@ -3774,7 +3774,7 @@
             var pulishmendian = '';
             //门店列表渲染
             $.ajax({
-                url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                url: 'rest/club/getClubInfo',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -3809,7 +3809,7 @@
                         }
                     //var RoomList = { clubId = storeId1 }
                     $.ajax({
-                        url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
+                        url: 'rest/club/getClubRoomList?clubId='+storeId1,
                         type: 'POST',
                         success: function (result) {
                             console.log(result)
@@ -3959,7 +3959,7 @@
                     endDate : endDate
                 }
                 $.ajax({
-                    url: 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                    url: 'rest/courseScheduling/selectCourseSchedulingList',
                     type: 'POST',
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify(SchedulingList),
@@ -4088,7 +4088,7 @@
                 } 
 
             $.ajax({
-                url : 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                url : 'rest/courseScheduling/selectCourseSchedulingList',
                 type : 'POST',
                 contentType : 'application/json;charset=UTF-8',
                 data : JSON.stringify(SchedulingList),
@@ -4595,7 +4595,7 @@
                         var strfirstfirst = '';
                         //门店列表渲染
                         $.ajax({
-                            url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                            url: 'rest/club/getClubInfo',
                             type: 'GET',
                             dataType: 'json',
                             success: function (data) {
@@ -4619,7 +4619,7 @@
                         var strsecond = '';                  
                         //var RoomList = { clubId : listdata.storeId }
                         $.ajax({
-                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+listdata.storeId,
+                            url: 'rest/club/getClubRoomList?clubId='+listdata.storeId,
                             type: 'POST',
                             success: function (result) {
                                 console.log(result)
@@ -4656,7 +4656,7 @@
                             $.ajax({
                                 type: 'GET',
                                 contentType: "application/json;charset=UTF-8",
-                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                url: "rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
                                 success: function (results) {
                                     console.log(results)
                                     var result = results.rows
@@ -4820,7 +4820,7 @@
                             $('#search-search').click(function(){
                                 setTimeout(() => {
                                     $.ajax({
-                                        url: 'http://test.physicalclub.com/crm/rest/leagueCoach/getLeagueCoachByJobNumber/'+$('#search-value').val(),
+                                        url: 'rest/leagueCoach/getLeagueCoachByJobNumber/'+$('#search-value').val(),
                                         type: 'GET',
                                         dataType: 'json',
                                         success: function (result) {
@@ -5130,7 +5130,7 @@
                             console.log(paramsrevise)
 
                             $.ajax({
-                                url : 'http://test.physicalclub.com/rest/courseScheduling/updateCourseScheduling',
+                                url : 'rest/courseScheduling/updateCourseScheduling',
                                 type : 'POST',
                                 contentType : 'application/json;charset=UTF-8',
                                 data : JSON.stringify(paramsrevise),
@@ -5249,7 +5249,7 @@
                 console.log(idsstr)
 
                 $.ajax({
-                    url : 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                    url : 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
                     type : 'POST',
                     contentType : 'application/json;charset=UTF-8',
                     data : JSON.stringify(idsstr),
@@ -5383,7 +5383,7 @@
                 var pulishmendian = '';
                 //门店列表渲染
                 $.ajax({
-                    url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                    url: 'rest/club/getClubInfo',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -5423,7 +5423,7 @@
                         //var RoomList = { clubId: storeId1 }
                         //console.log(RoomList)
                         $.ajax({
-                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList?clubId='+storeId1,
+                            url: 'rest/club/getClubRoomList?clubId='+storeId1,
                             type: 'POST',
                             success: function (result) {
                                 console.log(result)
@@ -5644,7 +5644,7 @@
                     console.log(SchedulingList)
 
                     $.ajax({
-                        url: 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                        url: 'rest/courseScheduling/selectCourseSchedulingList',
                         type: 'POST',
                         contentType: 'application/json;charset=UTF-8',
                         data: JSON.stringify(SchedulingList),
@@ -5773,7 +5773,7 @@
             }
 
             $.ajax({
-                url: 'http://test.physicalclub.com/rest/courseScheduling/selectCourseSchedulingList',
+                url: 'rest/courseScheduling/selectCourseSchedulingList',
                 type: 'POST',
                 contentType: 'application/json;charset=UTF-8',
                 data: JSON.stringify(SchedulingList),
@@ -6217,7 +6217,7 @@
                         var strfirstfirst = '';
                         //门店列表渲染
                         $.ajax({
-                            url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                            url: 'rest/club/getClubInfo',
                             type: 'GET',
                             dataType: 'json',
                             success: function (data) {
@@ -6241,7 +6241,7 @@
                         var strsecond = '';
                         var RoomList = { clubId: listdata.storeId }
                         $.ajax({
-                            url: 'http://test.physicalclub.com/crm/rest/club/getClubRoomList',
+                            url: 'rest/club/getClubRoomList',
                             type: 'POST',
                             contentType: 'application/json;charset=UTF-8',
                             data: JSON.stringify(RoomList),
@@ -6281,7 +6281,7 @@
                             $.ajax({
                                 type: 'GET',
                                 contentType: "application/json;charset=UTF-8",
-                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                url: "rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
                                 success: function (results) {
                                     console.log(results)
                                     var result = results.rows
@@ -6445,7 +6445,7 @@
                             $('#search-search2').click(function () {
                                 setTimeout(() => {
                                     $.ajax({
-                                        url: 'http://test.physicalclub.com/crm/rest/leagueCoach/getLeagueCoachByJobNumber/' + $('#search-value2').val(),
+                                        url: 'rest/leagueCoach/getLeagueCoachByJobNumber/' + $('#search-value2').val(),
                                         type: 'GET',
                                         dataType: 'json',
                                         success: function (result) {
@@ -6859,7 +6859,7 @@
                                     // console.log(paramsrevise)
 
                                     $.ajax({
-                                        url: 'http://test.physicalclub.com/rest/courseScheduling/updateCourseScheduling',
+                                        url: 'rest/courseScheduling/updateCourseScheduling',
                                         type: 'POST',
                                         contentType: 'application/json;charset=UTF-8',
                                         data: JSON.stringify(paramsrevise),
@@ -7079,7 +7079,7 @@
                 console.log(idsstr)
 
                 $.ajax({
-                    url: 'http://test.physicalclub.com/rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+                    url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
                     type: 'POST',
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify(idsstr),

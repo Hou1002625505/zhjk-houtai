@@ -876,7 +876,7 @@
             var formData = new FormData();
             formData.append('file', document.getElementById('photoFile').files[0]);
             $.ajax({
-                url: "http://test.physicalclub.com/crm/rest/leagueCoach/uploadLeagueCoachFile",
+                url: "rest/leagueCoach/uploadLeagueCoachFile",
                 type: "post",
                 data: formData,
                 contentType: false,
@@ -923,7 +923,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupType),
                 success: function (result) {
                     var strGroupType;
@@ -1054,7 +1054,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/leagueCoach/selectLeagueCoachList",
+                url: "rest/leagueCoach/selectLeagueCoachList",
                 data: JSON.stringify(paramscoach),
                 success: function (result) {
                     console.log(result)
@@ -1251,7 +1251,7 @@
                 $.ajax({
                     type: 'POST',
                     contentType: "application/json;charset=UTF-8",
-                    url: "http://test.physicalclub.com/rest/leagueCoach/selectLeagueCoachList",
+                    url: "rest/leagueCoach/selectLeagueCoachList",
                     data: JSON.stringify(paramscoach),
                     success: function (result) {
                         var list = result
@@ -1414,7 +1414,7 @@
                             $.ajax({
                                 type: 'POST',
                                 contentType: "application/json;charset=UTF-8",
-                                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                                url: "rest/wx/dictionnary/getdictionnarylist",
                                 data: JSON.stringify(paramstkCoachIabel),
                                 success: function (result) {
                                     // console.log(list)
@@ -1467,7 +1467,7 @@
                             $.ajax({
                                 type: 'GET',
                                 contentType: "application/json;charset=UTF-8",
-                                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
+                                url: "rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
                                 success: function (results) {
                                     console.log(results)
                                     var result = results.rows
@@ -1732,7 +1732,7 @@
 
                $.ajax({
                     type: 'POST',
-                    url: "http://test.physicalclub.com/rest/leagueCoach/updateLeagueCoach",
+                    url: "rest/leagueCoach/updateLeagueCoach",
                     contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
                     data: JSON.stringify(paramcoach),
                     success: function (result) {

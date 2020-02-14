@@ -267,7 +267,7 @@
             }
 
             $.ajax({
-                url: 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
+                url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
                 type: 'POST',
                 contentType: 'application/json;charset=UTF-8',
                 data: JSON.stringify(list),
@@ -325,7 +325,7 @@
                 //门店列表和选择时间渲染
                 
                 $.ajax({
-                    url: 'http://test.physicalclub.com/rest/club/getClubInfo',
+                    url: 'rest/club/getClubInfo',
                     type: 'GET',
                     dataType: 'json',
                     success: function (data) {
@@ -375,7 +375,7 @@
                     }
 
                     $.ajax({
-                    url: 'http://test.physicalclub.com/rest/classScheduling/selectGroupByCourseSchedulingList',
+                    url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
                     type: 'POST',
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify(list),

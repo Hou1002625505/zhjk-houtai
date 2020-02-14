@@ -1821,7 +1821,7 @@
         // }
         formData.append('fileType', 1);
         $.ajax({
-            url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
+            url: "rest/leagueCurriculum/uploadLeagueCurriculumFile",
             type: "post",
             data: formData,
             contentType: false,
@@ -1861,7 +1861,7 @@
                 //}
                 formData.append('fileType', 2);
                 $.ajax({
-                    url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/uploadLeagueCurriculumFile",
+                    url: "rest/leagueCurriculum/uploadLeagueCurriculumFile",
                     type: "post",
                     data: formData,
                     contentType: false,
@@ -2070,7 +2070,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupType),
                 success: function (result) {
                     var strGroupType;
@@ -2136,7 +2136,7 @@
 
                     $.ajax({
                         type: 'POST',
-                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                        url: 'rest/leagueCurriculum/selectLeagueCurriculumList',
                         contentType: "application/json;charset=UTF-8",
                         data: JSON.stringify(params),
                         success: function (result) {
@@ -2223,7 +2223,7 @@
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                        url: 'rest/leagueCurriculum/updateAllLeagueCurriculumState',
                                         contentType: "application/json;charset=UTF-8",
                                         data: JSON.stringify(params1),
                                         success: function (resule) {
@@ -2251,7 +2251,7 @@
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                        url: 'rest/leagueCurriculum/updateAllLeagueCurriculumState',
                                         contentType: "application/json;charset=UTF-8",
                                         data: JSON.stringify(params1),
                                         success: function (resule) {
@@ -2283,7 +2283,7 @@
 
                                 $.ajax({
                                     type: 'POST',
-                                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                    url: 'rest/leagueCurriculum/updateAllLeagueCurriculumState',
                                     contentType: "application/json;charset=UTF-8",
                                     data: JSON.stringify(params1),
                                     success: function (resule) {
@@ -2316,7 +2316,7 @@
 
                                 $.ajax({
                                     type: 'POST',
-                                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/updateAllLeagueCurriculumState',
+                                    url: 'rest/leagueCurriculum/updateAllLeagueCurriculumState',
                                     contentType: "application/json;charset=UTF-8",
                                     data: JSON.stringify(params1),
                                     success: function (resule) {
@@ -2419,7 +2419,7 @@
                 }
                 $.ajax({
                     type: 'POST',
-                    url: 'http://test.physicalclub.com/crm/rest/leagueCurriculum/selectLeagueCurriculumList',
+                    url: 'rest/leagueCurriculum/selectLeagueCurriculumList',
                     contentType: "application/json;charset=UTF-8",
                     data: JSON.stringify(paramsall),
                     success: function (resultall) {
@@ -2612,7 +2612,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupType),
                 success: function (result) {
                     var strGroupType;
@@ -2642,7 +2642,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGCourseType),
                 success: function (result) {
                     var strmodel;
@@ -2672,7 +2672,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupCourseGole),
                 success: function (result) {
                     var strmodel = '';
@@ -2701,7 +2701,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/rest/wx/dictionnary/getdictionnarylist",
+                url: "rest/wx/dictionnary/getdictionnarylist",
                 data: JSON.stringify(paramsGroupRadar),
                 success: function (result) {
                     var strGroupRadar = '';
@@ -2729,7 +2729,7 @@
             $.ajax({
                 type: 'POST',
                 contentType: "application/json;charset=UTF-8",
-                url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/selectGxFitListByCondition",
+                url: "rest/leagueCurriculum/selectGxFitListByCondition",
                 data: JSON.stringify(paramsgxbm),
                 success: function (result) {
                     var strgxbm = '';
@@ -3183,7 +3183,7 @@
 
                     $.ajax({
                         type: 'POST',
-                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/updateLeagueCurriculum",
+                        url: "rest/leagueCurriculum/updateLeagueCurriculum",
                         contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
                         data: JSON.stringify(fd),
                         success: function (result) {
@@ -3224,7 +3224,7 @@
 
                     $.ajax({
                         type: 'POST',
-                        url: "http://test.physicalclub.com/crm/rest/leagueCurriculum/insertLeagueCurriculum",
+                        url: "rest/leagueCurriculum/insertLeagueCurriculum",
                         contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
                         data: JSON.stringify(fd),
                         success: function (result) {
