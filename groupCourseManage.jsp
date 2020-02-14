@@ -2476,14 +2476,17 @@
 
                                 if (item.curriculumPayTypeList[0].payTypeName == '付现') {
                                     $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
-                                } else if (item.curriculumPayTypeList[0].payTypeName == '会员卡扣') {
+                                }else{
                                     $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
                                 }
 
                                 for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                                    if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[0].curriculumGuangxinList[0].itemId) {
-                                        $('#inputtwelve-flex').children().eq(i).children('img').show()
+                                    for(var j=0;j< item.curriculumPayTypeList[0].curriculumGuangxinList.length;j++){
+                                        if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[0].curriculumGuangxinList[j].itemId) {
+                                            $('#inputtwelve-flex').children().eq(i).children('img').show()
+                                        }
                                     }
+                                    
                                 }
                                 
                                 //图片的渲染
@@ -2954,7 +2957,6 @@
         }
 
         pay_pay() {
-            
 
             //console.log($(".add-course-sortone-inputthree-p"))
 
@@ -3186,7 +3188,7 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
-                            //alert(result.message)
+                            alert(result.message)
                             window.location.reload()
                         },
                         error: function (e) {
@@ -3196,8 +3198,8 @@
                     })
                 
                 }
-                if (!id) {
-
+                //if (!id) 
+                else{
                     var fd = {
                         modeId: modeId,
                         suitableForCrowd: suitableForCrowd,
@@ -3227,7 +3229,7 @@
                         data: JSON.stringify(fd),
                         success: function (result) {
                             console.log(result)
-                            //alert(result.message)
+                            alert(result.message)
                             window.location.reload()
                         },
                         error: function (e) {
