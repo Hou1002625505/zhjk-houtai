@@ -327,6 +327,28 @@
 			font-size: 16px;
 			margin-left:15px
 		}
+		.sj-body-flex{
+			width:100%;
+			display: flex;
+			align-items: center;
+		}
+		#sj-body-fhsyj{
+			font-size:16px;
+			color:#71B2EF
+		}
+		.sj-body-line{
+			height:1px;
+			background:#BFBFBF;
+			margin-top:10px
+		}
+		#sj-body-hdmc{
+			font-size:18px;
+			color:#444444;
+		}
+		#sj-body-gd{
+			font-size:16px;
+			color:#71B2EF
+		}
 	</style>
 </head>
 
@@ -476,7 +498,7 @@
 
 	</div>
 
-	<div class="xzhd-body">
+	<div class="xzhd-body" style="display:none">
 		<div style="width:100%">
 			<div id="fhsyj">返回上一级</div>
 		</div>
@@ -555,6 +577,17 @@
 			<p id="xzhd-body-quxiao">返回</p>
 		</div>
 	</div>
+
+	<div class="sj-body">
+		<div class='sj-body-flex'>
+			<p id="sj-body-fhsyj">返回上一级</p>
+		</div>
+		<div class="sj-body-line"></div>
+		<div class='sj-body-flex' style="margin-top:10px">
+			<p id="sj-body-hdmc">活动名称：情人双人健身月卡</p>
+			<div style="display:flex"><p id="sj-body-gd">更多</p></div>
+		</div>
+	</div>
 </body>
 
 <script>
@@ -571,6 +604,16 @@
 		$('.xzhd-body-zstjraduis').children().hide()
 		$(this).css('border-color','#71B2EF')
 		$(this).children().show()
+	})
+
+	$('#xjhd-start').click(function(){
+		$('.xzhd-body').show()
+		$('.yqyl-body').hide()
+	})
+
+	$('#fhsyj').click(function(){
+		$('.xzhd-body').hide()
+		$('.yqyl-body').show()
 	})
 </script>
 
