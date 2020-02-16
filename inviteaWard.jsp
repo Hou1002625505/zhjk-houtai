@@ -51,6 +51,18 @@
 			width: 12.5%
 		}
 
+		.item22{
+			width:9.375%
+		}
+
+		.item33{
+			width:10.42%
+		}
+
+		.item44 {
+			width: 8.02%
+		}
+
 		#xjhd-start {
 			width: 120px;
 			height: 40px;
@@ -430,11 +442,19 @@
 			font-size:16px;
 			margin-left:220px
 		}
+		.table-body1 tr th {
+			font-size: 14px;
+			color: #444444;
+			height: 40px;
+			text-align: center;
+			border-left: 1px dotted #CCCCCC;
+			border-bottom: 1px dotted #CCCCCC
+		}
 	</style>
 </head>
 
 <body>
-	<div class="yqyl-body" style="display:none">
+	<div class="yqyl-body">
 		<div style="width:100%">
 			<p id="xjhd-start">新建活动</p>
 		</div>
@@ -490,7 +510,7 @@
 					<th class="item3">200</th>
 					<th class="item4">活动中</th>
 					<th>
-						<p>数据</p>
+						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
 						<p>|</p>
@@ -520,7 +540,7 @@
 					<th class="item3">200</th>
 					<th class="item4">活动中</th>
 					<th>
-						<p>数据</p>
+						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
 						<p>|</p>
@@ -550,7 +570,7 @@
 					<th class="item3">200</th>
 					<th class="item4">活动中</th>
 					<th>
-						<p>数据</p>
+						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
 						<p>|</p>
@@ -659,7 +679,7 @@
 		</div>
 	</div>
 
-	<div class="sj-body">
+	<div class="sj-body" style="display:none">
 		<div class='sj-body-flex'>
 			<p id="sj-body-fhsyj">返回上一级</p>
 		</div>
@@ -758,7 +778,65 @@
 			<p id="sj-body-qingchu">清除</p>
 			<p id="sj-body-dcsj">导出数据</p>
 		</div>
-		
+
+		<table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
+			<tbody>
+				<tr class="table-header" style="background:#f8fafb">
+					<th class="item1">序号</th>
+					<th class="item22">会员姓名</th>
+					<th class="item22">手机号码</th>
+					<th class="item33">优惠券名称</th>
+					<th class="item22">分享时间</th>
+					<th class="item22">领取时间</th>
+					<th class="item22">使用时间</th>
+					<th class="item22">会员性质</th>
+					<th class="item44">状态</th>
+					<th class="item44">来源</th>
+				</tr>
+			</tbody>
+			<tbody class="table-body1">
+				<tr>
+					<th class="item1">1</th>
+					<th class="item22">王小娟</th>
+					<th class="item22">15218943782</th>
+					<th class="item33">500元优惠券C</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">老客</th>
+					<th class="item44">已使用</th>
+					<th class="item44">CRM</th>
+				</tr>
+				<tr>
+					<th class="item1">1</th>
+					<th class="item22">王小娟</th>
+					<th class="item22">15218943782</th>
+					<th class="item33">500元优惠券C</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">老客</th>
+					<th class="item44">已使用</th>
+					<th class="item44">CRM</th>
+				</tr>
+				<tr>
+					<th class="item1">1</th>
+					<th class="item22">王小娟</th>
+					<th class="item22">15218943782</th>
+					<th class="item33">500元优惠券C</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">2020-02-11</th>
+					<th class="item22">老客</th>
+					<th class="item44">已使用</th>
+					<th class="item44">CRM</th>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="sj-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;color:#444444">共416条，每页10条</p>
+		</div>
 	</div>
 </body>
 
@@ -786,6 +864,16 @@
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+	})
+
+	$('#sj-body-fhsyj').click(function(){
+		$('.yqyl-body').show()
+		$('.sj-body').hide()
+	})
+
+	$('.shuju').click(function(){
+		$('.yqyl-body').hide()
+		$('.sj-body').show()
 	})
 </script>
 
