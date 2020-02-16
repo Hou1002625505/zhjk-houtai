@@ -92,7 +92,6 @@
 
 		.select_wrap {
 			position: relative;
-			margin-right: 40px;
 		}
 
 		.triangle_border_down1 {
@@ -344,10 +343,92 @@
 		#sj-body-hdmc{
 			font-size:18px;
 			color:#444444;
+			font-weight: bold
 		}
 		#sj-body-gd{
 			font-size:16px;
 			color:#71B2EF
+		}
+		.sj-body-flex1{
+			height:auto;
+			display:flex;
+			flex-wrap: wrap;
+		}
+
+		.sj-body-flex1 div:nth-child(2n){
+			margin-left:44px
+		}
+
+		.sj-body-flex-p{
+			font-size:16px;
+			color:#444444;
+			margin-right:20px
+		}
+		.sj-body-input {
+			border: 1px solid #BFBFBF;
+			overflow: hidden;
+			border-radius: 4px;
+		}
+		#sj-body-yhqmc{
+			border:none;
+			width:200px;
+			height:30px;
+		}
+		#sj-body-lqsjs{
+			width:120px;
+			height:30px;
+			border:none
+		}
+		#sj-body-lqsje{
+			width:120px;
+			height:30px;
+			border:none
+		}
+		#sj-body-zt{
+			width: 120px;
+			height: 30px;
+			border: 1px solid #d5d5d7;
+			border-radius: 4px;
+			font-size: 14px
+		}
+		#sj-body-ly{
+			width: 120px;
+			height: 30px;
+			border: 1px solid #d5d5d7;
+			border-radius: 4px;
+			font-size: 14px
+		}
+		#sj-body-chaxun{
+			width:80px;
+			height:30px;
+			background:#71B2EF;
+			color:white;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 30px;
+			font-size:16px;
+			margin-left:40px
+		}
+		#sj-body-qingchu{
+			width:80px;
+			height:30px;
+			border:1px solid #d0ced0;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 30px;
+			font-size:16px;
+			margin-left:15px
+		}
+		#sj-body-dcsj{
+			width:100px;
+			height:30px;
+			background:#71B2EF;
+			color:white;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 30px;
+			font-size:16px;
+			margin-left:220px
 		}
 	</style>
 </head>
@@ -363,7 +444,7 @@
 				<input id="yqyl-header-hdmc" type="text">
 			</div>
 			<p class="yqyl-header-p">活动状态</p>
-			<span class="select_wrap">
+			<span class="select_wrap" style="margin-right: 40px;">
 				<select name="visitstatus" id="zengjuanyuany">
 					<option value="" selected="selected">全部</option>
 					<option value="1">活动中</option>
@@ -583,10 +664,101 @@
 			<p id="sj-body-fhsyj">返回上一级</p>
 		</div>
 		<div class="sj-body-line"></div>
-		<div class='sj-body-flex' style="margin-top:10px">
+		<div class='sj-body-flex' style="margin-top:10px;justify-content: space-between;">
 			<p id="sj-body-hdmc">活动名称：情人双人健身月卡</p>
-			<div style="display:flex"><p id="sj-body-gd">更多</p></div>
+			<div style="display:flex;align-items: center;"><p id="sj-body-gd">更多</p><img style="width:13px;height:13px;margin-left:7px" src="image/pulldown_btn.png" alt=""></div>
 		</div>
+		<div class="sj-body-flex1">
+			<div style="width:800px;margin-top:22px">
+				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
+				<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
+					<div style="text-align: center;">
+						<p style="font-size:14px">已发放</p>
+						<p style="font-size:14px;margin-top:18px">150</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已领取</p>
+						<p style="font-size:14px;margin-top:18px">50</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已使用</p>
+						<p style="font-size:14px;margin-top:18px">34</p>
+					</div>
+				</div>
+			</div>
+			<div style="width:800px;margin-top:22px">
+				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
+				<div
+					style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
+					<div style="text-align: center;">
+						<p style="font-size:14px">已发放</p>
+						<p style="font-size:14px;margin-top:18px">150</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已领取</p>
+						<p style="font-size:14px;margin-top:18px">50</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已使用</p>
+						<p style="font-size:14px;margin-top:18px">34</p>
+					</div>
+				</div>
+			</div>
+			<div style="width:800px;margin-top:22px">
+				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
+				<div
+					style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
+					<div style="text-align: center;">
+						<p style="font-size:14px">已发放</p>
+						<p style="font-size:14px;margin-top:18px">150</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已领取</p>
+						<p style="font-size:14px;margin-top:18px">50</p>
+					</div>
+					<div style="text-align: center;">
+						<p style="font-size:14px">已使用</p>
+						<p style="font-size:14px;margin-top:18px">34</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sj-body-flex" style="margin-top:30px">
+			<p class="sj-body-flex-p">优惠券名称</p>
+			<div class="sj-body-input">
+				<input id="sj-body-yhqmc" type="text">
+			</div>
+			<p class="sj-body-flex-p" style="margin-left:38px">领取时间</p>
+			<div class="sj-body-input">
+				<input id="sj-body-lqsjs" type="text" placeholder="开始日期">
+			</div>
+			<div style="margin:0 10px">-</div>
+			<div class="sj-body-input">
+				<input id="sj-body-lqsje" type="text" placeholder="结束日期">
+			</div>
+			<p class="sj-body-flex-p" style="margin-left:38px">状态</p>
+			<span class="select_wrap">
+				<select name="visitstatus" id="sj-body-zt">
+					<option value="" selected="selected">全部</option>
+					<option value="1">已使用</option>
+					<option value="2">未使用</option>
+				</select>
+				<em class="triangle_border_down1"></em>
+			</span>
+			<p class="sj-body-flex-p" style="margin-left:38px">来源</p>
+			<span class="select_wrap">
+				<select name="visitstatus" id="sj-body-ly">
+					<option value="" selected="selected">全部</option>
+					<option value="1">新客</option>
+					<option value="2">老客</option>
+				</select>
+				<em class="triangle_border_down1"></em>
+			</span>
+			<p id="sj-body-chaxun">查询</p>
+			<p id="sj-body-qingchu">清除</p>
+			<p id="sj-body-dcsj">导出数据</p>
+		</div>
+		
 	</div>
 </body>
 
