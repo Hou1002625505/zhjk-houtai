@@ -166,18 +166,172 @@
 			border-right: 1px dotted #CCCCCC;
 			display: flex;
 			justify-content: center;
-			position:relative
+			position: relative
 		}
 
 		.table-body tr th:last-child p {
 			line-height: 40px;
 			color: #71B2EF
 		}
+
+		#fhsyj {
+			font-size: 16px;
+			color: #71B2EF
+		}
+
+		.xzhd-body-line {
+			height: 1px;
+			background: #BFBFBF;
+			margin-top: 20px
+		}
+
+		.xzhd-body-flex {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			margin-left: 15px
+		}
+
+		.xzhd-body-flex1 {
+			width: 100%;
+			display: flex;
+			margin-left: 15px
+		}
+
+		.xzhd-body-input {
+			border: 1px solid #BFBFBF;
+			overflow: hidden;
+			border-radius: 4px;
+		}
+
+		#xzhd-body-hdmc {
+			width: 380px;
+			height: 32px;
+			border: none;
+			color: #BFBFBF;
+		}
+
+		#xzhd-body-hdsjs {
+			width: 175px;
+			height: 32px;
+			border: none;
+			color: #BFBFBF;
+		}
+
+		#xzhd-body-hdsje {
+			width: 175px;
+			height: 32px;
+			border: none;
+			color: #BFBFBF;
+		}
+
+		#xzhd-body-fxhd {
+			width: 300px;
+			height: 32px;
+			border: none;
+			color: #BFBFBF;
+		}
+
+		.xzhd-body-down {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 10px solid #BFBFBF;
+			position: absolute;
+			right: 5px;
+			top: 11px;
+		}
+
+		#xzhd-body-lqrhd {
+			width: 300px;
+			height: 32px;
+			border: none;
+			color: #BFBFBF;
+		}
+		.xzhd-body-zstjraduis{
+			width:24px;
+			height:24px;
+			border-radius:50%;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#xzhd-body-hdbjpz-img{
+			width:120px;
+			height:150px;
+			border:1px solid #CCCCCC;
+			border-radius: 3px;
+		}
+		#xzhd-body-hdbjpz-upload{
+			width:60px;
+			height:30px;
+			border-radius: 4px;
+			background: #71B2EF;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			margin-left:15px
+		}
+		#xzhd-body-lqanpz-img{
+			width:160px;
+			height:60px;
+			border:1px solid #CCCCCC;
+			border-radius: 3px;
+		}
+		#xzhd-body-lqanpz-upload{
+			width:60px;
+			height:30px;
+			border-radius: 4px;
+			background: #71B2EF;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			margin-left:15px
+		}
+		#xzhd-body-fxwzbt{
+			width:680px;
+			height:32px;
+			border: none;
+			color: #BFBFBF;
+		}
+		#xzhd-body-fxhdxs{
+			width:680px;
+			height:160px;
+			resize: none;
+			border: none;
+			color: #BFBFBF;
+		}
+		#xzhd-body-save{
+			width:110px;
+			height:40px;
+			background: #71B2EF;
+			text-align: center;
+			line-height: 40px;
+			color:white;
+			border-radius: 4px;
+			font-size: 16px;
+		}
+		#xzhd-body-quxiao{
+			width:110px;
+			height:40px;
+			text-align: center;
+			line-height: 40px;
+			border-radius: 4px;
+			border:1px solid #BFBFBF;
+			font-size: 16px;
+			margin-left:15px
+		}
 	</style>
 </head>
 
 <body>
-	<div class="yqyl-body">
+	<div class="yqyl-body" style="display:none">
 		<div style="width:100%">
 			<p id="xjhd-start">新建活动</p>
 		</div>
@@ -238,16 +392,19 @@
 						<p>查看</p>
 						<p>|</p>
 						<p class="youxiao">有效</p>
-						<div 
-						style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
+						<div
+							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 							<div style="display:flex;justify-content: center;padding-bottom:10px">
 								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;background:#71B2EF;color:white;border-radius:4px;margin-left:26px;">确定</div>
+								<div
+									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;background:#71B2EF;color:white;border-radius:4px;margin-left:26px;">
+									确定</div>
 								<div class="quxiao"
-								style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;border:1px solid #d8d8d9;border-radius:4px;box-sizing:border-box;margin-left:15px">取消</div>
+									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;border:1px solid #d8d8d9;border-radius:4px;box-sizing:border-box;margin-left:15px">
+									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:red;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
 					</th>
 				</tr>
@@ -277,7 +434,7 @@
 									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:red;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
 					</th>
 				</tr>
@@ -307,22 +464,113 @@
 									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:red;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
 					</th>
 				</tr>
 			</tbody>
 		</table>
+		<div style="width:100%;margin-top:22px">
+			<p style="font-size:16px">共20条，每页15条</p>
+		</div>
+
+	</div>
+
+	<div class="xzhd-body">
+		<div style="width:100%">
+			<div id="fhsyj">返回上一级</div>
+		</div>
+		<div class="xzhd-body-line"></div>
+		<div style="font-size:18px;color:#444444;margin:20px 0 0 15px;">活动信息</div>
+		<div class="xzhd-body-line"></div>
+		<div class="xzhd-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;margin-right:86px">活动名称</p>
+			<div class="xzhd-body-input">
+				<input id="xzhd-body-hdmc" placeholder="请填写活动名称" type="text">
+			</div>
+		</div>
+		<div class="xzhd-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;margin-right:86px">活动时间</p>
+			<div class="xzhd-body-input">
+				<input id="xzhd-body-hdsjs" placeholder="开始时间" type="text">
+			</div>
+			<div style="color:#CCCCCC;margin:0 10px">--</div>
+			<div class="xzhd-body-input">
+				<input id="xzhd-body-hdsje" placeholder="结束时间" type="text">
+			</div>
+		</div>
+		<div class="xzhd-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;margin-right:86px">分享获得</p>
+			<div class="xzhd-body-input" style="position:relative">
+				<input id="xzhd-body-fxhd" placeholder="请选择要分享的优惠券" type="text">
+				<div class="xzhd-body-down"></div>
+			</div>
+		</div>
+		<div class="xzhd-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;margin-right:70px">领取人获得</p>
+			<div class="xzhd-body-input" style="position:relative">
+				<input id="xzhd-body-lqrhd" placeholder="请选择领取人可获得的优惠券" type="text">
+				<div class="xzhd-body-down"></div>
+			</div>
+		</div>
+		<div class="xzhd-body-flex" style="margin-top:24px">
+			<p style="font-size:16px;margin-right:82px">赠送条件</p>
+			<div class="xzhd-body-zstjraduis">
+				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
+			</div>
+			<p style="margin:0 36px 0 15px;font-size:14px">使用送</p>
+			<div class="xzhd-body-zstjraduis">
+				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
+			</div>
+			<p style="margin:0 36px 0 15px;font-size:14px">领取送</p>
+			<div class="xzhd-body-zstjraduis">
+				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
+			</div>
+			<p style="margin:0 36px 0 15px;font-size:14px">分享送</p>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">活动背景配置</p>
+			<div id="xzhd-body-hdbjpz-img"></div>
+			<div id="xzhd-body-hdbjpz-upload">上传</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">领取按钮配置</p>
+			<div id="xzhd-body-lqanpz-img"></div>
+			<div id="xzhd-body-lqanpz-upload">上传</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">分享文字标题</p>
+			<div class="xzhd-body-input">
+				<input id="xzhd-body-fxwzbt" placeholder="请填写分享活动描述"/>
+			</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">分享活动描述</p>
+			<div class="xzhd-body-input">
+				<textarea id="xzhd-body-fxhdxs" placeholder="请对活动分享进行描述"></textarea>
+			</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p id="xzhd-body-save">保存</p>
+			<p id="xzhd-body-quxiao">返回</p>
+		</div>
 	</div>
 </body>
 
 <script>
-	$('.youxiao').click(function(){
+	$('.youxiao').click(function () {
 		$(this).parent().children('div').show()
 	})
 
-	$('.quxiao').click(function(){
+	$('.quxiao').click(function () {
 		$(this).parent().parent().hide()
+	})
+
+	$('.xzhd-body-zstjraduis').click(function(){
+		$('.xzhd-body-zstjraduis').css('border-color', '#BFBFBF')
+		$('.xzhd-body-zstjraduis').children().hide()
+		$(this).css('border-color','#71B2EF')
+		$(this).children().show()
 	})
 </script>
 
