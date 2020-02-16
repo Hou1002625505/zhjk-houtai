@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="<%=basePath%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>邀请有礼</title>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="easyui/demo.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+    <script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</head>
+<style>
+    html {
+			border: 1px solid #95B8E7;
+		}
+    * {
+			margin: 0;
+			padding: 0;
+		}
+    #xjhd-start{
+        width:120px;
+        height:40px;
+        background:#71B2EF;
+        border-radius: 4px;
+        color:white;
+        font-size:20px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .yqyl-header-p{
+        font-size:16px;
+        color:#444444;
+        margin-right:20px
+    }
+    #yqyl-header-hdmc{
+        width:200px;
+        height:30px;
+        border-radius: 4px;
+        border:none
+    }
+    .yqyl-header-input{
+        border:1px solid #d5d5d7;
+        border-radius: 4px;
+        margin-right: 40px;
+    }
+    #zengjuanyuany{
+        width:120px;
+        height:30px;
+        border:1px solid #d5d5d7;
+        border-radius: 4px;
+        font-size:14px
+    }
+    .select_wrap{
+        position:relative;
+        margin-right: 40px;
+    }
+    .triangle_border_down1{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-width: 8px 5px 0;
+        border-style: solid;
+        border-color: #BFBFBF transparent transparent;
+        position: absolute;
+        right: 5px;
+        top: 11px;
+    }
+    #yqyl-header-hdsjs{
+        width:120px;
+        height:30px;
+        border:none;
+        font-size:12px
+    }
+    #yqyl-header-hdsje{
+        width:120px;
+        height:30px;
+        border:none;
+        font-size:12px
+    }
+</style>
+<body>
+    <div class="yqyl-body">
+        <div style="width:100%">
+            <p id="xjhd-start">新建活动</p>
+        </div>
+        <div style="width:100%;display:flex;align-items:center;margin:20px 0">
+            <p class="yqyl-header-p">活动名称</p>
+            <div class="yqyl-header-input">
+                <input id="yqyl-header-hdmc" type="text">
+            </div>
+            <p class="yqyl-header-p">活动状态</p>
+            <span class="select_wrap">
+                <select name="visitstatus" id="zengjuanyuany">
+                    <option value="" selected="selected">全部</option>
+                    <option value="1">活动中</option>
+                    <option value="2">未开始</option>
+                    <option value="3">已结束</option>
+                </select>
+                <em class="triangle_border_down1"></em>
+            </span>
+            <p class="yqyl-header-p">活动时间</p>
+            <div class="yqyl-header-input" style='margin-right:7px'>
+                <input id="yqyl-header-hdsjs" type="text" placeholder="开始日期">
+            </div>
+            <div style="width:5px;height:2px;background:#c7c6c9;margin-right:7px">
+            </div>
+            <div class="yqyl-header-input">
+                <input id="yqyl-header-hdsje" type="text" placeholder="结束日期">
+            </div>
+        </div>
+        <div style="width:100%">
+            <div id="chaxun">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

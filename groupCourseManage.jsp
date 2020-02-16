@@ -12,8 +12,6 @@
 <head>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
@@ -46,7 +44,7 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .course-manage-body {
             /* padding: 20px 20px 0 20px; */
         }
@@ -60,12 +58,12 @@
             text-align: center;
             line-height: 1.5rem;
             cursor: pointer;
-            border-radius: 0.2px;
+            border-radius: 0.2rem;
         }
 
         .course-manage-flex {
             display: flex;
-            margin-top: 1px;
+            margin-top: 0.05rem;
             align-items: center;
         }
 
@@ -76,7 +74,7 @@
             margin-left: 1rem;
             margin-right: 2rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF
+            border: 0.05rem solid #BFBFBF
         }
 
         .course-manage-flextwo {
@@ -87,7 +85,7 @@
         .course-manage-flextwo #course-manage-flextwo-search {
             width: 4rem;
             height: 1.5rem;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             background: #71B2EF;
             text-align: center;
             line-height: 1.5rem;
@@ -99,7 +97,7 @@
             width: 4rem;
             height: 1.5rem;
             border-radius: 0.2rem;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
             box-sizing: border-box;
             text-align: center;
             line-height: 1.5rem;
@@ -124,7 +122,7 @@
             display: none;
             width: 6rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -146,7 +144,7 @@
             position: relative;
             height: 1.5rem;
             width: 6rem;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             border-radius: 0.2rem;
             box-sizing: border-box;
             line-height: 1.5rem;
@@ -163,7 +161,7 @@
         .select-menu-img {
             width: 0.6rem;
             height: 0.45rem;
-            margin-right: 10px;
+            margin-right: 0.5rem;
             position: absolute;
             right: 0;
             top: 0.5rem;
@@ -188,7 +186,7 @@
             padding: 0.4rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
             font-size: 0.6rem;
-            border: 1px solid #BFBFBF
+            border: 0.05rem solid #BFBFBF
         }
 
         .course-manage-flex-input-two {
@@ -200,7 +198,7 @@
             padding: 0.4rem 0 0.35rem 0.5rem;
             box-sizing: border-box;
             font-size: 0.6rem;
-            border: 1px solid #BFBFBF
+            border: 0.05rem solid #BFBFBF
         }
 
         .course-manage-flex-input-three {
@@ -210,7 +208,7 @@
             margin-left: 1.05rem;
             margin-right: 0.3rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF
+            border: 0.05rem solid #BFBFBF
         }
 
         .course-manage-flex-input-four {
@@ -219,7 +217,7 @@
             border-radius: 0.2rem;
             margin-left: 0.3rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF
+            border: 0.05rem solid #BFBFBF
         }
 
         .course-manage-table {
@@ -232,20 +230,20 @@
         }
 
         .course-manage-table table td {
-            border-left: 1px dashed #CCCCCC;
-            border-bottom: 1px dashed #CCCCCC;
+            border-left: 0.05rem dashed #CCCCCC;
+            border-bottom: 0.05rem dashed #CCCCCC;
             height: 2rem;
             text-align: center;
             font-size: 0.7rem;
         }
 
         .course-manage-table table td:last-child {
-            border-right: 1px dashed #CCCCCC;
+            border-right: 0.05rem dashed #CCCCCC;
             text-align: center;
         }
 
         .course-manage-table table th {
-            background: #D0E8F2;
+            background: #CCCCCC;
             text-align: center;
             height: 2rem;
             font-size: 0.7rem;
@@ -268,14 +266,14 @@
             width: 0.8rem;
             height: 0.8rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
         }
 
         .course-manage-table .course-manage-table-checkbox img {
             width: 0.8rem;
             height: 0.8rem;
-            margin-left: -1px;
-            margin-top: -1px;
+            margin-left: -0.05rem;
+            margin-top: -0.05rem;
         }
 
         .course-manage-table .headingsifting {
@@ -291,7 +289,7 @@
         }
 
         .course-manage-table .headingsifting .headingsifting-column img:nth-child(2) {
-            margin-top: 1px
+            margin-top: 0.05rem
         }
 
         .course-manage-footer {
@@ -307,30 +305,30 @@
             width: 0.8rem;
             height: 0.8rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
             line-height: 0.7rem;
         }
 
         .course-manage-table-checkbox img {
             width: 0.8rem;
             height: 0.8rem;
-            margin-top: -1px;
-            margin-left: -1px;
+            margin-top: -0.05rem;
+            margin-left: -0.05rem;
         }
 
         #course-manage-table-checkbox {
             width: 0.8rem;
             height: 0.8rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
             line-height: 0.7rem;
         }
 
         #course-manage-table-checkbox img {
             width: 0.8rem;
             height: 0.8rem;
-            margin-top: -1px;
-            margin-left: -1px;
+            margin-top: -0.05rem;
+            margin-left: -0.05rem;
         }
 
         .course-manage-footer .course-manage-footer-pone {
@@ -341,9 +339,9 @@
         .course-manage-footer .course-manage-footer-ptwo {
             width: 4.5rem;
             height: 1.5rem;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
             margin-left: 0.45rem;
-            font-size: 14px;
+            font-size: 0.7rem;
             color: #444444;
             text-align: center;
             line-height: 1.5rem;
@@ -356,7 +354,7 @@
         }
 
         .c-datepicker-date-editor {
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             position: relative;
             top: -1.2rem;
             width: 11rem;
@@ -394,7 +392,7 @@
         }
 
         .add-course-body .add-course-body-line {
-            height: 1px;
+            height: 0.05rem;
             background: #BFBFBF;
             margin-top: 1rem
         }
@@ -422,7 +420,7 @@
             display: none;
             width: 12rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -445,7 +443,7 @@
             position: relative;
             height: 1.6rem;
             width: 12rem;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             border-radius: 0.2rem;
             box-sizing: border-box;
             line-height: 1.6rem;
@@ -497,7 +495,7 @@
             margin-left: 4.3rem;
             padding-left: 0.85rem;
             font-size: 0.7rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             line-height: 1.4rem;
             border-radius: 0.2rem;
             display: flex;
@@ -519,7 +517,7 @@
             display: flex;
             width: 6rem;
             height: 1.6rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             margin-left: 3.55rem;
             border-radius: 0.2rem;
         }
@@ -549,7 +547,7 @@
         .add-course-sortone .add-course-sortone-inputthree-p {
             width: 4rem;
             height: 1.6rem;
-            border: 1px solid #71B2EF;
+            border: 0.05rem solid #71B2EF;
             border-radius: 0.15rem;
             text-align: center;
             line-height: 1.6rem;
@@ -575,7 +573,7 @@
         .add-course-sorttwo .add-course-sortone-inputfour textarea {
             width: 34rem;
             height: 8rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             border-radius: 0.15rem;
             margin-left: 4.5rem;
             resize: none;
@@ -619,7 +617,7 @@
         .add-course-sortone .add-course-sortone-inputfive {
             width: 6rem;
             height: 1.6rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             border-radius: 0.15rem;
             margin-left: 3.6rem;
             display: flex;
@@ -638,7 +636,7 @@
         .add-course-sortone .add-course-sortone-inputsix {
             width: 19rem;
             height: 1.6rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             padding-left: 0.9rem;
             margin-left: 4.3rem;
             line-height: 1.6rem;
@@ -660,7 +658,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput {
             width: 6rem;
             height: 1.6rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             margin-left: 0.9rem;
             border-radius: 0.15rem;
             display: flex;
@@ -678,7 +676,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone {
             width: 2.75rem;
             height: 1.6rem;
-            border-right: 1px solid #CCCCCC
+            border-right: 0.05rem solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectone .select-menu {
@@ -687,7 +685,7 @@
             height: 1.6rem;
             box-sizing: border-box;
             line-height: 1.4rem;
-            border-right: 1px solid #CCCCCC;
+            border-right: 0.05rem solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
         }
@@ -699,7 +697,7 @@
             display: none;
             width: 2.75rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -766,7 +764,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo {
             width: 2.75rem;
             height: 1.6rem;
-            border-right: 1px solid #CCCCCC
+            border-right: 0.05rem solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selecttwo .select-menu {
@@ -775,7 +773,7 @@
             height: 1.6rem;
             box-sizing: border-box;
             line-height: 1.4rem;
-            border-right: 1px solid #CCCCCC;
+            border-right: 0.05rem solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
         }
@@ -787,7 +785,7 @@
             display: none;
             width: 2.75rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -854,7 +852,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree {
             width: 2.75rem;
             height: 1.6rem;
-            border-right: 1px solid #CCCCCC
+            border-right: 0.05rem solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectthree .select-menu {
@@ -863,7 +861,7 @@
             height: 1.6rem;
             box-sizing: border-box;
             line-height: 1.4rem;
-            border-right: 1px solid #CCCCCC;
+            border-right: 0.05rem solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
         }
@@ -875,7 +873,7 @@
             display: none;
             width: 2.75rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -918,7 +916,7 @@
             height: 0.45rem;
             position: absolute;
             right: 0;
-            top: 10px;
+            top: 0.5rem;
             color: #CCCCCC;
             margin: 0
         }
@@ -942,7 +940,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour {
             width: 2.75rem;
             height: 1.6rem;
-            border-right: 1px solid #CCCCCC
+            border-right: 0.05rem solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfour .select-menu {
@@ -951,7 +949,7 @@
             height: 1.6rem;
             box-sizing: border-box;
             line-height: 1.4rem;
-            border-right: 1px solid #CCCCCC;
+            border-right: 0.05rem solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
         }
@@ -963,7 +961,7 @@
             display: none;
             width: 2.75rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -1030,7 +1028,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive {
             width: 2.75rem;
             height: 1.6rem;
-            border-right: 1px solid #CCCCCC
+            border-right: 0.05rem solid #CCCCCC
         }
 
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu {
@@ -1039,7 +1037,7 @@
             height: 1.6rem;
             box-sizing: border-box;
             line-height: 1.4rem;
-            border-right: 1px solid #CCCCCC;
+            border-right: 0.05rem solid #CCCCCC;
             margin: 0;
             box-sizing: border-box;
         }
@@ -1051,7 +1049,7 @@
             display: none;
             width: 2.75rem;
             text-align: left;
-            border: 1px solid #ddd;
+            border: 0.05rem solid #ddd;
             background: #fff;
             position: absolute;
             z-index: 1;
@@ -1074,7 +1072,7 @@
         .add-course-sortone .add-course-sortone-inputseven .oneinput .add-course-sortone-selectfive .select-menu-div {
             position: relative;
             height: 1.6rem;
-            border-radius: 4px;
+            border-radius: 0.2rem;
             box-sizing: border-box;
             width: 2.75rem;
             line-height: 1.6rem;
@@ -1128,17 +1126,17 @@
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table th {
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             border-left: none;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr:nth-child(1) th:nth-child(1) {
-            border-left: 1px solid #CCCCCC;
+            border-left: 0.05rem solid #CCCCCC;
             width: 12rem
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td {
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             border-top: none;
             border-left: none;
             padding: 0.375rem 0.375rem 0.275rem 0.375rem;
@@ -1147,14 +1145,14 @@
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) {
-            border-left: 1px solid #CCCCCC;
+            border-left: 0.05rem solid #CCCCCC;
             width: 12rem;
         }
 
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(1) textarea {
             width: 11rem;
             height: 4rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             resize: none;
             box-sizing: border-box;
         }
@@ -1162,7 +1160,7 @@
         .add-course-sorttwo .add-course-sortone-inputeight table tr td:nth-child(2) textarea {
             width: 17rem;
             height: 4rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             resize: none;
             box-sizing: border-box;
         }
@@ -1189,7 +1187,7 @@
             width: 6rem;
             height: 1.6rem;
             background: #71B2EF;
-            font-size: 14px;
+            font-size: 0.7rem;
             color: white;
             text-align: center;
             line-height: 1.6rem;
@@ -1323,7 +1321,7 @@
         .add-course-sortthree .add-course-sortone-inputtwelve .inputtwelve-checkbox {
             width: 10.5rem;
             height: 1.6rem;
-            border: 1px solid #CCCCCC;
+            border: 0.05rem solid #CCCCCC;
             font-size: 0.6rem;
             text-align: center;
             line-height: 1.6rem;
@@ -1375,7 +1373,7 @@
             width: 0.8rem;
             height: 0.8rem;
             box-sizing: border-box;
-            border: 1px solid #BFBFBF;
+            border: 0.05rem solid #BFBFBF;
             line-height: 0.7rem;
         }
 
@@ -1410,7 +1408,7 @@
             text-align: center;
             line-height: 2rem;
             border-radius: 0.2rem;
-            border: 1px solid #71B2EF;
+            border: 0.05rem solid #71B2EF;
             box-sizing: border-box;
             margin-left: 0.75rem
         }
@@ -1737,10 +1735,10 @@
         <div class="add-course-sortone">
             <p style="font-size:0.8rem">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
-                <div style="width:12rem;height:1.6rem;border:1px solid #CCCCCC;margin-left:3.1rem">
+                <div style="width:12rem;height:1.6rem;border:0.05rem solid #CCCCCC;margin-left:3.1rem">
                     <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none">
                 </div>
-                <div style="width:20.5rem;height:1.6rem;border:1px solid #CCCCCC;margin-left:1rem">
+                <div style="width:20.5rem;height:1.6rem;border:0.05rem solid #CCCCCC;margin-left:1rem">
                     <input type="text" id="gxmc" style="border:none">
                 </div>
                 
