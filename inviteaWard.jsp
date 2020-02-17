@@ -163,7 +163,7 @@
 			height: 40px;
 		}
 
-		.table-body tr th {
+		.table-body tr td {
 			font-size: 14px;
 			color: #444444;
 			height: 40px;
@@ -172,7 +172,7 @@
 			border-bottom: 1px dotted #CCCCCC
 		}
 
-		.table-body tr th:last-child {
+		.table-body tr td:last-child {
 			flex: 1;
 			border-right: 1px dotted #CCCCCC;
 			display: flex;
@@ -180,7 +180,7 @@
 			position: relative
 		}
 
-		.table-body tr th:last-child p {
+		.table-body tr td:last-child p {
 			line-height: 40px;
 			color: #71B2EF
 		}
@@ -238,9 +238,11 @@
 
 		#xzhd-body-fxhd {
 			width: 300px;
-			height: 32px;
+			min-height: 32px;
 			border: none;
-			color: #BFBFBF;
+			color: #757575;
+			line-height: 32px;
+			font-size:14px
 		}
 
 		.xzhd-body-down {
@@ -442,13 +444,70 @@
 			font-size:16px;
 			margin-left:220px
 		}
-		.table-body1 tr th {
+		.table-body1 tr td {
 			font-size: 14px;
 			color: #444444;
 			height: 40px;
 			text-align: center;
 			border-left: 1px dotted #CCCCCC;
 			border-bottom: 1px dotted #CCCCCC
+		}
+		#xzhd-body-fxhd-zhankai{
+			width:660px;
+			height:210px;
+			background:white;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+			position:absolute;
+			top:100%;
+			left:150px;
+			z-index: 999;
+			padding:0 20px 20px 20px;
+			display:flex;
+			margin-top:10px
+		}
+
+		.xzhd-body-henggang{
+			width:16px;
+			height:16px;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+		}
+		.xzhd-body-henggang img{
+			margin-left:-1px;
+			margin-top:-1px;
+			display:none
+		}
+
+		.xzhd-body-gouxuan{
+			width:16px;
+			height:16px;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+		}
+		.xzhd-body-gouxuan img{
+			margin-left:-1px;
+			margin-top:-1px;
+			display:none
+		}
+		.xzhd-body-tbody th{
+			font-size:16px;
+			height:40px;
+		}
+		.xzhd-body-tbody1 td{
+			font-size:14px;
+			height:40px;
+			text-align: center;
+		}
+		.xzhd-body-tbody2 td{
+			font-size:14px;
+			height:40px;
+			text-align: center;
+		}
+		.xzhd-body-chacha{
+			width:16px;
+			height:16px;
+			margin-left:22px
 		}
 	</style>
 </head>
@@ -502,14 +561,14 @@
 			</tbody>
 			<tbody class="table-body">
 				<tr>
-					<th class="item1">1</th>
-					<th class="item2">情人双人健身月卡</th>
-					<th class="item2">2020.02.11-2020.02.28</th>
-					<th class="item3">514</th>
-					<th class="item3">245</th>
-					<th class="item3">200</th>
-					<th class="item4">活动中</th>
-					<th>
+					<td class="item1">1</td>
+					<td class="item2">情人双人健身月卡</td>
+					<td class="item2">2020.02.11-2020.02.28</td>
+					<td class="item3">514</td>
+					<td class="item3">245</td>
+					<td class="item3">200</td>
+					<td class="item4">活动中</td>
+					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
@@ -529,17 +588,17 @@
 							<div style="height:1px;background:#BFBFBF;"></div>
 							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
-					</th>
+					</td>
 				</tr>
 				<tr>
-					<th class="item1">1</th>
-					<th class="item2">情人双人健身月卡</th>
-					<th class="item2">2020.02.11-2020.02.28</th>
-					<th class="item3">514</th>
-					<th class="item3">245</th>
-					<th class="item3">200</th>
-					<th class="item4">活动中</th>
-					<th>
+					<td class="item1">1</td>
+					<td class="item2">情人双人健身月卡</td>
+					<td class="item2">2020.02.11-2020.02.28</td>
+					<td class="item3">514</td>
+					<td class="item3">245</td>
+					<td class="item3">200</td>
+					<td class="item4">活动中</td>
+					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
@@ -559,17 +618,17 @@
 							<div style="height:1px;background:#BFBFBF;"></div>
 							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
-					</th>
+					</td>
 				</tr>
 				<tr>
-					<th class="item1">1</th>
-					<th class="item2">情人双人健身月卡</th>
-					<th class="item2">2020.02.11-2020.02.28</th>
-					<th class="item3">514</th>
-					<th class="item3">245</th>
-					<th class="item3">200</th>
-					<th class="item4">活动中</th>
-					<th>
+					<td class="item1">1</td>
+					<td class="item2">情人双人健身月卡</td>
+					<td class="item2">2020.02.11-2020.02.28</td>
+					<td class="item3">514</td>
+					<td class="item3">245</td>
+					<td class="item3">200</td>
+					<td class="item4">活动中</td>
+					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
 						<p>查看</p>
@@ -589,7 +648,7 @@
 							<div style="height:1px;background:#BFBFBF;"></div>
 							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 						</div>
-					</th>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -622,13 +681,137 @@
 				<input id="xzhd-body-hdsje" placeholder="结束时间" type="text">
 			</div>
 		</div>
-		<div class="xzhd-body-flex" style="margin-top:24px">
+
+		<div class="xzhd-body-flex" style="margin-top:24px;position: relative;">
 			<p style="font-size:16px;margin-right:86px">分享获得</p>
 			<div class="xzhd-body-input" style="position:relative">
-				<input id="xzhd-body-fxhd" placeholder="请选择要分享的优惠券" type="text">
-				<div class="xzhd-body-down"></div>
+				<div id="xzhd-body-fxhd">
+					<p>请选择要分享的优惠券</p>
+				</div>
+				<div class="xzhd-body-down" style="top:42%"></div>
+			</div>
+			<div id="xzhd-body-fxhd-zhankai" style="display:none">
+				<div style="width:200px;margin-top:10px">
+					<div style="display:flex;align-items:center;">
+						<div class="xzhd-body-henggang">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+						<p style="font-size:16px;color:#444444;margin-left:14px">CRM优惠券</p>
+					</div>
+					<div style="display:flex;align-items:center;margin-top:24px">
+						<div class="xzhd-body-henggang">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+						<p style="font-size:16px;color:#444444;margin-left:14px">有赞优惠券</p>
+					</div>
+				</div>
+				<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
+					<tbody class="xzhd-body-tbody">
+						<tr>
+							<th></th>
+							<th>优惠券名称</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th>库存</th>
+						</tr>
+					</tbody>
+					<tbody class="xzhd-body-tbody1" style="display:none">
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>50元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>100元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>200元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>500元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+					<tbody class="xzhd-body-tbody2" style="display:none">
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>500元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>200元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>100元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>50元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+				</table>
+				
 			</div>
 		</div>
+
 		<div class="xzhd-body-flex" style="margin-top:24px">
 			<p style="font-size:16px;margin-right:70px">领取人获得</p>
 			<div class="xzhd-body-input" style="position:relative">
@@ -796,40 +979,40 @@
 			</tbody>
 			<tbody class="table-body1">
 				<tr>
-					<th class="item1">1</th>
-					<th class="item22">王小娟</th>
-					<th class="item22">15218943782</th>
-					<th class="item33">500元优惠券C</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">老客</th>
-					<th class="item44">已使用</th>
-					<th class="item44">CRM</th>
+					<td class="item1">1</td>
+					<td class="item22">王小娟</td>
+					<td class="item22">15218943782</td>
+					<td class="item33">500元优惠券C</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">老客</td>
+					<td class="item44">已使用</td>
+					<td class="item44">CRM</td>
 				</tr>
 				<tr>
-					<th class="item1">1</th>
-					<th class="item22">王小娟</th>
-					<th class="item22">15218943782</th>
-					<th class="item33">500元优惠券C</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">老客</th>
-					<th class="item44">已使用</th>
-					<th class="item44">CRM</th>
+					<td class="item1">1</td>
+					<td class="item22">王小娟</td>
+					<td class="item22">15218943782</td>
+					<td class="item33">500元优惠券C</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">老客</td>
+					<td class="item44">已使用</td>
+					<td class="item44">CRM</td>
 				</tr>
 				<tr>
-					<th class="item1">1</th>
-					<th class="item22">王小娟</th>
-					<th class="item22">15218943782</th>
-					<th class="item33">500元优惠券C</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">2020-02-11</th>
-					<th class="item22">老客</th>
-					<th class="item44">已使用</th>
-					<th class="item44">CRM</th>
+					<td class="item1">1</td>
+					<td class="item22">王小娟</td>
+					<td class="item22">15218943782</td>
+					<td class="item33">500元优惠券C</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">2020-02-11</td>
+					<td class="item22">老客</td>
+					<td class="item44">已使用</td>
+					<td class="item44">CRM</td>
 				</tr>
 			</tbody>
 		</table>
@@ -875,6 +1058,117 @@
 		$('.yqyl-body').hide()
 		$('.sj-body').show()
 	})
+
+	$('#xzhd-body-fxhd').click(function(){
+		if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
+			$('#xzhd-body-fxhd-zhankai').show()
+		}
+	})
+
+	$('.xzhd-body-henggang').click(function () {
+			$('.xzhd-body-henggang').children().hide()
+			if ($(this).children().is(':hidden')) {
+				$(this).children().show()
+
+				if ($(this).parent().children('p').html() == 'CRM优惠券') {
+					$('.xzhd-body-tbody1').show()
+					$('.xzhd-body-tbody2').hide()
+				} else if ($(this).parent().children('p').html() == '有赞优惠券') {
+					$('.xzhd-body-tbody1').hide()
+					$('.xzhd-body-tbody2').show()
+				}
+
+			} else {
+				$(this).children().hide()
+			}
+		})
+
+	$('.xzhd-body-gouxuan').click(function(){
+		if($(this).children().is(':hidden')){
+			$(this).children().show()
+			gouxuan()
+		}else{
+			$(this).children().hide()
+			var str2 = $(this).parent().parent().children().eq(1).html()
+			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+					var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+				}
+			}
+
+			for(var j=0;j<$('#xzhd-body-fxhd').children().length;j++){
+				if(str1+str2 == $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0]+ $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[1]){
+					$('#xzhd-body-fxhd').children().eq(j).remove()
+					//console.log(111111111)
+				}
+			}
+		}
+	})
+
+	function chacha(){
+		$('.xzhd-body-chacha').click(function () {
+			console.log(1111)
+			$(this).parent().remove()
+			var str = $(this).parent().children('p').html()
+			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+					var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+				}
+			}
+			//console.log(str)
+			
+			for (var j = 0; j < $('.xzhd-body-gouxuan').length; j++) {
+				var str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
+				//console.log(str1+str2)
+				if (str == str1 +'/'+ str2) {
+					//$('.xzhd-body-gouxuan').eq(j).click()
+					for(var p=0;p<$('.xzhd-body-henggang').length;p++){
+						if($('.xzhd-body-henggang').eq(p).children().is(':visible')){
+							if(p==0){
+								if(j<=3){
+									$('.xzhd-body-gouxuan').eq(j).click()
+								}
+							}else if(p == 1){
+								if (j >3) {
+									$('.xzhd-body-gouxuan').eq(j).click()
+								}
+							}
+						}
+					}
+					
+				}
+			}
+		})
+	}
+	
+
+
+	function gouxuan(){
+		for(var k=0;k< $('#xzhd-body-fxhd').children().length;k++){
+			if ($('#xzhd-body-fxhd').children().eq(k).html() == '请选择要分享的优惠券'){
+				$('#xzhd-body-fxhd').children().eq(k).remove()
+			}
+		}
+		
+		var str = ''
+		var str1 = ''
+		var str2 = ''
+		for(var i=0;i<$('.xzhd-body-henggang').length;i++){
+			if($('.xzhd-body-henggang').eq(i).children().is(":visible")){
+				str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+			}
+		}
+		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
+			if($('.xzhd-body-gouxuan').eq(j).children().is(":visible")){
+				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
+				str = ($('#xzhd-body-fxhd').html())
+				str += `<div style="display:flex;align-items: center;"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+			}
+		}
+		$('#xzhd-body-fxhd').html(str)
+		$('.xzhd-body-chacha').unbind()
+		chacha()
+	}
 </script>
 
 </html>
