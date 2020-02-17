@@ -688,7 +688,7 @@
 				<div id="xzhd-body-fxhd">
 					<p>请选择要分享的优惠券</p>
 				</div>
-				<div class="xzhd-body-down" style="top:42%"></div>
+				<div class="xzhd-body-down" id="xzhd-body-down11" style="top:42%"></div>
 			</div>
 			<div id="xzhd-body-fxhd-zhankai" style="display:none">
 				<div style="width:200px;margin-top:10px">
@@ -1105,6 +1105,12 @@
 		}
 	})
 
+	$('#xzhd-body-down11').click(function(){
+		if($('#xzhd-body-fxhd-zhankai').is(':visible')){
+			$('#xzhd-body-fxhd-zhankai').hide()
+		}
+	})
+
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
 			console.log(1111)
@@ -1141,8 +1147,6 @@
 		})
 	}
 	
-
-
 	function gouxuan(){
 		for(var k=0;k< $('#xzhd-body-fxhd').children().length;k++){
 			if ($('#xzhd-body-fxhd').children().eq(k).html() == '请选择要分享的优惠券'){
