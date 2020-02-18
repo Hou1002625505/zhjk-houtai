@@ -313,9 +313,10 @@
 
 		#xzhd-body-lqrhd {
 			width: 300px;
-			height: 32px;
+			min-height: 32px;
 			border: none;
-			color: #BFBFBF;
+			color: #757575;
+			line-height: 32px;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
@@ -549,6 +550,21 @@
 			margin-top:10px
 		}
 
+		#xzhd-body-lqrhd-zhankai{
+			width:660px;
+			height:210px;
+			background:white;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+			position:absolute;
+			top:100%;
+			left:150px;
+			z-index: 999;
+			padding:0 20px 20px 20px;
+			display:flex;
+			margin-top:10px
+		}
+
 		.xzhd-body-henggang{
 			width:16px;
 			height:16px;
@@ -561,6 +577,18 @@
 			display:none
 		}
 
+		.xzhd-body-henggang1{
+			width:16px;
+			height:16px;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+		}
+		.xzhd-body-henggang1 img{
+			margin-left:-1px;
+			margin-top:-1px;
+			display:none
+		}
+
 		.xzhd-body-gouxuan{
 			width:16px;
 			height:16px;
@@ -568,6 +596,17 @@
 			box-sizing: border-box;
 		}
 		.xzhd-body-gouxuan img{
+			margin-left:-1px;
+			margin-top:-1px;
+			display:none
+		}
+		.xzhd-body-gouxuan1{
+			width:16px;
+			height:16px;
+			border:1px solid #BFBFBF;
+			box-sizing: border-box;
+		}
+		.xzhd-body-gouxuan1 img{
 			margin-left:-1px;
 			margin-top:-1px;
 			display:none
@@ -586,7 +625,23 @@
 			height:40px;
 			text-align: center;
 		}
+		.xzhd-body-tbody11 td{
+			font-size:14px;
+			height:40px;
+			text-align: center;
+		}
+		.xzhd-body-tbody22 td{
+			font-size:14px;
+			height:40px;
+			text-align: center;
+		}
 		.xzhd-body-chacha{
+			width:16px;
+			height:16px;
+			margin-left:22px;
+			margin-right:50px
+		}
+		.xzhd-body-chacha1{
 			width:16px;
 			height:16px;
 			margin-left:22px;
@@ -898,11 +953,136 @@
 			</div>
 		</div>
 
-		<div class="xzhd-body-flex" style="margin-top:24px">
+		<div class="xzhd-body-flex" style="margin-top:24px;position: relative;">
 			<p style="font-size:16px;margin-right:70px">领取人获得</p>
 			<div class="xzhd-body-input" style="position:relative">
-				<input id="xzhd-body-lqrhd" placeholder="请选择领取人可获得的优惠券" type="text">
-				<div class="xzhd-body-down"></div>
+				<div id="xzhd-body-lqrhd">
+					<p>请选择领取人可获得的优惠券</p>
+				</div>
+				<div class="xzhd-body-down" id="xzhd-body-down22" style="top:42%"></div>
+			</div>
+			<div id="xzhd-body-lqrhd-zhankai" style="display:none">
+				<div style="width:200px;margin-top:10px">
+					<div style="display:flex;align-items:center;">
+						<div class="xzhd-body-henggang1">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+						<p style="font-size:16px;color:#444444;margin:0 46px 0 14px;">CRM优惠券</p>
+						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
+						<img id="crm-rightnone" src="image/right_none.png" alt="">
+					</div>
+					<div style="display:flex;align-items:center;margin-top:24px">
+						<div class="xzhd-body-henggang1">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+						<p style="font-size:16px;color:#444444;margin:0 49px 0 14px;">有赞优惠券</p>
+						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
+						<img id="crm-rightnone" src="image/right_none.png" alt="">
+					</div>
+				</div>
+				<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
+					<tbody class="xzhd-body-tbody">
+						<tr>
+							<th></th>
+							<th>优惠券名称</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th>库存</th>
+						</tr>
+					</tbody>
+					<tbody class="xzhd-body-tbody11" style="display:none">
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>50元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>100元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>200元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>500元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+					<tbody class="xzhd-body-tbody22" style="display:none">
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>500元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>200元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>100元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="xzhd-body-gouxuan1">
+									<img src="image/codeallset_btn.png" alt="">
+								</div>
+							</td>
+							<td>50元优惠券</td>
+							<td>2020-02-11</td>
+							<td>2020-02-28</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="xzhd-body-flex" style="margin-top:24px">
@@ -1152,6 +1332,13 @@
 		}
 	})
 
+	$('#xzhd-body-lqrhd').click(function(){
+		if($('#xzhd-body-lqrhd-zhankai').is(':hidden')){
+			$('#xzhd-body-lqrhd-zhankai').show()
+			$('#xzhd-body-down22').attr('class', 'xzhd-body-up')
+		}
+	})
+
 	$('.xzhd-body-henggang').click(function () {
 			$('.xzhd-body-henggang').children().hide()
 			$('.xzhd-body-henggang').parent().children('#crm-rightget').hide()
@@ -1167,6 +1354,28 @@
 				} else if ($(this).parent().children('p').html() == '有赞优惠券') {
 					$('.xzhd-body-tbody1').hide()
 					$('.xzhd-body-tbody2').show()
+				}
+
+			} else {
+				$(this).children().hide()
+			}
+		})
+
+	$('.xzhd-body-henggang1').click(function () {
+			$('.xzhd-body-henggang1').children().hide()
+			$('.xzhd-body-henggang1').parent().children('#crm-rightget').hide()
+			$('.xzhd-body-henggang1').parent().children('#crm-rightnone').show()
+			if ($(this).children().is(':hidden')) {
+				$(this).children().show()
+				$(this).parent().children('#crm-rightget').show()
+				$(this).parent().children('#crm-rightnone').hide()
+
+				if ($(this).parent().children('p').html() == 'CRM优惠券') {
+					$('.xzhd-body-tbody11').show()
+					$('.xzhd-body-tbody22').hide()
+				} else if ($(this).parent().children('p').html() == '有赞优惠券') {
+					$('.xzhd-body-tbody11').hide()
+					$('.xzhd-body-tbody22').show()
 				}
 
 			} else {
@@ -1196,12 +1405,41 @@
 		}
 	})
 
+	$('.xzhd-body-gouxuan1').click(function () {
+			if ($(this).children().is(':hidden')) {
+				$(this).children().show()
+				gouxuan1()
+			} else {
+				$(this).children().hide()
+				var str2 = $(this).parent().parent().children().eq(1).html()
+				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+						var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+					}
+				}
+
+				for (var j = 0; j < $('#xzhd-body-lqrhd').children().length; j++) {
+					if (str1 + str2 == $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[0] + $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[1]) {
+						$('#xzhd-body-lqrhd').children().eq(j).remove()
+						//console.log(111111111)
+					}
+				}
+			}
+		})
+
 	$('#xzhd-body-down11').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':visible')){
 			$('#xzhd-body-fxhd-zhankai').hide()
 			$(this).attr('class','xzhd-body-down')
 		}
 	})
+
+	$('#xzhd-body-down22').click(function () {
+			if ($('#xzhd-body-lqrhd-zhankai').is(':visible')) {
+				$('#xzhd-body-lqrhd-zhankai').hide()
+				$(this).attr('class', 'xzhd-body-down')
+			}
+		})
 
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
@@ -1239,6 +1477,42 @@
 		})
 	}
 	
+	function chacha1() {
+			$('.xzhd-body-chacha1').click(function () {
+
+				$(this).parent().remove()
+				var str = $(this).parent().children('p').html()
+				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+						var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+					}
+				}
+				//console.log(str)
+
+				for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
+					var str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
+					//console.log(str1+str2)
+					if (str == str1 + '/' + str2) {
+						//$('.xzhd-body-gouxuan1').eq(j).click()
+						for (var p = 0; p < $('.xzhd-body-henggang1').length; p++) {
+							if ($('.xzhd-body-henggang1').eq(p).children().is(':visible')) {
+								if (p == 0) {
+									if (j <= 3) {
+										$('.xzhd-body-gouxuan1').eq(j).click()
+									}
+								} else if (p == 1) {
+									if (j > 3) {
+										$('.xzhd-body-gouxuan1').eq(j).click()
+									}
+								}
+							}
+						}
+
+					}
+				}
+			})
+		}
+
 	function gouxuan(){
 		for(var k=0;k< $('#xzhd-body-fxhd').children().length;k++){
 			if ($('#xzhd-body-fxhd').children().eq(k).html() == '请选择要分享的优惠券'){
@@ -1266,6 +1540,34 @@
 		$('.xzhd-body-chacha').unbind()
 		chacha()
 	}
+	
+	function gouxuan1() {
+			for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
+				if ($('#xzhd-body-lqrhd').children().eq(k).html() == '请选择领取人可获得的优惠券') {
+					$('#xzhd-body-lqrhd').children().eq(k).remove()
+				}
+			}
+
+			var str = ''
+			var str1 = ''
+			var str2 = ''
+			for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+				if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+					str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+				}
+			}
+			for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
+				if ($('.xzhd-body-gouxuan1').eq(j).children().is(":visible")) {
+					//var str = ($('#xzhd-body-lqrhd').html())
+					console.log(j)
+					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>` + str1 + '/' + str2 + `</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
+				}
+			}
+			$('#xzhd-body-lqrhd').html(str)
+			$('.xzhd-body-chacha1').unbind()
+			chacha1()
+		}
 </script>
 
 </html>
