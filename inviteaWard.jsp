@@ -1386,9 +1386,11 @@
 	$('.xzhd-body-gouxuan').click(function(){
 		if($(this).children().is(':hidden')){
 			$(this).children().show()
+			$(this).addClass('gx')
 			gouxuan()
 		}else{
 			$(this).children().hide()
+			$(this).removeClass('gx')
 			var str2 = $(this).parent().parent().children().eq(1).html()
 			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
 				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
@@ -1408,9 +1410,11 @@
 	$('.xzhd-body-gouxuan1').click(function () {
 			if ($(this).children().is(':hidden')) {
 				$(this).children().show()
+				$(this).addClass('gxx')
 				gouxuan1()
 			} else {
 				$(this).children().hide()
+				$(this).removeClass('gxx')
 				var str2 = $(this).parent().parent().children().eq(1).html()
 				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
 					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
@@ -1529,7 +1533,7 @@
 			}
 		}
 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
-			if($('.xzhd-body-gouxuan').eq(j).children().is(":visible")){
+			if($('.xzhd-body-gouxuan').eq(j).hasClass('gx')){
 				//str += ($('#xzhd-body-fxhd').html())
 				console.log(j)
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
@@ -1557,7 +1561,7 @@
 				}
 			}
 			for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
-				if ($('.xzhd-body-gouxuan1').eq(j).children().is(":visible")) {
+				if ($('.xzhd-body-gouxuan1').eq(j).hasClass('gxx')) {
 					//var str = ($('#xzhd-body-lqrhd').html())
 					console.log(j)
 					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
