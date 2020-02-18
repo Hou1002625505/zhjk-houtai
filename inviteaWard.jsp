@@ -72,6 +72,7 @@
 			font-size: 20px;
 			text-align: center;
 			line-height: 40px;
+			cursor: pointer;
 		}
 
 		.yqyl-header-p {
@@ -142,6 +143,7 @@
 			text-align: center;
 			align-items: center;
 			line-height: 30px;
+			cursor: pointer;
 		}
 
 		#qingchu {
@@ -154,7 +156,8 @@
 			line-height: 30px;
 			margin-left: 15px;
 			color: #444444;
-			border: 1px solid #c8cacc
+			border: 1px solid #c8cacc;
+			cursor: pointer;
 		}
 
 		.table-header th {
@@ -187,7 +190,34 @@
 
 		#fhsyj {
 			font-size: 16px;
-			color: #71B2EF
+			color: #71B2EF;
+			cursor: pointer;
+		}
+
+		.yqyl-body-quxiao{
+			width:70px;
+			height:36px;
+			font-size:16px;
+			text-align:center;
+			line-height:36px;
+			border:1px solid #d8d8d9;
+			border-radius:4px;
+			box-sizing:border-box;
+			margin-left:15px;
+			cursor: pointer;
+		}
+
+		.yqyl-body-queding{
+			width:70px;
+			height:36px;
+			font-size:16px;
+			text-align:center;
+			line-height:36px;
+			background:#71B2EF;
+			color:white;
+			border-radius:4px;
+			margin-left:26px;
+			cursor: pointer;
 		}
 
 		.xzhd-body-line {
@@ -220,6 +250,9 @@
 			height: 32px;
 			border: none;
 			color: #BFBFBF;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 
 		#xzhd-body-hdsjs {
@@ -227,6 +260,9 @@
 			height: 32px;
 			border: none;
 			color: #BFBFBF;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 
 		#xzhd-body-hdsje {
@@ -234,6 +270,9 @@
 			height: 32px;
 			border: none;
 			color: #BFBFBF;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 
 		#xzhd-body-fxhd {
@@ -242,7 +281,10 @@
 			border: none;
 			color: #757575;
 			line-height: 32px;
-			font-size:14px
+			font-size:14px;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 
 		.xzhd-body-down {
@@ -257,11 +299,26 @@
 			top: 11px;
 		}
 
+		.xzhd-body-up {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 10px solid #BFBFBF;
+			position: absolute;
+			right: 5px;
+			top: 11px;
+		}
+
 		#xzhd-body-lqrhd {
 			width: 300px;
 			height: 32px;
 			border: none;
 			color: #BFBFBF;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 		.xzhd-body-zstjraduis{
 			width:24px;
@@ -288,7 +345,8 @@
 			text-align: center;
 			line-height: 30px;
 			font-size: 16px;
-			margin-left:15px
+			margin-left:15px;
+			cursor: pointer;
 		}
 		#xzhd-body-lqanpz-img{
 			width:160px;
@@ -305,13 +363,17 @@
 			text-align: center;
 			line-height: 30px;
 			font-size: 16px;
-			margin-left:15px
+			margin-left:15px;
+			cursor: pointer;
 		}
 		#xzhd-body-fxwzbt{
 			width:680px;
 			height:32px;
 			border: none;
 			color: #BFBFBF;
+			font-size:16px;
+			padding-left:20px;
+			box-sizing: border-box;
 		}
 		#xzhd-body-fxhdxs{
 			width:680px;
@@ -319,6 +381,10 @@
 			resize: none;
 			border: none;
 			color: #BFBFBF;
+			padding-left:20px;
+			padding-top:10px;
+			font-size:16px;
+			box-sizing: border-box;
 		}
 		#xzhd-body-save{
 			width:110px;
@@ -329,6 +395,7 @@
 			color:white;
 			border-radius: 4px;
 			font-size: 16px;
+			cursor: pointer;
 		}
 		#xzhd-body-quxiao{
 			width:110px;
@@ -338,7 +405,18 @@
 			border-radius: 4px;
 			border:1px solid #BFBFBF;
 			font-size: 16px;
-			margin-left:15px
+			margin-left:15px;
+			cursor: pointer;
+		}
+
+		.shuju{
+			cursor: pointer;
+		}
+		.youxiao{
+			cursor: pointer;
+		}
+		.chakan{
+			cursor: pointer;
 		}
 		.sj-body-flex{
 			width:100%;
@@ -347,7 +425,8 @@
 		}
 		#sj-body-fhsyj{
 			font-size:16px;
-			color:#71B2EF
+			color:#71B2EF;
+			cursor: pointer;
 		}
 		.sj-body-line{
 			height:1px;
@@ -421,7 +500,8 @@
 			text-align: center;
 			line-height: 30px;
 			font-size:16px;
-			margin-left:40px
+			margin-left:40px;
+			cursor: pointer;
 		}
 		#sj-body-qingchu{
 			width:80px;
@@ -431,7 +511,8 @@
 			text-align: center;
 			line-height: 30px;
 			font-size:16px;
-			margin-left:15px
+			margin-left:15px;
+			cursor: pointer;
 		}
 		#sj-body-dcsj{
 			width:100px;
@@ -442,7 +523,8 @@
 			text-align: center;
 			line-height: 30px;
 			font-size:16px;
-			margin-left:220px
+			margin-left:220px;
+			cursor: pointer;
 		}
 		.table-body1 tr td {
 			font-size: 14px;
@@ -507,7 +589,8 @@
 		.xzhd-body-chacha{
 			width:16px;
 			height:16px;
-			margin-left:22px
+			margin-left:22px;
+			margin-right:50px
 		}
 	</style>
 </head>
@@ -571,18 +654,18 @@
 					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
-						<p>查看</p>
+						<p class="chakan">查看</p>
 						<p>|</p>
 						<p class="youxiao">有效</p>
 						<div
 							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 							<div style="display:flex;justify-content: center;padding-bottom:10px">
 								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;background:#71B2EF;color:white;border-radius:4px;margin-left:26px;">
+								<div class="yqyl-body-queding"
+									>
 									确定</div>
-								<div class="quxiao"
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;border:1px solid #d8d8d9;border-radius:4px;box-sizing:border-box;margin-left:15px">
+								<div class="yqyl-body-quxiao"
+									>
 									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
@@ -601,18 +684,18 @@
 					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
-						<p>查看</p>
+						<p class="chakan">查看</p>
 						<p>|</p>
 						<p class="youxiao">有效</p>
 						<div
 							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 							<div style="display:flex;justify-content: center;padding-bottom:10px">
 								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;background:#71B2EF;color:white;border-radius:4px;margin-left:26px;">
+								<div class="yqyl-body-queding"
+									>
 									确定</div>
-								<div class="quxiao"
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;border:1px solid #d8d8d9;border-radius:4px;box-sizing:border-box;margin-left:15px">
+								<div class="yqyl-body-quxiao"
+									>
 									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
@@ -631,18 +714,18 @@
 					<td>
 						<p class="shuju">数据</p>
 						<p>|</p>
-						<p>查看</p>
+						<p class="chakan">查看</p>
 						<p>|</p>
 						<p class="youxiao">有效</p>
 						<div
 							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 							<div style="display:flex;justify-content: center;padding-bottom:10px">
 								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;background:#71B2EF;color:white;border-radius:4px;margin-left:26px;">
+								<div class="yqyl-body-queding"
+									>
 									确定</div>
-								<div class="quxiao"
-									style="width:70px;height:36px;font-size:16px;text-align:center;line-height:36px;border:1px solid #d8d8d9;border-radius:4px;box-sizing:border-box;margin-left:15px">
+								<div class="yqyl-body-quxiao"
+									>
 									取消</div>
 							</div>
 							<div style="height:1px;background:#BFBFBF;"></div>
@@ -696,13 +779,17 @@
 						<div class="xzhd-body-henggang">
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
-						<p style="font-size:16px;color:#444444;margin-left:14px">CRM优惠券</p>
+						<p style="font-size:16px;color:#444444;margin:0 46px 0 14px;">CRM优惠券</p>
+						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
+						<img id="crm-rightnone" src="image/right_none.png" alt="">
 					</div>
 					<div style="display:flex;align-items:center;margin-top:24px">
 						<div class="xzhd-body-henggang">
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
-						<p style="font-size:16px;color:#444444;margin-left:14px">有赞优惠券</p>
+						<p style="font-size:16px;color:#444444;margin:0 49px 0 14px;">有赞优惠券</p>
+						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
+						<img id="crm-rightnone" src="image/right_none.png" alt="">
 					</div>
 				</div>
 				<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
@@ -808,7 +895,6 @@
 						</tr>
 					</tbody>
 				</table>
-				
 			</div>
 		</div>
 
@@ -869,7 +955,7 @@
 		<div class="sj-body-line"></div>
 		<div class='sj-body-flex' style="margin-top:10px;justify-content: space-between;">
 			<p id="sj-body-hdmc">活动名称：情人双人健身月卡</p>
-			<div style="display:flex;align-items: center;"><p id="sj-body-gd">更多</p><img style="width:13px;height:13px;margin-left:7px" src="image/pulldown_btn.png" alt=""></div>
+			<div style="display:flex;align-items: center;"><p id="sj-body-gd">更多</p><img style="width:13px;height:7px;margin-left:7px" src="image/more_unfold.png" alt=""></div>
 		</div>
 		<div class="sj-body-flex1">
 			<div style="width:800px;margin-top:22px">
@@ -1028,7 +1114,7 @@
 		$(this).parent().children('div').show()
 	})
 
-	$('.quxiao').click(function () {
+	$('.yqyl-body-quxiao').click(function () {
 		$(this).parent().parent().hide()
 	})
 
@@ -1062,13 +1148,18 @@
 	$('#xzhd-body-fxhd').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
 			$('#xzhd-body-fxhd-zhankai').show()
+			$('#xzhd-body-down11').attr('class','xzhd-body-up')
 		}
 	})
 
 	$('.xzhd-body-henggang').click(function () {
 			$('.xzhd-body-henggang').children().hide()
+			$('.xzhd-body-henggang').parent().children('#crm-rightget').hide()
+			$('.xzhd-body-henggang').parent().children('#crm-rightnone').show()
 			if ($(this).children().is(':hidden')) {
 				$(this).children().show()
+				$(this).parent().children('#crm-rightget').show()
+				$(this).parent().children('#crm-rightnone').hide()
 
 				if ($(this).parent().children('p').html() == 'CRM优惠券') {
 					$('.xzhd-body-tbody1').show()
@@ -1108,12 +1199,13 @@
 	$('#xzhd-body-down11').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':visible')){
 			$('#xzhd-body-fxhd-zhankai').hide()
+			$(this).attr('class','xzhd-body-down')
 		}
 	})
 
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
-			console.log(1111)
+			
 			$(this).parent().remove()
 			var str = $(this).parent().children('p').html()
 			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
@@ -1164,9 +1256,10 @@
 		}
 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 			if($('.xzhd-body-gouxuan').eq(j).children().is(":visible")){
+				//var str = ($('#xzhd-body-fxhd').html())
+				console.log(j)
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
-				str = ($('#xzhd-body-fxhd').html())
-				str += `<div style="display:flex;align-items: center;"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 			}
 		}
 		$('#xzhd-body-fxhd').html(str)
