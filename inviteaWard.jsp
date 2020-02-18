@@ -832,7 +832,7 @@
 				<div style="width:200px;margin-top:10px">
 					<div style="display:flex;align-items:center;">
 						<div class="xzhd-body-henggang">
-							<img src="image/codeallset_btn.png" alt="">
+							<img src="image/checkout.png" alt="">
 						</div>
 						<p style="font-size:16px;color:#444444;margin:0 46px 0 14px;">CRM优惠券</p>
 						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
@@ -840,7 +840,7 @@
 					</div>
 					<div style="display:flex;align-items:center;margin-top:24px">
 						<div class="xzhd-body-henggang">
-							<img src="image/codeallset_btn.png" alt="">
+							<img src="image/checkout.png" alt="">
 						</div>
 						<p style="font-size:16px;color:#444444;margin:0 49px 0 14px;">有赞优惠券</p>
 						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
@@ -965,7 +965,7 @@
 				<div style="width:200px;margin-top:10px">
 					<div style="display:flex;align-items:center;">
 						<div class="xzhd-body-henggang1">
-							<img src="image/codeallset_btn.png" alt="">
+							<img src="image/checkout.png" alt="">
 						</div>
 						<p style="font-size:16px;color:#444444;margin:0 46px 0 14px;">CRM优惠券</p>
 						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
@@ -973,7 +973,7 @@
 					</div>
 					<div style="display:flex;align-items:center;margin-top:24px">
 						<div class="xzhd-body-henggang1">
-							<img src="image/codeallset_btn.png" alt="">
+							<img src="image/checkout.png" alt="">
 						</div>
 						<p style="font-size:16px;color:#444444;margin:0 49px 0 14px;">有赞优惠券</p>
 						<img id="crm-rightget" style="display:none" src="image/right_get.png" alt="">
@@ -1290,55 +1290,56 @@
 </body>
 
 <script>
+	//首页有效按钮显示
 	$('.youxiao').click(function () {
 		$(this).parent().children('div').show()
 	})
-
+	//首页结束活动界面隐藏
 	$('.yqyl-body-quxiao').click(function () {
 		$(this).parent().parent().hide()
 	})
-
+	//活动界面赠送条件单选按钮
 	$('.xzhd-body-zstjraduis').click(function(){
 		$('.xzhd-body-zstjraduis').css('border-color', '#BFBFBF')
 		$('.xzhd-body-zstjraduis').children().hide()
 		$(this).css('border-color','#71B2EF')
 		$(this).children().show()
 	})
-
+	//新建活动按钮
 	$('#xjhd-start').click(function(){
 		$('.xzhd-body').show()
 		$('.yqyl-body').hide()
 	})
-
+	//新建活动的返回上一级按钮
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
 	})
-
+	//数据页面返回上一级按钮
 	$('#sj-body-fhsyj').click(function(){
 		$('.yqyl-body').show()
 		$('.sj-body').hide()
 	})
-
+	//显示数据页面按钮
 	$('.shuju').click(function(){
 		$('.yqyl-body').hide()
 		$('.sj-body').show()
 	})
-
+	//活动页面分享获得下拉
 	$('#xzhd-body-fxhd').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
 			$('#xzhd-body-fxhd-zhankai').show()
 			$('#xzhd-body-down11').attr('class','xzhd-body-up')
 		}
 	})
-
+	//活动页面领取获得下拉
 	$('#xzhd-body-lqrhd').click(function(){
 		if($('#xzhd-body-lqrhd-zhankai').is(':hidden')){
 			$('#xzhd-body-lqrhd-zhankai').show()
 			$('#xzhd-body-down22').attr('class', 'xzhd-body-up')
 		}
 	})
-
+	//活动页面分享获得卡券分类
 	$('.xzhd-body-henggang').click(function () {
 			$('.xzhd-body-henggang').children().hide()
 			$('.xzhd-body-henggang').parent().children('#crm-rightget').hide()
@@ -1360,7 +1361,7 @@
 				$(this).children().hide()
 			}
 		})
-
+	//活动页面领取获得卡券分类
 	$('.xzhd-body-henggang1').click(function () {
 			$('.xzhd-body-henggang1').children().hide()
 			$('.xzhd-body-henggang1').parent().children('#crm-rightget').hide()
@@ -1382,7 +1383,7 @@
 				$(this).children().hide()
 			}
 		})
-
+	//活动页面分享获得卡券勾选
 	$('.xzhd-body-gouxuan').click(function(){
 		if($(this).children().is(':hidden')){
 			$(this).children().show()
@@ -1406,7 +1407,7 @@
 			}
 		}
 	})
-
+	//活动页面领取获得卡券勾选
 	$('.xzhd-body-gouxuan1').click(function () {
 			if ($(this).children().is(':hidden')) {
 				$(this).children().show()
@@ -1430,24 +1431,33 @@
 				}
 			}
 		})
-
+	//活动页面分享获得收回
 	$('#xzhd-body-down11').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':visible')){
 			$('#xzhd-body-fxhd-zhankai').hide()
 			$(this).attr('class','xzhd-body-down')
 		}
 	})
-
+	//活动界面领取获得收回
 	$('#xzhd-body-down22').click(function () {
 			if ($('#xzhd-body-lqrhd-zhankai').is(':visible')) {
 				$('#xzhd-body-lqrhd-zhankai').hide()
 				$(this).attr('class', 'xzhd-body-down')
 			}
 		})
-
+	//活动界面分享获得点击叉号删除
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
-			
+			if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
+				return;
+			}
+
+			if($(this).parent().children('p').html().split('/')[0] == 'CRM优惠券'){
+				$('.xzhd-body-henggang').eq(0).click()
+			}else if($(this).parent().children('p').html().split('/')[0] == '有赞优惠券'){
+				$('.xzhd-body-henggang').eq(1).click()
+			}
+
 			$(this).parent().remove()
 			var str = $(this).parent().children('p').html()
 			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
@@ -1480,9 +1490,18 @@
 			}
 		})
 	}
-	
+	//活动界面领取获得点击叉号删除
 	function chacha1() {
 			$('.xzhd-body-chacha1').click(function () {
+				if ($('#xzhd-body-lqrhd-zhankai').is(':hidden')) {
+					return;
+				}
+
+				if ($(this).parent().children('p').html().split('/')[0] == 'CRM优惠券') {
+					$('.xzhd-body-henggang1').eq(0).click()
+				} else if ($(this).parent().children('p').html().split('/')[0] == '有赞优惠券') {
+					$('.xzhd-body-henggang1').eq(1).click()
+				}
 
 				$(this).parent().remove()
 				var str = $(this).parent().children('p').html()
@@ -1516,7 +1535,7 @@
 				}
 			})
 		}
-
+	//活动界面分享获得卡券面额勾选
 	function gouxuan(){
 		for(var k=0;k< $('#xzhd-body-fxhd').children().length;k++){
 			if ($('#xzhd-body-fxhd').children().eq(k).html() == '请选择要分享的优惠券'){
@@ -1527,15 +1546,20 @@
 		var str = ''
 		var str1 = ''
 		var str2 = ''
-		for(var i=0;i<$('.xzhd-body-henggang').length;i++){
-			if($('.xzhd-body-henggang').eq(i).children().is(":visible")){
-				str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			}
-		}
+		// for(var i=0;i<$('.xzhd-body-henggang').length;i++){
+		// 	if($('.xzhd-body-henggang').eq(i).children().is(":visible")){
+		// 		str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+		// 	}
+		// }
 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 			if($('.xzhd-body-gouxuan').eq(j).hasClass('gx')){
 				//str += ($('#xzhd-body-fxhd').html())
-				console.log(j)
+				if(j<=3){
+					str1 = $('.xzhd-body-henggang').eq(0).parent().children('p').html()
+				}else if(j>3){
+					str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
+				}
+				//console.log(j)
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
 				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 			}
@@ -1544,7 +1568,7 @@
 		$('.xzhd-body-chacha').unbind()
 		chacha()
 	}
-	
+	//活动界面领取获得卡券面额勾选
 	function gouxuan1() {
 			for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
 				if ($('#xzhd-body-lqrhd').children().eq(k).html() == '请选择领取人可获得的优惠券') {
@@ -1555,15 +1579,20 @@
 			var str = ''
 			var str1 = ''
 			var str2 = ''
-			for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-				if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-					str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-				}
-			}
+			// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+			// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+			// 		str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+			// 	}
+			// }
 			for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
 				if ($('.xzhd-body-gouxuan1').eq(j).hasClass('gxx')) {
 					//var str = ($('#xzhd-body-lqrhd').html())
-					console.log(j)
+					if (j <= 3) {
+						str1 = $('.xzhd-body-henggang').eq(0).parent().children('p').html()
+					} else if (j > 3) {
+						str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
+					}
+					//console.log(j)
 					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
 					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>` + str1 + '/' + str2 + `</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
 				}
