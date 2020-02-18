@@ -1530,7 +1530,7 @@
 		}
 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 			if($('.xzhd-body-gouxuan').eq(j).children().is(":visible")){
-				//var str = ($('#xzhd-body-fxhd').html())
+				//str += ($('#xzhd-body-fxhd').html())
 				console.log(j)
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
 				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
