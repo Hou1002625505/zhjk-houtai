@@ -784,7 +784,7 @@
 		
 	</div>
 
-	<div class="xzhd-body" style="display:none">
+	<div class="xzhd-body" style="display:none;position:relative">
 		<div style="width:100%">
 			<div id="fhsyj">返回上一级</div>
 		</div>
@@ -799,11 +799,11 @@
 		</div>
 		<div class="xzhd-body-flex" style="margin-top:24px">
 			<p style="font-size:16px;margin-right:86px">活动时间</p>
-			<div class="xzhd-body-input">
+			<div class="xzhd-body-input J-datepicker-day">
 				<input id="xzhd-body-hdsjs" placeholder="开始时间" type="text">
 			</div>
 			<div style="color:#CCCCCC;margin:0 10px">--</div>
-			<div class="xzhd-body-input">
+			<div class="xzhd-body-input J-datepicker-day">
 				<input id="xzhd-body-hdsje" placeholder="结束时间" type="text">
 			</div>
 		</div>
@@ -1177,6 +1177,15 @@
 			<p id="xzhd-body-save">保存</p>
 			<p id="xzhd-body-quxiao">返回</p>
 		</div>
+		<div style="position:absolute;right:222px;bottom: 390px;">
+			<p style="font-size:16px">示例</p>
+			<p style="font-size:16px;margin-top:9px">建议图片进行适当设计，图上铺之以营销文案，来吸引消费者。</p>
+			<div style="display:flex;align-items: flex-end;margin-top:9px">
+				<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
+				<p style="font-size:16px">（点击图片可查看大图）</p>
+			</div>
+		</div>
+		
 	</div>
 
 	<div class="sj-body" style="display:none">
@@ -1344,14 +1353,6 @@
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
 
 <script>
-	//首页有效按钮显示
-	$('.youxiao').click(function () {
-		$(this).parent().children('div').show()
-	})
-	//首页结束活动界面隐藏
-	$('.yqyl-body-quxiao').click(function () {
-		$(this).parent().parent().hide()
-	})
 	//活动界面赠送条件单选按钮
 	$('.xzhd-body-zstjraduis').click(function(){
 		$('.xzhd-body-zstjraduis').css('border-color', '#BFBFBF')
@@ -1374,11 +1375,7 @@
 		$('.yqyl-body').show()
 		$('.sj-body').hide()
 	})
-	//显示数据页面按钮
-	$('.shuju').click(function(){
-		$('.yqyl-body').hide()
-		$('.sj-body').show()
-	})
+	
 	//活动页面分享获得下拉
 	$('#xzhd-body-fxhd').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
@@ -1592,6 +1589,13 @@
 	$('#xzhd-body-lqanpz-upload').click(function(){
 		$('#lqanpz_upload').click()
 	})
+
+	//新建活动的点击按钮
+
+	$('#xzhd-body-save').click(function(){
+		console.log(12121212)
+	})
+
 	//活动背景配置上传
 	function hdbjpz_upload(){
 		if($('#hdbjpz_upload').val() == ''){
@@ -1833,6 +1837,16 @@
 
 			}
 		}
+	//打开图片
+	function openImg() {
+
+		var page = window.open();
+
+		var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:600px' src='http://test.physicalclub.com/crm/image/srcimg.png' alt=''/></div></body > "
+
+		page.document.write(html);
+
+	}
 
 	//首页接口
 	function shouye(){
@@ -1982,6 +1996,24 @@
 					})
 					$('.table-body').html(str)
 
+					//显示数据页面按钮
+					$('.shuju').click(function () {
+						$('.yqyl-body').hide()
+						$('.sj-body').show()
+						var id = $(this).parent().attr('class')
+						youhuiqtj(id)
+					})
+
+					//首页有效按钮显示
+					$('.youxiao').click(function () {
+						$(this).parent().children('div').show()
+					})
+
+					//首页结束活动界面隐藏
+					$('.yqyl-body-quxiao').click(function () {
+						$(this).parent().parent().hide()
+					})
+
 					var obj = {
 						wrapid: 'boxpage', //页面显示分页器容器id
 						total: result.total, //总条数
@@ -2002,7 +2034,42 @@
 		}
 		
 	}
-
+	//有赞接口
+	function youzanjk(){
+		var str = ''
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "rest/wx/dictionnary/getdictionnarylist",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+	}
+	//数据页面优惠券统计
+	function youhuiqtj(id){
+		var str = {
+			id : id
+		}
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/countActivityCoupon",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+	}
 	//活动界面分享获得点击叉号删除
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
