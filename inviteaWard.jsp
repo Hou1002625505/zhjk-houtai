@@ -21,6 +21,7 @@
 	<script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/moment.min.js"></script>
 	<style>
 		html {
 			border: 1px solid #95B8E7;
@@ -671,12 +672,12 @@
 				<em class="triangle_border_down1"></em>
 			</span>
 			<p class="yqyl-header-p">活动时间</p>
-			<div class="yqyl-header-input" style='margin-right:7px'>
+			<div class="yqyl-header-input J-datepicker-day" style='margin-right:7px'>
 				<input id="yqyl-header-hdsjs" type="text" placeholder="开始日期">
 			</div>
 			<div style="width:5px;height:2px;background:#c7c6c9;margin-right:7px">
 			</div>
-			<div class="yqyl-header-input">
+			<div class="yqyl-header-input J-datepicker-day">
 				<input id="yqyl-header-hdsje" type="text" placeholder="结束日期">
 			</div>
 		</div>
@@ -1289,6 +1290,9 @@
 	</div>
 </body>
 
+<script type="text/javascript" src="easyui/datepicker.all.js"></script>
+<script type="text/javascript" src="easyui/datepicker.en.js"></script>
+
 <script>
 	//首页有效按钮显示
 	$('.youxiao').click(function () {
@@ -1445,6 +1449,116 @@
 				$(this).attr('class', 'xzhd-body-down')
 			}
 		})
+	
+	//shouye()
+
+	time()
+
+	//时间组件
+	function time() {
+			$('.J-datepicker-day').datePicker({
+				hasShortcut: true,
+				format: 'YYYY-MM-DD',
+				shortcutOptions: [{
+					name: '今天',
+					day: '0'
+				}, {
+					name: '昨天',
+					day: '-1'
+				}, {
+					name: '一周前',
+					day: '-7'
+				}]
+			});
+
+			function fchatitylist() {
+				intoPages = 1;
+				visititylist();
+			}
+
+			function visititylist() {
+				var status = $("#visitstatus").val();
+				var conditionName = '';//顾问姓名
+				var startDate = $("#selectDate1").val();
+				var endDate = $("#selectDate2").val();
+				//var club = $("#clubId").val();
+				var fangcusname = $("#fangcusname").val();
+				var fangmobile = $("#fangmobile").val();
+				if (startDate != '') {
+					if (endDate == '') {
+						alert("请选择结束日期");
+						return;
+					}
+				}
+			}
+
+
+			function getDay(day) {
+
+				var today = new Date();
+
+
+
+				var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+
+
+
+				today.setTime(targetday_milliseconds); //注意，这行是关键代码
+
+
+
+				var tYear = today.getFullYear();
+
+				var tMonth = today.getMonth();
+
+				var tDate = today.getDate();
+
+				tMonth = doHandleMonth(tMonth + 1);
+
+				tDate = doHandleMonth(tDate);
+
+				return tYear + "-" + tMonth + "-" + tDate;
+
+			}
+
+			function doHandleMonth(month) {
+
+				var m = month;
+
+				if (month.toString().length == 1) {
+
+					m = "0" + month;
+
+				}
+
+				return m;
+
+			}
+		}
+
+	//首页接口
+	function shouye(){
+
+		var str ={
+			page : 1,
+			rows : 1
+		}
+
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/customer/activities/getInvitationActivitiese",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+
+	}
 	//活动界面分享获得点击叉号删除
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
