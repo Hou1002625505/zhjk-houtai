@@ -17,11 +17,12 @@
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="easyui/demo.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
-	<link rel="stylesheet" type="text/css" href="../easyui/pagination.css" />
-	<script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+	<script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/moment.min.js"></script>
+	
 	<style>
 		html {
 			border: 1px solid #95B8E7;
@@ -350,6 +351,67 @@
 			margin-left:15px;
 			cursor: pointer;
 		}
+
+		#xzhd-body-fxanpz-img{
+			width:160px;
+			height:60px;
+			border:1px solid #CCCCCC;
+			border-radius: 3px;
+		}
+
+		#xzhd-body-fxanpz-upload{
+			width:60px;
+			height:30px;
+			border-radius: 4px;
+			background: #71B2EF;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			margin-left:15px;
+			cursor: pointer;
+		}
+
+		#xzhd-body-fxhyljt-img{
+			width:150px;
+			height:120px;
+			border:1px solid #CCCCCC;
+			border-radius: 3px;
+		}
+
+		#xzhd-body-fxhyljt-upload{
+			width:60px;
+			height:30px;
+			border-radius: 4px;
+			background: #71B2EF;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			margin-left:15px;
+			cursor: pointer;
+		}
+
+		#xzhd-body-lqhdbjpz-img{
+			width:120px;
+			height:150px;
+			border:1px solid #CCCCCC;
+			border-radius: 3px;
+		}
+
+		#xzhd-body-lqhdbjpz-upload{
+			width:60px;
+			height:30px;
+			border-radius: 4px;
+			background: #71B2EF;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			font-size: 16px;
+			margin-left:15px;
+			cursor: pointer;
+		}
+
 		#xzhd-body-lqanpz-img{
 			width:160px;
 			height:60px;
@@ -639,14 +701,27 @@
 		.xzhd-body-chacha{
 			width:16px;
 			height:16px;
-			margin-left:22px;
-			margin-right:50px
+			margin-left:15px;
+			margin-right:40px
 		}
 		.xzhd-body-chacha1{
 			width:16px;
 			height:16px;
-			margin-left:22px;
-			margin-right:50px
+			margin-left:15px;
+			margin-right:40px
+		}
+		.minus_minus{
+			width:15px;
+			height:15px;
+		}
+		.add_add{
+			width:15px;
+			height:15px;
+		}
+		.xzhd-body-kqsl{
+			width:50px;
+			border-bottom: 1px solid #BFBFBF;
+			text-align: center;
 		}
 	</style>
 </head>
@@ -666,8 +741,8 @@
 				<select name="visitstatus" id="zengjuanyuany">
 					<option value="" selected="selected">全部</option>
 					<option value="1">活动中</option>
-					<option value="2">未开始</option>
-					<option value="3">已结束</option>
+					<option value="0">未开始</option>
+					<option value="2">已结束</option>
 				</select>
 				<em class="triangle_border_down1"></em>
 			</span>
@@ -699,102 +774,14 @@
 				</tr>
 			</tbody>
 			<tbody class="table-body">
-				<tr>
-					<td class="item1">1</td>
-					<td class="item2">情人双人健身月卡</td>
-					<td class="item2">2020.02.11-2020.02.28</td>
-					<td class="item3">514</td>
-					<td class="item3">245</td>
-					<td class="item3">200</td>
-					<td class="item4">活动中</td>
-					<td>
-						<p class="shuju">数据</p>
-						<p>|</p>
-						<p class="chakan">查看</p>
-						<p>|</p>
-						<p class="youxiao">有效</p>
-						<div
-							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
-							<div style="display:flex;justify-content: center;padding-bottom:10px">
-								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div class="yqyl-body-queding"
-									>
-									确定</div>
-								<div class="yqyl-body-quxiao"
-									>
-									取消</div>
-							</div>
-							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="item1">1</td>
-					<td class="item2">情人双人健身月卡</td>
-					<td class="item2">2020.02.11-2020.02.28</td>
-					<td class="item3">514</td>
-					<td class="item3">245</td>
-					<td class="item3">200</td>
-					<td class="item4">活动中</td>
-					<td>
-						<p class="shuju">数据</p>
-						<p>|</p>
-						<p class="chakan">查看</p>
-						<p>|</p>
-						<p class="youxiao">有效</p>
-						<div
-							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
-							<div style="display:flex;justify-content: center;padding-bottom:10px">
-								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div class="yqyl-body-queding"
-									>
-									确定</div>
-								<div class="yqyl-body-quxiao"
-									>
-									取消</div>
-							</div>
-							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="item1">1</td>
-					<td class="item2">情人双人健身月卡</td>
-					<td class="item2">2020.02.11-2020.02.28</td>
-					<td class="item3">514</td>
-					<td class="item3">245</td>
-					<td class="item3">200</td>
-					<td class="item4">活动中</td>
-					<td>
-						<p class="shuju">数据</p>
-						<p>|</p>
-						<p class="chakan">查看</p>
-						<p>|</p>
-						<p class="youxiao">有效</p>
-						<div
-							style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
-							<div style="display:flex;justify-content: center;padding-bottom:10px">
-								<div style="line-height: 36px;">是否立即结束活动？</div>
-								<div class="yqyl-body-queding"
-									>
-									确定</div>
-								<div class="yqyl-body-quxiao"
-									>
-									取消</div>
-							</div>
-							<div style="height:1px;background:#BFBFBF;"></div>
-							<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
-						</div>
-					</td>
-				</tr>
+				
 			</tbody>
 		</table>
-		<div style="width:100%;margin-top:22px">
+		<div style="width:100%;margin-top:22px;display:flex;align-items: center;">
 			<p style="font-size:16px">共20条，每页15条</p>
+			<div class="box" id="boxpage" style="margin:0 0 0 27px"></div>
 		</div>
-
+		
 	</div>
 
 	<div class="xzhd-body" style="display:none">
@@ -853,8 +840,7 @@
 						<tr>
 							<th></th>
 							<th>优惠券名称</th>
-							<th>开始时间</th>
-							<th>结束时间</th>
+							<th>数量</th>
 							<th>库存</th>
 						</tr>
 					</tbody>
@@ -866,8 +852,13 @@
 								</div>
 							</td>
 							<td>50元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td>
+								<div style="display:flex;justify-content: center;">
+									<img class="minus_minus" src="image/minus_minus.png" alt="">
+									<p class="xzhd-body-kqsl">1</p>
+									<img class="add_add" src="image/add_add.png" alt="">
+								</div>
+							</td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -877,8 +868,12 @@
 								</div>
 							</td>
 							<td>100元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td>
+								<div style="display:flex;justify-content: center;">
+									<img class="minus_minus" src="image/minus_minus.png" alt="">
+									<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+								</div>
+							</td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -888,8 +883,9 @@
 								</div>
 							</td>
 							<td>200元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -899,8 +895,13 @@
 								</div>
 							</td>
 							<td>500元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td>
+								<div style="display:flex;justify-content: center;">
+									<img class="minus_minus" src="image/minus_minus.png" alt="">
+									<p class="xzhd-body-kqsl">1</p>
+									<img class="add_add" src="image/add_add.png" alt="">
+								</div>
+							</td>
 							<td>1000</td>
 						</tr>
 					</tbody>
@@ -912,8 +913,9 @@
 								</div>
 							</td>
 							<td>500元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -923,8 +925,13 @@
 								</div>
 							</td>
 							<td>200元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td>
+								<div style="display:flex;justify-content: center;">
+									<img class="minus_minus" src="image/minus_minus.png" alt="">
+									<p class="xzhd-body-kqsl">1</p>
+									<img class="add_add" src="image/add_add.png" alt="">
+								</div>
+							</td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -934,8 +941,9 @@
 								</div>
 							</td>
 							<td>100元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -945,8 +953,9 @@
 								</div>
 							</td>
 							<td>50元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 					</tbody>
@@ -987,7 +996,6 @@
 							<th></th>
 							<th>优惠券名称</th>
 							<th>开始时间</th>
-							<th>结束时间</th>
 							<th>库存</th>
 						</tr>
 					</tbody>
@@ -999,8 +1007,13 @@
 								</div>
 							</td>
 							<td>50元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td>
+								<div style="display:flex;justify-content: center;">
+									<img class="minus_minus" src="image/minus_minus.png" alt="">
+									<p class="xzhd-body-kqsl">1</p>
+									<img class="add_add" src="image/add_add.png" alt="">
+								</div>
+							</td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1010,8 +1023,9 @@
 								</div>
 							</td>
 							<td>100元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1021,8 +1035,9 @@
 								</div>
 							</td>
 							<td>200元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1032,8 +1047,9 @@
 								</div>
 							</td>
 							<td>500元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 					</tbody>
@@ -1045,8 +1061,9 @@
 								</div>
 							</td>
 							<td>500元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1056,8 +1073,9 @@
 								</div>
 							</td>
 							<td>200元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1067,8 +1085,9 @@
 								</div>
 							</td>
 							<td>100元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 						<tr>
@@ -1078,8 +1097,9 @@
 								</div>
 							</td>
 							<td>50元优惠券</td>
-							<td>2020-02-11</td>
-							<td>2020-02-28</td>
+							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
+							</div></td>
 							<td>1000</td>
 						</tr>
 					</tbody>
@@ -1103,13 +1123,43 @@
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">活动背景配置</p>
-			<div id="xzhd-body-hdbjpz-img"></div>
+			<div id="xzhd-body-hdbjpz-img">
+				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+			</div>
 			<div id="xzhd-body-hdbjpz-upload">上传</div>
+			<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload" onchange="hdbjpz_upload()" style="display:none">
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">分享按钮配置</p>
+			<div id="xzhd-body-fxanpz-img">
+				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+			</div>
+			<div id="xzhd-body-fxanpz-upload">上传</div>
+			<input type="file" accept=".png,.jpeg,.jpg" id="fxanpz_upload" onchange="fxanpz_upload()" style="display:none">
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:39px">分享好友链接图</p>
+			<div id="xzhd-body-fxhyljt-img">
+				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+			</div>
+			<div id="xzhd-body-fxhyljt-upload">上传</div>
+			<input type="file" accept=".png,.jpeg,.jpg" id="fxhyljt_upload" onchange="fxhyljt_upload()" style="display:none">
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:22px">领取活动背景配置</p>
+			<div id="xzhd-body-lqhdbjpz-img">
+				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+			</div>
+			<div id="xzhd-body-lqhdbjpz-upload">上传</div>
+			<input type="file" accept=".png,.jpeg,.jpg" id="lqhdbjpz_upload" onchange="lqhdbjpz_upload()" style="display:none">
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">领取按钮配置</p>
-			<div id="xzhd-body-lqanpz-img"></div>
+			<div id="xzhd-body-lqanpz-img">
+				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+			</div>
 			<div id="xzhd-body-lqanpz-upload">上传</div>
+			<input type="file" accept=".png,.jpeg,.jpg" id="lqanpz_upload" onchange="lqanpz_upload()" style="display:none">
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">分享文字标题</p>
@@ -1404,9 +1454,10 @@
 			}
 
 			for(var j=0;j<$('#xzhd-body-fxhd').children().length;j++){
-				if(str1+str2 == $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0]+ $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[1]){
+				if(str1+str2 == $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0]+ $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[1].split('×')[0]){
 					$('#xzhd-body-fxhd').children().eq(j).remove()
 					//console.log(111111111)
+					//console.log(j)
 				}
 			}
 		}
@@ -1428,7 +1479,7 @@
 				}
 
 				for (var j = 0; j < $('#xzhd-body-lqrhd').children().length; j++) {
-					if (str1 + str2 == $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[0] + $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[1]) {
+					if (str1 + str2 == $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[0] + $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[1].split('×')[0]) {
 						$('#xzhd-body-lqrhd').children().eq(j).remove()
 						//console.log(111111111)
 					}
@@ -1449,10 +1500,257 @@
 				$(this).attr('class', 'xzhd-body-down')
 			}
 		})
-	
-	//shouye()
+	//新建页面添加卡券数量
+	$('.add_add').click(function(){
+		var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+		strcount++
+		$(this).parent().children('.xzhd-body-kqsl').html(strcount)
 
+		for(var i=0;i<$('.xzhd-body-henggang').length;i++){
+			if($('.xzhd-body-henggang').eq(i).children().is(":visible")){
+				var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+			}
+		}
+
+		for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+			if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+				var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+			}
+		}
+
+		var str2 = $(this).parent().parent().parent().children().eq(1).html()
+		for(var j=0;j< $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length;j++){
+			if(str1+'/'+ str2 == $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]){
+				var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+				var str5 = $(this).parent().children('p').html()
+				var str6 = str3 + '×' + str5
+				$(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+			}
+		}
+
+	})
+
+	//新建页面减少卡券数量
+	$('.minus_minus').click(function(){
+		var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+		strcount--
+		if(strcount<=0){
+			strcount = 0
+		}
+		$(this).parent().children('.xzhd-body-kqsl').html(strcount)
+
+		for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+			if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+				var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+			}
+		}
+
+		var str2 = $(this).parent().parent().parent().children().eq(1).html()
+		for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
+			if (str1 + '/' + str2 == $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]) {
+				var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+				var str5 = $(this).parent().children('p').html()
+				var str6 = str3 + '×' + str5
+				$(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+			}
+		}
+	})
+
+	//首页的查询按钮
+	$('#chaxun').click(function(){
+		shouye()
+	})
+	//首页的清除按钮
+	$('#qingchu').click(function(){
+		$('#yqyl-header-hdmc').val('')
+		$('#yqyl-header-hdsjs').val('')
+		$('#yqyl-header-hdsje').val('')
+		$('#zengjuanyuany').find('option[value=""]').prop("selected", true);
+		shouye()
+	})
+
+	shouye()
+	
 	time()
+	//活动背景配置点击
+	$('#xzhd-body-hdbjpz-upload').click(function(){
+		$('#hdbjpz_upload').click()
+	})
+	//分享按钮配置点击
+	$('#xzhd-body-fxanpz-upload').click(function(){
+		$('#fxanpz_upload').click()
+	})
+	//分享好友链接图点击
+	$('#xzhd-body-fxhyljt-upload').click(function(){
+		$('#fxhyljt_upload').click()
+	})
+	//领取活动背景配置点击
+	$('#xzhd-body-lqhdbjpz-upload').click(function(){
+		$('#lqhdbjpz_upload').click()
+	})
+	//领取按钮配置点击
+	$('#xzhd-body-lqanpz-upload').click(function(){
+		$('#lqanpz_upload').click()
+	})
+	//活动背景配置上传
+	function hdbjpz_upload(){
+		if($('#hdbjpz_upload').val() == ''){
+			return;
+		}
+		let file = $("#hdbjpz_upload").val()
+		let filename = file.substr(file.lastIndexOf("."));
+		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+			alert("请上传图片格式的文件");
+			return;
+		}
+
+		var formData = new FormData();
+		formData.append('file', document.getElementById('hdbjpz_upload').files[0])
+		$.ajax({
+			url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+			type: "post",
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function (data) {
+				console.log(data)
+				//var img = data
+				//return data
+				$('#xzhd-body-hdbjpz-img').children().attr('src','images/'+ data.rows[0].path)
+			},
+			error: function (data) {
+				alert("上传失败")
+			}
+		});
+	}
+
+	//分享按钮配置上传
+	function fxanpz_upload() {
+		if ($('#fxanpz_upload').val() == '') {
+			return;
+		}
+		let file = $("#fxanpz_upload").val()
+		let filename = file.substr(file.lastIndexOf("."));
+		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+			alert("请上传图片格式的文件");
+			return;
+		}
+
+		var formData = new FormData();
+		formData.append('file', document.getElementById('fxanpz_upload').files[0])
+		$.ajax({
+			url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+			type: "post",
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function (data) {
+				console.log(data)
+				//var img = data
+				//return data
+				$('#xzhd-body-fxanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+			},
+			error: function (data) {
+				alert("上传失败")
+			}
+		});
+	}
+
+	//分享好友链接图上传
+	function fxhyljt_upload() {
+			if ($('#fxhyljt_upload').val() == '') {
+				return;
+			}
+			let file = $("#fxhyljt_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
+
+			var formData = new FormData();
+			formData.append('file', document.getElementById('fxhyljt_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-fxhyljt-img').children().attr('src', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
+		}
+
+	//领取活动背景配置上传
+	function lqhdbjpz_upload() {
+			if ($('#lqhdbjpz_upload').val() == '') {
+				return;
+			}
+			let file = $("#lqhdbjpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
+
+			var formData = new FormData();
+			formData.append('file', document.getElementById('lqhdbjpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-lqhdbjpz-img').children().attr('src', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
+		}
+
+	//领取按钮配置上传
+	function lqanpz_upload() {
+			if ($('#lqanpz_upload').val() == '') {
+				return;
+			}
+			let file = $("#lqanpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
+
+			var formData = new FormData();
+			formData.append('file', document.getElementById('lqanpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-lqanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
+		}
 
 	//时间组件
 	function time() {
@@ -1539,26 +1837,172 @@
 	//首页接口
 	function shouye(){
 
-		var str ={
-			page : 1,
-			rows : 1
+		var onPagechange = function (page) {
+			aaaaaa(page)
 		}
 
-		$.ajax({
-			type: 'POST',
-			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/customer/activities/getInvitationActivitiese",
-			data: JSON.stringify(str),
-			success: function (result) {
-				console.log(result)
-			},
-			error: function (e) {
-				console.log(e.status);
-				console.log(e.responseText)
-			}
-		})
+		var page = 1
+		aaaaaa(page)
 
+		function aaaaaa(page){
+
+			var name = $('#yqyl-header-hdmc').val()
+			var status = $('#zengjuanyuany').val()
+			var startDate = $('#yqyl-header-hdsjs').val()
+			var endDate = $('#yqyl-header-hdsje').val()
+
+			var param = { 
+				pacId: 1,
+				name : name,
+				status : status,
+				startDate : startDate,
+				endDate : endDate
+			}
+
+			var str = {
+				param: param,
+				page: page,
+				rows: 10
+			}
+
+			function timegeshi(i) {
+				var strstr = ''
+				strstr = i.split(' ')[0]
+				return strstr = i.split(' ')[0].split('-')[0] + '.' + i.split(' ')[0].split('-')[1] + '.' + i.split(' ')[0].split('-')[2]
+			}
+
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/activities/getInvitationActivitiese",
+				data: JSON.stringify(str),
+				success: function (result) {
+					console.log(result)
+					var str = ''
+					$.each(result.rows, function (i, item) {
+						if (item.state == 0) {
+							str += `
+						<tr>
+							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item2">`+ item.activityName + `</td>
+							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+							<td class="item3">`+ item.shareCustomerNum + `</td>
+							<td class="item3">`+ item.receiveCount + `</td>
+							<td class="item3">`+ item.useCount + `</td>
+							<td class="item4">未开始</td>
+							<td class="`+ item.id + `">
+								<p class="shuju">数据</p>
+								<p>|</p>
+								<p class="chakan">查看</p>
+								<p>|</p>
+								<p class="youxiao">有效</p>
+								<div
+									style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
+									<div style="display:flex;justify-content: center;padding-bottom:10px">
+										<div style="line-height: 36px;">是否立即结束活动？</div>
+										<div class="yqyl-body-queding"
+										>
+											确定</div>
+										<div class="yqyl-body-quxiao"
+										>
+											取消</div>
+									</div>
+									<div style="height:1px;background:#BFBFBF;"></div>
+									<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+								</div>
+							</td>
+						</tr>
+						`
+						} else if (item.state == 1) {
+							str += `
+						<tr>
+							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item2">`+ item.activityName + `</td>
+							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+							<td class="item3">`+ item.shareCustomerNum + `</td>
+							<td class="item3">`+ item.receiveCount + `</td>
+							<td class="item3">`+ item.useCount + `</td>
+							<td class="item4">进行中</td>
+							<td class="`+ item.id + `">
+								<p class="shuju">数据</p>
+								<p>|</p>
+								<p class="chakan">查看</p>
+								<p>|</p>
+								<p class="youxiao">有效</p>
+								<div
+									style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
+									<div style="display:flex;justify-content: center;padding-bottom:10px">
+										<div style="line-height: 36px;">是否立即结束活动？</div>
+										<div class="yqyl-body-queding"
+										>
+											确定</div>
+										<div class="yqyl-body-quxiao"
+										>
+											取消</div>
+									</div>
+									<div style="height:1px;background:#BFBFBF;"></div>
+									<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+								</div>
+							</td>
+						</tr>
+						`
+						} else {
+							str += `
+						<tr>
+							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item2">`+ item.activityName + `</td>
+							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+							<td class="item3">`+ item.shareCustomerNum + `</td>
+							<td class="item3">`+ item.receiveCount + `</td>
+							<td class="item3">`+ item.useCount + `</td>
+							<td class="item4">已结束</td>
+							<td class="`+ item.id + `">
+								<p class="shuju">数据</p>
+								<p>|</p>
+								<p class="chakan">查看</p>
+								<div
+									style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
+									<div style="display:flex;justify-content: center;padding-bottom:10px">
+										<div style="line-height: 36px;">是否立即结束活动？</div>
+										<div class="yqyl-body-queding"
+										>
+											确定</div>
+										<div class="yqyl-body-quxiao"
+										>
+											取消</div>
+									</div>
+									<div style="height:1px;background:#BFBFBF;"></div>
+									<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
+								</div>
+							</td>
+						</tr>
+						`
+						}
+
+					})
+					$('.table-body').html(str)
+
+					var obj = {
+						wrapid: 'boxpage', //页面显示分页器容器id
+						total: result.total, //总条数
+						pagesize: 10, //每页显示10条
+						currentPage: page, //当前页
+						onPagechange: onPagechange
+						//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+					}
+
+					pagination.init(obj);
+
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
+		}
+		
 	}
+
 	//活动界面分享获得点击叉号删除
 	function chacha(){
 		$('.xzhd-body-chacha').click(function () {
@@ -1573,7 +2017,7 @@
 			}
 
 			$(this).parent().remove()
-			var str = $(this).parent().children('p').html()
+			var str = $(this).parent().children('p').html().split('×')[0]
 			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
 				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
 					var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
@@ -1618,7 +2062,7 @@
 				}
 
 				$(this).parent().remove()
-				var str = $(this).parent().children('p').html()
+				var str = $(this).parent().children('p').html().split('×')[0]
 				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
 					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
 						var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
@@ -1674,8 +2118,9 @@
 					str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
 				}
 				//console.log(j)
+				var str3 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
-				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 			}
 		}
 		$('#xzhd-body-fxhd').html(str)
@@ -1707,8 +2152,9 @@
 						str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
 					}
 					//console.log(j)
+					var str3 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>` + str1 + '/' + str2 + `</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
 				}
 			}
 			$('#xzhd-body-lqrhd').html(str)
