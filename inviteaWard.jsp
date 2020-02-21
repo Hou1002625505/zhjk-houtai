@@ -801,13 +801,13 @@
 			</tbody>
 		</table>
 		<div style="width:100%;margin-top:22px;display:flex;align-items: center;">
-			<p style="font-size:16px">共20条，每页15条</p>
+			<p style="font-size:16px" id="yqyl-body-sjjl"></p>
 			<div class="box" id="boxpage" style="margin:0 0 0 27px"></div>
 		</div>
 		
 	</div>
 
-	<div class="xzhd-body" style="display:none;position:relative">
+	<div class="xzhd-body" style="display:none;">
 		<div style="width:100%">
 			<div id="fhsyj">返回上一级</div>
 		</div>
@@ -943,6 +943,18 @@
 			<p style="margin:0 36px 0 15px;font-size:14px">分享送</p>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">分享文字标题</p>
+			<div class="xzhd-body-input">
+				<input id="xzhd-body-fxwzbt" placeholder="请填写分享活动描述" />
+			</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:54px">分享活动描述</p>
+			<div class="xzhd-body-input">
+				<textarea id="xzhd-body-fxhdxs" placeholder="请对活动分享进行描述"></textarea>
+			</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">活动背景配置</p>
 			<div id="xzhd-body-hdbjpz-img">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
@@ -958,13 +970,21 @@
 			<div id="xzhd-body-fxanpz-upload">上传</div>
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxanpz_upload" onchange="fxanpz_upload()" style="display:none">
 		</div>
-		<div class="xzhd-body-flex1" style="margin-top:50px">
+		<div class="xzhd-body-flex1" style="margin-top:50px;position:relative">
 			<p style="font-size:16px;margin-right:39px">分享好友链接图</p>
 			<div id="xzhd-body-fxhyljt-img">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 			</div>
 			<div id="xzhd-body-fxhyljt-upload">上传</div>
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxhyljt_upload" onchange="fxhyljt_upload()" style="display:none">
+			<div style="position:absolute;right:222px;top:0">
+				<p style="font-size:16px">示例</p>
+				<p style="font-size:16px;margin-top:9px">建议图片进行适当设计，图上铺之以营销文案，来吸引消费者。</p>
+				<div style="display:flex;align-items: flex-end;margin-top:9px">
+					<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
+					<p style="font-size:16px">（点击图片可查看大图）</p>
+				</div>
+			</div>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:22px">领取活动背景配置</p>
@@ -982,29 +1002,10 @@
 			<div id="xzhd-body-lqanpz-upload">上传</div>
 			<input type="file" accept=".png,.jpeg,.jpg" id="lqanpz_upload" onchange="lqanpz_upload()" style="display:none">
 		</div>
-		<div class="xzhd-body-flex1" style="margin-top:50px">
-			<p style="font-size:16px;margin-right:54px">分享文字标题</p>
-			<div class="xzhd-body-input">
-				<input id="xzhd-body-fxwzbt" placeholder="请填写分享活动描述"/>
-			</div>
-		</div>
-		<div class="xzhd-body-flex1" style="margin-top:50px">
-			<p style="font-size:16px;margin-right:54px">分享活动描述</p>
-			<div class="xzhd-body-input">
-				<textarea id="xzhd-body-fxhdxs" placeholder="请对活动分享进行描述"></textarea>
-			</div>
-		</div>
+		
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p id="xzhd-body-save">保存</p>
 			<p id="xzhd-body-quxiao">返回</p>
-		</div>
-		<div style="position:absolute;right:222px;bottom: 390px;">
-			<p style="font-size:16px">示例</p>
-			<p style="font-size:16px;margin-top:9px">建议图片进行适当设计，图上铺之以营销文案，来吸引消费者。</p>
-			<div style="display:flex;align-items: flex-end;margin-top:9px">
-				<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
-				<p style="font-size:16px">（点击图片可查看大图）</p>
-			</div>
 		</div>
 		
 	</div>
@@ -1262,7 +1263,7 @@
 	$('#xzhd-body-lqanpz-upload').click(function(){
 		$('#lqanpz_upload').click()
 	})
-
+	//数据页面的更多按钮
 	$('#sj-body-gd').click(function(){
 		if($('#sj-body-gdimg1').is(':hidden')){
 			$('#sj-body-gdimg1').show()
@@ -1614,9 +1615,11 @@
 			url: "http://test.physicalclub.com/crm/rest/activities/insertInvitationActivities",
 			data: JSON.stringify(xjhdstr),
 			success: function (result) {
-				alert(result.messsage)
+				console.log(result)
+				alert(result.message)
 				$('.xzhd-body').hide()
 				$('.yqyl-body').show()
+				shouye()
 			},
 			error: function (e) {
 				console.log(e.status);
@@ -1817,9 +1820,9 @@
 						onPagechange: onPagechange
 						//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
 					}
-
 					pagination.init(obj);
-
+					var sjjlstr = `共`+ result.total +`条，每页10条`
+					$('#yqyl-body-sjjl').html(sjjlstr)
 				},
 				error: function (e) {
 					console.log(e.status);
