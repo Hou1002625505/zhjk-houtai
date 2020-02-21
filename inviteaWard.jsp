@@ -1616,10 +1616,15 @@
 			data: JSON.stringify(xjhdstr),
 			success: function (result) {
 				console.log(result)
-				alert(result.message)
-				$('.xzhd-body').hide()
-				$('.yqyl-body').show()
-				shouye()
+				if (result.message !== '新增成功!') {
+					alert(result.message)
+					return;
+				}else if (result.message == '新增成功!') {
+					alert(result.message)
+					$('.xzhd-body').hide()
+					$('.yqyl-body').show()
+					shouye()
+				}
 			},
 			error: function (e) {
 				console.log(e.status);
