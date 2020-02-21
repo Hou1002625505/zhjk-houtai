@@ -1135,6 +1135,7 @@
 		$('#xzhd-body-fxwzbt').val('')
 		$('#xzhd-body-fxhdxs').val('')
 		//新建活动的点击按钮
+		$('#xzhd-body-save').unbind()
 		$('#xzhd-body-save').click(function () {
 			newhd()
 		})
@@ -1143,6 +1144,7 @@
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+		window.location.reload()
 	})
 	//数据页面返回上一级按钮
 	$('#sj-body-fhsyj').click(function(){
@@ -1621,6 +1623,7 @@
 					$('.xzhd-body').hide()
 					$('.yqyl-body').show()
 					shouye()
+					window.location.reload()
 				}
 			},
 			error: function (e) {
@@ -1630,6 +1633,109 @@
 		})
 
 		//console.log(xjhdstr)
+	}
+	
+	//编辑活动接口
+	function bjhdjk(id){
+		var activityName = $('#xzhd-body-hdmc').val()
+		var startdata = $('#xzhd-body-hdsjs').val() + ' ' + '00:00'
+		var enddata = $('#xzhd-body-hdsje').val() + ' ' + '23:59'
+		var data1 = new Date(startdata)
+		var data2 = new Date(enddata)
+		var activityStartDate = data1.getTime()
+		var activityEndDate = data2.getTime()
+		for (var i = 0; i < $('#zstjzstj').children('.xzhd-body-zstjraduis').length; i++) {
+			if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(0).children().is(':visible')) {
+				var giftConditions = 1
+			} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(1).children().is(':visible')) {
+				var giftConditions = 2
+			} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(2).children().is(':visible')) {
+				var giftConditions = 3
+			}
+		}
+		var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
+		var shareButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
+		var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
+		var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
+		var receiveButtonUrl = $('#xzhd-body-lqanpz-img').attr('class')
+		var shareTitle = $('#xzhd-body-fxwzbt').val()
+		var shareDescription = $('#xzhd-body-fxhdxs').val()
+		var shareCouponList = []
+		var receiveCouponList = []
+		for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
+			if ($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == 'CRM优惠券') {
+				var couponSource = 1
+			} else if ($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == '有赞优惠券') {
+				var couponSource = 2
+			}
+			var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
+			var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
+			var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
+			shareCouponList.push({
+				couponId: couponId,
+				couponName: couponName,
+				couponSource: couponSource,
+				quantity: quantity
+			})
+		}
+		for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
+			if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
+				var couponSource = 1
+			} else if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == '有赞优惠券') {
+				var couponSource = 2
+			}
+			var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
+			var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
+			var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
+			receiveCouponList.push({
+				couponId: couponId,
+				couponName: couponName,
+				couponSource: couponSource,
+				quantity: quantity
+			})
+		}
+		var xjhdstr = {
+			id : id,
+			activityName: activityName,
+			activityStartDate: activityStartDate,
+			activityEndDate: activityEndDate,
+			giftConditions: giftConditions,
+			pageBackgroundUrl: pageBackgroundUrl,
+			shareButtonUrl: shareButtonUrl,
+			shareBuddyLinksUrl: shareBuddyLinksUrl,
+			receiveBackgroundUrl: receiveBackgroundUrl,
+			receiveButtonUrl: receiveButtonUrl,
+			shareTitle: shareTitle,
+			shareDescription: shareDescription,
+			receiveCouponList: receiveCouponList,
+			shareCouponList: shareCouponList,
+			fontColor: 123
+		}
+
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/updateInviActivities",
+			data: JSON.stringify(xjhdstr),
+			success: function (result) {
+				console.log(result)
+				if (result.message !== '修改成功!') {
+					alert(result.message)
+					return;
+				} else if (result.message == '修改成功!') {
+					alert(result.message)
+					$('.xzhd-body').hide()
+					$('.yqyl-body').show()
+					shouye()
+					window.location.reload()
+				}
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+
 	}
 	//首页接口
 	function shouye(){
@@ -1801,6 +1907,15 @@
 						$('#sj-body-dcsj').click(function(){
 							shujuymdc(id)
 						})
+					})
+
+					//查看编辑页面按钮
+					$('.chakan').click(function(){
+						$('.yqyl-body').hide()
+						$('.xzhd-body').show()
+						var id=$(this).parent().attr('class')
+						console.log(id)
+						chakanchakan(id)
 					})
 
 					//首页有效按钮显示
@@ -2089,11 +2204,12 @@
 				console.log(result)
 				var youhuiqxlstr = `<option value="" selected="selected"></option>`
 				$.each(result.rows,function(i,item){
-					if(item.couponName.length>7){
-						var couponNamestr = item.couponName.substring(0,7)+'...'
-					}
+					// if(item.couponName.length>7){
+					// 	var couponNamestr = item.couponName.substring(0,7)+'...'
+					// }
+					//console.log(couponNamestr)
 					youhuiqxlstr +=`
-						<option value="`+ item.couponId +`">`+ couponNamestr +`</option>
+						<option value="`+ item.couponId +`">`+ item.couponName +`</option>
 					`
 				})
 				$('#sj-body-slelctyhjmc').html(youhuiqxlstr)
@@ -2212,6 +2328,134 @@
 		var couponSource = $('#sj-body-ly').val()
 
 		location.href = "http://test.physicalclub.com/crm/rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
+	}
+	//查看页面
+	function chakanchakan(id){
+		var str = {
+			id : id
+		}
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/getActivitiesInfoById",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+				for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
+					$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
+					$('.xzhd-body-gouxuan').eq(j).children().hide()
+				}
+				var str = ''
+				//分享有礼内容渲染
+				for(var i=0;i< result.shareCouponList.length;i++){
+					if(result.shareCouponList[i].couponSource == 1){
+						var str1 = 'CRM优惠券'
+					}else if(result.shareCouponList[i].couponSource == 2){
+						var str1 = '有赞优惠券'
+					}
+					var str22 = result.shareCouponList[i].couponName
+					if (str22.length > 5) {
+						var str2 = str22.substring(0, 4) + '...'
+					}else{
+						var str2 = str22
+					}
+					var str3 = result.shareCouponList[i].quantity
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str1 + '/' + str22 + '×' + str3 + `" class="` + result.shareCouponList[i].couponId + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				}
+				var strstr = ''
+				//领取有礼内容渲染
+				for (var ii = 0; ii < result.receiveCouponList.length; ii++) {
+					if (result.receiveCouponList[ii].couponSource == 1) {
+						var str11 = 'CRM优惠券'
+					} else if (result.receiveCouponList[ii].couponSource == 2) {
+						var str11 = '有赞优惠券'
+					}
+					var str222 = result.receiveCouponList[ii].couponName
+					if (str222.length > 5) {
+						var str22 = str222.substring(0, 4) + '...'
+					} else {
+						var str22 = str222
+					}
+					var str33 = result.receiveCouponList[ii].quantity
+					strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str11 + '/' + str222 + '×' + str33 + `" class="` + result.receiveCouponList[ii].couponId + `"><p>` + str11 + '/' + str22 + '×' + str33 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				}
+				$('#xzhd-body-fxhd').html(str)
+				$('#xzhd-body-lqrhd').html(strstr)
+				//console.log($('#xzhd-body-fxhd').html())
+				//分享获得点击渲染
+				for (var z = 0; z < $('.xzhd-body-gouxuan').length; z++) {
+					if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody1'){
+						var kaquanfl = 'CRM优惠券'
+						for(var x=0;x<$('#xzhd-body-fxhd').children().length;x++){
+							if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
+								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
+								$('.xzhd-body-gouxuan').eq(z).children().show()
+							}
+						}
+					}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
+						var kaquanfl = '有赞优惠券'
+						for (var y = 0; y < $('#xzhd-body-fxhd').children().length; y++) {
+							if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
+								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
+								$('.xzhd-body-gouxuan').eq(z).children().show()
+							}
+						}
+					}
+				}
+				//领取有礼点击渲染
+				for (var zz = 0; zz < $('.xzhd-body-gouxuan1').length; zz++) {
+					if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody11') {
+						var kaquanfl = 'CRM优惠券'
+						for (var xx = 0; xx < $('#xzhd-body-lqrhd').children().length; xx++) {
+							if ($('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
+								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
+								$('.xzhd-body-gouxuan1').eq(zz).children().show()
+							}
+						}
+					} else if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody22') {
+						var kaquanfl = '有赞优惠券'
+						for (var yy = 0; yy < $('#xzhd-body-lqrhd').children().length; yy++) {
+							if ($('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
+								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
+								$('.xzhd-body-gouxuan1').eq(zz).children().show()
+							}
+						}
+					}
+				}
+				$('#xzhd-body-hdmc').val(result.activityName)
+				$('#xzhd-body-hdsjs').val(result.activityStartDate.split(' ')[0])
+				$('#xzhd-body-hdsje').val(result.activityEndDate.split(' ')[0])
+				if(result.giftConditions ==1 ){
+					$('.xzhd-body-zstjraduis').eq(0).click()
+				}else if(result.giftConditions == 2 ){
+					$('.xzhd-body-zstjraduis').eq(1).click()
+				}else if(result.giftConditions == 3){
+					$('.xzhd-body-zstjraduis').eq(2).click()
+				}
+				$('#xzhd-body-hdbjpz-img').attr('class', result.pageBackgroundUrl)
+				$('#xzhd-body-hdbjpz-img').children().attr('src',result.pageBackgroundUrl)
+				$('#xzhd-body-fxanpz-img').attr('class',result.shareButtonUrl)
+				$('#xzhd-body-fxanpz-img').children().attr('src', result.shareButtonUrl)
+				$('#xzhd-body-fxhyljt-img').attr('class',result.shareBuddyLinksUrl)
+				$('#xzhd-body-fxhyljt-img').children().attr('src', result.shareBuddyLinksUrl)
+				$('#xzhd-body-lqhdbjpz-img').attr('class',result.receiveBackgroundUrl)
+				$('#xzhd-body-lqhdbjpz-img').children().attr('src', result.receiveBackgroundUrl)
+				$('#xzhd-body-lqanpz-img').attr('class', result.receiveButtonUrl)
+				$('#xzhd-body-lqanpz-img').children().attr('src', result.receiveButtonUrl)
+				$('#xzhd-body-fxwzbt').val(result.shareTitle)
+				$('#xzhd-body-fxhdxs').val(result.shareDescription)
+				var id = result.id
+				$('#xzhd-body-save').unbind()
+				$('#xzhd-body-save').click(function(){
+					bjhdjk(id)
+				})
+				
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
 	}
 	//活动界面分享获得点击叉号删除
 	function chacha(){
