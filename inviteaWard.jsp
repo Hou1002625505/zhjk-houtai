@@ -105,6 +105,14 @@
 			font-size: 14px
 		}
 
+		#sj-body-slelctyhjmc {
+			width: 120px;
+			height: 30px;
+			border: 1px solid #d5d5d7;
+			border-radius: 4px;
+			font-size: 14px
+		}
+
 		.select_wrap {
 			position: relative;
 		}
@@ -119,6 +127,18 @@
 			position: absolute;
 			right: 5px;
 			top: 11px;
+		}
+
+		.triangle_border_down2 {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-width: 8px 5px 0;
+			border-style: solid;
+			border-color: #BFBFBF transparent transparent;
+			position: absolute;
+			right: 5px;
+			top: 3px;
 		}
 
 		#yqyl-header-hdsjs {
@@ -504,12 +524,15 @@
 		}
 		#sj-body-gd{
 			font-size:16px;
-			color:#71B2EF
+			color:#71B2EF;
+			cursor: pointer;
 		}
 		.sj-body-flex1{
-			height:auto;
+			height:143px;
 			display:flex;
 			flex-wrap: wrap;
+			overflow: hidden;
+			
 		}
 
 		.sj-body-flex1 div:nth-child(2n){
@@ -992,83 +1015,43 @@
 		</div>
 		<div class="sj-body-line"></div>
 		<div class='sj-body-flex' style="margin-top:10px;justify-content: space-between;">
-			<p id="sj-body-hdmc">活动名称：情人双人健身月卡</p>
-			<div style="display:flex;align-items: center;"><p id="sj-body-gd">更多</p><img style="width:13px;height:7px;margin-left:7px" src="image/more_unfold.png" alt=""></div>
+			<p id="sj-body-hdmc"></p>
+			<div style="display:flex;align-items: center;">
+				<p id="sj-body-gd">更多</p>
+				<img id="sj-body-gdimg" style="width:13px;height:7px;margin-left:7px" src="image/more_unfold.png" alt="">
+				<img id="sj-body-gdimg1" style="width:13px;height:7px;margin-left:7px;display:none" src="image/more_fold.png" alt="">
+			</div>
 		</div>
 		<div class="sj-body-flex1">
-			<div style="width:800px;margin-top:22px">
-				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
-				<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
-					<div style="text-align: center;">
-						<p style="font-size:14px">已发放</p>
-						<p style="font-size:14px;margin-top:18px">150</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已领取</p>
-						<p style="font-size:14px;margin-top:18px">50</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已使用</p>
-						<p style="font-size:14px;margin-top:18px">34</p>
-					</div>
-				</div>
-			</div>
-			<div style="width:800px;margin-top:22px">
-				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
-				<div
-					style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
-					<div style="text-align: center;">
-						<p style="font-size:14px">已发放</p>
-						<p style="font-size:14px;margin-top:18px">150</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已领取</p>
-						<p style="font-size:14px;margin-top:18px">50</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已使用</p>
-						<p style="font-size:14px;margin-top:18px">34</p>
-					</div>
-				</div>
-			</div>
-			<div style="width:800px;margin-top:22px">
-				<p style="font-size:16px;color:#444444;font-weight: bold;">500元优惠券C</p>
-				<div
-					style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
-					<div style="text-align: center;">
-						<p style="font-size:14px">已发放</p>
-						<p style="font-size:14px;margin-top:18px">150</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已领取</p>
-						<p style="font-size:14px;margin-top:18px">50</p>
-					</div>
-					<div style="text-align: center;">
-						<p style="font-size:14px">已使用</p>
-						<p style="font-size:14px;margin-top:18px">34</p>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 		<div class="sj-body-flex" style="margin-top:30px">
 			<p class="sj-body-flex-p">优惠券名称</p>
-			<div class="sj-body-input">
-				<input id="sj-body-yhqmc" type="text">
+			<div class="sj-body-input" id='sj-body-inputyhjmc'>
+				<span class="select_wrap">
+					<select name="visitstatus" id="sj-body-slelctyhjmc">
+						
+					</select>
+					<em class="triangle_border_down2"></em>
+				</span>
 			</div>
 			<p class="sj-body-flex-p" style="margin-left:38px">领取时间</p>
-			<div class="sj-body-input">
+			<div class="sj-body-input J-datepicker-day">
 				<input id="sj-body-lqsjs" type="text" placeholder="开始日期">
 			</div>
 			<div style="margin:0 10px">-</div>
-			<div class="sj-body-input">
+			<div class="sj-body-input J-datepicker-day">
 				<input id="sj-body-lqsje" type="text" placeholder="结束日期">
 			</div>
 			<p class="sj-body-flex-p" style="margin-left:38px">状态</p>
 			<span class="select_wrap">
 				<select name="visitstatus" id="sj-body-zt">
 					<option value="" selected="selected">全部</option>
-					<option value="1">已使用</option>
-					<option value="2">未使用</option>
+					<option value="0">未核销</option>
+					<option value="1">已核销</option>
+					<option value="2">已赠送</option>
+					<option value="3">撤回</option>
+					<option value="4">已过期</option>
 				</select>
 				<em class="triangle_border_down1"></em>
 			</span>
@@ -1076,8 +1059,8 @@
 			<span class="select_wrap">
 				<select name="visitstatus" id="sj-body-ly">
 					<option value="" selected="selected">全部</option>
-					<option value="1">新客</option>
-					<option value="2">老客</option>
+					<option value="1">crm</option>
+					<option value="2">有赞</option>
 				</select>
 				<em class="triangle_border_down1"></em>
 			</span>
@@ -1101,48 +1084,14 @@
 					<th class="item44">来源</th>
 				</tr>
 			</tbody>
-			<tbody class="table-body1">
-				<tr>
-					<td class="item1">1</td>
-					<td class="item22">王小娟</td>
-					<td class="item22">15218943782</td>
-					<td class="item33">500元优惠券C</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">老客</td>
-					<td class="item44">已使用</td>
-					<td class="item44">CRM</td>
-				</tr>
-				<tr>
-					<td class="item1">1</td>
-					<td class="item22">王小娟</td>
-					<td class="item22">15218943782</td>
-					<td class="item33">500元优惠券C</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">老客</td>
-					<td class="item44">已使用</td>
-					<td class="item44">CRM</td>
-				</tr>
-				<tr>
-					<td class="item1">1</td>
-					<td class="item22">王小娟</td>
-					<td class="item22">15218943782</td>
-					<td class="item33">500元优惠券C</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">2020-02-11</td>
-					<td class="item22">老客</td>
-					<td class="item44">已使用</td>
-					<td class="item44">CRM</td>
-				</tr>
+			<tbody class="table-body1" id="sj-body-body1">
+				
 			</tbody>
 		</table>
 
 		<div class="sj-body-flex" style="margin-top:24px">
-			<p style="font-size:16px;color:#444444">共416条，每页10条</p>
+			<p style="font-size:16px;color:#444444" id="sj-body-flex-jujl"></p>
+			<div class="box" id="boxpage1" style="margin:0 0 0 27px"></div>
 		</div>
 	</div>
 </body>
@@ -1162,6 +1111,32 @@
 	$('#xjhd-start').click(function(){
 		$('.xzhd-body').show()
 		$('.yqyl-body').hide()
+		$('#xzhd-body-hdmc').val('')
+		$('#xzhd-body-hdsjs').val('')
+		$('#xzhd-body-hdsje').val('')
+		var xjhdstr = `<p>请选择要分享的优惠券</p>`
+		$('#xzhd-body-fxhd').html(xjhdstr)
+		var lqrhdstr = `<p>请选择领取人可获得的优惠券</p>`
+		$('#xzhd-body-lqrhd').html(lqrhdstr)
+		for(var e=0;e<$('.xzhd-body-zstjraduis').length;e++){
+			$('.xzhd-body-zstjraduis').eq(e).children().hide()
+		}
+		$('#xzhd-body-hdbjpz-img').attr('class','')
+		$('#xzhd-body-hdbjpz-img').children().attr('src','image/white-white.jpg')
+		$('#xzhd-body-fxanpz-img').attr('class','')
+		$('#xzhd-body-fxanpz-img').children().attr('src', 'image/white-white.jpg')
+		$('#xzhd-body-fxhyljt-img').attr('class', '')
+		$('#xzhd-body-fxhyljt-img').children().attr('src', 'image/white-white.jpg')
+		$('#xzhd-body-lqhdbjpz-img').attr('class', '')
+		$('#xzhd-body-lqhdbjpz-img').children().attr('src', 'image/white-white.jpg')
+		$('#xzhd-body-lqanpz-img').attr('class', '')
+		$('#xzhd-body-lqanpz-img').children().attr('src', 'image/white-white.jpg')
+		$('#xzhd-body-fxwzbt').val('')
+		$('#xzhd-body-fxhdxs').val('')
+		//新建活动的点击按钮
+		$('#xzhd-body-save').click(function () {
+			newhd()
+		})
 	})
 	//新建活动的返回上一级按钮
 	$('#fhsyj').click(function(){
@@ -1288,9 +1263,16 @@
 		$('#lqanpz_upload').click()
 	})
 
-	//新建活动的点击按钮
-	$('#xzhd-body-save').click(function(){
-		newhd()
+	$('#sj-body-gd').click(function(){
+		if($('#sj-body-gdimg1').is(':hidden')){
+			$('#sj-body-gdimg1').show()
+			$('#sj-body-gdimg').hide()
+			$('.sj-body-flex1').css('height','auto')
+		}else{
+			$('#sj-body-gdimg1').hide()
+			$('#sj-body-gdimg').show()
+			$('.sj-body-flex1').css('height', '143px')
+		}
 	})
 
 	//活动背景配置上传
@@ -1575,30 +1557,40 @@
 		var receiveButtonUrl = $('#xzhd-body-lqanpz-img').attr('class')
 		var shareTitle = $('#xzhd-body-fxwzbt').val()
 		var shareDescription = $('#xzhd-body-fxhdxs').val()
-		// var receiveCouponList =[
-		// 	{
-		// 		couponId: "f488a989-56bf-41a5-9cff-54bb80df9587",
-		// 		couponName: "测试2",
-		// 		couponSource: 1,
-		// 		quantity: 2
-		// 	}
-		// ]
-		// var shareCouponList = [
-		// 	{
-		// 		invitationNumber: 1,
-		// 		couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
-		// 		couponName: "测试1（非固定当日生效）",
-		// 		couponSource: 1,
-		// 		quantity: 2
-		// 	},
-		// 	{
-		// 		invitationNumber: 3,
-		// 		couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
-		// 		couponName: "测试youzan优惠券1",
-		// 		couponSource: 2,
-		// 		quantity: 2
-		// 	}
-		// ]
+		var shareCouponList = []
+		var receiveCouponList = []
+		for(var j=0;j<$('#xzhd-body-fxhd').children().length;j++){
+			if($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == 'CRM优惠券'){
+				var couponSource = 1
+			}else if($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == '有赞优惠券'){
+				var couponSource = 2
+			}
+			var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
+			var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
+			var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
+			shareCouponList.push({
+				couponId : couponId,
+				couponName : couponName,
+				couponSource : couponSource,
+				quantity : quantity
+			})
+		}
+		for(var k =0;k<$('#xzhd-body-lqrhd').children().length;k++){
+			if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
+				var couponSource = 1
+			} else if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == '有赞优惠券') {
+				var couponSource = 2
+			}
+			var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
+			var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
+			var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
+			receiveCouponList.push({
+				couponId: couponId,
+				couponName: couponName,
+				couponSource: couponSource,
+				quantity: quantity
+			})
+		}
 		var xjhdstr = {
 			activityName : activityName,
 			activityStartDate : activityStartDate,
@@ -1611,30 +1603,9 @@
 			receiveButtonUrl : receiveButtonUrl,
 			shareTitle : shareTitle,
 			shareDescription : shareDescription,
-			receiveCouponList :[
-				{
-					couponId: "f488a989-56bf-41a5-9cff-54bb80df9587",
-					couponName: "测试2",
-					couponSource: 1,
-					quantity: 2
-				}
-			],
-			shareCouponList : [
-				{
-					invitationNumber: 1,
-					couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
-					couponName: "测试1",
-					couponSource: 1,
-					quantity: 2
-				},
-				{
-					invitationNumber: 3,
-					couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
-					couponName: "测试youzan优惠券1",
-					couponSource: 2,
-					quantity: 2
-				}
-			]
+			receiveCouponList : receiveCouponList,
+			shareCouponList : shareCouponList,
+			fontColor : 123
 		}
 
 		$.ajax({
@@ -1643,7 +1614,9 @@
 			url: "http://test.physicalclub.com/crm/rest/activities/insertInvitationActivities",
 			data: JSON.stringify(xjhdstr),
 			success: function (result) {
-				console.log(result)
+				alert(result.messsage)
+				$('.xzhd-body').hide()
+				$('.yqyl-body').show()
 			},
 			error: function (e) {
 				console.log(e.status);
@@ -1806,7 +1779,24 @@
 						$('.yqyl-body').hide()
 						$('.sj-body').show()
 						var id = $(this).parent().attr('class')
-						youhuiqtj(id)
+						var hdmcstrstr =  $(this).parent().parent().children().eq(1).html()
+						youhuiqtj(id,hdmcstrstr)
+						youhuiqxl(id)
+						youhuiqtable11(id)
+						$('#sj-body-chaxun').click(function(){
+							youhuiqtable11(id)
+						})
+						$('#sj-body-qingchu').click(function(){
+							$('#sj-body-slelctyhjmc').find('option[value=""]').prop("selected", true)
+							$('#sj-body-lqsjs').val('')
+							$('#sj-body-lqsje').val('')
+							$('#sj-body-zt').find('option[value=""]').prop("selected", true)
+							$('#sj-body-ly').find('option[value=""]').prop("selected", true)
+							youhuiqtable11(id)
+						})
+						$('#sj-body-dcsj').click(function(){
+							shujuymdc(id)
+						})
 					})
 
 					//首页有效按钮显示
@@ -2013,8 +2003,8 @@
 				$('.minus_minus').click(function () {
 					var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
 					strcount--
-					if (strcount <= 0) {
-						strcount = 0
+					if (strcount <= 1) {
+						strcount = 1
 					}
 					$(this).parent().children('.xzhd-body-kqsl').html(strcount)
 
@@ -2042,7 +2032,9 @@
 		})
 	}
 	//数据页面优惠券统计
-	function youhuiqtj(id){
+	function youhuiqtj(id,hdmcstrstr){
+		var str123 = '活动名称:'+ hdmcstrstr
+		$('#sj-body-hdmc').html(str123)
 		var str = {
 			id : id
 		}
@@ -2053,12 +2045,169 @@
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
+				var str11 = ''
+				$.each(result.rows,function(i,item){
+					str11 += `
+					<div style="width:500px;margin-top:22px;box-sizing:border-box">
+						<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
+						<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
+							<div style="text-align: center;">
+								<p style="font-size:14px">已领取</p>
+								<p style="font-size:14px;margin-top:18px">`+ item.totalCount +`</p>
+							</div>
+							<div style="text-align: center;">
+								<p style="font-size:14px">已使用</p>
+								<p style="font-size:14px;margin-top:18px">`+ item.count +`</p>
+							</div>
+						</div>
+					</div>
+					`
+				})
+				$('.sj-body-flex1').html(str11)
 			},
 			error: function (e) {
 				console.log(e.status);
 				console.log(e.responseText)
 			}
 		})
+	}
+	//数据页面下拉优惠券
+	function youhuiqxl(id){
+		var str = {
+			id : id
+		}
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/getCouponDropdownList",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+				var youhuiqxlstr = `<option value="" selected="selected"></option>`
+				$.each(result.rows,function(i,item){
+					if(item.couponName.length>7){
+						var couponNamestr = item.couponName.substring(0,7)+'...'
+					}
+					youhuiqxlstr +=`
+						<option value="`+ item.couponId +`">`+ couponNamestr +`</option>
+					`
+				})
+				$('#sj-body-slelctyhjmc').html(youhuiqxlstr)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+	}
+	//数据页面表格
+	function youhuiqtable11(id){
+
+		var onPagechange = function (page) {
+			youhuiqtable(page)
+		}
+
+		var page = 1
+		youhuiqtable(page)
+
+		function youhuiqtable(page){
+		var str = {
+			activityId : id,
+			page:page,
+			rows:10,
+			couponId : $('#sj-body-slelctyhjmc').val(),
+			startDate : $('#sj-body-lqsjs').val(),
+			endDate : $('#sj-body-lqsje').val(),
+			status : $('#sj-body-zt').val(),
+			couponSource : $('#sj-body-ly').val()
+		}
+
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/selectActivityCouponList",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+				function xinlaoke(i){
+					var str = ''
+					if(i==1){
+						return str = '老客'
+					}else if(i==2){
+						return str = '新客'
+					}
+				}
+				function zhuangtai(i){
+					var str = ''
+					if(i==0){
+						return str = '未核销'
+					}else if(i==1){
+						return str = '已核销'
+					}else if(i==2){
+					    return str = '已赠送'
+					}else if(i==3){
+						return str = '撤回'
+					}else if(i==4){
+						return str = '已过期'
+					}
+				}
+				function laiyuan(i){
+					var str = ''
+					if(i==1){
+						str = 'crm'
+					}else if(i==2){
+						str = '有赞'
+					}
+				}
+				var str123456 = ''
+				$.each(result.rows,function(i,item){
+					str123456 += `
+					<tr>
+						<td class="item1">`+ (i+1) +`</td>
+						<td class="item22">`+ item.customerName +`</td>
+						<td class="item22">`+ item.mobile +`</td>
+						<td class="item33">`+ item.couponName +`</td>
+						<td class="item22">`+ item.shareDate +`</td>
+						<td class="item22">`+ item.receiveDate +`</td>
+						<td class="item22">`+ item.verifyDate +`</td>
+						<td class="item22">`+ xinlaoke(item.customerNature) +`</td>
+						<td class="item44">`+ zhuangtai(item.status) +`</td>
+						<td class="item44">`+ laiyuan(item.couponSource) +`</td>
+					</tr>
+					`
+				})
+				
+				$('#sj-body-body1').html(str123456)
+
+				var obj = {
+					wrapid: 'boxpage1', //页面显示分页器容器id
+					total: result.total, //总条数
+					pagesize: 10, //每页显示10条
+					currentPage: page, //当前页
+					onPagechange: onPagechange
+					//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+				}
+				pagination.init(obj);
+				var jujlstr = `共`+ result.total +`条，每页10条`
+				$('#sj-body-flex-jujl').html(jujlstr)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+	}
+	}
+	//数据页面导出
+	function shujuymdc(id){
+
+		var couponId = $('#sj-body-slelctyhjmc').val()
+		var startDate = $('#sj-body-lqsjs').val()
+		var endDate = $('#sj-body-lqsje').val()
+		var status = $('#sj-body-zt').val()
+		var couponSource = $('#sj-body-ly').val()
+
+		location.href = "http://test.physicalclub.com/crm/rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
 	}
 	//活动界面分享获得点击叉号删除
 	function chacha(){
@@ -2181,7 +2330,7 @@
 				if(str2.length>5){
 					str2 = str2.substring(0, 4)+'...'
 				}
-				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() +`" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 			}
 		}
 		$('#xzhd-body-fxhd').html(str)
@@ -2219,7 +2368,7 @@
 					if (str2.length > 5) {
 						str2 = str2.substring(0, 4) + '...'
 					}
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html() +`" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
 				}
 			}
 			$('#xzhd-body-lqrhd').html(str)
