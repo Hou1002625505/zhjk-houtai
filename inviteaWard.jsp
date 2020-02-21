@@ -1298,8 +1298,6 @@
 			processData: false,
 			success: function (data) {
 				console.log(data)
-				//var img = data
-				//return data
 				$('#xzhd-body-hdbjpz-img').children().attr('src','images/'+ data.rows[0].path)
 				$('#xzhd-body-hdbjpz-img').attr('class', 'images/' + data.rows[0].path)
 			},
@@ -1530,7 +1528,6 @@
 		var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:600px' src='http://test.physicalclub.com/crm/image/srcimg.png' alt=''/></div></body > "
 
 		page.document.write(html);
-
 	}
 
 	//新建活动接口
@@ -1778,7 +1775,6 @@
 						</tr>
 						`
 						}
-
 					})
 					$('.table-body').html(str)
 
