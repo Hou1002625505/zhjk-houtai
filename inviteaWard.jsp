@@ -608,9 +608,9 @@
 			top:100%;
 			left:150px;
 			z-index: 999;
-			padding:0 20px 20px 20px;
+			padding:0 0 20px 20px;
 			display:flex;
-			margin-top:10px
+			margin-top:10px;
 		}
 
 		#xzhd-body-lqrhd-zhankai{
@@ -835,131 +835,25 @@
 						<img id="crm-rightnone" src="image/right_none.png" alt="">
 					</div>
 				</div>
-				<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
-					<tbody class="xzhd-body-tbody">
-						<tr>
-							<th></th>
-							<th>优惠券名称</th>
-							<th>数量</th>
-							<th>库存</th>
-						</tr>
-					</tbody>
-					<tbody class="xzhd-body-tbody1" style="display:none">
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>50元优惠券</td>
-							<td>
-								<div style="display:flex;justify-content: center;">
-									<img class="minus_minus" src="image/minus_minus.png" alt="">
-									<p class="xzhd-body-kqsl">1</p>
-									<img class="add_add" src="image/add_add.png" alt="">
-								</div>
-							</td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>100元优惠券</td>
-							<td>
-								<div style="display:flex;justify-content: center;">
-									<img class="minus_minus" src="image/minus_minus.png" alt="">
-									<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-								</div>
-							</td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>200元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>500元优惠券</td>
-							<td>
-								<div style="display:flex;justify-content: center;">
-									<img class="minus_minus" src="image/minus_minus.png" alt="">
-									<p class="xzhd-body-kqsl">1</p>
-									<img class="add_add" src="image/add_add.png" alt="">
-								</div>
-							</td>
-							<td>1000</td>
-						</tr>
-					</tbody>
-					<tbody class="xzhd-body-tbody2" style="display:none">
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>500元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>200元优惠券</td>
-							<td>
-								<div style="display:flex;justify-content: center;">
-									<img class="minus_minus" src="image/minus_minus.png" alt="">
-									<p class="xzhd-body-kqsl">1</p>
-									<img class="add_add" src="image/add_add.png" alt="">
-								</div>
-							</td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>100元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>50元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-					</tbody>
-				</table>
+				<div style="height:100%;overflow-y:scroll;flex:1">
+					<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
+						<tbody class="xzhd-body-tbody">
+							<tr>
+								<th style="width:10%"></th>
+								<th style="width:10%">优惠券名称</th>
+								<th style="width:10%">数量</th>
+								<th style="width:10%">库存</th>
+							</tr>
+						</tbody>
+						<tbody class="xzhd-body-tbody1" style="display:none;">
+					
+						</tbody>
+						<tbody class="xzhd-body-tbody2" style="display:none">
+							
+						</tbody>
+					</table>
+				</div>
+				
 			</div>
 		</div>
 
@@ -990,123 +884,27 @@
 						<img id="crm-rightnone" src="image/right_none.png" alt="">
 					</div>
 				</div>
+				<div style="height:100%;overflow-y:scroll;flex:1">
 				<table style="border-collapse: collapse;flex:1;table-layout:fixed;">
 					<tbody class="xzhd-body-tbody">
 						<tr>
-							<th></th>
-							<th>优惠券名称</th>
-							<th>开始时间</th>
-							<th>库存</th>
+							<th style="width:10%"></th>
+							<th style="width:10%">优惠券名称</th>
+							<th style="width:10%">开始时间</th>
+							<th style="width:10%">库存</th>
 						</tr>
 					</tbody>
 					<tbody class="xzhd-body-tbody11" style="display:none">
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>50元优惠券</td>
-							<td>
-								<div style="display:flex;justify-content: center;">
-									<img class="minus_minus" src="image/minus_minus.png" alt="">
-									<p class="xzhd-body-kqsl">1</p>
-									<img class="add_add" src="image/add_add.png" alt="">
-								</div>
-							</td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>100元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>200元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>500元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
+						
 					</tbody>
 					<tbody class="xzhd-body-tbody22" style="display:none">
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>500元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>200元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>100元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="xzhd-body-gouxuan1">
-									<img src="image/codeallset_btn.png" alt="">
-								</div>
-							</td>
-							<td>50元优惠券</td>
-							<td><div style="display:flex;justify-content: center;"><img class="minus_minus" src="image/minus_minus.png" alt="">
-								<p class="xzhd-body-kqsl">1</p><img class="add_add" src="image/add_add.png" alt="">
-							</div></td>
-							<td>1000</td>
-						</tr>
+					
 					</tbody>
 				</table>
+				</div>
 			</div>
 		</div>
-		<div class="xzhd-body-flex" style="margin-top:24px">
+		<div class="xzhd-body-flex" id="zstjzstj" style="margin-top:24px">
 			<p style="font-size:16px;margin-right:82px">赠送条件</p>
 			<div class="xzhd-body-zstjraduis">
 				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
@@ -1434,55 +1232,7 @@
 				$(this).children().hide()
 			}
 		})
-	//活动页面分享获得卡券勾选
-	$('.xzhd-body-gouxuan').click(function(){
-		if($(this).children().is(':hidden')){
-			$(this).children().show()
-			$(this).addClass('gx')
-			gouxuan()
-		}else{
-			$(this).children().hide()
-			$(this).removeClass('gx')
-			var str2 = $(this).parent().parent().children().eq(1).html()
-			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-					var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-				}
-			}
-
-			for(var j=0;j<$('#xzhd-body-fxhd').children().length;j++){
-				if(str1+str2 == $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0]+ $('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[1].split('×')[0]){
-					$('#xzhd-body-fxhd').children().eq(j).remove()
-					//console.log(111111111)
-					//console.log(j)
-				}
-			}
-		}
-	})
-	//活动页面领取获得卡券勾选
-	$('.xzhd-body-gouxuan1').click(function () {
-			if ($(this).children().is(':hidden')) {
-				$(this).children().show()
-				$(this).addClass('gxx')
-				gouxuan1()
-			} else {
-				$(this).children().hide()
-				$(this).removeClass('gxx')
-				var str2 = $(this).parent().parent().children().eq(1).html()
-				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-						var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-					}
-				}
-
-				for (var j = 0; j < $('#xzhd-body-lqrhd').children().length; j++) {
-					if (str1 + str2 == $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[0] + $('#xzhd-body-lqrhd').children().eq(j).children('p').html().split('/')[1].split('×')[0]) {
-						$('#xzhd-body-lqrhd').children().eq(j).remove()
-						//console.log(111111111)
-					}
-				}
-			}
-		})
+	
 	//活动页面分享获得收回
 	$('#xzhd-body-down11').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':visible')){
@@ -1497,62 +1247,7 @@
 				$(this).attr('class', 'xzhd-body-down')
 			}
 		})
-	//新建页面添加卡券数量
-	$('.add_add').click(function(){
-		var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
-		strcount++
-		$(this).parent().children('.xzhd-body-kqsl').html(strcount)
-
-		for(var i=0;i<$('.xzhd-body-henggang').length;i++){
-			if($('.xzhd-body-henggang').eq(i).children().is(":visible")){
-				var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			}
-		}
-
-		for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-			if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-				var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-			}
-		}
-
-		var str2 = $(this).parent().parent().parent().children().eq(1).html()
-		for(var j=0;j< $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length;j++){
-			if(str1+'/'+ str2 == $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]){
-				var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
-				var str5 = $(this).parent().children('p').html()
-				var str6 = str3 + '×' + str5
-				$(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
-			}
-		}
-
-	})
-
-	//新建页面减少卡券数量
-	$('.minus_minus').click(function(){
-		var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
-		strcount--
-		if(strcount<=0){
-			strcount = 0
-		}
-		$(this).parent().children('.xzhd-body-kqsl').html(strcount)
-
-		for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-			if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-				var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			}
-		}
-
-		var str2 = $(this).parent().parent().parent().children().eq(1).html()
-		for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
-			if (str1 + '/' + str2 == $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]) {
-				var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
-				var str5 = $(this).parent().children('p').html()
-				var str6 = str3 + '×' + str5
-				$(this).parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
-			}
-		}
-	})
-
+	
 	//首页的查询按钮
 	$('#chaxun').click(function(){
 		shouye()
@@ -1569,6 +1264,9 @@
 	shouye()
 	
 	time()
+
+	youzanjk()
+	
 	//活动背景配置点击
 	$('#xzhd-body-hdbjpz-upload').click(function(){
 		$('#hdbjpz_upload').click()
@@ -1591,9 +1289,8 @@
 	})
 
 	//新建活动的点击按钮
-
 	$('#xzhd-body-save').click(function(){
-		console.log(12121212)
+		newhd()
 	})
 
 	//活动背景配置上传
@@ -1621,6 +1318,7 @@
 				//var img = data
 				//return data
 				$('#xzhd-body-hdbjpz-img').children().attr('src','images/'+ data.rows[0].path)
+				$('#xzhd-body-hdbjpz-img').attr('class', 'images/' + data.rows[0].path)
 			},
 			error: function (data) {
 				alert("上传失败")
@@ -1653,6 +1351,7 @@
 				//var img = data
 				//return data
 				$('#xzhd-body-fxanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+				$('#xzhd-body-fxanpz-img').attr('class', 'images/' + data.rows[0].path)
 			},
 			error: function (data) {
 				alert("上传失败")
@@ -1685,6 +1384,7 @@
 					//var img = data
 					//return data
 					$('#xzhd-body-fxhyljt-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-fxhyljt-img').attr('class', 'images/' + data.rows[0].path)
 				},
 				error: function (data) {
 					alert("上传失败")
@@ -1717,6 +1417,7 @@
 					//var img = data
 					//return data
 					$('#xzhd-body-lqhdbjpz-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-lqhdbjpz-img').attr('class', 'images/' + data.rows[0].path)
 				},
 				error: function (data) {
 					alert("上传失败")
@@ -1749,6 +1450,7 @@
 					//var img = data
 					//return data
 					$('#xzhd-body-lqanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-lqanpz-img').attr('class', 'images/' + data.rows[0].path)
 				},
 				error: function (data) {
 					alert("上传失败")
@@ -1848,6 +1550,109 @@
 
 	}
 
+	//新建活动接口
+	function newhd(){
+		var activityName = $('#xzhd-body-hdmc').val()
+			var startdata = $('#xzhd-body-hdsjs').val()+' '+'00:00'
+			var enddata = $('#xzhd-body-hdsje').val()+' '+'23:59'
+			var data1 = new Date(startdata)
+			var data2 = new Date(enddata)
+		var activityStartDate = data1.getTime()
+		var activityEndDate = data2.getTime()
+		for(var i=0;i<$('#zstjzstj').children('.xzhd-body-zstjraduis').length;i++){
+			if($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(0).children().is(':visible')){
+				var giftConditions = 1
+			}else if($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(1).children().is(':visible')){
+				var giftConditions = 2
+			}else if($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(2).children().is(':visible')){
+				var giftConditions = 3
+			}
+		}
+		var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
+		var shareButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
+		var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
+		var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
+		var receiveButtonUrl = $('#xzhd-body-lqanpz-img').attr('class')
+		var shareTitle = $('#xzhd-body-fxwzbt').val()
+		var shareDescription = $('#xzhd-body-fxhdxs').val()
+		// var receiveCouponList =[
+		// 	{
+		// 		couponId: "f488a989-56bf-41a5-9cff-54bb80df9587",
+		// 		couponName: "测试2",
+		// 		couponSource: 1,
+		// 		quantity: 2
+		// 	}
+		// ]
+		// var shareCouponList = [
+		// 	{
+		// 		invitationNumber: 1,
+		// 		couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
+		// 		couponName: "测试1（非固定当日生效）",
+		// 		couponSource: 1,
+		// 		quantity: 2
+		// 	},
+		// 	{
+		// 		invitationNumber: 3,
+		// 		couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
+		// 		couponName: "测试youzan优惠券1",
+		// 		couponSource: 2,
+		// 		quantity: 2
+		// 	}
+		// ]
+		var xjhdstr = {
+			activityName : activityName,
+			activityStartDate : activityStartDate,
+			activityEndDate : activityEndDate,
+			giftConditions : giftConditions,
+			pageBackgroundUrl : pageBackgroundUrl,
+			shareButtonUrl : shareButtonUrl,
+			shareBuddyLinksUrl : shareBuddyLinksUrl,
+			receiveBackgroundUrl : receiveBackgroundUrl,
+			receiveButtonUrl : receiveButtonUrl,
+			shareTitle : shareTitle,
+			shareDescription : shareDescription,
+			receiveCouponList :[
+				{
+					couponId: "f488a989-56bf-41a5-9cff-54bb80df9587",
+					couponName: "测试2",
+					couponSource: 1,
+					quantity: 2
+				}
+			],
+			shareCouponList : [
+				{
+					invitationNumber: 1,
+					couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
+					couponName: "测试1",
+					couponSource: 1,
+					quantity: 2
+				},
+				{
+					invitationNumber: 3,
+					couponId: "ee3301be-3b3d-4bd4-891a-d02b179acec7",
+					couponName: "测试youzan优惠券1",
+					couponSource: 2,
+					quantity: 2
+				}
+			]
+		}
+
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/insertInvitationActivities",
+			data: JSON.stringify(xjhdstr),
+			success: function (result) {
+				console.log(result)
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+
+		//console.log(xjhdstr)
+	}
 	//首页接口
 	function shouye(){
 
@@ -2040,10 +1845,195 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "rest/wx/dictionnary/getdictionnarylist",
+			url: "http://test.physicalclub.com/crm/rest/activities/getCouponList",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
+				var str1 = ''
+				var str11 = ''
+				var str2 = ''
+				var str22 = ''
+				$.each(result.rows[0].crmCouponList,function(i,item){
+				str1 +=
+				`<tr class="`+ item.couponId +`">
+					<td style="width:10%">
+						<div class="xzhd-body-gouxuan">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.packageName +`</td>
+					<td style="width:10%">
+						<div style="display:flex;justify-content: center;">
+							<img class="minus_minus" src="image/minus_minus.png" alt="">
+							<p class="xzhd-body-kqsl">1</p>
+							<img class="add_add" src="image/add_add.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.stockQuantity +`</td>
+				</tr>`
+				})
+				$.each(result.rows[0].crmCouponList, function (i, item) {
+					str11 +=
+						`<tr class="`+ item.couponId +`">
+					<td style="width:10%">
+						<div class="xzhd-body-gouxuan1">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.packageName + `</td>
+					<td style="width:10%">
+						<div style="display:flex;justify-content: center;">
+							<img class="minus_minus" src="image/minus_minus.png" alt="">
+							<p class="xzhd-body-kqsl">1</p>
+							<img class="add_add" src="image/add_add.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.stockQuantity + `</td>
+				</tr>`
+				})
+				$.each(result.rows[0].yzCouponList, function (i, item) {
+					str2 +=
+						`<tr class="`+ item.id +`">
+					<td style="width:10%">
+						<div class="xzhd-body-gouxuan">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.title + `</td>
+					<td style="width:10%">
+						<div style="display:flex;justify-content: center;">
+							<img class="minus_minus" src="image/minus_minus.png" alt="">
+							<p class="xzhd-body-kqsl">1</p>
+							<img class="add_add" src="image/add_add.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.totalFansTaked + `</td>
+				</tr>`
+				})
+				$.each(result.rows[0].yzCouponList, function (i, item) {
+					str22 +=
+						`<tr class="`+ item.id +`">
+					<td style="width:10%">
+						<div class="xzhd-body-gouxuan1">
+							<img src="image/codeallset_btn.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.title + `</td>
+					<td style="width:10%">
+						<div style="display:flex;justify-content: center;">
+							<img class="minus_minus" src="image/minus_minus.png" alt="">
+							<p class="xzhd-body-kqsl">1</p>
+							<img class="add_add" src="image/add_add.png" alt="">
+						</div>
+					</td>
+					<td style="width:10%">`+ item.totalFansTaked + `</td>
+				</tr>`
+				})
+				$('.xzhd-body-tbody1').html(str1)
+				$('.xzhd-body-tbody2').html(str2)
+				$('.xzhd-body-tbody11').html(str11)
+				$('.xzhd-body-tbody22').html(str22)
+				//活动页面分享获得卡券勾选
+				$('.xzhd-body-gouxuan').click(function () {
+					if ($(this).children().is(':hidden')) {
+						$(this).children().show()
+						$(this).addClass('gx')
+						gouxuan()
+					} else {
+						$(this).children().hide()
+						$(this).removeClass('gx')
+						var str2 = $(this).parent().parent().attr('class')
+						// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+						// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+						// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+						// 	}
+						// }
+
+						for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
+							if (str2 == $('#xzhd-body-fxhd').children().eq(j).attr('class')) {
+								$('#xzhd-body-fxhd').children().eq(j).remove()
+							}
+						}
+					}
+				})
+				//活动页面领取获得卡券勾选
+				$('.xzhd-body-gouxuan1').click(function () {
+					if ($(this).children().is(':hidden')) {
+						$(this).children().show()
+						$(this).addClass('gxx')
+						gouxuan1()
+					} else {
+						$(this).children().hide()
+						$(this).removeClass('gxx')
+						var str2 = $(this).parent().parent().attr('class')
+						// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+						// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+						// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+						// 	}
+						// }
+
+						for (var j = 0; j < $('#xzhd-body-lqrhd').children().length; j++) {
+							if (str2 == $('#xzhd-body-lqrhd').children().eq(j).attr('class')) {
+								$('#xzhd-body-lqrhd').children().eq(j).remove()
+								//console.log(111111111)
+							}
+						}
+					}
+				})
+				//新建页面添加卡券数量
+				$('.add_add').click(function () {
+					var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+					strcount++
+					$(this).parent().children('.xzhd-body-kqsl').html(strcount)
+
+					// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+					// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+					// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+					// 	}
+					// }
+
+					// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+					// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+					// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+					// 	}
+					// }
+
+					var str2 = $(this).parent().parent().parent().attr('class')
+					for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
+						if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
+							var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+							var str5 = $(this).parent().children('p').html()
+							var str6 = str3 + '×' + str5
+							$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+						}
+					}
+
+				})
+				//新建页面减少卡券数量
+				$('.minus_minus').click(function () {
+					var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+					strcount--
+					if (strcount <= 0) {
+						strcount = 0
+					}
+					$(this).parent().children('.xzhd-body-kqsl').html(strcount)
+
+					// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+					// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+					// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+					// 	}
+					// }
+
+					var str2 = $(this).parent().parent().parent().attr('class')
+					for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
+						if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
+							var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+							var str5 = $(this).parent().children('p').html()
+							var str6 = str3 + '×' + str5
+							$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+						}
+					}
+				})
 			},
 			error: function (e) {
 				console.log(e.status);
@@ -2084,27 +2074,27 @@
 			}
 
 			$(this).parent().remove()
-			var str = $(this).parent().children('p').html().split('×')[0]
-			for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-				if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-					var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-				}
-			}
+			var str = $(this).parent().attr('class')
+			// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+			// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+			// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+			// 	}
+			// }
 			//console.log(str)
-			
+			var strcount = $('.xzhd-body-tbody1').children().length - 1
 			for (var j = 0; j < $('.xzhd-body-gouxuan').length; j++) {
-				var str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
+				var str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class')
 				//console.log(str1+str2)
-				if (str == str1 +'/'+ str2) {
+				if (str == str2) {
 					//$('.xzhd-body-gouxuan').eq(j).click()
 					for(var p=0;p<$('.xzhd-body-henggang').length;p++){
 						if($('.xzhd-body-henggang').eq(p).children().is(':visible')){
 							if(p==0){
-								if(j<=3){
+								if(j<=strcount){
 									$('.xzhd-body-gouxuan').eq(j).click()
 								}
 							}else if(p == 1){
-								if (j >3) {
+								if (j >strcount) {
 									$('.xzhd-body-gouxuan').eq(j).click()
 								}
 							}
@@ -2129,27 +2119,27 @@
 				}
 
 				$(this).parent().remove()
-				var str = $(this).parent().children('p').html().split('×')[0]
-				for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-					if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-						var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-					}
-				}
+				var str = $(this).parent().attr('class')
+				// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+				// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+				// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+				// 	}
+				// }
 				//console.log(str)
-
+				var strcount = $('.xzhd-body-tbody11').children().length - 1
 				for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
-					var str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
+					var str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class')
 					//console.log(str1+str2)
-					if (str == str1 + '/' + str2) {
+					if (str == str2) {
 						//$('.xzhd-body-gouxuan1').eq(j).click()
 						for (var p = 0; p < $('.xzhd-body-henggang1').length; p++) {
 							if ($('.xzhd-body-henggang1').eq(p).children().is(':visible')) {
 								if (p == 0) {
-									if (j <= 3) {
+									if (j <= strcount) {
 										$('.xzhd-body-gouxuan1').eq(j).click()
 									}
 								} else if (p == 1) {
-									if (j > 3) {
+									if (j > strcount) {
 										$('.xzhd-body-gouxuan1').eq(j).click()
 									}
 								}
@@ -2176,18 +2166,22 @@
 		// 		str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
 		// 	}
 		// }
+		var strcount = $('.xzhd-body-tbody1').children().length -1
 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 			if($('.xzhd-body-gouxuan').eq(j).hasClass('gx')){
 				//str += ($('#xzhd-body-fxhd').html())
-				if(j<=3){
+				if(j<= strcount){
 					str1 = $('.xzhd-body-henggang').eq(0).parent().children('p').html()
-				}else if(j>3){
+				}else if(j>strcount){
 					str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
 				}
 				//console.log(j)
 				var str3 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
-				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				if(str2.length>5){
+					str2 = str2.substring(0, 4)+'...'
+				}
+				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 			}
 		}
 		$('#xzhd-body-fxhd').html(str)
@@ -2210,18 +2204,22 @@
 			// 		str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
 			// 	}
 			// }
+			var strcount = $('.xzhd-body-tbody11').children().length - 1
 			for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
 				if ($('.xzhd-body-gouxuan1').eq(j).hasClass('gxx')) {
 					//var str = ($('#xzhd-body-lqrhd').html())
-					if (j <= 3) {
+					if (j <= strcount) {
 						str1 = $('.xzhd-body-henggang').eq(0).parent().children('p').html()
-					} else if (j > 3) {
+					} else if (j > strcount) {
 						str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
 					}
 					//console.log(j)
 					var str3 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
+					if (str2.length > 5) {
+						str2 = str2.substring(0, 4) + '...'
+					}
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
 				}
 			}
 			$('#xzhd-body-lqrhd').html(str)
