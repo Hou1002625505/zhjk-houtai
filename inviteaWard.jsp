@@ -1207,22 +1207,18 @@
 		}
 	})
 
-	// $('.xzhd-body').click(function(event){
-	// 	//event.stopPropagation()
-	// 	var id1 = $('#xzhd-body-fxhd')
-	// 	var id2 = $('#xzhd-body-fxhd-zhankai')
-	// 	var id3 = $('#xzhd-body-lqrhd')
-	// 	var id4 = $('#xzhd-body-lqrhd-zhankai')
-	// 	if(event.target == id1 || event.target == id2 || event.target == id3 || event.target == id4){
-	// 		return;
-	// 	}
-	// 	if(id2.is(':visible')){
-	// 		id2.hide()
-	// 	}
-	// 	if(id4.is(':visible')){
-	// 		id4.hide()
-	// 	}
-	// })
+	$('.xzhd-body').click(function(){
+		if($(event.target).attr('class') == 'xzhd-body-flex' || $(event.target).attr('class') == 'xzhd-body'){
+			if($('#xzhd-body-fxhd-zhankai').is(':visible')){
+				$('#xzhd-body-fxhd-zhankai').hide()
+				$('#xzhd-body-down11').attr('class', 'xzhd-body-down')
+			}
+			if ($('#xzhd-body-lqrhd-zhankai').is(':visible')) {
+				$('#xzhd-body-lqrhd-zhankai').hide()
+				$('#xzhd-body-down22').attr('class', 'xzhd-body-down')
+			}
+		}
+	})
 
 	//活动页面领取获得下拉
 	$('#xzhd-body-lqrhd').click(function(){
