@@ -752,6 +752,27 @@
 			border-bottom: 1px solid #BFBFBF;
 			text-align: center;
 		}
+		#xzhd-body-count{
+			position:absolute;
+			top:7px;
+			left:330px;
+			font-size:16px;
+			color:#444444
+		}
+		#xzhd-body-fxwzbt-count{
+			position:absolute;
+			top:7px;
+			left:626px;
+			font-size:16px;
+			color:#444444
+		}
+		#xzhd-body-fxhdxs-count{
+			position:absolute;
+			top:132px;
+			left:626px;
+			font-size:16px;
+			color:#444444
+		}
 	</style>
 </head>
 
@@ -822,8 +843,9 @@
 		<div class="xzhd-body-line"></div>
 		<div class="xzhd-body-flex" style="margin-top:24px">
 			<p style="font-size:16px;margin-right:86px">活动名称</p>
-			<div class="xzhd-body-input">
+			<div class="xzhd-body-input" style="position:relative">
 				<input id="xzhd-body-hdmc" placeholder="请填写活动名称" type="text">
+				<p id='xzhd-body-count'><span id="xzhd-body-text-count">0</span>/20</p>
 			</div>
 		</div>
 		<div class="xzhd-body-flex" style="margin-top:24px">
@@ -949,15 +971,17 @@
 			<p style="margin:0 36px 0 15px;font-size:14px">分享送</p>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
-			<p style="font-size:16px;margin-right:54px">分享文字标题</p>
-			<div class="xzhd-body-input">
+			<p style="font-size:16px;margin-right:54px;">分享文字标题</p>
+			<div class="xzhd-body-input" style="position:relative">
 				<input id="xzhd-body-fxwzbt" placeholder="请填写分享活动描述" />
+				<p id='xzhd-body-fxwzbt-count'><span id="xzhd-body-fxwzbt-text-count">0</span>/20</p>
 			</div>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">分享活动描述</p>
-			<div class="xzhd-body-input">
+			<div class="xzhd-body-input" style="position:relative">
 				<textarea id="xzhd-body-fxhdxs" placeholder="请对活动分享进行描述"></textarea>
+				<p id='xzhd-body-fxhdxs-count'><span id="xzhd-body-fxhdxs-text-count">0</span>/30</p>
 			</div>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
@@ -1291,6 +1315,37 @@
 		}
 	})
 
+	$("#xzhd-body-hdmc").on("input propertychange", function () {
+			var $this = $(this),
+				_val = $this.val(),
+				count = "";
+			if (_val.length > 20) {
+				$this.val(_val.substring(0, 20));
+			}
+			count = $this.val().length;
+			$("#xzhd-body-text-count").text(count);
+		});
+	
+	$('#xzhd-body-fxwzbt').on("input propertychange", function () {
+			var $this = $(this),
+				_val = $this.val(),
+				count = "";
+			if (_val.length > 20) {
+				$this.val(_val.substring(0, 20));
+			}
+			count = $this.val().length;
+			$("#xzhd-body-fxwzbt-text-count").text(count);
+		});
+	$('#xzhd-body-fxhdxs').on("input propertychange", function () {
+			var $this = $(this),
+				_val = $this.val(),
+				count = "";
+			if (_val.length > 30) {
+				$this.val(_val.substring(0, 30));
+			}
+			count = $this.val().length;
+			$("#xzhd-body-fxhdxs-text-count").text(count);
+		});
 	//活动背景配置上传
 	function hdbjpz_upload(){
 		if($('#hdbjpz_upload').val() == ''){
