@@ -1662,7 +1662,7 @@
 			return;
 		}
 
-		if(('#xzhd-body-fxhdxs').val() == ''){
+		if($('#xzhd-body-fxhdxs').val() == ''){
 			alert('请填写分享活动描述')
 			return;
 		}
@@ -2336,7 +2336,7 @@
 				var str11 = ''
 				$.each(result.rows,function(i,item){
 					str11 += `
-					<div style="width:500px;margin-top:22px;box-sizing:border-box">
+					<div style="width:500px;margin-top:22px;box-sizing:border-box;margin-left:44px">
 						<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
 						<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
 							<div style="text-align: center;">
@@ -2373,12 +2373,14 @@
 				console.log(result)
 				var youhuiqxlstr = `<option value="" selected="selected"></option>`
 				$.each(result.rows,function(i,item){
-					// if(item.couponName.length>7){
-					// 	var couponNamestr = item.couponName.substring(0,7)+'...'
-					// }
+					if(item.couponName.length>7){
+						var couponNamestr = item.couponName.substring(0,7)+'...'
+					}else{
+						var couponNamestr = item.couponName
+					}
 					//console.log(couponNamestr)
 					youhuiqxlstr +=`
-						<option value="`+ item.couponId +`">`+ item.couponName +`</option>
+						<option value="`+ item.couponId +`">`+ couponNamestr +`</option>
 					`
 				})
 				$('#sj-body-slelctyhjmc').html(youhuiqxlstr)
