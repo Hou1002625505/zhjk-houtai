@@ -2374,7 +2374,7 @@
 					}else if(result.shareCouponList[i].couponSource == 2){
 						var str1 = '有赞优惠券'
 					}
-					var str22 = result.shareCouponList[i].couponName
+					var str22 = result.shareCouponList[i].couponName.split('/')[1].split('×')[0]
 					if (str22.length > 5) {
 						var str2 = str22.substring(0, 4) + '...'
 					}else{
@@ -2391,7 +2391,7 @@
 					} else if (result.receiveCouponList[ii].couponSource == 2) {
 						var str11 = '有赞优惠券'
 					}
-					var str222 = result.receiveCouponList[ii].couponName
+					var str222 = result.receiveCouponList[ii].couponName.split('/')[1].split('×')[0]
 					if (str222.length > 5) {
 						var str22 = str222.substring(0, 4) + '...'
 					} else {
@@ -2411,6 +2411,7 @@
 							if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
+								//console.log(z)
 							}
 						}
 					}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
@@ -2419,6 +2420,7 @@
 							if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
+								//console.log(z)
 							}
 						}
 					}
