@@ -1928,6 +1928,12 @@
 						$(this).parent().parent().hide()
 					})
 
+					//首页活动确定按钮
+					$('.yqyl-body-queding').click(function(){
+						var id = $(this).parent().parent().parent().attr('class')
+						jieshuhdjkan(id)
+					})
+
 					var obj = {
 						wrapid: 'boxpage', //页面显示分页器容器id
 						total: result.total, //总条数
@@ -2450,6 +2456,27 @@
 					bjhdjk(id)
 				})
 				
+			},
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText)
+			}
+		})
+	}
+	//结束活动接口按钮
+	function jieshuhdjkan(id){
+		var str = {
+			id: id,
+			state : 2
+		}
+		$.ajax({
+			type: 'POST',
+			contentType: "application/json;charset=UTF-8",
+			url: "http://test.physicalclub.com/crm/rest/activities/updInvitationActivitiese",
+			data: JSON.stringify(str),
+			success: function (result) {
+				console.log(result)
+				shouye()
 			},
 			error: function (e) {
 				console.log(e.status);
