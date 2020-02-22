@@ -102,7 +102,9 @@
 			height: 30px;
 			border: 1px solid #d5d5d7;
 			border-radius: 4px;
-			font-size: 14px
+			font-size: 14px;
+			padding-left:14px;
+			box-sizing: border-box;
 		}
 
 		#sj-body-slelctyhjmc {
@@ -145,14 +147,18 @@
 			width: 120px;
 			height: 30px;
 			border: none;
-			font-size: 12px
+			font-size: 12px;
+			padding-left:13px;
+			box-sizing: border-box;
 		}
 
 		#yqyl-header-hdsje {
 			width: 120px;
 			height: 30px;
 			border: none;
-			font-size: 12px
+			font-size: 12px;
+			padding-left:14px;
+			box-sizing: border-box;
 		}
 
 		#chaxun {
@@ -535,9 +541,9 @@
 			
 		}
 
-		.sj-body-flex1 div:nth-child(2n){
+		/* .sj-body-flex1 div:nth-child(2n){
 			margin-left:44px
-		}
+		} */
 
 		.sj-body-flex-p{
 			font-size:16px;
@@ -2476,7 +2482,7 @@
 	function jieshuhdjkan(id){
 		var str = {
 			id: id,
-			state : 2
+			status : 2
 		}
 		$.ajax({
 			type: 'POST',
