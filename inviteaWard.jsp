@@ -277,42 +277,42 @@
 			width: 380px;
 			height: 32px;
 			border: none;
-			color: #BFBFBF;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
+			color:#444444
 		}
 
 		#xzhd-body-hdsjs {
 			width: 175px;
 			height: 32px;
 			border: none;
-			color: #BFBFBF;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
+			color:#444444
 		}
 
 		#xzhd-body-hdsje {
 			width: 175px;
 			height: 32px;
 			border: none;
-			color: #BFBFBF;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
+			color:#444444
 		}
 
 		#xzhd-body-fxhd {
 			width: 300px;
 			min-height: 32px;
 			border: none;
-			color: #757575;
 			line-height: 32px;
 			font-size:14px;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
+			color:#444444
 		}
 
 		.xzhd-body-down {
@@ -343,11 +343,11 @@
 			width: 300px;
 			min-height: 32px;
 			border: none;
-			color: #757575;
 			line-height: 32px;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
+			color:#444444
 		}
 		.xzhd-body-zstjraduis{
 			width:24px;
@@ -383,6 +383,9 @@
 			height:60px;
 			border:1px solid #CCCCCC;
 			border-radius: 3px;
+			display:flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		#xzhd-body-fxanpz-upload{
@@ -443,6 +446,9 @@
 			height:60px;
 			border:1px solid #CCCCCC;
 			border-radius: 3px;
+			display:flex;
+			justify-content: center;
+			align-items: center;
 		}
 		#xzhd-body-lqanpz-upload{
 			width:60px;
@@ -460,7 +466,7 @@
 			width:680px;
 			height:32px;
 			border: none;
-			color: #BFBFBF;
+			color: #444444;
 			font-size:16px;
 			padding-left:20px;
 			box-sizing: border-box;
@@ -470,7 +476,7 @@
 			height:160px;
 			resize: none;
 			border: none;
-			color: #BFBFBF;
+			color: #444444;
 			padding-left:20px;
 			padding-top:10px;
 			font-size:16px;
@@ -863,7 +869,7 @@
 			<p style="font-size:16px;margin-right:86px">分享获得</p>
 			<div class="xzhd-body-input" style="position:relative">
 				<div id="xzhd-body-fxhd">
-					<p>请选择要分享的优惠券</p>
+					<p style="color:#BFBFBF">请选择要分享的优惠券</p>
 				</div>
 				<div class="xzhd-body-down" id="xzhd-body-down11" style="top:42%"></div>
 			</div>
@@ -912,7 +918,7 @@
 			<p style="font-size:16px;margin-right:70px">领取人获得</p>
 			<div class="xzhd-body-input" style="position:relative">
 				<div id="xzhd-body-lqrhd">
-					<p>请选择领取人可获得的优惠券</p>
+					<p style="color:#BFBFBF">请选择领取人可获得的优惠券</p>
 				</div>
 				<div class="xzhd-body-down" id="xzhd-body-down22" style="top:42%"></div>
 			</div>
@@ -995,7 +1001,7 @@
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">分享按钮配置</p>
 			<div id="xzhd-body-fxanpz-img">
-				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+				<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 			</div>
 			<div id="xzhd-body-fxanpz-upload">上传</div>
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxanpz_upload" onchange="fxanpz_upload()" style="display:none">
@@ -1027,7 +1033,7 @@
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px">领取按钮配置</p>
 			<div id="xzhd-body-lqanpz-img">
-				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+				<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 			</div>
 			<div id="xzhd-body-lqanpz-upload">上传</div>
 			<input type="file" accept=".png,.jpeg,.jpg" id="lqanpz_upload" onchange="lqanpz_upload()" style="display:none">
@@ -1153,9 +1159,9 @@
 		$('#xzhd-body-hdmc').val('')
 		$('#xzhd-body-hdsjs').val('')
 		$('#xzhd-body-hdsje').val('')
-		var xjhdstr = `<p>请选择要分享的优惠券</p>`
+		var xjhdstr = `<p style="color:#757575">请选择要分享的优惠券</p>`
 		$('#xzhd-body-fxhd').html(xjhdstr)
-		var lqrhdstr = `<p>请选择领取人可获得的优惠券</p>`
+		var lqrhdstr = `<p style="color:#757575">请选择领取人可获得的优惠券</p>`
 		$('#xzhd-body-lqrhd').html(lqrhdstr)
 		for(var e=0;e<$('.xzhd-body-zstjraduis').length;e++){
 			$('.xzhd-body-zstjraduis').eq(e).children().hide()
@@ -1183,12 +1189,16 @@
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
 	})
+	//新建活动返回按钮
+	$('#xzhd-body-quxiao').click(function(){
+		$('.xzhd-body').hide()
+		$('.yqyl-body').show()
+	})
 	//数据页面返回上一级按钮
 	$('#sj-body-fhsyj').click(function(){
 		$('.yqyl-body').show()
 		$('.sj-body').hide()
 	})
-	
 	//活动页面分享获得下拉
 	$('#xzhd-body-fxhd').click(function(){
 		if($('#xzhd-body-fxhd-zhankai').is(':hidden')){
@@ -1196,6 +1206,24 @@
 			$('#xzhd-body-down11').attr('class','xzhd-body-up')
 		}
 	})
+
+	// $('.xzhd-body').click(function(event){
+	// 	//event.stopPropagation()
+	// 	var id1 = $('#xzhd-body-fxhd')
+	// 	var id2 = $('#xzhd-body-fxhd-zhankai')
+	// 	var id3 = $('#xzhd-body-lqrhd')
+	// 	var id4 = $('#xzhd-body-lqrhd-zhankai')
+	// 	if(event.target == id1 || event.target == id2 || event.target == id3 || event.target == id4){
+	// 		return;
+	// 	}
+	// 	if(id2.is(':visible')){
+	// 		id2.hide()
+	// 	}
+	// 	if(id4.is(':visible')){
+	// 		id4.hide()
+	// 	}
+	// })
+
 	//活动页面领取获得下拉
 	$('#xzhd-body-lqrhd').click(function(){
 		if($('#xzhd-body-lqrhd-zhankai').is(':hidden')){
@@ -1602,6 +1630,72 @@
 
 	//新建活动接口
 	function newhd(){
+
+		if($('#xzhd-body-hdmc').val() == ''){
+			alert('请填写活动名称')
+			return;
+		}
+
+		if($('#xzhd-body-hdsjs').val() == ''){
+			alert('请选择活动开始时间')
+			return;
+		}
+
+		if ($('#xzhd-body-hdsje').val() == '') {
+			alert('请选择活动结束时间')
+			return;
+		}
+
+		if($('.xzhd-body-zstjraduis').eq(0).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(1).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(2).children().is(':hidden')){
+			alert('请选择赠送条件')
+			return;
+		}
+
+		if($('#xzhd-body-fxhd').children().eq(0).html() == '请选择要分享的优惠券'){
+			alert('请选择分享获得优惠券')
+			return;
+		}
+
+		if($('#xzhd-body-lqrhd').children().eq(0).html() == '请选择领取人可获得的优惠券'){
+			alert('请选择领取人优惠券')
+			return;
+		}
+
+		if($('#xzhd-body-fxwzbt').val() == ''){
+			alert('请填写分享文字标题')
+			return;
+		}
+
+		if(('#xzhd-body-fxhdxs').val() == ''){
+			alert('请填写分享活动描述')
+			return;
+		}
+
+		if ($('#xzhd-body-hdbjpz-img').attr('class') == '') {
+			alert('请上传活动背景配置图片')
+			return;
+		}
+
+		if($('#xzhd-body-fxanpz-img').attr('class') == ''){
+			alert('请上传分享按钮配置图片')
+			return;
+		}
+
+		if ($('#xzhd-body-fxhyljt-img').attr('class') == '') {
+			alert('请上传分享好友链接图片')
+			return;
+		}
+
+		if ($('#xzhd-body-lqhdbjpz-img').attr('class') == '') {
+			alert('请上传领取活动背景配置图片')
+			return;
+		}
+
+		if ($('#xzhd-body-lqanpz-img').attr('class') == '') {
+			alert('请上传领取按钮配置图片')
+			return;
+		}
+
 		var activityName = $('#xzhd-body-hdmc').val()
 			var startdata = $('#xzhd-body-hdsjs').val()+' '+'00:00'
 			var enddata = $('#xzhd-body-hdsje').val()+' '+'23:59'
@@ -1659,6 +1753,7 @@
 				quantity: quantity
 			})
 		}
+
 		var xjhdstr = {
 			activityName : activityName,
 			activityStartDate : activityStartDate,
@@ -1862,13 +1957,13 @@
 							<td class="`+ item.id + `">
 								<p class="shuju">数据</p>
 								<p>|</p>
-								<p class="chakan">查看</p>
+								<p class="chakan">编辑</p>
 								<p>|</p>
-								<p class="youxiao">有效</p>
+								<p class="youxiao">开启</p>
 								<div
 									style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 									<div style="display:flex;justify-content: center;padding-bottom:10px">
-										<div style="line-height: 36px;">是否立即结束活动？</div>
+										<div style="line-height: 36px;">是否立即开始活动？</div>
 										<div class="yqyl-body-queding"
 										>
 											确定</div>
@@ -1877,7 +1972,6 @@
 											取消</div>
 									</div>
 									<div style="height:1px;background:#BFBFBF;"></div>
-									<div style="font-size: 14px;color:#FF0000;margin-top:10px">结束后活动停止，已领取的优惠券还能继续使用！</div>
 								</div>
 							</td>
 						</tr>
@@ -1897,7 +1991,7 @@
 								<p>|</p>
 								<p class="chakan">查看</p>
 								<p>|</p>
-								<p class="youxiao">有效</p>
+								<p class="youxiao">失效</p>
 								<div
 									style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
 									<div style="display:flex;justify-content: center;padding-bottom:10px">
@@ -1997,7 +2091,14 @@
 					//首页活动确定按钮
 					$('.yqyl-body-queding').click(function(){
 						var id = $(this).parent().parent().parent().attr('class')
-						jieshuhdjkan(id)
+						if($(this).parent().parent().parent().parent().children().eq(6).html() == '未开始'){
+							var status = 1
+							jieshuhdjkan(id,status)
+						}else if($(this).parent().parent().parent().parent().children().eq(6).html() == '进行中'){
+							var status = 2
+							jieshuhdjkan(id,status)
+						}
+						
 					})
 
 					var obj = {
@@ -2042,7 +2143,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.packageName +`</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName +`</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
@@ -2061,7 +2162,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.packageName + `</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName + `</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
@@ -2080,7 +2181,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.title + `</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.title + `</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
@@ -2099,7 +2200,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.title + `</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.title + `</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
@@ -2429,7 +2530,7 @@
 					}else if(result.shareCouponList[i].couponSource == 2){
 						var str1 = '有赞优惠券'
 					}
-					var str22 = result.shareCouponList[i].couponName.split('/')[1].split('×')[0]
+					var str22 = result.shareCouponList[i].couponName
 					if (str22.length > 5) {
 						var str2 = str22.substring(0, 4) + '...'
 					}else{
@@ -2446,7 +2547,7 @@
 					} else if (result.receiveCouponList[ii].couponSource == 2) {
 						var str11 = '有赞优惠券'
 					}
-					var str222 = result.receiveCouponList[ii].couponName.split('/')[1].split('×')[0]
+					var str222 = result.receiveCouponList[ii].couponName
 					if (str222.length > 5) {
 						var str22 = str222.substring(0, 4) + '...'
 					} else {
@@ -2535,11 +2636,11 @@
 			}
 		})
 	}
-	//结束活动接口按钮
-	function jieshuhdjkan(id){
+	//开始或结束活动接口按钮
+	function jieshuhdjkan(id,status){
 		var str = {
 			id: id,
-			status : 2
+			status : status
 		}
 		$.ajax({
 			type: 'POST',
@@ -2548,6 +2649,7 @@
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
+				alert(result.message)
 				shouye()
 			},
 			error: function (e) {
