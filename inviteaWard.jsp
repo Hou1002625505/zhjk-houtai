@@ -105,6 +105,7 @@
 			font-size: 14px;
 			padding-left:14px;
 			box-sizing: border-box;
+			-webkit-appearance: none
 		}
 
 		#sj-body-slelctyhjmc {
