@@ -2287,6 +2287,10 @@
 				$('.add_add').click(function () {
 					var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
 					strcount++
+					var str55 = $(this).parent().parent().parent().children().eq(3).html()
+					if (strcount >= str55) {
+						strcount = str55
+					}
 					$(this).parent().children('.xzhd-body-kqsl').html(strcount)
 
 					// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
@@ -2300,12 +2304,13 @@
 					// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
 					// 	}
 					// }
-
+					
 					var str2 = $(this).parent().parent().parent().attr('class')
 					for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
 						if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
 							var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
 							var str5 = $(this).parent().children('p').html()
+							
 							var str6 = str3 + '×' + str5
 							$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
 						}
@@ -2475,17 +2480,25 @@
 						return str = '有赞'
 					}
 				}
+				function tygs(i){
+					var str = ''	
+					if(!i){
+						return str = ''
+					}else{
+						return str = i
+					}
+				}
 				var str123456 = ''
 				$.each(result.rows,function(i,item){
 					str123456 += `
 					<tr>
 						<td class="item1">`+ (i+1) +`</td>
-						<td class="item22">`+ item.customerName +`</td>
-						<td class="item22">`+ item.mobile +`</td>
-						<td class="item33">`+ item.couponName +`</td>
-						<td class="item22">`+ item.shareDate +`</td>
-						<td class="item22">`+ item.receiveDate +`</td>
-						<td class="item22">`+ item.verifyDate +`</td>
+						<td class="item22">`+ tygs(item.customerName) +`</td>
+						<td class="item22">`+ tygs(item.mobile) +`</td>
+						<td class="item33">`+ tygs(item.couponName) +`</td>
+						<td class="item22">`+ tygs(item.shareDate) +`</td>
+						<td class="item22">`+ tygs(item.receiveDate) +`</td>
+						<td class="item22">`+ tygs(item.verifyDate) +`</td>
 						<td class="item22">`+ xinlaoke(item.customerNature) +`</td>
 						<td class="item44">`+ zhuangtai(item.status) +`</td>
 						<td class="item44">`+ laiyuan(item.couponSource) +`</td>
