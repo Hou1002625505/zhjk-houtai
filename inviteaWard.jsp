@@ -2168,7 +2168,7 @@
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
-							<p class="xzhd-body-kqsl">0</p>
+							<p class="xzhd-body-kqsl">1</p>
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
@@ -2187,7 +2187,7 @@
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
-							<p class="xzhd-body-kqsl">0</p>
+							<p class="xzhd-body-kqsl">1</p>
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
@@ -2206,7 +2206,7 @@
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
-							<p class="xzhd-body-kqsl">0</p>
+							<p class="xzhd-body-kqsl">1</p>
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
@@ -2225,7 +2225,7 @@
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
-							<p class="xzhd-body-kqsl">0</p>
+							<p class="xzhd-body-kqsl">1</p>
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
