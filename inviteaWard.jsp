@@ -972,7 +972,7 @@
 						<tr>
 							<th style="width:10%"></th>
 							<th style="width:10%">优惠券名称</th>
-							<th style="width:10%">开始时间</th>
+							<th style="width:10%">数量</th>
 							<th style="width:10%">库存</th>
 						</tr>
 					</tbody>
@@ -2470,9 +2470,9 @@
 				function laiyuan(i){
 					var str = ''
 					if(i==1){
-						str = 'crm'
+						return str = 'crm'
 					}else if(i==2){
-						str = '有赞'
+						return str = '有赞'
 					}
 				}
 				var str123456 = ''
