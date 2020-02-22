@@ -112,7 +112,10 @@
 			height: 30px;
 			border: 1px solid #d5d5d7;
 			border-radius: 4px;
-			font-size: 14px
+			font-size: 14px;
+			padding-left:13px;
+			box-sizing: border-box;
+			-webkit-appearance: none
 		}
 
 		.select_wrap {
@@ -544,7 +547,14 @@
 			display:flex;
 			flex-wrap: wrap;
 			overflow: hidden;
-			
+		}
+
+		.sj-body-flex1 div:nth-child(3n+1){
+			margin-left:0
+		}
+
+		.sj-body-flex1 div{
+			margin-left:44px
 		}
 
 		/* .sj-body-flex1 div:nth-child(2n){
@@ -554,7 +564,7 @@
 		.sj-body-flex-p{
 			font-size:16px;
 			color:#444444;
-			margin-right:20px
+			margin-right:20px;
 		}
 		.sj-body-input {
 			border: 1px solid #BFBFBF;
@@ -569,26 +579,37 @@
 		#sj-body-lqsjs{
 			width:120px;
 			height:30px;
-			border:none
+			border:none;
+			padding-left:13px;
+			box-sizing: border-box;
+			
 		}
 		#sj-body-lqsje{
 			width:120px;
 			height:30px;
-			border:none
+			border:none;
+			padding-left:13px;
+			box-sizing: border-box;
 		}
 		#sj-body-zt{
 			width: 120px;
 			height: 30px;
 			border: 1px solid #d5d5d7;
 			border-radius: 4px;
-			font-size: 14px
+			font-size: 14px;
+			padding-left:13px;
+			box-sizing: border-box;
+			-webkit-appearance: none
 		}
 		#sj-body-ly{
 			width: 120px;
 			height: 30px;
 			border: 1px solid #d5d5d7;
 			border-radius: 4px;
-			font-size: 14px
+			font-size: 14px;
+			padding-left:13px;
+			box-sizing: border-box;
+			-webkit-appearance: none
 		}
 		#sj-body-chaxun{
 			width:80px;
@@ -601,6 +622,7 @@
 			font-size:16px;
 			margin-left:40px;
 			cursor: pointer;
+			display: inline-block;
 		}
 		#sj-body-qingchu{
 			width:80px;
@@ -612,6 +634,7 @@
 			font-size:16px;
 			margin-left:15px;
 			cursor: pointer;
+			display: inline-block;
 		}
 		#sj-body-dcsj{
 			width:100px;
@@ -624,6 +647,7 @@
 			font-size:16px;
 			margin-left:220px;
 			cursor: pointer;
+			display: inline-block;
 		}
 		.table-body1 tr td {
 			font-size: 14px;
@@ -1063,16 +1087,16 @@
 			
 		</div>
 		<div class="sj-body-flex" style="margin-top:30px">
-			<p class="sj-body-flex-p">优惠券名称</p>
-			<div class="sj-body-input" id='sj-body-inputyhjmc'>
+			<label class="sj-body-flex-p">优惠券名称</label>
+			<!-- <div class="sj-body-input" id='sj-body-inputyhjmc' style="width:120px"> -->
 				<span class="select_wrap">
 					<select name="visitstatus" id="sj-body-slelctyhjmc">
 						
 					</select>
-					<em class="triangle_border_down2"></em>
+					<em class="triangle_border_down1"></em>
 				</span>
-			</div>
-			<p class="sj-body-flex-p" style="margin-left:38px">领取时间</p>
+			<!-- </div> -->
+			<label class="sj-body-flex-p" style="margin-left:38px">领取时间</label>
 			<div class="sj-body-input J-datepicker-day">
 				<input id="sj-body-lqsjs" type="text" placeholder="开始日期">
 			</div>
@@ -1080,7 +1104,7 @@
 			<div class="sj-body-input J-datepicker-day">
 				<input id="sj-body-lqsje" type="text" placeholder="结束日期">
 			</div>
-			<p class="sj-body-flex-p" style="margin-left:38px">状态</p>
+			<label class="sj-body-flex-p" style="margin-left:38px">状态</label>
 			<span class="select_wrap">
 				<select name="visitstatus" id="sj-body-zt">
 					<option value="" selected="selected">全部</option>
@@ -1092,7 +1116,7 @@
 				</select>
 				<em class="triangle_border_down1"></em>
 			</span>
-			<p class="sj-body-flex-p" style="margin-left:38px">来源</p>
+			<label class="sj-body-flex-p" style="margin-left:38px">来源</label>
 			<span class="select_wrap">
 				<select name="visitstatus" id="sj-body-ly">
 					<option value="" selected="selected">全部</option>
@@ -1101,9 +1125,9 @@
 				</select>
 				<em class="triangle_border_down1"></em>
 			</span>
-			<p id="sj-body-chaxun">查询</p>
-			<p id="sj-body-qingchu">清除</p>
-			<p id="sj-body-dcsj">导出数据</p>
+			<span id="sj-body-chaxun">查询</span>
+			<span id="sj-body-qingchu">清除</span>
+			<span id="sj-body-dcsj">导出数据</span>
 		</div>
 
 		<table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
@@ -2336,7 +2360,7 @@
 				var str11 = ''
 				$.each(result.rows,function(i,item){
 					str11 += `
-					<div style="width:500px;margin-top:22px;box-sizing:border-box;margin-left:44px">
+					<div style="width:500px;margin-top:22px;box-sizing:border-box;">
 						<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
 						<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
 							<div style="text-align: center;">
