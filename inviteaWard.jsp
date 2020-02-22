@@ -1110,6 +1110,14 @@
 	})
 	//新建活动按钮
 	$('#xjhd-start').click(function(){
+		for (var j = 0; j < $('.xzhd-body-gouxuan').length; j++) {
+			$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
+			$('.xzhd-body-gouxuan').eq(j).children().hide()
+		}
+		for (var jj = 0; jj < $('.xzhd-body-gouxuan1').length; jj++) {
+			$('.xzhd-body-gouxuan1').eq(jj).removeClass('gxx')
+			$('.xzhd-body-gouxuan1').eq(jj).children().hide()
+		}
 		$('.xzhd-body').show()
 		$('.yqyl-body').hide()
 		$('#xzhd-body-hdmc').val('')
@@ -1144,7 +1152,6 @@
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
-		window.location.reload()
 	})
 	//数据页面返回上一级按钮
 	$('#sj-body-fhsyj').click(function(){
@@ -1623,7 +1630,6 @@
 					$('.xzhd-body').hide()
 					$('.yqyl-body').show()
 					shouye()
-					window.location.reload()
 				}
 			},
 			error: function (e) {
@@ -1727,7 +1733,6 @@
 					$('.xzhd-body').hide()
 					$('.yqyl-body').show()
 					shouye()
-					window.location.reload()
 				}
 			},
 			error: function (e) {
@@ -2350,6 +2355,10 @@
 				for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 					$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
 					$('.xzhd-body-gouxuan').eq(j).children().hide()
+				}
+				for (var jj = 0; jj < $('.xzhd-body-gouxuan1').length; jj++) {
+					$('.xzhd-body-gouxuan1').eq(jj).removeClass('gxx')
+					$('.xzhd-body-gouxuan1').eq(jj).children().hide()
 				}
 				var str = ''
 				//分享有礼内容渲染
