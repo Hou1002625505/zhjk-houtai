@@ -550,11 +550,11 @@
 			overflow: hidden;
 		}
 
-		.sj-body-flex1 div:nth-child(3n+1){
+		.sj-body-flex1 .sj-body-flex111:nth-child(3n+1){
 			margin-left:0
 		}
 
-		.sj-body-flex1 div{
+		.sj-body-flex1 .sj-body-flex111{
 			margin-left:44px
 		}
 
@@ -1213,11 +1213,39 @@
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+		$('#xzhd-body-hdmc').css('pointer-events','auto')
+		$('#xzhd-body-hdsjs').css('pointer-events', 'auto')
+		$('#xzhd-body-hdsje').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhd').css('pointer-events', 'auto')
+		$('#xzhd-body-lqrhd').css('pointer-events', 'auto')
+		$('.xzhd-body-zstjraduis').css('pointer-events', 'auto')
+		$('#xzhd-body-fxwzbt').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhdxs').css('pointer-events', 'auto')
+		$('#xzhd-body-hdbjpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-fxanpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhyljt-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-lqhdbjpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-lqanpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-save').css('pointer-events', 'auto')
 	})
 	//新建活动返回按钮
 	$('#xzhd-body-quxiao').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+		$('#xzhd-body-hdmc').css('pointer-events','auto')
+		$('#xzhd-body-hdsjs').css('pointer-events', 'auto')
+		$('#xzhd-body-hdsje').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhd').css('pointer-events', 'auto')
+		$('#xzhd-body-lqrhd').css('pointer-events', 'auto')
+		$('.xzhd-body-zstjraduis').css('pointer-events', 'auto')
+		$('#xzhd-body-fxwzbt').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhdxs').css('pointer-events', 'auto')
+		$('#xzhd-body-hdbjpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-fxanpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-fxhyljt-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-lqhdbjpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-lqanpz-upload').css('pointer-events', 'auto')
+		$('#xzhd-body-save').css('pointer-events', 'auto')
 	})
 	//数据页面返回上一级按钮
 	$('#sj-body-fhsyj').click(function(){
@@ -2095,8 +2123,9 @@
 						$('.yqyl-body').hide()
 						$('.xzhd-body').show()
 						var id=$(this).parent().attr('class')
-						console.log(id)
-						chakanchakan(id)
+						var dianjimc = $(this).html()
+						//console.log(id)
+						chakanchakan(id,dianjimc)
 					})
 
 					//首页有效按钮显示
@@ -2366,7 +2395,7 @@
 				var str11 = ''
 				$.each(result.rows,function(i,item){
 					str11 += `
-					<div style="width:500px;margin-top:22px;box-sizing:border-box;">
+					<div class="sj-body-flex111" style="width:500px;margin-top:22px;box-sizing:border-box;">
 						<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
 						<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
 							<div style="text-align: center;">
@@ -2539,7 +2568,7 @@
 		location.href = "http://test.physicalclub.com/crm/rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
 	}
 	//查看页面
-	function chakanchakan(id){
+	function chakanchakan(id, dianjimc){
 		var str = {
 			id : id
 		}
@@ -2549,7 +2578,24 @@
 			url: "http://test.physicalclub.com/crm/rest/activities/getActivitiesInfoById",
 			data: JSON.stringify(str),
 			success: function (result) {
-				console.log(result)
+				console.log(dianjimc)
+				if(dianjimc == '查看'){
+					$('#xzhd-body-hdmc').css('pointer-events','none')
+					$('#xzhd-body-hdsjs').css('pointer-events', 'none')
+					$('#xzhd-body-hdsje').css('pointer-events', 'none')
+					$('#xzhd-body-fxhd').css('pointer-events', 'none')
+					$('#xzhd-body-lqrhd').css('pointer-events', 'none')
+					$('.xzhd-body-zstjraduis').css('pointer-events', 'none')
+					$('#xzhd-body-fxwzbt').css('pointer-events', 'none')
+					$('#xzhd-body-fxhdxs').css('pointer-events', 'none')
+					$('#xzhd-body-hdbjpz-upload').css('pointer-events', 'none')
+					$('#xzhd-body-fxanpz-upload').css('pointer-events', 'none')
+					$('#xzhd-body-fxhyljt-upload').css('pointer-events', 'none')
+					$('#xzhd-body-lqhdbjpz-upload').css('pointer-events', 'none')
+					$('#xzhd-body-lqanpz-upload').css('pointer-events', 'none')
+					$('#xzhd-body-save').css('pointer-events', 'none')
+				}
+				//console.log(result)
 				for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
 					$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
 					$('.xzhd-body-gouxuan').eq(j).children().hide()
