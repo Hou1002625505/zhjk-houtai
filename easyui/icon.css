@@ -1,0 +1,456 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+	
+  background-size: cover;
+}
+.icon-add{
+	background:url('icons/edit_add.png') no-repeat center center;
+  background-size: cover;
+}
+.icon-edit{
+	background:url('icons/pencil.png') no-repeat center center;
+	
+  background-size: cover;
+}
+.icon-clear{
+	background:url('icons/clear.png') no-repeat center center;
+	
+  background-size: cover;
+}
+.icon-remove{
+	background:url('icons/edit_remove.png') no-repeat center center;
+  background-size: cover;
+}
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+  background-size: cover;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-undo{
+	background:url('icons/19.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-undo1{
+	background:url('icons/20.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+.icon-man{
+	background:url('icons/man.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('icons/lock.png') no-repeat center center;
+}
+.icon-more{
+	background:url('icons/more.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('icons/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('icons/3.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-large-shapes{
+	background:url('icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('icons/22.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-user{
+	background:url('icons/23.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-jsqx{
+	background:url('icons/jsqx.png') no-repeat center center;
+}
+.icon-kh{
+	background:url('icons/5.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-tc{
+	background:url('icons/10.png') no-repeat center center;
+	  background-size: cover;
+}
+
+.icon-tc1{
+	background:url('icons/sijiaogai.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-tc2{
+	background:url('icons/sijiaoyuan.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-tc3{
+	background:url('icons/sijiaopi.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-tc4{
+	background:url('icons/keshifa.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-tc5{
+	background:url('icons/sijiaozhao.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-xf{
+	background:url('icons/xf.png') no-repeat center center;
+}
+.icon-hyk{
+	background:url('icons/4.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-wz{
+	background:url('icons/2.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-bm{
+	background:url('icons/11.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-hb{
+	background:url('icons/12.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-hd{
+	background:url('icons/13.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-hd1{background:url('icons/pcqiyedang.png') no-repeat center center;
+	       background-size: cover;
+	  }
+.icon-hd2{background:url('icons/pcshenqinglist.png') no-repeat center center;
+	        background-size: cover;
+	  }
+.icon-dj{
+	background:url('icons/14.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-dj1{
+	background:url('icons/15.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-fwl{
+	background:url('icons/6.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-fwl1{
+	background:url('icons/24.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-khxq{
+	background:url('icons/7.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-khpjs{
+	background:url('icons/8.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-khpjs1{
+	background:url('icons/pchyhf.png') no-repeat center center;
+	  background-size: cover;
+}
+.ficon-dj{
+	background:url('icons/pchfgk.png') no-repeat center center;
+	  background-size: cover;
+}
+.picon-dj1{
+	background:url('icons/pczxrb.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-khpjs2{
+	background:url('icons/26.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-bk{
+	background:url('icons/bk.png') no-repeat center center;
+}
+.icon-jsyh{
+	background:url('icons/jsyh.png') no-repeat center center;
+}
+.icon-bcs{
+	background:url('icons/bcs.png') no-repeat center center;
+}
+.icon-downSale{
+	background: url('icons/downsale.png') no-repeat center center;
+}
+.icon-upSale{
+	background: url('icons/16.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-upSale1{
+	background: url('icons/21.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-upSale2{
+	background: url('icons/17.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-upSale2{
+	background: url('icons/17.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-upSale3{
+	background: url('icons/25.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-pj{
+	background:url('icons/1.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-jy{
+	background:url('icons/jy.png') no-repeat center center;
+}
+.icon-qy{
+	background:url('icons/qy.png') no-repeat center center;
+}
+.icon-hs{
+	background:url('icons/hs.png') no-repeat center center;
+}
+.icon-jcsj{
+	background:url('icons/jcsj.png') no-repeat center center;
+}
+.icon-sjqx{
+	background:url('icons/sjqx.png') no-repeat center center;
+}
+.icon-khpj{
+	background:url('icons/18.png') no-repeat center center;
+	  background-size: cover;
+}
+.icon-khrz{
+	background:url('icons/khrz.png') no-repeat center center;
+}
+.icon-yhrz{
+	background:url('icons/yhrz.png') no-repeat center center;
+}
+.icon-excel{
+	background:url('icons/excel.png') no-repeat center center;
+}
+.icon-tb{
+	background:url('icons/tb.png') no-repeat center center;
+}
+.icon-zzjg{
+	background:url('icons/zzjg.png') no-repeat center center;
+}
+.icon-zzjg1{
+	background:url('icons/27.png') no-repeat center center;
+	  background-size: cover;
+}
+
+.icon-menubk{
+	background:url('icons/bk.png') no-repeat center center; /* 绑卡*/
+	  background-size: cover;
+}
+.icon-menubc{
+	background:url('icons/bc.png') no-repeat center center; /* 保存*/
+	  background-size: cover;
+}
+.datagrid-toolbar{
+	background-color: #fff !important;
+}
+.icon-menubj{
+	background:url('icons/bj.png') no-repeat center center; /* 编辑*/
+	  background-size: cover;
+}
+.icon-menuchuli{
+	background:url('icons/chuli.png') no-repeat center center; /* 处理*/
+	  background-size: cover;
+}
+.icon-menudaochu{
+	background:url('icons/daochu.png') no-repeat center center; /* 导出*/
+	  background-size: cover;
+}
+.icon-menusendKC{
+	background:url('icons/sendKC.png') no-repeat center center; /* 发布课程*/
+	  background-size: cover;
+}
+.icon-menuhxkq{
+	background:url('icons/hxkq.png') no-repeat center center; /* 核销卡券*/
+	  background-size: cover;
+}
+.icon-menuhuifang{
+	background:url('icons/huifang.png') no-repeat center center; /* 回访*/
+	  background-size: cover;
+}
+.icon-menujieshu{
+	background:url('icons/jieshu.png') no-repeat center center; /* 结束*/
+	  background-size: cover;
+}
+.icon-menujinyong{
+	background:url('icons/jinyong.png') no-repeat center center; /* 禁用*/
+	  background-size: cover;
+}
+.icon-menukhrlc{
+	background:url('icons/khrlc.png') no-repeat center center; /* 客户入离场*/
+	  background-size: cover;
+}
+.icon-menupzhd{
+	background:url('icons/pzhd.png') no-repeat center center; /* 配置活动*/
+	  background-size: cover;
+}
+.icon-menuplsc{
+	background:url('icons/plsc.png') no-repeat center center; /* 批量上传*/
+	  background-size: cover;
+}
+.icon-menuqiyong{
+	background:url('icons/qiyong.png') no-repeat center center; /* 启用*/
+	  background-size: cover;
+}
+.icon-menurili{
+	background:url('icons/rili.png') no-repeat center center; /* 日历*/
+	  background-size: cover;
+}
+.icon-menudeletes{
+	background:url('icons/deletes.png') no-repeat center center; /* 删除*/
+	  background-size: cover;
+}
+.icon-menuuploadKb{
+	background:url('icons/uploadKb.png') no-repeat center center; /* 上传课表*/
+	  background-size: cover;
+}
+.icon-menusetHB{
+	background:url('icons/setHB.png') no-repeat center center; /* 设置海报*/
+	  background-size: cover;
+}
+.icon-menuuserSY{
+	background:url('icons/userSY.png') no-repeat center center; /* 使用*/
+	  background-size: cover;
+}
+.icon-menuaddtj{
+	background:url('icons/addtj.png') no-repeat center center; /* 添加*/
+	  background-size: cover;
+}
+.icon-menuaddtyk{
+	background:url('icons/addtyk.png') no-repeat center center; /* 添加体验卡*/
+	  background-size: cover;
+}
+.icon-menutongbu{
+	background:url('icons/tongbu.png') no-repeat center center; /* 同步*/
+	  background-size: cover;
+}
+.icon-menuxlzk{
+	background:url('icons/xlzk.png') no-repeat center center; /* 下拉展开*/
+	  background-size: cover;
+}
+.icon-kfsb {
+	background: url('icons/kfsb.png') no-repeat center center;/* 扣费接口失败接口*/
+	background-size: cover;
+}
+
+.icon-sjglsjkcfxb {
+	background: url('icons/sjgl-sjkcfxb.png') no-repeat center center;/* 私教管理私教课程分析表*/
+	background-size: cover;
+}
+
+.icon-sjglsjskxlmx {
+	background: url('icons/sjgl-sjskxlmx.png') no-repeat center center;/* 私教管理私教上课训练明细*/
+	background-size: cover;
+}
+
+.icon-tcglkcgl {
+	background: url('icons/tcgl-kcgl.png') no-repeat center center;/* 团操管理课程管理*/
+	background-size: cover;
+}
+.icon-tcgljlgl {
+	background: url('icons/tcgl-jlgl.png') no-repeat center center;/* 团操管理教练管理*/
+	background-size: cover;
+}
+.icon-tcgltckbhdtj {
+	background: url('icons/tkgl-tckbhdtj.png') no-repeat center center;/* 团操管理团课管理核对统计*/
+	background-size: cover;
+}
+.icon-tcglpkgl {
+	background: url('icons/tcgl-pkgl.png') no-repeat center center;/* 团操管理排课管理*/
+	background-size: cover;
+}
+.icon-tcglkcb {
+	background: url('icons/tcgl-kcb.png') no-repeat center center;/* 团操管理课程表*/
+	background-size: cover;
+}
+.icon-tcgltksjfx {
+	background: url('icons/tcgl-tksjfx.png') no-repeat center center;/* 团操管理团课数据分析*/
+	background-size: cover;
+}
+.icon-yxglyqyl {
+	background: url('icons/yxgl-yqyl.png') no-repeat center center;/* 营销管理邀请有礼*/
+	background-size: cover;
+}
+.icon-yxglfxyl {
+	background: url('icons/yxgl-fxyl.png') no-repeat center center;/* 营销管理分享有礼有礼*/
+	background-size: cover;
+}
+
+.icon-B2Bqyda {
+	background: url('icons/B2B-qyda.png') no-repeat center center;/* B2B企业档案*/
+	background-size: cover;
+}
+
+.icon-B2Bqyxfmx {
+	background: url('icons/B2B-qyxfmx.png') no-repeat center center;/* B2B企业消费明细*/
+	background-size: cover;
+}
+.icon-pzzxxtcs {
+	background: url('icons/pzzx-xtcs.png') no-repeat center center;/* 配置中心系统参数*/
+	background-size: cover;
+}
