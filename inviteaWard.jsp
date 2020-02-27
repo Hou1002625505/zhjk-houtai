@@ -996,10 +996,10 @@
 				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
 			</div>
 			<p style="margin:0 36px 0 15px;font-size:14px">领取送</p>
-			<div class="xzhd-body-zstjraduis">
+			<!-- <div class="xzhd-body-zstjraduis">
 				<p style="width:14px;height:14px;border-radius:50%;background:#71B2EF;display:none"></p>
 			</div>
-			<p style="margin:0 36px 0 15px;font-size:14px">分享送</p>
+			<p style="margin:0 36px 0 15px;font-size:14px">分享送</p> -->
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:54px;">分享文字标题</p>
