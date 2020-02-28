@@ -1213,6 +1213,7 @@
 	$('#fhsyj').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+		$('.xzhd-body-kqsl').html('1')
 		$('#xzhd-body-hdmc').css('pointer-events','auto')
 		$('#xzhd-body-hdsjs').css('pointer-events', 'auto')
 		$('#xzhd-body-hdsje').css('pointer-events', 'auto')
@@ -1232,6 +1233,7 @@
 	$('#xzhd-body-quxiao').click(function(){
 		$('.xzhd-body').hide()
 		$('.yqyl-body').show()
+		$('.xzhd-body-kqsl').html('1')
 		$('#xzhd-body-hdmc').css('pointer-events','auto')
 		$('#xzhd-body-hdsjs').css('pointer-events', 'auto')
 		$('#xzhd-body-hdsje').css('pointer-events', 'auto')
@@ -1836,6 +1838,7 @@
 					$('.yqyl-body').show()
 					shouye()
 				}
+				
 			},
 			error: function (e) {
 				console.log(e.status);
@@ -1975,7 +1978,7 @@
 			var str = {
 				param: param,
 				page: page,
-				rows: 10
+				rows: 15
 			}
 
 			function timegeshi(i) {
@@ -1983,6 +1986,13 @@
 				strstr = i.split(' ')[0]
 				return strstr = i.split(' ')[0].split('-')[0] + '.' + i.split(' ')[0].split('-')[1] + '.' + i.split(' ')[0].split('-')[2]
 			}
+
+			function xhbs(q){
+				var str1 = ''
+				return str1 = q+(str.page-1)*15
+			}
+
+			//console.log(str.page)
 
 			$.ajax({
 				type: 'POST',
@@ -1996,7 +2006,7 @@
 						if (item.state == 0) {
 							str += `
 						<tr>
-							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item1">`+ xhbs(i + 1) + `</td>
 							<td class="item2">`+ item.activityName + `</td>
 							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
 							<td class="item3">`+ item.shareCustomerNum + `</td>
@@ -2028,7 +2038,7 @@
 						} else if (item.state == 1) {
 							str += `
 						<tr>
-							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item1">`+ xhbs(i + 1) + `</td>
 							<td class="item2">`+ item.activityName + `</td>
 							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
 							<td class="item3">`+ item.shareCustomerNum + `</td>
@@ -2061,7 +2071,7 @@
 						} else {
 							str += `
 						<tr>
-							<td class="item1">`+ (Number(i) + 1) + `</td>
+							<td class="item1">`+ xhbs(i + 1) + `</td>
 							<td class="item2">`+ item.activityName + `</td>
 							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
 							<td class="item3">`+ item.shareCustomerNum + `</td>
@@ -2154,14 +2164,15 @@
 					var obj = {
 						wrapid: 'boxpage', //页面显示分页器容器id
 						total: result.total, //总条数
-						pagesize: 10, //每页显示10条
+						pagesize: 15, //每页显示10条
 						currentPage: page, //当前页
 						onPagechange: onPagechange
 						//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
 					}
 					pagination.init(obj);
-					var sjjlstr = `共`+ result.total +`条，每页10条`
+					var sjjlstr = `共`+ result.total +`条，每页15条`
 					$('#yqyl-body-sjjl').html(sjjlstr)
+					$('.xzhd-body-kqsl').html('1')
 				},
 				error: function (e) {
 					console.log(e.status);
@@ -2649,6 +2660,8 @@
 							if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
+								var str666 = $('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[1]
+								$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 								//console.log(z)
 							}
 						}
@@ -2659,6 +2672,8 @@
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
 								//console.log(z)
+								var str666 = $('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[1]
+								$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 							}
 						}
 					}
@@ -2671,6 +2686,8 @@
 							if ($('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
 								$('.xzhd-body-gouxuan1').eq(zz).children().show()
+								var str66666 = $('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[1]
+								$('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(2).children().children().eq(1).html(str66666)
 							}
 						}
 					} else if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody22') {
@@ -2679,6 +2696,8 @@
 							if ($('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
 								$('.xzhd-body-gouxuan1').eq(zz).children().show()
+								var str66666 = $('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[1]
+								$('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(2).children().children().eq(1).html(str66666)
 							}
 						}
 					}
