@@ -2651,6 +2651,8 @@
 				}
 				$('#xzhd-body-fxhd').html(str)
 				$('#xzhd-body-lqrhd').html(strstr)
+				chacha()
+				chacha1()
 				//console.log($('#xzhd-body-fxhd').html())
 				//分享获得点击渲染
 				for (var z = 0; z < $('.xzhd-body-gouxuan').length; z++) {

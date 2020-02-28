@@ -872,7 +872,9 @@
 			box-sizing: border-box;
 			border-left: 1px solid #CCCCCC;
 			border-bottom: 1px solid #CCCCCC;
-			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	
 		.xzhd-body-zdlqrs-downfold {
@@ -880,7 +882,9 @@
 			height: 16px;
 			box-sizing: border-box;
 			border-left: 1px solid #CCCCCC;
-			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	
 		.xzhd-body-tswztswz {
@@ -943,37 +947,7 @@
 					</tr>
 				</tbody>
 				<tbody class="table-body">
-					<tr>
-						<td class="item1">1</td>
-						<td class="item2">瓜分百元红包大礼包</td>
-						<td class="item2">活动时间</td>
-						<td class="item3">评论人数</td>
-						<td class="item3">评论人次</td>
-						<td class="item3">分享人数</td>
-						<td class="item3">分享人次</td>
-						<td class="item3">领取人数</td>
-						<td class="item3">领取人次</td>
-						<td class="item3">使用人数</td>
-						<td class="item3">状态</td>
-						<td class="`+ item.id + `">
-							<p class="shuju">数据</p>
-							<p>|</p>
-							<p class="chakan">编辑</p>
-							<p>|</p>
-							<p class="youxiao">开启</p>
-							<div
-								style="position:absolute;top:0;left:-275px;width:370px;height:110px;background:white;z-index: 999;padding:20px 20px 0 23px;box-sizing: border-box;display:none">
-								<div style="display:flex;justify-content: center;padding-bottom:10px">
-									<div style="line-height: 36px;">是否立即开始活动？</div>
-									<div class="yqyl-body-queding">
-										确定</div>
-									<div class="yqyl-body-quxiao">
-										取消</div>
-								</div>
-								<div style="height:1px;background:#BFBFBF;"></div>
-							</div>
-						</td>
-					</tr>
+					
 				</tbody>
 			</table>
 			<div style="width:100%;margin-top:22px;display:flex;align-items: center;">
@@ -1600,167 +1574,168 @@
 			count = $this.val().length;
 			$("#xzhd-body-fxhdxs-text-count").text(count);
 		});
+		
 		//活动背景配置上传
 		function hdbjpz_upload() {
-			// if($('#hdbjpz_upload').val() == ''){
-			// 	return;
-			// }
-			// let file = $("#hdbjpz_upload").val()
-			// let filename = file.substr(file.lastIndexOf("."));
-			// if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-			// 	alert("请上传图片格式的文件");
-			// 	return;
-			// }
+			if($('#hdbjpz_upload').val() == ''){
+				return;
+			}
+			let file = $("#hdbjpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
 
-			// var formData = new FormData();
-			// formData.append('file', document.getElementById('hdbjpz_upload').files[0])
-			// $.ajax({
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
-			// 	type: "post",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	success: function (data) {
-			// 		console.log(data)
-			// 		$('#xzhd-body-hdbjpz-img').children().attr('src','images/'+ data.rows[0].path)
-			// 		$('#xzhd-body-hdbjpz-img').attr('class', 'images/' + data.rows[0].path)
-			// 	},
-			// 	error: function (data) {
-			// 		alert("上传失败")
-			// 	}
-			// });
+			var formData = new FormData();
+			formData.append('file', document.getElementById('hdbjpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					$('#xzhd-body-hdbjpz-img').children().attr('src','images/'+ data.rows[0].path)
+					$('#xzhd-body-hdbjpz-img').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
 		}
 
 		//分享按钮配置上传
 		function fxanpz_upload() {
-			// if ($('#fxanpz_upload').val() == '') {
-			// 	return;
-			// }
-			// let file = $("#fxanpz_upload").val()
-			// let filename = file.substr(file.lastIndexOf("."));
-			// if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-			// 	alert("请上传图片格式的文件");
-			// 	return;
-			// }
+			if ($('#fxanpz_upload').val() == '') {
+				return;
+			}
+			let file = $("#fxanpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
 
-			// var formData = new FormData();
-			// formData.append('file', document.getElementById('fxanpz_upload').files[0])
-			// $.ajax({
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
-			// 	type: "post",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	success: function (data) {
-			// 		console.log(data)
-			// 		//var img = data
-			// 		//return data
-			// 		$('#xzhd-body-fxanpz-img').children().attr('src', 'images/' + data.rows[0].path)
-			// 		$('#xzhd-body-fxanpz-img').attr('class', 'images/' + data.rows[0].path)
-			// 	},
-			// 	error: function (data) {
-			// 		alert("上传失败")
-			// 	}
-			// });
+			var formData = new FormData();
+			formData.append('file', document.getElementById('fxanpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-fxanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-fxanpz-img').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
 		}
 
 		//分享好友链接图上传
 		function fxhyljt_upload() {
-			// if ($('#fxhyljt_upload').val() == '') {
-			// 	return;
-			// }
-			// let file = $("#fxhyljt_upload").val()
-			// let filename = file.substr(file.lastIndexOf("."));
-			// if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-			// 	alert("请上传图片格式的文件");
-			// 	return;
-			// }
+			if ($('#fxhyljt_upload').val() == '') {
+				return;
+			}
+			let file = $("#fxhyljt_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
 
-			// var formData = new FormData();
-			// formData.append('file', document.getElementById('fxhyljt_upload').files[0])
-			// $.ajax({
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
-			// 	type: "post",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	success: function (data) {
-			// 		console.log(data)
-			// 		//var img = data
-			// 		//return data
-			// 		$('#xzhd-body-fxhyljt-img').children().attr('src', 'images/' + data.rows[0].path)
-			// 		$('#xzhd-body-fxhyljt-img').attr('class', 'images/' + data.rows[0].path)
-			// 	},
-			// 	error: function (data) {
-			// 		alert("上传失败")
-			// 	}
-			// });
+			var formData = new FormData();
+			formData.append('file', document.getElementById('fxhyljt_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-fxhyljt-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-fxhyljt-img').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
 		}
 
 		//领取活动背景配置上传
 		function lqhdbjpz_upload() {
-			// if ($('#lqhdbjpz_upload').val() == '') {
-			// 	return;
-			// }
-			// let file = $("#lqhdbjpz_upload").val()
-			// let filename = file.substr(file.lastIndexOf("."));
-			// if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-			// 	alert("请上传图片格式的文件");
-			// 	return;
-			// }
+			if ($('#lqhdbjpz_upload').val() == '') {
+				return;
+			}
+			let file = $("#lqhdbjpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
 
-			// var formData = new FormData();
-			// formData.append('file', document.getElementById('lqhdbjpz_upload').files[0])
-			// $.ajax({
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
-			// 	type: "post",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	success: function (data) {
-			// 		console.log(data)
-			// 		//var img = data
-			// 		//return data
-			// 		$('#xzhd-body-lqhdbjpz-img').children().attr('src', 'images/' + data.rows[0].path)
-			// 		$('#xzhd-body-lqhdbjpz-img').attr('class', 'images/' + data.rows[0].path)
-			// 	},
-			// 	error: function (data) {
-			// 		alert("上传失败")
-			// 	}
-			// });
+			var formData = new FormData();
+			formData.append('file', document.getElementById('lqhdbjpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-lqhdbjpz-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-lqhdbjpz-img').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
 		}
 
 		//领取按钮配置上传
 		function lqanpz_upload() {
-			// if ($('#lqanpz_upload').val() == '') {
-			// 	return;
-			// }
-			// let file = $("#lqanpz_upload").val()
-			// let filename = file.substr(file.lastIndexOf("."));
-			// if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-			// 	alert("请上传图片格式的文件");
-			// 	return;
-			// }
+			if ($('#lqanpz_upload').val() == '') {
+				return;
+			}
+			let file = $("#lqanpz_upload").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
 
-			// var formData = new FormData();
-			// formData.append('file', document.getElementById('lqanpz_upload').files[0])
-			// $.ajax({
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
-			// 	type: "post",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	success: function (data) {
-			// 		console.log(data)
-			// 		//var img = data
-			// 		//return data
-			// 		$('#xzhd-body-lqanpz-img').children().attr('src', 'images/' + data.rows[0].path)
-			// 		$('#xzhd-body-lqanpz-img').attr('class', 'images/' + data.rows[0].path)
-			// 	},
-			// 	error: function (data) {
-			// 		alert("上传失败")
-			// 	}
-			// });
+			var formData = new FormData();
+			formData.append('file', document.getElementById('lqanpz_upload').files[0])
+			$.ajax({
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					//var img = data
+					//return data
+					$('#xzhd-body-lqanpz-img').children().attr('src', 'images/' + data.rows[0].path)
+					$('#xzhd-body-lqanpz-img').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
 		}
 
 		//时间组件
@@ -1931,21 +1906,20 @@
 			var activityEndDate = data2.getTime()
 			for (var i = 0; i < $('#zstjzstj').children('.xzhd-body-zstjraduis').length; i++) {
 				if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(0).children().is(':visible')) {
-					var giftConditions = 1
+					var onlyNewPeople = 1
 				} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(1).children().is(':visible')) {
-					var giftConditions = 2
-				} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(2).children().is(':visible')) {
-					var giftConditions = 3
+					var onlyNewPeople = 2
 				}
 			}
 			var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
-			var shareButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
+			var sharePosterButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
 			var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
 			var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
 			var receiveButtonUrl = $('#xzhd-body-lqanpz-img').attr('class')
 			var shareTitle = $('#xzhd-body-fxwzbt').val()
 			var shareDescription = $('#xzhd-body-fxhdxs').val()
-			var shareCouponList = []
+			var maxReceiveNumber = $('#xzhd-body-zdlqrs').val()
+			var everyReceive = $('#xzhd-body-hblqsl').val()
 			var receiveCouponList = []
 			for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
 				if ($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == 'CRM优惠券') {
@@ -1956,22 +1930,6 @@
 				var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
 				var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
 				var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
-				shareCouponList.push({
-					couponId: couponId,
-					couponName: couponName,
-					couponSource: couponSource,
-					quantity: quantity
-				})
-			}
-			for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
-				if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
-					var couponSource = 1
-				} else if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == '有赞优惠券') {
-					var couponSource = 2
-				}
-				var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
-				var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
-				var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
 				receiveCouponList.push({
 					couponId: couponId,
 					couponName: couponName,
@@ -1979,46 +1937,47 @@
 					quantity: quantity
 				})
 			}
-
+			
 			var xjhdstr = {
 				activityName: activityName,
 				activityStartDate: activityStartDate,
 				activityEndDate: activityEndDate,
-				giftConditions: giftConditions,
+				onlyNewPeople: onlyNewPeople,
 				pageBackgroundUrl: pageBackgroundUrl,
-				shareButtonUrl: shareButtonUrl,
+				sharePosterButtonUrl: sharePosterButtonUrl,
 				shareBuddyLinksUrl: shareBuddyLinksUrl,
 				receiveBackgroundUrl: receiveBackgroundUrl,
 				receiveButtonUrl: receiveButtonUrl,
 				shareTitle: shareTitle,
 				shareDescription: shareDescription,
 				receiveCouponList: receiveCouponList,
-				shareCouponList: shareCouponList,
-				fontColor: 123
+				fontColor: 123,
+				maxReceiveNumber: maxReceiveNumber,
+				everyReceive : everyReceive
 			}
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/insertInvitationActivities",
-			// 	data: JSON.stringify(xjhdstr),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		if (result.message !== '新增成功!') {
-			// 			alert(result.message)
-			// 			return;
-			// 		}else if (result.message == '新增成功!') {
-			// 			alert(result.message)
-			// 			$('.xzhd-body').hide()
-			// 			$('.yqyl-body').show()
-			// 			shouye()
-			// 		}
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/addEvaluateActivities",
+				data: JSON.stringify(xjhdstr),
+				success: function (result) {
+					console.log(result)
+					if (result.message !== '新增成功!') {
+						alert(result.message)
+						return;
+					}else if (result.message == '新增成功!') {
+						alert(result.message)
+						$('.xzhd-body').hide()
+						$('.yqyl-body').show()
+						shouye()
+					}
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 
 			//console.log(xjhdstr)
 		}
@@ -2034,21 +1993,20 @@
 			var activityEndDate = data2.getTime()
 			for (var i = 0; i < $('#zstjzstj').children('.xzhd-body-zstjraduis').length; i++) {
 				if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(0).children().is(':visible')) {
-					var giftConditions = 1
+					var onlyNewPeople = 1
 				} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(1).children().is(':visible')) {
-					var giftConditions = 2
-				} else if ($('#zstjzstj').children('.xzhd-body-zstjraduis').eq(2).children().is(':visible')) {
-					var giftConditions = 3
+					var onlyNewPeople = 2
 				}
 			}
 			var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
-			var shareButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
+			var sharePosterButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
 			var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
 			var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
 			var receiveButtonUrl = $('#xzhd-body-lqanpz-img').attr('class')
 			var shareTitle = $('#xzhd-body-fxwzbt').val()
 			var shareDescription = $('#xzhd-body-fxhdxs').val()
-			var shareCouponList = []
+			var maxReceiveNumber = $('#xzhd-body-zdlqrs').val()
+			var everyReceive = $('#xzhd-body-hblqsl').val()
 			var receiveCouponList = []
 			for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
 				if ($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('/')[0] == 'CRM优惠券') {
@@ -2059,22 +2017,6 @@
 				var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
 				var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
 				var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
-				shareCouponList.push({
-					couponId: couponId,
-					couponName: couponName,
-					couponSource: couponSource,
-					quantity: quantity
-				})
-			}
-			for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
-				if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
-					var couponSource = 1
-				} else if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == '有赞优惠券') {
-					var couponSource = 2
-				}
-				var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
-				var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
-				var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
 				receiveCouponList.push({
 					couponId: couponId,
 					couponName: couponName,
@@ -2082,46 +2024,50 @@
 					quantity: quantity
 				})
 			}
+
 			var xjhdstr = {
-				id: id,
+				id:id,
 				activityName: activityName,
 				activityStartDate: activityStartDate,
 				activityEndDate: activityEndDate,
-				giftConditions: giftConditions,
+				onlyNewPeople: onlyNewPeople,
 				pageBackgroundUrl: pageBackgroundUrl,
-				shareButtonUrl: shareButtonUrl,
+				sharePosterButtonUrl: sharePosterButtonUrl,
 				shareBuddyLinksUrl: shareBuddyLinksUrl,
 				receiveBackgroundUrl: receiveBackgroundUrl,
 				receiveButtonUrl: receiveButtonUrl,
 				shareTitle: shareTitle,
 				shareDescription: shareDescription,
 				receiveCouponList: receiveCouponList,
-				shareCouponList: shareCouponList,
-				fontColor: 123
+				fontColor: 123,
+				maxReceiveNumber: maxReceiveNumber,
+				everyReceive: everyReceive
 			}
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/updateInviActivities",
-			// 	data: JSON.stringify(xjhdstr),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		if (result.message !== '修改成功!') {
-			// 			alert(result.message)
-			// 			return;
-			// 		} else if (result.message == '修改成功!') {
-			// 			alert(result.message)
-			// 			$('.xzhd-body').hide()
-			// 			$('.yqyl-body').show()
-			// 			shouye()
-			// 		}
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/updateEvaluateActivities",
+				data: JSON.stringify(xjhdstr),
+				success: function (result) {
+					console.log(result)
+					if (result.message !== '修改成功!') {
+						alert(result.message)
+						return;
+					} else if (result.message == '修改成功!') {
+						alert(result.message)
+						$('.xzhd-body').hide()
+						$('.yqyl-body').show()
+						shouye()
+					}
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
+
+			console.log(xjhdstr)
 
 		}
 		//首页接口
@@ -2143,10 +2089,10 @@
 
 				var param = {
 					pacId: 3,
-					// name: name,
-					// status: status,
-					// startDate: startDate,
-					// endDate: endDate
+					name: name,
+					status: status,
+					startDate: startDate,
+					endDate: endDate
 				}
 
 				var str = {
@@ -2176,10 +2122,14 @@
 								<td class="item1">`+ (Number(i) + 1) + `</td>
 								<td class="item2">`+ item.activityName + `</td>
 								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3">`+ item.shareCustomerNum + `</td>
-								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.useCount + `</td>
-								<td class="item4">未开始</td>
+								<td class="item3">`+ item.evaluationNum +`</td>
+								<td class="item3">`+ item.evaluationTimes +`</td>
+								<td class="item3">`+ item.shareCustomerNum +`</td>
+								<td class="item3">`+ item.shareCustomerTimes +`</td>
+								<td class="item3">`+ item.receiveCount +`</td>
+								<td class="item3">`+ item.receiveTimes +`</td>
+								<td class="item3">`+ item.useCount +`</td>
+								<td class="item3">未开始</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
 									<p>|</p>
@@ -2208,10 +2158,14 @@
 								<td class="item1">`+ (Number(i) + 1) + `</td>
 								<td class="item2">`+ item.activityName + `</td>
 								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+								<td class="item3">`+ item.evaluationNum + `</td>
+								<td class="item3">`+ item.evaluationTimes + `</td>
 								<td class="item3">`+ item.shareCustomerNum + `</td>
+								<td class="item3">`+ item.shareCustomerTimes + `</td>
 								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.useCount + `</td>
-								<td class="item4">进行中</td>
+								<td class="item3">`+ item.receiveTimes + `</td>
+								<td class="item3">`+ item.useCount +`</td>
+								<td class="item3">进行中</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
 									<p>|</p>
@@ -2241,10 +2195,14 @@
 								<td class="item1">`+ (Number(i) + 1) + `</td>
 								<td class="item2">`+ item.activityName + `</td>
 								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+								<td class="item3">`+ item.evaluationNum + `</td>
+								<td class="item3">`+ item.evaluationTimes + `</td>
 								<td class="item3">`+ item.shareCustomerNum + `</td>
+								<td class="item3">`+ item.shareCustomerTimes + `</td>
 								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.useCount + `</td>
-								<td class="item4">已结束</td>
+								<td class="item3">`+ item.receiveTimes + `</td>
+								<td class="item3">`+ item.useCount +`</td>
+								<td class="item3">已结束</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
 									<p>|</p>
@@ -2331,13 +2289,13 @@
 						var obj = {
 							wrapid: 'boxpage', //页面显示分页器容器id
 							total: result.total, //总条数
-							pagesize: 10, //每页显示10条
+							pagesize: 15, //每页显示10条
 							currentPage: page, //当前页
 							onPagechange: onPagechange
 							//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
 						}
 						pagination.init(obj);
-						var sjjlstr = `共`+ result.total +`条，每页10条`
+						var sjjlstr = `共`+ result.total +`条，每页15条`
 						$('#yqyl-body-sjjl').html(sjjlstr)
 					},
 					error: function (e) {
@@ -2351,211 +2309,146 @@
 		}
 		//有赞接口
 		function youzanjk() {
-			var str = ''
+			$.ajax({
+				type: 'GET',
+				//contentType: "application/json;charset=UTF-8",
+				dataType:'json',
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/getCouponList",
+				success: function (result) {
+					console.log(result)
+					var str1 = ''
+					var str11 = ''
+					var str2 = ''
+					var str22 = ''
+					$.each(result.rows[0].crmCouponList,function(i,item){
+					str1 +=
+					`<tr class="`+ item.couponId +`">
+						<td style="width:10%">
+							<div class="xzhd-body-gouxuan">
+								<img src="image/codeallset_btn.png" alt="">
+							</div>
+						</td>
+						<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName +`</td>
+						<td style="width:10%">
+							<div style="display:flex;justify-content: center;">
+								<img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p>
+								<img class="add_add" src="image/add_add.png" alt="">
+							</div>
+						</td>
+						<td style="width:10%">`+ item.stockQuantity +`</td>
+					</tr>`
+					})
+					$.each(result.rows[0].yzCouponList, function (i, item) {
+						str2 +=
+							`<tr class="`+ item.id +`">
+						<td style="width:10%">
+							<div class="xzhd-body-gouxuan">
+								<img src="image/codeallset_btn.png" alt="">
+							</div>
+						</td>
+						<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.title + `</td>
+						<td style="width:10%">
+							<div style="display:flex;justify-content: center;">
+								<img class="minus_minus" src="image/minus_minus.png" alt="">
+								<p class="xzhd-body-kqsl">1</p>
+								<img class="add_add" src="image/add_add.png" alt="">
+							</div>
+						</td>
+						<td style="width:10%">`+ item.totalFansTaked + `</td>
+					</tr>`
+					})
+					$('.xzhd-body-tbody1').html(str1)
+					$('.xzhd-body-tbody2').html(str2)
+					//活动页面分享获得卡券勾选
+					$('.xzhd-body-gouxuan').click(function () {
+						if ($(this).children().is(':hidden')) {
+							$(this).children().show()
+							$(this).addClass('gx')
+							gouxuan()
+						} else {
+							$(this).children().hide()
+							$(this).removeClass('gx')
+							var str2 = $(this).parent().parent().attr('class')
+							// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+							// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+							// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+							// 	}
+							// }
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/getCouponList",
-			// 	data: JSON.stringify(str),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		var str1 = ''
-			// 		var str11 = ''
-			// 		var str2 = ''
-			// 		var str22 = ''
-			// 		$.each(result.rows[0].crmCouponList,function(i,item){
-			// 		str1 +=
-			// 		`<tr class="`+ item.couponId +`">
-			// 			<td style="width:10%">
-			// 				<div class="xzhd-body-gouxuan">
-			// 					<img src="image/codeallset_btn.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName +`</td>
-			// 			<td style="width:10%">
-			// 				<div style="display:flex;justify-content: center;">
-			// 					<img class="minus_minus" src="image/minus_minus.png" alt="">
-			// 					<p class="xzhd-body-kqsl">1</p>
-			// 					<img class="add_add" src="image/add_add.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%">`+ item.stockQuantity +`</td>
-			// 		</tr>`
-			// 		})
-			// 		$.each(result.rows[0].crmCouponList, function (i, item) {
-			// 			str11 +=
-			// 				`<tr class="`+ item.couponId +`">
-			// 			<td style="width:10%">
-			// 				<div class="xzhd-body-gouxuan1">
-			// 					<img src="image/codeallset_btn.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName + `</td>
-			// 			<td style="width:10%">
-			// 				<div style="display:flex;justify-content: center;">
-			// 					<img class="minus_minus" src="image/minus_minus.png" alt="">
-			// 					<p class="xzhd-body-kqsl">1</p>
-			// 					<img class="add_add" src="image/add_add.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%">`+ item.stockQuantity + `</td>
-			// 		</tr>`
-			// 		})
-			// 		$.each(result.rows[0].yzCouponList, function (i, item) {
-			// 			str2 +=
-			// 				`<tr class="`+ item.id +`">
-			// 			<td style="width:10%">
-			// 				<div class="xzhd-body-gouxuan">
-			// 					<img src="image/codeallset_btn.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.title + `</td>
-			// 			<td style="width:10%">
-			// 				<div style="display:flex;justify-content: center;">
-			// 					<img class="minus_minus" src="image/minus_minus.png" alt="">
-			// 					<p class="xzhd-body-kqsl">1</p>
-			// 					<img class="add_add" src="image/add_add.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%">`+ item.totalFansTaked + `</td>
-			// 		</tr>`
-			// 		})
-			// 		$.each(result.rows[0].yzCouponList, function (i, item) {
-			// 			str22 +=
-			// 				`<tr class="`+ item.id +`">
-			// 			<td style="width:10%">
-			// 				<div class="xzhd-body-gouxuan1">
-			// 					<img src="image/codeallset_btn.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.title + `</td>
-			// 			<td style="width:10%">
-			// 				<div style="display:flex;justify-content: center;">
-			// 					<img class="minus_minus" src="image/minus_minus.png" alt="">
-			// 					<p class="xzhd-body-kqsl">1</p>
-			// 					<img class="add_add" src="image/add_add.png" alt="">
-			// 				</div>
-			// 			</td>
-			// 			<td style="width:10%">`+ item.totalFansTaked + `</td>
-			// 		</tr>`
-			// 		})
-			// 		$('.xzhd-body-tbody1').html(str1)
-			// 		$('.xzhd-body-tbody2').html(str2)
-			// 		$('.xzhd-body-tbody11').html(str11)
-			// 		$('.xzhd-body-tbody22').html(str22)
-			// 		//活动页面分享获得卡券勾选
-			// 		$('.xzhd-body-gouxuan').click(function () {
-			// 			if ($(this).children().is(':hidden')) {
-			// 				$(this).children().show()
-			// 				$(this).addClass('gx')
-			// 				gouxuan()
-			// 			} else {
-			// 				$(this).children().hide()
-			// 				$(this).removeClass('gx')
-			// 				var str2 = $(this).parent().parent().attr('class')
-			// 				// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-			// 				// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-			// 				// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			// 				// 	}
-			// 				// }
+							for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
+								if (str2 == $('#xzhd-body-fxhd').children().eq(j).attr('class')) {
+									$('#xzhd-body-fxhd').children().eq(j).remove()
+								}
+							}
+						}
+					})
+					
+					//新建页面添加卡券数量
+					$('.add_add').click(function () {
+						var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+						strcount++
+						var str55 = $(this).parent().parent().parent().children().eq(3).html()
+						if (strcount >= str55) {
+							strcount = str55
+						}
+						$(this).parent().children('.xzhd-body-kqsl').html(strcount)
 
-			// 				for (var j = 0; j < $('#xzhd-body-fxhd').children().length; j++) {
-			// 					if (str2 == $('#xzhd-body-fxhd').children().eq(j).attr('class')) {
-			// 						$('#xzhd-body-fxhd').children().eq(j).remove()
-			// 					}
-			// 				}
-			// 			}
-			// 		})
-			// 		//活动页面领取获得卡券勾选
-			// 		$('.xzhd-body-gouxuan1').click(function () {
-			// 			if ($(this).children().is(':hidden')) {
-			// 				$(this).children().show()
-			// 				$(this).addClass('gxx')
-			// 				gouxuan1()
-			// 			} else {
-			// 				$(this).children().hide()
-			// 				$(this).removeClass('gxx')
-			// 				var str2 = $(this).parent().parent().attr('class')
-			// 				// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-			// 				// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-			// 				// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-			// 				// 	}
-			// 				// }
+						// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+						// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+						// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+						// 	}
+						// }
 
-			// 				for (var j = 0; j < $('#xzhd-body-lqrhd').children().length; j++) {
-			// 					if (str2 == $('#xzhd-body-lqrhd').children().eq(j).attr('class')) {
-			// 						$('#xzhd-body-lqrhd').children().eq(j).remove()
-			// 						//console.log(111111111)
-			// 					}
-			// 				}
-			// 			}
-			// 		})
-			// 		//新建页面添加卡券数量
-			// 		$('.add_add').click(function () {
-			// 			var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
-			// 			strcount++
-			// 			var str55 = $(this).parent().parent().parent().children().eq(3).html()
-			// 			if (strcount >= str55) {
-			// 				strcount = str55
-			// 			}
-			// 			$(this).parent().children('.xzhd-body-kqsl').html(strcount)
+						// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
+						// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
+						// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
+						// 	}
+						// }
 
-			// 			// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-			// 			// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-			// 			// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			// 			// 	}
-			// 			// }
+						var str2 = $(this).parent().parent().parent().attr('class')
+						for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
+							if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
+								var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+								var str5 = $(this).parent().children('p').html()
 
-			// 			// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-			// 			// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-			// 			// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-			// 			// 	}
-			// 			// }
+								var str6 = str3 + '×' + str5
+								$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+							}
+						}
 
-			// 			var str2 = $(this).parent().parent().parent().attr('class')
-			// 			for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
-			// 				if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
-			// 					var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
-			// 					var str5 = $(this).parent().children('p').html()
+					})
+					//新建页面减少卡券数量
+					$('.minus_minus').click(function () {
+						var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
+						strcount--
+						if (strcount <= 1) {
+							strcount = 1
+						}
+						$(this).parent().children('.xzhd-body-kqsl').html(strcount)
 
-			// 					var str6 = str3 + '×' + str5
-			// 					$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
-			// 				}
-			// 			}
+						// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
+						// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
+						// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
+						// 	}
+						// }
 
-			// 		})
-			// 		//新建页面减少卡券数量
-			// 		$('.minus_minus').click(function () {
-			// 			var strcount = $(this).parent().children('.xzhd-body-kqsl').html()
-			// 			strcount--
-			// 			if (strcount <= 1) {
-			// 				strcount = 1
-			// 			}
-			// 			$(this).parent().children('.xzhd-body-kqsl').html(strcount)
-
-			// 			// for (var i = 0; i < $('.xzhd-body-henggang').length; i++) {
-			// 			// 	if ($('.xzhd-body-henggang').eq(i).children().is(":visible")) {
-			// 			// 		var str1 = $('.xzhd-body-henggang').eq(i).parent().children('p').html()
-			// 			// 	}
-			// 			// }
-
-			// 			var str2 = $(this).parent().parent().parent().attr('class')
-			// 			for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
-			// 				if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
-			// 					var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
-			// 					var str5 = $(this).parent().children('p').html()
-			// 					var str6 = str3 + '×' + str5
-			// 					$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
-			// 				}
-			// 			}
-			// 		})
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+						var str2 = $(this).parent().parent().parent().attr('class')
+						for (var j = 0; j < $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().length; j++) {
+							if (str2 == $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).attr('class')) {
+								var str3 = $(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html().split('×')[0]
+								var str5 = $(this).parent().children('p').html()
+								var str6 = str3 + '×' + str5
+								$(this).parent().parent().parent().parent().parent().parent().parent().parent().children().eq(1).children().eq(0).children().eq(j).children('p').html(str6)
+							}
+						}
+					})
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 
 		}
 		//数据页面优惠券统计
@@ -2754,155 +2647,119 @@
 		}
 		//查看页面
 		function chakanchakan(id, dianjimc) {
-			var str = {
-				id: id
-			}
+			// var str = {
+			// 	id: id
+			// }
+			var activityId = id
+			$.ajax({
+				type: 'GET',
+				//contentType: "application/json;charset=UTF-8",
+				dataType:'json',
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/getActivitiesInfoById/"+ activityId,
+				success: function (result) {
+					console.log(dianjimc)
+					console.log(result)
+					if(dianjimc == '查看'){
+						$('#xzhd-body-hdmc').css('pointer-events','none')
+						$('#xzhd-body-hdsjs').css('pointer-events', 'none')
+						$('#xzhd-body-hdsje').css('pointer-events', 'none')
+						$('#xzhd-body-fxhd').css('pointer-events', 'none')
+						$('#xzhd-body-lqrhd').css('pointer-events', 'none')
+						$('.xzhd-body-zstjraduis').css('pointer-events', 'none')
+						$('#xzhd-body-fxwzbt').css('pointer-events', 'none')
+						$('#xzhd-body-fxhdxs').css('pointer-events', 'none')
+						$('#xzhd-body-hdbjpz-upload').css('pointer-events', 'none')
+						$('#xzhd-body-fxanpz-upload').css('pointer-events', 'none')
+						$('#xzhd-body-fxhyljt-upload').css('pointer-events', 'none')
+						$('#xzhd-body-lqhdbjpz-upload').css('pointer-events', 'none')
+						$('#xzhd-body-lqanpz-upload').css('pointer-events', 'none')
+						$('#xzhd-body-save').css('pointer-events', 'none')
+					}
+					//console.log(result)
+					for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
+						$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
+						$('.xzhd-body-gouxuan').eq(j).children().hide()
+					}
+					for (var jj = 0; jj < $('.xzhd-body-gouxuan1').length; jj++) {
+						$('.xzhd-body-gouxuan1').eq(jj).removeClass('gxx')
+						$('.xzhd-body-gouxuan1').eq(jj).children().hide()
+					}
+					var str = ''
+					//分享有礼内容渲染
+					for(var i=0;i< result.rows[0].receiveCouponList.length;i++){
+						if(result.rows[0].receiveCouponList[i].couponSource == 1){
+							var str1 = 'CRM优惠券'
+						}else if(result.rows[0].receiveCouponList[i].couponSource == 2){
+							var str1 = '有赞优惠券'
+						}
+						var str22 = result.rows[0].receiveCouponList[i].couponName
+						if (str22.length > 5) {
+							var str2 = str22.substring(0, 4) + '...'
+						}else{
+							var str2 = str22
+						}
+						var str3 = result.rows[0].receiveCouponList[i].quantity
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str1 + '/' + str22 + '×' + str3 + `" class="` + result.rows[0].receiveCouponList[i].couponId + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+					}
+					//领取有礼内容渲染
+					
+					$('#xzhd-body-fxhd').html(str)
+					chacha()
+					//console.log($('#xzhd-body-fxhd').html())
+					//分享获得点击渲染
+					for (var z = 0; z < $('.xzhd-body-gouxuan').length; z++) {
+						if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody1'){
+							var kaquanfl = 'CRM优惠券'
+							for(var x=0;x<$('#xzhd-body-fxhd').children().length;x++){
+								if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
+									$('.xzhd-body-gouxuan').eq(z).addClass('gx')
+									$('.xzhd-body-gouxuan').eq(z).children().show()
+									//console.log(z)
+								}
+							}
+						}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
+							var kaquanfl = '有赞优惠券'
+							for (var y = 0; y < $('#xzhd-body-fxhd').children().length; y++) {
+								if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
+									$('.xzhd-body-gouxuan').eq(z).addClass('gx')
+									$('.xzhd-body-gouxuan').eq(z).children().show()
+									//console.log(z)
+								}
+							}
+						}
+					}
+					$('#xzhd-body-hdmc').val(result.rows[0].activityName)
+					$('#xzhd-body-hdsjs').val(result.rows[0].activityStartDate.split(' ')[0])
+					$('#xzhd-body-hdsje').val(result.rows[0].activityEndDate.split(' ')[0])
+					if(result.rows[0].giftConditions ==1 ){
+						$('.xzhd-body-zstjraduis').eq(0).click()
+					}else if(result.rows[0].giftConditions == 2 ){
+						$('.xzhd-body-zstjraduis').eq(1).click()
+					}
+					$('#xzhd-body-hdbjpz-img').attr('class', result.rows[0].pageBackgroundUrl)
+					$('#xzhd-body-hdbjpz-img').children().attr('src',result.rows[0].pageBackgroundUrl)
+					$('#xzhd-body-fxanpz-img').attr('class',result.rows[0].sharePosterButtonUrl)
+					$('#xzhd-body-fxanpz-img').children().attr('src', result.rows[0].sharePosterButtonUrl)
+					$('#xzhd-body-fxhyljt-img').attr('class',result.rows[0].shareBuddyLinksUrl)
+					$('#xzhd-body-fxhyljt-img').children().attr('src', result.rows[0].shareBuddyLinksUrl)
+					$('#xzhd-body-lqhdbjpz-img').attr('class',result.rows[0].receiveBackgroundUrl)
+					$('#xzhd-body-lqhdbjpz-img').children().attr('src', result.rows[0].receiveBackgroundUrl)
+					$('#xzhd-body-lqanpz-img').attr('class', result.rows[0].receiveButtonUrl)
+					$('#xzhd-body-lqanpz-img').children().attr('src', result.rows[0].receiveButtonUrl)
+					$('#xzhd-body-fxwzbt').val(result.rows[0].shareTitle)
+					$('#xzhd-body-fxhdxs').val(result.rows[0].shareDescription)
+					var id = result.rows[0].id
+					$('#xzhd-body-save').unbind()
+					$('#xzhd-body-save').click(function(){
+						bjhdjk(id)
+					})
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/getActivitiesInfoById",
-			// 	data: JSON.stringify(str),
-			// 	success: function (result) {
-			// 		console.log(dianjimc)
-			// 		if(dianjimc == '查看'){
-			// 			$('#xzhd-body-hdmc').css('pointer-events','none')
-			// 			$('#xzhd-body-hdsjs').css('pointer-events', 'none')
-			// 			$('#xzhd-body-hdsje').css('pointer-events', 'none')
-			// 			$('#xzhd-body-fxhd').css('pointer-events', 'none')
-			// 			$('#xzhd-body-lqrhd').css('pointer-events', 'none')
-			// 			$('.xzhd-body-zstjraduis').css('pointer-events', 'none')
-			// 			$('#xzhd-body-fxwzbt').css('pointer-events', 'none')
-			// 			$('#xzhd-body-fxhdxs').css('pointer-events', 'none')
-			// 			$('#xzhd-body-hdbjpz-upload').css('pointer-events', 'none')
-			// 			$('#xzhd-body-fxanpz-upload').css('pointer-events', 'none')
-			// 			$('#xzhd-body-fxhyljt-upload').css('pointer-events', 'none')
-			// 			$('#xzhd-body-lqhdbjpz-upload').css('pointer-events', 'none')
-			// 			$('#xzhd-body-lqanpz-upload').css('pointer-events', 'none')
-			// 			$('#xzhd-body-save').css('pointer-events', 'none')
-			// 		}
-			// 		//console.log(result)
-			// 		for(var j=0;j<$('.xzhd-body-gouxuan').length;j++){
-			// 			$('.xzhd-body-gouxuan').eq(j).removeClass('gx')
-			// 			$('.xzhd-body-gouxuan').eq(j).children().hide()
-			// 		}
-			// 		for (var jj = 0; jj < $('.xzhd-body-gouxuan1').length; jj++) {
-			// 			$('.xzhd-body-gouxuan1').eq(jj).removeClass('gxx')
-			// 			$('.xzhd-body-gouxuan1').eq(jj).children().hide()
-			// 		}
-			// 		var str = ''
-			// 		//分享有礼内容渲染
-			// 		for(var i=0;i< result.shareCouponList.length;i++){
-			// 			if(result.shareCouponList[i].couponSource == 1){
-			// 				var str1 = 'CRM优惠券'
-			// 			}else if(result.shareCouponList[i].couponSource == 2){
-			// 				var str1 = '有赞优惠券'
-			// 			}
-			// 			var str22 = result.shareCouponList[i].couponName
-			// 			if (str22.length > 5) {
-			// 				var str2 = str22.substring(0, 4) + '...'
-			// 			}else{
-			// 				var str2 = str22
-			// 			}
-			// 			var str3 = result.shareCouponList[i].quantity
-			// 			str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str1 + '/' + str22 + '×' + str3 + `" class="` + result.shareCouponList[i].couponId + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
-			// 		}
-			// 		var strstr = ''
-			// 		//领取有礼内容渲染
-			// 		for (var ii = 0; ii < result.receiveCouponList.length; ii++) {
-			// 			if (result.receiveCouponList[ii].couponSource == 1) {
-			// 				var str11 = 'CRM优惠券'
-			// 			} else if (result.receiveCouponList[ii].couponSource == 2) {
-			// 				var str11 = '有赞优惠券'
-			// 			}
-			// 			var str222 = result.receiveCouponList[ii].couponName
-			// 			if (str222.length > 5) {
-			// 				var str22 = str222.substring(0, 4) + '...'
-			// 			} else {
-			// 				var str22 = str222
-			// 			}
-			// 			var str33 = result.receiveCouponList[ii].quantity
-			// 			strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str11 + '/' + str222 + '×' + str33 + `" class="` + result.receiveCouponList[ii].couponId + `"><p>` + str11 + '/' + str22 + '×' + str33 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
-			// 		}
-			// 		$('#xzhd-body-fxhd').html(str)
-			// 		$('#xzhd-body-lqrhd').html(strstr)
-			// 		//console.log($('#xzhd-body-fxhd').html())
-			// 		//分享获得点击渲染
-			// 		for (var z = 0; z < $('.xzhd-body-gouxuan').length; z++) {
-			// 			if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody1'){
-			// 				var kaquanfl = 'CRM优惠券'
-			// 				for(var x=0;x<$('#xzhd-body-fxhd').children().length;x++){
-			// 					if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
-			// 						$('.xzhd-body-gouxuan').eq(z).addClass('gx')
-			// 						$('.xzhd-body-gouxuan').eq(z).children().show()
-			// 						//console.log(z)
-			// 					}
-			// 				}
-			// 			}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
-			// 				var kaquanfl = '有赞优惠券'
-			// 				for (var y = 0; y < $('#xzhd-body-fxhd').children().length; y++) {
-			// 					if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
-			// 						$('.xzhd-body-gouxuan').eq(z).addClass('gx')
-			// 						$('.xzhd-body-gouxuan').eq(z).children().show()
-			// 						//console.log(z)
-			// 					}
-			// 				}
-			// 			}
-			// 		}
-			// 		//领取有礼点击渲染
-			// 		for (var zz = 0; zz < $('.xzhd-body-gouxuan1').length; zz++) {
-			// 			if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody11') {
-			// 				var kaquanfl = 'CRM优惠券'
-			// 				for (var xx = 0; xx < $('#xzhd-body-lqrhd').children().length; xx++) {
-			// 					if ($('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
-			// 						$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
-			// 						$('.xzhd-body-gouxuan1').eq(zz).children().show()
-			// 					}
-			// 				}
-			// 			} else if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody22') {
-			// 				var kaquanfl = '有赞优惠券'
-			// 				for (var yy = 0; yy < $('#xzhd-body-lqrhd').children().length; yy++) {
-			// 					if ($('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
-			// 						$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
-			// 						$('.xzhd-body-gouxuan1').eq(zz).children().show()
-			// 					}
-			// 				}
-			// 			}
-			// 		}
-			// 		$('#xzhd-body-hdmc').val(result.activityName)
-			// 		$('#xzhd-body-hdsjs').val(result.activityStartDate.split(' ')[0])
-			// 		$('#xzhd-body-hdsje').val(result.activityEndDate.split(' ')[0])
-			// 		if(result.giftConditions ==1 ){
-			// 			$('.xzhd-body-zstjraduis').eq(0).click()
-			// 		}else if(result.giftConditions == 2 ){
-			// 			$('.xzhd-body-zstjraduis').eq(1).click()
-			// 		}else if(result.giftConditions == 3){
-			// 			$('.xzhd-body-zstjraduis').eq(2).click()
-			// 		}
-			// 		$('#xzhd-body-hdbjpz-img').attr('class', result.pageBackgroundUrl)
-			// 		$('#xzhd-body-hdbjpz-img').children().attr('src',result.pageBackgroundUrl)
-			// 		$('#xzhd-body-fxanpz-img').attr('class',result.shareButtonUrl)
-			// 		$('#xzhd-body-fxanpz-img').children().attr('src', result.shareButtonUrl)
-			// 		$('#xzhd-body-fxhyljt-img').attr('class',result.shareBuddyLinksUrl)
-			// 		$('#xzhd-body-fxhyljt-img').children().attr('src', result.shareBuddyLinksUrl)
-			// 		$('#xzhd-body-lqhdbjpz-img').attr('class',result.receiveBackgroundUrl)
-			// 		$('#xzhd-body-lqhdbjpz-img').children().attr('src', result.receiveBackgroundUrl)
-			// 		$('#xzhd-body-lqanpz-img').attr('class', result.receiveButtonUrl)
-			// 		$('#xzhd-body-lqanpz-img').children().attr('src', result.receiveButtonUrl)
-			// 		$('#xzhd-body-fxwzbt').val(result.shareTitle)
-			// 		$('#xzhd-body-fxhdxs').val(result.shareDescription)
-			// 		var id = result.id
-			// 		$('#xzhd-body-save').unbind()
-			// 		$('#xzhd-body-save').click(function(){
-			// 			bjhdjk(id)
-			// 		})
-
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 
 		}
 		//开始或结束活动接口按钮
@@ -2930,6 +2787,7 @@
 		//活动界面分享获得点击叉号删除
 		function chacha() {
 			$('.xzhd-body-chacha').click(function () {
+				
 				if ($('#xzhd-body-fxhd-zhankai').is(':hidden')) {
 					return;
 				}
@@ -2972,51 +2830,7 @@
 				}
 			})
 		}
-		//活动界面领取获得点击叉号删除
-		function chacha1() {
-			$('.xzhd-body-chacha1').click(function () {
-				if ($('#xzhd-body-lqrhd-zhankai').is(':hidden')) {
-					return;
-				}
-
-				if ($(this).parent().children('p').html().split('/')[0] == 'CRM优惠券') {
-					$('.xzhd-body-henggang1').eq(0).click()
-				} else if ($(this).parent().children('p').html().split('/')[0] == '有赞优惠券') {
-					$('.xzhd-body-henggang1').eq(1).click()
-				}
-
-				$(this).parent().remove()
-				var str = $(this).parent().attr('class')
-				// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-				// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-				// 		var str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-				// 	}
-				// }
-				//console.log(str)
-				var strcount = $('.xzhd-body-tbody11').children().length - 1
-				for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
-					var str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class')
-					//console.log(str1+str2)
-					if (str == str2) {
-						//$('.xzhd-body-gouxuan1').eq(j).click()
-						for (var p = 0; p < $('.xzhd-body-henggang1').length; p++) {
-							if ($('.xzhd-body-henggang1').eq(p).children().is(':visible')) {
-								if (p == 0) {
-									if (j <= strcount) {
-										$('.xzhd-body-gouxuan1').eq(j).click()
-									}
-								} else if (p == 1) {
-									if (j > strcount) {
-										$('.xzhd-body-gouxuan1').eq(j).click()
-									}
-								}
-							}
-						}
-
-					}
-				}
-			})
-		}
+		
 		//活动界面分享获得卡券面额勾选
 		function gouxuan() {
 			for (var k = 0; k < $('#xzhd-body-fxhd').children().length; k++) {
@@ -3055,85 +2869,7 @@
 			$('.xzhd-body-chacha').unbind()
 			chacha()
 		}
-		//活动界面领取获得卡券面额勾选
-		function gouxuan1() {
-			for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
-				if ($('#xzhd-body-lqrhd').children().eq(k).html() == '请选择领取人可获得的优惠券') {
-					$('#xzhd-body-lqrhd').children().eq(k).remove()
-				}
-			}
-
-			var str = ''
-			var str1 = ''
-			var str2 = ''
-			// for (var i = 0; i < $('.xzhd-body-henggang1').length; i++) {
-			// 	if ($('.xzhd-body-henggang1').eq(i).children().is(":visible")) {
-			// 		str1 = $('.xzhd-body-henggang1').eq(i).parent().children('p').html()
-			// 	}
-			// }
-			var strcount = $('.xzhd-body-tbody11').children().length - 1
-			for (var j = 0; j < $('.xzhd-body-gouxuan1').length; j++) {
-				if ($('.xzhd-body-gouxuan1').eq(j).hasClass('gxx')) {
-					//var str = ($('#xzhd-body-lqrhd').html())
-					if (j <= strcount) {
-						str1 = $('.xzhd-body-henggang').eq(0).parent().children('p').html()
-					} else if (j > strcount) {
-						str1 = $('.xzhd-body-henggang').eq(1).parent().children('p').html()
-					}
-					//console.log(j)
-					var str3 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
-					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
-					if (str2.length > 5) {
-						str2 = str2.substring(0, 4) + '...'
-					}
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html() + `" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
-				}
-			}
-			$('#xzhd-body-lqrhd').html(str)
-			$('.xzhd-body-chacha1').unbind()
-			chacha1()
-		}
-
-		//显示数据页面按钮
-		$('.shuju').click(function () {
-			$('.yqyl-body').hide()
-			$('.sj-body').show()
-			// var id = $(this).parent().attr('class')
-			// var hdmcstrstr =  $(this).parent().parent().children().eq(1).html()
-			// youhuiqtj(id,hdmcstrstr)
-			// youhuiqxl(id)
-			// youhuiqtable11(id)
-			// $('#sj-body-chaxun').click(function(){
-			//     youhuiqtable11(id)
-			// })
-			// $('#sj-body-qingchu').click(function(){
-			//     $('#sj-body-slelctyhjmc').find('option[value=""]').prop("selected", true)
-			//     $('#sj-body-lqsjs').val('')
-			//     $('#sj-body-lqsje').val('')
-			//     $('#sj-body-zt').find('option[value=""]').prop("selected", true)
-			//     $('#sj-body-ly').find('option[value=""]').prop("selected", true)
-			//     youhuiqtable11(id)
-			// })
-			// $('#sj-body-dcsj').click(function(){
-			//     shujuymdc(id)
-			// })
-		})
-
-		//查看编辑页面按钮
-		$('.chakan').click(function () {
-			$('.yqyl-body').hide()
-			$('.xzhd-body').show()
-			// var id=$(this).parent().attr('class')
-			// var dianjimc = $(this).html()
-			// console.log(id)
-			// chakanchakan(id,dianjimc)
-		})
-
-		//首页有效按钮显示
-		$('.youxiao').click(function () {
-			$(this).parent().children('div').show()
-		})
-
+		
 		//首页结束活动界面隐藏
 		$('.yqyl-body-quxiao').click(function () {
 			$(this).parent().parent().hide()
