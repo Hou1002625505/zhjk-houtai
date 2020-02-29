@@ -1586,7 +1586,13 @@
 				alert("请上传图片格式的文件");
 				return;
 			}
-
+			var fileMaxSize = 5120;
+			var fileSize1 = document.getElementById('hdbjpz_upload').files[0].size;
+			var fileSize = fileSize1 /1024;
+			if(fileSize> fileMaxSize){
+				alert("上传文件大小不能超过5M")
+				return;
+			}
 			var formData = new FormData();
 			formData.append('file', document.getElementById('hdbjpz_upload').files[0])
 			$.ajax({
@@ -1651,6 +1657,14 @@
 				return;
 			}
 
+			var fileMaxSize = 2048;
+			var fileSize1 = document.getElementById('fxhyljt_upload').files[0].size;
+			var fileSize = fileSize1 / 1024;
+			if (fileSize > fileMaxSize) {
+				alert("上传文件大小不能超过2M")
+				return;
+			}
+
 			var formData = new FormData();
 			formData.append('file', document.getElementById('fxhyljt_upload').files[0])
 			$.ajax({
@@ -1681,6 +1695,14 @@
 			let filename = file.substr(file.lastIndexOf("."));
 			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
 				alert("请上传图片格式的文件");
+				return;
+			}
+
+			var fileMaxSize = 5120;
+			var fileSize1 = document.getElementById('lqhdbjpz_upload').files[0].size;
+			var fileSize = fileSize1 / 1024;
+			if (fileSize > fileMaxSize) {
+				alert("上传文件大小不能超过5M")
 				return;
 			}
 
