@@ -2155,18 +2155,18 @@
 							} else if (item.state == 1) {
 								str += `
 							<tr>
-								<td class="item1">`+ (Number(i) + 1) + `</td>
-								<td class="item2">`+ item.activityName + `</td>
-								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3">`+ item.evaluationNum + `</td>
-								<td class="item3">`+ item.evaluationTimes + `</td>
-								<td class="item3">`+ item.shareCustomerNum + `</td>
-								<td class="item3">`+ item.shareCustomerTimes + `</td>
-								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.receiveTimes + `</td>
-								<td class="item3">`+ item.useCount +`</td>
-								<td class="item3">进行中</td>
-								<td class="`+ item.id + `">
+								<td class="item1" style="background:#f7a567">`+ (Number(i) + 1) + `</td>
+								<td class="item2" style="background:#f7a567">`+ item.activityName + `</td>
+								<td class="item2" style="background:#f7a567">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.evaluationNum + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.evaluationTimes + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.shareCustomerNum + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.shareCustomerTimes + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.receiveCount + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.receiveTimes + `</td>
+								<td class="item3" style="background:#f7a567">`+ item.useCount +`</td>
+								<td class="item3" style="background:#f7a567">进行中</td>
+								<td class="`+ item.id + `" style="background:#f7a567">
 									<p class="shuju">数据</p>
 									<p>|</p>
 									<p class="chakan">查看</p>
@@ -2276,10 +2276,10 @@
 						//首页活动确定按钮
 						$('.yqyl-body-queding').click(function(){
 							var id = $(this).parent().parent().parent().attr('class')
-							if($(this).parent().parent().parent().parent().children().eq(6).html() == '未开始'){
+							if($(this).parent().parent().parent().parent().children().eq(10).html() == '未开始'){
 								var status = 1
 								jieshuhdjkan(id,status)
-							}else if($(this).parent().parent().parent().parent().children().eq(6).html() == '进行中'){
+							}else if($(this).parent().parent().parent().parent().children().eq(10).html() == '进行中'){
 								var status = 2
 								jieshuhdjkan(id,status)
 							}
@@ -2459,72 +2459,70 @@
 				id: id
 			}
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/countActivityCoupon",
-			// 	data: JSON.stringify(str),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		var str11 = ''
-			// 		$.each(result.rows,function(i,item){
-			// 			str11 += `
-			// 			<div class="sj-body-flex111" style="width:500px;margin-top:22px;box-sizing:border-box;">
-			// 				<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
-			// 				<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
-			// 					<div style="text-align: center;">
-			// 						<p style="font-size:14px">已领取</p>
-			// 						<p style="font-size:14px;margin-top:18px">`+ item.totalCount +`</p>
-			// 					</div>
-			// 					<div style="text-align: center;">
-			// 						<p style="font-size:14px">已使用</p>
-			// 						<p style="font-size:14px;margin-top:18px">`+ item.count +`</p>
-			// 					</div>
-			// 				</div>
-			// 			</div>
-			// 			`
-			// 		})
-			// 		$('.sj-body-flex1').html(str11)
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+			$.ajax({
+				type: 'GET',
+				dataType:'json',
+				//contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/selectActivityCouponStatistics/"+id,
+				success: function (result) {
+					console.log(result)
+					var str11 = ''
+					$.each(result.rows,function(i,item){
+						str11 += `
+						<div class="sj-body-flex111" style="width:500px;margin-top:22px;box-sizing:border-box;">
+							<p style="font-size:16px;color:#444444;font-weight: bold;">`+ item.couponName +`</p>
+							<div style="display:flex;height:90px;background:#F5F5F5;margin-top:10px;justify-content: space-around;align-items: center;">
+								<div style="text-align: center;">
+									<p style="font-size:14px">已领取</p>
+									<p style="font-size:14px;margin-top:18px">`+ item.totalCount +`</p>
+								</div>
+								<div style="text-align: center;">
+									<p style="font-size:14px">已使用</p>
+									<p style="font-size:14px;margin-top:18px">`+ item.count +`</p>
+								</div>
+							</div>
+						</div>
+						`
+					})
+					$('.sj-body-flex1').html(str11)
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 
 		}
 		//数据页面下拉优惠券
 		function youhuiqxl(id) {
-			var str = {
-				id: id
-			}
+			var activityId = id
 
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/getCouponDropdownList",
-			// 	data: JSON.stringify(str),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		var youhuiqxlstr = `<option value="" selected="selected"></option>`
-			// 		$.each(result.rows,function(i,item){
-			// 			if(item.couponName.length>7){
-			// 				var couponNamestr = item.couponName.substring(0,7)+'...'
-			// 			}else{
-			// 				var couponNamestr = item.couponName
-			// 			}
-			// 			//console.log(couponNamestr)
-			// 			youhuiqxlstr +=`
-			// 				<option value="`+ item.couponId +`">`+ couponNamestr +`</option>
-			// 			`
-			// 		})
-			// 		$('#sj-body-slelctyhjmc').html(youhuiqxlstr)
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+			$.ajax({
+				type: 'GET',
+				dataType:'json',
+				//contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/getCouponDropdownList/"+ activityId,
+				success: function (result) {
+					console.log(result)
+					var youhuiqxlstr = `<option value="" selected="selected"></option>`
+					$.each(result.rows,function(i,item){
+						if(item.couponName.length>7){
+							var couponNamestr = item.couponName.substring(0,7)+'...'
+						}else{
+							var couponNamestr = item.couponName
+						}
+						//console.log(couponNamestr)
+						youhuiqxlstr +=`
+							<option value="`+ item.couponId +`">`+ couponNamestr +`</option>
+						`
+					})
+					$('#sj-body-slelctyhjmc').html(youhuiqxlstr)
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 
 		}
 		//数据页面表格
@@ -2549,88 +2547,88 @@
 					couponSource: $('#sj-body-ly').val()
 				}
 
-				// $.ajax({
-				// 	type: 'POST',
-				// 	contentType: "application/json;charset=UTF-8",
-				// 	url: "http://test.physicalclub.com/crm/rest/activities/selectActivityCouponList",
-				// 	data: JSON.stringify(str),
-				// 	success: function (result) {
-				// 		console.log(result)
-				// 		function xinlaoke(i){
-				// 			var str = ''
-				// 			if(i==1){
-				// 				return str = '老客'
-				// 			}else if(i==2){
-				// 				return str = '新客'
-				// 			}
-				// 		}
-				// 		function zhuangtai(i){
-				// 			var str = ''
-				// 			if(i==0){
-				// 				return str = '未核销'
-				// 			}else if(i==1){
-				// 				return str = '已核销'
-				// 			}else if(i==2){
-				// 			    return str = '已赠送'
-				// 			}else if(i==3){
-				// 				return str = '撤回'
-				// 			}else if(i==4){
-				// 				return str = '已过期'
-				// 			}
-				// 		}
-				// 		function laiyuan(i){
-				// 			var str = ''
-				// 			if(i==1){
-				// 				return str = 'crm'
-				// 			}else if(i==2){
-				// 				return str = '有赞'
-				// 			}
-				// 		}
-				// 		function tygs(i){
-				// 			var str = ''	
-				// 			if(!i){
-				// 				return str = ''
-				// 			}else{
-				// 				return str = i
-				// 			}
-				// 		}
-				// 		var str123456 = ''
-				// 		$.each(result.rows,function(i,item){
-				// 			str123456 += `
-				// 			<tr>
-				// 				<td class="item1">`+ (i+1) +`</td>
-				// 				<td class="item22">`+ tygs(item.customerName) +`</td>
-				// 				<td class="item22">`+ tygs(item.mobile) +`</td>
-				// 				<td class="item33">`+ tygs(item.couponName) +`</td>
-				// 				<td class="item22">`+ tygs(item.shareDate) +`</td>
-				// 				<td class="item22">`+ tygs(item.receiveDate) +`</td>
-				// 				<td class="item22">`+ tygs(item.verifyDate) +`</td>
-				// 				<td class="item22">`+ xinlaoke(item.customerNature) +`</td>
-				// 				<td class="item44">`+ zhuangtai(item.status) +`</td>
-				// 				<td class="item44">`+ laiyuan(item.couponSource) +`</td>
-				// 			</tr>
-				// 			`
-				// 		})
+				$.ajax({
+					type: 'POST',
+					contentType: "application/json;charset=UTF-8",
+					url: "http://test.physicalclub.com/crm/rest/evaluateActivity/selectActivityCouponList",
+					data: JSON.stringify(str),
+					success: function (result) {
+						console.log(result)
+						function xinlaoke(i){
+							var str = ''
+							if(i==1){
+								return str = '老客'
+							}else if(i==2){
+								return str = '新客'
+							}
+						}
+						function zhuangtai(i){
+							var str = ''
+							if(i==0){
+								return str = '未核销'
+							}else if(i==1){
+								return str = '已核销'
+							}else if(i==2){
+							    return str = '已赠送'
+							}else if(i==3){
+								return str = '撤回'
+							}else if(i==4){
+								return str = '已过期'
+							}
+						}
+						function laiyuan(i){
+							var str = ''
+							if(i==1){
+								return str = 'crm'
+							}else if(i==2){
+								return str = '有赞'
+							}
+						}
+						function tygs(i){
+							var str = ''	
+							if(!i){
+								return str = ''
+							}else{
+								return str = i
+							}
+						}
+						var str123456 = ''
+						$.each(result.rows,function(i,item){
+							str123456 += `
+							<tr>
+								<td class="item1">`+ (i+1) +`</td>
+								<td class="item22">`+ tygs(item.customerName) +`</td>
+								<td class="item22">`+ tygs(item.mobile) +`</td>
+								<td class="item33">`+ tygs(item.couponName) +`</td>
+								<td class="item22">`+ tygs(item.shareDate) +`</td>
+								<td class="item22">`+ tygs(item.receiveDate) +`</td>
+								<td class="item22">`+ tygs(item.verifyDate) +`</td>
+								<td class="item22">`+ xinlaoke(item.customerNature) +`</td>
+								<td class="item44">`+ zhuangtai(item.status) +`</td>
+								<td class="item44">`+ laiyuan(item.couponSource) +`</td>
+							</tr>
+							`
+						})
 
-				// 		$('#sj-body-body1').html(str123456)
+						$('#sj-body-body1').html(str123456)
 
-				// 		var obj = {
-				// 			wrapid: 'boxpage1', //页面显示分页器容器id
-				// 			total: result.total, //总条数
-				// 			pagesize: 10, //每页显示10条
-				// 			currentPage: page, //当前页
-				// 			onPagechange: onPagechange
-				// 			//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
-				// 		}
-				// 		pagination.init(obj);
-				// 		var jujlstr = `共`+ result.total +`条，每页10条`
-				// 		$('#sj-body-flex-jujl').html(jujlstr)
-				// 	},
-				// 	error: function (e) {
-				// 		console.log(e.status);
-				// 		console.log(e.responseText)
-				// 	}
-				// })
+						var obj = {
+							wrapid: 'boxpage1', //页面显示分页器容器id
+							total: result.total, //总条数
+							pagesize: 10, //每页显示10条
+							currentPage: page, //当前页
+							onPagechange: onPagechange
+							//btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+						}
+						pagination.init(obj);
+						var jujlstr = `共`+ result.total +`条，每页10条`
+						$('#sj-body-flex-jujl').html(jujlstr)
+					},
+					error: function (e) {
+						console.log(e.status);
+						console.log(e.responseText)
+					}
+				})
 
 			}
 		}
@@ -2643,7 +2641,7 @@
 			var status = $('#sj-body-zt').val()
 			var couponSource = $('#sj-body-ly').val()
 
-			location.href = "http://test.physicalclub.com/crm/rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
+			location.href = "http://test.physicalclub.com/crm/rest/evaluateActivity/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
 		}
 		//查看页面
 		function chakanchakan(id, dianjimc) {
@@ -2768,21 +2766,21 @@
 				id: id,
 				status: status
 			}
-			// $.ajax({
-			// 	type: 'POST',
-			// 	contentType: "application/json;charset=UTF-8",
-			// 	url: "http://test.physicalclub.com/crm/rest/activities/updInvitationActivitiese",
-			// 	data: JSON.stringify(str),
-			// 	success: function (result) {
-			// 		console.log(result)
-			// 		alert(result.message)
-			// 		shouye()
-			// 	},
-			// 	error: function (e) {
-			// 		console.log(e.status);
-			// 		console.log(e.responseText)
-			// 	}
-			// })
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json;charset=UTF-8",
+				url: "http://test.physicalclub.com/crm/rest/evaluateActivity/updateEvaluateActivitiesState",
+				data: JSON.stringify(str),
+				success: function (result) {
+					console.log(result)
+					alert(result.message)
+					shouye()
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
 		}
 		//活动界面分享获得点击叉号删除
 		function chacha() {
@@ -2870,24 +2868,6 @@
 			chacha()
 		}
 		
-		//首页结束活动界面隐藏
-		$('.yqyl-body-quxiao').click(function () {
-			$(this).parent().parent().hide()
-		})
-
-		//首页活动确定按钮
-		$('.yqyl-body-queding').click(function () {
-			var id = $(this).parent().parent().parent().attr('class')
-			// if($(this).parent().parent().parent().parent().children().eq(6).html() == '未开始'){
-			//     var status = 1
-			//     jieshuhdjkan(id,status)
-			// }else if($(this).parent().parent().parent().parent().children().eq(6).html() == '进行中'){
-			//     var status = 2
-			//     jieshuhdjkan(id,status)
-			// }
-
-		})
-
 		//新建活动界面人数翻页
 		$('.xzhd-body-zdlqrs-upfold').click(function () {
 			var rsstr = $(this).parent().parent().children('input').val()
