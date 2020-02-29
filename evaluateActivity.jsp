@@ -1149,14 +1149,14 @@
 				</div>
 				<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload" onchange="hdbjpz_upload()"
 					style="display:none">
-				<div style="position:absolute;right:222px;top:0">
+				<!-- <div style="position:absolute;right:222px;top:0">
 					<p style="font-size:16px">示例1</p>
 					<p style="font-size:16px;margin-top:9px">上传活动背景图时，分享红包按钮处请留白</p>
 					<div style="display:flex;align-items:flex-end;margin-top:9px">
 						<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
 						<p style="font-size:16px">（点击图片可查看大图）</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="xzhd-body-flex1" style="margin-top:50px">
 				<p style="font-size:16px;margin-right:54px">分享按钮配置</p>
@@ -2129,6 +2129,11 @@
 					return strstr = i.split(' ')[0].split('-')[0] + '.' + i.split(' ')[0].split('-')[1] + '.' + i.split(' ')[0].split('-')[2]
 				}
 
+				function xhbs(q) {
+					var str1 = ''
+					return str1 = q + (str.page - 1) * 15
+				}
+
 				$.ajax({
 					type: 'POST',
 					contentType: "application/json;charset=UTF-8",
@@ -2141,7 +2146,7 @@
 							if (item.state == 0) {
 								str += `
 							<tr>
-								<td class="item1">`+ (Number(i) + 1) + `</td>
+								<td class="item1">`+ xhbs(i + 1) + `</td>
 								<td class="item2">`+ item.activityName + `</td>
 								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
 								<td class="item3">`+ item.evaluationNum +`</td>
@@ -2177,18 +2182,18 @@
 							} else if (item.state == 1) {
 								str += `
 							<tr>
-								<td class="item1" style="background:#f7a567">`+ (Number(i) + 1) + `</td>
-								<td class="item2" style="background:#f7a567">`+ item.activityName + `</td>
-								<td class="item2" style="background:#f7a567">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.evaluationNum + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.evaluationTimes + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.shareCustomerNum + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.shareCustomerTimes + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.receiveCount + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.receiveTimes + `</td>
-								<td class="item3" style="background:#f7a567">`+ item.useCount +`</td>
-								<td class="item3" style="background:#f7a567">进行中</td>
-								<td class="`+ item.id + `" style="background:#f7a567">
+								<td class="item1">`+ xhbs(i + 1) + `</td>
+								<td class="item2">`+ item.activityName + `</td>
+								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+								<td class="item3">`+ item.evaluationNum + `</td>
+								<td class="item3">`+ item.evaluationTimes + `</td>
+								<td class="item3">`+ item.shareCustomerNum + `</td>
+								<td class="item3">`+ item.shareCustomerTimes + `</td>
+								<td class="item3">`+ item.receiveCount + `</td>
+								<td class="item3">`+ item.receiveTimes + `</td>
+								<td class="item3">`+ item.useCount +`</td>
+								<td class="item3" style="color:#ff0000">进行中</td>
+								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
 									<p>|</p>
 									<p class="chakan">查看</p>
@@ -2214,7 +2219,7 @@
 							} else {
 								str += `
 							<tr>
-								<td class="item1">`+ (Number(i) + 1) + `</td>
+								<td class="item1">`+ xhbs(i + 1) + `</td>
 								<td class="item2">`+ item.activityName + `</td>
 								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
 								<td class="item3">`+ item.evaluationNum + `</td>
@@ -2249,6 +2254,14 @@
 							}
 						})
 						$('.table-body').html(str)
+
+						$('.table-body').children().mouseover(function () {
+							$(this).children().css('background', '#faa262')
+						})
+
+						$('.table-body').children().mouseout(function () {
+							$(this).children().css('background', '#ffffff')
+						})
 
 						//显示数据页面按钮
 						$('.shuju').click(function () {

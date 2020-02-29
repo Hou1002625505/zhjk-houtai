@@ -2038,14 +2038,14 @@
 						} else if (item.state == 1) {
 							str += `
 						<tr>
-							<td class="item1" style="background:#f7a567">`+ xhbs(i + 1) + `</td>
-							<td class="item2" style="background:#f7a567">`+ item.activityName + `</td>
-							<td class="item2" style="background:#f7a567">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-							<td class="item3" style="background:#f7a567">`+ item.shareCustomerNum + `</td>
-							<td class="item3" style="background:#f7a567">`+ item.receiveCount + `</td>
-							<td class="item3" style="background:#f7a567">`+ item.useCount + `</td>
-							<td class="item4" style="background:#f7a567">进行中</td>
-							<td class="`+ item.id + `" style="background:#f7a567">
+							<td class="item1">`+ xhbs(i + 1) + `</td>
+							<td class="item2">`+ item.activityName + `</td>
+							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
+							<td class="item3">`+ item.shareCustomerNum + `</td>
+							<td class="item3">`+ item.receiveCount + `</td>
+							<td class="item3">`+ item.useCount + `</td>
+							<td class="item4" style="color:#ff0000">进行中</td>
+							<td class="`+ item.id + `">
 								<p class="shuju">数据</p>
 								<p>|</p>
 								<p class="chakan">查看</p>
@@ -2102,6 +2102,14 @@
 						}
 					})
 					$('.table-body').html(str)
+
+					$('.table-body').children().mouseover(function(){
+						$(this).children().css('background','#faa262')
+					}) 
+
+					$('.table-body').children().mouseout(function () {
+						$(this).children().css('background', '#ffffff')
+					})
 
 					//显示数据页面按钮
 					$('.shuju').click(function () {

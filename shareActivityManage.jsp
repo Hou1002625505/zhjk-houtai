@@ -2178,10 +2178,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					for(var ii = 0;ii<$('#fangcardlist').children().children().children().length;ii++){
 						//console.log($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html())
 						if ($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html() == '活动中'){
-							$('#fangcardlist').children().children().children().eq(i).children().css('background', '#f7a567')
-							$('#fangcardlist').children().children().children().eq(i).children().eq(7).css('border-top', '1px solid #f7a567')
+							$('#fangcardlist').children().children().children().eq(ii).children().eq(6).css('color','#ff0000')
 						}
 					}
+
+					$('#fangcardlist').children().children().children().mouseover(function(){
+						$(this).children('td').css('background', '#faa262')
+					})
+
+					$('#fangcardlist').children().children().children().mouseout(function () {
+						$(this).children('td').css('background', '#ffffff')
+					})
 
 				}
 			},
