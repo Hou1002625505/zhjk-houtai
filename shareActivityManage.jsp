@@ -2111,7 +2111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			data: JSON.stringify(data),
 			success: function (res) {
 
-				console.log(res)
+				//console.log(res)
 				if (res.status) {
 					$('#fangdatalist_wrap').html('')
 					var data = res.rows;
@@ -2145,9 +2145,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								'</tr>';
 
 							$('#fangdatalist_wrap').append(str)
+
+							
+
 							// if($('.coloritem').html() == '活动中'){
-							// 	$('#fangdatalist_wrap').children().eq(i).children().css('background','#f7a567')
-							// 	$('#fangdatalist_wrap').children().eq(i).children().eq(7).css('border-top', '1px solid #f7a567')
+							// 	console.log(111)
+							// 	$('#fangdatalist_wrap').children().children().children().eq(i).children().css('background','#f7a567')
+							// 	$('#fangdatalist_wrap').children().children().children().eq(i).children().eq(7).css('border-top', '1px solid #f7a567')
 							// }
 						}
 					} else {
@@ -2170,6 +2174,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						// var strpage="<span class='page'>共"+res.total+"条，每页"+eachPage+"条</span>";
 						// $("#ywyboxpage").prepend(strpage)
 
+					}
+					for(var ii = 0;ii<$('#fangcardlist').children().children().children().length;ii++){
+						//console.log($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html())
+						if ($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html() == '活动中'){
+							$('#fangcardlist').children().children().children().eq(i).children().css('background', '#f7a567')
+							$('#fangcardlist').children().children().children().eq(i).children().eq(7).css('border-top', '1px solid #f7a567')
+						}
 					}
 
 				}
@@ -2907,7 +2918,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			url: "rest/shareActivity/getCouponList",
 			success: function (res) {
 
-				console.log(JSON.stringify(res))
+				//console.log(JSON.stringify(res))
 				if (res.status) {
 					if (res.rows.length > 0) {
 						couponList = res.rows;
