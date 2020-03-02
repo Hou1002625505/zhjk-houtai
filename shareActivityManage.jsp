@@ -2123,12 +2123,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							intoNum++;
 							var item = data[i];
 							var str = '<tr>' +
-								'<td class="item item1 ">' + intoNum + '</td>' +
-								'<td class="item fitem6f ">' + item.activityName + '</td>' +
-								'<td class="item fitem6f ">' + item.activityStartDate.split(" ")[0] + '-' + item.activityEndDate.split(" ")[0] + '</td>' +
-								'<td class="item fitem5f ">' + item.shareCustomerNum + '</td>' +
-								'<td class="item fitem5f ">' + item.receiveCount + '</td>' +
-								'<td class="item fitem5f ">' + item.useCount + '</td>' +
+								'<td class="item item1 "><p>' + intoNum + '</p></td>' +
+								'<td class="item fitem6f "><p>' + item.activityName + '</p></td>' +
+								'<td class="item fitem6f "><p>' + item.activityStartDate.split(" ")[0] + '-' + item.activityEndDate.split(" ")[0] + '</p></td>' +
+								'<td class="item fitem5f "><p>' + item.shareCustomerNum + '</p></td>' +
+								'<td class="item fitem5f "><p>' + item.receiveCount + '</p></td>' +
+								'<td class="item fitem5f "><p>' + item.useCount + '</p></td>' +
 								'<td class="item fitem5f coloritem ">' + (item.state == 0 ? '未开始' : item.state == 1 ? '活动中' : item.state == 2 ? '已结束' : '') + '</td>' +
 								'<td class="item fitem2f">' +
 								'<span class="bianji" onclick="lookData(\'' + item.id + '\',\'' + item.activityName + '\')">数据</span>';
@@ -2184,10 +2184,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 					$('#fangcardlist').children().children().children().mouseover(function(){
 						$(this).children('td').css('background', '#faa262')
+						$(this).children('td').children('p').css('color', 'white')
 					})
 
 					$('#fangcardlist').children().children().children().mouseout(function () {
 						$(this).children('td').css('background', '#ffffff')
+						$(this).children('td').children('p').css('color', '#444444')
 					})
 
 				}

@@ -1354,6 +1354,8 @@
 			$('#xzhd-body-lqanpz-img').children().attr('src', 'image/white-white.jpg')
 			$('#xzhd-body-fxwzbt').val('')
 			$('#xzhd-body-fxhdxs').val('')
+			$('#xzhd-body-zdlqrs').val('')
+			$('#xzhd-body-hblqsl').val('')
 			//新建活动的点击按钮
 			$('#xzhd-body-save').unbind()
 			$('#xzhd-body-save').click(function () {
@@ -2146,16 +2148,16 @@
 							if (item.state == 0) {
 								str += `
 							<tr>
-								<td class="item1">`+ xhbs(i + 1) + `</td>
-								<td class="item2">`+ item.activityName + `</td>
-								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3">`+ item.evaluationNum +`</td>
-								<td class="item3">`+ item.evaluationTimes +`</td>
-								<td class="item3">`+ item.shareCustomerNum +`</td>
-								<td class="item3">`+ item.shareCustomerTimes +`</td>
-								<td class="item3">`+ item.receiveCount +`</td>
-								<td class="item3">`+ item.receiveTimes +`</td>
-								<td class="item3">`+ item.useCount +`</td>
+								<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+								<td class="item2"><span>`+ item.activityName + `</span></td>
+								<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+								<td class="item3"><span>`+ item.evaluationNum +`</span></td>
+								<td class="item3"><span>`+ item.evaluationTimes +`</span></td>
+								<td class="item3"><span>`+ item.shareCustomerNum +`</span></td>
+								<td class="item3"><span>`+ item.shareCustomerTimes +`</span></td>
+								<td class="item3"><span>`+ item.receiveCount +`</span></td>
+								<td class="item3"><span>`+ item.receiveTimes +`</span></td>
+								<td class="item3"><span>`+ item.useCount +`</span></td>
 								<td class="item3">未开始</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
@@ -2182,16 +2184,16 @@
 							} else if (item.state == 1) {
 								str += `
 							<tr>
-								<td class="item1">`+ xhbs(i + 1) + `</td>
-								<td class="item2">`+ item.activityName + `</td>
-								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3">`+ item.evaluationNum + `</td>
-								<td class="item3">`+ item.evaluationTimes + `</td>
-								<td class="item3">`+ item.shareCustomerNum + `</td>
-								<td class="item3">`+ item.shareCustomerTimes + `</td>
-								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.receiveTimes + `</td>
-								<td class="item3">`+ item.useCount +`</td>
+								<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+								<td class="item2"><span>`+ item.activityName + `</span></td>
+								<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+								<td class="item3"><span>`+ item.evaluationNum + `</span></td>
+								<td class="item3"><span>`+ item.evaluationTimes + `</span></td>
+								<td class="item3"><span>`+ item.shareCustomerNum + `</span></td>
+								<td class="item3"><span>`+ item.shareCustomerTimes + `</span></td>
+								<td class="item3"><span>`+ item.receiveCount + `</span></td>
+								<td class="item3"><span>`+ item.receiveTimes + `</span></td>
+								<td class="item3"><span>`+ item.useCount +`</span></td>
 								<td class="item3" style="color:#ff0000">进行中</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
@@ -2219,16 +2221,16 @@
 							} else {
 								str += `
 							<tr>
-								<td class="item1">`+ xhbs(i + 1) + `</td>
-								<td class="item2">`+ item.activityName + `</td>
-								<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-								<td class="item3">`+ item.evaluationNum + `</td>
-								<td class="item3">`+ item.evaluationTimes + `</td>
-								<td class="item3">`+ item.shareCustomerNum + `</td>
-								<td class="item3">`+ item.shareCustomerTimes + `</td>
-								<td class="item3">`+ item.receiveCount + `</td>
-								<td class="item3">`+ item.receiveTimes + `</td>
-								<td class="item3">`+ item.useCount +`</td>
+								<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+								<td class="item2"><span>`+ item.activityName + `</span></td>
+								<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+								<td class="item3"><span>`+ item.evaluationNum + `</span></td>
+								<td class="item3"><span>`+ item.evaluationTimes + `</span></td>
+								<td class="item3"><span>`+ item.shareCustomerNum + `</span></td>
+								<td class="item3"><span>`+ item.shareCustomerTimes + `</span></td>
+								<td class="item3"><span>`+ item.receiveCount + `</span></td>
+								<td class="item3"><span>`+ item.receiveTimes + `</span></td>
+								<td class="item3"><span>`+ item.useCount +`</span></td>
 								<td class="item3">已结束</td>
 								<td class="`+ item.id + `">
 									<p class="shuju">数据</p>
@@ -2257,10 +2259,12 @@
 
 						$('.table-body').children().mouseover(function () {
 							$(this).children().css('background', '#faa262')
+							$(this).children().children('span').css('color', 'white')
 						})
 
 						$('.table-body').children().mouseout(function () {
 							$(this).children().css('background', '#ffffff')
+							$(this).children().children('span').css('color', '#444444')
 						})
 
 						//显示数据页面按钮
@@ -2764,9 +2768,9 @@
 					$('#xzhd-body-hdmc').val(result.rows[0].activityName)
 					$('#xzhd-body-hdsjs').val(result.rows[0].activityStartDate.split(' ')[0])
 					$('#xzhd-body-hdsje').val(result.rows[0].activityEndDate.split(' ')[0])
-					if(result.rows[0].giftConditions ==1 ){
+					if(result.rows[0].onlyNewPeople ==1 ){
 						$('.xzhd-body-zstjraduis').eq(0).click()
-					}else if(result.rows[0].giftConditions == 2 ){
+					}else if(result.rows[0].onlyNewPeople == 2 ){
 						$('.xzhd-body-zstjraduis').eq(1).click()
 					}
 					$('#xzhd-body-hdbjpz-img').attr('class', result.rows[0].pageBackgroundUrl)
@@ -2781,6 +2785,8 @@
 					$('#xzhd-body-lqanpz-img').children().attr('src', result.rows[0].receiveButtonUrl)
 					$('#xzhd-body-fxwzbt').val(result.rows[0].shareTitle)
 					$('#xzhd-body-fxhdxs').val(result.rows[0].shareDescription)
+					$('#xzhd-body-zdlqrs').val(result.rows[0].maxReceiveNumber)
+					$('#xzhd-body-hblqsl').val(result.rows[0].everyReceive)
 					var id = result.rows[0].id
 					$('#xzhd-body-save').unbind()
 					$('#xzhd-body-save').click(function(){

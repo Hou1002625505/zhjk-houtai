@@ -2006,12 +2006,12 @@
 						if (item.state == 0) {
 							str += `
 						<tr>
-							<td class="item1">`+ xhbs(i + 1) + `</td>
-							<td class="item2">`+ item.activityName + `</td>
-							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-							<td class="item3">`+ item.shareCustomerNum + `</td>
-							<td class="item3">`+ item.receiveCount + `</td>
-							<td class="item3">`+ item.useCount + `</td>
+							<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+							<td class="item2"><span>`+ item.activityName + `</span></td>
+							<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+							<td class="item3"><span>`+ item.shareCustomerNum + `</span></td>
+							<td class="item3"><span>`+ item.receiveCount + `</span></td>
+							<td class="item3"><span>`+ item.useCount + `</span></td>
 							<td class="item4">未开始</td>
 							<td class="`+ item.id + `">
 								<p class="shuju">数据</p>
@@ -2038,12 +2038,12 @@
 						} else if (item.state == 1) {
 							str += `
 						<tr>
-							<td class="item1">`+ xhbs(i + 1) + `</td>
-							<td class="item2">`+ item.activityName + `</td>
-							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-							<td class="item3">`+ item.shareCustomerNum + `</td>
-							<td class="item3">`+ item.receiveCount + `</td>
-							<td class="item3">`+ item.useCount + `</td>
+							<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+							<td class="item2"><span>`+ item.activityName + `</span></td>
+							<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+							<td class="item3"><span>`+ item.shareCustomerNum + `</span></td>
+							<td class="item3"><span>`+ item.receiveCount + `</span></td>
+							<td class="item3"><span>`+ item.useCount + `</span></td>
 							<td class="item4" style="color:#ff0000">进行中</td>
 							<td class="`+ item.id + `">
 								<p class="shuju">数据</p>
@@ -2071,12 +2071,12 @@
 						} else {
 							str += `
 						<tr>
-							<td class="item1">`+ xhbs(i + 1) + `</td>
-							<td class="item2">`+ item.activityName + `</td>
-							<td class="item2">`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</td>
-							<td class="item3">`+ item.shareCustomerNum + `</td>
-							<td class="item3">`+ item.receiveCount + `</td>
-							<td class="item3">`+ item.useCount + `</td>
+							<td class="item1"><span>`+ xhbs(i + 1) + `</span></td>
+							<td class="item2"><span>`+ item.activityName + `</span></td>
+							<td class="item2"><span>`+ timegeshi(item.activityStartDate) + '-' + timegeshi(item.activityEndDate) + `</span></td>
+							<td class="item3"><span>`+ item.shareCustomerNum + `</span></td>
+							<td class="item3"><span>`+ item.receiveCount + `</span></td>
+							<td class="item3"><span>`+ item.useCount + `</span></td>
 							<td class="item4">已结束</td>
 							<td class="`+ item.id + `">
 								<p class="shuju">数据</p>
@@ -2105,10 +2105,12 @@
 
 					$('.table-body').children().mouseover(function(){
 						$(this).children().css('background','#faa262')
+						$(this).children().children('span').css('color','white')
 					}) 
 
 					$('.table-body').children().mouseout(function () {
 						$(this).children().css('background', '#ffffff')
+						$(this).children().children('span').css('color', '#444444')
 					})
 
 					//显示数据页面按钮
