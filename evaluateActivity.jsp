@@ -549,6 +549,8 @@
 			width: 100%;
 			display: flex;
 			align-items: center;
+			height:auto;
+			flex-wrap: wrap;
 		}
 	
 		#sj-body-fhsyj {
@@ -892,6 +894,20 @@
 			font-size: 16px;
 			margin: 7px 0 0 14px
 		}
+
+		@media screen and (max-width: 1388px) {
+		#sj-body-flex111 select {
+			width: 10.2% !important;
+		}
+		/* .busData .c-datepicker-date-editor {
+			width: 8%;
+		} */
+
+		/* .busData .select_wrap {
+			margin-right: 10px;
+		} */
+		}
+
 	</style>
 	</head>
 	
@@ -1238,7 +1254,7 @@
 			<div class="sj-body-flex1">
 	
 			</div>
-			<div class="sj-body-flex" style="margin-top:30px">
+			<div class="sj-body-flex" style="margin-top:30px" id="sj-body-flex111">
 				<label class="sj-body-flex-p">优惠券名称</label>
 				<!-- <div class="sj-body-input" id='sj-body-inputyhjmc' style="width:120px"> -->
 				<span class="select_wrap">
