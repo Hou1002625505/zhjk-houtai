@@ -2811,6 +2811,8 @@
                                 $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
                             }
 
+                            $('#inputtwelve-flex').children().children('img').hide()
+
                             for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
                                 for (var j = 0; j < item.curriculumPayTypeList[0].curriculumGuangxinList.length; j++) {
                                     if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[0].curriculumGuangxinList[j].itemId) {
@@ -2828,8 +2830,8 @@
                                 var index = i
 
                                 html += '		<div class="zhegeshenmedoumeiyou ' + item.leagueCurriculumImgList[index].imgUrl + '" style="position:relative">';
-                                html += '           <img id="deldel" style="position:absolute;top:0.15rem;left:10rem;display:none" src="../image/palyitdel_btn.png">'
-                                html += '			<img style="height:8rem;width:10.25rem;margin-left:1rem" src="images/' + item.leagueCurriculumImgList[index].imgUrl + '" />';
+                                html += '           <img id="deldel" style="position:absolute;top:3px;left:192px;display:none" src="../image/palyitdel_btn.png">'
+                                html += '			<img style="height:160px;width:200px;margin-left:1rem" src="images/' + item.leagueCurriculumImgList[index].imgUrl + '" />';
                                 html += '		</div>';
 
                             }
@@ -2852,8 +2854,8 @@
                             if (item.leagueCurriculumVideoList == '') {
 
                             } else {
-                                $('#photoFile').addClass(item.leagueCurriculumVideoList[0].videoUrl)
-                                var strstr = item.leagueCurriculumVideoList[0].videoUrl.split(' ')[0]
+                                $('#photoFile').attr('class',item.leagueCurriculumVideoList[0].videoUrl)
+                                var strstr = item.leagueCurriculumVideoList[0].videoUrl
                                 $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + strstr)
 
                                 $('#videoshow').show()
