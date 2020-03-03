@@ -1454,7 +1454,7 @@
 		var formData = new FormData();
 		formData.append('file', document.getElementById('hdbjpz_upload').files[0])
 		$.ajax({
-			url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+			url: "rest/activities/uploadInviActivityFile",
 			type: "post",
 			data: formData,
 			contentType: false,
@@ -1485,7 +1485,7 @@
 		var formData = new FormData();
 		formData.append('file', document.getElementById('fxanpz_upload').files[0])
 		$.ajax({
-			url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+			url: "rest/activities/uploadInviActivityFile",
 			type: "post",
 			data: formData,
 			contentType: false,
@@ -1518,7 +1518,7 @@
 			var formData = new FormData();
 			formData.append('file', document.getElementById('fxhyljt_upload').files[0])
 			$.ajax({
-				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				url: "rest/activities/uploadInviActivityFile",
 				type: "post",
 				data: formData,
 				contentType: false,
@@ -1551,7 +1551,7 @@
 			var formData = new FormData();
 			formData.append('file', document.getElementById('lqhdbjpz_upload').files[0])
 			$.ajax({
-				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				url: "rest/activities/uploadInviActivityFile",
 				type: "post",
 				data: formData,
 				contentType: false,
@@ -1584,7 +1584,7 @@
 			var formData = new FormData();
 			formData.append('file', document.getElementById('lqanpz_upload').files[0])
 			$.ajax({
-				url: "http://test.physicalclub.com/crm/rest/activities/uploadInviActivityFile",
+				url: "rest/activities/uploadInviActivityFile",
 				type: "post",
 				data: formData,
 				contentType: false,
@@ -1839,7 +1839,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/insertInvitationActivities",
+			url: "rest/activities/insertInvitationActivities",
 			data: JSON.stringify(xjhdstr),
 			success: function (result) {
 				console.log(result)
@@ -1943,7 +1943,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/updateInviActivities",
+			url: "rest/activities/updateInviActivities",
 			data: JSON.stringify(xjhdstr),
 			success: function (result) {
 				console.log(result)
@@ -2011,7 +2011,7 @@
 			$.ajax({
 				type: 'POST',
 				contentType: "application/json;charset=UTF-8",
-				url: "http://test.physicalclub.com/crm/rest/activities/getInvitationActivitiese",
+				url: "rest/activities/getInvitationActivitiese",
 				data: JSON.stringify(str),
 				success: function (result) {
 					console.log(result)
@@ -2212,7 +2212,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/getCouponList",
+			url: "rest/activities/getCouponList",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
@@ -2423,7 +2423,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/countActivityCoupon",
+			url: "rest/activities/countActivityCoupon",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
@@ -2461,7 +2461,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/getCouponDropdownList",
+			url: "rest/activities/getCouponDropdownList",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
@@ -2510,7 +2510,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/selectActivityCouponList",
+			url: "rest/activities/selectActivityCouponList",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
@@ -2600,7 +2600,7 @@
 		var status = $('#sj-body-zt').val()
 		var couponSource = $('#sj-body-ly').val()
 
-		location.href = "http://test.physicalclub.com/crm/rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
+		location.href = "rest/activities/exportActivityCoupon?activityId=" + id + '&couponId=' + couponId + '&startDate=' + startDate + '&endDate=' + endDate + '&status=' + status + '&couponSource=' + couponSource
 	}
 	//查看页面
 	function chakanchakan(id, dianjimc){
@@ -2610,7 +2610,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/getActivitiesInfoById",
+			url: "rest/activities/getActivitiesInfoById",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(dianjimc)
@@ -2772,7 +2772,7 @@
 		$.ajax({
 			type: 'POST',
 			contentType: "application/json;charset=UTF-8",
-			url: "http://test.physicalclub.com/crm/rest/activities/updInvitationActivitiese",
+			url: "rest/activities/updInvitationActivitiese",
 			data: JSON.stringify(str),
 			success: function (result) {
 				console.log(result)
