@@ -35,6 +35,11 @@
     <!-- 引用初始化JS -->
     <script type="text/javascript" src="easyui/jq22.js"></script>
     <style>
+
+        html {
+			border: 1px solid #95B8E7;
+		}
+
         /* html{
             font-size:calc(100vw / 88.11);
         } */
@@ -64,6 +69,8 @@
             display: flex;
             margin-top: 1px;
             align-items: center;
+            height:auto;
+            flex-wrap: wrap;
         }
 
         .course-manage-flex #course-manage-flex-input {
@@ -217,8 +224,8 @@
         .course-manage-footer {
             display: flex;
             margin-top: 17px;
-            height: 26px;
-            display: flex;
+            height: auto;
+            flex-wrap: wrap;
             align-items: center;
             padding-left: 14px;
         }
@@ -932,7 +939,7 @@
             border-bottom: 1px dotted #CCCCCC
         }
 
-        .table-body tr td:last-child {
+        .table-body1 tr td:last-child {
             flex: 1;
             border-right: 1px dotted #CCCCCC;
             display: flex;
