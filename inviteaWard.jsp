@@ -2701,7 +2701,20 @@
 						var str2 = str22
 					}
 					var str3 = result.shareCouponList[i].quantity
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str1 + '/' + str22 + '×' + str3 + `" class="` + result.shareCouponList[i].couponId + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+					if(result.shareCouponList[i].couponSource == 2){
+						var description = result.shareCouponList[i].description
+
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str22 + `" class="` + result.shareCouponList[i].couponId + `">
+							<p class="`+ description +`">` + str1 + '/' + str2 + '×' + str3 + `</p>
+							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+						</div>`
+					}else{
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str22 + `" class="` + result.shareCouponList[i].couponId + `">
+							<p>` + str1 + '/' + str2 + '×' + str3 + `</p>
+							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+						</div>`
+					}
+					
 				}
 				var strstr = ''
 				//领取有礼内容渲染
@@ -2718,7 +2731,20 @@
 						var str22 = str222
 					}
 					var str33 = result.receiveCouponList[ii].quantity
-					strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str11 + '/' + str222 + '×' + str33 + `" class="` + result.receiveCouponList[ii].couponId + `"><p>` + str11 + '/' + str22 + '×' + str33 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+					if(result.receiveCouponList[ii].couponSource == 2){
+						var description = result.receiveCouponList[ii].description
+						
+						strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str222 + `" class="` + result.receiveCouponList[ii].couponId + `">
+							<p class="`+ description +`">` + str11 + '/' + str22 + '×' + str33 + `</p>
+							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+						</div>`
+					}else{
+						strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str222 + `" class="` + result.receiveCouponList[ii].couponId + `">
+						<p>` + str11 + '/' + str22 + '×' + str33 + `</p>
+						<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+					</div>`
+					}
+					
 				}
 				$('#xzhd-body-fxhd').html(str)
 				$('#xzhd-body-lqrhd').html(strstr)
@@ -2730,10 +2756,10 @@
 					if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody1'){
 						var kaquanfl = 'CRM优惠券'
 						for(var x=0;x<$('#xzhd-body-fxhd').children().length;x++){
-							if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
+							if($('#xzhd-body-fxhd').children().eq(x).attr('id') == $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
-								var str666 = $('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[1]
+								var str666 = $('#xzhd-body-fxhd').children().eq(x).children('p').html().split('×')[1]
 								$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 								//console.log(z)
 							}
@@ -2741,11 +2767,11 @@
 					}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
 						var kaquanfl = '有赞优惠券'
 						for (var y = 0; y < $('#xzhd-body-fxhd').children().length; y++) {
-							if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
+							if ($('#xzhd-body-fxhd').children().eq(y).attr('id') == $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 								$('.xzhd-body-gouxuan').eq(z).children().show()
 								//console.log(z)
-								var str666 = $('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[1]
+								var str666 = $('#xzhd-body-fxhd').children().eq(y).children('p').html().split('×')[1]
 								$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 							}
 						}
@@ -2756,20 +2782,20 @@
 					if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody11') {
 						var kaquanfl = 'CRM优惠券'
 						for (var xx = 0; xx < $('#xzhd-body-lqrhd').children().length; xx++) {
-							if ($('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
+							if ($('#xzhd-body-lqrhd').children().eq(xx).attr('id') == $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
 								$('.xzhd-body-gouxuan1').eq(zz).children().show()
-								var str66666 = $('#xzhd-body-lqrhd').children().eq(xx).attr('id').split('×')[1]
+								var str66666 = $('#xzhd-body-lqrhd').children().eq(xx).children('p').html().split('×')[1]
 								$('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(2).children().children().eq(1).html(str66666)
 							}
 						}
 					} else if ($('.xzhd-body-gouxuan1').eq(zz).parent().parent().parent().attr('class') == 'xzhd-body-tbody22') {
 						var kaquanfl = '有赞优惠券'
 						for (var yy = 0; yy < $('#xzhd-body-lqrhd').children().length; yy++) {
-							if ($('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
+							if ($('#xzhd-body-lqrhd').children().eq(yy).attr('id') == $('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(1).html()) {
 								$('.xzhd-body-gouxuan1').eq(zz).addClass('gxx')
 								$('.xzhd-body-gouxuan1').eq(zz).children().show()
-								var str66666 = $('#xzhd-body-lqrhd').children().eq(yy).attr('id').split('×')[1]
+								var str66666 = $('#xzhd-body-lqrhd').children().eq(yy).children('p').html().split('×')[1]
 								$('.xzhd-body-gouxuan1').eq(zz).parent().parent().children().eq(2).children().children().eq(1).html(str66666)
 							}
 						}
@@ -2954,7 +2980,7 @@
 					str2 = str2.substring(0, 4)+'...'
 				}
 				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() +`" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`">
-					<p $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('id')>`+ str1 +'/'+ str2 +'×'+str3+`</p>
+					<p class='`+$('.xzhd-body-gouxuan').eq(j).parent().parent().attr('id')+`'>`+ str1 +'/'+ str2 +'×'+str3+`</p>
 					<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 				</div>`
 			}

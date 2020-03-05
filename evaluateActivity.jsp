@@ -1026,7 +1026,7 @@
 			</div>
 	
 			<div class="xzhd-body-flex" style="margin-top:24px;position: relative;">
-				<p style="font-size:16px;margin-right:86px">分享获得</p>
+				<p style="font-size:16px;margin-right:86px">红包内容</p>
 				<div class="xzhd-body-input" style="position:relative">
 					<div id="xzhd-body-fxhd">
 						<p style="color:#BFBFBF"></p>
@@ -1886,19 +1886,14 @@
 				alert('请选择活动结束时间')
 				return;
 			}
-
-			if ($('.xzhd-body-zstjraduis').eq(0).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(1).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(2).children().is(':hidden')) {
+					
+			if ($('.xzhd-body-zstjraduis').eq(0).children('p').is(':hidden') && $('.xzhd-body-zstjraduis').eq(1).children('p').is(':hidden')) {
 				alert('请选择赠送条件')
 				return;
 			}
 
-			if ($('#xzhd-body-fxhd').children().eq(0).html() == '请选择要分享的优惠券') {
+			if ($('#xzhd-body-fxhd').children().eq(0).html() == '请选择评论分享可获得的红包') {
 				alert('请选择分享获得优惠券')
-				return;
-			}
-
-			if ($('#xzhd-body-lqrhd').children().eq(0).html() == '请选择领取人可获得的优惠券') {
-				alert('请选择领取人优惠券')
 				return;
 			}
 
@@ -2752,7 +2747,10 @@
 							var str2 = str22
 						}
 						var str3 = result.rows[0].receiveCouponList[i].quantity
-						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str1 + '/' + str22 + '×' + str3 + `" class="` + result.rows[0].receiveCouponList[i].couponId + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` +  str22 + `" class="` + result.rows[0].receiveCouponList[i].couponId + `">
+							<p>` + str1 + '/' + str2 + '×' + str3 + `</p>
+							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+						</div>`
 					}
 					//领取有礼内容渲染
 					
@@ -2764,19 +2762,23 @@
 						if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody1'){
 							var kaquanfl = 'CRM优惠券'
 							for(var x=0;x<$('#xzhd-body-fxhd').children().length;x++){
-								if($('#xzhd-body-fxhd').children().eq(x).attr('id').split('×')[0] == kaquanfl+'/'+$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
+								if($('#xzhd-body-fxhd').children().eq(x).attr('id') == $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()){
 									$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 									$('.xzhd-body-gouxuan').eq(z).children().show()
 									//console.log(z)
+									var str666 = $('#xzhd-body-fxhd').children().eq(x).children('p').html().split('×')[1]
+									$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 								}
 							}
 						}else if($('.xzhd-body-gouxuan').eq(z).parent().parent().parent().attr('class') == 'xzhd-body-tbody2'){
 							var kaquanfl = '有赞优惠券'
 							for (var y = 0; y < $('#xzhd-body-fxhd').children().length; y++) {
-								if ($('#xzhd-body-fxhd').children().eq(y).attr('id').split('×')[0] == kaquanfl + '/' + $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
+								if ($('#xzhd-body-fxhd').children().eq(y).attr('id') == $('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(1).html()) {
 									$('.xzhd-body-gouxuan').eq(z).addClass('gx')
 									$('.xzhd-body-gouxuan').eq(z).children().show()
 									//console.log(z)
+									var str666 = $('#xzhd-body-fxhd').children().eq(y).children('p').html().split('×')[1]
+									$('.xzhd-body-gouxuan').eq(z).parent().parent().children().eq(2).children().children().eq(1).html(str666)
 								}
 							}
 						}

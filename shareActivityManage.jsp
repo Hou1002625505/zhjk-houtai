@@ -929,9 +929,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 
 	.xzhd-body-tbody1 .psda {
-		width: 100px;
+		width: 90%;
 		position: absolute;
-		overflow: hidden;
 		padding-right: 0;
 		float: left;
 		text-overflow: ellipsis;
@@ -1760,7 +1759,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	function crmyhj(em) {
 		$.each(couponList[0].crmCouponList, function (i, item) {
 			var str = '<tr>' +
-				'<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">' +
+				'<td style="width:30%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">' +
 				'<div class="xzhd-body-gouxuan" onclick="seletzm(1,this,\'' + item.couponId + '\',' + item.stockQuantity + ')">';
 			if (item.selected) {
 				str += '<img class="gouxuan"  id="' + item.couponId + '" src="../images/codeallset_btn.png" alt="" style="display: block;">';
@@ -1786,7 +1785,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	function yzyhj(em) {
 		$.each(couponList[0].yzCouponList, function (i, item) {
 			var str = '<tr>' +
-				'<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">' +
+				'<td style="width:30%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">' +
 				'<div class="xzhd-body-gouxuan" onclick="seletzm(2,this,\'' + item.id + '\',' + item.totalFansTaked + ')">';
 			if (item.selected) {
 				str += '<img class="gouxuan" id="' + item.id + '" src="../images/codeallset_btn.png" alt="" style="display: block;">';
