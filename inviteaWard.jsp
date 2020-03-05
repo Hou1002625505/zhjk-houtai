@@ -1795,12 +1795,24 @@
 			var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
 			var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
 			var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
-			shareCouponList.push({
-				couponId : couponId,
-				couponName : couponName,
-				couponSource : couponSource,
-				quantity : quantity
-			})
+			var description = $('#xzhd-body-fxhd').children().eq(j).children('p').attr('class')
+			if(couponSource == 1){
+				shareCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity
+				})
+			}else if(couponSource == 2){
+				shareCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity,
+					description : description
+				})
+			}
+			
 		}
 		for(var k =0;k<$('#xzhd-body-lqrhd').children().length;k++){
 			if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
@@ -1811,12 +1823,24 @@
 			var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
 			var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
 			var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
-			receiveCouponList.push({
-				couponId: couponId,
-				couponName: couponName,
-				couponSource: couponSource,
-				quantity: quantity
-			})
+			var description = $('#xzhd-body-lqrhd').children().eq(k).children('p').attr('class')
+			if(couponSource == 1){
+				receiveCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity
+				})
+			}else if(couponSource == 2){
+				receiveCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity,
+					description : description
+				})
+			}
+			
 		}
 
 		var xjhdstr = {
@@ -1899,12 +1923,23 @@
 			var couponId = $('#xzhd-body-fxhd').children().eq(j).attr('class')
 			var couponName = $('#xzhd-body-fxhd').children().eq(j).attr('id')
 			var quantity = Number($('#xzhd-body-fxhd').children().eq(j).children('p').html().split('×')[1])
-			shareCouponList.push({
-				couponId: couponId,
-				couponName: couponName,
-				couponSource: couponSource,
-				quantity: quantity
-			})
+			var description = $('#xzhd-body-fxhd').children().eq(j).children('p').attr('class')
+			if (couponSource == 1) {
+				shareCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity
+				})
+			} else if (couponSource == 2) {
+				shareCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity,
+					description: description
+				})
+			}
 		}
 		for (var k = 0; k < $('#xzhd-body-lqrhd').children().length; k++) {
 			if ($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('/')[0] == 'CRM优惠券') {
@@ -1915,12 +1950,23 @@
 			var couponId = $('#xzhd-body-lqrhd').children().eq(k).attr('class')
 			var couponName = $('#xzhd-body-lqrhd').children().eq(k).attr('id')
 			var quantity = Number($('#xzhd-body-lqrhd').children().eq(k).children('p').html().split('×')[1])
-			receiveCouponList.push({
-				couponId: couponId,
-				couponName: couponName,
-				couponSource: couponSource,
-				quantity: quantity
-			})
+			var description = $('#xzhd-body-lqrhd').children().eq(k).children('p').attr('class')
+			if (couponSource == 1) {
+				receiveCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity
+				})
+			} else if (couponSource == 2) {
+				receiveCouponList.push({
+					couponId: couponId,
+					couponName: couponName,
+					couponSource: couponSource,
+					quantity: quantity,
+					description: description
+				})
+			}
 		}
 		var xjhdstr = {
 			id : id,
@@ -2260,7 +2306,7 @@
 				})
 				$.each(result.rows[0].yzCouponList, function (i, item) {
 					str2 +=
-						`<tr class="`+ item.id +`">
+						`<tr class="`+ item.id +`" id="` + item.description +`">
 					<td style="width:10%">
 						<div class="xzhd-body-gouxuan">
 							<img src="image/codeallset_btn.png" alt="">
@@ -2279,7 +2325,7 @@
 				})
 				$.each(result.rows[0].yzCouponList, function (i, item) {
 					str22 +=
-						`<tr class="`+ item.id +`">
+						`<tr class="`+ item.id +`" id="` + item.description +`">
 					<td style="width:10%">
 						<div class="xzhd-body-gouxuan1">
 							<img src="image/codeallset_btn.png" alt="">
@@ -2613,6 +2659,7 @@
 			url: "rest/activities/getActivitiesInfoById",
 			data: JSON.stringify(str),
 			success: function (result) {
+				console.log(result)
 				console.log(dianjimc)
 				if(dianjimc == '查看'){
 					$('#xzhd-body-hdmc').css('pointer-events','none')
@@ -2906,7 +2953,10 @@
 				if(str2.length>5){
 					str2 = str2.substring(0, 4)+'...'
 				}
-				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() +`" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`"><p>`+ str1 +'/'+ str2 +'×'+str3+`</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
+				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() +`" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`">
+					<p $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('id')>`+ str1 +'/'+ str2 +'×'+str3+`</p>
+					<img class="xzhd-body-chacha" src="image/classdel_btn.png">
+				</div>`
 			}
 		}
 		$('#xzhd-body-fxhd').html(str)
@@ -2944,7 +2994,10 @@
 					if (str2.length > 5) {
 						str2 = str2.substring(0, 4) + '...'
 					}
-					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html() +`" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`"><p>` + str1 + '/' + str2 + '×'+str3+`</p><img class="xzhd-body-chacha1" src="image/classdel_btn.png"></div>`
+					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html() +`" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`">
+						<p class="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('id') +`">` + str1 + '/' + str2 + '×'+str3+`</p>
+						<img class="xzhd-body-chacha1" src="image/classdel_btn.png">
+					</div>`
 				}
 			}
 			$('#xzhd-body-lqrhd').html(str)
