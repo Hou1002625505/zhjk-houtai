@@ -36,9 +36,9 @@
     <!-- 引用初始化JS -->
     <!-- <script src="imgui/jq22.js"></script> -->
     <style>
-        /* html{
+        html{
             font-size:calc(100vw / 88.11);
-        } */
+        }
 
         html {
             border: 1px solid #95B8E7;
@@ -179,7 +179,7 @@
             text-align: center;
             line-height: 30px;
             border-radius: 4px;
-            margin-right: 200px;
+            margin-right: 0;
             font-size: 16px;
         }
 
@@ -761,7 +761,7 @@
 
         .course-arranging-body .add-edit-course {
             position: absolute;
-            top: 300px;
+            top: 182px;
             left: 480px;
             z-index: 100;
             width: 421px;
@@ -1792,23 +1792,23 @@
     <div class="course-arranging-body" id="course-arranging-body-left">
         <div class="course-arranging-header-two"></div>
         <div class="course-arranging-header-three">
-            <p id="leadlead">导入课程</p>
+            <p id="leadlead" style="cursor:pointer;">导入课程</p>
             <input id="filelead" style="display:none" accept=".xlsx,.xls" type="file" onchange="filelead()">
-            <p id="addaddadd">新增</p>
-            <p id='publishpublish'>发布</p>
-            <p id="publishpublishall">全部发布</p>
+            <p id="addaddadd" style="cursor:pointer;">新增</p>
+            <p id='publishpublish' style="cursor:pointer;">发布</p>
+            <p id="publishpublishall" style="cursor:pointer;">全部发布</p>
         </div>
-        <div class="course-arranging-flex">
+        <div class="course-arranging-flex" style="height:auto;flex-wrap: wrap;">
             <div style="font-size:16px;margin-right:10px">上课门店</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-skmd">
+                <select name="visitstatus" id="kcgl-body-skmd" style="cursor:pointer;">
 
                 </select>
                 <em class="triangle_border_down1"></em>
             </span>
             <div style="font-size:16px;margin-right:10px">上课房间</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-skfj">
+                <select name="visitstatus" id="kcgl-body-skfj" style="cursor:pointer;">
                     
                 </select>
                 <em class="triangle_border_down1"></em>
@@ -1828,10 +1828,10 @@
         </div>
         <div class="course-arranging-flextwo">
             <div class="course-arranging-flexthree">
-                <p id="publish-search">查询</p>
-                <p id="cxsx">清除</p>
+                <p id="publish-search" style="cursor:pointer;">查询</p>
+                <p id="cxsx" style="cursor:pointer;">清除</p>
             </div>
-            <p class="course-arranging-flextwo-pthree" id='derivederive'>导出课程</p>
+            <p class="course-arranging-flextwo-pthree" id='derivederive' style="cursor:pointer;">导出课程</p>
         </div>
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody>
@@ -1855,16 +1855,16 @@
 
             </tbody>
         </table>
-        <div class="course-arranging-footer">
+        <div class="course-arranging-footer" style="height:auto;flex-wrap: wrap;">
             <div class="course-arranging-table-checkbox" id="course-arranging-table-checkbox-all">
                 <img style="display:none" src="./image/codeallset_btn.png">
             </div>
             <div class="course-arranging-footer-pone">当页全选</div>
             <div class="course-arranging-footer-pone">已选课程<span></span></div>
-            <div class="course-arranging-footer-ptwo" id="recommended">推荐</div>
-            <div class="course-arranging-footer-ptwo" id="qx-recommended">取消推荐</div>
-            <div class="course-arranging-footer-ptwo" id="tiebiao-show">贴标</div>
-            <div class="course-arranging-footer-ptwo" id="shanchudel">删除</div>
+            <div class="course-arranging-footer-ptwo" id="recommended" style="cursor:pointer;">推荐</div>
+            <div class="course-arranging-footer-ptwo" id="qx-recommended" style="cursor:pointer;">取消推荐</div>
+            <div class="course-arranging-footer-ptwo" id="tiebiao-show" style="cursor:pointer;">贴标</div>
+            <div class="course-arranging-footer-ptwo" id="shanchudel" style="cursor:pointer;">删除</div>
             <div class="course-arranging-footer-pthree"></div>
             <div class="box" id="boxpage" style="margin:0"></div>
         </div>
@@ -1884,17 +1884,17 @@
 
     <div class="course-arranging-body" id="course-arranging-body-right" style="display:none">
         <div class="course-arranging-header-two"></div>
-        <div class="course-arranging-flex">
+        <div class="course-arranging-flex" style="height:auto;flex-wrap: wrap;">
             <div style="font-size:16px;margin-right:10px">上课门店</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-skmd1">
+                <select name="visitstatus" id="kcgl-body-skmd1" style="cursor:pointer">
             
                 </select>
                 <em class="triangle_border_down1"></em>
             </span>
             <div style="font-size:16px;margin-right:10px">上课房间</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-skfj1">
+                <select name="visitstatus" id="kcgl-body-skfj1" style="cursor:pointer">
             
                 </select>
                 <em class="triangle_border_down1"></em>
@@ -1914,10 +1914,10 @@
         </div>
         <div class="course-arranging-flextwo">
             <div class="course-arranging-flexthree">
-                <p id="publish-search1">查询</p>
-                <p id="cxsx2">清除</p>
+                <p id="publish-search1" style="cursor:pointer">查询</p>
+                <p id="cxsx2" style="cursor:pointer">清除</p>
             </div>
-            <p class="course-arranging-flextwo-pthree" id='derivederive11'>导出课程</p>
+            <p class="course-arranging-flextwo-pthree" id='derivederive11' style="cursor:pointer">导出课程</p>
         </div>
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody>
@@ -1941,7 +1941,9 @@
         
             </tbody>
         </table>
-        <div class="box" id="boxpage1" style="padding-bottom: 20px;"></div>
+
+        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:77rem"></div>
+        
 
         <div class="edit-course" id="edit-course2">
 
@@ -1972,6 +1974,7 @@
         $(this).addClass('course-arranging-header-one-ptwo-active')
         $('#course-arranging-body-left').hide()
         $('#course-arranging-body-right').show()
+        shoyen()
     })
 
     //切换至待发布页面
@@ -1980,6 +1983,7 @@
         $(this).addClass('course-arranging-header-one-pone-active')
         $('#course-arranging-body-left').show()
         $('#course-arranging-body-right').hide()
+        shoye()
     })
 
     //待发布页面查询
@@ -2706,7 +2710,7 @@
                         str2 += `
                         <tr class="course-arranging-table-tr">
                             <td style="width:2.5%" class="`+ item.id + `"><div style="display:flex;justify-content: center;"><div class="course-arranging-table-checkbox"><img style="display:none" src="./image/codeallset_btn.png"></div></div></td>
-                            <td class="item2" style="position:relative">`+ item.storeName + `<img style="position:absolute;left:140px;top:0;` + (item.isRecommend == 1 ? '' : 'display:none') +`" src="image/recommended_img.png"></td>
+                            <td class="item2" style="position:relative">`+ item.storeName + `<img style="position:absolute;right:0;top:0;` + (item.isRecommend == 1 ? '' : 'display:none') +`" src="image/recommended_img.png"></td>
                             <td class="item2">`+ item.roomName + `</td>
                             <td class="item3">`+ item.dateStr + `</td>
                             <td class="item3">`+ item.timeStr + `</td>
@@ -2718,7 +2722,7 @@
                             <td class="item4">`+ item.minNumber + `人</td>
                             <td class="item4">`+ tiebiao(item.tagName) + `</td>
                             <td style="position:relative;display:flex;flex:1;justify-content:center;align-items:center">
-                                <p style="color:#71B2EF" class="a-add `+ i + `">编辑</p><p style="color:#71B2EF;margin:0 3px 0 3px">|</p><p style="color:#71B2EF" class="a-del">删除</p>
+                                <p style="color:#71B2EF;cursor:pointer;" class="a-add `+ i + `">编辑</p><p style="color:#71B2EF;margin:0 3px 0 3px">|</p><p style="color:#71B2EF;cursor:pointer;" class="a-del">删除</p>
                                 <div class="td-del" style="display:none">
                                     <div class="td-del-flex">
                                         <p>是否删除该课程?</p>
@@ -2762,6 +2766,20 @@
                         ckkcxxjbj(result,id)
                     })
 
+                    $('.a-del').click(function(){
+                        $(this).parent().children('.td-del').show()
+                        var ids1 = $(this).parent().parent().parent().parent().children().eq(0).attr('class')
+
+                        $('.td-del-flex-yes').click(function(){
+                            sybgzdscsj(ids1)
+                        })
+                        
+                        $('.td-del-flex-no').click(function(){
+                            $(this).parent().parent().hide()
+                        })
+
+                    })
+
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
@@ -2782,6 +2800,34 @@
 
 
         }
+    }
+
+    //首页表格中的删除事件
+    function sybgzdscsj(ids1){
+        var ids = []
+                
+        ids.push(ids1)
+            
+
+        var recommended = {
+            operationType: 1,
+            ids: ids
+        }
+
+        $.ajax({
+            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(recommended),
+            success: function (result) {
+                alert(result.message)
+                shoye()
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+
+        })
     }
 
     //发布首页
@@ -2879,7 +2925,16 @@
                                 <td class="item4">`+ item.minNumber + `人</td>
                                 <td class="item4">`+ tiebiao(item.tagName) + `</td>
                                 <td style="position:relative;display:flex;flex:1;justify-content:center;align-items:center">
-                                    <p class="a-add1 `+ i + `" style="display:none">编辑</p><p style="color:#71B2EF" class="a-xiajia">下架</p>
+                                    <p class="a-add1 `+ i + `" style="display:none">编辑</p><p style="color:#71B2EF;cursor:pointer" class="a-xiajia">下架</p>
+                                    <div class="td-del" style="display:none">
+                                        <div class="td-del-flex">
+                                            <p>是否下架该课程?</p>
+                                            <p class="td-del-not-flex-yes">确定</p>
+                                            <p class="td-del-not-flex-no">取消</p>
+                                        </div>
+                                        <p class="td-del-line"></p>
+                                        <p class="td-del-left">下架课表后，将不会看到该课程!</p>
+                                    </div>
                                 </td>
                             </tr>
                         `
@@ -2898,8 +2953,16 @@
                         })
 
                         $('.a-xiajia').click(function(){
-                            var ids1 = $(this).parent().parent().children().eq(0).attr('class')
-                            fbsyxj(ids1)
+                            $(this).parent().children('.td-del').show()
+
+                            $('.td-del-not-flex-yes').click(function(){
+                                var ids1 = $(this).parent().parent().parent().parent().children().eq(0).attr('class')
+                                fbsyxj(ids1)
+                            })
+
+                            $('.td-del-not-flex-no').click(function(){
+                                $(this).parent().parent().hide()
+                            })
                         })
 
                         var obj = {
@@ -2992,13 +3055,13 @@
                     <img class="edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
                     <p class="edit-course-header-pone">新增未发布</p>
                 </div>
-                <img class="edit-course-header-imgone" style="width:22px;height:23px" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
+                <img class="edit-course-header-imgone" style="width:22px;height:23px;cursor:pointer" id="edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
             </div>
             <div class="edit-course-context">
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one" style="margin-right:111px">门店</div>
                     <span class="select_wrap" style="margin:0">
-                        <select name="visitstatus" id="kcgl-body-md">
+                        <select name="visitstatus" id="kcgl-body-md" style="cursor:pointer">
 
                         </select>
                         <em class="triangle_border_down1"></em>
@@ -3007,7 +3070,7 @@
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one" style="margin-right:111px">房间</div>
                     <span class="select_wrap" style="margin:0">
-                        <select name="visitstatus" id="kcgl-body-fj">
+                        <select name="visitstatus" id="kcgl-body-fj" style="cursor:pointer">
 
                         </select>
                         <em class="triangle_border_down1"></em>
@@ -3016,7 +3079,7 @@
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one">课程名称</div>
                     <div class="select-menu-input-coursename-div">
-                        <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px"/>   
+                        <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px;cursor:pointer"/>   
                     </div> 
                 </div>
                 <div class="edit-course-context-flextwo">
@@ -3024,20 +3087,20 @@
                     <div class="edit-course-context-twoall" id="all-coach">
                         
                     </div>
-                    <p class="edit-course-context-three" id="edit-course-addadd" style="margin:5px 0">添加</p>
+                    <p class="edit-course-context-three" id="edit-course-addadd" style="margin:5px 0;cursor:pointer">添加</p>
                 </div>
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one">上课日期</div>
                     <div class="J-datepicker-day" style="width:150px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;margin:0 39px 0 77px">
-                        <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                     <p style="font-size:18px;margin-right:18px">上课时间</p>
                     <div class="mycontainer" style="width:120px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;">
-                        <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                     <p style="margin:0 6px 0 6px">-</p>
                     <div class="mycontainer" style="width:120px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;">
-                        <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box"></input>
+                        <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                 </div>
 
@@ -3045,7 +3108,7 @@
                     <p class="edit-course-context-flex3-pone">课程售价</p>
                     <div class="add-course-sortone-inputtwo">
                         <p>￥</p>
-                        <input type="text" id="course-price">
+                        <input type="text" id="course-price" style="cursor:pointer">
                     </div>
                     <p class="edit-course-context-flex3-ptwo" style="display:none">标准价</p>
                     <div class="add-course-sortone-inputthree" style="display:none">
@@ -3057,12 +3120,12 @@
                 <div class="edit-course-context-flex3">
                     <p class="edit-course-context-flex3-pone">开课人数</p>
                     <div class="add-course-sortone-inputtwo">
-                        <input type="text" id="mincount">
+                        <input type="text" id="mincount" style="cursor:pointer">
                     </div>
                     <p style="margin-left:-20px;margin-right:8px;">人</p>
                     <p class="edit-course-context-flex3-ptwo">最大人数</p>
                     <div class="add-course-sortone-inputthree" style="margin-left:17px;">
-                        <input type="text" id="maxcount" style="text-decoration:none;color:black">
+                        <input type="text" id="maxcount" style="text-decoration:none;color:black;cursor:pointer">
                     </div>
                     <p style="margin-left:-20px">人</p>
                 </div>
@@ -3111,8 +3174,8 @@
                 </div>
             </div>
             <div class="edit-course-footer">
-                <p id="edit-course-footer-pone" class="addcfpone">保存</p>
-                <p id="edit-course-footer-ptwo" class="addcfptwo">取消</p>
+                <p id="edit-course-footer-pone" class="addcfpone" style="cursor:pointer">保存</p>
+                <p id="edit-course-footer-ptwo" class="addcfptwo" style="cursor:pointer">取消</p>
             </div>
         `
 
@@ -3302,14 +3365,14 @@
                             <img class="add-edit-course-header-imgone" src="./image/editor_icon.png" alt="" />
                             <p class="add-edit-course-header-pone">添加教练</p>
                         </div>
-                        <img class="add-edit-course-header-imgone" id="add-edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
+                        <img class="add-edit-course-header-imgone" style="cursor:pointer" id="add-edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                     </div>
                     <div class="add-edit-course-header-context">
                         <div class="add-edit-course-header-context-one">
                             <div class="add-edit-course-header-context-oneflex">
                                 <input / id="search-value">
                                 <div class="add-edit-course-header-context-one-blue">
-                                    <img src="./image/search_btn.png" alt=""/ id="search-search">
+                                    <img src="./image/search_btn.png" style="cursor:pointer" alt=""/ id="search-search">
                                 </div>
                             </div>
                         </div>
@@ -3324,8 +3387,8 @@
                         </div>
                     </div>
                     <div class="add-edit-course-header-context-three">
-                        <p id="add-edit-course-header-context-three-pone">确定</p>
-                        <p id="add-edit-course-header-context-three-ptwo">取消</p>
+                        <p id="add-edit-course-header-context-three-pone" style="cursor:pointer">确定</p>
+                        <p id="add-edit-course-header-context-three-ptwo" style="cursor:pointer">取消</p>
                     </div>
                 `
         $('#add-edit-course1').html(addeditstr)
@@ -3349,7 +3412,7 @@
             strselect += `
                                 <p class="add-edit-course-header-context-two-ptwo `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
                                     `+ $('#all-coach').children().eq(i).html() + `
-                                    <img src="./image/classdel_btn.png" alt=""/>
+                                    <img style="cursor:pointer" src="./image/classdel_btn.png" alt=""/>
                                 </p>
                             `
         }
@@ -3377,7 +3440,7 @@
             var againcoach = ''
             for (var i = 0; i < $('#select-coach').children().length; i++) {
                 againcoach += `
-                    <p class="edit-course-context-twoone `+ $('#select-coach').children().eq(i).attr('class').split(' ')[1] + `">` + $('#select-coach').children().eq(i).text() + `</p>
+                    <p style="cursor:pointer" class="edit-course-context-twoone `+ $('#select-coach').children().eq(i).attr('class').split(' ')[1] + `">` + $('#select-coach').children().eq(i).text() + `</p>
                 `
             }
             $('#all-coach').html(againcoach)
@@ -3388,9 +3451,9 @@
             if ($('#all-coach').children().length > 1) {
                 for (var i = 0; i < $('#all-coach').children().length; i++) {
                     strperformance += `
-                        <div class="edit-course-context-flex4-pthree `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
+                        <div style="overflow:hidden" class="edit-course-context-flex4-pthree `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
                             <p class="edit-course-context-flex4-pfour">`+ $('#all-coach').children().eq(i).html() + `</p>
-                            <input class="edit-course-context-flex4-pfive" />
+                            <input class="edit-course-context-flex4-pfive" style="cursor:pointer"/>
                         </div>
                     `
                 }
@@ -3413,7 +3476,7 @@
                         //console.log(strselect)
 
                         var strcoachone = `
-                                            <p id="coach-p" class="`+ result.rows[0].userName + `" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem">
+                                            <p id="coach-p" class="`+ result.rows[0].userName + `" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem;cursor:pointer">
                                             `+ result.rows[0].realName + `
                                             </p>
                                         `
@@ -3445,11 +3508,11 @@
                             }
 
                             strselect += `
-                                                    <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
-                                                        `+ $(this).html() + `
-                                                        <img src="./image/classdel_btn.png" alt=""/>
-                                                    </p>
-                                                `
+                                            <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
+                                                `+ $(this).html() + `
+                                                <img src="./image/classdel_btn.png" alt=""/>
+                                            </p>
+                                        `
                             //点击查询出的教练名进行渲染
                             //setTimeout(() => {
                                 $('#select-coach').html(strselect)
@@ -3706,6 +3769,56 @@
 
     //编辑事件
     function bjbj(id){
+
+        if ($('#kcgl-body-md').val() == '') {
+            alert('请选择门店')
+            return;
+        }
+
+        if ($('#kcgl-body-fj').val() == '') {
+            alert('请选择房间')
+            return;
+        }
+
+        if (!$('#select-menu-input-coursename').hasClass('class')) {
+            alert('请选择课程')
+            return;
+        }
+
+        if ($('#all-coach').html() == '') {
+            alert('请选择教练')
+            return;
+        }
+
+        if ($('#edit-course-context-three').val() == '') {
+            alert('请选择上课日期')
+            return;
+        }
+
+        if ($('#edit-course-context-four').val() == '') {
+            alert('请选择开始时间')
+            return;
+        }
+
+        if ($('#edit-course-context-five').val() == '') {
+            alert('请选择结束时间')
+            return;
+        }
+
+        if ($('#course-price').val() == '') {
+            alert('请选择价格')
+            return;
+        }
+
+        if ($('#mincount').val() == '') {
+            alert('请选择开课人数')
+            return;
+        }
+
+        if ($('#maxcount').val() == '') {
+            alert('请选择最大人数')
+        }
+
         //获取门店id
         var storeId = $('#kcgl-body-md').val()
 
