@@ -1942,6 +1942,8 @@
         
             </tbody>
         </table>
+        <div class="box" id="boxpage1" style="padding-bottom: 20px;"></div>
+
         <div class="edit-course" id="edit-course2">
 
         </div>
@@ -1957,11 +1959,6 @@
 
         </div>
 
-        <!-- <div class="add-edit-course-change" id="add-edit-course-change" style="display:none">
-
-        </div> -->
-
-        <div class="box" id="boxpage1"></div>
     </div>
 </body>
 
@@ -2730,6 +2727,12 @@
                         }
                     })
 
+                    $('.a-add').click(function () {
+                        $('#edit-course1').show()
+                        var id = $(this).parent().parent().children().eq(0).attr('class')
+                        ckkcxxjbj(result,id)
+                    })
+
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
@@ -3109,6 +3112,7 @@
             $('.dateTimeWrap').hide()
         })
 
+        $('#edit-course-footer-pone').unbind()
         $('#edit-course-footer-pone').click(function(){
             xjsjxjsj()
         })
@@ -3116,8 +3120,6 @@
         xjjbjmdxl()
 
         kcmclbxr()
-
-        skjllbxr()
 
         time()
 
@@ -3132,7 +3134,7 @@
         })
 
         $('#edit-course1').click(function(){
-            if($(event.target).attr('class') == 'edit-course-context-flex' || $(event.target).attr('class') == 'edit-course-context-flextwo' || $(event.target).attr('class') == 'edit-course-context-flex3' ){
+            if($(event.target).attr('class') == 'edit-course-context-flex' || $(event.target).attr('class') == 'edit-course-context-flextwo' || $(event.target).attr('class') == 'edit-course-context-flex3' || $(event.target).attr('class') == 'edit-course-context-twoall'){
                 if($('.dateTimeWrap').is(':visible')){
                     $('.dateTimeWrap').hide()
                 }
@@ -3145,6 +3147,7 @@
 
         $('#edit-course-addadd').click(function(){
             $('#add-edit-course1').show()
+            skjllbxr()
         })
     }
 
@@ -3314,7 +3317,7 @@
         //教练选择页面
         var strselect = ''
         for (var i = 0; i < $('#all-coach').children().length; i++) {
-            strselect = `
+            strselect += `
                                 <p class="add-edit-course-header-context-two-ptwo `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
                                     `+ $('#all-coach').children().eq(i).html() + `
                                     <img src="./image/classdel_btn.png" alt=""/>
@@ -3337,6 +3340,37 @@
         //添加教练的标签，点击叉叉关闭
         $('.add-edit-course-header-context-two-ptwo').children('img').click(function () {
             $(this).parent().remove()
+        })
+
+        //添加教练的点击确认事件
+        $('#add-edit-course-header-context-three-pone').click(function () {
+            $(this).parent().parent().hide()
+            var againcoach = ''
+            for (var i = 0; i < $('#select-coach').children().length; i++) {
+                againcoach += `
+                    <p class="edit-course-context-twoone `+ $('#select-coach').children().eq(i).attr('class').split(' ')[1] + `">` + $('#select-coach').children().eq(i).text() + `</p>
+                `
+            }
+            $('#all-coach').html(againcoach)
+
+            var strperformance = ''
+
+            //比例的渲染
+            if ($('#all-coach').children().length > 1) {
+                for (var i = 0; i < $('#all-coach').children().length; i++) {
+                    strperformance += `
+                        <div class="edit-course-context-flex4-pthree `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
+                            <p class="edit-course-context-flex4-pfour">`+ $('#all-coach').children().eq(i).html() + `</p>
+                            <input class="edit-course-context-flex4-pfive" />
+                        </div>
+                    `
+                }
+            } else {
+                strperformance = ''
+            }
+
+            $('#coach-performance').html(strperformance)
+
         })
 
         $('#search-search').click(function () {
@@ -3407,38 +3441,6 @@
                                 })
                             //}, 100);
                         })
-
-                        //添加教练的点击确认事件
-                        $('#add-edit-course-header-context-three-pone').click(function () {
-                            $(this).parent().parent().hide()
-                            var againcoach = ''
-                            for (var i = 0; i < $('#select-coach').children().length; i++) {
-                                againcoach += `
-                                                        <p class="edit-course-context-twoone `+ $('#select-coach').children().eq(i).attr('class').split(' ')[1] + `">` + $('#select-coach').children().eq(i).text() + `</p>
-                                                    `
-                            }
-                            $('#all-coach').html(againcoach)
-
-                            var strperformance = ''
-
-                            //比例的渲染
-                            if ($('#all-coach').children().length > 1) {
-                                for (var i = 0; i < $('#all-coach').children().length; i++) {
-                                    strperformance += `
-                                                            <div class="edit-course-context-flex4-pthree `+ $('#all-coach').children().eq(i).attr('class').split(' ')[1] + `">
-                                                                <p class="edit-course-context-flex4-pfour">`+ $('#all-coach').children().eq(i).html() + `</p>
-                                                                <input class="edit-course-context-flex4-pfive" />
-                                                            </div>
-                                                        `
-                                }
-                            } else {
-                                strperformance = ''
-                            }
-
-                            $('#coach-performance').html(strperformance)
-
-                        })
-
                     },
                     error: function (e) {
                         console.log(e.status)
@@ -3539,6 +3541,169 @@
 
     }
 
+    //查看课程信息及编辑
+    function ckkcxxjbj(result,id){
+        
+        for(var i=0;i< result.rows.length;i++){
+            if(id == result.rows[i].id){
+                var list = result.rows[i]
+            }
+        }
+
+        console.log(list)
+
+        $('#kcgl-body-md').find(`option[value="`+ list.storeId +`"]`).prop("selected", true);
+
+        $('#kcgl-body-md').click()
+
+        setTimeout(() => {
+            $('#kcgl-body-fj').find(`option[value="` + list.roomId + `"]`).prop("selected", true);
+        }, 50);
+
+        $('#select-menu-input-coursename').attr('class','8f7f4a7d-9cdd-43e8-afce-b6374572a9d0')
+
+        //教练姓名渲染
+        var againcoach = ''
+        for (var i = 0; i < list.courseSchedulingItemList.length; i++) {
+            againcoach += `
+                <p class="edit-course-context-twoone `+ list.courseSchedulingItemList[i].userName + `">` + list.courseSchedulingItemList[i].realName + `</p>
+            `
+        }
+        $('#all-coach').html(againcoach)
+
+        //比例的渲染
+        var strperformance = ''
+        if (list.courseSchedulingItemList.length > 1) {
+            for (var i = 0; i < list.courseSchedulingItemList.length; i++) {
+                strperformance += `
+                    <div class="edit-course-context-flex4-pthree `+ list.courseSchedulingItemList[i].userName + `">
+                        <p class="edit-course-context-flex4-pfour">`+ list.courseSchedulingItemList[i].realName + `</p>
+                        <input class="edit-course-context-flex4-pfive" value='`+ list.courseSchedulingItemList[i].performance  +`'/>
+                    </div>
+                `
+            }
+        } else {
+            strperformance = ''
+        }
+        $('#coach-performance').html(strperformance)
+
+        $('#edit-course-context-three').val(list.monthDayStr)
+
+        $('#edit-course-context-four').val(list.timeStr.split('-')[0])
+
+        $('#edit-course-context-five').val(list.timeStr.split('-')[1])
+
+        $('#course-price').val(list.price)
+
+        $('#mincount').val(list.minNumber)
+
+        $('#maxcount').val(list.maxNumber)
+
+        if(list.isQueue == 1){
+            $('#is-Queue').children('.paypayisQueue').eq(0).click()
+        }else{
+            $('#is-Queue').children('.paypayisQueue').eq(1).click()
+        }
+
+        if(list.isRecommend == 0){
+            $('#tag-Name').children('.paypay').eq(0).click()
+        }else if(list.isRecommend == 1){
+            $('#tag-Name').children('.paypay').eq(1).click()
+        }else{
+            $('#tag-Name').children('.paypay').eq(3).click()
+        }
+
+        $('#edit-course-footer-pone').unbind()
+        $('#edit-course-footer-pone').click(function () {
+            bjbj(id)
+        })
+    }
+
+    //编辑事件
+    function bjbj(id){
+        //获取门店id
+        var storeId = $('#kcgl-body-md').val()
+
+        var roomId = $('#kcgl-body-fj').val()
+
+        //课程id获取
+        //var leagueCurriculumId = $('#select-menu-input-coursename').attr('class')
+        var leagueCurriculumId = '8f7f4a7d-9cdd-43e8-afce-b6374572a9d0'
+        //获取员工工号及比例
+        var courseSchedulingItemList = []
+        if ($('#coach-performance').html() == '') {
+            courseSchedulingItemList.push({ coachId: $('#all-coach').children().eq(0).attr('class').split(' ')[1], performance: 1 })
+        } else {
+            for (var i = 0; i < $('#coach-performance').children().length; i++) {
+                courseSchedulingItemList.push({ coachId: $('#coach-performance').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val() })
+            }
+        }
+
+        //获取课程开始和结束时间
+        var start = $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
+        var end = $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
+        var data1 = new Date(start)
+        var data2 = new Date(end)
+        var startDate = data1.getTime()
+        var endDate = data2.getTime()
+
+        //获取课程价格
+        var price = Number($('#course-price').val())
+
+        //获取开课最大和最小人数
+        var maxNumber = Number($('#maxcount').val())
+        var minNumber = Number($('#mincount').val())
+
+        //是否排队             
+        if ($('#is-Queue').children('.paypayisQueue').eq(0).children('.paypay-show').is(':visible')) {
+            var isQueue = 1
+            //console.log(isQueue)
+        } else {
+            var isQueue = 0
+            //console.log(isQueue)
+        }
+
+        //标签id
+        var tagId = ''
+        if ($('#tag-Name').children('.paypay').eq(0).children('.paypay-show').is(':visible')) {
+            tagId = 0
+        }
+        else if ($('#tag-Name').children('.paypay').eq(1).children('.paypay-show').is(':visible')) {
+            tagId = "8222a8d209a24520b116747a047529b3"
+        } else {
+            tagId = "941660f44ced4aefa8b5b24809a0d43b"
+        }
+
+        var addcfpone = {
+            id : id,
+            storeId: storeId,
+            roomId: roomId,
+            leagueCurriculumId: leagueCurriculumId,
+            courseSchedulingItemList: courseSchedulingItemList,
+            startDate: startDate,
+            endDate: endDate,
+            price: price,
+            maxNumber: maxNumber,
+            minNumber: minNumber,
+            isQueue: isQueue,
+            tagId: tagId
+        }
+
+        $.ajax({
+            url: 'rest/courseScheduling/updateCourseScheduling',
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(addcfpone),
+            success: function (result) {
+                $('#edit-course1').hide()
+                alert(result.message)
+                shoye()
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+    }
 </script>
 
 </html>
