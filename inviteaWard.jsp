@@ -552,12 +552,26 @@
 			overflow: hidden;
 		}
 
-		.sj-body-flex1 .sj-body-flex111:nth-child(3n+1){
-			margin-left:0
+		/* @media (max-device-width: 1228px) and (min-device-width: 1867px){
+			.sj-body-flex1 .sj-body-flex111:nth-child(2n+1){
+				margin-left:0
+			}
 		}
 
+		@media (max-device-width: 1867px) and (min-device-width: 2132px){
+			.sj-body-flex1 .sj-body-flex111:nth-child(3n+1){
+				margin-left:0
+			}
+		}
+
+		@media (max-device-width: 2132px){
+			.sj-body-flex1 .sj-body-flex111:nth-child(4n+1){
+				margin-left:0
+			}
+		} */
+
 		.sj-body-flex1 .sj-body-flex111{
-			margin-left:44px
+			margin-right:44px
 		}
 
 		/* .sj-body-flex1 div:nth-child(2n){
@@ -2320,7 +2334,7 @@
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.totalFansTaked + `</td>
+					<td style="width:10%">`+ item.stockQty + `</td>
 				</tr>`
 				})
 				$.each(result.rows[0].yzCouponList, function (i, item) {
@@ -2339,7 +2353,7 @@
 							<img class="add_add" src="image/add_add.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%">`+ item.totalFansTaked + `</td>
+					<td style="width:10%">`+ item.stockQty + `</td>
 				</tr>`
 				})
 				$('.xzhd-body-tbody1').html(str1)
