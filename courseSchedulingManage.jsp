@@ -986,7 +986,6 @@
         }
 
         .add-course-name-context .add-course-name-context-flex {
-            display: flex;
             flex-wrap: wrap;
         }
 
@@ -2229,6 +2228,36 @@
     //新建按钮
     $('#addaddadd').click(function(){
         $('#edit-course1').show()
+
+        $('#kcgl-body-md').find('option[value=""]').prop("selected", true);
+
+        $('#kcgl-body-md').click()
+
+        setTimeout(() => {
+            $('#kcgl-body-fj').find('option[value=""]').prop("selected", true);
+        }, 50);
+        
+
+        $('#select-menu-input-coursename').val('')
+        $('#select-menu-input-coursename').attr('class','')
+
+        $('#all-coach').html('')
+
+        $('#edit-course-context-three').val('')
+
+        $('#edit-course-context-four').val('')
+
+        $('#edit-course-context-five').val('')
+
+        $('#course-price').val('')
+
+        $('#mincount').val('')
+
+        $('#maxcount').val('')
+
+        $('#is-Queue').children('.paypayisQueue').eq(0).click()
+
+        $('#tag-Name').children('.paypay').eq(0).click()
     })
 
     time()
@@ -3232,7 +3261,7 @@
                 }
 
                 $('#add-course-name-context-bottom-pone').click(function () {
-                    $(this).parent().parent().parent().hide()
+                    $(this).parent().parent().hide()
                     //$('#select-menu-input-coursename').val($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).html())
                     //$('#select-menu-input-coursename').addClass($('#add-course-name-context-flex-coursename').children().eq(i).children('.addthree-flexfour').children().eq(j).attr('class').split(' ')[1])
 
@@ -3455,14 +3484,64 @@
 
     //新建事件
     function xjsjxjsj(){
+
+        if($('#kcgl-body-md').val() == ''){
+            alert('请选择门店')
+            return;
+        }
+
+        if($('#kcgl-body-fj').val() == ''){
+            alert('请选择房间')
+            return;
+        }
+
+        if(!$('#select-menu-input-coursename').hasClass('class')){
+            alert('请选择课程')
+            return;
+        }
+
+        if($('#all-coach').html() == ''){
+            alert('请选择教练')
+            return;
+        }
+
+        if($('#edit-course-context-three').val() == ''){
+            alert('请选择上课日期')
+            return;
+        }
+
+        if($('#edit-course-context-four').val() == ''){
+            alert('请选择开始时间')
+            return;
+        }
+
+        if ($('#edit-course-context-five').val() == '') {
+            alert('请选择结束时间')
+            return;
+        }
+
+        if($('#course-price').val() == ''){
+            alert('请选择价格')
+            return;
+        }
+
+        if($('#mincount').val() == ''){
+            alert('请选择开课人数')
+            return;
+        }
+
+        if($('#maxcount').val() == ''){
+            alert('请选择最大人数')
+        }
+
         //获取门店id
         var storeId = $('#kcgl-body-md').val()
 
         var roomId = $('#kcgl-body-fj').val()
         
         //课程id获取
-        //var leagueCurriculumId = $('#select-menu-input-coursename').attr('class')
-        var leagueCurriculumId ='8f7f4a7d-9cdd-43e8-afce-b6374572a9d0'
+        var leagueCurriculumId = $('#select-menu-input-coursename').attr('class')
+
         //获取员工工号及比例
         var courseSchedulingItemList = []
         if ($('#coach-performance').html() == '') {
@@ -3474,8 +3553,8 @@
         }
 
         //获取课程开始和结束时间
-        var start = $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
-        var end = $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
+        var start =  new Date().getFullYear()+ " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
+        var end = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
         var data1 = new Date(start)
         var data2 = new Date(end)
         var startDate = data1.getTime()
@@ -3530,9 +3609,14 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(addcfpone),
             success: function (result) {
-                $('#edit-course1').hide()
-                alert(result.message)
-                shoye()
+                if (result.message !== '新增成功!') {
+                    alert(result.message)
+                    return;
+                } else if (result.message == '新增成功!') {
+                    $('#edit-course1').hide()
+                    alert(result.message)
+                    shoye()
+                }
             },
             error: function (e) {
                 console.log(e.status)
@@ -3560,7 +3644,8 @@
             $('#kcgl-body-fj').find(`option[value="` + list.roomId + `"]`).prop("selected", true);
         }, 50);
 
-        $('#select-menu-input-coursename').attr('class','8f7f4a7d-9cdd-43e8-afce-b6374572a9d0')
+        $('#select-menu-input-coursename').val(list.leagueCurriculumName)
+        $('#select-menu-input-coursename').attr('class', list.leagueCurriculumId)
 
         //教练姓名渲染
         var againcoach = ''
@@ -3605,12 +3690,12 @@
             $('#is-Queue').children('.paypayisQueue').eq(1).click()
         }
 
-        if(list.isRecommend == 0){
+        if(list.tagName == '无'){
             $('#tag-Name').children('.paypay').eq(0).click()
-        }else if(list.isRecommend == 1){
+        }else if(list.tagName == '热门'){
             $('#tag-Name').children('.paypay').eq(1).click()
         }else{
-            $('#tag-Name').children('.paypay').eq(3).click()
+            $('#tag-Name').children('.paypay').eq(2).click()
         }
 
         $('#edit-course-footer-pone').unbind()
@@ -3627,8 +3712,8 @@
         var roomId = $('#kcgl-body-fj').val()
 
         //课程id获取
-        //var leagueCurriculumId = $('#select-menu-input-coursename').attr('class')
-        var leagueCurriculumId = '8f7f4a7d-9cdd-43e8-afce-b6374572a9d0'
+        var leagueCurriculumId = $('#select-menu-input-coursename').attr('class')
+
         //获取员工工号及比例
         var courseSchedulingItemList = []
         if ($('#coach-performance').html() == '') {
@@ -3640,8 +3725,8 @@
         }
 
         //获取课程开始和结束时间
-        var start = $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
-        var end = $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
+        var start = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
+        var end = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
         var data1 = new Date(start)
         var data2 = new Date(end)
         var startDate = data1.getTime()
@@ -3695,15 +3780,22 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(addcfpone),
             success: function (result) {
-                $('#edit-course1').hide()
-                alert(result.message)
-                shoye()
+                if(result.message !== '修改成功!'){
+                    alert(result.message)
+                    return;
+                }else if(result.message == '修改成功!'){
+                    $('#edit-course1').hide()
+                    alert(result.message)
+                    shoye()
+                }
+                
             },
             error: function (e) {
                 console.log(e.status)
             }
         })
     }
+
 </script>
 
 </html>
