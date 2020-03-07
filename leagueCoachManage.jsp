@@ -1032,7 +1032,7 @@
                             <td style="width:item3">`+ biaoqian(item.coachTagList) + `</td>
                             <td style="width:item4">`+ kecheng(item.coachSkillList) + `</td>
                             <td style="width:item4">`+ introduce(item) + `</td>
-                            <td style="width:item1"><p class="course-coach-manage-a" style="color:#71B2EF">编辑</p></td>
+                            <td style="width:item1"><p class="course-coach-manage-a" style="color:#71B2EF;cursor:pointer">编辑</p></td>
                         </tr>
                     `
                     })
@@ -1108,7 +1108,10 @@
                                         <p class="flexthree-blockone-pone" style="margin-right:110px">头像</p>
                                         <div id="imageimage" style="display:flex;justify-content:space-between;width:670px">
                                             <img style="width:50px;height:50px" src="images/`+ result.rows[0].pictures + `">  
-                                            <div id="imageimage1" style="display:flex;align-items:center;"><p style="font-size:14px;color:#71B2EF">编辑</p><image style="width:13px;height:14px;margin-left:9px" src="image/pulldown_btn.png"></div>
+                                            <div id="imageimage1" style="display:flex;align-items:center;cursor:pointer">
+                                                <p style="font-size:14px;color:#71B2EF">编辑</p>
+                                                <image style="width:13px;height:14px;margin-left:9px" src="image/pulldown_btn.png">
+                                            </div>
                                         </div>
                                         <div id="imageimage11" style="display:none">
                                             <div style="display:flex;justify-content:space-between;width:670px">
@@ -1117,7 +1120,7 @@
                                                     <p style="width:80px;height:30px;background:#71B2EF;color:white;text-align:center;line-height:30px;border-radius:4px;margin-left:20px" id="clickclick">上传头像</p>
                                                     <input type="file" accept=".png,.jpeg,.jpg" class="`+ result.rows[0].pictures + `" id="photoFile" style="display: none;" onchange="upload()">
                                                 </div>
-                                                <div id="shouqishouqi" style="display:flex">
+                                                <div id="shouqishouqi" style="display:flex;cursor:pointer">
                                                     <p style="font-size:14px;color:#71B2EF;margin-right:10px">收起</p>    
                                                     <img style="width:13px;height:14px" src="image/pullup_btn.png">
                                                 </div>

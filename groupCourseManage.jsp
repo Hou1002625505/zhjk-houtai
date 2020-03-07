@@ -990,7 +990,7 @@
             <input id="course-manage-flex-input" type="text">
             <div style="font-size:16px">课程分类</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-kcfl">
+                <select name="visitstatus" id="kcgl-body-kcfl" style="cursor:pointer">
                     <option value="" selected="selected">全部</option>
                     <option value="0">未核销</option>
                     <option value="1">已核销</option>
@@ -1002,7 +1002,7 @@
             </span>
             <div style="font-size:16px">课程状态</div>
             <span class="select_wrap">
-                <select name="visitstatus" id="kcgl-body-kczt">
+                <select name="visitstatus" id="kcgl-body-kczt" style="cursor:pointer">
                     <option value="" selected="selected">全部</option>
                     <option value="1">上架</option>
                     <option value="2">未上架</option>
@@ -1063,8 +1063,8 @@
                 <img style="display:none" src="../images/simage/codeallset_btn.png">
             </div>
             <div class="course-manage-footer-pone">当页全选</div>
-            <div class="course-manage-footer-ptwo" id="batchup">批量上传</div>
-            <div class="course-manage-footer-ptwo" id="batchdown">批量下架</div>
+            <div class="course-manage-footer-ptwo" id="batchup" style="cursor: pointer;">批量上传</div>
+            <div class="course-manage-footer-ptwo" id="batchdown" style="cursor: pointer;">批量下架</div>
             <div class="course-manage-footer-pthree"></div>
             <div class="box" id="boxpage" style="margin-left:30px;margin-top:0"></div>
         </div>
@@ -1318,11 +1318,11 @@
                 <div class="inputtwelve-flex" id="inputtwelve-flex">
 
                 </div>
-                <div class="inputtwelve-zhankai" id="zhankai-show">
+                <div class="inputtwelve-zhankai" id="zhankai-show" style="cursor: pointer;">
                     <p>展开</p>
                     <img src="/image/pulldown_btn.png" alt="">
                 </div>
-                <div class="inputtwelve-zhankai" id="zhankai-hide" style="display:none">
+                <div class="inputtwelve-zhankai" id="zhankai-hide" style="display:none;cursor: pointer;">
                     <p>关闭</p>
                     <img src="/image/pullup_btn.png" alt="">
                 </div>
@@ -1405,6 +1405,8 @@
 
         $('.add-course-sortone-inputeight').children().children().children().children().eq(0).children().val('')
         $('.add-course-sortone-inputeight').children().children().children().children().eq(1).children().val('')
+
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
 
         $('#add-course-footer-save').unbind()
         $('#add-course-footer-save').click(function(){
@@ -2003,7 +2005,7 @@
                                     <td class="item2">`+ item.createDate + `</td>
                                     <td class="item2">上架</td>
                                     <td class="`+ item.id + `" style="display:flex;flex:1;box-sizing: border-box;height:41px;justify-content:center;align-items:center;border-top:1px solid white">
-                                    <p class="course-manage-table-tr-edit" style="color:#71B2EF">编辑</p><p style="color:#71B2EF;margin:0 2px">|</p><p class="course-manage-table-tr-down" style="color:#71B2EF">下架</p>
+                                    <p class="course-manage-table-tr-edit" style="color:#71B2EF;cursor:pointer">编辑</p><p style="color:#71B2EF;margin:0 2px">|</p><p class="course-manage-table-tr-down" style="color:#71B2EF;cursor:pointer">下架</p>
                                     </td>
                                 </tr>
                             `
