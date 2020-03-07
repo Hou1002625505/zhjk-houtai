@@ -196,15 +196,11 @@
             align-items: flex-end;
         }
 
-        .bias {
-            width:145px;
-            height: 1px;
-            background: #BFBFBF;
-            transform: rotate(201.3deg);
-            position: absolute;
-            left: -6px;
-            top: 25px
-        }
+        /* .bias {
+            background-image: url(image/xiexian.png);
+            width:100px;
+            height:50px
+        } */
 
         .bias-right {
             text-align: right;
@@ -253,13 +249,13 @@
         <div class="liuyi-flex">
             <p style="font-size:16px;margin-right:20px">上课门店</p>
             <span class="select_wrap">
-                <select name="visitstatus" id="sj-body-zt">
+                <select name="visitstatus" id="sj-body-zt" style="cursor:pointer">
 
                 </select>
                 <em class="triangle_border_down1"></em>
             </span>
             <div class="liuyi-flex-right"></div>
-            <p class="liuyi-flex-right-p1">下一周</p>
+            <p class="liuyi-flex-right-p1" style="cursor: pointer;">下一周</p>
         </div>
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody class="table-body" id="sj-body-body1">
@@ -334,6 +330,8 @@ function skfjxlcd(){
             
             $('#sj-body-zt').html(liuyistr)
 
+            $('#sj-body-zt').find('option[value="16"]').prop("selected", true);
+
             mdsjxzxr()
         },
         error: function (msg) {
@@ -369,7 +367,7 @@ function mdsjxzxr(){
 
                 $.each(result.rows, function (i, item) {
                     liuyitime += `
-                    <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                    <p class="liuyi-flex-right-p" >`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
                 `
                 })
 
@@ -383,6 +381,8 @@ function mdsjxzxr(){
             }
         })
     })
+
+    $('#sj-body-zt').click()
 }
 
 //表格渲染
@@ -425,7 +425,7 @@ function bgxr(result){
                 var tablestr = ''
                 tablestr = `
                 <tr>
-                    <th class="item1" style="position:relative"><p class="bias-right">房间</p><p class="bias"></p><p class="bias-left">时间</p></th>
+                    <th class="item1" style="position:relative;background-image:url(image/xiexian.png);background-size: 100% 100%;"><p class="bias-right">房间</p><p class="bias"></p><p class="bias-left">时间</p></th>
                     <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 0) + `</th>
                     <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 1) + `</th>
                     <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 2) + `</th>
@@ -610,11 +610,29 @@ function bgxr(result){
                 </tr>
         `
                 $('#sj-body-body1').html(tablestr)
+
             }
         }
     })
 
-    
+    if((new Date().getMonth() + 1) > 10){
+        var strmonth = (new Date().getMonth() + 1)
+    }else{
+        var strmonth = '0'+ (new Date().getMonth() + 1)
+    }
+
+    if(new Date().getUTCDate() > 10){
+        var strdate = new Date().getUTCDate()
+    }else{
+        var strdate = '0'+ new Date().getUTCDate()
+    }
+
+    for(var j=0;j< $('.liuyi-flex-right-p').length;j++){
+        if(strmonth +'-'+ strdate == $('.liuyi-flex-right-p').eq(j).html().split('(')[0]){
+            $('.liuyi-flex-right-p').eq(j).click()
+        }
+    }
+
 }
 
 </script>
