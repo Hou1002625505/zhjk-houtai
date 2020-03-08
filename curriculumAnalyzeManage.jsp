@@ -681,6 +681,16 @@ function dygbgxr(){
                     `
                     $('.table-body1').html(tablestr)
 
+                    $('.table-body1').children().mouseover(function () {
+                        $(this).children('td').css('background', '#faa262')
+                        $(this).children('td').css('color', 'white')
+                    })
+
+                    $('.table-body1').children().mouseout(function () {
+                        $(this).children('td').css('background', '#ffffff')
+                        $(this).children('td').css('color', '#444444')
+                    })
+
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
@@ -800,6 +810,16 @@ function degbgxr(){
                         `
                     $('.table-body1').html(tablestr)
 
+                    $('.table-body1').children().mouseover(function () {
+                        $(this).children('td').css('background', '#faa262')
+                        $(this).children('td').css('color', 'white')
+                    })
+
+                    $('.table-body1').children().mouseout(function () {
+                        $(this).children('td').css('background', '#ffffff')
+                        $(this).children('td').css('color', '#444444')
+                    })
+
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
@@ -905,6 +925,16 @@ function dsgbgxr(){
                         </tr>
                     `
                     $('.table-body1').html(tablestr)
+
+                    $('.table-body1').children().mouseover(function () {
+                        $(this).children('td').css('background', '#faa262')
+                        $(this).children('td').css('color', 'white')
+                    })
+
+                    $('.table-body1').children().mouseout(function () {
+                        $(this).children('td').css('background', '#ffffff')
+                        $(this).children('td').css('color', '#444444')
+                    })
 
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
