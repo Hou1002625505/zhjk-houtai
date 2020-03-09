@@ -308,7 +308,7 @@
 		}
 
 		#xzhd-body-fxhd {
-			width: 300px;
+			width: 500px;
 			min-height: 32px;
 			border: none;
 			line-height: 32px;
@@ -344,7 +344,7 @@
 		}
 
 		#xzhd-body-lqrhd {
-			width: 300px;
+			width: 500px;
 			min-height: 32px;
 			border: none;
 			line-height: 32px;
@@ -2708,22 +2708,22 @@
 					}else if(result.shareCouponList[i].couponSource == 2){
 						var str1 = '有赞优惠券'
 					}
-					var str22 = result.shareCouponList[i].couponName
-					if (str22.length > 5) {
-						var str2 = str22.substring(0, 4) + '...'
-					}else{
-						var str2 = str22
-					}
+					var str2 = result.shareCouponList[i].couponName
+					// if (str22.length > 5) {
+					// 	var str2 = str22.substring(0, 4) + '...'
+					// }else{
+					// 	var str2 = str22
+					// }
 					var str3 = result.shareCouponList[i].quantity
 					if(result.shareCouponList[i].couponSource == 2){
 						var description = result.shareCouponList[i].description
 
-						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str22 + `" class="` + result.shareCouponList[i].couponId + `">
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str2 + `" class="` + result.shareCouponList[i].couponId + `">
 							<p class="`+ description +`">` + str1 + '/' + str2 + '×' + str3 + `</p>
 							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 						</div>`
 					}else{
-						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str22 + `" class="` + result.shareCouponList[i].couponId + `">
+						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str2 + `" class="` + result.shareCouponList[i].couponId + `">
 							<p>` + str1 + '/' + str2 + '×' + str3 + `</p>
 							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 						</div>`
@@ -2739,22 +2739,22 @@
 						var str11 = '有赞优惠券'
 					}
 					var str222 = result.receiveCouponList[ii].couponName
-					if (str222.length > 5) {
-						var str22 = str222.substring(0, 4) + '...'
-					} else {
-						var str22 = str222
-					}
+					// if (str222.length > 5) {
+					// 	var str22 = str222.substring(0, 4) + '...'
+					// } else {
+					// 	var str22 = str222
+					// }
 					var str33 = result.receiveCouponList[ii].quantity
 					if(result.receiveCouponList[ii].couponSource == 2){
 						var description = result.receiveCouponList[ii].description
 						
 						strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str222 + `" class="` + result.receiveCouponList[ii].couponId + `">
-							<p class="`+ description +`">` + str11 + '/' + str22 + '×' + str33 + `</p>
+							<p class="`+ description +`">` + str11 + '/' + str222 + '×' + str33 + `</p>
 							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 						</div>`
 					}else{
 						strstr += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + str222 + `" class="` + result.receiveCouponList[ii].couponId + `">
-						<p>` + str11 + '/' + str22 + '×' + str33 + `</p>
+						<p>` + str11 + '/' + str222 + '×' + str33 + `</p>
 						<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 					</div>`
 					}
@@ -2990,9 +2990,9 @@
 				//console.log(j)
 				var str3 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 				str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
-				if(str2.length>5){
-					str2 = str2.substring(0, 4)+'...'
-				}
+				// if(str2.length>5){
+				// 	str2 = str2.substring(0, 4)+'...'
+				// }
 				str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() +`" class="`+ $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') +`">
 					<p class='`+$('.xzhd-body-gouxuan').eq(j).parent().parent().attr('id')+`'>`+ str1 +'/'+ str2 +'×'+str3+`</p>
 					<img class="xzhd-body-chacha" src="image/classdel_btn.png">
@@ -3031,9 +3031,9 @@
 					//console.log(j)
 					var str3 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 					str2 = $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html()
-					if (str2.length > 5) {
-						str2 = str2.substring(0, 4) + '...'
-					}
+					// if (str2.length > 5) {
+					// 	str2 = str2.substring(0, 4) + '...'
+					// }
 					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().children().eq(1).html() +`" class="` + $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('class') +`">
 						<p class="`+ $('.xzhd-body-gouxuan1').eq(j).parent().parent().attr('id') +`">` + str1 + '/' + str2 + '×'+str3+`</p>
 						<img class="xzhd-body-chacha1" src="image/classdel_btn.png">

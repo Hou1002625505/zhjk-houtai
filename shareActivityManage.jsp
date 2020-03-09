@@ -528,7 +528,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	#xzhd-body-fxhd {
 		position: relative;
-		width: 300px;
+		width: 500px;
 		min-height: 32px;
 		border: none;
 		color: #BFBFBF;
@@ -565,7 +565,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	#xzhd-body-lqrhd,
 	#xzhd-body-fxhd {
-		width: 300px;
+		width: 500px;
 		min-height: 32px;
 		border: none;
 		color: #BFBFBF;
@@ -1318,7 +1318,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		align-items: center;
 		justify-content: space-between;
 		font-size: 16px;
-		width: 230px;
+		width: 400px;
 		background-color: #F5F5F5;
 		height: 30px;
 		height: 26px;
@@ -1330,7 +1330,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 
 	.cgysl p {
-		width: 160px;
+		width: 100%;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -1830,7 +1830,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if (item.couponId == id) {
 						item.selected = true;
 						var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.activityName + '" couponSource="1" quantity="' + item.numbers1 + '">' +
-							'<p>CRM优惠券/' + item.activityName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.numbers1 + '</p>' +
+							'<p>CRM优惠券/' + item.activityName + ' ' + 'x' + item.numbers1 + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.numbers1 + '</p>' +
 							'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 							'</div>';
 						$(em).parents('.xzhd-body-flex').find("#xzhd-body-fxhd").append(str);
@@ -1841,7 +1841,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if (item.id == id) {
 						item.selected = true;
 						var str = '<div class="cgysl"   couponId="' + item.id + '" couponName="' + item.title + '" couponSource="2" quantity="' + item.numbers1 + '">' +
-							'<p>有赞优惠券/' + item.title + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.numbers1 + '</p>' +
+							'<p>有赞优惠券/' + item.title + ' ' + 'x' + item.numbers1 +  '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.numbers1 + '</p>' +
 							'<img onclick="deleteyhj(this,\'' + item.id + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 							'</div>';
 						$(em).parents('.xzhd-body-flex').find("#xzhd-body-fxhd").append(str);
@@ -2145,7 +2145,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 							$('#fangdatalist_wrap').append(str)
 
-							
+
 
 							// if($('.coloritem').html() == '活动中'){
 							// 	console.log(111)
@@ -2174,14 +2174,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						// $("#ywyboxpage").prepend(strpage)
 
 					}
-					for(var ii = 0;ii<$('#fangcardlist').children().children().children().length;ii++){
+					for (var ii = 0; ii < $('#fangcardlist').children().children().children().length; ii++) {
 						//console.log($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html())
-						if ($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html() == '活动中'){
-							$('#fangcardlist').children().children().children().eq(ii).children().eq(6).css('color','#ff0000')
+						if ($('#fangcardlist').children().children().children().eq(ii).children().eq(6).html() == '活动中') {
+							$('#fangcardlist').children().children().children().eq(ii).children().eq(6).css('color', '#ff0000')
 						}
 					}
 
-					$('#fangcardlist').children().children().children().mouseover(function(){
+					$('#fangcardlist').children().children().children().mouseover(function () {
 						$(this).children('td').css('background', '#faa262')
 						$(this).children('td').children('p').css('color', 'white')
 					})
@@ -2765,13 +2765,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									$(".xundata").find("input").val(index)
 									if (item.couponSource == 1) {
 										var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-											'<p>CRM优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+											'<p>CRM优惠券/' + item.couponName + ' ' + 'x' + item.quantity +'</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 											'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										$('.xundata #xzhd-body-fxhd').append(str);
 									} else {
 										var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-											'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+											'<p>有赞优惠券/' + item.couponName + ' ' + 'x' + item.quantity + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 											'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										$('.xundata #xzhd-body-fxhd').append(str);
@@ -2780,13 +2780,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								} else {
 									if (item.couponSource == 1) {
 										var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-											'<p>CRM优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+											'<p>CRM优惠券/' + item.couponName + ' ' + 'x' + item.quantity + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 											'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										arStr += str;
 									} else {
 										var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-											'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+											'<p>有赞优惠券/' + item.couponName + ' ' + 'x' + item.quantity + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 											'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										arStr += str;
@@ -2805,13 +2805,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						$.each(item.receiveCouponList, function (index, item) {
 							if (item.couponSource == 1) {
 								var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-									'<p>CRM优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+									'<p>CRM优惠券/' + item.couponName + ' ' + 'x' + item.quantity + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 									'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 									'</div>';
 								$('.mksdd #xzhd-body-fxhd').append(str);
 							} else {
 								var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-									'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 180px;" class="koj">x' + item.quantity + '</p>' +
+									'<p>有赞优惠券/' + item.couponName + ' ' + 'x' + item.quantity + '</p><p style="position: absolute;left: 180px;display:none" class="koj">x' + item.quantity + '</p>' +
 									'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 									'</div>';
 								$('.mksdd #xzhd-body-fxhd').append(str);

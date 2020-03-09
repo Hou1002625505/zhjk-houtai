@@ -324,7 +324,7 @@
 		}
 	
 		#xzhd-body-fxhd {
-			width: 300px;
+			width: 500px;
 			min-height: 32px;
 			border: none;
 			line-height: 32px;
@@ -2759,14 +2759,14 @@
 							var str1 = '有赞优惠券'
 						}
 						var str22 = result.rows[0].receiveCouponList[i].couponName
-						if (str22.length > 5) {
-							var str2 = str22.substring(0, 4) + '...'
-						}else{
-							var str2 = str22
-						}
+						// if (str22.length > 5) {
+						// 	var str2 = str22.substring(0, 4) + '...'
+						// }else{
+						// 	var str2 = str22
+						// }
 						var str3 = result.rows[0].receiveCouponList[i].quantity
 						str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` +  str22 + `" class="` + result.rows[0].receiveCouponList[i].couponId + `">
-							<p>` + str1 + '/' + str2 + '×' + str3 + `</p>
+							<p>` + str1 + '/' + str22 + '×' + str3 + `</p>
 							<img class="xzhd-body-chacha" src="image/classdel_btn.png">
 						</div>`
 					}
@@ -2934,9 +2934,9 @@
 					//console.log(j)
 					var str3 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(2).children().children('.xzhd-body-kqsl').html()
 					str2 = $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html()
-					if (str2.length > 5) {
-						str2 = str2.substring(0, 4) + '...'
-					}
+					// if (str2.length > 5) {
+					// 	str2 = str2.substring(0, 4) + '...'
+					// }
 					str += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:16px" id="` + $('.xzhd-body-gouxuan').eq(j).parent().parent().children().eq(1).html() + `" class="` + $('.xzhd-body-gouxuan').eq(j).parent().parent().attr('class') + `"><p>` + str1 + '/' + str2 + '×' + str3 + `</p><img class="xzhd-body-chacha" src="image/classdel_btn.png"></div>`
 				}
 			}
