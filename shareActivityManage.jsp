@@ -1318,7 +1318,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		align-items: center;
 		justify-content: space-between;
 		font-size: 16px;
-		width: 400px;
+		width: 90%;
 		background-color: #F5F5F5;
 		height: 30px;
 		height: 26px;
