@@ -1150,7 +1150,7 @@
                                     </div>
                                     <div class="coach-manage-addone-flexthree-blocktwo" style="margin-bottom:100px">
                                         <p class="flexthree-blocktwo-pone">个人简介</p>
-                                        <textarea class="flexthree-blocktwo-psix" id="coach-introduce">`+ $.trim(result.rows[0].introduce) + `</textarea>
+                                        <textarea class="flexthree-blocktwo-psix" id="coach-introduce" style="resize:none">`+ $.trim(result.rows[0].introduce) + `</textarea>
                                     </div>
                                 </div>
                                 <div class="coach-manage-addone-flexfour">

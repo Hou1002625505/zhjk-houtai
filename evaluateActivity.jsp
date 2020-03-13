@@ -2396,7 +2396,7 @@
 								<img src="image/codeallset_btn.png" alt="">
 							</div>
 						</td>
-						<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName +`</td>
+						<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ (item.internalName ? item.internalName : item.packageName) +`</td>
 						<td style="width:10%">
 							<div style="display:flex;justify-content: center;">
 								<img class="minus_minus" src="image/minus_minus.png" alt="">

@@ -387,6 +387,9 @@ function mdsjxzxr(){
 
 //表格渲染
 function bgxr(result){
+
+    
+
     function panduan(i, j) {
         var str
         if (i == '') {
@@ -414,6 +417,7 @@ function bgxr(result){
     }
 
     $('.liuyi-flex-right-p').click(function () {
+        console.log(result)
         $(this).parent().children('.liuyi-flex-right-p').css('background', '#F5F5F5')
         $(this).parent().children('.liuyi-flex-right-p').css('color', 'black')
 
@@ -422,197 +426,261 @@ function bgxr(result){
 
         for (var i = 0; i < result.rows.length; i++) {
             if ($(this).html().split('(')[0] == result.rows[i].monthDayStr) {
-                var tablestr = ''
-                tablestr = `
-                <tr>
+                var tablestr1 = `
+                    <tr>
                     <th class="item1" style="position:relative;background-image:url(image/xiexian.png);background-size: 100% 100%;"><p class="bias-right">房间</p><p class="bias"></p><p class="bias-left">时间</p></th>
-                    <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 0) + `</th>
-                    <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 1) + `</th>
-                    <th class="item2" colspan="2">`+ panduan(result.rows[i].children, 2) + `</th>
-                </tr>
-                <tr style="height:130px">
+                `
+                for(var j=0;j< result.rows[i].children.length;j++){
+                    if(j< result.rows[i].children.length){
+                        tablestr1 += `
+                            <th class="item2" colspan="2">`+ panduan(result.rows[i].children, j) + `</th>
+                        `
+                    }else if(j == result.rows[i].children.length){
+                        tablestr1 += `
+                            <th class="item2" colspan="2">`+ panduan(result.rows[i].children, j) + `</th>
+                        </tr>
+                        `
+                    }
+                }
+
+                tablestr1 +=`
+                    <tr style="height:130px">
                     <td rowspan="2" class="item1" style="background:white;border-top:none;font-size:18px">
                         上午
                         <br>
                         <br>
                         8:00-11:59
                     </td>
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 1) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 0, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 0, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 0, 3) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
+                `
+
+                for(var q = 0; q < result.rows[i].children.length; q++){
+                    if(q < result.rows[i].children.length){
+                        tablestr1 +=`
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 1) + `</div>
+                            </td>
+                        `
+                    }else if(q == result.rows[i].children.length){
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 1) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 +=`
+                    <tr style="height:130px">
+                `
+
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 3) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 3) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                 tablestr1 +=`
+                    <tr style="height:130px">
                     <td rowspan="4" class="item1" style="background:white;border-top:none;font-size:18px">
                         下午
                         <br>
                         <br>
                         12:00-17:59
                     </td>
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 1) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 3) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 4) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 5) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 4) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 5) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 4) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 5) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 6) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 1, 7) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 6) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 1, 7) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 6) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 1, 7) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
+                 `
+
+                 for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 1) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 1) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 +=`
+                    <tr style="height:130px">
+                `
+                
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 3) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 3) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 += `
+                    <tr style="height:130px">
+                `
+
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 4) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 5) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 4) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 5) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 += `
+                    <tr style="height:130px">
+                `
+
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 6) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 7) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 6) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 7) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 +=`
+                 <tr style="height:130px">
                     <td rowspan="4" class="item1" style="background:white;border-top:none;font-size:18px">
                         晚上
                         <br>
                         <br>
                         18:00-21:30
                     </td>
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 1) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 0) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 1) + `</div>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td class="item3" style="padding-left:10px">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 0, 2, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 1, 2, 3) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 2) + `</div>
-                    </td>
-                    <td class="item3">
-                        <div class="liuyi-white">`+ content(result.rows[i].children, 2, 2, 3) + `</div>
-                    </td>
-                </tr>
-        `
-                $('#sj-body-body1').html(tablestr)
+                `
 
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 1) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 0) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 1) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                tablestr1 += `
+                    <tr style="height:130px">
+                `
+
+                for (var w = 0; w < result.rows[i].children.length; w++) {
+                    if (w < result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 3) + `</div>
+                            </td>
+                        `
+                    } else if (w == result.rows[i].children.length) {
+                        tablestr1 += `
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 2) + `</div>
+                            </td>
+                            <td class="item3">
+                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 3) + `</div>
+                            </td>
+                            </tr>
+                        `
+                    }
+                }
+
+                $('#sj-body-body1').html(tablestr1)
             }
         }
+
     })
 
     if((new Date().getMonth() + 1) > 10){

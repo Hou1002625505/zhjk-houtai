@@ -1725,7 +1725,7 @@
 			return;
 		}
 
-		if($('.xzhd-body-zstjraduis').eq(0).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(1).children().is(':hidden') && $('.xzhd-body-zstjraduis').eq(2).children().is(':hidden')){
+		if($('.xzhd-body-zstjraduis').eq(0).children('p').is(':hidden') && $('.xzhd-body-zstjraduis').eq(1).children('p').is(':hidden')){
 			alert('请选择赠送条件')
 			return;
 		}
@@ -2288,7 +2288,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName +`</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ (item.internalName?item.internalName:item.packageName) +`</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">
@@ -2307,7 +2307,7 @@
 							<img src="image/codeallset_btn.png" alt="">
 						</div>
 					</td>
-					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ item.packageName + `</td>
+					<td style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;">`+ (item.internalName? item.internalName:item.packageName) + `</td>
 					<td style="width:10%">
 						<div style="display:flex;justify-content: center;">
 							<img class="minus_minus" src="image/minus_minus.png" alt="">

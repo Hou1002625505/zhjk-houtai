@@ -1231,8 +1231,8 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td><textarea placeholder="Q :"></textarea></td>
-                        <td><textarea placeholder="A :"></textarea></td>
+                        <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
+                        <td><textarea class="textarea22" placeholder="A :"></textarea></td>
                         <td>
                             <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                             <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
@@ -1249,7 +1249,7 @@
                 <p>最多上传1个视频，单个视频不超过20M，视频作品将会展示在团课详情首位</p>
             </div>
             <div>
-                <input id="photoFile" accept=".MP4" style="display:none" type="file" onchange="upload()">
+                <input id="photoFile" accept=".MP4,mp4" style="display:none" type="file" onchange="upload()">
             </div>
         </div>
 
@@ -1309,10 +1309,11 @@
             <div class="add-course-checkboxall">
                 <img style="display:none" src="/image/codeallset_btn.png" alt="">
             </div>
-            <p>取消全选</p>
+            <p id="quanxuan">全选</p>
+            <p id="quxiaoqx" style="display:none">取消全选</p>
         </div>
 
-        <div class="add-course-sortthree">
+        <div class="add-course-sortthree" style="margin-top:20px">
             <p style="font-size:16px;margin-right:8px">会员卡口对应编码</p>
             <div class="add-course-sortone-inputtwelve">
                 <div class="inputtwelve-flex" id="inputtwelve-flex">
@@ -1390,11 +1391,52 @@
 
         $('#shrq').val('')
 
-        $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
+        // $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
 
-        $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
+        // $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
+        
+        $('.kcgl-body-kcldt').find('option[value=""]').prop("selected", true);
+
+        for(var i=0;i< $('.kcgl-body-kcldt').length;i++){
+            $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().eq(0).val('')
+        }
 
         $('#area1').val('')
+
+        var faqhtml = `
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>问题</th>
+                    <th>回答</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
+                    <td><textarea class="textarea22" placeholder="A :"></textarea></td>
+                    <td>
+                        <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
+                        <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
+                    </td>
+                </tr>
+            </table>
+        `
+        $('#faq').html(faqhtml)
+
+        $("#addOneRow").click(function () {
+            var tempTr = $(this).parent().parent().clone(true);
+            $(this).parent().parent().parent().children("tr:last").after(tempTr);
+            $(this).parent().parent().parent().children("tr:last").children().eq(0).children().val('')
+            $(this).parent().parent().parent().children("tr:last").children().eq(1).children().val('')
+        });
+        $("#delOneRow").click(function () {
+            if ($(this).parent().parent().parent().children("tr").length < 2) {
+                alert("至少保留一行!");
+            } else {
+                if (confirm("确认删除?")) {
+                    $(this).parent().parent().remove();
+                }
+            }
+        });
 
         $('#videoshow').hide()
         $('#photoFile').attr('class', '')
@@ -1724,9 +1766,14 @@
         $(".add-course-checkboxall").click(function () {
             if ($(this).children('img').is(":hidden")) {
                 $(this).children('img').show()
-                $(".inputtwelve-checkbox").children('img').hide()
+                $(".inputtwelve-checkbox").children('img').show()
+                $('#quanxuan').hide()
+                $('#quxiaoqx').show()
             } else {
                 $(this).children('img').hide()
+                $(".inputtwelve-checkbox").children('img').hide()
+                $('#quanxuan').show()
+                $('#quxiaoqx').hide()
             }
         })
     }
@@ -1843,7 +1890,7 @@
 
                 let file = $("#photoFile").val()
                 let filename = file.substr(file.lastIndexOf("."));
-                if (filename != '.MP4') {
+                if (filename != '.MP4' && filename != '.mp4') {
                     alert("请上传mp4格式的文件");
                     return;
                 }
@@ -1882,7 +1929,8 @@
 
                             var page = window.open();
 
-                            var html = "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
+                        var html = 
+                        "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
 
                             page.document.write(html);
 
@@ -1937,6 +1985,7 @@
 
     function woyaowoyao() {
         if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+            $('.add-course-check').hide()
             $(".inputtwelve-checkbox").click(function () {
                 $(".inputtwelve-checkbox").children('img').hide()
                 if ($(this).children('img').is(":hidden")) {
@@ -1947,6 +1996,7 @@
                 }
             })
         } else {
+            $('.add-course-check').show()
             $(".inputtwelve-checkbox").click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -2021,9 +2071,9 @@
                                     <td class="item2">`+ item.createDate + `</td>
                                     <td class="item2">下架</td>
                                     <td class="`+ item.id + `" style="display:flex;flex:1;box-sizing: border-box;height:41px;justify-content:center;align-items:center;border-top:1px solid white">
-                                        <p class="course-manage-table-tr-edit" style="color:#71B2EF">编辑</p>
+                                        <p class="course-manage-table-tr-edit" style="color:#71B2EF;cursor:pointer">编辑</p>
                                         <p style="color:#71B2EF;margin:0 2px">|</p>
-                                        <p class="course-manage-table-tr-up" style="color:#71B2EF">上架</p>
+                                        <p class="course-manage-table-tr-up" style="color:#71B2EF;cursor:pointer">上架</p>
                                     </td>
                                 </tr>
                             `
@@ -2077,13 +2127,14 @@
                             data: JSON.stringify(params1),
                             success: function (resule) {
                                 alert(resule.message)
+                                shoye()
                             },
                             error: function (e) {
                                 console.log(e.status);
                                 console.log(e.responseText)
                             }
                         })
-                        shoye()
+                        
                     })
 
                     $('.course-manage-table-tr-down').click(function () {
@@ -2105,13 +2156,14 @@
                                 //console.log(resule)
                                 //console.log(list)
                                 alert(resule.message)
+                                shoye()
                             },
                             error: function (e) {
                                 console.log(e.status);
                                 console.log(e.responseText)
                             }
                         })
-                        shoye()
+                        
                     })
 
                     $('#batchup').click(function () {
@@ -2251,11 +2303,13 @@
                         alert('课程雷达图选择格式错误')
                         return;
                     }else{
-                        for(var jj = 1;jj < ldzdcount11;jj++){
-                            if($('.kcgl-body-kcldt').eq(iii).val() == $('.kcgl-body-kcldt').eq(jj).val()){
+                        for(var jj = iii+1;jj < ldzdcount11;jj++){
+                            if($('.kcgl-body-kcldt').eq(iii).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(jj).val().split(' ')[1]){
                                 alert('课程雷达选择不可重复')
                                 return;
                             } 
+                            // console.log($('.kcgl-body-kcldt').eq(iii).val())
+                            // console.log($('.kcgl-body-kcldt').eq(jj).val())
                         }
                     }
                 }
@@ -2274,6 +2328,14 @@
                     alert('FAQ不可为空')
                     return;
                 }
+            }
+
+            if($('#preview1').html() == ''){
+                alert('请选择上传图片')
+                return;
+            }else if(!$('#preview1').children('div').is(':visible')){
+                 alert('请选择上传图片')
+                return;
             }
 
             //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
@@ -2354,8 +2416,8 @@
             for (var i = 0; i < ldzdcount; i++) {
                 for (var j = 0; j < $('.kcgl-body-kcldt').eq(0).children().length; j++) {
                     if ($('.kcgl-body-kcldt').children().eq(j).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(i).val().split(' ')[1]) {
-                        var dictionaryId = $('.kcgl-body-kcldt').val().split(' ')[0]
-                        var effectValue = $('.kcgl-body-kcldt').parent().parent().children().eq(1).children().val()
+                        var dictionaryId = $('.kcgl-body-kcldt').eq(i).val().split(' ')[0]
+                        var effectValue = $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().val()
                         curriculumEffectList.push({ dictionaryId, effectValue })
                     }
                 }
@@ -2523,7 +2585,7 @@
                     alert('课程雷达图选择格式错误')
                     return;
                 } else {
-                    for (var jj = 1; jj < ldzdcount11; jj++) {
+                    for (var jj = iii+1; jj < ldzdcount11; jj++) {
                         if ($('.kcgl-body-kcldt').eq(iii).val() == $('.kcgl-body-kcldt').eq(jj).val()) {
                             alert('课程雷达选择不可重复')
                             return;
@@ -2546,6 +2608,14 @@
                 alert('FAQ不可为空')
                 return;
             }
+        }
+
+        if ($('#preview1').html() == '') {
+            alert('请选择上传图片')
+            return;
+        } else if (!$('#preview1').children('div').is(':visible')) {
+            alert('请选择上传图片')
+            return;
         }
 
         //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
@@ -2626,8 +2696,8 @@
         for (var i = 0; i < ldzdcount; i++) {
             for (var j = 0; j < $('.kcgl-body-kcldt').eq(0).children().length; j++) {
                 if ($('.kcgl-body-kcldt').children().eq(j).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(i).val().split(' ')[1]) {
-                    var dictionaryId = $('.kcgl-body-kcldt').val().split(' ')[0]
-                    var effectValue = $('.kcgl-body-kcldt').parent().parent().children().eq(1).children().val()
+                    var dictionaryId = $('.kcgl-body-kcldt').eq(i).val().split(' ')[0]
+                    var effectValue = $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().val()
                     curriculumEffectList.push({ dictionaryId, effectValue })
                 }
             }
@@ -2742,6 +2812,46 @@
             $('.course-manage-body').hide()
             $('.add-course-body').show()
 
+            $('#kcgl-body-kcfl1').find('option[value=""]').prop("selected", true);
+
+            $('#kcgl-body-skfs').find('option[value=""]').prop("selected", true);
+
+            $('#area2').val('')
+
+            $('#kcbzj').val('')
+
+            $('#GroupCourseGole').children().removeClass('add-course-sortone-inputthree-p-active')
+
+            $('#area').val('')
+
+            $('#kllxh').val('')
+
+            $('#shrq').val('')
+
+            // $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
+
+            // $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
+
+            $('.kcgl-body-kcldt').find('option[value=""]').prop("selected", true);
+
+            for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
+                $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().eq(0).val('')
+            }
+
+            $('#area1').val('')
+
+            $('#videoshow').hide()
+            $('#photoFile').attr('class', '')
+
+            $('#preview1').html('')
+
+            $('#inputtwelve-flex').children().children('img').hide()
+
+            $('.add-course-sortone-inputeight').children().children().children().children().eq(0).children().val('')
+            $('.add-course-sortone-inputeight').children().children().children().children().eq(1).children().val('')
+
+            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+
             var a = aa
             console.log(a)
             var paramsall = {
@@ -2805,14 +2915,50 @@
 
                             $('#area1').val(item.announcements)
 
+                            var faqhtml = `
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th>问题</th>
+                                        <th>回答</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
+                                        <td><textarea class="textarea22" placeholder="A :"></textarea></td>
+                                        <td>
+                                            <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
+                                            <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            `
+                            $('#faq').html(faqhtml)
+
+                            $("#addOneRow").click(function () {
+                                var tempTr = $(this).parent().parent().clone(true);
+                                $(this).parent().parent().parent().children("tr:last").after(tempTr);
+                                $(this).parent().parent().parent().children("tr:last").children().eq(0).children().val('')
+                                $(this).parent().parent().parent().children("tr:last").children().eq(1).children().val('')
+                            });
+                            $("#delOneRow").click(function () {
+                                if ($(this).parent().parent().parent().children("tr").length < 2) {
+                                    alert("至少保留一行!");
+                                } else {
+                                    if (confirm("确认删除?")) {
+                                        $(this).parent().parent().remove();
+                                    }
+                                }
+                            });
+                            
                             for (var i = 1; i < item.leagueCurriculumFaqList.length; i++) {
                                 $('#addOneRow').click()
                             }
 
                             for (var i = 0; i < item.leagueCurriculumFaqList.length; i++) {
-                                $('#faq').children().children().children().eq(i + 1).children().eq(0).children('textarea').html(item.leagueCurriculumFaqList[i].problem)
-                                $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').html(item.leagueCurriculumFaqList[i].answer)
+                                $('#faq').children().children().children().eq(i + 1).children().eq(0).children('textarea').val(item.leagueCurriculumFaqList[i].problem)
+                                $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').val(item.leagueCurriculumFaqList[i].answer)
                             }
+                            
 
                             if (item.curriculumPayTypeList[0].payTypeName == '付现') {
                                 $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()

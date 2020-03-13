@@ -1331,8 +1331,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	.cgysl p {
 		width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		/* overflow: hidden;
+		text-overflow: ellipsis; */
 		white-space: nowrap;
 		color: #444444;
 	}
@@ -1516,7 +1516,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 
 						</thead>
-						<tbody class="xzhd-body-tbody1">
+						<tbody class="xzhd-body-tbody1" style="display:none">
 
 
 						</tbody>
@@ -1567,7 +1567,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 
 						</thead>
-						<tbody class="xzhd-body-tbody1">
+						<tbody class="xzhd-body-tbody1" style="display:none">
 
 
 						</tbody>
@@ -1767,7 +1767,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				str += '<img class="gouxuan"  id="' + item.couponId + '" src="../images/codeallset_btn.png" alt="" >';
 			}
 			str += '</div>' +
-				'<p class="psda">' + item.activityName + '</p>' +
+				'<p class="psda">' + (item.internalName ? item.internalName : item.packageName) + '</p>' +
 				'</td>' +
 				'<td style="width:10%">' +
 				'<div style="display:flex;justify-content: center;">' +
@@ -1807,17 +1807,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$(em).parents('.xzhd-body-flex').find('.xzhd-body-tbody1').append(str)
 		})
 	}
+
 	function selectType(em, type) {
 		$(".xzhd-body-tbody1").html("")
 		$(".xzhd-body-henggang").parent().find("img").hide()
 		$(em).find("img").show();
 		$(em).children("img:last-child").hide();
+		
+		$(em).parent().parent().children().eq(1).children().children().eq(1).show()
 		if (type == 1) {
 			crmyhj(em);
 		} else {
 			yzyhj(em);
 		}
 	}
+	
 	function seletzm(i, em, id, kc) {
 		if (kc == 0) {
 			alert('库存为0，不能选择');
@@ -1830,7 +1834,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if (item.couponId == id) {
 						item.selected = true;
 						var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.activityName + '" couponSource="1" quantity="' + item.numbers1 + '">' +
-							'<p>CRM优惠券/' + item.activityName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.numbers1 + '</p>' +
+							'<p>CRM优惠券/' + item.activityName + '</p><p style="margin-left:2px" class="koj">x' + item.numbers1 + '</p>' +
 							'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 							'</div>';
 						$(em).parents('.xzhd-body-flex').find("#xzhd-body-fxhd").append(str);
@@ -1841,7 +1845,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if (item.id == id) {
 						item.selected = true;
 						var str = '<div class="cgysl"   couponId="' + item.id + '" couponName="' + item.title + '" couponSource="2" quantity="' + item.numbers1 + '">' +
-							'<p>有赞优惠券/' + item.title +  '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.numbers1 + '</p>' +
+							'<p>有赞优惠券/' + item.title +  '</p><p style="margin-left:2px" class="koj">x' + item.numbers1 + '</p>' +
 							'<img onclick="deleteyhj(this,\'' + item.id + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 							'</div>';
 						$(em).parents('.xzhd-body-flex').find("#xzhd-body-fxhd").append(str);
@@ -1952,13 +1956,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			})
 		}
-
-		$(em).parents('.xzhd-body-flex').find(".cgysl").each(function () {
-			if ($(this).attr("couponid") == id) {
-				$(this).attr("quantity", $(em).parent().find('p').text())
-				$(this).find('.koj').text("x" + $(em).parent().find('p').text())
-			}
-		})
 	}
 	// console.log(JSON.stringify(couponList))
 
@@ -2772,13 +2769,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									$(".xundata").find("input").val(index)
 									if (item.couponSource == 1) {
 										var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-											'<p>CRM优惠券/' + item.couponName +'</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+											'<p>CRM优惠券/' + item.couponName +'</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 											'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										$('.xundata #xzhd-body-fxhd').append(str);
 									} else {
 										var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-											'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+											'<p>有赞优惠券/' + item.couponName + '</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 											'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										$('.xundata #xzhd-body-fxhd').append(str);
@@ -2787,13 +2784,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								} else {
 									if (item.couponSource == 1) {
 										var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-											'<p>CRM优惠券/' + item.couponName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+											'<p>CRM优惠券/' + item.couponName + '</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 											'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										arStr += str;
 									} else {
 										var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-											'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+											'<p>有赞优惠券/' + item.couponName + '</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 											'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 											'</div>';
 										arStr += str;
@@ -2812,13 +2809,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						$.each(item.receiveCouponList, function (index, item) {
 							if (item.couponSource == 1) {
 								var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="1" quantity="' + item.quantity + '">' +
-									'<p>CRM优惠券/' + item.couponName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+									'<p>CRM优惠券/' + item.couponName + '</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 									'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 									'</div>';
 								$('.mksdd #xzhd-body-fxhd').append(str);
 							} else {
 								var str = '<div class="cgysl"   couponId="' + item.couponId + '" couponName="' + item.couponName + '" couponSource="2" quantity="' + item.quantity + '">' +
-									'<p>有赞优惠券/' + item.couponName + '</p><p style="position: absolute;left: 80%;" class="koj">x' + item.quantity + '</p>' +
+									'<p>有赞优惠券/' + item.couponName + '</p><p style="margin-left:2px" class="koj">x' + item.quantity + '</p>' +
 									'<img onclick="deleteyhj(this,\'' + item.couponId + '\',2)" class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 									'</div>';
 								$('.mksdd #xzhd-body-fxhd').append(str);
@@ -2932,7 +2929,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			type: "get",
 			url: "rest/shareActivity/getCouponList",
 			success: function (res) {
-
+				console.log(res)
 				//console.log(JSON.stringify(res))
 				if (res.status) {
 					if (res.rows.length > 0) {

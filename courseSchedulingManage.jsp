@@ -2028,11 +2028,18 @@
 
     //贴标页面显示
     $('#tiebiao-show').click(function(){
+
+        if ($('#sj-body-body1').children().children().eq(0).children().children().children().is(':hidden')) {
+            alert('请勾选门店')
+            return;
+        }
+
         $('#add-edit-course-label1').show()
     })
 
     //发布
     $('#publishpublish').click(function () {
+
         var ids = []
 
         for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
@@ -2054,8 +2061,13 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
             success: function (result) {
-                alert(result.message)
-                shoye()
+                if(result.message.substr(0,4) == '发布成功'){
+                    alert(result.message)
+                    shoye()
+                }else{
+                    alert('请勾选门店')
+                }
+                
             },
             error: function (e) {
                 console.log(e.status)
@@ -2101,6 +2113,7 @@
 
     //推荐按钮
     $('#recommended').click(function () {
+
             var ids = []
             for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
                 if ($('#sj-body-body1').children().eq(i).children().eq(0).children().children().children().is(':visible')) {
@@ -2121,8 +2134,15 @@
                 contentType: 'application/json;charset=UTF-8',
                 data: JSON.stringify(recommended),
                 success: function (result) {
-                    alert(result.message)
-                    shoye()
+                    console.log(result)
+                    if(result.message == '推荐成功1条!'){
+                        alert(result.message)
+                        shoye()
+                    }else{
+                        alert('请勾选门店')
+                    }
+                    
+                    
                 },
                 error: function (e) {
                     console.log(e.status)
@@ -2132,6 +2152,7 @@
 
     //取消推荐按钮
     $('#qx-recommended').click(function(){
+
         var ids = []
         for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
             if ($('#sj-body-body1').children().eq(i).children().eq(0).children().children().children().is(':visible')) {
@@ -2152,8 +2173,13 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
             success: function (result) {
-                console.log(result)
-                shoye()
+                if(result.message == '取消推荐成功1条!'){
+                    alert(result.message)
+                    shoye()
+                }else{
+                    alert('请勾选门店')
+                }
+                
             },
             error: function (e) {
                 console.log(e.status)
@@ -2163,6 +2189,7 @@
 
     //删除按钮
     $('#shanchudel').click(function(){
+
        var ids = []
         for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
             if ($('#sj-body-body1').children().eq(i).children().eq(0).children().children().children().is(':visible')) {
@@ -2182,8 +2209,14 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
             success: function (result) {
-                alert(result.message)
-                shoye()
+                console.log(result.message)
+                if(result.message == '删除成功1条!'){
+                    alert(result.message)
+                    shoye()
+                }else{
+                    alert('请勾选门店')
+                }
+                
             },
             error: function (e) {
                 console.log(e.status)
@@ -2262,6 +2295,11 @@
         $('#is-Queue').children('.paypayisQueue').eq(0).click()
 
         $('#tag-Name').children('.paypay').eq(0).click()
+
+        $('#edit-course-footer-pone').unbind()
+        $('#edit-course-footer-pone').click(function () {
+            xjsjxjsj()
+        })
     })
 
     time()
@@ -2413,7 +2451,7 @@
                 type: 'POST',
                 success: function (result) {
                     var strsecond = `
-                        <option value="" selected="selected">全部</option>
+                        <option value="" selected="selected"></option>
                     `
                     console.log(result)
                     for (var i = 0; i < result.rows.length; i++) {
@@ -2512,6 +2550,7 @@
 
     //贴标事件
     function tbsj(tagId){
+
         var ids = []
         for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
             if ($('#sj-body-body1').children().eq(i).children().eq(0).children().children().children().is(':visible')) {
@@ -3039,6 +3078,7 @@
             processData: false,
             success: function (data) {
                 console.log(data)
+                shoye()
             },
             error: function (data) {
                 alert("上传失败")
@@ -3251,7 +3291,7 @@
                     <img src="./image/tags_icon.png" alt=""/>
                     <p>课程名称</p>
                 </div>
-                <img style="width:1.1rem;height:1.1rem" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
+                <img style="width:22px;height:22px;cursor:pointer" id="add-course-name-header-img" src="./image/popupclose_btn.png" alt=""/>
             </div>
             <div class="add-course-name-context">
                 <div class="add-course-name-context-flex" id="add-course-name-context-flex-coursename">
@@ -3259,8 +3299,8 @@
                 </div>
             </div>
             <div class="add-course-name-context-bottom1">
-                <p id="add-course-name-context-bottom-pone">确定</p>
-                <p id="add-course-name-context-bottom-ptwo">取消</p>
+                <p id="add-course-name-context-bottom-pone" style="cursor:pointer">确定</p>
+                <p id="add-course-name-context-bottom-ptwo" style="cursor:pointer">取消</p>
             </div>
         `
         $('#add-course-name1').html(acn_str)
@@ -3474,9 +3514,9 @@
                     success: function (result) {
                         console.log(result)
                         //console.log(strselect)
-
+                        //background:#71B2EF;
                         var strcoachone = `
-                                            <p id="coach-p" class="`+ result.rows[0].userName + `" style="width:3.5rem;height:1.2rem;border-radius:0.2rem;background:#71B2EF;color:white;text-align:center;line-height:1.2rem;cursor:pointer">
+                                            <p id="coach-p" class="`+ result.rows[0].userName + `" style="width:70px;height:24px;border-radius:4px;color:black;text-align:center;line-height:24px;cursor:pointer">
                                             `+ result.rows[0].realName + `
                                             </p>
                                         `
@@ -3485,6 +3525,8 @@
 
                         //var strselect = ''
                         $('#coach-p').click(function () {
+                            $(this).css('background','#71B2EF')
+                            $(this).css('color','white')
                             //console.log(strselect)
                             //console.log($('#select-coach').html())
 
@@ -3542,7 +3584,15 @@
 
         })
     
-    
+        if ($('#add-edit-course1').is(':visible')) {
+            $(document).unbind()
+            $(document).keydown(function (event) {
+                if (event.keyCode == 13) {
+                    $('#search-search').click()
+                }
+            });
+        }
+
     }
 
     //新建事件
@@ -3558,7 +3608,7 @@
             return;
         }
 
-        if(!$('#select-menu-input-coursename').hasClass('class')){
+        if($('#select-menu-input-coursename').attr('class') == ''){
             alert('请选择课程')
             return;
         }
@@ -3614,10 +3664,10 @@
                 courseSchedulingItemList.push({ coachId: $('#coach-performance').children().eq(i).attr('class').split(' ')[1], performance: $('#coach-performance').children().eq(i).children('input').val() })
             }
         }
-
+        //new Date().getFullYear() + " " + 
         //获取课程开始和结束时间
-        var start =  new Date().getFullYear()+ " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
-        var end = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
+        var start =  $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
+        var end = $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
         var data1 = new Date(start)
         var data2 = new Date(end)
         var startDate = data1.getTime()
@@ -3735,7 +3785,7 @@
         }
         $('#coach-performance').html(strperformance)
 
-        $('#edit-course-context-three').val(list.monthDayStr)
+        $('#edit-course-context-three').val(list.dateStr)
 
         $('#edit-course-context-four').val(list.timeStr.split('-')[0])
 
@@ -3780,7 +3830,7 @@
             return;
         }
 
-        if (!$('#select-menu-input-coursename').hasClass('class')) {
+        if ($('#select-menu-input-coursename').attr('class') == '') {
             alert('请选择课程')
             return;
         }
@@ -3838,8 +3888,8 @@
         }
 
         //获取课程开始和结束时间
-        var start = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
-        var end = new Date().getFullYear() + " " + $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
+        var start = $('#edit-course-context-three').val() + " " + $('#edit-course-context-four').val() + ":00"
+        var end = $('#edit-course-context-three').val() + " " + $('#edit-course-context-five').val() + ":59"
         var data1 = new Date(start)
         var data2 = new Date(end)
         var startDate = data1.getTime()
