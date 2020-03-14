@@ -1277,15 +1277,15 @@
             <div class="add-course-sortone-inputten" id="add-course-sortone-inputten">
                 <div class="inputten-paypay">
                     <div class="paypay">
-                        <img class="paypay-show" src="/image/payment_btn.png" alt="">
-                        <img class="paypay-hidden" src="/image/paymentnor_btn.png" alt="">
+                        <img class="paypay-show" src="/image/codeallset_btn.png" alt="">
+                        <img class="paypay-hidden" src="/image/codeallnor_btn.png" alt="">
                     </div>
                     <p style="font-size: 14px;">付现</p>
                 </div>
                 <div class="inputten-paypay">
                     <div class="paypay">
-                        <img class="paypay-show" src="/image/payment_btn.png" alt="">
-                        <img class="paypay-hidden" src="/image/paymentnor_btn.png" alt="">
+                        <img class="paypay-show" src="/image/codeallset_btn.png" alt="">
+                        <img class="paypay-hidden" src="/image/codeallnor_btn.png" alt="">
                     </div>
                     <p style="font-size: 14px;">会员卡扣</p>
                 </div>

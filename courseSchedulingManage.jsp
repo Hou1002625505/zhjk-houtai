@@ -1942,7 +1942,7 @@
             </tbody>
         </table>
 
-        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:77rem"></div>
+        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:77rem;width:100%"></div>
         
 
         <div class="edit-course" id="edit-course2">
@@ -2028,12 +2028,6 @@
 
     //贴标页面显示
     $('#tiebiao-show').click(function(){
-
-        if ($('#sj-body-body1').children().children().eq(0).children().children().children().is(':hidden')) {
-            alert('请勾选门店')
-            return;
-        }
-
         $('#add-edit-course-label1').show()
     })
 
@@ -2135,7 +2129,7 @@
                 data: JSON.stringify(recommended),
                 success: function (result) {
                     console.log(result)
-                    if(result.message == '推荐成功1条!'){
+                    if(result.message.substr(0,4) == '推荐成功'){
                         alert(result.message)
                         shoye()
                     }else{
@@ -2173,7 +2167,7 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
             success: function (result) {
-                if(result.message == '取消推荐成功1条!'){
+                if(result.message.substr(0,4) == '取消推荐'){
                     alert(result.message)
                     shoye()
                 }else{
@@ -2210,7 +2204,7 @@
             data: JSON.stringify(recommended),
             success: function (result) {
                 console.log(result.message)
-                if(result.message == '删除成功1条!'){
+                if(result.message.substr(0,4) == '删除成功'){
                     alert(result.message)
                     shoye()
                 }else{
@@ -2573,8 +2567,13 @@
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(taglist),
             success: function (result) {
-                alert(result.message)
-                shoye()
+                if(result.message.substr(0,4) == '打标成功'){
+                    alert(result.message)
+                    shoye()
+                }else{
+                    alert('请勾选门店')
+                }
+                
             },
             error: function (e) {
                 console.log(e.status)
@@ -3257,12 +3256,12 @@
 
         $("#edit-course-context-four").datetime({
             type: "time",
-            value: [12, 28]
+            value: [00,00]
         })
 
         $("#edit-course-context-five").datetime({
             type: "time",
-            value: [12, 28]
+            value: [00,00]
         })
 
         $('#edit-course1').click(function(){
@@ -3435,10 +3434,12 @@
 
         $('#add-edit-course-header-context-three-ptwo').click(function(){
             $(this).parent().parent().hide()
+            $(document).unbind()
         })
 
         $('#add-edit-course-hide').click(function(){
             $(this).parent().parent().hide()
+            $(document).unbind()
         })
 
         skjllbnr()
@@ -3502,6 +3503,8 @@
             }
 
             $('#coach-performance').html(strperformance)
+
+            $(document).unbind()
 
         })
 

@@ -146,7 +146,7 @@
             cursor: pointer;
         }
 
-        .liuyi-flex .liuyi-flex-right-p1{
+        .liuyi-flex-right-p1{
             width:150px;
             height:46px;
             border-radius: 4px;
@@ -255,8 +255,12 @@
                 <em class="triangle_border_down1"></em>
             </span>
             <div class="liuyi-flex-right"></div>
-            <p class="liuyi-flex-right-p1" style="cursor: pointer;">下一周</p>
         </div>
+        <div style="display:flex;flex-direction: row-reverse;">
+            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p11" style="cursor: pointer;">下一周</p>
+            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p22" style="cursor: pointer;">上一周</p>
+        </div>
+        
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody class="table-body" id="sj-body-body1">
                 
@@ -270,7 +274,7 @@
 <script type="text/javascript">
     
 var weekweek = 0 
-$('.liuyi-flex-right-p1').click(function(){
+$('#liuyi-flex-right-p11').click(function(){
     var storeId = $('#sj-body-zt').val()
 
     if (storeId == '') {
@@ -308,6 +312,45 @@ $('.liuyi-flex-right-p1').click(function(){
         }
     })
 })
+
+    $('#liuyi-flex-right-p22').click(function () {
+        var storeId = $('#sj-body-zt').val()
+
+        if (storeId == '') {
+            return;
+        }
+
+        weekweek--
+        var list = {
+            storeId: storeId,
+            week: weekweek
+        }
+
+        $.ajax({
+            url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(list),
+            success: function (result) {
+
+                var liuyitime = ''
+
+                $.each(result.rows, function (i, item) {
+                    liuyitime += `
+                    <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                `
+                })
+
+                $('.liuyi-flex-right').html(liuyitime)
+
+                bgxr(result)
+
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+    })
 
 skfjxlcd()
 
@@ -678,6 +721,10 @@ function bgxr(result){
                 }
 
                 $('#sj-body-body1').html(tablestr1)
+
+                if(result.rows[i].children == ''){
+                    $('#sj-body-body1').html('')
+                }
             }
         }
 
