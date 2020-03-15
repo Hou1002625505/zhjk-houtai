@@ -2806,10 +2806,12 @@
 
                     $('.a-del').click(function(){
                         $(this).parent().children('.td-del').show()
-                        var ids1 = $(this).parent().parent().parent().parent().children().eq(0).attr('class')
+                        var ids1 = $(this).parent().parent().children().eq(0).attr('class')
+                        console.log(ids1)
 
                         $('.td-del-flex-yes').click(function(){
                             sybgzdscsj(ids1)
+                            
                         })
                         
                         $('.td-del-flex-no').click(function(){
@@ -2845,7 +2847,6 @@
         var ids = []
                 
         ids.push(ids1)
-            
 
         var recommended = {
             operationType: 1,

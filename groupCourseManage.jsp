@@ -1264,9 +1264,10 @@
 
         </div>
 
-        <div class="add-course-sorttwo">
+        <div class="add-course-sorttwo" style="position:relative">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <div id="demo" class="demo"></div>
+            <p style="position:absolute;left:150px;top:0;font-size: 16px;">图片建议尺寸750像素*400像素</p>
         </div>
 
         <p style="font-size:16px;font-weight:bold;margin-top:53px">扣课方式及项目关联</p>
@@ -1521,6 +1522,26 @@
     woyaowoyao()
 
     shoye()
+
+    function ajax(){
+        var paramsGroupType = {
+            typeCode: "CourseGrade"
+        }
+
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json;charset=UTF-8",
+            url: "rest/wx/dictionnary/getdictionnarylist",
+            data: JSON.stringify(paramsGroupType),
+            success: function (result) {
+                console.log(result)
+            },
+            error: function (e) {
+                console.log(e.status);
+                console.log(e.responseText)
+            }
+        })
+    }
 
     //时间组件
     function time() {
@@ -2371,9 +2392,6 @@
             //}
             }
 
-            
-            
-
             //支付方式的参数
             for (var i = 0; i < $(".paypay").length; i++) {
                 if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
@@ -2417,6 +2435,18 @@
                 if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
                     difficultyId--
                 }
+            }
+
+            if(difficultyId == 1){
+                var difficultyId1 = 'c000930a6721479e90f051263995523e'
+            }else if(difficultyId == 2){
+                var difficultyId1 = '6b576cf4245f40c4a1c736f90c07944c'
+            }else if(difficultyId == 3){
+                var difficultyId1 = '228b8ecd602c4649ba593563a428d317'
+            }else if(difficultyId == 4){
+                var difficultyId1 = 'ec976638f03d42c9b8191d51e81888f5'
+            }else if(difficultyId == 5){
+                var difficultyId1 = '2dda5b7cc2bc4649a2a6849e5301c5c1'
             }
 
             //产品价格参数
@@ -2533,7 +2563,7 @@
                 announcements: announcements,
                 calorieConsumption: calorieConsumption,
                 classifyId: classifyId,
-                difficultyId: difficultyId,
+                difficultyId: difficultyId1,
                 price: price,
                 modeId: modeId,
                 description: description,
@@ -2709,6 +2739,18 @@
             }
         }
 
+        if (difficultyId == 1) {
+            var difficultyId1 = 'c000930a6721479e90f051263995523e'
+        } else if (difficultyId == 2) {
+            var difficultyId1 = '6b576cf4245f40c4a1c736f90c07944c'
+        } else if (difficultyId == 3) {
+            var difficultyId1 = '228b8ecd602c4649ba593563a428d317'
+        } else if (difficultyId == 4) {
+            var difficultyId1 = 'ec976638f03d42c9b8191d51e81888f5'
+        } else if (difficultyId == 5) {
+            var difficultyId1 = '2dda5b7cc2bc4649a2a6849e5301c5c1'
+        }
+
         //产品价格参数
 
         var price = $('#kcbzj').val()
@@ -2830,7 +2872,7 @@
             announcements: announcements,
             calorieConsumption: calorieConsumption,
             classifyId: classifyId,
-            difficultyId: difficultyId,
+            difficultyId: difficultyId1,
             price: price,
             modeId: modeId,
             description: description,
@@ -2966,11 +3008,32 @@
                                 $('.add-course-sortone-inputseven').children().eq(ee).children().eq(1).children().val(item.curriculumEffectList[ee].effectValue)
                             }
 
-                            for (var i = 0; i < item.difficultyId; i++) {
+                            // for (var i = 0; i < item.difficultyId.substr(4, 5); i++) {
+                            //     $('#rating').children().eq(i).css("background-position", "0px 0px")
+                            //     $('#rating').children().eq(i).children().hide()
+                            // }
+                            // for (var i = item.difficultyId.substr(4,5); i < $('#rating').children().length; i++) {
+                            //     $('#rating').children().eq(i).css("background-position", "0px -58px")
+                            //     $('#rating').children().eq(i).children().show()
+                            // }
+
+                            if(item.difficultyName == '一星'){
+                                var countdifficult = 1
+                            }else if(item.difficultyName == '二星'){
+                                var countdifficult = 2
+                            } else if (item.difficultyName == '三星') {
+                                var countdifficult = 3
+                            } else if (item.difficultyName == '四星') {
+                                var countdifficult = 4
+                            } else if (item.difficultyName == '五星') {
+                                var countdifficult = 5
+                            }
+
+                            for (var i = 0; i < countdifficult; i++) {
                                 $('#rating').children().eq(i).css("background-position", "0px 0px")
                                 $('#rating').children().eq(i).children().hide()
                             }
-                            for (var i = item.difficultyId; i < $('#rating').children().length; i++) {
+                            for (var i = countdifficult; i < $('#rating').children().length; i++) {
                                 $('#rating').children().eq(i).css("background-position", "0px -58px")
                                 $('#rating').children().eq(i).children().show()
                             }
