@@ -1816,7 +1816,7 @@
             <div style="font-size:16px">上课教练</div>
             <input class="course-arranging-flex-select-two" id="teaching-course-coach"></input>
             <div style="font-size:16px">教练工号</div>
-            <input class="course-arranging-flex-select-three" id="coach-id"></input>
+            <input class="course-arranging-flex-select-three" id="coach-id" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>
             <div style="font-size:16px">创建时间</div>
             <div class="J-datepicker-day">
                 <input type="text" class="course-arranging-flex-input-one" id="create-course-time" placeholder="开始时间">
@@ -1902,7 +1902,7 @@
             <div style="font-size:16px">上课教练</div>
             <input class="course-arranging-flex-select-two" id="teaching-course-coach1" />
             <div style="font-size:16px">教练工号</div>
-            <input class="course-arranging-flex-select-three" id="coach-id1" />
+            <input class="course-arranging-flex-select-three" id="coach-id1" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
             <div style="font-size:16px">创建时间</div>
             <div class="J-datepicker-day">
                 <input type="text" class="course-arranging-flex-input-one" id="create-course-time1" placeholder="开始时间">
@@ -3076,8 +3076,14 @@
             contentType: false,
             processData: false,
             success: function (data) {
-                console.log(data)
-                shoye()
+                if(data.message == '导入成功!'){
+                    alert(data.message)
+                    shoye()
+                }else{
+                    alert(data.message)
+                    return;
+                }
+                
             },
             error: function (data) {
                 alert("上传失败")
@@ -3147,7 +3153,7 @@
                     <p class="edit-course-context-flex3-pone">课程售价</p>
                     <div class="add-course-sortone-inputtwo">
                         <p>￥</p>
-                        <input type="text" id="course-price" style="cursor:pointer">
+                        <input type="text" id="course-price" style="cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p class="edit-course-context-flex3-ptwo" style="display:none">标准价</p>
                     <div class="add-course-sortone-inputthree" style="display:none">
@@ -3159,12 +3165,12 @@
                 <div class="edit-course-context-flex3">
                     <p class="edit-course-context-flex3-pone">开课人数</p>
                     <div class="add-course-sortone-inputtwo">
-                        <input type="text" id="mincount" style="cursor:pointer">
+                        <input type="text" id="mincount" style="cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p style="margin-left:-20px;margin-right:8px;">人</p>
                     <p class="edit-course-context-flex3-ptwo">最大人数</p>
                     <div class="add-course-sortone-inputthree" style="margin-left:17px;">
-                        <input type="text" id="maxcount" style="text-decoration:none;color:black;cursor:pointer">
+                        <input type="text" id="maxcount" style="text-decoration:none;color:black;cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p style="margin-left:-20px">人</p>
                 </div>

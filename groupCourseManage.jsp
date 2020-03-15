@@ -279,7 +279,7 @@
 
         .course-manage-footer .course-manage-footer-pthree {
             font-size: 16px;
-            margin-left: 1013px;
+            margin-left:60rem;
         }
 
         .c-datepicker-date-editor {
@@ -686,13 +686,13 @@
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-show {
             width: 21px;
-            height: 21px
+            height: 21px;
+            display:none
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-hidden {
             width: 21px;
             height: 21px;
-            display: none;
         }
 
 
@@ -1018,9 +1018,9 @@
                     id="course-manage-flex-input-two" placeholder="结束时间">
             </div>
             <div style="font-size:16px">价格区间</div>
-            <input type="text" class="course-manage-flex-input-three" id="course-manage-flex-input-three">
+            <input type="text" class="course-manage-flex-input-three" id="course-manage-flex-input-three" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             <p>-</p>
-            <input type="text" class="course-manage-flex-input-four" id="course-manage-flex-input-four">
+            <input type="text" class="course-manage-flex-input-four" id="course-manage-flex-input-four" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
         </div>
         <div class="course-manage-flextwo">
             <p id="course-manage-flextwo-search">查询</p>
@@ -1104,7 +1104,7 @@
             <p style="font-size:16px">课程标准价</p>
             <div class="add-course-sortone-inputtwo">
                 <p>￥</p>
-                <input type="text" id="kcbzj">
+                <input type="text" id="kcbzj" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             </div>
         </div>
         <div class="add-course-sortone">
@@ -1140,7 +1140,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">卡路里消耗</p>
             <div class="add-course-sortone-inputfive">
-                <input type="text" id="kllxh">
+                <input type="text" id="kllxh" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                 <p>cal</p>
             </div>
         </div>
@@ -1163,7 +1163,7 @@
                         <em class="triangle_border_down2"></em>
                     </span>
                     <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" value="">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]/g,'');" value="">
                     </div>
                 </div>
                 <div class="oneinput">
@@ -1174,7 +1174,7 @@
                         <em class="triangle_border_down2"></em>
                     </span>
                     <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" value="">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
                     </div>
                 </div>
                 <div class="oneinput">
@@ -1185,7 +1185,7 @@
                         <em class="triangle_border_down2"></em>
                     </span>
                     <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" value="">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
                     </div>
                 </div>
                 <div class="oneinput">
@@ -1196,7 +1196,7 @@
                         <em class="triangle_border_down2"></em>
                     </span>
                     <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" value="">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
                     </div>
                 </div>
                 <div class="oneinput">
@@ -1207,7 +1207,7 @@
                         <em class="triangle_border_down2"></em>
                     </span>
                     <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" value="">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
                     </div>
                 </div>
             </div>
@@ -1292,11 +1292,11 @@
             </div>
         </div>
 
-        <div class="add-course-sortone">
+        <div class="add-course-sortone" id="kcdybm111">
             <p style="font-size:16px">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
                 <div style="width:240px;height:32px;border:1px solid #CCCCCC;margin-left:62px">
-                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none">
+                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                 </div>
                 <div style="width:410px;height:32px;border:1px solid #CCCCCC;margin-left:20px">
                     <input type="text" id="gxmc" style="border:none">
@@ -1305,7 +1305,7 @@
             </div>
         </div>
 
-        <div class="add-course-check">
+        <div class="add-course-check" id="hykkdybmqx">
             <div class="add-course-checkboxall">
                 <img style="display:none" src="/image/codeallset_btn.png" alt="">
             </div>
@@ -1313,8 +1313,8 @@
             <p id="quxiaoqx" style="display:none">取消全选</p>
         </div>
 
-        <div class="add-course-sortthree" style="margin-top:20px">
-            <p style="font-size:16px;margin-right:8px">会员卡口对应编码</p>
+        <div id="hykkdybm" class="add-course-sortthree" style="margin-top:20px">
+            <p style="font-size:16px;margin-right:8px">会员卡扣对应编码</p>
             <div class="add-course-sortone-inputtwelve">
                 <div class="inputtwelve-flex" id="inputtwelve-flex">
 
@@ -1445,10 +1445,21 @@
 
         $('#inputtwelve-flex').children().children('img').hide()
 
-        $('.add-course-sortone-inputeight').children().children().children().children().eq(0).children().val('')
-        $('.add-course-sortone-inputeight').children().children().children().children().eq(1).children().val('')
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-show').hide()
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-hidden').show()
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').removeClass('11')
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-show').hide()
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-hidden').show()
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').removeClass('11')
 
         $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+
+        $('#gxbm').val('')
+        $('#gxmc').val('')
+
+        $('.add-course-checkboxall').children('img').hide()
+        $('#quanxuan').show()
+        $('#quxiaoqx').hide()
 
         $('#add-course-footer-save').unbind()
         $('#add-course-footer-save').click(function(){
@@ -1462,12 +1473,10 @@
 
     //支付
     $(".paypay").click(function () {
-        $('.paypay').children('.paypay-show').hide()
-        $('.paypay').children('.paypay-hidden').show()
-        $(this).parent().parent().children().children('.paypay').removeClass('11')
         if ($(this).children('.paypay-hidden').is(":hidden")) {
             $(this).children('.paypay-hidden').show()
             $(this).children('.paypay-show').hide()
+            $(this).removeClass('11')
         } else {
             $(this).children('.paypay-hidden').hide()
             $(this).children('.paypay-show').show()
@@ -1730,6 +1739,17 @@
             $("#text-count2").text(count);
         });
 
+        $(".input").on("input propertychange", function () {
+            var $this = $(this),
+                _val = $this.val(),
+                count = "";
+            if (_val.length > 1) {
+                $this.val(_val.substring(0, 1));
+            }
+            count = $this.val().length;
+            $("input").text(count);
+        });
+
         $("#addOneRow").click(function () {
             var tempTr = $(this).parent().parent().clone(true);
             $(this).parent().parent().parent().children("tr:last").after(tempTr);
@@ -1985,18 +2005,14 @@
 
     function woyaowoyao() {
         if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
-            $('.add-course-check').hide()
-            $(".inputtwelve-checkbox").click(function () {
-                $(".inputtwelve-checkbox").children('img').hide()
-                if ($(this).children('img').is(":hidden")) {
-                    $(this).children('img').show()
-                    $(".add-course-checkboxall").children('img').hide()
-                } else {
-                    $(this).children('img').hide()
-                }
-            })
-        } else {
-            $('.add-course-check').show()
+            $('#kcdybm111').show()
+        }else{
+            $('#kcdybm111').hide()
+        }
+
+        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')){
+            $('#hykkdybm').show()
+            $('#hykkdybmqx').show()
             $(".inputtwelve-checkbox").click(function () {
                 if ($(this).children('img').is(":hidden")) {
                     $(this).children('img').show()
@@ -2005,6 +2021,9 @@
                     $(this).children('img').hide()
                 }
             })
+        }else{
+            $('#hykkdybm').hide()
+            $('#hykkdybmqx').hide()
         }
     }
 
@@ -2338,12 +2357,21 @@
                 return;
             }
 
-            //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
-            if(!$('#inputtwelve-flex').children().children('img').is(':visible')){
-                alert('会员卡口对应编码')
-                return;
-            }
+            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')){
+                if($('#gxbm').val() == '' || $('#gxmc').val() == ''){
+                    alert('请输入编码')
+                    return;
+                }
+            }else{
+                //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
+                if (!$('#inputtwelve-flex').children().children('img').is(':visible')) {
+                    alert('会员卡口对应编码')
+                    return;
+                }
             //}
+            }
+
+            
             
 
             //支付方式的参数
@@ -2442,18 +2470,40 @@
                 leagueCurriculumFaqList.push({ problem, answer })
             }
 
-            //广信编码
+            var curriculumPayTypeList = []
+            //支付方式的参数
+            // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
+            //     var payMode = i + 1
 
-            var curriculumGuangxinList = []
+            //if ($(".paypay").eq(0).children('.paypay-show').is(':visible')) {
 
-            for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
-
-                    var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
-
-                    curriculumGuangxinList.push({ itemId })
-                }
+            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+                var curriculumGuangxinList = []
+                var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+                var itemId = $('#gxbm').val()
+                curriculumGuangxinList.push({ itemId: itemId })
+                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
             }
+
+            //}
+
+            //if ($(".paypay").eq(1).children('.paypay-show').is(':visible')) {
+
+            if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+                var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+                var curriculumGuangxinList = []
+                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                    if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
+
+                        var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+
+                        curriculumGuangxinList.push({ itemId: itemId })
+                    }
+                }
+                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+            }
+
+            //广信编码
 
             //视频上传
 
@@ -2491,9 +2541,7 @@
                 curriculumEffectList: curriculumEffectList,
                 curriculumTagList: curriculumTagList,
                 leagueCurriculumFaqList: leagueCurriculumFaqList,
-                curriculumPayTypeList: [
-                    { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
-                ],
+                curriculumPayTypeList: curriculumPayTypeList,
                 leagueCurriculumVideoList: videos,
                 leagueCurriculumImgList: Imgs
             }
@@ -2618,28 +2666,18 @@
             return;
         }
 
-        //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
-        if (!$('#inputtwelve-flex').children().children('img').is(':visible')) {
-            alert('会员卡口对应编码')
-            return;
-        }
-        //}
-
-
-        //支付方式的参数
-        for (var i = 0; i < $(".paypay").length; i++) {
-            if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
-                var payMode = i + 1
+        if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+            if ($('#gxbm').val() == '' || $('#gxmc').val() == '') {
+                alert('请输入编码')
+                return;
             }
-        }
-
-        var payTypeId = ''
-
-        if (payMode == 1) {
-            payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-        }
-        else if (payMode == 2) {
-            payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+        } else {
+            //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
+            if (!$('#inputtwelve-flex').children().children('img').is(':visible')) {
+                alert('会员卡口对应编码')
+                return;
+            }
+            //}
         }
 
         //课程分类id
@@ -2713,7 +2751,6 @@
         }
 
         //FAQ问题
-
         var leagueCurriculumFaqList = []
 
         for (var i = 1; i < $('#faq').children().children().children().length; i++) {
@@ -2722,18 +2759,47 @@
             leagueCurriculumFaqList.push({ problem, answer })
         }
 
-        //广信编码
 
-        var curriculumGuangxinList = []
+        var curriculumPayTypeList = []
+        //支付方式的参数
+            // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
+            //     var payMode = i + 1
 
-        for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-            if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
-
-                var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
-
-                curriculumGuangxinList.push({ itemId })
+        //if ($(".paypay").eq(0).children('.paypay-show').is(':visible')) {
+            
+            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+                var curriculumGuangxinList = []
+                var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+                var itemId = $('#gxbm').val()
+                curriculumGuangxinList.push({ itemId: itemId })
+                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
             }
-        }
+            
+        //}
+        
+        //if ($(".paypay").eq(1).children('.paypay-show').is(':visible')) {
+            
+            if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+                var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+                var curriculumGuangxinList = []
+                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                    if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
+
+                        var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+
+                        curriculumGuangxinList.push({ itemId: itemId })
+                    }
+                }
+                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+            }
+        //}
+        
+            //}
+        
+
+        //广信编码
+        
+        
 
         //视频上传
 
@@ -2772,9 +2838,7 @@
             curriculumEffectList: curriculumEffectList,
             curriculumTagList: curriculumTagList,
             leagueCurriculumFaqList: leagueCurriculumFaqList,
-            curriculumPayTypeList: [
-                { payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList }
-            ],
+            curriculumPayTypeList: curriculumPayTypeList,
             leagueCurriculumVideoList: videos,
             leagueCurriculumImgList: Imgs
         }
@@ -2847,10 +2911,19 @@
 
             $('#inputtwelve-flex').children().children('img').hide()
 
-            $('.add-course-sortone-inputeight').children().children().children().children().eq(0).children().val('')
-            $('.add-course-sortone-inputeight').children().children().children().children().eq(1).children().val('')
+            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-show').hide()
+            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-hidden').show()
+            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').removeClass('11')
+            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-show').hide()
+            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-hidden').show()
+            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').removeClass('11')
 
-            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+            $('#gxbm').val('')
+            $('#gxmc').val('')
+
+            $('.add-course-checkboxall').children('img').hide()
+            $('#quanxuan').show()
+            $('#quxiaoqx').hide()
 
             var a = aa
             console.log(a)
@@ -2959,22 +3032,42 @@
                                 $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').val(item.leagueCurriculumFaqList[i].answer)
                             }
                             
-
-                            if (item.curriculumPayTypeList[0].payTypeName == '付现') {
-                                $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
-                            } else {
-                                $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
+                            for(var i=0;i<item.curriculumPayTypeList.length;i++){
+                                if (item.curriculumPayTypeList[i].payTypeName == '付现') {
+                                    $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+                                } else if(item.curriculumPayTypeList[i].payTypeName == '卡扣'){
+                                    $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
+                                }
                             }
+                            
 
                             $('#inputtwelve-flex').children().children('img').hide()
 
-                            for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                                for (var j = 0; j < item.curriculumPayTypeList[0].curriculumGuangxinList.length; j++) {
-                                    if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[0].curriculumGuangxinList[j].itemId) {
-                                        $('#inputtwelve-flex').children().eq(i).children('img').show()
+                            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')){
+                                for(var i=0;i<item.curriculumPayTypeList.length;i++){
+                                    if(item.curriculumPayTypeList[i].payTypeName == '付现'){
+                                        $('#gxbm').val(item.curriculumPayTypeList[i].curriculumGuangxinList[0].itemId)
+                                        $('#gxbm').blur()
                                     }
                                 }
+                            }
+                            if($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')){
+                                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                                    for (var k = 0; k < item.curriculumPayTypeList.length; k++){
+                                        if(item.curriculumPayTypeList[k].payTypeName == '卡扣'){
+                                            for (var j = 0; j < item.curriculumPayTypeList[k].curriculumGuangxinList.length; j++) {
+                                                if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[k].curriculumGuangxinList[j].itemId) {
+                                                    $('#inputtwelve-flex').children().eq(i).children('img').show()
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
 
+                            if(!$('#inputtwelve-flex').children().children('img').is(':hidden')){
+                                $('.add-course-checkboxall').click()
                             }
 
                             //图片的渲染

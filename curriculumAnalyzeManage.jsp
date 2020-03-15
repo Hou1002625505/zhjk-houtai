@@ -349,7 +349,7 @@
         </div>
         <p style="font-size: 16px;margin-left:39px;margin-right:20px">教练工号</p>
         <div class="course-anaylse-search-selectthree" style="overflow: hidden;width:120px;margin:0">
-            <input id="jlgh" type="text" style="width:120px;height:30px;border:0;" />
+            <input id="jlgh" type="text" style="width:120px;height:30px;border:0;" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
         </div>
         <p style="font-size:16px;margin-left:39px">日期范围</p>
         <div class="J-datepicker-day">
@@ -921,7 +921,7 @@ function dsgbgxr(){
                             <td class="item3">`+ item.subscribeCount + `</td>
                             <td class="item3">`+ item.signCount + `</td>
                             <td class="item3">`+ (item.signRate * 100) + `%</td>
-                            <td class="item3">`+ item.fullStarffedRate +`</td>
+                            <td class="item3">`+ item.fullStarffedRate +`%</td>
                         </tr>
                     `
                     $('.table-body1').html(tablestr)

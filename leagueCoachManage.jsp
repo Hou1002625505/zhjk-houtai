@@ -826,7 +826,7 @@
             <div style="font-size:16px">员工姓名</div>
             <input class="course-coach-manage-flex-input" id="ccmfi1" type="text">
             <div style="font-size:16px">员工工号</div>
-            <input class="course-coach-manage-flex-input" id="ccmfi2" type="text">
+            <input class="course-coach-manage-flex-input" id="ccmfi2" type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             <div style="font-size:16px">课程类型</div>
             <div class="course-coach-manage-flex-select-one">
                 <span class="select_wrap">
