@@ -1063,7 +1063,7 @@
                 <img style="display:none" src="../images/simage/codeallset_btn.png">
             </div>
             <div class="course-manage-footer-pone">当页全选</div>
-            <div class="course-manage-footer-ptwo" id="batchup" style="cursor: pointer;">批量上传</div>
+            <div class="course-manage-footer-ptwo" id="batchup" style="cursor: pointer;">批量上架</div>
             <div class="course-manage-footer-ptwo" id="batchdown" style="cursor: pointer;">批量下架</div>
             <div class="course-manage-footer-pthree"></div>
             <div class="box" id="boxpage" style="margin-left:30px;margin-top:0"></div>
@@ -1231,8 +1231,8 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
-                        <td><textarea class="textarea22" placeholder="A :"></textarea></td>
+                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
+                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
                         <td>
                             <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                             <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
@@ -1267,7 +1267,7 @@
         <div class="add-course-sorttwo" style="position:relative">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <div id="demo" class="demo"></div>
-            <p style="position:absolute;left:150px;top:0;font-size: 16px;">图片建议尺寸750像素*400像素</p>
+            <p style="position:absolute;left:155px;top:0;font-size: 14px;">图片建议尺寸750像素*400像素</p>
         </div>
 
         <p style="font-size:16px;font-weight:bold;margin-top:53px">扣课方式及项目关联</p>
@@ -1297,10 +1297,10 @@
             <p style="font-size:16px">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
                 <div style="width:240px;height:32px;border:1px solid #CCCCCC;margin-left:62px">
-                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none;padding-left:10px;box-sizing: border-box;" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                 </div>
-                <div style="width:410px;height:32px;border:1px solid #CCCCCC;margin-left:20px">
-                    <input type="text" id="gxmc" style="border:none">
+                <div style="width:410px;height:32px;border:1px solid #CCCCCC;margin-left:20px;">
+                    <input type="text" id="gxmc" style="border:none;padding-left:10px;box-sizing: border-box;">
                 </div>
 
             </div>
@@ -1412,8 +1412,8 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
-                    <td><textarea class="textarea22" placeholder="A :"></textarea></td>
+                    <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
+                    <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
                     <td>
                         <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                         <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
@@ -1953,12 +1953,12 @@
                         //return data
                         alert(data.message)
                         $('#photoFile').attr('class', data.rows[0].path)
-                        $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
+                        $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
 
                         $('#videoshow').show()
 
                         $('#videovideo').click(function () {
-                            openVideo('http://test.physicalclub.com/crm/videos/' + data.rows[0].path)
+                            openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
                         })
 
                         $('#videohide').click(function () {
@@ -3059,8 +3059,8 @@
                                         <th></th>
                                     </tr>
                                     <tr>
-                                        <td><textarea class="textarea11" placeholder="Q :"></textarea></td>
-                                        <td><textarea class="textarea22" placeholder="A :"></textarea></td>
+                                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
+                                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
                                         <td>
                                             <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                                             <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
@@ -3167,12 +3167,12 @@
                             } else {
                                 $('#photoFile').attr('class',item.leagueCurriculumVideoList[0].videoUrl)
                                 var strstr = item.leagueCurriculumVideoList[0].videoUrl
-                                $('#videovideo').html('http://test.physicalclub.com/crm/videos/' + strstr)
+                                $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
 
                                 $('#videoshow').show()
 
                                 $('#videovideo').click(function () {
-                                    openVideo('http://test.physicalclub.com/crm/videos/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                    openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
                                 })
 
                                 $('#videohide').click(function () {
