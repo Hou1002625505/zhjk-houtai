@@ -967,7 +967,7 @@
         var page = 1;
         aaaaaa(page)
 
-        function aaaaaa(){
+        function aaaaaa(page){
 
             var paramscoach = {
                 page: page,
@@ -1216,7 +1216,6 @@
                 //点击保存修改事件
                 $('#coach-manage-addone-flexfour-save').click(function(){
                     jldbjbc()
-                    $(this).parent().parent().hide()
                 })
             },
             error: function (e) {
@@ -1542,6 +1541,32 @@
 
     //教练的编辑保存
     function jldbjbc(){
+
+        if($('#preview_photo').attr('src') == ''){
+            alert('请选择图片')
+            return;
+        }
+
+        if($('#area').val() == ''){
+            alert('请输入昵称')
+            return;
+        }
+
+        if($('#coach-tag').html() == ''){
+            alert('请选择个人标签')
+            return;
+        }
+
+        if($('#coach-course').html() == ''){
+            alert('请选择上牌课程')
+            return;
+        }
+
+        if($('#coach-introduce').val() == ''){
+            alert('请填写个人简介')
+            return;
+        }
+
         var TagList = []
         var SkillList = []
 
@@ -1583,6 +1608,7 @@
             data: JSON.stringify(paramcoach),
             success: function (result) {
                 if (result.message !== '修改成功!') {
+                    $('.course-coach-manage-addone').hide()
                     alert(result.message)
                     return;
                 } else if (result.message == '修改成功!') {

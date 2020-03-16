@@ -3655,6 +3655,18 @@
 
         if($('#maxcount').val() == ''){
             alert('请选择最大人数')
+            return;
+        }
+
+        if ($('#coach-performance').html()) {
+            for (var i = 0; i < $('#coach-performance').children().length; i++) {
+                if ($('#coach-performance').children().eq(i).children().eq(1).val() == '') {
+                    alert('请输入比例部分')
+                    break;
+                    return;
+                }
+                console.log(i)
+            }
         }
 
         //获取门店id
@@ -3879,6 +3891,17 @@
 
         if ($('#maxcount').val() == '') {
             alert('请选择最大人数')
+        }
+
+        if ($('#coach-performance').html()) {
+            for (var i = 0; i < $('#coach-performance').children().length; i++) {
+                if ($('#coach-performance').children().eq(i).children().eq(1).val() == '') {
+                    alert('请输入比例部分')
+                    break;
+                    return;
+                }
+                console.log(i)
+            }
         }
 
         //获取门店id

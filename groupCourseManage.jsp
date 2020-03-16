@@ -1503,6 +1503,12 @@
         $('.add-course-body').hide()
     })
 
+    $('#gxmc').click(function () {
+        var strstr = $('#gxbm').val()
+        fkjk(strstr)
+        
+    })
+
     time()
 
     kcflxl()
@@ -1953,12 +1959,14 @@
                         //return data
                         alert(data.message)
                         $('#photoFile').attr('class', data.rows[0].path)
-                        $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                        // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                        $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
 
                         $('#videoshow').show()
 
                         $('#videovideo').click(function () {
-                            openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                            //openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                            openVideo('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
                         })
 
                         $('#videohide').click(function () {
@@ -1989,7 +1997,6 @@
         var paramsgxbm = {
 
         }
-
         $.ajax({
             type: 'POST',
             contentType: "application/json;charset=UTF-8",
@@ -1999,13 +2006,6 @@
                 var strgxbm = '';
                 var thatresult = result
                 //console.log(result)
-                $('#gxbm').blur(function () {
-                    $.each(thatresult.rows, function (i, item) {
-                        if (item.mediid == $('#gxbm').val()) {
-                            $('#gxmc').val(item.mediname)
-                        }
-                    })
-                })
 
                 $.each(thatresult.rows, function (i, item) {
                     strgxbm += `
@@ -2016,6 +2016,28 @@
                         `
                     $('#inputtwelve-flex').html(strgxbm)
                 })
+            },
+            error: function (e) {
+                console.log(e.status);
+                console.log(e.responseText)
+            }
+        })
+    }
+
+    //付款接口
+    function fkjk(strstr){
+        // var str = {
+        //     packageCode = strstr
+        // }
+
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json;charset=UTF-8",
+            url: "rest/business/account/getGxPackageInfo?packageCode="+ strstr,
+            success: function (result) {
+                console.log(result)
+                $('#gxmc').val(result.rows[0].packageName)
+                $('#gxmc').attr('class', result.rows[0].packageId)
             },
             error: function (e) {
                 console.log(e.status);
@@ -2510,7 +2532,7 @@
             if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
                 var curriculumGuangxinList = []
                 var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-                var itemId = $('#gxbm').val()
+                var itemId = $('#gxmc').attr('class')
                 curriculumGuangxinList.push({ itemId: itemId })
                 curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
             }
@@ -2812,7 +2834,7 @@
             if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
                 var curriculumGuangxinList = []
                 var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-                var itemId = $('#gxbm').val()
+                var itemId = $('#gxmc').attr('class')
                 curriculumGuangxinList.push({ itemId: itemId })
                 curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
             }
@@ -3109,8 +3131,8 @@
                             if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')){
                                 for(var i=0;i<item.curriculumPayTypeList.length;i++){
                                     if(item.curriculumPayTypeList[i].payTypeName == '付现'){
-                                        $('#gxbm').val(item.curriculumPayTypeList[i].curriculumGuangxinList[0].itemId)
-                                        $('#gxbm').blur()
+                                        $('#gxbm').val(item.curriculumPayTypeList[i].curriculumGuangxinList[0].itemCode)
+                                        $('#gxmc').click()
                                     }
                                 }
                             }
@@ -3167,12 +3189,14 @@
                             } else {
                                 $('#photoFile').attr('class',item.leagueCurriculumVideoList[0].videoUrl)
                                 var strstr = item.leagueCurriculumVideoList[0].videoUrl
-                                $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
+                                //$('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
+                                $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + strstr)
 
                                 $('#videoshow').show()
 
                                 $('#videovideo').click(function () {
-                                    openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                    // openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                    openVideo('http://crm.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
                                 })
 
                                 $('#videohide').click(function () {
