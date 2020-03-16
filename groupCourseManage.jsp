@@ -987,7 +987,7 @@
         <div class="course-manage-button" id="course-manage-button" style="margin-bottom:20px">新建课程</div>
         <div class="course-manage-flex">
             <div style="font-size:16px">课程名称</div>
-            <input id="course-manage-flex-input" type="text">
+            <input id="course-manage-flex-input" autocomplete="off" type="text">
             <div style="font-size:16px">课程分类</div>
             <span class="select_wrap">
                 <select name="visitstatus" id="kcgl-body-kcfl" style="cursor:pointer">
@@ -1010,17 +1010,17 @@
                 <em class="triangle_border_down1"></em>
             </span>
             <div style="font-size:16px">创建时间</div>
-            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-one "
+            <div class="J-datepicker-day"> <input type="text" autocomplete="off" class="course-manage-flex-input-one "
                     id="course-manage-flex-input-one" placeholder="开始时间">
             </div>
             <p>-</p>
-            <div class="J-datepicker-day"> <input type="text" class="course-manage-flex-input-two"
+            <div class="J-datepicker-day"> <input type="text" autocomplete="off" class="course-manage-flex-input-two"
                     id="course-manage-flex-input-two" placeholder="结束时间">
             </div>
             <div style="font-size:16px">价格区间</div>
-            <input type="text" class="course-manage-flex-input-three" id="course-manage-flex-input-three" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+            <input type="text" autocomplete="off" class="course-manage-flex-input-three" id="course-manage-flex-input-three" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             <p>-</p>
-            <input type="text" class="course-manage-flex-input-four" id="course-manage-flex-input-four" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+            <input type="text" autocomplete="off" class="course-manage-flex-input-four" id="course-manage-flex-input-four" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
         </div>
         <div class="course-manage-flextwo">
             <p id="course-manage-flextwo-search">查询</p>
@@ -1096,7 +1096,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">课程名称</p>
             <div class="add-course-sortone-inputone">
-                <input type="text" value="" id="area2">
+                <input type="text" value="" id="area2" autocomplete="off">
                 <p><span id="text-count2">0</span>/22</p>
             </div>
         </div>
@@ -1104,7 +1104,7 @@
             <p style="font-size:16px">课程标准价</p>
             <div class="add-course-sortone-inputtwo">
                 <p>￥</p>
-                <input type="text" id="kcbzj" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                <input type="text" id="kcbzj" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             </div>
         </div>
         <div class="add-course-sortone">
@@ -1140,7 +1140,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">卡路里消耗</p>
             <div class="add-course-sortone-inputfive">
-                <input type="text" id="kllxh" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                <input type="text" id="kllxh" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                 <p>cal</p>
             </div>
         </div>
@@ -1148,7 +1148,7 @@
         <div class="add-course-sortone">
             <p style="font-size:16px">适用人群</p>
             <div class="add-course-sortone-inputsix">
-                <input type="text" value="" id="shrq">
+                <input type="text" value="" autocomplete="off" id="shrq">
             </div>
         </div>
 
@@ -1267,7 +1267,7 @@
         <div class="add-course-sorttwo" style="position:relative">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <div id="demo" class="demo"></div>
-            <p style="position:absolute;left:155px;top:0;font-size: 14px;">图片建议尺寸750像素*400像素</p>
+            <p style="position:absolute;left:155px;top:0;font-size: 14px;">图片建议尺寸380像素*220像素</p>
         </div>
 
         <p style="font-size:16px;font-weight:bold;margin-top:53px">扣课方式及项目关联</p>
@@ -1297,10 +1297,10 @@
             <p style="font-size:16px">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
                 <div style="width:240px;height:32px;border:1px solid #CCCCCC;margin-left:62px">
-                    <input placeholder="请输入课程对应广信编码" type="text" id="gxbm" style="border:none;padding-left:10px;box-sizing: border-box;" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                    <input placeholder="请输入课程对应广信编码" autocomplete="off" type="text" id="gxbm" style="border:none;padding-left:10px;box-sizing: border-box;">
                 </div>
                 <div style="width:410px;height:32px;border:1px solid #CCCCCC;margin-left:20px;">
-                    <input type="text" id="gxmc" style="border:none;padding-left:10px;box-sizing: border-box;">
+                    <input type="text" id="gxmc" autocomplete="off" style="border:none;padding-left:10px;box-sizing: border-box;">
                 </div>
 
             </div>

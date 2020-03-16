@@ -824,9 +824,9 @@
     <div class="course-coach-manage-body">
         <div class="course-coach-manage-flex">
             <div style="font-size:16px">员工姓名</div>
-            <input class="course-coach-manage-flex-input" id="ccmfi1" type="text">
+            <input class="course-coach-manage-flex-input" id="ccmfi1" type="text" autocomplete="off">
             <div style="font-size:16px">员工工号</div>
-            <input class="course-coach-manage-flex-input" id="ccmfi2" type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+            <input class="course-coach-manage-flex-input" id="ccmfi2" type="text" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             <div style="font-size:16px">课程类型</div>
             <div class="course-coach-manage-flex-select-one">
                 <span class="select_wrap">
@@ -839,7 +839,7 @@
             <div style="font-size:16px">课程名称</div>
             <div class="course-coach-manage-flex-select-two">
                 <div style="width:200px;height:30px;border:1px solid #d5d5d7;border-radius: 4px;margin:0 30px 0 20px">
-                    <input id="jlgl-kcmc" style="width:200px;height:30px;border:0;" />
+                    <input id="jlgl-kcmc" style="width:200px;height:30px;border:0;" autocomplete="off"/>
                 </div>
             </div>
             <div class="course-coach-manage-flextwo">

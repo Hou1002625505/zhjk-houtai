@@ -1814,16 +1814,16 @@
                 <em class="triangle_border_down1"></em>
             </span>
             <div style="font-size:16px">上课教练</div>
-            <input class="course-arranging-flex-select-two" id="teaching-course-coach"></input>
+            <input class="course-arranging-flex-select-two" id="teaching-course-coach" autocomplete="off"></input>
             <div style="font-size:16px">教练工号</div>
-            <input class="course-arranging-flex-select-three" id="coach-id" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>
+            <input class="course-arranging-flex-select-three" autocomplete="off" id="coach-id" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>
             <div style="font-size:16px">创建时间</div>
             <div class="J-datepicker-day">
-                <input type="text" class="course-arranging-flex-input-one" id="create-course-time" placeholder="开始时间">
+                <input type="text" class="course-arranging-flex-input-one" autocomplete="off" id="create-course-time" placeholder="开始时间">
             </div>
             <p>-</p>
             <div class="J-datepicker-day">
-                <input type="text" class="course-arranging-flex-input-two" id="end-course-time" placeholder="结束时间">
+                <input type="text" class="course-arranging-flex-input-two" autocomplete="off" id="end-course-time" placeholder="结束时间">
             </div>
         </div>
         <div class="course-arranging-flextwo">
@@ -3125,7 +3125,7 @@
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one">课程名称</div>
                     <div class="select-menu-input-coursename-div">
-                        <input id="select-menu-input-coursename" style="margin-left:10px;border:0;font-size:14px;cursor:pointer"/>   
+                        <input id="select-menu-input-coursename" autocomplete="off" style="margin-left:10px;border:0;font-size:14px;cursor:pointer"/>   
                     </div> 
                 </div>
                 <div class="edit-course-context-flextwo">
@@ -3138,15 +3138,15 @@
                 <div class="edit-course-context-flex">
                     <div class="edit-course-context-one">上课日期</div>
                     <div class="J-datepicker-day" style="width:150px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;margin:0 39px 0 77px">
-                        <input id="edit-course-context-three" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
+                        <input id="edit-course-context-three" autocomplete="off" style="width:150px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                     <p style="font-size:18px;margin-right:18px">上课时间</p>
                     <div class="mycontainer" style="width:120px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;">
-                        <input id="edit-course-context-four" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
+                        <input id="edit-course-context-four" autocomplete="off" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                     <p style="margin:0 6px 0 6px">-</p>
                     <div class="mycontainer" style="width:120px;height:36px;overflow: hidden;border:1px solid #BFBFBF;border-radius:4px;">
-                        <input id="edit-course-context-five" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
+                        <input id="edit-course-context-five" autocomplete="off" style="width:120px;height:36px;border:0;padding-left:10px;box-sizing:border-box;cursor:pointer" />
                     </div>
                 </div>
 
@@ -3154,7 +3154,7 @@
                     <p class="edit-course-context-flex3-pone">课程售价</p>
                     <div class="add-course-sortone-inputtwo">
                         <p>￥</p>
-                        <input type="text" id="course-price" style="cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                        <input type="text" id="course-price" style="cursor:pointer" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p class="edit-course-context-flex3-ptwo" style="display:none">标准价</p>
                     <div class="add-course-sortone-inputthree" style="display:none">
@@ -3166,12 +3166,12 @@
                 <div class="edit-course-context-flex3">
                     <p class="edit-course-context-flex3-pone">开课人数</p>
                     <div class="add-course-sortone-inputtwo">
-                        <input type="text" id="mincount" style="cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                        <input type="text" id="mincount" style="cursor:pointer" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p style="margin-left:-20px;margin-right:8px;">人</p>
                     <p class="edit-course-context-flex3-ptwo">最大人数</p>
                     <div class="add-course-sortone-inputthree" style="margin-left:17px;">
-                        <input type="text" id="maxcount" style="text-decoration:none;color:black;cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+                        <input type="text" id="maxcount" autocomplete="off" style="text-decoration:none;color:black;cursor:pointer" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
                     </div>
                     <p style="margin-left:-20px">人</p>
                 </div>
@@ -3764,7 +3764,9 @@
         $('#kcgl-body-md').click()
 
         setTimeout(() => {
-            $('#kcgl-body-fj').find(`option[value="` + list.roomId + `"]`).prop("selected", true);
+            setTimeout(() => {
+                $('#kcgl-body-fj').find(`option[value="` + list.roomId + `"]`).prop("selected", true);
+            }, 50);
         }, 50);
 
         $('#select-menu-input-coursename').val(list.leagueCurriculumName)
