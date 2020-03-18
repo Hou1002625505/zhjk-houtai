@@ -1049,8 +1049,8 @@
                         total: result.total, //总条数
                         pagesize: 10, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);

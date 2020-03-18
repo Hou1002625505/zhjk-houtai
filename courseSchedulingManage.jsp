@@ -343,7 +343,7 @@
 
         .course-arranging-footer .course-arranging-footer-pthree {
             font-size: 14px;
-            margin-left: 893px;
+            margin-left: 820px;
         }
 
         .td-del {
@@ -1942,7 +1942,7 @@
             </tbody>
         </table>
 
-        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:77rem;width:100%"></div>
+        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:66rem;width:100%"></div>
         
 
         <div class="edit-course" id="edit-course2">
@@ -2825,8 +2825,8 @@
                         total: result.total, //总条数
                         pagesize: 10, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
@@ -3009,8 +3009,8 @@
                             total: result.total, //总条数
                             pagesize: 10, //每页显示10条
                             currentPage: page, //当前页
-                            onPagechange: onPagechange
-                            //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                            onPagechange: onPagechange,
+                            btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                         }
 
                         pagination.init(obj);
@@ -3080,6 +3080,7 @@
                 if(data.message == '导入成功!'){
                     alert(data.message)
                     shoye()
+                    window.location.reload()
                 }else{
                     alert(data.message)
                     return;

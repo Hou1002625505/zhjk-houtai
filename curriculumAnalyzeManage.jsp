@@ -675,8 +675,8 @@ function dygbgxr(){
                             <td class="item3">`+ item.releaseCount + `</td>
                             <td class="item3">`+ item.subscribeCount + `</td>
                             <td class="item3">`+ item.signCount + `</td>
-                            <td class="item3">`+ (item.signRate * 100) + `%</td>
-                            <td class="item3">`+ item.fullStarffedRate +`%</td>
+                            <td class="item3">`+ item.signRateStr+ `</td>
+                            <td class="item3">`+ item.fullStarffedRateStr +`</td>
                         </tr>
                     `
                     $('.table-body1').html(tablestr)
@@ -696,8 +696,8 @@ function dygbgxr(){
                         total: result.total, //总条数
                         pagesize: 15, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
@@ -825,8 +825,8 @@ function degbgxr(){
                         total: result.total, //总条数
                         pagesize: 15, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
@@ -920,8 +920,8 @@ function dsgbgxr(){
                             <td class="item3">`+ item.releaseCount + `</td>
                             <td class="item3">`+ item.subscribeCount + `</td>
                             <td class="item3">`+ item.signCount + `</td>
-                            <td class="item3">`+ (item.signRate * 100) + `%</td>
-                            <td class="item3">`+ item.fullStarffedRate +`%</td>
+                            <td class="item3">`+ item.signRateStr+ `</td>
+                            <td class="item3">`+ item.fullStarffedRateStr +`</td>
                         </tr>
                     `
                     $('.table-body1').html(tablestr)
@@ -941,8 +941,8 @@ function dsgbgxr(){
                         total: result.total, //总条数
                         pagesize: 15, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);

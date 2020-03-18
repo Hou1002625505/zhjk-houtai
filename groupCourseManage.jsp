@@ -279,7 +279,7 @@
 
         .course-manage-footer .course-manage-footer-pthree {
             font-size: 16px;
-            margin-left:60rem;
+            margin-left:53rem;
         }
 
         .c-datepicker-date-editor {
@@ -1036,8 +1036,8 @@
                         <div style="display:flex;align-items: center;justify-content: center;">
                             <div class="headingsifting">课程价格</div>
                             <div class="headingsifting-column">
-                                <img src="../images/simage/headingsifting_up.png">
-                                <img src="../images/simage/headingsifting_down.png"></div>
+                                <img src="/image/headingsifting_up.png">
+                                <img src="/image/headingsifting_down.png"></div>
                         </div>
 
                     </th>
@@ -1045,8 +1045,8 @@
                         <div style="display:flex;align-items: center;justify-content: center;">
                             <div class="headingsifting">创建时间</div>
                             <div class="headingsifting-column">
-                                <img src="../images/simage/headingsifting_up.png">
-                                <img src="../images/simage/headingsifting_down.png"></div>
+                                <img src="/image/headingsifting_up.png">
+                                <img src="/image/headingsifting_down.png"></div>
                         </div>
 
                     </th>
@@ -1060,7 +1060,7 @@
         </table>
         <div class="course-manage-footer">
             <div id="course-manage-table-checkbox">
-                <img style="display:none" src="../images/simage/codeallset_btn.png">
+                <img style="display:none" src="/image/codeallset_btn.png">
             </div>
             <div class="course-manage-footer-pone">当页全选</div>
             <div class="course-manage-footer-ptwo" id="batchup" style="cursor: pointer;">批量上架</div>
@@ -2149,8 +2149,8 @@
                         total: result.total, //总条数
                         pagesize: 10, //每页显示10条
                         currentPage: page, //当前页
-                        onPagechange: onPagechange
-                        //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        onPagechange: onPagechange,
+                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
