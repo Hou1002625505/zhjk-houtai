@@ -230,7 +230,7 @@
             position: absolute;
             width: 920px;
             height: 820px;
-            top: -705px;
+            top: 30px;
             left: 340px;
             z-index: 100;
             background: #D0E8F2;
@@ -307,7 +307,7 @@
         }
 
         .coach-manage-addone-flexthree-blockone .flexthree-blockone-inputtwo {
-            margin-left: -24px
+            margin-left: -30px
         }
 
         .coach-manage-addone-flexthree .coach-manage-addone-flexthree-blocktwo {
@@ -822,6 +822,9 @@
 
 <body>
     <div class="course-coach-manage-body">
+        <div class="course-coach-manage-add" style="position: relative;"></div>
+        <div class="course-coach-manage-add1" style="opacity: 0;"></div>
+        <div class="course-coach-manage-add2" style="opacity: 0;"></div>
         <div class="course-coach-manage-flex">
             <div style="font-size:16px">员工姓名</div>
             <input class="course-coach-manage-flex-input" id="ccmfi1" type="text" autocomplete="off">
@@ -866,9 +869,7 @@
         <div class="course-coach-manage-bottom">
             <div class="box" id="boxpage" style="margin-left:0"></div>
         </div>
-        <div class="course-coach-manage-add" style="position: relative;"></div>
-        <div class="course-coach-manage-add1" style="opacity: 0;"></div>
-        <div class="course-coach-manage-add2" style="opacity: 0;"></div>
+        
     </div>
 </body>
 
@@ -1127,7 +1128,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
+                                    <div class="coach-manage-addone-flexthree-blockone"><p class="flexthree-blockone-pone">昵称</p><div id="areaborder"><input id="area" autocomplete="off" value="`+ result.rows[0].nickName + `"/></div><div class="flexthree-blockone-inputtwo"><span id="text-count">0</span>/7</div></div>
                                     <div class="coach-manage-addone-flexthree-blockthree">
                                         <p class="flexthree-blockthree-pone">工作性质</p>
                                         <span class="select_wrap">
@@ -1486,7 +1487,24 @@
 
     //教练查看js
     function jlckjs(){
+        // $("#area").on("input propertychange", function () {
+        //     var $this = $(this),
+        //         _val = $this.val(),
+        //         count = "";
+        //     // if (_val.length > 7) {
+        //     //     $this.val(_val.substring(0, 7));
+        //     // }
+        //     count = $this.val().length;
+        //     $("#text-count").text(count);
+        // });
         $("#area").on("input propertychange", function () {
+            var $this = $(this),
+                _val = $this.val(),
+                count = "";
+            count = $this.val().length;
+            $("#text-count").text(count);
+        });
+        $('#area').blur(function(){
             var $this = $(this),
                 _val = $this.val(),
                 count = "";
@@ -1495,7 +1513,7 @@
             }
             count = $this.val().length;
             $("#text-count").text(count);
-        });
+        })
 
         //点击添加标签窗口的叉关闭窗口
         $('#addtwo-flexone-chacha').click(function () {

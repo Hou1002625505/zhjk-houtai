@@ -1817,7 +1817,7 @@
             <input class="course-arranging-flex-select-two" id="teaching-course-coach" autocomplete="off"></input>
             <div style="font-size:16px">教练工号</div>
             <input class="course-arranging-flex-select-three" autocomplete="off" id="coach-id" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"></input>
-            <div style="font-size:16px">创建时间</div>
+            <div style="font-size:16px">课程时间</div>
             <div class="J-datepicker-day">
                 <input type="text" class="course-arranging-flex-input-one" autocomplete="off" id="create-course-time" placeholder="开始时间">
             </div>
@@ -2072,25 +2072,45 @@
 
     //全部发布
     $('#publishpublishall').click(function () {
-        var ids = []
-        var data = new Date()
-        for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
-            if (($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[1]) > (data.getMonth() + 1)) || (($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[1]) == (data.getMonth() + 1) && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[2]) > data.getDate()))) {
+        // var ids = []
+        // var data = new Date()
+        // for (var i = 0; i < $('#sj-body-body1').children().length; i++) {
+        //     if (($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[1]) > (data.getMonth() + 1)) || (($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[0] >= data.getFullYear() && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[1]) == (data.getMonth() + 1) && Number($('#sj-body-body1').children().eq(i).children().eq(3).html().split('-')[2]) > data.getDate()))) {
 
-                var ids1 = $('#sj-body-body1').children().eq(i).children().eq(0).attr('class')
+        //         var ids1 = $('#sj-body-body1').children().eq(i).children().eq(0).attr('class')
 
-                ids.push(ids1)
-            }
-        }
+        //         ids.push(ids1)
+        //     }
+        // }
+        
+        var storeId = $('#kcgl-body-skmd').val()
+
+        var roomId = $('#kcgl-body-skfj').val()
+
+        var realName = $('#teaching-course-coach').val()
+
+        var userName = $('#coach-id').val()
+
+        var startDate = $('#create-course-time').val()
+
+        //var startDate1 = new Date(startDate).getTime()
+
+        var endDate = $('#end-course-time').val()
+
+        //var endDate1 = new Date(endDate).getTime()
 
         var recommended = {
-            operationType: 4,
-            ids: ids,
-            state: 1
+            storeId : storeId,
+            roomId : roomId,
+            realName : realName,
+            userName : userName,
+            startDate : startDate,
+            endDate : endDate
         }
-
+        
+        //http://test.physicalclub.com/rest/courseScheduling/updateReleaseAllCourseScheduling
         $.ajax({
-            url: 'rest/courseScheduling/updateBatchCourseSchedulingByOperationType',
+            url: 'rest/courseScheduling/updateReleaseAllCourseScheduling',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(recommended),
@@ -3586,6 +3606,10 @@
                                 })
                             //}, 100);
                         })
+                    
+                        $('#coach-p').click()
+
+                        $('#coach-p').unbind()
                     },
                     error: function (e) {
                         console.log(e.status)

@@ -296,6 +296,12 @@
         #jlxm{
             
         }
+
+        .c-datepicker-date-table td.disabled .cell,
+		.c-datepicker-month-table td.disabled .cell,
+		.c-datepicker-year-table td.disabled .cell {
+			text-decoration: none;
+		}
     </style>
 </head>
 
@@ -326,11 +332,11 @@
             <input id="kcmc" type="text" style="width:200px;height:30px;border:0;"/>
         </div>
         <p style="font-size:16px">日期范围</p>
-        <div class="J-datepicker-day">
-            <input type="text" class="course-anaylse-search-inputone " id="ksrq" placeholder="开始日期">
+        <div class="J-datepicker-day" id="startTime">
+            <input type="text" class="course-anaylse-search-inputone" id="ksrq" placeholder="开始日期">
         </div>
         <p>-</p>
-        <div class="J-datepicker-day">
+        <div class="J-datepicker-day" id="endTime">
             <input type="text" class="course-anaylse-search-inputtwo" id="jsrq" placeholder="结束日期">
         </div>
     </div>
@@ -352,11 +358,11 @@
             <input id="jlgh" type="text" style="width:120px;height:30px;border:0;" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
         </div>
         <p style="font-size:16px;margin-left:39px">日期范围</p>
-        <div class="J-datepicker-day">
-            <input type="text" class="course-anaylse-search-inputone " id="ksrq1" placeholder="开始日期">
+        <div class="J-datepicker-day" id="startTime1">
+            <input type="text" class="course-anaylse-search-inputone" id="ksrq1" placeholder="开始日期">
         </div>
         <p>-</p>
-        <div class="J-datepicker-day">
+        <div class="J-datepicker-day" id="endTime1">
             <input type="text" class="course-anaylse-search-inputtwo" id="jsrq1" placeholder="结束日期">
         </div>
     </div>
@@ -386,6 +392,125 @@
 
 <script type="text/javascript">
 
+    var oldTime = "";
+    oldTime = $("#ksrq").val();
+    var oldTime1 = "";
+        oldTime1 = $("#ksrq1").val();
+    var day2 = new Date();
+    day2.setTime(day2.getTime());
+    var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1 < 10 ? "0" + (day2.getMonth() + 1) : day2.getMonth() + 1) + "-" + (day2.getDate() < 10 ? "0" + day2.getDate() : day2.getDate());
+    function fun_date(aa) {
+            var date1 = new Date();
+            //time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();//time1表示当前时间
+            var date2 = new Date(date1);
+            date2.setDate(date1.getDate() + aa);
+            var time2 = date2.getFullYear() + "-" + (date2.getMonth() + 1 < 10?'0'+(date2.getMonth() + 1):(date2.getMonth() + 1)) + "-" + date2.getDate();
+            return time2
+        }
+    var s3 = fun_date(-7)
+    $('#ksrq').val(s3)
+    $('#jsrq').val(s2)
+    $('#ksrq1').val(s3)
+    $('#jsrq1').val(s2)
+
+    $('#startTime').datePicker({
+            hasShortcut: false,
+            format: 'YYYY-MM-DD',
+            max: s2,
+            hide: function () {
+                if (oldTime != $("#ksrq").val()) {
+                    $("#jsrq").val('')
+                }
+                oldTime = $("#ksrq").val();
+                sy()
+            }
+        });
+    
+    $('#startTime1').datePicker({
+            hasShortcut: false,
+            format: 'YYYY-MM-DD',
+            max: s2,
+            hide: function () {
+                if (oldTime1 != $("#ksrq1").val()) {
+                    $("#jsrq1").val('')
+                }
+                oldTime1 = $("#ksrq1").val();
+                sy1()
+            }
+        });
+
+    $("#endTime").on("click", function () {
+            if ($("#ksrq").val() == '') {
+                alert("请选择开始时间")
+                $('.c-datepicker-picker').hide();
+            }
+        })
+
+    $("#endTime1").on("click", function () {
+            if ($("#ksrq1").val() == '') {
+                alert("请选择开始时间")
+                $('.c-datepicker-picker').hide();
+            }
+        })
+
+    function sy() {
+            var maxTime = "";
+            var day2 = new Date();
+            day2.setTime(day2.getTime());
+            var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1 < 10 ? "0" + (day2.getMonth() + 1) : day2.getMonth() + 1) + "-" + (day2.getDate() < 10 ? "0" + day2.getDate() : day2.getDate());
+            //		alert(s2)
+            var t = new Date($("#ksrq").val());
+            var iToDay = t.getDate();
+            var iToMon = t.getMonth();
+            var iToYear = t.getFullYear();
+            var newDay = new Date(iToYear, iToMon, (iToDay + 30));
+            var hthird = newDay.getFullYear() + "-" + ((newDay.getMonth() + 1) < 10 ? "0" + (newDay.getMonth() + 1) : newDay.getMonth() + 1) + "-" + (newDay.getDate() < 10 ? "0" + newDay.getDate() : newDay.getDate());
+            var thetime = hthird;
+            var d = new Date(Date.parse(thetime.replace(/-/g, "/")));
+            var curDate = day2;
+            if (d <= curDate) {
+                maxTime = thetime;
+            } else {
+                maxTime = s2;
+            }
+
+            $("#endTime").datePicker({
+                hasShortcut: false,
+                format: 'YYYY-MM-DD',
+                min: $("#ksrq").val(),
+                max: maxTime
+            });
+        }
+    
+    function sy1() {
+            var maxTime = "";
+            var day2 = new Date();
+            day2.setTime(day2.getTime());
+            var s2 = day2.getFullYear() + "-" + (day2.getMonth() + 1 < 10 ? "0" + (day2.getMonth() + 1) : day2.getMonth() + 1) + "-" + (day2.getDate() < 10 ? "0" + day2.getDate() : day2.getDate());
+            //		alert(s2)
+            var t = new Date($("#ksrq1").val());
+            var iToDay = t.getDate();
+            var iToMon = t.getMonth();
+            var iToYear = t.getFullYear();
+            var newDay = new Date(iToYear, iToMon, (iToDay + 30));
+            var hthird = newDay.getFullYear() + "-" + ((newDay.getMonth() + 1) < 10 ? "0" + (newDay.getMonth() + 1) : newDay.getMonth() + 1) + "-" + (newDay.getDate() < 10 ? "0" + newDay.getDate() : newDay.getDate());
+            var thetime = hthird;
+            var d = new Date(Date.parse(thetime.replace(/-/g, "/")));
+            var curDate = day2;
+            if (d <= curDate) {
+                maxTime = thetime;
+            } else {
+                maxTime = s2;
+            }
+
+            $("#endTime1").datePicker({
+                hasShortcut: false,
+                format: 'YYYY-MM-DD',
+                min: $("#ksrq1").val(),
+                max: maxTime
+            });
+        }
+
     $('#course-anaylse-header-pone').click(function () {
         $('#course-anaylse-header-pthree').css('background', '#F5F5F5')
         $('#course-anaylse-header-pthree').css('color', 'black')
@@ -396,10 +521,26 @@
         $(this).addClass('1')
         $('#course-anaylse-header-ptwo').removeClass('1')
         $('#course-anaylse-header-pthree').removeClass('1')
-        $('#course-anaylse-pthree').hide()
         $('#qlg').show()
         $('#zhy').hide()
-        dygbgxr()
+
+        $('#ksrq').val(s3)
+        $('#jsrq').val(s2)
+        $('#ksrq1').val(s3)
+        $('#jsrq1').val(s2)
+
+        $('#course-anaylse-pone').unbind()
+        $('#course-anaylse-pone').click(function () {
+            if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+                dygbgxr()
+            } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+                degbgxr()
+            } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+                dsgbgxr()
+            }
+        })
+        $('#course-anaylse-pone').click()
+        
     })
 
     $('#course-anaylse-header-ptwo').click(function () {
@@ -412,10 +553,26 @@
         $(this).addClass('1')
         $('#course-anaylse-header-pone').removeClass('1')
         $('#course-anaylse-header-pthree').removeClass('1')
-        $('#course-anaylse-pthree').hide()
         $('#qlg').show()
         $('#zhy').hide()
-        degbgxr()
+
+        $('#ksrq').val(s3)
+        $('#jsrq').val(s2)
+        $('#ksrq1').val(s3)
+        $('#jsrq1').val(s2)
+
+        $('#course-anaylse-pone').unbind()
+        $('#course-anaylse-pone').click(function () {
+            if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+                dygbgxr()
+            } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+                degbgxr()
+            } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+                dsgbgxr()
+            }
+        })
+        $('#course-anaylse-pone').click()
+        
     })
 
     $('#course-anaylse-header-pthree').click(function () {
@@ -431,7 +588,24 @@
         $('#course-anaylse-pthree').show()
         $('#qlg').hide()
         $('#zhy').show()
-        dsgbgxr()
+
+        $('#ksrq').val(s3)
+        $('#jsrq').val(s2)
+        $('#ksrq1').val(s3)
+        $('#jsrq1').val(s2)
+
+        $('#course-anaylse-pone').unbind()
+        $('#course-anaylse-pone').click(function () {
+            if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+                dygbgxr()
+            } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+                degbgxr()
+            } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+                dsgbgxr()
+            }
+        })
+        $('#course-anaylse-pone').click()
+        
     })
 
     $('#course-anaylse-pone').click(function(){
@@ -467,16 +641,39 @@
 
     $('#course-anaylse-pthree').click(function(){
         
-        var storeId = $('#sj-body-md1').val()
-        var realName = $('#jlxm').val()
-        var userName = $('#jlgh').val()
-        var startDate = $('#ksrq1').val()
-        var endDate = $('#jsrq1').val()
+        if($('.course-anaylse-header').children().eq(0).hasClass('1')){
+            var storeId = $('#sj-body-md').val()
+            var classifyId = $('#sj-body-kcfl').val()
+            var leagueCurriculumName = $('#kcmc').val()
+            var startDate = $('#ksrq').val()
+            var endDate = $('#jsrq').val()
 
-        location.href = 'http://test.physicalclub.com/rest/ curriculumAnalyze/exportCoachAnalyze?storeId='+ storeId + '&realName=' + realName +'&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
+            location.href = 'rest/curriculumAnalyze/exportCurriculumAnalyze?storeId=' + storeId + '&classifyId=' + classifyId + '&leagueCurriculumName=' + leagueCurriculumName + '&startDate=' + startDate + '&endDate=' + endDate
+        
+        }else if($('.course-anaylse-header').children().eq(1).hasClass('1')){
+            var storeId = $('#sj-body-md').val()
+            var classifyId = $('#sj-body-kcfl').val()
+            var leagueCurriculumName = $('#kcmc').val()
+            var startDate = $('#ksrq').val()
+            var endDate = $('#jsrq').val()
+
+            location.href = 'rest/curriculumAnalyze/exportStudentAnalyze?storeId=' + storeId + '&classifyId=' + classifyId + '&leagueCurriculumName=' + leagueCurriculumName + '&startDate=' + startDate + '&endDate=' + endDate
+        }else if($('.course-anaylse-header').children().eq(2).hasClass('1')){
+            var storeId = $('#sj-body-md1').val()
+            var realName = $('#jlxm').val()
+            var userName = $('#jlgh').val()
+            var startDate = $('#ksrq1').val()
+            var endDate = $('#jsrq1').val()
+
+            location.href = 'rest/curriculumAnalyze/exportCoachAnalyze?storeId=' + storeId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
+            
+        }
+
+        
     })
 
-time()
+    $('#course-anaylse-pone').click()
+//time()
 
 mdxlxr()
 
@@ -485,86 +682,86 @@ kcflxlxr()
 dygbgxr()
 
 //时间
-function time() {
-        $('.J-datepicker-day').datePicker({
-            hasShortcut: true,
-            format: 'YYYY-MM-DD',
-            shortcutOptions: [{
-                name: '今天',
-                day: '0'
-            }, {
-                name: '昨天',
-                day: '-1'
-            }, {
-                name: '一周前',
-                day: '-7'
-            }]
-        });
+// function time() {
+//         $('.J-datepicker-day').datePicker({
+//             hasShortcut: true,
+//             format: 'YYYY-MM-DD',
+//             shortcutOptions: [{
+//                 name: '今天',
+//                 day: '0'
+//             }, {
+//                 name: '昨天',
+//                 day: '-1'
+//             }, {
+//                 name: '一周前',
+//                 day: '-7'
+//             }]
+//         });
 
-        function fchatitylist() {
-            intoPages = 1;
-            visititylist();
-        }
+//         function fchatitylist() {
+//             intoPages = 1;
+//             visititylist();
+//         }
 
-        function visititylist() {
-            var status = $("#visitstatus").val();
-            var conditionName = '';//顾问姓名
-            var startDate = $("#selectDate1").val();
-            var endDate = $("#selectDate2").val();
-            //var club = $("#clubId").val();
-            var fangcusname = $("#fangcusname").val();
-            var fangmobile = $("#fangmobile").val();
-            if (startDate != '') {
-                if (endDate == '') {
-                    alert("请选择结束日期");
-                    return;
-                }
-            }
-        }
-
-
-        function getDay(day) {
-
-            var today = new Date();
+//         function visititylist() {
+//             var status = $("#visitstatus").val();
+//             var conditionName = '';//顾问姓名
+//             var startDate = $("#selectDate1").val();
+//             var endDate = $("#selectDate2").val();
+//             //var club = $("#clubId").val();
+//             var fangcusname = $("#fangcusname").val();
+//             var fangmobile = $("#fangmobile").val();
+//             if (startDate != '') {
+//                 if (endDate == '') {
+//                     alert("请选择结束日期");
+//                     return;
+//                 }
+//             }
+//         }
 
 
+//         function getDay(day) {
 
-            var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+//             var today = new Date();
 
 
 
-            today.setTime(targetday_milliseconds); //注意，这行是关键代码
+//             var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
 
 
 
-            var tYear = today.getFullYear();
+//             today.setTime(targetday_milliseconds); //注意，这行是关键代码
 
-            var tMonth = today.getMonth();
 
-            var tDate = today.getDate();
 
-            tMonth = doHandleMonth(tMonth + 1);
+//             var tYear = today.getFullYear();
 
-            tDate = doHandleMonth(tDate);
+//             var tMonth = today.getMonth();
 
-            return tYear + "-" + tMonth + "-" + tDate;
+//             var tDate = today.getDate();
 
-        }
+//             tMonth = doHandleMonth(tMonth + 1);
 
-        function doHandleMonth(month) {
+//             tDate = doHandleMonth(tDate);
 
-            var m = month;
+//             return tYear + "-" + tMonth + "-" + tDate;
 
-            if (month.toString().length == 1) {
+//         }
 
-                m = "0" + month;
+//         function doHandleMonth(month) {
 
-            }
+//             var m = month;
 
-            return m;
+//             if (month.toString().length == 1) {
 
-        }
-    }
+//                 m = "0" + month;
+
+//             }
+
+//             return m;
+
+//         }
+//     }
 
 //门店下拉渲染
 function mdxlxr(){
@@ -759,9 +956,9 @@ function degbgxr(){
                             <th class="item4" style="border:1px solid #CCCCCC;border-left:none" rowspan="2">课程类型</th>
                             <th class="item5" style="border:1px solid #CCCCCC;border-left:none" rowspan="2">课程编号</th>
                             <th class="item6" style="border:1px solid #CCCCCC;border-left:none" rowspan="2">课程名称</th>
-                            <th style="width:12.1354%;border:1px solid #CCCCCC;border-left:none" colspan="3">发布数量</th>
-                            <th style="width:20.2604%;border:1px solid #CCCCCC;border-left:none" colspan="5">预约总人次</th>
-                            <th style="width:32.4479%;border:1px solid #CCCCCC;border-left:none" colspan="8">签到总人次</th>
+                            <th style="width:12.1354%;border:1px solid #CCCCCC;border-left:none" colspan="3">性别</th>
+                            <th style="width:20.2604%;border:1px solid #CCCCCC;border-left:none" colspan="5">上课频次</th>
+                            <th style="width:32.4479%;border:1px solid #CCCCCC;border-left:none" colspan="8">年龄</th>
                         </tr>
                         <tr style="background:#f8fafb">
                             <th class="item7" style="border:1px solid #CCCCCC;border-left:none;border-top:none">男</th>
@@ -891,6 +1088,7 @@ function dsgbgxr(){
                             <th class="item8">岗位</th>
                             <th class="item3">发布课程数量</th>
                             <th class="item3">预约总人次</th>
+                            <th class="item3">课程平均签到人次</th>
                             <th class="item3">签到总人次</th>
                             <th class="item3">签到率</th>
                             <th class="item3">满员率</th>
@@ -901,13 +1099,16 @@ function dsgbgxr(){
                     var gzxz = ''
                     if (!arr) {
                         return gzxz = ''
-                    } else {
-                        if (arr == 1) {
-                            return gzxz = "全职"
-                        } else {
-                            return gzxz = "兼职"
-                        }
+                    } else{
+                        return arr
                     }
+                    // else {
+                    //     if (arr == 1) {
+                    //         return gzxz = "全职"
+                    //     } else {
+                    //         return gzxz = "兼职"
+                    //     }
+                    // }
                 }
 
                 $.each(result.rows, function (i, item) {
@@ -916,9 +1117,10 @@ function dsgbgxr(){
                             <td class="item1">`+ (i + 1) + `</td>
                             <td class="item8">`+ item.userName + `</td>
                             <td class="item8">`+ item.realName + `</td>
-                            <td class="item8">`+ gzxz(item.jobCategory) + `</td>
+                            <td class="item8">`+ gzxz(item.jobCategoryStr) + `</td>
                             <td class="item3">`+ item.releaseCount + `</td>
                             <td class="item3">`+ item.subscribeCount + `</td>
+                            <td class="item3">`+ item.averageSignCount + `</td>
                             <td class="item3">`+ item.signCount + `</td>
                             <td class="item3">`+ item.signRateStr+ `</td>
                             <td class="item3">`+ item.fullStarffedRateStr +`</td>

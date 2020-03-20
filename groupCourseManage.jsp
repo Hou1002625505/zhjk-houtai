@@ -1509,6 +1509,11 @@
         
     })
 
+    $('#gxbm').blur(function(){
+        var strstr = $('#gxbm').val()
+        fkjk(strstr)
+    })
+
     time()
 
     kcflxl()
