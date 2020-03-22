@@ -88,6 +88,19 @@
             font-size:16px;
         }
     
+        .course-anaylse-header #course-anaylse-header-pfour {
+            width: 100px;
+            height: 30px;
+            border-radius: 0 4px 0 0;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #BFBFBF;
+            border-bottom: 0;
+            background: #F5F5F5;
+            box-sizing: border-box;
+            font-size:16px;
+        }
+
         .course-anaylse-nav {
             height: 1px;
             background: #BFBFBF;
@@ -310,6 +323,7 @@
         <div id="course-anaylse-header-pone" class="1" style="cursor: pointer;">课程分析</div>
         <div id="course-anaylse-header-ptwo" style="cursor: pointer;">学员分析</div>
         <div id="course-anaylse-header-pthree" style="cursor: pointer;">教练分析</div>
+        <div id="course-anaylse-header-pfour" style="cursor: pointer;">课程明细</div>
     </div>
     <div class="course-anaylse-nav"></div>
     <div class="course-anaylse-search" id="qlg">
@@ -516,11 +530,14 @@
         $('#course-anaylse-header-pthree').css('color', 'black')
         $('#course-anaylse-header-ptwo').css('background', '#F5F5F5')
         $('#course-anaylse-header-ptwo').css('color', 'black')
+        $('#course-anaylse-header-pfour').css('background', '#F5F5F5')
+        $('#course-anaylse-header-pfour').css('color', 'black')
         $('#course-anaylse-header-pone').css('background', '#71B2EF')
         $('#course-anaylse-header-pone').css('color', 'white')
         $(this).addClass('1')
         $('#course-anaylse-header-ptwo').removeClass('1')
         $('#course-anaylse-header-pthree').removeClass('1')
+        $('#course-anaylse-header-pfour').removeClass('1')
         $('#qlg').show()
         $('#zhy').hide()
 
@@ -537,6 +554,9 @@
                 degbgxr()
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
                 dsgbgxr()
+            }
+            else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+                dssgbgxr()
             }
         })
         $('#course-anaylse-pone').click()
@@ -548,11 +568,14 @@
         $('#course-anaylse-header-pthree').css('color', 'black')
         $('#course-anaylse-header-pone').css('background', '#F5F5F5')
         $('#course-anaylse-header-pone').css('color', 'black')
+        $('#course-anaylse-header-pfour').css('background', '#F5F5F5')
+        $('#course-anaylse-header-pfour').css('color', 'black')
         $('#course-anaylse-header-ptwo').css('background', '#71B2EF')
         $('#course-anaylse-header-ptwo').css('color', 'white')
         $(this).addClass('1')
         $('#course-anaylse-header-pone').removeClass('1')
         $('#course-anaylse-header-pthree').removeClass('1')
+        $('#course-anaylse-header-pfour').removeClass('1')
         $('#qlg').show()
         $('#zhy').hide()
 
@@ -570,6 +593,9 @@
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
                 dsgbgxr()
             }
+            else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+                dssgbgxr()
+            }
         })
         $('#course-anaylse-pone').click()
         
@@ -580,11 +606,14 @@
         $('#course-anaylse-header-pone').css('color', 'black')
         $('#course-anaylse-header-ptwo').css('background', '#F5F5F5')
         $('#course-anaylse-header-ptwo').css('color', 'black')
+        $('#course-anaylse-header-pfour').css('background', '#F5F5F5')
+        $('#course-anaylse-header-pfour').css('color', 'black')
         $('#course-anaylse-header-pthree').css('background', '#71B2EF')
         $('#course-anaylse-header-pthree').css('color', 'white')
         $(this).addClass('1')
         $('#course-anaylse-header-pone').removeClass('1')
         $('#course-anaylse-header-ptwo').removeClass('1')
+        $('#course-anaylse-header-pfour').removeClass('1')
         $('#course-anaylse-pthree').show()
         $('#qlg').hide()
         $('#zhy').show()
@@ -603,9 +632,49 @@
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
                 dsgbgxr()
             }
+            else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+                dssgbgxr()
+            }
         })
         $('#course-anaylse-pone').click()
         
+    })
+
+    $('#course-anaylse-header-pfour').click(function(){
+        $('#course-anaylse-header-pthree').css('background', '#F5F5F5')
+        $('#course-anaylse-header-pthree').css('color', 'black')
+        $('#course-anaylse-header-pone').css('background', '#F5F5F5')
+        $('#course-anaylse-header-pone').css('color', 'black')
+        $('#course-anaylse-header-ptwo').css('background', '#F5F5F5')
+        $('#course-anaylse-header-ptwo').css('color', 'black')
+        $('#course-anaylse-header-pfour').css('background', '#71B2EF')
+        $('#course-anaylse-header-pfour').css('color', 'white')
+        $(this).addClass('1')
+        $('#course-anaylse-header-pone').removeClass('1')
+        $('#course-anaylse-header-pthree').removeClass('1')
+        $('#course-anaylse-header-pthree').removeClass('1')
+        $('#qlg').hide()
+        $('#zhy').show()
+
+        $('#ksrq').val(s3)
+        $('#jsrq').val(s2)
+        $('#ksrq1').val(s3)
+        $('#jsrq1').val(s2)
+
+        $('#course-anaylse-pone').unbind()
+        $('#course-anaylse-pone').click(function () {
+            if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+                dygbgxr()
+            } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+                degbgxr()
+            } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+                dsgbgxr()
+            }
+            else if($('.course-anaylse-header').children().eq(3).hasClass('1')){
+                dssgbgxr()
+            }
+        })
+        $('#course-anaylse-pone').click()
     })
 
     $('#course-anaylse-pone').click(function(){
@@ -616,11 +685,16 @@
         }else if($('.course-anaylse-header').children().eq(2).hasClass('1')){
             dsgbgxr()
         }
+        else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+            dssgbgxr()
+        }
     })
 
     $('#course-anaylse-ptwo').click(function(){
 
         $('#sj-body-md').find('option[value=""]').prop("selected", true);
+
+        $('#sj-body-md1').find('option[value=""]').prop("selected", true);
 
         $('#sj-body-kcfl').find('option[value=""]').prop("selected", true);
         
@@ -630,12 +704,23 @@
 
         $('#jsrq').val('')
 
+        $('#jlxm').val('')
+
+        $('#jlgh').val('')
+
+        $('#ksrq1').val('')
+
+        $('#jsrq1').val('')
+
         if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
             dygbgxr()
         } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
             degbgxr()
         } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
             dsgbgxr()
+        }
+        else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+            dssgbgxr()
         }
     })
 
@@ -667,6 +752,14 @@
 
             location.href = 'rest/curriculumAnalyze/exportCoachAnalyze?storeId=' + storeId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
             
+        } else if ($('.course-anaylse-header').children().eq(3).hasClass('1')){
+            var storeId = $('#sj-body-md1').val()
+            var realName = $('#jlxm').val()
+            var userName = $('#jlgh').val()
+            var startDate = $('#ksrq1').val()
+            var endDate = $('#jsrq1').val()
+
+            location.href = 'rest/ curriculumAnalyze/exportCourseSchedulingDetail?storeId=' + storeId + '&realName=' + realName + '&userName=' + userName + '&startDate=' + startDate + '&endDate=' + endDate
         }
 
         
@@ -861,6 +954,10 @@ function dygbgxr(){
                             <th class="item3">满员率</th>
                         </tr>
                 `
+                
+                if (result.rows.length == 0) {
+                    $('.table-body1').html(tablestr)
+                }
 
                 $.each(result.rows, function (i, item) {
                     tablestr += `
@@ -905,6 +1002,8 @@ function dygbgxr(){
                     `
                     $('.count').html(str3)
                 })
+            
+                
             },
             error: function (e) {
                 console.log(e.status)
@@ -980,6 +1079,11 @@ function degbgxr(){
                         </tr>
 
                 `
+
+                if (result.rows.length == 0) {
+                    $('.table-body1').html(tablestr)
+                }
+
                 $.each(result.rows, function (i, item) {
                     tablestr += `
                             <tr>
@@ -1111,6 +1215,10 @@ function dsgbgxr(){
                     // }
                 }
 
+                if (result.rows.length == 0) {
+                    $('.table-body1').html(tablestr)
+                }
+
                 $.each(result.rows, function (i, item) {
                     tablestr += `
                         <tr>
@@ -1145,6 +1253,123 @@ function dsgbgxr(){
                         currentPage: page, //当前页
                         onPagechange: onPagechange,
                         btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                    }
+
+                    pagination.init(obj);
+
+                    var str3
+                    str3 = `
+                        <p style="font-size:16px">共`+ result.total + `条，每页` + list.rows + `条</p>
+                    `
+                    $('.count').html(str3)
+                })
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+
+    }
+}
+
+//第四个表格渲染
+function dssgbgxr(){
+    var onPagechange = function (page) {
+        console.log(page)
+        aaaaaa(page)
+    }
+
+    var page = 1;
+    aaaaaa(page)
+
+    function aaaaaa(page) {
+
+        var storeId = $('#sj-body-md1').val()
+        var realName = $('#jlxm').val()
+        var userName = $('#jlgh').val()
+        var startDate = $('#ksrq1').val()
+        var endDate = $('#jsrq1').val()
+
+        var list = {
+            page: page,
+            rows: 15,
+            storeId: storeId,
+            realName: realName,
+            userName: userName,
+            startDate: startDate,
+            endDate: endDate
+        }
+
+        $.ajax({
+            url: 'rest/curriculumAnalyze/selectCourseSchedulingDetailList',
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(list),
+            success: function (result) {
+                console.log(result)
+
+                var tablestr;
+                tablestr = `
+                        <tr style="background:#f8fafb">
+                            <th>序号</th>
+                            <th>发布课程</th>
+                            <th>预约人数</th>
+                            <th>签到人数</th>
+                            <th>预约率</th>
+                            <th>签到率</th>
+                        </tr>
+                `
+
+                // function gzxz(arr) {
+                //     var gzxz = ''
+                //     if (!arr) {
+                //         return gzxz = ''
+                //     } else {
+                //         return arr
+                //     }
+                //     // else {
+                //     //     if (arr == 1) {
+                //     //         return gzxz = "全职"
+                //     //     } else {
+                //     //         return gzxz = "兼职"
+                //     //     }
+                //     // }
+                // }
+
+                if (result.rows.length == 0) {
+                    $('.table-body1').html(tablestr)
+                }
+
+                $.each(result.rows, function (i, item) {
+                    tablestr += `
+                        <tr>
+                            <td>`+ (i + 1) + `</td>
+                            <td>`+ item.leagueCurriculumName + `</td>
+                            <td>`+ item.totalCount + `</td>
+                            <td>`+ item.signCount + `</td>
+                            <td>`+ item.subscribeRateStr + `</td>
+                            <td>`+ item.signRateStr + `</td>
+                        </tr>
+                    `
+                    $('.table-body1').html(tablestr)
+
+                    $('.table-body1').children().mouseover(function () {
+                        $(this).children('td').css('background', '#faa262')
+                        $(this).children('td').css('color', 'white')
+                    })
+
+                    $('.table-body1').children().mouseout(function () {
+                        $(this).children('td').css('background', '#ffffff')
+                        $(this).children('td').css('color', '#444444')
+                    })
+
+                    var obj = {
+                        wrapid: 'boxpage', //页面显示分页器容器id
+                        total: result.total, //总条数
+                        pagesize: 15, //每页显示10条
+                        currentPage: page, //当前页
+                        onPagechange: onPagechange,
+                        btnCount: 5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);

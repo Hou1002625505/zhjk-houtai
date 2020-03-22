@@ -10,15 +10,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<base href="<%=basePath%>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>企业消费明细</title>
-	<link rel="stylesheet" type="text/css" href="http://test.physicalclub.com/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="http://test.physicalclub.com/easyui/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="http://test.physicalclub.com/easyui/demo.css">
-	<link rel="stylesheet" type="text/css" href="http://test.physicalclub.com/easyui/pagination.css" />
-	<link rel="stylesheet" type="text/css" href="http://test.physicalclub.com/easyui/themes/datepicker.css" />
-	<script type="text/javascript" src="http://test.physicalclub.com/easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="http://test.physicalclub.com/easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="http://test.physicalclub.com/js/common.js"></script>
-	<script src="http://test.physicalclub.com/easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="easyui/demo.css">
+	<link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script src="easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <style type="text/css">
 	html,
@@ -1592,6 +1592,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		<div class="xzhd-body-flex1" style="margin-top:50px">
+			<p style="font-size:16px;margin-right:40px">活动入口配置图</p>
+			<div id="xzhd-body-hdbjpz-img" class="xzbac uploadssimg8" valnum=8></div>
+			<div class="xzhd-body-hdbjpz-upload successcg" id="uploadss8">上传</div>
+		</div>
+		<div class="xzhd-body-flex1" style="margin-top:50px">
 			<p style="font-size:16px;margin-right:24px">活动页面背景配置</p>
 			<div id="xzhd-body-hdbjpz-img" class="xzbac uploadssimg1" valnum=1></div>
 			<div class="xzhd-body-hdbjpz-upload successcg" id="uploadss1">上传</div>
@@ -1748,12 +1753,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 </body>
-<script src="http://test.physicalclub.com/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="http://test.physicalclub.com/easyui/moment.min.js"></script>
-<script type="text/javascript" src="http://test.physicalclub.com/easyui/datepicker.all.js"></script>
-<script type="text/javascript" src="http://test.physicalclub.com/easyui/datepicker.en.js"></script>
-<script type="text/javascript" src="http://test.physicalclub.com/js/common.js"></script>
-<script type="text/javascript" src="http://test.physicalclub.com/easyui/easyui-lang-zh_CN.js"></script>
+<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="easyui/moment.min.js"></script>
+<script type="text/javascript" src="easyui/datepicker.all.js"></script>
+<script type="text/javascript" src="easyui/datepicker.en.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
 <script>
 	var couponList = [];
 	function crmyhj(em) {
@@ -1767,7 +1772,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				str += '<img class="gouxuan"  id="' + item.couponId + '" src="../images/codeallset_btn.png" alt="" >';
 			}
 			str += '</div>' +
-				'<p class="psda">' + (item.internalName ? item.internalName : item.packageName) + '</p>' +
+				'<p class="psda">' + item.packageName + '</p>' +
 				'</td>' +
 				'<td style="width:10%">' +
 				'<div style="display:flex;justify-content: center;">' +
@@ -1807,7 +1812,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$(em).parents('.xzhd-body-flex').find('.xzhd-body-tbody1').append(str)
 		})
 	}
-
 	function selectType(em, type) {
 		$(".xzhd-body-tbody1").html("")
 		$(".xzhd-body-henggang").parent().find("img").hide()
@@ -1821,7 +1825,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			yzyhj(em);
 		}
 	}
-	
 	function seletzm(i, em, id, kc) {
 		if (kc == 0) {
 			alert('库存为0，不能选择');
@@ -1833,8 +1836,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$.each(couponList[0].crmCouponList, function (i, item) {
 					if (item.couponId == id) {
 						item.selected = true;
-						var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.activityName + '" couponSource="1" quantity="' + item.numbers1 + '">' +
-							'<p>CRM优惠券/' + item.activityName + '</p><p style="margin-left:2px" class="koj">x' + item.numbers1 + '</p>' +
+						var str = '<div class="cgysl" couponId="' + item.couponId + '" couponName="' + item.packageName + '" couponSource="1" quantity="' + item.numbers1 + '">' +
+							'<p>CRM优惠券/' + item.packageName + '</p><p style="margin-left:2px" class="koj">x' + item.numbers1 + '</p>' +
 							'<img  onclick="deleteyhj(this,\'' + item.couponId + '\',1)"  class="xzhd-body-chacha" src="../images/classdel_btn.png">' +
 							'</div>';
 						$(em).parents('.xzhd-body-flex').find("#xzhd-body-fxhd").append(str);
@@ -1956,6 +1959,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			})
 		}
+			$(em).parents('.xzhd-body-flex').find(".cgysl").each(function () {
+			if ($(this).attr("couponid") == id) {
+				$(this).attr("quantity", $(em).parent().find('p').text())
+				$(this).find('.koj').text("x" + $(em).parent().find('p').text())
+			}
+		})
 	}
 	// console.log(JSON.stringify(couponList))
 
@@ -2242,13 +2251,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		receiveButtonUrl = "";
 		sharePosterButtonUrl = "";
 		shareBuddyLinksUrl = "";
+		entranceImageUrl="";
 		$(".xzbac").each(function (index) {
 			$(this).css({
 				'background': 'rgba(245,245,245,1)'
 			})
 		})
 	})
-	var imgType = 1, pageBackgroundUrl = "", shareButtonUrl = "", sharePosterUrl = "", receiveBackgroundUrl = "", receiveButtonUrl = "", sharePosterButtonUrl = "", shareBuddyLinksUrl = "";
+	var imgType = 1, pageBackgroundUrl = "", shareButtonUrl = "", sharePosterUrl = "", receiveBackgroundUrl = "", receiveButtonUrl = "", sharePosterButtonUrl = "", shareBuddyLinksUrl = "",entranceImageUrl="";
 	$("#uploadss1").on("click", function () {
 		$("#collection").click();
 		imgType = 1;
@@ -2277,10 +2287,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#collection").click();
 		imgType = 7;
 	})
+	$("#uploadss8").on("click", function () {
+		$("#collection").click();
+		imgType = 8;
+	})
 	$("#collection").change(function () {
 		let file = $("#collection").val()
 		let filename = file.substr(file.lastIndexOf("."));
-		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg'&& filename != '.gif') {
 			alert("请上传图片格式的文件");
 			return;
 		}
@@ -2315,6 +2329,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						receiveBackgroundUrl = 'images/' + data.rows[0].path;
 					} else if (imgType == 7) {
 						receiveButtonUrl = 'images/' + data.rows[0].path;
+					} else if (imgType == 8) {
+						entranceImageUrl = 'images/' + data.rows[0].path;
 					}
 				} else {
 					$("#uploadss" + imgType).text("上传失败")
@@ -2391,7 +2407,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			alert("请填写分享描述")
 			return;
 		}
-		if (pageBackgroundUrl == '' || shareButtonUrl == '' || sharePosterUrl == '' || receiveBackgroundUrl == '' || receiveButtonUrl == '' || sharePosterButtonUrl == '' || shareBuddyLinksUrl == '') {
+		if (entranceImageUrl==""||pageBackgroundUrl == '' || shareButtonUrl == '' || sharePosterUrl == '' || receiveBackgroundUrl == '' || receiveButtonUrl == '' || sharePosterButtonUrl == '' || shareBuddyLinksUrl == '') {
 			alert('请上传完图片');
 			return;
 		}
@@ -2412,6 +2428,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			"receiveButtonUrl": receiveButtonUrl,
 			"sharePosterButtonUrl": sharePosterButtonUrl,
 			"shareBuddyLinksUrl": shareBuddyLinksUrl,
+			"entranceImageUrl":entranceImageUrl,
 			"shareTitle": shareTitle,
 			"shareDescription": shareDescription,
 			"fontColor": fontColor,
@@ -2827,6 +2844,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						receiveBackgroundUrl = "";
 						receiveButtonUrl = "";
 						sharePosterButtonUrl = "";
+						entranceImageUrl="";
 						shareBuddyLinksUrl = "";
 						$(".xzbac").each(function (index) {
 							$(this).css({
@@ -2853,7 +2871,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								$(this).find("p").show();
 							}
 						})
-
+	if (item.entranceImageUrl != '') {
+							entranceImageUrl = item.entranceImageUrl;
+							$(".uploadssimg8").css({
+								"background": "url(" + item.entranceImageUrl + ") center / 100% no-repeat"
+							})
+						}
 						if (item.pageBackgroundUrl != '') {
 							pageBackgroundUrl = item.pageBackgroundUrl;
 							$(".uploadssimg1").css({
@@ -2988,6 +3011,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				window.open(receiveButtonUrl)
 			}
 		}
+		if ($(this).attr('valnum') == 8) {
+			if (entranceImageUrl != '') {
+				window.open(entranceImageUrl)
+			}
+		}
+
 
 	})
 	function backsyj() {

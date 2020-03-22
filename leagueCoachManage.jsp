@@ -233,10 +233,11 @@
             top: 30px;
             left: 340px;
             z-index: 100;
-            background: #D0E8F2;
+            background: #eeffff;
             border-radius: 9px;
             padding: 18px;
             box-sizing: border-box;
+            border:1px solid #c7dbff
         }
 
         .course-coach-manage-addone .coach-manage-addone-flexone {
@@ -263,7 +264,7 @@
         .course-coach-manage-addone .coach-manage-addone-flexthree {
             width: 880px;
             height: 738px;
-            border: 2px solid #71B2EF;
+            border: 2px solid #c7dbff;
             box-sizing: border-box;
             margin-top: 10px;
             background: #FFFFFF;
@@ -472,10 +473,11 @@
             height: 584px;
             top: 175px;
             left: 530px;
-            background: #D0E8F2;
+            background: #eeffff;
             border-radius: 9px;
             padding: 18px;
             box-sizing: border-box;
+            border:1px solid #c7dbff
         }
 
         .course-coach-manage-addtwo .coach-manage-addtwo-flexone {
@@ -500,7 +502,7 @@
         .course-coach-manage-addtwo .coach-manage-addtwo-flexthree {
             width: 570px;
             height: 505px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             background: white;
             margin-top: 17px;
             padding: 22px 0 0 4px;
@@ -586,10 +588,11 @@
             height: 678px;
             top: 140px;
             left: 485px;
-            background: #D0E8F2;
+            background: #eeffff;
             border-radius: 9px;
             padding: 18px;
             box-sizing: border-box;
+            border:1px solid #c7dbff
         }
 
         .course-coach-manage-addthree .coach-manage-addthree-flexone {
@@ -615,7 +618,7 @@
         .course-coach-manage-addthree .coach-manage-addthree-flexthree {
             width: 650px;
             height: 600px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             background: white;
             margin-top: 17px;
             box-sizing: border-box;

@@ -410,8 +410,8 @@
         .edit-course {
             width: 800px;
             height: 760px;
-            border: 1px solid #71B2EF;
-            background: #E0ECFF;
+            border: 1px solid #c7dbff;
+            background: #eeffff;
             border-radius: 4px;
             padding: 18px;
             box-sizing: border-box;
@@ -446,7 +446,7 @@
         .edit-course .edit-course-context {
             width: 756px;
             height: 680px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             background: #FFFFFF;
             overflow-y: scroll;
             position: relative;
@@ -766,8 +766,8 @@
             z-index: 100;
             width: 421px;
             height: 376px;
-            background: #E0ECFF;
-            border: 1px solid #71B2EF;
+            background: #eeffff;
+            border: 1px solid #c7dbff;
             border-radius: 4px;
             padding: 13px;
             box-sizing: border-box;
@@ -798,7 +798,7 @@
         .add-edit-course-header-context {
             width: 391px;
             height: 314px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             background: white;
             margin-top: 11px;
             overflow-y: scroll;
@@ -941,12 +941,12 @@
         .course-arranging-body .add-course-name {
             width: 688px;
             height: 678px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             position: absolute;
             left: 32px;
             top: 2px;
             z-index: 200;
-            background: #E0ECFF;
+            background: #eeffff;
             padding: 18px;
             border-radius: 4px;
             box-sizing: border-box;
@@ -976,7 +976,7 @@
         .add-course-name .add-course-name-context {
             width: 650px;
             height: 600px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             margin-top: 30px;
             background: white;
             padding: 22px 22px 22px 4px;
@@ -1060,13 +1060,14 @@
             position: absolute;
             width: 467px;
             height: 363px;
-            background: #E0ECFF;
+            background: #eeffff;
             z-index: 388;
             border-radius: 4px;
             top: 240px;
             left: 566px;
             padding: 18px;
             box-sizing: border-box;
+            border:1px solid #c7dbff
         }
 
         .add-edit-course-label .add-edit-course-label-header {
@@ -1093,7 +1094,7 @@
         .add-edit-course-label .add-edit-course-label-context {
             width: 427px;
             height: 282px;
-            border: 1px solid #71B2EF;
+            border: 1px solid #c7dbff;
             margin-top: 16px;
             background: white
         }

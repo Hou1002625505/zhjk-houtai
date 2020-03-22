@@ -381,14 +381,14 @@
 			align-items: center;
 		}
 	
-		#xzhd-body-hdbjpz-img {
+		#xzhd-body-hdbjpz-img ,#xzhd-body-hdbjpz-img1{
 			width: 120px;
 			height: 150px;
 			border: 1px solid #CCCCCC;
 			border-radius: 3px;
 		}
 	
-		#xzhd-body-hdbjpz-upload {
+		#xzhd-body-hdbjpz-upload,#xzhd-body-hdbjpz-upload1 {
 			width: 60px;
 			height: 30px;
 			border-radius: 4px;
@@ -1170,6 +1170,29 @@
 					<p id='xzhd-body-fxhdxs-count'><span id="xzhd-body-fxhdxs-text-count">0</span>/30</p>
 				</div>
 			</div>
+		
+			<div class="xzhd-body-flex1" style="margin-top:50px;position: relative;">
+				<p style="font-size:16px;margin-right:40px">活动入口配置图</p>
+				<div id="xzhd-body-hdbjpz-img1">
+					<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
+				</div>
+				<div style="display: flex;flex-direction: column;">
+					<div id="xzhd-body-hdbjpz-upload1">上传</div>
+					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：宽度建议750像素</p>
+					<p class="xzhd-body-tswztswz">高度尽量不要超过3手机屏，</p>
+					<p class="xzhd-body-tswztswz">图片大小不超过5M.</p>
+				</div>
+				<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload1" onchange="hdbjpz_upload1()"
+					style="display:none">
+				<!-- <div style="position:absolute;right:222px;top:0">
+					<p style="font-size:16px">示例1</p>
+					<p style="font-size:16px;margin-top:9px">上传活动背景图时，分享红包按钮处请留白</p>
+					<div style="display:flex;align-items:flex-end;margin-top:9px">
+						<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
+						<p style="font-size:16px">（点击图片可查看大图）</p>
+					</div>
+				</div> -->
+			</div>
 			<div class="xzhd-body-flex1" style="margin-top:50px;position: relative;">
 				<p style="font-size:16px;margin-right:22px">活动页面背景配置</p>
 				<div id="xzhd-body-hdbjpz-img">
@@ -1378,6 +1401,8 @@
 			}
 			$('#xzhd-body-hdbjpz-img').attr('class', '')
 			$('#xzhd-body-hdbjpz-img').children().attr('src', 'image/white-white.jpg')
+			$('#xzhd-body-hdbjpz-img1').attr('class', '')
+			$('#xzhd-body-hdbjpz-img1').children().attr('src', 'image/white-white.jpg')
 			$('#xzhd-body-fxanpz-img').attr('class', '')
 			$('#xzhd-body-fxanpz-img').children().attr('src', 'image/white-white.jpg')
 			$('#xzhd-body-fxhyljt-img').attr('class', '')
@@ -1545,7 +1570,10 @@
 		time()
 
 		youzanjk()
-
+//活动入口配置点击
+$('#xzhd-body-hdbjpz-upload1').click(function () {
+			$('#hdbjpz_upload1').click()
+		})
 		//活动背景配置点击
 		$('#xzhd-body-hdbjpz-upload').click(function () {
 			$('#hdbjpz_upload').click()
@@ -1610,7 +1638,42 @@
 			count = $this.val().length;
 			$("#xzhd-body-fxhdxs-text-count").text(count);
 		});
-		
+		//活动r入口配置图上传
+		function hdbjpz_upload1() {
+			if($('#hdbjpz_upload1').val() == ''){
+				return;
+			}
+			let file = $("#hdbjpz_upload1").val()
+			let filename = file.substr(file.lastIndexOf("."));
+			if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+				alert("请上传图片格式的文件");
+				return;
+			}
+			var fileMaxSize = 5120;
+			var fileSize1 = document.getElementById('hdbjpz_upload1').files[0].size;
+			var fileSize = fileSize1 /1024;
+			if(fileSize> fileMaxSize){
+				alert("上传文件大小不能超过5M")
+				return;
+			}
+			var formData = new FormData();
+			formData.append('file', document.getElementById('hdbjpz_upload1').files[0])
+			$.ajax({
+				url: "rest/evaluateActivity/uploadEvaluateActivitiesFile",
+				type: "post",
+				data: formData,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					console.log(data)
+					$('#xzhd-body-hdbjpz-img1').children().attr('src','images/'+ data.rows[0].path)
+					$('#xzhd-body-hdbjpz-img1').attr('class', 'images/' + data.rows[0].path)
+				},
+				error: function (data) {
+					alert("上传失败")
+				}
+			});
+		}
 		//活动背景配置上传
 		function hdbjpz_upload() {
 			if($('#hdbjpz_upload').val() == ''){
@@ -1924,6 +1987,10 @@
 				alert('请填写分享活动描述')
 				return;
 			}
+			if ($('#xzhd-body-hdbjpz-img1').attr('class') == '') {
+				alert('请上传活动入口配置图片')
+				return;
+			}
 
 			if ($('#xzhd-body-hdbjpz-img').attr('class') == '') {
 				alert('请上传活动背景配置图片')
@@ -1965,6 +2032,7 @@
 				}
 			}
 			var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
+			var entranceImageUrl = $('#xzhd-body-hdbjpz-img1').attr('class')
 			var sharePosterButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
 			var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
 			var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
@@ -1997,6 +2065,7 @@
 				activityEndDate: activityEndDate,
 				onlyNewPeople: onlyNewPeople,
 				pageBackgroundUrl: pageBackgroundUrl,
+				entranceImageUrl:entranceImageUrl,
 				sharePosterButtonUrl: sharePosterButtonUrl,
 				shareBuddyLinksUrl: shareBuddyLinksUrl,
 				receiveBackgroundUrl: receiveBackgroundUrl,
@@ -2052,6 +2121,7 @@
 				}
 			}
 			var pageBackgroundUrl = $('#xzhd-body-hdbjpz-img').attr('class')
+			var entranceImageUrl = $('#xzhd-body-hdbjpz-img1').attr('class')
 			var sharePosterButtonUrl = $('#xzhd-body-fxanpz-img').attr('class')
 			var shareBuddyLinksUrl = $('#xzhd-body-fxhyljt-img').attr('class')
 			var receiveBackgroundUrl = $('#xzhd-body-lqhdbjpz-img').attr('class')
@@ -2086,6 +2156,7 @@
 				onlyNewPeople: onlyNewPeople,
 				pageBackgroundUrl: pageBackgroundUrl,
 				sharePosterButtonUrl: sharePosterButtonUrl,
+				entranceImageUrl:entranceImageUrl,
 				shareBuddyLinksUrl: shareBuddyLinksUrl,
 				receiveBackgroundUrl: receiveBackgroundUrl,
 				receiveButtonUrl: receiveButtonUrl,
@@ -2811,6 +2882,8 @@
 					}
 					$('#xzhd-body-hdbjpz-img').attr('class', result.rows[0].pageBackgroundUrl)
 					$('#xzhd-body-hdbjpz-img').children().attr('src',result.rows[0].pageBackgroundUrl)
+					$('#xzhd-body-hdbjpz-img1').attr('class', result.rows[0].entranceImageUrl)
+					$('#xzhd-body-hdbjpz-img1').children().attr('src',result.rows[0].entranceImageUrl)
 					$('#xzhd-body-fxanpz-img').attr('class',result.rows[0].sharePosterButtonUrl)
 					$('#xzhd-body-fxanpz-img').children().attr('src', result.rows[0].sharePosterButtonUrl)
 					$('#xzhd-body-fxhyljt-img').attr('class',result.rows[0].shareBuddyLinksUrl)
