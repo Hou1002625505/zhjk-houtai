@@ -1856,8 +1856,8 @@
 
 		var page = window.open();
 
-		var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:800px' src='http://test.physicalclub.com/crm/image/yqylslsb.png' alt=''/></div></body > "
-		// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1600px' src='http://crm.physicalclub.com/crm/image/yqylslsb.png' alt=''/></div></body > "
+		var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://test.physicalclub.com/crm/image/yqylslsb.png' alt=''/></div></body > "
+		// var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://crm.physicalclub.com/crm/image/yqylslsb.png' alt=''/></div></body > "
 
 		page.document.write(html);
 	}
@@ -1866,8 +1866,8 @@
 
 			var page = window.open();
 
-			var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1600px' src='http://test.physicalclub.com/crm/image/yqylslyb.png' alt=''/></div></body > "
-			// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1600px' src='http://crm.physicalclub.com/crm/image/yqylslyb.png' alt=''/></div></body > "
+			var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://test.physicalclub.com/crm/image/yqylslyb.png' alt=''/></div></body > "
+			// var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://crm.physicalclub.com/crm/image/yqylslyb.png' alt=''/></div></body > "
 
 			page.document.write(html);
 		}
@@ -1876,8 +1876,8 @@
 
 			var page = window.open();
 
-			var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1000px' src='http://test.physicalclub.com/crm/image/yqylsleb.png' alt=''/></div></body > "
-			// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:600px' src='http://crm.physicalclub.com/crm/image/yqylsleb.png' alt=''/></div></body > "
+			var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://test.physicalclub.com/crm/image/yqylsleb.png' alt=''/></div></body > "
+			// var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='http://crm.physicalclub.com/crm/image/yqylsleb.png' alt=''/></div></body > "
 
 			page.document.write(html);
 		}
