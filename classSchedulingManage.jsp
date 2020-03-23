@@ -255,8 +255,8 @@
                 <em class="triangle_border_down1"></em>
             </span>
             <div class="liuyi-flex-right"></div>
-            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p11" style="cursor: pointer;">上一周</p>
-            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p22" style="cursor: pointer;">下一周</p>
+            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p22" style="cursor: pointer;">上一周</p>
+            <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p11" style="cursor: pointer;">下一周</p>
         </div>
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody class="table-body" id="sj-body-body1">

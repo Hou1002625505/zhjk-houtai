@@ -594,6 +594,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		border: 1px solid #CCCCCC;
 		border-radius: 3px;
 		background-size: contain;
+  position: relative;
+  z-index: 9999;
+
 	}
 
 	.xzbac,
@@ -620,6 +623,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		height: 60px;
 		border: 1px solid #CCCCCC;
 		border-radius: 3px;
+		  position: relative;
+  z-index: 9999;
 	}
 
 	#xzhd-body-lqanpz-upload,
@@ -2294,7 +2299,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$("#collection").change(function () {
 		let file = $("#collection").val()
 		let filename = file.substr(file.lastIndexOf("."));
-		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg'&& filename != '.gif') {
+		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
 			alert("请上传图片格式的文件");
 			return;
 		}
