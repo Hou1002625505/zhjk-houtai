@@ -1178,20 +1178,22 @@
 				</div>
 				<div style="display: flex;flex-direction: column;">
 					<div id="xzhd-body-hdbjpz-upload1">上传</div>
-					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：宽度建议750像素</p>
-					<p class="xzhd-body-tswztswz">高度尽量不要超过3手机屏，</p>
-					<p class="xzhd-body-tswztswz">图片大小不超过5M.</p>
+					<p class="xzhd-body-tswztswz" style="margin-top:14px">浮窗建议尺寸：92像素*122像素</p>
+					<p class="xzhd-body-tswztswz">支持jpg.png/gif，大小不超过1M</p>
+					<p class="xzhd-body-tswztswz">设计要求请参考示例一</p>
 				</div>
 				<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload1" onchange="hdbjpz_upload1()"
 					style="display:none">
-				<!-- <div style="position:absolute;right:222px;top:0">
-					<p style="font-size:16px">示例1</p>
-					<p style="font-size:16px;margin-top:9px">上传活动背景图时，分享红包按钮处请留白</p>
-					<div style="display:flex;align-items:flex-end;margin-top:9px">
-						<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
-						<p style="font-size:16px">（点击图片可查看大图）</p>
+				<div style="position:absolute;right:295px;top:0">
+					<p style="font-size:16px">示例一:</p>
+					<div style="display:flex;margin-top:9px">
+						<img style="width:115px;height:147px" onclick="openImg()" src="image/plylsly.png" alt="">
+						<div style="margin-top:48px">
+							<p style="font-size: 16px;">浮窗距离顶部高度：672像素</p>
+							<p style="font-size: 16px;margin-top:8px">浮窗建议尺寸：92像素*122像素</p>
+						</div>
 					</div>
-				</div> -->
+				</div>
 			</div>
 			<div class="xzhd-body-flex1" style="margin-top:50px;position: relative;">
 				<p style="font-size:16px;margin-right:22px">活动页面背景配置</p>
@@ -1200,28 +1202,34 @@
 				</div>
 				<div style="display: flex;flex-direction: column;">
 					<div id="xzhd-body-hdbjpz-upload">上传</div>
-					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：宽度建议750像素</p>
-					<p class="xzhd-body-tswztswz">高度尽量不要超过3手机屏，</p>
-					<p class="xzhd-body-tswztswz">图片大小不超过5M.</p>
+					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：592像素*630像素</p>
+					<p class="xzhd-body-tswztswz">支持jpg.png，大小不超过1M</p>
+					<p class="xzhd-body-tswztswz">设计要求请参考示例二</p>
 				</div>
 				<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload" onchange="hdbjpz_upload()"
 					style="display:none">
-				<!-- <div style="position:absolute;right:222px;top:0">
-					<p style="font-size:16px">示例1</p>
-					<p style="font-size:16px;margin-top:9px">上传活动背景图时，分享红包按钮处请留白</p>
-					<div style="display:flex;align-items:flex-end;margin-top:9px">
-						<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
-						<p style="font-size:16px">（点击图片可查看大图）</p>
+				<div style="position:absolute;right:258px;top:0">
+					<p style="font-size:16px">示例二:</p>
+					<div style="display:flex;margin-top:9px">
+						<img style="width:99px;height:178px" onclick="openImg1()" src="image/plylsle.png" alt="">
+						<div style="margin-top:26px">
+							<p style="font-size: 16px;">弹窗尺寸：592像素*630像素</p>
+							<p style="font-size: 16px;margin-top:7px">分享按钮配置：距离顶部高度：236像素</p>
+							<p style="font-size: 16px;margin-top:7px">按钮尺寸：488像素*88像素</p>
+						</div>
 					</div>
-				</div> -->
+				</div>
 			</div>
 			<div class="xzhd-body-flex1" style="margin-top:50px">
 				<p style="font-size:16px;margin-right:54px">分享按钮配置</p>
 				<div id="xzhd-body-fxanpz-img">
 					<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 				</div>
-				<div id="xzhd-body-fxanpz-upload">上传</div>
-				<p class="xzhd-body-tswztswz" style="margin-top:3px">参考示例1:距离顶部820像素,按钮高度90像素以内</p>
+				<div>
+					<div id="xzhd-body-fxanpz-upload">上传</div>
+					<p style="margin:15px 0 0 15px;font-size: 16px;color:#BFBFBF;">按钮建议尺寸：480像素*88像素，设计要求请参考示例二</p>
+				</div>
+				
 				<input type="file" accept=".png,.jpeg,.jpg" id="fxanpz_upload" onchange="fxanpz_upload()"
 					style="display:none">
 			</div>
@@ -1232,40 +1240,59 @@
 				</div>
 				<div style="display: flex;flex-direction: column;">
 					<div id="xzhd-body-fxhyljt-upload">上传</div>
-					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：宽度建议750像素</p>
-					<p class="xzhd-body-tswztswz">高度建议564像素</p>
-					<p class="xzhd-body-tswztswz">图片大小不超过2M.</p>
+					<p class="xzhd-body-tswztswz" style="margin-top:14px">图片建议尺寸：400像素*320像素</p>
+					<p class="xzhd-body-tswztswz">支持jpg/png.大小不超过1M</p>
+					<p class="xzhd-body-tswztswz">设计要求情参考示例三</p>
 				</div>
 				<input type="file" accept=".png,.jpeg,.jpg" id="fxhyljt_upload" onchange="fxhyljt_upload()"
 					style="display:none">
-				<div style="position:absolute;right:100px;top:0">
-					<p style="font-size:16px">示例2</p>
+				<div style="position:absolute;right:190px;top:0">
+					<p style="font-size:16px">示例三:</p>
 					<p style="font-size:16px;margin-top:9px">建议图片进行适当设计，图上铺之以营销文案，来吸引消费者。</p>
 					<div style="display:flex;align-items:flex-end;margin-top:9px">
-						<img style="width:150px;height:110px" onclick="openImg()" src="image/srcimg.png" alt="">
+						<img style="width:150px;height:110px" onclick="openImg2()" src="image/plylsls.png" alt="">
 						<p style="font-size:16px">（点击图片可查看大图）</p>
 					</div>
 				</div>
 			</div>
-			<div class="xzhd-body-flex1" style="margin-top:50px">
+			<div class="xzhd-body-flex1" style="margin-top:50px;position:relative">
 				<p style="font-size:16px;margin-right:22px">领取活动背景配置</p>
 				<div id="xzhd-body-lqhdbjpz-img">
 					<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 				</div>
 				<div style="display: flex;flex-direction: column;">
 					<div id="xzhd-body-lqhdbjpz-upload">上传</div>
-					<p class="xzhd-body-tswztswz" style="margin-top:39px">高度尽量不要超过3手机屏</p>
-					<p class="xzhd-body-tswztswz">图片大小不超过5M，参考示例1</p>
+					<p class="xzhd-body-tswztswz" style="margin-top:21px">图片建议尺寸：宽度750像素，高度尽量不要超过3手机屏</p>
+					<p class="xzhd-body-tswztswz">支持jpg/png.大小不超过1M.</p>
+					<p class="xzhd-body-tswztswz">设计要求请参考示例四</p>
 				</div>
 				<input type="file" accept=".png,.jpeg,.jpg" id="lqhdbjpz_upload" onchange="lqhdbjpz_upload()"
 					style="display:none">
+				<div style="position:absolute;right:238px;top:0">
+					<p style="font-size:16px">示例四:</p>
+					<div style="display:flex;margin-top:9px">
+						<img style="width:102px;height:292px" onclick="openImg3()" src="image/plylslss.png" alt="">
+						<div style="margin-top:108px"> 
+							<p style="font-size: 16px;">获得优惠券名称距离顶部高度：914像素</p>
+							<p style="font-size: 16px;margin-top:4px">领取按钮配置：距离顶部高度：1100像素</p>
+							<p style="font-size: 16px;margin-top:4px">按钮尺寸：520像素*80像素</p>
+							<p style="font-size: 16px;margin-top:4px">红包剩余个数距离顶部：1312像素</p>
+							<p style="font-size: 16px;margin-top:38px">好友列表高度:距离顶部高度1572像素</p>
+							<p style="font-size: 16px;margin-top:6px">列表间距160像素，总高度480像素</p>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="xzhd-body-flex1" style="margin-top:50px">
 				<p style="font-size:16px;margin-right:54px">领取按钮配置</p>
 				<div id="xzhd-body-lqanpz-img">
 					<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 				</div>
-				<div id="xzhd-body-lqanpz-upload">上传</div>
+				<div>
+					<div id="xzhd-body-lqanpz-upload">上传</div>
+					<p style="margin:15px 0 0 15px;font-size: 16px;color: #BFBFBF;">按钮建议尺寸：520像素*80像素，设计要求请参考示例四</p>
+				</div>
+				
 				<input type="file" accept=".png,.jpeg,.jpg" id="lqanpz_upload" onchange="lqanpz_upload()"
 					style="display:none">
 			</div>
@@ -1570,10 +1597,10 @@
 		time()
 
 		youzanjk()
-//活动入口配置点击
-$('#xzhd-body-hdbjpz-upload1').click(function () {
-			$('#hdbjpz_upload1').click()
-		})
+		//活动入口配置点击
+		$('#xzhd-body-hdbjpz-upload1').click(function () {
+					$('#hdbjpz_upload1').click()
+				})
 		//活动背景配置点击
 		$('#xzhd-body-hdbjpz-upload').click(function () {
 			$('#hdbjpz_upload').click()
@@ -1945,10 +1972,37 @@ $('#xzhd-body-hdbjpz-upload1').click(function () {
 
 			var page = window.open();
 
-			var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:600px' src='http://test.physicalclub.com/crm/image/srcimg.png' alt=''/></div></body > "
-
+			var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://test.physicalclub.com/crm/image/plylslyb.png' alt=''/></div></body > "
+			// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://crm.physicalclub.com/crm/image/plylslyb.png' alt=''/></div></body > "
 			page.document.write(html);
 		}
+
+		function openImg1() {
+
+				var page = window.open();
+
+				var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://test.physicalclub.com/crm/image/plylsleb.png' alt=''/></div></body > "
+				// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://crm.physicalclub.com/crm/image/plylsleb.png' alt=''/></div></body > "
+				page.document.write(html);
+			}
+		
+		function openImg2() {
+
+				var page = window.open();
+
+				var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:800px' src='http://test.physicalclub.com/crm/image/plylslsb.png' alt=''/></div></body > "
+				// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:800px' src='http://crm.physicalclub.com/crm/image/plylslsb.png' alt=''/></div></body > "
+				page.document.write(html);
+			}
+
+		function openImg3() {
+
+				var page = window.open();
+
+				var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://test.physicalclub.com/crm/image/plylslssb.png' alt=''/></div></body > "
+				// var html = "<body style='background:black'><div style ='text-align:center'><img style='width:800px;height:1200px' src='http://crm.physicalclub.com/crm/image/plylslssb.png' alt=''/></div></body > "
+				page.document.write(html);
+			}
 
 		//新建活动接口
 		function newhd() {

@@ -1097,7 +1097,12 @@
 			<div id="xzhd-body-hdbjpz-img1" style="width:300px;height:80px">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-hdbjpz-upload1">上传</div>
+			<div>
+				<div id="xzhd-body-hdbjpz-upload1">上传</div>
+				<p style="font-size: 16px;margin-left:15px;margin-top:11px;color:#A7A7A7">图片建议尺寸：750像素*150像素，大小不超过1M</p>
+				<p style="font-size: 16px;margin-left:15px;margin-top:5px;color:#A7A7A7">支持jpg/png</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload1" onchange="hdbjpz_upload1()"
 				style="display:none">
 			<div style="position:absolute;top:0;right:77px">
@@ -1117,7 +1122,13 @@
 			<div id="xzhd-body-hdbjpz-img">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-hdbjpz-upload">上传</div>
+			<div>
+				<div id="xzhd-body-hdbjpz-upload">上传</div>
+				<p style="margin-top:20px;margin-left:15px;font-size: 16px;color:#A7A7A7">图片建议尺寸：宽度750像素，高度尽量不要超过3手机屏</p>
+				<p style="margin-top:9px;margin-left:15px;font-size: 16px;color:#A7A7A7">支持jpg/png,大小不超过1M.</p>
+				<p style="margin-top:9px;margin-left:15px;font-size: 16px;color:#A7A7A7">设计要求请参考示例一</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="hdbjpz_upload" onchange="hdbjpz_upload()"
 				style="display:none">
 		</div>
@@ -1126,7 +1137,11 @@
 			<div id="xzhd-body-fxanpz-img">
 				<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-fxanpz-upload">上传</div>
+			<div>
+				<div id="xzhd-body-fxanpz-upload">上传</div>
+				<p style="margin:15px 0 0 15px;font-size: 16px;color:#A7A7A7;">按钮建议尺寸：590像素*90像素，设计要求请参考示例一</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxanpz_upload" onchange="fxanpz_upload()"
 				style="display:none">
 		</div>
@@ -1135,10 +1150,16 @@
 			<div id="xzhd-body-fxhyljt-img">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-fxhyljt-upload">上传</div>
+			<div>
+				<div id="xzhd-body-fxhyljt-upload">上传</div>
+				<p style="margin:21px 0 0 15px;font-size: 16px;color:#A7A7A7 ;">图片建议尺寸：400像素*320像素</p>
+				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">支持jpg/png,大小不超过1M.</p>
+				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">设计要求请参考示例二</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxhyljt_upload" onchange="fxhyljt_upload()"
 				style="display:none">
-			<div style="position:absolute;right:222px;top:-44px">
+			<div style="position:absolute;right:222px">
 				<p style="font-size:16px">示例二：</p>
 				<p style="font-size:16px;margin-top:9px">建议图片进行适当设计，图上铺之以营销文案，来吸引消费者。</p>
 				<div style="display:flex;align-items: flex-end;margin-top:9px">
@@ -1152,7 +1173,13 @@
 			<div id="xzhd-body-lqhdbjpz-img">
 				<img style="width:100%;height:100%" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-lqhdbjpz-upload">上传</div>
+			<div>
+				<div id="xzhd-body-lqhdbjpz-upload">上传</div>
+				<p style="margin:20px 0 0 15px;font-size: 16px;color:#A7A7A7;">图片建议尺寸：宽度750像素，高度尽量不要超过3手机屏</p>
+				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">支持jpg/png,大小不超过1M.</p>
+				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">设计要求请参考示例三</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="lqhdbjpz_upload" onchange="lqhdbjpz_upload()"
 				style="display:none">
 			<div style="position:absolute;right:223px;top:0">
@@ -1160,7 +1187,7 @@
 				<div style="display:flex">
 					<img src="image/yqylsle.png" onclick="openImg2()" alt="">
 					<div>
-						<p style="margin-top:115px;font-size: 16px;">领取按钮配置：距离顶部高度：906像素</p>
+						<p style="margin-top:141px;font-size: 16px;">领取按钮配置：距离顶部高度：906像素</p>
 						<p style="font-size: 16px;">按钮尺寸：480像素*90像素</p>
 					</div>
 				</div>
@@ -1171,7 +1198,11 @@
 			<div id="xzhd-body-lqanpz-img">
 				<img style="width:120px;height:30px" src="image/white-white.jpg" alt="">
 			</div>
-			<div id="xzhd-body-lqanpz-upload">上传</div>
+			<div>
+				<div id="xzhd-body-lqanpz-upload">上传</div>
+				<p style="margin:15px 0 0 15px;font-size: 16px;color:#A7A7A7;">按钮建议尺寸：480像素*90像素，设计要求请参考示例三</p>
+			</div>
+			
 			<input type="file" accept=".png,.jpeg,.jpg" id="lqanpz_upload" onchange="lqanpz_upload()"
 				style="display:none">
 		</div>
