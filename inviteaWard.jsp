@@ -1112,7 +1112,8 @@
 					<div>
 						<p style="margin-top:84px;font-size:16px">分享按钮配置：距离顶部高度828像素，按钮尺寸：590像素*90像素</p>
 						<p style="margin-top:220px;font-size:16px">好友列表高度：距离顶部高度2881像素,</p>
-						<p style="font-size:16px">列表间距160像素，总高度556像素</p>
+						<p style="font-size:16px;margin-top:4px">列表间距160像素，总高度556像素</p>
+						<p style="font-size:16px;margin-top:4px">（点击图片可查看大图）</p>
 					</div>
 				</div>
 			</div>
@@ -1155,6 +1156,7 @@
 				<p style="margin:21px 0 0 15px;font-size: 16px;color:#A7A7A7 ;">图片建议尺寸：400像素*320像素</p>
 				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">支持jpg/png,大小不超过1M.</p>
 				<p style="margin:9px 0 0 15px;font-size: 16px;color:#A7A7A7;">设计要求请参考示例二</p>
+				
 			</div>
 			
 			<input type="file" accept=".png,.jpeg,.jpg" id="fxhyljt_upload" onchange="fxhyljt_upload()"
@@ -1188,7 +1190,8 @@
 					<img src="image/yqylsle.png" onclick="openImg2()" alt="">
 					<div>
 						<p style="margin-top:141px;font-size: 16px;">领取按钮配置：距离顶部高度：906像素</p>
-						<p style="font-size: 16px;">按钮尺寸：480像素*90像素</p>
+						<p style="font-size: 16px;margin-top:4px">按钮尺寸：480像素*90像素</p>
+						<p style="font-size:16px;margin-top:4px">（点击图片可查看大图）</p>
 					</div>
 				</div>
 			</div>

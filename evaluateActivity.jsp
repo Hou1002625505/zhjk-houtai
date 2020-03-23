@@ -1191,6 +1191,7 @@
 						<div style="margin-top:48px">
 							<p style="font-size: 16px;">浮窗距离顶部高度：672像素</p>
 							<p style="font-size: 16px;margin-top:8px">浮窗建议尺寸：92像素*122像素</p>
+							<p style="font-size:16px;margin-top:8px">（点击图片可查看大图）</p>
 						</div>
 					</div>
 				</div>
@@ -1216,6 +1217,7 @@
 							<p style="font-size: 16px;">弹窗尺寸：592像素*630像素</p>
 							<p style="font-size: 16px;margin-top:7px">分享按钮配置：距离顶部高度：236像素</p>
 							<p style="font-size: 16px;margin-top:7px">按钮尺寸：488像素*88像素</p>
+							<p style="font-size:16px;margin-top:50px">（点击图片可查看大图）</p>
 						</div>
 					</div>
 				</div>
@@ -1279,6 +1281,7 @@
 							<p style="font-size: 16px;margin-top:4px">红包剩余个数距离顶部：1312像素</p>
 							<p style="font-size: 16px;margin-top:38px">好友列表高度:距离顶部高度1572像素</p>
 							<p style="font-size: 16px;margin-top:6px">列表间距160像素，总高度480像素</p>
+							<p style="font-size:16px;margin-top:8px">（点击图片可查看大图）</p>
 						</div>
 					</div>
 				</div>
