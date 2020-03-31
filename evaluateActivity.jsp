@@ -1019,7 +1019,7 @@
 			<div class="xzhd-body-flex" style="margin-top:24px">
 				<p style="font-size:16px;margin-right:54px">最大领取人数</p>
 				<div class="xzhd-body-input" style="position: relative;">
-					<input id="xzhd-body-zdlqrs" placeholder="人数" type="text">
+					<input id="xzhd-body-zdlqrs" placeholder="人数" type="text" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
 					<div style="display:flex;flex-direction:column;position:absolute;top:0;right:0">
 						<div class="xzhd-body-zdlqrs-upfold">
 							<img style="width:13px;height:7.5px;" src="image/upfoldicomTop.png" alt="">
@@ -1144,7 +1144,7 @@
 			<div class="xzhd-body-flex" style="margin-top:24px">
 				<p style="font-size:16px;margin-right:54px">红包领取数量</p>
 				<div class="xzhd-body-input" style="position: relative;">
-					<input id="xzhd-body-hblqsl" placeholder="人数" type="text">
+					<input id="xzhd-body-hblqsl" placeholder="人数" type="text" autocomplete="off" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
 					<div style="display:flex;flex-direction:column;position:absolute;top:0;right:0">
 						<div class="xzhd-body-zdlqrs-upfold">
 							<img style="width:13px;height:7.5px;" src="image/upfoldicomTop.png" alt="">

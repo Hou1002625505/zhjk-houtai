@@ -805,10 +805,11 @@
         }
 
         .add-edit-course-header-context .add-edit-course-header-context-one {
-            height: 50px;
+            min-height: 50px;
             width: 100%;
             border-bottom: 1px solid #BFBFBF;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
@@ -1756,7 +1757,7 @@
         .table-body1 tr td {
             font-size: 14px;
             color: #444444;
-            height: 40px;
+            min-height: 40px;
             text-align: center;
             border-left: 1px dotted #CCCCCC;
             border-bottom: 1px dotted #CCCCCC;
@@ -1904,7 +1905,7 @@
             <input class="course-arranging-flex-select-two" id="teaching-course-coach1" />
             <div style="font-size:16px">教练工号</div>
             <input class="course-arranging-flex-select-three" id="coach-id1" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
-            <div style="font-size:16px">创建时间</div>
+            <div style="font-size:16px">课程时间</div>
             <div class="J-datepicker-day">
                 <input type="text" class="course-arranging-flex-input-one" id="create-course-time1" placeholder="开始时间">
             </div>
@@ -2733,25 +2734,30 @@
                     var str2 = ''
 
                     //教练姓名格式判断
-
                     function coachname(arr) {
-                        var coachname;
+                        var coachname = '';
                         if (arr == '') {
                             return coachname = ''
                         }
                         else if (arr) {
-                            return coachname = arr[0].realName
+                            for (var i = 0; i < arr.length; i++) {
+                                coachname += (arr[i].realName + '、')
+                            }
+                            return coachname = coachname
                         }
                     }
-                    //教练工号格式判断
 
+                    //教练工号格式判断
                     function username(arr) {
-                        var username;
+                        var username = '';
                         if (arr == '') {
                             return username = ''
                         }
                         else if (arr) {
-                            return username = arr[0].userName
+                            for (var i = 0; i < arr.length; i++) {
+                                username += (arr[i].userName + '、')
+                            }
+                            return username = username
                         }
                     }
 
@@ -2932,30 +2938,36 @@
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify(SchedulingList),
                     success: function (result) {
-                        //console.log(result)
+                        console.log(result)
 
                         //表格的动态渲染
                         var str2 = ''
 
                         //教练姓名格式判断
                         function coachname(arr) {
-                            var coachname;
+                            var coachname = '';
                             if (arr == '') {
                                 return coachname = ''
                             }
                             else if (arr) {
-                                return coachname = arr[0].realName
+                                for(var i=0;i< arr.length;i++){
+                                    coachname += (arr[i].realName + '、')
+                                }
+                                return coachname = coachname
                             }
                         }
                         
                         //教练工号格式判断
                         function username(arr) {
-                            var username;
+                            var username = '';
                             if (arr == '') {
                                 return username = ''
                             }
                             else if (arr) {
-                                return username = arr[0].userName
+                                for(var i = 0; i < arr.length; i++){
+                                    username += (arr[i].userName + '、')
+                                }
+                                return username = username
                             }
                         }
 
@@ -3435,10 +3447,10 @@
                         </div>
                         <img class="add-edit-course-header-imgone" style="cursor:pointer" id="add-edit-course-hide" src="./image/popupclose_btn.png" alt=""/>
                     </div>
-                    <div class="add-edit-course-header-context">
+                    <div class="add-edit-course-header-context" style="overflow-y: scroll;">
                         <div class="add-edit-course-header-context-one">
                             <div class="add-edit-course-header-context-oneflex">
-                                <input / id="search-value">
+                                <input / id="search-value" autocomplete="off">
                                 <div class="add-edit-course-header-context-one-blue">
                                     <img src="./image/search_btn.png" style="cursor:pointer" alt=""/ id="search-search">
                                 </div>
@@ -3547,16 +3559,20 @@
                         console.log(result)
                         //console.log(strselect)
                         //background:#71B2EF;
-                        var strcoachone = `
-                                            <p id="coach-p" class="`+ result.rows[0].userName + `" style="width:70px;height:24px;border-radius:4px;color:black;text-align:center;line-height:24px;cursor:pointer">
-                                            `+ result.rows[0].realName + `
+                        var strcoachone = ''
+                        for(var q=0;q< result.rows.length;q++){
+                            strcoachone += `
+                                            <p class="coach-p" id="`+ result.rows[q].userName + `" style="width:70px;height:24px;border-radius:4px;color:black;text-align:center;line-height:24px;cursor:pointer;margin-left:5px">
+                                            `+ result.rows[q].realName + `
                                             </p>
                                         `
+                        }
+                        
                         //点击查询渲染的教练名
                         $('#coach-show').html(strcoachone)
 
                         //var strselect = ''
-                        $('#coach-p').click(function () {
+                        $('.coach-p').click(function () {
                             $(this).css('background','#71B2EF')
                             $(this).css('color','white')
                             //console.log(strselect)
@@ -3582,7 +3598,7 @@
                             }
 
                             strselect += `
-                                            <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('class') + `">
+                                            <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('id') + `">
                                                 `+ $(this).html() + `
                                                 <img src="./image/classdel_btn.png" alt=""/>
                                             </p>
@@ -3607,10 +3623,13 @@
                                 })
                             //}, 100);
                         })
-                    
-                        $('#coach-p').click()
+                        
+                        if(result.rows.length == 1){
+                            $('.coach-p').eq(0).click()
 
-                        $('#coach-p').unbind()
+                            $('.coach-p').unbind()
+                        }
+                        
                     },
                     error: function (e) {
                         console.log(e.status)
@@ -3853,12 +3872,12 @@
             $('#is-Queue').children('.paypayisQueue').eq(1).click()
         }
 
-        if(list.tagName == '无'){
-            $('#tag-Name').children('.paypay').eq(0).click()
-        }else if(list.tagName == '热门'){
+        if(list.tagName == '热门'){
             $('#tag-Name').children('.paypay').eq(1).click()
-        }else{
+        }else if (list.tagName == '体验'){
             $('#tag-Name').children('.paypay').eq(2).click()
+        }else{
+            $('#tag-Name').children('.paypay').eq(0).click()
         }
 
         $('#edit-course-footer-pone').unbind()

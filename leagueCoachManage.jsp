@@ -514,6 +514,8 @@
         .coach-manage-addtwo-flexthree .addtwo-flexfour {
             display: flex;
             flex-wrap: wrap;
+            height:330px;
+            overflow-y: scroll;
         }
 
         .coach-manage-addtwo-flexthree .flexthree-tags {
@@ -530,6 +532,7 @@
             cursor: pointer;
             font-size: 14px;
             justify-content: center;
+            text-align: center;
         }
 
         .coach-manage-addtwo-flexthree .addtwo-flexfour .active {
@@ -653,6 +656,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            text-align: center;
         }
 
         .coach-manage-addthree-flexthree .flexthree-tags1 {
@@ -666,7 +670,8 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-size: 14px
+            font-size: 14px;
+            text-align: center;
         }
 
         .coach-manage-addthree-flexthree .addthree-flexfour .active1 {
@@ -678,7 +683,7 @@
         .coach-manage-addthree-flexthree .coach-manage-addthree-flexfour {
             padding: 0 21px 26px 21px;
             position: absolute;
-            bottom: 4px;
+            bottom: 0;
             width: 646px;
             box-sizing: border-box;
             background: white
@@ -870,7 +875,7 @@
             </tbody>
         </table>
         <div class="course-coach-manage-bottom">
-            <div class="box" id="boxpage" style="margin-left:0"></div>
+            <div class="box" id="boxpage" style="margin-left:0;z-index: 99;"></div>
         </div>
         
     </div>
@@ -1633,6 +1638,7 @@
                     alert(result.message)
                     return;
                 } else if (result.message == '修改成功!') {
+                    $('.course-coach-manage-addone').hide()
                     alert(result.message)
                     shoye()
                 }
@@ -1645,5 +1651,4 @@
     }
 
 </script>
-
 </html>

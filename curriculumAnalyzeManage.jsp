@@ -549,13 +549,57 @@
         $('#course-anaylse-pone').unbind()
         $('#course-anaylse-pone').click(function () {
             if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dygbgxr()
             } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 degbgxr()
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dsgbgxr()
             }
             else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dssgbgxr()
             }
         })
@@ -587,13 +631,57 @@
         $('#course-anaylse-pone').unbind()
         $('#course-anaylse-pone').click(function () {
             if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dygbgxr()
             } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 degbgxr()
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dsgbgxr()
             }
             else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dssgbgxr()
             }
         })
@@ -626,13 +714,57 @@
         $('#course-anaylse-pone').unbind()
         $('#course-anaylse-pone').click(function () {
             if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dygbgxr()
             } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 degbgxr()
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dsgbgxr()
             }
             else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dssgbgxr()
             }
         })
@@ -664,13 +796,57 @@
         $('#course-anaylse-pone').unbind()
         $('#course-anaylse-pone').click(function () {
             if ($('.course-anaylse-header').children().eq(0).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dygbgxr()
             } else if ($('.course-anaylse-header').children().eq(1).hasClass('1')) {
+
+                if ($('#ksrq').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 degbgxr()
             } else if ($('.course-anaylse-header').children().eq(2).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dsgbgxr()
             }
-            else if($('.course-anaylse-header').children().eq(3).hasClass('1')){
+            else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+
+                if ($('#ksrq1').val() == '') {
+                    alert('请选择开始时间')
+                    return;
+                }
+
+                if ($('#jsrq1').val() == '') {
+                    alert('请选择结束时间')
+                    return;
+                }
+
                 dssgbgxr()
             }
         })
@@ -679,13 +855,57 @@
 
     $('#course-anaylse-pone').click(function(){
         if($('.course-anaylse-header').children().eq(0).hasClass('1')){
+
+            if($('#ksrq').val() == ''){
+                alert('请选择开始时间')
+                return;
+            }
+
+            if($('#jsrq').val() == ''){
+                alert('请选择结束时间')
+                return;
+            }
+
             dygbgxr()
         }else if($('.course-anaylse-header').children().eq(1).hasClass('1')){
+
+            if ($('#ksrq').val() == '') {
+                alert('请选择开始时间')
+                return;
+            }
+
+            if ($('#jsrq').val() == '') {
+                alert('请选择结束时间')
+                return;
+            }
+
             degbgxr()
         }else if($('.course-anaylse-header').children().eq(2).hasClass('1')){
+
+            if ($('#ksrq1').val() == '') {
+                alert('请选择开始时间')
+                return;
+            }
+
+            if ($('#jsrq1').val() == '') {
+                alert('请选择结束时间')
+                return;
+            }
+
             dsgbgxr()
         }
         else if ($('.course-anaylse-header').children().eq(3).hasClass('1')) {
+
+            if ($('#ksrq1').val() == '') {
+                alert('请选择开始时间')
+                return;
+            }
+
+            if ($('#jsrq1').val() == '') {
+                alert('请选择结束时间')
+                return;
+            }
+
             dssgbgxr()
         }
     })

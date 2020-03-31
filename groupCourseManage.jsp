@@ -409,6 +409,7 @@
             font-size: 14px;
             margin-left: 18px;
             box-sizing: border-box;
+            margin-top: 10px;
         }
 
         .add-course-sortone-inputthree-p-active {
@@ -832,7 +833,9 @@
         }
 
         #GroupCourseGole {
-            display: flex
+            display: flex;
+            width:750px;
+            flex-wrap: wrap;
         }
 
         .select_wrap {
@@ -1970,7 +1973,7 @@
                         $('#videoshow').show()
 
                         $('#videovideo').click(function () {
-                            //openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                            // openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
                             openVideo('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
                         })
 
@@ -3194,7 +3197,7 @@
                             } else {
                                 $('#photoFile').attr('class',item.leagueCurriculumVideoList[0].videoUrl)
                                 var strstr = item.leagueCurriculumVideoList[0].videoUrl
-                                //$('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
+                                // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
                                 $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + strstr)
 
                                 $('#videoshow').show()
@@ -3233,5 +3236,5 @@
         
     }
 </script>
-
+add-course-sortone-inputthree-p
 </html>
