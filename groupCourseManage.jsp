@@ -1963,6 +1963,7 @@
                     </div>
                 `
                 $('#preview1').append(html)
+                $('#fileImage').val('')
                 $('.idid').mouseover(function(){
                     $(this).children('.file_del_img').show()
                 })
