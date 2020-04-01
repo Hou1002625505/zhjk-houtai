@@ -2015,14 +2015,14 @@
                     //return data
                     alert(data.message)
                     $('#photoFile').attr('class', data.rows[0].path)
-                    // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
-                    $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                    $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                    // $('#videovideo').html('http://crm.physicalclub.com/video1s/' + data.rows[0].path)
 
                     $('#videoshow').show()
 
                     $('#videovideo').click(function () {
-                        // openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
-                        openVideo('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                        openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                        // openVideo('http://crm.physicalclub.com/video1s/' + data.rows[0].path)
                     })
 
                     $('#videohide').click(function () {
@@ -3245,14 +3245,14 @@
                         } else {
                             $('#photoFile').attr('class', item.leagueCurriculumVideoList[0].videoUrl)
                             var strstr = item.leagueCurriculumVideoList[0].videoUrl
-                            // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
-                            $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + strstr)
+                            $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
+                            // $('#videovideo').html('http://crm.physicalclub.com/video1s/' + strstr)
 
                             $('#videoshow').show()
 
                             $('#videovideo').click(function () {
-                                // openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
-                                openVideo('http://crm.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                // openVideo('http://crm.physicalclub.com/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
                             })
 
                             $('#videohide').click(function () {
