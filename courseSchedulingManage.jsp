@@ -2714,7 +2714,7 @@
             var SchedulingList = {
                 state: 0,
                 page: page,
-                rows: 10,
+                rows: 100,
                 storeId: storeId,
                 roomId: roomId,
                 realName: realName,
@@ -2850,7 +2850,7 @@
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
-                        pagesize: 10, //每页显示10条
+                        pagesize: 100, //每页显示10条
                         currentPage: page, //当前页
                         onPagechange: onPagechange,
                         btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
@@ -2923,7 +2923,7 @@
                 var SchedulingList = {
                     state: 1,
                     page: page,
-                    rows: 10,
+                    rows: 100,
                     storeId: storeId,
                     roomId: roomId,
                     realName: realName,
@@ -3040,7 +3040,7 @@
                         var obj = {
                             wrapid: 'boxpage1', //页面显示分页器容器id
                             total: result.total, //总条数
-                            pagesize: 10, //每页显示10条
+                            pagesize: 100, //每页显示10条
                             currentPage: page, //当前页
                             onPagechange: onPagechange,
                             btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数

@@ -78,10 +78,10 @@
         .course-anaylse-header #course-anaylse-header-pthree {
             width: 100px;
             height: 30px;
-            border-radius: 0 4px 0 0;
             text-align: center;
             line-height: 30px;
             border: 1px solid #BFBFBF;
+            border-right:none;
             border-bottom: 0;
             background: #F5F5F5;
             box-sizing: border-box;

@@ -442,18 +442,30 @@ function bgxr(result){
     }
 
     function content(i, j, k, h) {
+        var data = new Date()
         var str
         if (i == '') {
             return str = ''
-        } else if (i.length < j + 1) {
+        } else if (i.children.length < j + 1) {
             return str = ''
-        } else if (!i[j].children[k].children) {
+        } else if (!i.children[j].children[k].children) {
             return str = ''
-        } else if (i[j].children[k].children.length < h + 1) {
+        } else if (i.children[j].children[k].children.length < h + 1) {
             return str = ''
         } else {
-            return str = `<p style="font-size:0.8rem">` + i[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem">` + i[j].children[k].children[h].timeStr + `<p>`
+            // console.log(i.children[j].children[k].timeStr.split('-')[1])
+            // console.log(data.getHours()+ ':' + data.getMinutes())
+            if(Number(i.monthDayStr.split('-')[0]) < (data.getMonth() + 1) || Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) < data.getDate()){
+                return str = `<p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+            }
+            else if(Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) == data.getDate() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[0]) < data.getHours() || Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) == data.getDate() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[0]) == data.getHours() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[1]) < data.getMinutes()){
+                return str = `<p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+            }else{
+                return str = `<p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+            }
+            
         }
+        
     }
 
     $('.liuyi-flex-right-p').click(function () {
@@ -497,19 +509,19 @@ function bgxr(result){
                     if(q < result.rows[i].children.length){
                         tablestr1 +=`
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], q, 0, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], q, 0, 1) + `</div>
                             </td>
                         `
                     }else if(q == result.rows[i].children.length){
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], q, 0, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, q, 0, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], q, 0, 1) + `</div>
                             </td>
                             </tr>
                         `
@@ -524,19 +536,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 0, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 0, 3) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 0, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 0, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 0, 3) + `</div>
                             </td>
                             </tr>
                         `
@@ -557,19 +569,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 1) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 1) + `</div>
                             </td>
                             </tr>
                         `
@@ -584,19 +596,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 3) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 3) + `</div>
                             </td>
                             </tr>
                         `
@@ -611,19 +623,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 4) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 4) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 5) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 5) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 4) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 4) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 5) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 5) + `</div>
                             </td>
                             </tr>
                         `
@@ -638,19 +650,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 6) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 6) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 7) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 7) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 6) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 6) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 1, 7) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 1, 7) + `</div>
                             </td>
                             </tr>
                         `
@@ -671,19 +683,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 1) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 0) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 0) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 1) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 1) + `</div>
                             </td>
                             </tr>
                         `
@@ -698,19 +710,19 @@ function bgxr(result){
                     if (w < result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 3) + `</div>
                             </td>
                         `
                     } else if (w == result.rows[i].children.length) {
                         tablestr1 += `
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 2) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 2) + `</div>
                             </td>
                             <td class="item3">
-                                <div class="liuyi-white">`+ content(result.rows[i].children, w, 2, 3) + `</div>
+                                <div class="liuyi-white">`+ content(result.rows[i], w, 2, 3) + `</div>
                             </td>
                             </tr>
                         `
