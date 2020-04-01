@@ -35,10 +35,9 @@
     <!-- 引用初始化JS -->
     <script type="text/javascript" src="easyui/jq22.js"></script>
     <style>
-
         html {
-			border: 1px solid #95B8E7;
-		}
+            border: 1px solid #95B8E7;
+        }
 
         /* html{
             font-size:calc(100vw / 88.11);
@@ -69,7 +68,7 @@
             display: flex;
             margin-top: 1px;
             align-items: center;
-            height:auto;
+            height: auto;
             flex-wrap: wrap;
         }
 
@@ -279,7 +278,7 @@
 
         .course-manage-footer .course-manage-footer-pthree {
             font-size: 16px;
-            margin-left:53rem;
+            margin-left: 53rem;
         }
 
         .c-datepicker-date-editor {
@@ -688,7 +687,7 @@
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-show {
             width: 21px;
             height: 21px;
-            display:none
+            display: none
         }
 
         .add-course-sortone .add-course-sortone-inputten .inputten-paypay .paypay .paypay-hidden {
@@ -834,7 +833,7 @@
 
         #GroupCourseGole {
             display: flex;
-            width:750px;
+            width: 750px;
             flex-wrap: wrap;
         }
 
@@ -892,7 +891,7 @@
             -webkit-appearance: none
         }
 
-        .kcgl-body-kcldt{
+        .kcgl-body-kcldt {
             width: 60px;
             height: 32px;
             border: 1px solid #d5d5d7;
@@ -1021,9 +1020,11 @@
                     id="course-manage-flex-input-two" placeholder="结束时间">
             </div>
             <div style="font-size:16px">价格区间</div>
-            <input type="text" autocomplete="off" class="course-manage-flex-input-three" id="course-manage-flex-input-three" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+            <input type="text" autocomplete="off" class="course-manage-flex-input-three"
+                id="course-manage-flex-input-three" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
             <p>-</p>
-            <input type="text" autocomplete="off" class="course-manage-flex-input-four" id="course-manage-flex-input-four" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+            <input type="text" autocomplete="off" class="course-manage-flex-input-four"
+                id="course-manage-flex-input-four" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
         </div>
         <div class="course-manage-flextwo">
             <p id="course-manage-flextwo-search">查询</p>
@@ -1091,7 +1092,7 @@
             <p style="font-size:16px;margin-right:66px">上课方式</p>
             <span class="select_wrap">
                 <select name="visitstatus" id="kcgl-body-skfs" style="cursor: pointer;">
-            
+
                 </select>
                 <em class="triangle_border_down1"></em>
             </span>
@@ -1161,56 +1162,66 @@
                 <div class="oneinput">
                     <span class="select_wrap1">
                         <select name="visitstatus" class="kcgl-body-kcldt" style="cursor: pointer;">
-                    
+
                         </select>
                         <em class="triangle_border_down2"></em>
                     </span>
-                    <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]/g,'');" value="">
+                    <div
+                        style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]/g,'');"
+                            value="">
                     </div>
                 </div>
                 <div class="oneinput">
                     <span class="select_wrap1">
                         <select name="visitstatus" class="kcgl-body-kcldt" style="cursor: pointer;">
-                    
+
                         </select>
                         <em class="triangle_border_down2"></em>
                     </span>
-                    <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
+                    <div
+                        style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');"
+                            value="">
                     </div>
                 </div>
                 <div class="oneinput">
                     <span class="select_wrap1">
                         <select name="visitstatus" class="kcgl-body-kcldt" style="cursor: pointer;">
-                    
+
                         </select>
                         <em class="triangle_border_down2"></em>
                     </span>
-                    <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
+                    <div
+                        style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');"
+                            value="">
                     </div>
                 </div>
                 <div class="oneinput">
                     <span class="select_wrap1">
                         <select name="visitstatus" class="kcgl-body-kcldt" style="cursor: pointer;">
-                    
+
                         </select>
                         <em class="triangle_border_down2"></em>
                     </span>
-                    <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
+                    <div
+                        style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');"
+                            value="">
                     </div>
                 </div>
                 <div class="oneinput">
                     <span class="select_wrap1">
                         <select name="visitstatus" class="kcgl-body-kcldt" style="cursor: pointer;">
-                    
+
                         </select>
                         <em class="triangle_border_down2"></em>
                     </span>
-                    <div style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
-                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');" value="">
+                    <div
+                        style="border:1px solid #d5d5d7;border-left:0;border-radius: 0 4px 4px 0;display:flex;align-items: center;">
+                        <input class="input" type="text" onkeyup="this.value=this.value.replace(/[^1-5]{1}$/g,'');"
+                            value="">
                     </div>
                 </div>
             </div>
@@ -1234,10 +1245,13 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
-                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
+                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;"
+                                placeholder="Q :"></textarea></td>
+                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;"
+                                placeholder="A :"></textarea></td>
                         <td>
-                            <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
+                            <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png"
+                                alt="">
                             <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
                         </td>
                     </tr>
@@ -1269,7 +1283,17 @@
 
         <div class="add-course-sorttwo" style="position:relative">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
-            <div id="demo" class="demo"></div>
+            <!-- <div id="demo" class="demo"></div> -->
+            <div class="andArea" style="width:240px;height:182px;margin-right:10px">
+                <div class="filePicker" style="background:#F7F7F7"><img style="margin-top:31px;border-radius:50% ;"
+                        src="../image/addapicture_btn.png"></div>
+                <p style="font-size:14px;background:#F7F7F7;margin-top:6px">点击添加图片</p>
+                <p style="font-size:12px;background:#F7F7F7;margin-top:5px">支持jpg/png格式</p>
+                <p style="font-size:12px;background:#F7F7F7;margin-top:3px">RGB格式。不超过5M</p>
+                <input id="fileImage" type="file" accept=".png,.jpeg,.jpg" size="30" onchange="imageimage()"
+                    name="fileselect[]" '+multiple+'>
+            </div>
+            <div id="preview1"></div>
             <p style="position:absolute;left:155px;top:0;font-size: 14px;">图片建议尺寸380像素*220像素</p>
         </div>
 
@@ -1300,10 +1324,12 @@
             <p style="font-size:16px">课程对应编码</p>
             <div class="add-course-sortone-inputeleven">
                 <div style="width:240px;height:32px;border:1px solid #CCCCCC;margin-left:62px">
-                    <input placeholder="请输入课程对应广信编码" autocomplete="off" type="text" id="gxbm" style="border:none;padding-left:10px;box-sizing: border-box;">
+                    <input placeholder="请输入课程对应广信编码" autocomplete="off" type="text" id="gxbm"
+                        style="border:none;padding-left:10px;box-sizing: border-box;">
                 </div>
                 <div style="width:410px;height:32px;border:1px solid #CCCCCC;margin-left:20px;">
-                    <input type="text" id="gxmc" autocomplete="off" style="border:none;padding-left:10px;box-sizing: border-box;">
+                    <input type="text" id="gxmc" autocomplete="off"
+                        style="border:none;padding-left:10px;box-sizing: border-box;">
                 </div>
 
             </div>
@@ -1346,6 +1372,10 @@
 
 <script type="text/javascript">
 
+    $('.filePicker').click(function () {
+        $('#fileImage').click()
+    })
+
     //全选的勾选按钮
     $("#course-manage-table-checkbox").click(function () {
         if ($(this).children('img').is(":hidden")) {
@@ -1361,7 +1391,7 @@
     $('#course-manage-flextwo-search').click(function () {
         shoye()
     })
-    
+
     //首页清除按钮
     $('#course-manage-flextwo-clear').click(function () {
         $('#course-manage-flex-input').val('')
@@ -1398,10 +1428,10 @@
         // $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
 
         // $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
-        
+
         $('.kcgl-body-kcldt').find('option[value=""]').prop("selected", true);
 
-        for(var i=0;i< $('.kcgl-body-kcldt').length;i++){
+        for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
             $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().eq(0).val('')
         }
 
@@ -1466,12 +1496,12 @@
         $('#quxiaoqx').hide()
 
         $('#add-course-footer-save').unbind()
-        $('#add-course-footer-save').click(function(){
+        $('#add-course-footer-save').click(function () {
             xzhd()
         })
     })
 
-    $('#scsp').click(function(){
+    $('#scsp').click(function () {
         $('#photoFile').click()
     })
 
@@ -1495,13 +1525,13 @@
     })
 
     //新建课程返回
-    $('#add-course-footer-fanhui').click(function(){
+    $('#add-course-footer-fanhui').click(function () {
         $('.course-manage-body').show()
         $('.add-course-body').hide()
     })
 
     //新建课程返回上一级
-    $('#add-course-body-pone').click(function(){
+    $('#add-course-body-pone').click(function () {
         $('.course-manage-body').show()
         $('.add-course-body').hide()
     })
@@ -1509,10 +1539,10 @@
     $('#gxmc').click(function () {
         var strstr = $('#gxbm').val()
         fkjk(strstr)
-        
+
     })
 
-    $('#gxbm').blur(function(){
+    $('#gxbm').blur(function () {
         var strstr = $('#gxbm').val()
         fkjk(strstr)
     })
@@ -1537,7 +1567,7 @@
 
     shoye()
 
-    function ajax(){
+    function ajax() {
         var paramsGroupType = {
             typeCode: "CourseGrade"
         }
@@ -1672,7 +1702,7 @@
     }
 
     //上课方式下拉
-    function skfsxl(){
+    function skfsxl() {
         var paramsGCourseType = {
             typeCode: "GCourseType"
         }
@@ -1703,7 +1733,7 @@
     }
 
     //课程目标的渲染
-    function kcmbxr(){
+    function kcmbxr() {
         var paramsGroupCourseGole = {
             typeCode: "GroupCourseGole"
         }
@@ -1740,7 +1770,7 @@
     }
 
     //新建页面js操作
-    function xjymjs(){
+    function xjymjs() {
         $("#area").on("input propertychange", function () {
             var $this = $(this),
                 _val = $this.val(),
@@ -1832,7 +1862,7 @@
             }
         })
     }
-    
+
     //星星
     function xingxing() {
         this.item = $('#rating').find('.rating-item')
@@ -1862,10 +1892,10 @@
         $('#rating').on('mouseout', function () {
             dianLiang(num)
         })
-        }
+    }
 
     //课程雷达图的请求及渲染
-    function kcldt(){
+    function kcldt() {
         var paramsGroupRadar = {
             typeCode: "GroupRadar"
         }
@@ -1883,7 +1913,7 @@
 
                 $.each(result.rows, function (i, item) {
                     strGroupRadar += `
-                            <option value="`+ item.dictionaryId +' '+ item.name+ `">` + item.name + `</option>
+                            <option value="`+ item.dictionaryId + ' ' + item.name + `">` + item.name + `</option>
                         `
                 })
                 $('.kcgl-body-kcldt').html(strGroupRadar)
@@ -1898,22 +1928,80 @@
 
     //图片上传
     function imageimage() {
-            if ($("#fileImage").val() == '') {
+        if ($("#fileImage").val() == '') {
+            return;
+        }
+
+        let file = $("#fileImage").val()
+        let filename = file.substr(file.lastIndexOf("."));
+        if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+            alert("请上传图片格式的文件");
+            return;
+        }
+
+        var formData = new FormData();
+        // for (var i = 0; i < $('#preview1').children().length; i++) {
+        formData.append('file', document.getElementById('fileImage').files[0])
+        // }
+        formData.append('fileType', 1);
+        $.ajax({
+            url: "rest/leagueCurriculum/uploadLeagueCurriculumFile",
+            type: "post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(data)
+                //var img = data
+                //return data
+                alert(data.message)
+                var html = ''
+                html = `
+                    <div class="idid" style="position:relative">
+                        <img style="width:240px;height:182px;margin-right:10px" src="images/`+ data.rows[0].path +`" alt="">
+                        <img style="position:absolute;top:2px;right:12px;display:none" class="file_del_img" src="../image/palyitdel_btn.png">
+                    </div>
+                `
+                $('#preview1').append(html)
+                $('.idid').mouseover(function(){
+                    $(this).children('.file_del_img').show()
+                })
+                $('.idid').mouseout(function () {
+                    $(this).children('.file_del_img').hide()
+                })
+                $('.file_del_img').click(function(){
+                    $(this).parent().remove()
+                })
+                //$('#demo').addClass(data.rows[0].path)
+                $('#preview1').children('div:last-child').addClass(data.rows[0].path)
+            },
+            error: function (data) {
+                alert("上传失败")
+            }
+        });
+    }
+
+    //视频上传
+    function upload() {
+        uploadvideo()
+
+        function uploadvideo() {
+            if ($("#photoFile").val() == '') {
                 return;
             }
 
-            let file = $("#fileImage").val()
+            let file = $("#photoFile").val()
             let filename = file.substr(file.lastIndexOf("."));
-            if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
-                alert("请上传图片格式的文件");
+            if (filename != '.MP4' && filename != '.mp4') {
+                alert("请上传mp4格式的文件");
                 return;
             }
 
             var formData = new FormData();
             // for (var i = 0; i < $('#preview1').children().length; i++) {
-            formData.append('file', document.getElementById('fileImage').files[0])
-            // }
-            formData.append('fileType', 1);
+            formData.append('file', document.getElementById('photoFile').files[0]);
+            //}
+            formData.append('fileType', 2);
             $.ajax({
                 url: "rest/leagueCurriculum/uploadLeagueCurriculumFile",
                 type: "post",
@@ -1925,83 +2013,42 @@
                     //var img = data
                     //return data
                     alert(data.message)
-                    $('#demo').addClass(data.rows[0].path)
-                    $('#preview1').children('div:last-child').addClass(data.rows[0].path)
+                    $('#photoFile').attr('class', data.rows[0].path)
+                    // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                    $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
+
+                    $('#videoshow').show()
+
+                    $('#videovideo').click(function () {
+                        // openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                        openVideo('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
+                    })
+
+                    $('#videohide').click(function () {
+                        $('#videoshow').hide()
+                        $('#photoFile').attr('class', '')
+                    })
+
+                    function openVideo(src) {
+
+                        var page = window.open();
+
+                        var html =
+                            "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
+
+                        page.document.write(html);
+
+                    }
                 },
                 error: function (data) {
                     alert("上传失败")
                 }
             });
         }
-
-    //视频上传
-    function upload() {
-            uploadvideo()
-
-            function uploadvideo() {
-                if ($("#photoFile").val() == '') {
-                    return;
-                }
-
-                let file = $("#photoFile").val()
-                let filename = file.substr(file.lastIndexOf("."));
-                if (filename != '.MP4' && filename != '.mp4') {
-                    alert("请上传mp4格式的文件");
-                    return;
-                }
-
-                var formData = new FormData();
-                // for (var i = 0; i < $('#preview1').children().length; i++) {
-                formData.append('file', document.getElementById('photoFile').files[0]);
-                //}
-                formData.append('fileType', 2);
-                $.ajax({
-                    url: "rest/leagueCurriculum/uploadLeagueCurriculumFile",
-                    type: "post",
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function (data) {
-                        console.log(data)
-                        //var img = data
-                        //return data
-                        alert(data.message)
-                        $('#photoFile').attr('class', data.rows[0].path)
-                        // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
-                        $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
-
-                        $('#videoshow').show()
-
-                        $('#videovideo').click(function () {
-                            // openVideo('http://test.physicalclub.com/crm/video1s/' + data.rows[0].path)
-                            openVideo('http://crm.physicalclub.com/crm/video1s/' + data.rows[0].path)
-                        })
-
-                        $('#videohide').click(function () {
-                            $('#videoshow').hide()
-                            $('#photoFile').attr('class', '')
-                        })
-
-                        function openVideo(src) {
-
-                            var page = window.open();
-
-                        var html = 
-                        "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
-
-                            page.document.write(html);
-
-                        }
-                    },
-                    error: function (data) {
-                        alert("上传失败")
-                    }
-                });
-            }
-        }
+    }
 
     //广信接口
-    function gxjk(){
+    function gxjk() {
         var paramsgxbm = {
 
         }
@@ -2033,7 +2080,7 @@
     }
 
     //付款接口
-    function fkjk(strstr){
+    function fkjk(strstr) {
         // var str = {
         //     packageCode = strstr
         // }
@@ -2041,7 +2088,7 @@
         $.ajax({
             type: 'POST',
             contentType: "application/json;charset=UTF-8",
-            url: "rest/business/account/getGxPackageInfo?packageCode="+ strstr,
+            url: "rest/business/account/getGxPackageInfo?packageCode=" + strstr,
             success: function (result) {
                 console.log(result)
                 $('#gxmc').val(result.rows[0].packageName)
@@ -2057,11 +2104,11 @@
     function woyaowoyao() {
         if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
             $('#kcdybm111').show()
-        }else{
+        } else {
             $('#kcdybm111').hide()
         }
 
-        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')){
+        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
             $('#hykkdybm').show()
             $('#hykkdybmqx').show()
             $(".inputtwelve-checkbox").click(function () {
@@ -2072,7 +2119,7 @@
                     $(this).children('img').hide()
                 }
             })
-        }else{
+        } else {
             $('#hykkdybm').hide()
             $('#hykkdybmqx').hide()
         }
@@ -2158,7 +2205,7 @@
                         pagesize: 10, //每页显示10条
                         currentPage: page, //当前页
                         onPagechange: onPagechange,
-                        btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+                        btnCount: 5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
@@ -2204,7 +2251,7 @@
                                 console.log(e.responseText)
                             }
                         })
-                        
+
                     })
 
                     $('.course-manage-table-tr-down').click(function () {
@@ -2233,7 +2280,7 @@
                                 console.log(e.responseText)
                             }
                         })
-                        
+
                     })
 
                     $('#batchup').click(function () {
@@ -2299,7 +2346,7 @@
 
                         shoye()
                     })
-                
+
                     $('.course-manage-table-tr-edit').click(function () {
                         var aa = $(this).parent().parent().children().eq(4).html()
                         chakan(aa)
@@ -2314,328 +2361,8 @@
     }
 
     //新增活动事件
-    function xzhd(){
+    function xzhd() {
 
-            if($('#kcgl-body-kcfl1').val() == ''){
-                alert('请选择课程类型')
-                return;
-            }
-
-            if($('#kcgl-body-skfs').val() == ''){
-                alert('请选择上课方式')
-                return;
-            }
-
-            if($('#area2').val() == ''){
-                alert('请填写课程名称')
-                return;
-            }
-
-            if($('#kcbzj').val() == ''){
-                alert('请填写课程标准价')
-                return;
-            }
-
-            if(!$('#GroupCourseGole').children().hasClass('add-course-sortone-inputthree-p-active')){
-                alert('请选择课程目标')
-                return;
-            }
-
-            if($('#area').val() == ''){
-                alert('请填写课程简介')
-                return;
-            }
-
-            if($('#kllxh').val() == ''){
-                alert('请填写卡路里消耗')
-                return;
-            }
-
-            if($('#shrq').val() == ''){
-                alert('请填写适用人群')
-                return;
-            }
-
-            var ldzdcount11 = 0;
-
-            for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
-                if ($('.kcgl-body-kcldt').eq(i).val().split(' ')[0] !== '') {
-                    ldzdcount11++
-                }
-            }
-
-            if(ldzdcount11 == 0){
-                alert('课程雷达不可为空')
-                return;
-            }else{
-                for (var iii = 0; iii < ldzdcount11; iii++) {
-                    if ($('.kcgl-body-kcldt').eq(iii).parent().parent().children().eq(1).children().val() == '') {
-                        alert('课程雷达图选择格式错误')
-                        return;
-                    }else{
-                        for(var jj = iii+1;jj < ldzdcount11;jj++){
-                            if($('.kcgl-body-kcldt').eq(iii).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(jj).val().split(' ')[1]){
-                                alert('课程雷达选择不可重复')
-                                return;
-                            } 
-                            // console.log($('.kcgl-body-kcldt').eq(iii).val())
-                            // console.log($('.kcgl-body-kcldt').eq(jj).val())
-                        }
-                    }
-                }
-            }
-
-            if($('#area1').val() == ''){
-                alert('请填写注意事项')
-                return;
-            }
-
-            for(var zz = 1;zz<$('.add-course-sortone-inputeight').children().children().children().length;zz++){
-                if($('.add-course-sortone-inputeight').children().children().children().eq(zz).children().eq(0).children().val() == ''){
-                    alert('FAQ不可为空')
-                    return;
-                }else if($('.add-course-sortone-inputeight').children().children().children().eq(zz).children().eq(1).children().val() == ''){
-                    alert('FAQ不可为空')
-                    return;
-                }
-            }
-
-            if($('#preview1').html() == ''){
-                alert('请选择上传图片')
-                return;
-            }else if(!$('#preview1').children('div').is(':visible')){
-                 alert('请选择上传图片')
-                return;
-            }
-
-            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')){
-                if($('#gxbm').val() == '' || $('#gxmc').val() == ''){
-                    alert('请输入编码')
-                    return;
-                }
-            }else{
-                //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
-                if (!$('#inputtwelve-flex').children().children('img').is(':visible')) {
-                    alert('会员卡口对应编码')
-                    return;
-                }
-            //}
-            }
-
-            //支付方式的参数
-            for (var i = 0; i < $(".paypay").length; i++) {
-                if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
-                    var payMode = i + 1
-                }
-            }
-
-            var payTypeId = ''
-
-            if (payMode == 1) {
-                payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-            }
-            else if (payMode == 2) {
-                payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
-            }
-
-            //课程分类id
-            var classifyId= $('#kcgl-body-kcfl1').val()
-
-            //适合人群参数
-
-            var suitableForCrowd = $('#shrq').val()
-
-            //注意事项参数
-
-            var announcements = $('#area1').val()
-
-            //卡路里参数
-
-            var calorieConsumption = $('#kllxh').val()
-
-            //上课方式的参数
-
-            var modeId = $('#kcgl-body-skfs').val()
-
-            //课程难度id
-
-            var difficultyId = 5;
-
-            for (var i = 0; i < $('#rating').children('li').length; i++) {
-                if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
-                    difficultyId--
-                }
-            }
-
-            if(difficultyId == 1){
-                var difficultyId1 = 'c000930a6721479e90f051263995523e'
-            }else if(difficultyId == 2){
-                var difficultyId1 = '6b576cf4245f40c4a1c736f90c07944c'
-            }else if(difficultyId == 3){
-                var difficultyId1 = '228b8ecd602c4649ba593563a428d317'
-            }else if(difficultyId == 4){
-                var difficultyId1 = 'ec976638f03d42c9b8191d51e81888f5'
-            }else if(difficultyId == 5){
-                var difficultyId1 = '2dda5b7cc2bc4649a2a6849e5301c5c1'
-            }
-
-            //产品价格参数
-
-            var price = $('#kcbzj').val()
-
-            //课程名称
-
-            var name = $('#area2').val()
-
-            //课程介绍参数
-
-            var description = $('#area').val()
-
-            //雷达字典id
-            var ldzdcount = 0;
-            var curriculumEffectList = []
-
-            for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
-                if ($('.kcgl-body-kcldt').eq(i).val().split(' ')[0] !== '') {
-                    ldzdcount++
-                }
-            }
-
-            for (var i = 0; i < ldzdcount; i++) {
-                for (var j = 0; j < $('.kcgl-body-kcldt').eq(0).children().length; j++) {
-                    if ($('.kcgl-body-kcldt').children().eq(j).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(i).val().split(' ')[1]) {
-                        var dictionaryId = $('.kcgl-body-kcldt').eq(i).val().split(' ')[0]
-                        var effectValue = $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().val()
-                        curriculumEffectList.push({ dictionaryId, effectValue })
-                    }
-                }
-            }
-
-            //标签字典id
-            var curriculumTagList = []
-            for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
-                if ($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')) {
-                    var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
-                    curriculumTagList.push({ dictionaryId })
-                }
-            }
-
-            //FAQ问题
-
-            var leagueCurriculumFaqList = []
-
-            for (var i = 1; i < $('#faq').children().children().children().length; i++) {
-                var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
-                var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
-                leagueCurriculumFaqList.push({ problem, answer })
-            }
-
-            var curriculumPayTypeList = []
-            //支付方式的参数
-            // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
-            //     var payMode = i + 1
-
-            //if ($(".paypay").eq(0).children('.paypay-show').is(':visible')) {
-
-            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
-                var curriculumGuangxinList = []
-                var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-                var itemId = $('#gxmc').attr('class')
-                curriculumGuangxinList.push({ itemId: itemId })
-                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
-            }
-
-            //}
-
-            //if ($(".paypay").eq(1).children('.paypay-show').is(':visible')) {
-
-            if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
-                var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
-                var curriculumGuangxinList = []
-                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                    if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
-
-                        var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
-
-                        curriculumGuangxinList.push({ itemId: itemId })
-                    }
-                }
-                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
-            }
-
-            //广信编码
-
-            //视频上传
-
-            var videos = []
-
-            if ($('#photoFile').attr('class')) {
-                var videos1 = $('#photoFile').attr('class')
-                videos.push({ videoUrl: videos1 })
-            }
-
-            //图片上传
-
-            var Imgs = []
-
-            if ($('#preview1').children()) {
-                for (var i = 0; i < $('#preview1').children().length; i++) {
-                    if ($('#preview1').children().eq(i).is(':hidden')) {
-
-                    } else {
-                        Imgs.push({ imgUrl: $('#preview1').children().eq(i).attr('class').split(' ')[1] })
-                    }
-
-                }
-            }
-            var fd = {
-                suitableForCrowd: suitableForCrowd,
-                announcements: announcements,
-                calorieConsumption: calorieConsumption,
-                classifyId: classifyId,
-                difficultyId: difficultyId1,
-                price: price,
-                modeId: modeId,
-                description: description,
-                name: name,
-                curriculumEffectList: curriculumEffectList,
-                curriculumTagList: curriculumTagList,
-                leagueCurriculumFaqList: leagueCurriculumFaqList,
-                curriculumPayTypeList: curriculumPayTypeList,
-                leagueCurriculumVideoList: videos,
-                leagueCurriculumImgList: Imgs
-            }
-
-            console.log(fd)
-
-            $.ajax({
-                type: 'POST',
-                url: "rest/leagueCurriculum/insertLeagueCurriculum",
-                contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
-                data: JSON.stringify(fd),
-                success: function (result) {
-                    if (result.message !== '新增成功!') {
-                        alert(result.message)
-                        return;
-                    } else if (result.message == '新增成功!') {
-                        alert(result.message)
-                        $('.course-manage-body').show()
-                        $('.add-course-body').hide()
-                        shoye()
-                    }
-                },
-                error: function (e) {
-                    console.log(e.status);
-                    console.log(e.responseText)
-                }
-            })
-
-        
-
-    }
-
-    //编辑活动事件
-    function bjhdsj(id){
         if ($('#kcgl-body-kcfl1').val() == '') {
             alert('请选择课程类型')
             return;
@@ -2693,7 +2420,327 @@
                     alert('课程雷达图选择格式错误')
                     return;
                 } else {
-                    for (var jj = iii+1; jj < ldzdcount11; jj++) {
+                    for (var jj = iii + 1; jj < ldzdcount11; jj++) {
+                        if ($('.kcgl-body-kcldt').eq(iii).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(jj).val().split(' ')[1]) {
+                            alert('课程雷达选择不可重复')
+                            return;
+                        }
+                        // console.log($('.kcgl-body-kcldt').eq(iii).val())
+                        // console.log($('.kcgl-body-kcldt').eq(jj).val())
+                    }
+                }
+            }
+        }
+
+        if ($('#area1').val() == '') {
+            alert('请填写注意事项')
+            return;
+        }
+
+        for (var zz = 1; zz < $('.add-course-sortone-inputeight').children().children().children().length; zz++) {
+            if ($('.add-course-sortone-inputeight').children().children().children().eq(zz).children().eq(0).children().val() == '') {
+                alert('FAQ不可为空')
+                return;
+            } else if ($('.add-course-sortone-inputeight').children().children().children().eq(zz).children().eq(1).children().val() == '') {
+                alert('FAQ不可为空')
+                return;
+            }
+        }
+
+        if ($('#preview1').html() == '') {
+            alert('请选择上传图片')
+            return;
+        } else if (!$('#preview1').children('div').is(':visible')) {
+            alert('请选择上传图片')
+            return;
+        }
+
+        if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+            if ($('#gxbm').val() == '' || $('#gxmc').val() == '') {
+                alert('请输入编码')
+                return;
+            }
+        } else {
+            //for(var qq = 0;qq< $('#inputtwelve-flex').children().length;qq++){
+            if (!$('#inputtwelve-flex').children().children('img').is(':visible')) {
+                alert('会员卡口对应编码')
+                return;
+            }
+            //}
+        }
+
+        //支付方式的参数
+        for (var i = 0; i < $(".paypay").length; i++) {
+            if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
+                var payMode = i + 1
+            }
+        }
+
+        var payTypeId = ''
+
+        if (payMode == 1) {
+            payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+        }
+        else if (payMode == 2) {
+            payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+        }
+
+        //课程分类id
+        var classifyId = $('#kcgl-body-kcfl1').val()
+
+        //适合人群参数
+
+        var suitableForCrowd = $('#shrq').val()
+
+        //注意事项参数
+
+        var announcements = $('#area1').val()
+
+        //卡路里参数
+
+        var calorieConsumption = $('#kllxh').val()
+
+        //上课方式的参数
+
+        var modeId = $('#kcgl-body-skfs').val()
+
+        //课程难度id
+
+        var difficultyId = 5;
+
+        for (var i = 0; i < $('#rating').children('li').length; i++) {
+            if ($('#rating').children('li').eq(i).children('img').is(':visible')) {
+                difficultyId--
+            }
+        }
+
+        if (difficultyId == 1) {
+            var difficultyId1 = 'c000930a6721479e90f051263995523e'
+        } else if (difficultyId == 2) {
+            var difficultyId1 = '6b576cf4245f40c4a1c736f90c07944c'
+        } else if (difficultyId == 3) {
+            var difficultyId1 = '228b8ecd602c4649ba593563a428d317'
+        } else if (difficultyId == 4) {
+            var difficultyId1 = 'ec976638f03d42c9b8191d51e81888f5'
+        } else if (difficultyId == 5) {
+            var difficultyId1 = '2dda5b7cc2bc4649a2a6849e5301c5c1'
+        }
+
+        //产品价格参数
+
+        var price = $('#kcbzj').val()
+
+        //课程名称
+
+        var name = $('#area2').val()
+
+        //课程介绍参数
+
+        var description = $('#area').val()
+
+        //雷达字典id
+        var ldzdcount = 0;
+        var curriculumEffectList = []
+
+        for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
+            if ($('.kcgl-body-kcldt').eq(i).val().split(' ')[0] !== '') {
+                ldzdcount++
+            }
+        }
+
+        for (var i = 0; i < ldzdcount; i++) {
+            for (var j = 0; j < $('.kcgl-body-kcldt').eq(0).children().length; j++) {
+                if ($('.kcgl-body-kcldt').children().eq(j).val().split(' ')[1] == $('.kcgl-body-kcldt').eq(i).val().split(' ')[1]) {
+                    var dictionaryId = $('.kcgl-body-kcldt').eq(i).val().split(' ')[0]
+                    var effectValue = $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().val()
+                    curriculumEffectList.push({ dictionaryId, effectValue })
+                }
+            }
+        }
+
+        //标签字典id
+        var curriculumTagList = []
+        for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
+            if ($('#GroupCourseGole').children().eq(i).hasClass('add-course-sortone-inputthree-p-active')) {
+                var dictionaryId = ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1])
+                curriculumTagList.push({ dictionaryId })
+            }
+        }
+
+        //FAQ问题
+
+        var leagueCurriculumFaqList = []
+
+        for (var i = 1; i < $('#faq').children().children().children().length; i++) {
+            var problem = $('#faq').children().children().children().eq(i).children().eq(0).children('textarea').val()
+            var answer = $('#faq').children().children().children().eq(i).children().eq(1).children('textarea').val()
+            leagueCurriculumFaqList.push({ problem, answer })
+        }
+
+        var curriculumPayTypeList = []
+        //支付方式的参数
+        // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
+        //     var payMode = i + 1
+
+        //if ($(".paypay").eq(0).children('.paypay-show').is(':visible')) {
+
+        if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+            var curriculumGuangxinList = []
+            var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+            var itemId = $('#gxmc').attr('class')
+            curriculumGuangxinList.push({ itemId: itemId })
+            curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+        }
+
+        //}
+
+        //if ($(".paypay").eq(1).children('.paypay-show').is(':visible')) {
+
+        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+            var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+            var curriculumGuangxinList = []
+            for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
+
+                    var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+
+                    curriculumGuangxinList.push({ itemId: itemId })
+                }
+            }
+            curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+        }
+
+        //广信编码
+
+        //视频上传
+
+        var videos = []
+
+        if ($('#photoFile').attr('class')) {
+            var videos1 = $('#photoFile').attr('class')
+            videos.push({ videoUrl: videos1 })
+        }
+
+        //图片上传
+
+        var Imgs = []
+
+        if ($('#preview1').children()) {
+            for (var i = 0; i < $('#preview1').children().length; i++) {
+                if ($('#preview1').children().eq(i).is(':hidden')) {
+
+                } else {
+                    Imgs.push({ imgUrl: $('#preview1').children().eq(i).attr('class').split(' ')[1] })
+                }
+
+            }
+        }
+        var fd = {
+            suitableForCrowd: suitableForCrowd,
+            announcements: announcements,
+            calorieConsumption: calorieConsumption,
+            classifyId: classifyId,
+            difficultyId: difficultyId1,
+            price: price,
+            modeId: modeId,
+            description: description,
+            name: name,
+            curriculumEffectList: curriculumEffectList,
+            curriculumTagList: curriculumTagList,
+            leagueCurriculumFaqList: leagueCurriculumFaqList,
+            curriculumPayTypeList: curriculumPayTypeList,
+            leagueCurriculumVideoList: videos,
+            leagueCurriculumImgList: Imgs
+        }
+
+        console.log(fd)
+
+        $.ajax({
+            type: 'POST',
+            url: "rest/leagueCurriculum/insertLeagueCurriculum",
+            contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
+            data: JSON.stringify(fd),
+            success: function (result) {
+                if (result.message !== '新增成功!') {
+                    alert(result.message)
+                    return;
+                } else if (result.message == '新增成功!') {
+                    alert(result.message)
+                    $('.course-manage-body').show()
+                    $('.add-course-body').hide()
+                    shoye()
+                }
+            },
+            error: function (e) {
+                console.log(e.status);
+                console.log(e.responseText)
+            }
+        })
+
+
+
+    }
+
+    //编辑活动事件
+    function bjhdsj(id) {
+        if ($('#kcgl-body-kcfl1').val() == '') {
+            alert('请选择课程类型')
+            return;
+        }
+
+        if ($('#kcgl-body-skfs').val() == '') {
+            alert('请选择上课方式')
+            return;
+        }
+
+        if ($('#area2').val() == '') {
+            alert('请填写课程名称')
+            return;
+        }
+
+        if ($('#kcbzj').val() == '') {
+            alert('请填写课程标准价')
+            return;
+        }
+
+        if (!$('#GroupCourseGole').children().hasClass('add-course-sortone-inputthree-p-active')) {
+            alert('请选择课程目标')
+            return;
+        }
+
+        if ($('#area').val() == '') {
+            alert('请填写课程简介')
+            return;
+        }
+
+        if ($('#kllxh').val() == '') {
+            alert('请填写卡路里消耗')
+            return;
+        }
+
+        if ($('#shrq').val() == '') {
+            alert('请填写适用人群')
+            return;
+        }
+
+        var ldzdcount11 = 0;
+
+        for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
+            if ($('.kcgl-body-kcldt').eq(i).val().split(' ')[0] !== '') {
+                ldzdcount11++
+            }
+        }
+
+        if (ldzdcount11 == 0) {
+            alert('课程雷达不可为空')
+            return;
+        } else {
+            for (var iii = 0; iii < ldzdcount11; iii++) {
+                if ($('.kcgl-body-kcldt').eq(iii).parent().parent().children().eq(1).children().val() == '') {
+                    alert('课程雷达图选择格式错误')
+                    return;
+                } else {
+                    for (var jj = iii + 1; jj < ldzdcount11; jj++) {
                         if ($('.kcgl-body-kcldt').eq(iii).val() == $('.kcgl-body-kcldt').eq(jj).val()) {
                             alert('课程雷达选择不可重复')
                             return;
@@ -2834,44 +2881,44 @@
 
         var curriculumPayTypeList = []
         //支付方式的参数
-            // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
-            //     var payMode = i + 1
+        // if ($(".paypay").eq(i).children('.paypay-show').is(':visible')) {
+        //     var payMode = i + 1
 
         //if ($(".paypay").eq(0).children('.paypay-show').is(':visible')) {
-            
-            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
-                var curriculumGuangxinList = []
-                var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
-                var itemId = $('#gxmc').attr('class')
-                curriculumGuangxinList.push({ itemId: itemId })
-                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
-            }
-            
+
+        if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+            var curriculumGuangxinList = []
+            var payTypeId = 'e65fcb162bf4475598476ee48e2a44c4'
+            var itemId = $('#gxmc').attr('class')
+            curriculumGuangxinList.push({ itemId: itemId })
+            curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+        }
+
         //}
-        
+
         //if ($(".paypay").eq(1).children('.paypay-show').is(':visible')) {
-            
-            if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
-                var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
-                var curriculumGuangxinList = []
-                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                    if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
 
-                        var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+            var payTypeId = 'ac07a37132804c61bbfc6ee02aa4ca30'
+            var curriculumGuangxinList = []
+            for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                if ($('#inputtwelve-flex').children().eq(i).children('img').is(':visible')) {
 
-                        curriculumGuangxinList.push({ itemId: itemId })
-                    }
+                    var itemId = parseInt($('#inputtwelve-flex').children().eq(i).children('p').html())
+
+                    curriculumGuangxinList.push({ itemId: itemId })
                 }
-                curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
             }
+            curriculumPayTypeList.push({ payTypeId: payTypeId, curriculumGuangxinList: curriculumGuangxinList })
+        }
         //}
-        
-            //}
-        
+
+        //}
+
 
         //广信编码
-        
-        
+
+
 
         //视频上传
 
@@ -2897,7 +2944,7 @@
             }
         }
         var fd = {
-            id:id,
+            id: id,
             suitableForCrowd: suitableForCrowd,
             announcements: announcements,
             calorieConsumption: calorieConsumption,
@@ -2932,7 +2979,7 @@
                     $('.add-course-body').hide()
                     shoye()
                 }
-                
+
             },
             error: function (e) {
                 console.log(e.status);
@@ -2943,145 +2990,145 @@
     }
 
     //查看页面
-    function chakan(aa){
-        
-            $('.course-manage-body').hide()
-            $('.add-course-body').show()
+    function chakan(aa) {
 
-            $('#kcgl-body-kcfl1').find('option[value=""]').prop("selected", true);
+        $('.course-manage-body').hide()
+        $('.add-course-body').show()
 
-            $('#kcgl-body-skfs').find('option[value=""]').prop("selected", true);
+        $('#kcgl-body-kcfl1').find('option[value=""]').prop("selected", true);
 
-            $('#area2').val('')
+        $('#kcgl-body-skfs').find('option[value=""]').prop("selected", true);
 
-            $('#kcbzj').val('')
+        $('#area2').val('')
 
-            $('#GroupCourseGole').children().removeClass('add-course-sortone-inputthree-p-active')
+        $('#kcbzj').val('')
 
-            $('#area').val('')
+        $('#GroupCourseGole').children().removeClass('add-course-sortone-inputthree-p-active')
 
-            $('#kllxh').val('')
+        $('#area').val('')
 
-            $('#shrq').val('')
+        $('#kllxh').val('')
 
-            // $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
+        $('#shrq').val('')
 
-            // $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
+        // $('.add-course-sortone-inputseven').children().children().eq(0).children().eq(0).find('option[value=""]').prop("selected", true);
 
-            $('.kcgl-body-kcldt').find('option[value=""]').prop("selected", true);
+        // $('.add-course-sortone-inputseven').children().children().eq(1).children().val('')
 
-            for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
-                $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().eq(0).val('')
-            }
+        $('.kcgl-body-kcldt').find('option[value=""]').prop("selected", true);
 
-            $('#area1').val('')
+        for (var i = 0; i < $('.kcgl-body-kcldt').length; i++) {
+            $('.kcgl-body-kcldt').eq(i).parent().parent().children().eq(1).children().eq(0).val('')
+        }
 
-            $('#videoshow').hide()
-            $('#photoFile').attr('class', '')
+        $('#area1').val('')
 
-            $('#preview1').html('')
+        $('#videoshow').hide()
+        $('#photoFile').attr('class', '')
 
-            $('#inputtwelve-flex').children().children('img').hide()
+        $('#preview1').html('')
 
-            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-show').hide()
-            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-hidden').show()
-            $('#add-course-sortone-inputten').children().eq(0).children('.paypay').removeClass('11')
-            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-show').hide()
-            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-hidden').show()
-            $('#add-course-sortone-inputten').children().eq(1).children('.paypay').removeClass('11')
+        $('#inputtwelve-flex').children().children('img').hide()
 
-            $('#gxbm').val('')
-            $('#gxmc').val('')
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-show').hide()
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').children('.paypay-hidden').show()
+        $('#add-course-sortone-inputten').children().eq(0).children('.paypay').removeClass('11')
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-show').hide()
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').children('.paypay-hidden').show()
+        $('#add-course-sortone-inputten').children().eq(1).children('.paypay').removeClass('11')
 
-            $('.add-course-checkboxall').children('img').hide()
-            $('#quanxuan').show()
-            $('#quxiaoqx').hide()
+        $('#gxbm').val('')
+        $('#gxmc').val('')
 
-            var a = aa
-            console.log(a)
-            var paramsall = {
-                rows: 10000,
-                page: 1
-            }
-            $.ajax({
-                type: 'POST',
-                url: 'rest/leagueCurriculum/selectLeagueCurriculumList',
-                contentType: "application/json;charset=UTF-8",
-                data: JSON.stringify(paramsall),
-                success: function (resultall) {
-                    console.log(resultall.rows)
+        $('.add-course-checkboxall').children('img').hide()
+        $('#quanxuan').show()
+        $('#quxiaoqx').hide()
 
-                    $.each(resultall.rows, function (i, item) {
-                        if (item.createDate == a) {
-                            var id = item.id
+        var a = aa
+        console.log(a)
+        var paramsall = {
+            rows: 10000,
+            page: 1
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'rest/leagueCurriculum/selectLeagueCurriculumList',
+            contentType: "application/json;charset=UTF-8",
+            data: JSON.stringify(paramsall),
+            success: function (resultall) {
+                console.log(resultall.rows)
 
-                            $('#kcgl-body-kcfl1').find(`option[value="` + item.classifyId + `"]`).prop("selected", true);
-                            
-                            $('#kcgl-body-skfs').find(`option[value="` + item.modeId + `"]`).prop("selected", true);
-                            
-                            $('#area2').val(item.name)
-                            $('#kcbzj').val(item.price)
-                            $('#area').val(item.description)
-                            $('#shrq').val(item.suitableForCrowd)
+                $.each(resultall.rows, function (i, item) {
+                    if (item.createDate == a) {
+                        var id = item.id
 
-                            for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
-                                for (var j = 0; j < item.curriculumTagList.length; j++) {
-                                    if ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1] == item.curriculumTagList[j].dictionaryId) {
-                                        $('#GroupCourseGole').children().eq(i).addClass('add-course-sortone-inputthree-p-active')
-                                    }
+                        $('#kcgl-body-kcfl1').find(`option[value="` + item.classifyId + `"]`).prop("selected", true);
+
+                        $('#kcgl-body-skfs').find(`option[value="` + item.modeId + `"]`).prop("selected", true);
+
+                        $('#area2').val(item.name)
+                        $('#kcbzj').val(item.price)
+                        $('#area').val(item.description)
+                        $('#shrq').val(item.suitableForCrowd)
+
+                        for (var i = 0; i < $('#GroupCourseGole').children().length; i++) {
+                            for (var j = 0; j < item.curriculumTagList.length; j++) {
+                                if ($('#GroupCourseGole').children().eq(i).attr('class').split(' ')[1] == item.curriculumTagList[j].dictionaryId) {
+                                    $('#GroupCourseGole').children().eq(i).addClass('add-course-sortone-inputthree-p-active')
                                 }
                             }
+                        }
 
-                            for(var ee = 0;ee< item.curriculumEffectList.length;ee++){
-                                console.log(item.curriculumEffectList[ee].dictionaryId)
-                                $('.kcgl-body-kcldt').eq(ee).find(`option[value="` + item.curriculumEffectList[ee].dictionaryId +' '+ item.curriculumEffectList[ee].name + `"]`).prop("selected", true);
-                                $('.add-course-sortone-inputseven').children().eq(ee).children().eq(1).children().val(item.curriculumEffectList[ee].effectValue)
-                            }
+                        for (var ee = 0; ee < item.curriculumEffectList.length; ee++) {
+                            console.log(item.curriculumEffectList[ee].dictionaryId)
+                            $('.kcgl-body-kcldt').eq(ee).find(`option[value="` + item.curriculumEffectList[ee].dictionaryId + ' ' + item.curriculumEffectList[ee].name + `"]`).prop("selected", true);
+                            $('.add-course-sortone-inputseven').children().eq(ee).children().eq(1).children().val(item.curriculumEffectList[ee].effectValue)
+                        }
 
-                            // for (var i = 0; i < item.difficultyId.substr(4, 5); i++) {
-                            //     $('#rating').children().eq(i).css("background-position", "0px 0px")
-                            //     $('#rating').children().eq(i).children().hide()
-                            // }
-                            // for (var i = item.difficultyId.substr(4,5); i < $('#rating').children().length; i++) {
-                            //     $('#rating').children().eq(i).css("background-position", "0px -58px")
-                            //     $('#rating').children().eq(i).children().show()
-                            // }
+                        // for (var i = 0; i < item.difficultyId.substr(4, 5); i++) {
+                        //     $('#rating').children().eq(i).css("background-position", "0px 0px")
+                        //     $('#rating').children().eq(i).children().hide()
+                        // }
+                        // for (var i = item.difficultyId.substr(4,5); i < $('#rating').children().length; i++) {
+                        //     $('#rating').children().eq(i).css("background-position", "0px -58px")
+                        //     $('#rating').children().eq(i).children().show()
+                        // }
 
-                            if(item.difficultyName == '一星'){
-                                var countdifficult = 1
-                            }else if(item.difficultyName == '二星'){
-                                var countdifficult = 2
-                            } else if (item.difficultyName == '三星') {
-                                var countdifficult = 3
-                            } else if (item.difficultyName == '四星') {
-                                var countdifficult = 4
-                            } else if (item.difficultyName == '五星') {
-                                var countdifficult = 5
-                            }
+                        if (item.difficultyName == '一星') {
+                            var countdifficult = 1
+                        } else if (item.difficultyName == '二星') {
+                            var countdifficult = 2
+                        } else if (item.difficultyName == '三星') {
+                            var countdifficult = 3
+                        } else if (item.difficultyName == '四星') {
+                            var countdifficult = 4
+                        } else if (item.difficultyName == '五星') {
+                            var countdifficult = 5
+                        }
 
-                            for (var i = 0; i < countdifficult; i++) {
-                                $('#rating').children().eq(i).css("background-position", "0px 0px")
-                                $('#rating').children().eq(i).children().hide()
-                            }
-                            for (var i = countdifficult; i < $('#rating').children().length; i++) {
-                                $('#rating').children().eq(i).css("background-position", "0px -58px")
-                                $('#rating').children().eq(i).children().show()
-                            }
+                        for (var i = 0; i < countdifficult; i++) {
+                            $('#rating').children().eq(i).css("background-position", "0px 0px")
+                            $('#rating').children().eq(i).children().hide()
+                        }
+                        for (var i = countdifficult; i < $('#rating').children().length; i++) {
+                            $('#rating').children().eq(i).css("background-position", "0px -58px")
+                            $('#rating').children().eq(i).children().show()
+                        }
 
-                            $('#kllxh').val(item.calorieConsumption)
-                            $('#syrq').val(item.suitableForCrowd)
+                        $('#kllxh').val(item.calorieConsumption)
+                        $('#syrq').val(item.suitableForCrowd)
 
-                            //console.log($('.oneinput').eq(0).html())
+                        //console.log($('.oneinput').eq(0).html())
 
-                            for (var i = 0; i < item.curriculumEffectList.length; i++) {
-                                $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
-                                $('.oneinput').eq(i).children('.add-course-sortone-selectone').children().children().children('.select-menu-input').val(item.curriculumEffectList[i].name)
-                                //console.log(111)
-                            }
+                        for (var i = 0; i < item.curriculumEffectList.length; i++) {
+                            $('.oneinput').eq(i).children('.input').val(item.curriculumEffectList[i].effectValue)
+                            $('.oneinput').eq(i).children('.add-course-sortone-selectone').children().children().children('.select-menu-input').val(item.curriculumEffectList[i].name)
+                            //console.log(111)
+                        }
 
-                            $('#area1').val(item.announcements)
+                        $('#area1').val(item.announcements)
 
-                            var faqhtml = `
+                        var faqhtml = `
                                 <table cellspacing="0" cellpadding="0">
                                     <tr>
                                         <th>问题</th>
@@ -3098,143 +3145,143 @@
                                     </tr>
                                 </table>
                             `
-                            $('#faq').html(faqhtml)
+                        $('#faq').html(faqhtml)
 
-                            $("#addOneRow").click(function () {
-                                var tempTr = $(this).parent().parent().clone(true);
-                                $(this).parent().parent().parent().children("tr:last").after(tempTr);
-                                $(this).parent().parent().parent().children("tr:last").children().eq(0).children().val('')
-                                $(this).parent().parent().parent().children("tr:last").children().eq(1).children().val('')
-                            });
-                            $("#delOneRow").click(function () {
-                                if ($(this).parent().parent().parent().children("tr").length < 2) {
-                                    alert("至少保留一行!");
-                                } else {
-                                    if (confirm("确认删除?")) {
-                                        $(this).parent().parent().remove();
-                                    }
+                        $("#addOneRow").click(function () {
+                            var tempTr = $(this).parent().parent().clone(true);
+                            $(this).parent().parent().parent().children("tr:last").after(tempTr);
+                            $(this).parent().parent().parent().children("tr:last").children().eq(0).children().val('')
+                            $(this).parent().parent().parent().children("tr:last").children().eq(1).children().val('')
+                        });
+                        $("#delOneRow").click(function () {
+                            if ($(this).parent().parent().parent().children("tr").length < 2) {
+                                alert("至少保留一行!");
+                            } else {
+                                if (confirm("确认删除?")) {
+                                    $(this).parent().parent().remove();
                                 }
-                            });
-                            
-                            for (var i = 1; i < item.leagueCurriculumFaqList.length; i++) {
-                                $('#addOneRow').click()
                             }
+                        });
 
-                            for (var i = 0; i < item.leagueCurriculumFaqList.length; i++) {
-                                $('#faq').children().children().children().eq(i + 1).children().eq(0).children('textarea').val(item.leagueCurriculumFaqList[i].problem)
-                                $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').val(item.leagueCurriculumFaqList[i].answer)
+                        for (var i = 1; i < item.leagueCurriculumFaqList.length; i++) {
+                            $('#addOneRow').click()
+                        }
+
+                        for (var i = 0; i < item.leagueCurriculumFaqList.length; i++) {
+                            $('#faq').children().children().children().eq(i + 1).children().eq(0).children('textarea').val(item.leagueCurriculumFaqList[i].problem)
+                            $('#faq').children().children().children().eq(i + 1).children().eq(1).children('textarea').val(item.leagueCurriculumFaqList[i].answer)
+                        }
+
+                        for (var i = 0; i < item.curriculumPayTypeList.length; i++) {
+                            if (item.curriculumPayTypeList[i].payTypeName == '付现') {
+                                $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
+                            } else if (item.curriculumPayTypeList[i].payTypeName == '卡扣') {
+                                $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
                             }
-                            
-                            for(var i=0;i<item.curriculumPayTypeList.length;i++){
+                        }
+
+
+                        $('#inputtwelve-flex').children().children('img').hide()
+
+                        if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')) {
+                            for (var i = 0; i < item.curriculumPayTypeList.length; i++) {
                                 if (item.curriculumPayTypeList[i].payTypeName == '付现') {
-                                    $('#add-course-sortone-inputten').children().eq(0).children('.paypay').click()
-                                } else if(item.curriculumPayTypeList[i].payTypeName == '卡扣'){
-                                    $('#add-course-sortone-inputten').children().eq(1).children('.paypay').click()
+                                    $('#gxbm').val(item.curriculumPayTypeList[i].curriculumGuangxinList[0].itemCode)
+                                    $('#gxmc').click()
                                 }
                             }
-                            
-
-                            $('#inputtwelve-flex').children().children('img').hide()
-
-                            if ($('#add-course-sortone-inputten').children().eq(0).children('.paypay').hasClass('11')){
-                                for(var i=0;i<item.curriculumPayTypeList.length;i++){
-                                    if(item.curriculumPayTypeList[i].payTypeName == '付现'){
-                                        $('#gxbm').val(item.curriculumPayTypeList[i].curriculumGuangxinList[0].itemCode)
-                                        $('#gxmc').click()
-                                    }
-                                }
-                            }
-                            if($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')){
-                                for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
-                                    for (var k = 0; k < item.curriculumPayTypeList.length; k++){
-                                        if(item.curriculumPayTypeList[k].payTypeName == '卡扣'){
-                                            for (var j = 0; j < item.curriculumPayTypeList[k].curriculumGuangxinList.length; j++) {
-                                                if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[k].curriculumGuangxinList[j].itemId) {
-                                                    $('#inputtwelve-flex').children().eq(i).children('img').show()
-                                                }
+                        }
+                        if ($('#add-course-sortone-inputten').children().eq(1).children('.paypay').hasClass('11')) {
+                            for (var i = 0; i < $('#inputtwelve-flex').children().length; i++) {
+                                for (var k = 0; k < item.curriculumPayTypeList.length; k++) {
+                                    if (item.curriculumPayTypeList[k].payTypeName == '卡扣') {
+                                        for (var j = 0; j < item.curriculumPayTypeList[k].curriculumGuangxinList.length; j++) {
+                                            if (parseInt($('#inputtwelve-flex').children().eq(i).children('p').html()) == item.curriculumPayTypeList[k].curriculumGuangxinList[j].itemId) {
+                                                $('#inputtwelve-flex').children().eq(i).children('img').show()
                                             }
                                         }
-                                        
                                     }
-                                }
-                            }
-
-                            if(!$('#inputtwelve-flex').children().children('img').is(':hidden')){
-                                $('.add-course-checkboxall').click()
-                            }
-
-                            //图片的渲染
-
-                            console.log(item)
-                            var html = ''
-                            for (var i = 0; i < item.leagueCurriculumImgList.length; i++) {
-                                var index = i
-
-                                html += '		<div class="zhegeshenmedoumeiyou ' + item.leagueCurriculumImgList[index].imgUrl + '" style="position:relative">';
-                                html += '           <img id="deldel" style="position:absolute;top:3px;left:192px;display:none" src="../image/palyitdel_btn.png">'
-                                html += '			<img style="height:160px;width:200px;margin-left:1rem" src="images/' + item.leagueCurriculumImgList[index].imgUrl + '" />';
-                                html += '		</div>';
-
-                            }
-
-                            $('#preview1').html(html)
-
-                            $('.zhegeshenmedoumeiyou').hover(function () {
-                                $(this).children('#deldel').show()
-                            }, function () {
-                                $(this).children('#deldel').hide()
-                            })
-
-                            $('.zhegeshenmedoumeiyou').children('#deldel').click(function () {
-                                $(this).parent().css('display', 'none')
-                                $(this).parent().attr('class', '')
-                            })
-
-                            //视频展示
-
-                            if (item.leagueCurriculumVideoList == '') {
-
-                            } else {
-                                $('#photoFile').attr('class',item.leagueCurriculumVideoList[0].videoUrl)
-                                var strstr = item.leagueCurriculumVideoList[0].videoUrl
-                                // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
-                                $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + strstr)
-
-                                $('#videoshow').show()
-
-                                $('#videovideo').click(function () {
-                                    // openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
-                                    openVideo('http://crm.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
-                                })
-
-                                $('#videohide').click(function () {
-                                    $('#videoshow').hide()
-                                    $('#photoFile').attr('class', '')
-                                })
-
-                                function openVideo(src) {
-
-                                    var page = window.open();
-
-                                    var html = "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
-
-                                    page.document.write(html);
 
                                 }
-                            }  
-
-                            $('#add-course-footer-save').unbind()
-                            $('#add-course-footer-save').click(function () {
-                                bjhdsj(id)
-                            })
+                            }
                         }
-                    })
-                
-                    
-                }
-            })
-        
+
+                        if (!$('#inputtwelve-flex').children().children('img').is(':hidden')) {
+                            $('.add-course-checkboxall').click()
+                        }
+
+                        //图片的渲染
+
+                        console.log(item)
+                        var html = ''
+                        for (var i = 0; i < item.leagueCurriculumImgList.length; i++) {
+                            var index = i
+
+                            html += '		<div class="zhegeshenmedoumeiyou ' + item.leagueCurriculumImgList[index].imgUrl + '" style="position:relative">';
+                            html += '           <img id="deldel" style="position:absolute;top:2px;right:12px;display:none" src="../image/palyitdel_btn.png">'
+                            html += '			<img style="height:182px;width:240px;margin-right:10px" src="images/' + item.leagueCurriculumImgList[index].imgUrl + '" />';
+                            html += '		</div>';
+
+                        }
+
+                        $('#preview1').html(html)
+
+                        $('.zhegeshenmedoumeiyou').hover(function () {
+                            $(this).children('#deldel').show()
+                        }, function () {
+                            $(this).children('#deldel').hide()
+                        })
+
+                        $('.zhegeshenmedoumeiyou').children('#deldel').click(function () {
+                            $(this).parent().css('display', 'none')
+                            $(this).parent().attr('class', '')
+                        })
+
+                        //视频展示
+
+                        if (item.leagueCurriculumVideoList == '') {
+
+                        } else {
+                            $('#photoFile').attr('class', item.leagueCurriculumVideoList[0].videoUrl)
+                            var strstr = item.leagueCurriculumVideoList[0].videoUrl
+                            // $('#videovideo').html('http://test.physicalclub.com/crm/video1s/' + strstr)
+                            $('#videovideo').html('http://crm.physicalclub.com/crm/video1s/' + strstr)
+
+                            $('#videoshow').show()
+
+                            $('#videovideo').click(function () {
+                                // openVideo('http://test.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                                openVideo('http://crm.physicalclub.com/crm/video1s/' + item.leagueCurriculumVideoList[0].videoUrl)
+                            })
+
+                            $('#videohide').click(function () {
+                                $('#videoshow').hide()
+                                $('#photoFile').attr('class', '')
+                            })
+
+                            function openVideo(src) {
+
+                                var page = window.open();
+
+                                var html = "<body style='background:black'><div style = 'width:80%;margin:auto;'><video controls width='100%' autoplay src='" + src + "'></video> </div></body > "
+
+                                page.document.write(html);
+
+                            }
+                        }
+
+                        $('#add-course-footer-save').unbind()
+                        $('#add-course-footer-save').click(function () {
+                            bjhdsj(id)
+                        })
+                    }
+                })
+
+
+            }
+        })
+
     }
 </script>
-add-course-sortone-inputthree-p
+
 </html>

@@ -62,7 +62,7 @@
 					html += '                       <p style="font-size:14px;background:#F7F7F7;margin-top:6px">点击添加图片</p>'
 					html += '                       <p style="font-size:12px;background:#F7F7F7;margin-top:5px">支持jpg/png格式</p>'
 					html += '                       <p style="font-size:12px;background:#F7F7F7;margin-top:3px">RGB格式。不超过5M</p>'
-					html += '						<input id="fileImage" type="file" accept=".png,.jpeg,.jpg" size="30" onchange="imageimage()" name="fileselect[]" '+multiple+'>';
+					html += '						<input id="fileImage" type="file" accept=".png,.jpeg,.jpg" size="30" onchange="imageimage()" value=" " name="fileselect[]" '+multiple+'>';
 	            	html += '					</div>';
 	            	html += '				</div>';
 					html += '			</div>';
