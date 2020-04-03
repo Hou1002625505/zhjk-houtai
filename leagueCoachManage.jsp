@@ -1571,7 +1571,7 @@
 
         })
 
-        $('#flexfour-flex-pthree').one('click', function () {
+        $('#flexfour-flex-pthree').click(function () {
             $('.course-coach-manage-add2').css('opacity', 0)
             $('.course-coach-manage-addthree').css('z-index', -10)
 
