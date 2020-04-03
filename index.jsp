@@ -627,6 +627,11 @@
 			<shiro:hasPermission name="1005">
 				<div title="配置中心" style="padding: 10px;">
 					<div align="left">
+						<shiro:hasPermission name="100504">
+							<a href="#" onclick="javascript:addTab('标签库','rest/tagKu/tagGroup/customerLabelPage');"
+								class="easyui-linkbutton"
+								data-options="plain:true,iconCls:'icon-upSale',width:'150px',iconAlign:'left'">标签库</a>
+						</shiro:hasPermission>
 						<shiro:hasPermission name="100502">
 							<a href="#"
 								onclick="javascript:addTab('数据字典','rest/dictionarytype/dictionarytypelistpage');"

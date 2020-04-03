@@ -1340,7 +1340,7 @@
                             <div class="coach-manage-addthree-flexone">
                                 <div class="coach-manage-addthree-flextwo">
                                     <img src="./image/tags_icon.png" alt="">
-                                    <p>添加个人标签（多选）</p>
+                                    <p>添加上牌课程（多选）</p>
                                 </div>
                                 <img id="addthree-flexone-chacha" style="width:1.25rem;height:1.25rem" src="./image/popupclose_btn.png" alt="">
                             </div>
@@ -1444,7 +1444,15 @@
 
                     ad_ft1 += `
                                 <div class="coach-manage-addthree-flexthree-flex">
-                                    <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                    <div style="display:flex">
+                                        <p class="coach-manage-addthree-flexthree-flex-p">`+ result[i].classifyName + `</p>
+                                        <div style="display:flex;margin-top:5px;margin-left:5px">
+                                            <div class="course-manage-table-checkbox" style="width: 16px;height: 16px;box-sizing: border-box;border: 1px solid #BFBFBF;">
+                                                <img style="display:none;margin-left:-1px;margin-top:-1px" src="/image/codeallset_btn.png">
+                                            </div>
+                                            <p>全选</p>
+                                        </div>
+                                    </div>
                                     <div class="addthree-flexfour">
                                     `+ ad_str2 + `
                                     </div>
@@ -1465,6 +1473,21 @@
                             $(this).addClass('active1')
                         }, 50);
                     }
+                })
+
+                $('.course-manage-table-checkbox').click(function(){
+                    if($(this).children('img').is(':hidden')){
+                        $(this).children('img').show()
+                        $(this).parent().children('p').html('取消全选')
+                        $(this).parent().parent().parent().children().eq(1).children().removeClass('active1')
+                        $(this).parent().parent().parent().children().eq(1).children().click()
+                    }else{
+                        $(this).children('img').hide()
+                        $(this).parent().children('p').html('全选')
+                        $(this).parent().parent().parent().children().eq(1).children()
+                        $(this).parent().parent().parent().children().eq(1).children().removeClass('active1')
+                    }
+                    
                 })
 
                 for (var i = 0; i < result.length; i++) {
