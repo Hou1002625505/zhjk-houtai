@@ -488,11 +488,17 @@
                 maxTime = s2;
             }
 
+            var date1 = new Date($("#ksrq").val());
+            //time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();//time1表示当前时间
+            var date2 = new Date(date1);
+            date2.setDate(date1.getDate() + 30);
+            var time2 = date2.getFullYear() + "-" + (date2.getMonth() + 1 < 10 ? '0' + (date2.getMonth() + 1) : (date2.getMonth() + 1)) + "-" + date2.getDate();
+            
             $("#endTime").datePicker({
                 hasShortcut: false,
                 format: 'YYYY-MM-DD',
                 min: $("#ksrq").val(),
-                max: maxTime
+                max: time2
             });
         }
     
@@ -517,12 +523,18 @@
                 maxTime = s2;
             }
 
-            $("#endTime1").datePicker({
-                hasShortcut: false,
-                format: 'YYYY-MM-DD',
-                min: $("#ksrq1").val(),
-                max: maxTime
-            });
+            var date1 = new Date($("#ksrq1").val());
+            //time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();//time1表示当前时间
+            var date2 = new Date(date1);
+            date2.setDate(date1.getDate() + 30);
+            var time2 = date2.getFullYear() + "-" + (date2.getMonth() + 1 < 10 ? '0' + (date2.getMonth() + 1) : (date2.getMonth() + 1)) + "-" + date2.getDate();
+
+        $("#endTime1").datePicker({
+            hasShortcut: false,
+            format: 'YYYY-MM-DD',
+            min: $("#ksrq1").val(),
+            max: time2
+        });
         }
 
     $('#course-anaylse-header-pone').click(function () {
