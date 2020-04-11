@@ -40,7 +40,9 @@
         /* html{
             font-size:calc(100vw / 88.11);
         } */
-
+html{
+	min-height:100%;
+}
         * {
             padding: 0;
             margin: 0

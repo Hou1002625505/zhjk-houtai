@@ -310,7 +310,7 @@ $('#liuyi-flex-right-p11').click(function(){
     })
 })
 
-    $('#liuyi-flex-right-p22').click(function () {
+$('#liuyi-flex-right-p22').click(function () {
         var storeId = $('#sj-body-zt').val()
 
         if (storeId == '') {
@@ -427,8 +427,6 @@ function mdsjxzxr(){
 
 //表格渲染
 function bgxr(result){
-
-    
 
     function panduan(i, j) {
         var str

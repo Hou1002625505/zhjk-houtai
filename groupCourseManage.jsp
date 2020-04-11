@@ -37,6 +37,7 @@
     <style>
         html {
             border: 1px solid #95B8E7;
+			min-height:100%;
         }
 
         /* html{
@@ -406,7 +407,7 @@
             text-align: center;
             line-height: 32px;
             font-size: 14px;
-            margin-left: 18px;
+            margin-left: 15px;
             box-sizing: border-box;
             margin-top: 10px;
         }
@@ -892,13 +893,14 @@
         }
 
         .kcgl-body-kcldt {
-            width: 60px;
+            width:78px;
             height: 32px;
             border: 1px solid #d5d5d7;
             border-radius: 4px 0 0 4px;
             font-size: 14px;
             box-sizing: border-box;
-            -webkit-appearance: none
+            -webkit-appearance: none;
+			padding-left:10px;
         }
 
         .triangle_border_down1 {
@@ -921,7 +923,7 @@
             border-style: solid;
             border-color: #444444 transparent transparent;
             position: absolute;
-            right: 5px;
+            right: 9px;
             top: 13px;
         }
 
@@ -1245,9 +1247,9 @@
                         <th></th>
                     </tr>
                     <tr>
-                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;"
+                        <td><textarea class="textarea11" style="padding:10px;box-sizing: border-box;"
                                 placeholder="Q :"></textarea></td>
-                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;"
+                        <td><textarea class="textarea22" style="padding:10px;box-sizing: border-box;"
                                 placeholder="A :"></textarea></td>
                         <td>
                             <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png"
@@ -1289,7 +1291,7 @@
                         src="../image/addapicture_btn.png"></div>
                 <p style="font-size:14px;background:#F7F7F7;margin-top:6px">点击添加图片</p>
                 <p style="font-size:12px;background:#F7F7F7;margin-top:5px">支持jpg/png格式</p>
-                <p style="font-size:12px;background:#F7F7F7;margin-top:3px">RGB格式。不超过5M</p>
+                <p style="font-size:12px;background:#F7F7F7;margin-top:3px">RGB格式。不超过1M</p>
                 <input id="fileImage" type="file" accept=".png,.jpeg,.jpg" size="30" onchange="imageimage()"
                     name="fileselect[]" '+multiple+'>
             </div>
@@ -1445,8 +1447,8 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
-                    <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
+                    <td><textarea class="textarea11" style="padding:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
+                    <td><textarea class="textarea22" style="padding:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
                     <td>
                         <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                         <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">
@@ -3137,8 +3139,8 @@
                                         <th></th>
                                     </tr>
                                     <tr>
-                                        <td><textarea class="textarea11" style="padding-left:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
-                                        <td><textarea class="textarea22" style="padding-left:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
+                                        <td><textarea class="textarea11" style="padding:10px;box-sizing: border-box;" placeholder="Q :"></textarea></td>
+                                        <td><textarea class="textarea22" style="padding:10px;box-sizing: border-box;" placeholder="A :"></textarea></td>
                                         <td>
                                             <img id="addOneRow" style="margin-right:6px;cursor: pointer;" src="/image/add_btn.png" alt="" >
                                             <img id="delOneRow" src="/image/del_btn.png" alt="" style="cursor: pointer;">

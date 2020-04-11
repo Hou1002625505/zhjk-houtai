@@ -42,6 +42,7 @@
 
         html {
             border: 1px solid #95B8E7;
+			min-height:100%;
         }
 
         * {
@@ -332,10 +333,10 @@
         .course-arranging-footer .course-arranging-footer-ptwo {
             width: 70px;
             height: 30px;
-            border: 1px solid #BFBFBF;
+            border: 1px solid #71B2EF;
             margin-left: 9px;
             font-size: 14px;
-            color: #444444;
+            color: #71B2EF;
             text-align: center;
             line-height: 30px;
             border-radius: 2px;
@@ -381,6 +382,9 @@
             margin-right: 13px;
             cursor: pointer;
         }
+		#boxpage{
+			display:none;
+		}
 
         .td-del .td-del-flex p:nth-child(3) {
             width: 62px;
@@ -448,7 +452,7 @@
             height: 680px;
             border: 1px solid #c7dbff;
             background: #FFFFFF;
-            overflow-y: scroll;
+            overflow-y: auto;
             position: relative;
         }
 
@@ -2729,7 +2733,11 @@
                 data: JSON.stringify(SchedulingList),
                 success: function (result) {
                     console.log(result)
-
+       if(result.rows&&result.rows.length>0){
+		   $("#boxpage").show();
+	   }else{
+		   		   $("#boxpage").hide();
+	   }
                     //表格的动态渲染
                     var str2 = ''
 
