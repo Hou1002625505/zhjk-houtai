@@ -420,7 +420,7 @@ html{
             //time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();//time1表示当前时间
             var date2 = new Date(date1);
             date2.setDate(date1.getDate() + aa);
-            var time2 = date2.getFullYear() + "-" + (date2.getMonth() + 1 < 10?'0'+(date2.getMonth() + 1):(date2.getMonth() + 1)) + "-" + date2.getDate();
+            var time2 = date2.getFullYear() + "-" + (date2.getMonth() + 1 < 10?'0'+(date2.getMonth() + 1):(date2.getMonth() + 1)) + "-" + (date2.getDate() < 10 ?'0'+ date2.getDate(): date2.getDate());
             return time2
         }
     var s3 = fun_date(-7)
@@ -797,7 +797,7 @@ html{
         $('#course-anaylse-header-pfour').css('color', 'white')
         $(this).addClass('1')
         $('#course-anaylse-header-pone').removeClass('1')
-        $('#course-anaylse-header-pthree').removeClass('1')
+        $('#course-anaylse-header-ptwo').removeClass('1')
         $('#course-anaylse-header-pthree').removeClass('1')
         $('#qlg').hide()
         $('#zhy').show()
