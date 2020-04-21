@@ -834,11 +834,11 @@
 
 		$('#hdts-queding').unbind()
 		$('#hdts-queding').click(function () {
-			 xiugai()
+			 xiugai(result)
 		})
 	}
 
-	function xiugai(){
+	function xiugai(result){
 		if ($('#hdtp').attr('class') == '') {
 			alert('请上传图片')
 			return;
@@ -869,8 +869,10 @@
 		var activeTitle = $('#hdts-hdbt').val()
 		var activeDescription = $('#hdts-hdms').val()
 		var activeLink = $('#hdts-hdlj').val()
+		var linkId = result.linkId
 
 		var fd = {
+			linkId : linkId,
 			activeImgUrl: activeImgUrl,
 			activeType: activeType,
 			activeTitle: activeTitle,
