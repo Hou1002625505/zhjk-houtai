@@ -183,11 +183,13 @@
 			border-radius: 10px;
 			top:50%;
 			left:50%;
+			top:136px;
 			margin-left:-317px;
 			box-sizing: border-box;
 			padding:15px 20px 20px 20px;
 			background:#edf4ff;
-			display:none
+			display:none;
+			box-shadow: 3px 3px 10px 2px #dcdcdc;
 		}
 		#shangchuan{
 			width:60px;
@@ -333,7 +335,8 @@
 				<p style="float: left;font-size: 18px;color:#444444;margin-left:11px">新建活动</p>
 				<img style="float: right;width:20px;height:20px;cursor: pointer;" id="xjhd-gb" src="./image/popupclose_btn.png" alt="">
 			</div>
-			<div style="width:592px;height:478px;border:1px solid #71B2EF;background:white;margin-top:13px;padding:26px 0 0 18px;box-sizing: border-box;">
+			<div style="width:592px;height:478px;border:1px solid #71B2EF;background:white;margin-top:13px;
+			padding:26px 0 0 18px;box-sizing: border-box;box-shadow: 3px 3px 10px 2px #c8d2e1;">
 				<div style="height:84px">
 					<p style="float: left;font-size: 18px;color:#444444;margin-right:18px">活动图片</p>
 					<div style="float: left;width:84px;height: 84px;border:1px solid #BFBFBF;box-sizing: border-box;">
@@ -355,13 +358,15 @@
 						<em class="triangle_border_down1"></em>
 					</span>
 				</div>
-				<div style="height:32px;line-height: 32px;margin-top: 25px;">
+				<div style="height:32px;line-height: 32px;margin-top: 25px;position: relative;">
 					<p style="float: left;font-size: 18px;color:#444444;margin-right:20px">活动标题</p>
 					<input type="text" id="hdts-hdbt" autocomplete="off" placeholder="请填写分享活动标题">
+					<p style="position:absolute;top:0;right:30px"><span id="text-count">0</span>/20</p>
 				</div>
-				<div style="height:80px;line-height: 80px;margin-top: 25px;">
+				<div style="height:80px;line-height: 80px;margin-top: 25px;position: relative;">
 					<p style="float: left;font-size: 18px;color:#444444;margin-right:20px">活动描述</p>
 					<textarea name="" id="hdts-hdms" placeholder="请对活动分享进行描述"></textarea>
+					<p style="position:absolute;top:25px;right:30px"><span id="text-count1">0</span>/200</p>
 				</div>
 				<div style="height:32px;line-height: 32px;margin-top: 25px;">
 					<p style="float: left;font-size: 18px;color:#444444;margin-right:20px">活动链接</p>
@@ -429,6 +434,31 @@
 	shouye()
 
 	xiala()
+
+	jscaozuo()
+
+	function jscaozuo(){
+		$("#hdts-hdbt").on("input propertychange", function () {
+			var $this = $(this),
+				_val = $this.val(),
+				count = "";
+			if (_val.length > 20) {
+				$this.val(_val.substring(0, 20));
+			}
+			count = $this.val().length;
+			$("#text-count").text(count);
+		}); 
+		$("#hdts-hdms").on("input propertychange", function () {
+			var $this = $(this),
+				_val = $this.val(),
+				count = "";
+			if (_val.length > 200) {
+				$this.val(_val.substring(0, 200));
+			}
+			count = $this.val().length;
+			$("#text-count1").text(count);
+		});
+	}
 
 	function time(){
 		$('.J-datepicker-day').datePicker({
@@ -619,7 +649,7 @@
 
 		let file = $("#fileImage").val()
 		let filename = file.substr(file.lastIndexOf("."));
-		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg') {
+		if (filename != '.png' && filename != '.jpeg' && filename != '.jpg' && filename != '.PNG' && filename != '.JPEG' && filename != '.JPG') {
 			alert("请上传图片格式的文件");
 			return;
 		}
@@ -632,11 +662,18 @@
 			contentType: false,
 			processData: false,
 			success: function (data) {
-				console.log(data)
+				if(data.message = '上传成功!'){
+					alert('上传成功!')
+					$('#hdtp').attr('src', 'images/' + data.rows[0].path)
+					$('#hdtp').attr('class', data.rows[0].path)
+					$('#fileImage').val('')
+				}else{
+					alert('上传失败!')
+				}
+				
 				//var img = data
 				//return data
-				$('#hdtp').attr('src', 'images/'+data.rows[0].path)
-				$('#hdtp').attr('class', data.rows[0].path)
+				
 			},
 			error: function (data) {
 				alert("上传失败")
@@ -843,7 +880,7 @@
 
 		$.ajax({
 			type: 'POST',
-			url: "rest/activePushLink/insertActivePushLink",
+			url: "rest/activePushLink/updateActivePushLink",
 			contentType: "application/json",  //multipart/form-data;boundary=--xxxxxxx   application/json,
 			data: JSON.stringify(fd),
 			success: function (result) {
