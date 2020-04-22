@@ -395,6 +395,8 @@
 		$('#hdts-hdbt').val('')
 		$('#hdts-hdms').val('')
 		$('#hdts-hdlj').val('')
+		$('#text-count').html('0')
+		$('#text-count1').html('0')
 		$('#hdts-queding').unbind()
 		$('#hdts-queding').click(function(){
 			xjhd()
@@ -831,7 +833,10 @@
 		$('#hdts-hdbt').val(result.activeTitle)
 		$('#hdts-hdms').val(result.activeDescription)
 		$('#hdts-hdlj').val(result.activeLink)
-
+		var count = $('#hdts-hdbt').val().length
+		var count1 = $('#hdts-hdms').val().length
+		$('#text-count').html(count)
+		$('#text-count1').html(count1)
 		$('#hdts-queding').unbind()
 		$('#hdts-queding').click(function () {
 			 xiugai(result)

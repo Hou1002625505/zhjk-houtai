@@ -573,6 +573,11 @@
 								class="easyui-linkbutton"
 								data-options="plain:true,iconCls:'icon-bm',width:'150px',iconAlign:'left'">体验券管理</a>
 						</shiro:hasPermission>
+						<shiro:hasPermission name="100208">
+							<a href="#" onclick="javascript:addTab('侧边栏活动推送链接','rest/activePushLink/activePushLinkListPage');"
+								class="easyui-linkbutton"
+								data-options="plain:true,iconCls:'icon-biaoqianku',width:'150px',iconAlign:'left'">侧边栏活动推送链接</a>
+						</shiro:hasPermission>
 					</div>
 				</div>
 			</shiro:hasPermission>
@@ -627,10 +632,7 @@
 			<shiro:hasPermission name="1005">
 				<div title="配置中心" style="padding: 10px;">
 					<div align="left">
-						<shiro:hasPermission name="100208">
-							<a href="#" onclick="javascript:addTab('标签库','rest/activePushLink/activePushLinkListPage');" class="easyui-linkbutton"
-								data-options="plain:true,iconCls:'icon-biaoqianku',width:'150px',iconAlign:'left'">侧边栏活动推送链接</a>
-						</shiro:hasPermission>
+						
 						<shiro:hasPermission name="100504">
 							<a href="#" onclick="javascript:addTab('标签库','rest/tagKu/tagGroup/customerLabelPage');"
 								class="easyui-linkbutton"
@@ -669,6 +671,11 @@
 							<a href="#" onclick="javascript:addTab('方案模板','rest/coach/plan/planUploadList');"
 								class="easyui-linkbutton"
 								data-options="plain:true,iconCls:'icon-upSale1',width:'150px',iconAlign:'left'">方案模板</a>
+						</shiro:hasPermission>
+						<shiro:hasPermission name="100511">
+							<a href="#" onclick="javascript:addTab('运营规则配置','rest/bsconfig/bsconfigpage');"
+								class="easyui-linkbutton"
+								data-options="plain:true,iconCls:'icon-upSale1',width:'150px',iconAlign:'left'">运营规则配置</a>
 						</shiro:hasPermission>
 					</div>
 				</div>
