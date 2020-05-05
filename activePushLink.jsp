@@ -695,6 +695,7 @@
 			data: JSON.stringify(paramsGroupType),
 			success: function (result) {
 				var strGroupType = '';
+				var strGroupType1 = '';
 				//console.log(result)
 				strGroupType = `
                        <option value="" selected="selected">全部</option>
@@ -704,8 +705,18 @@
                             <option value="`+ item.dictionaryId + `">` + item.name + `</option>
                         `
 				})
+				var strGroupType1 = '';
+				//console.log(result)
+				strGroupType1 = `
+                       <option value="" selected="selected"></option>
+                    `
+				$.each(result.rows, function (i, item) {
+					strGroupType1 += `
+                            <option value="`+ item.dictionaryId + `">` + item.name + `</option>
+                        `
+				})
 				$('#hdts-hdfl').html(strGroupType)
-				$('#hdts-hdfl1').html(strGroupType)
+				$('#hdts-hdfl1').html(strGroupType1)
 			},
 			error: function (e) {
 				console.log(e.status);

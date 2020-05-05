@@ -1861,7 +1861,7 @@
 
             </tbody>
         </table>
-        <div class="course-arranging-footer" style="height:auto;flex-wrap: wrap;">
+        <div class="course-arranging-footer" style="height:auto;flex-wrap: wrap;position:relative">
             <div class="course-arranging-table-checkbox" id="course-arranging-table-checkbox-all">
                 <img style="display:none" src="./image/codeallset_btn.png">
             </div>
@@ -1872,6 +1872,7 @@
             <div class="course-arranging-footer-ptwo" id="tiebiao-show" style="cursor:pointer;">贴标</div>
             <div class="course-arranging-footer-ptwo" id="shanchudel" style="cursor:pointer;">删除</div>
             <div class="course-arranging-footer-pthree"></div>
+            <div class="fenye" style="position:absolute;left:600px;top:3px;font-size:14px">11111</div>
             <div class="box" id="boxpage" style="margin:0"></div>
         </div>
         <div class="edit-course" id="edit-course1">
@@ -1885,7 +1886,7 @@
 
         </div>
 
-        
+                
     </div>
 
     <div class="course-arranging-body" id="course-arranging-body-right" style="display:none">
@@ -1948,7 +1949,10 @@
             </tbody>
         </table>
 
-        <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:66rem;width:100%"></div>
+        <div style="position:relative">
+            <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:66rem;width:100%"></div>
+            <p id="fenye1" style="font-size: 14px;position:absolute;left:10px;top:20px">2222</p>
+        </div>
         
 
         <div class="edit-course" id="edit-course2">
@@ -2733,11 +2737,11 @@
                 data: JSON.stringify(SchedulingList),
                 success: function (result) {
                     console.log(result)
-       if(result.rows&&result.rows.length>0){
-		   $("#boxpage").show();
-	   }else{
-		   		   $("#boxpage").hide();
-	   }
+                    // if(result.rows&&result.rows.length>0){
+                    //     $("#boxpage").show();
+                    // }else{
+                    //     $("#boxpage").hide();
+                    // }
                     //表格的动态渲染
                     var str2 = ''
 
@@ -2858,13 +2862,17 @@
                     var obj = {
                         wrapid: 'boxpage', //页面显示分页器容器id
                         total: result.total, //总条数
-                        pagesize: 100, //每页显示10条
+                        pagesize: 100, //每页显示100条
                         currentPage: page, //当前页
                         onPagechange: onPagechange,
                         btnCount:5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
                     }
 
                     pagination.init(obj);
+
+                    var fenye = `共`+ result.total +`条，每页100条`
+
+                    $('.fenye').html(fenye)
 
                 },
                 error: function (e) {
@@ -3055,6 +3063,10 @@
                         }
 
                         pagination.init(obj);
+
+                        var fenye = `共` + result.total + `条，每页100条`
+
+                        $('#fenye1').html(fenye)
 
                     },
                     error: function (e) {

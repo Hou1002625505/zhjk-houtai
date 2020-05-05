@@ -308,6 +308,10 @@ html{
             width:13.125%
         }
 
+        .item9{
+            width:10%
+        }
+
         #jlxm{
             
         }
@@ -1546,6 +1550,10 @@ function dssgbgxr(){
                 tablestr = `
                         <tr style="background:#f8fafb">
                             <th>序号</th>
+                            <th>门店名称</th>
+                            <th>上课日期</th>
+                            <th>上课时间</th>
+                            <th>上课教练</th>
                             <th>发布课程</th>
                             <th>预约人数</th>
                             <th>签到人数</th>
@@ -1570,6 +1578,25 @@ function dssgbgxr(){
                 //     // }
                 // }
 
+                function qckg(str){
+                    var qq = str.split(' ')[0]
+                    return qq
+                }
+
+                function jl(str){
+                    var qq = ''
+                    if(str.length == 1){
+                        qq = str[0].realName
+                    }else{
+                        for (var i = 0; i < str.length; i++) {
+                            qq += (str[i].realName + '、')
+                        }
+                    }
+
+                    return qq
+                    
+                }
+
                 if (result.rows.length == 0) {
                     $('.table-body1').html(tablestr)
                 }
@@ -1577,12 +1604,16 @@ function dssgbgxr(){
                 $.each(result.rows, function (i, item) {
                     tablestr += `
                         <tr>
-                            <td>`+ (i + 1) + `</td>
-                            <td>`+ item.leagueCurriculumName + `</td>
-                            <td>`+ item.totalCount + `</td>
-                            <td>`+ item.signCount + `</td>
-                            <td>`+ item.subscribeRateStr + `</td>
-                            <td>`+ item.signRateStr + `</td>
+                            <td class="item9">`+ (i + 1) + `</td>
+                            <td class="item9">`+ item.storeName +`</td>
+                            <td class="item9">`+ qckg(item.startDate) +`</td>
+                            <td class="item9">`+ item.timeStr +`</td>
+                            <td class="item9">`+ jl(item.courseSchedulingItemList) +`</td>
+                            <td class="item9">`+ item.leagueCurriculumName + `</td>
+                            <td class="item9">`+ item.totalCount + `</td>
+                            <td class="item9">`+ item.signCount + `</td>
+                            <td class="item9">`+ item.subscribeRateStr + `</td>
+                            <td class="item9">`+ item.signRateStr + `</td>
                         </tr>
                     `
                     $('.table-body1').html(tablestr)
