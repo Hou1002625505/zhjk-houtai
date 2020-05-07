@@ -1872,7 +1872,7 @@
             <div class="course-arranging-footer-ptwo" id="tiebiao-show" style="cursor:pointer;">贴标</div>
             <div class="course-arranging-footer-ptwo" id="shanchudel" style="cursor:pointer;">删除</div>
             <div class="course-arranging-footer-pthree"></div>
-            <div class="fenye" style="position:absolute;left:600px;top:3px;font-size:14px">11111</div>
+            <div class="fenye" style="position:absolute;left:600px;top:3px;font-size:14px"></div>
             <div class="box" id="boxpage" style="margin:0"></div>
         </div>
         <div class="edit-course" id="edit-course1">
@@ -1951,7 +1951,7 @@
 
         <div style="position:relative">
             <div class="box" id="boxpage1" style="padding-bottom:20px;margin-left:66rem;width:100%"></div>
-            <p id="fenye1" style="font-size: 14px;position:absolute;left:10px;top:20px">2222</p>
+            <p id="fenye1" style="font-size: 14px;position:absolute;left:10px;top:20px"></p>
         </div>
         
 
@@ -1984,6 +1984,20 @@
         $(this).addClass('course-arranging-header-one-ptwo-active')
         $('#course-arranging-body-left').hide()
         $('#course-arranging-body-right').show()
+
+        var data = new Date()
+
+        var setstarttime = data.toLocaleDateString()
+        // .split('/').join('-')
+
+        var setstarttime0 = setstarttime.split('/')[0]
+        var setstarttime1 = setstarttime.split('/')[1]
+        var setstarttime2 = setstarttime.split('/')[2]
+
+        var setstarttime3 = setstarttime0 + '-' + (setstarttime1<10?'0'+ setstarttime1: setstarttime1) + '-' + (setstarttime2 < 10 ? '0' + setstarttime2 : setstarttime2)
+
+        $('#create-course-time1').val(setstarttime3)
+
         shoyen()
     })
 
@@ -2872,7 +2886,7 @@
 
                     var fenye = `共`+ result.total +`条，每页100条`
 
-                    $('.fenye').html(fenye)
+                    // $('.fenye').html(fenye)
 
                 },
                 error: function (e) {
@@ -3066,7 +3080,7 @@
 
                         var fenye = `共` + result.total + `条，每页100条`
 
-                        $('#fenye1').html(fenye)
+                        // $('#fenye1').html(fenye)
 
                     },
                     error: function (e) {

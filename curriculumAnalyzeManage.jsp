@@ -264,7 +264,7 @@ html{
         .table-body1 tr td {
             font-size: 14px;
             color: #444444;
-            height: 40px;
+            min-height: 40px;
             text-align: center;
             border-left: 1px dotted #CCCCCC;
             border-bottom: 1px dotted #CCCCCC;
@@ -309,7 +309,7 @@ html{
         }
 
         .item9{
-            width:10%
+            width:9.09090909%
         }
 
         #jlxm{
@@ -1554,6 +1554,7 @@ function dssgbgxr(){
                             <th>上课日期</th>
                             <th>上课时间</th>
                             <th>上课教练</th>
+                            <th>教练工号</th>
                             <th>发布课程</th>
                             <th>预约人数</th>
                             <th>签到人数</th>
@@ -1597,6 +1598,20 @@ function dssgbgxr(){
                     
                 }
 
+                function jlgh(str) {
+                    var qq = ''
+                    if (str.length == 1) {
+                        qq = str[0].userName
+                    } else {
+                        for (var i = 0; i < str.length; i++) {
+                            qq += (str[i].userName + '、')
+                        }
+                    }
+
+                    return qq
+
+                }
+
                 if (result.rows.length == 0) {
                     $('.table-body1').html(tablestr)
                 }
@@ -1609,6 +1624,7 @@ function dssgbgxr(){
                             <td class="item9">`+ qckg(item.startDate) +`</td>
                             <td class="item9">`+ item.timeStr +`</td>
                             <td class="item9">`+ jl(item.courseSchedulingItemList) +`</td>
+                            <td class="item9">`+ jlgh(item.courseSchedulingItemList) +`</td>
                             <td class="item9">`+ item.leagueCurriculumName + `</td>
                             <td class="item9">`+ item.totalCount + `</td>
                             <td class="item9">`+ item.signCount + `</td>

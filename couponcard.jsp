@@ -1515,7 +1515,8 @@
 				<select name="visitstatus" id="kajuanlei">
 					<option value="" selected="selected">全部</option>
 					<option value="0">体验卡</option>
-					<option value="1">优惠券</option>
+					<option value="1">线下现金券</option>
+					<option value="2">现金券</option>
 
 				</select><em class="triangle_border_down1"></em></span>
 			<label>卡券状态</label>
@@ -1573,6 +1574,7 @@
 
 		<div class="box" id="boxpage"></div>
 	</div>
+
 	<div class="xinjianka_wrap">
 		<div class="fanhuisj backs">返回上一级</div>
 		<div class="xinjianka">
@@ -1614,10 +1616,18 @@
 										class="input1" name="packageName" id="packageName" />
 									<!--<em class="xieg"><i id="remain">0</i>/9</em>--></span>
 							</div>
+
+							<div class="xinjianka_info1item">
+								<span class="text1">对内名称</span><span class="select_wrap"><input type="text"
+										class="input1" name="internalName" id="internalName" />
+									<!--<em class="xieg"><i id="remain">0</i>/9</em>--></span>
+							</div>
+
 							<div class="xinjianka_info1item">
 								<span class="text1">卡券类型</span><span class="select_wrap"><select id="kajuanleixing"
 										name="couponType">
 										<option value="0" selected="selected">体验卡</option>
+										<option value="1">线下现金券</option>
 										<option value="2">现金券</option>
 									</select><em class="triangle_border_down"></em></span><span id="gxidflag"><span
 										class="fgxid">广信套餐ID</span><input type="text" class="input1" name="packageIdGx"
@@ -1849,6 +1859,14 @@
 									<iframe src="editor/index.html" width="620px" height="160px" name="child"
 										class="edior"></iframe></span>
 							</div>
+							<div class="xinjianka_info1item">
+								<span class="text1">分享标题</span><span class="select_wrap"><input type="text"
+										class="input1" name="shareTitle" id="shareTitles" /></span>
+							</div>
+							<div class="xinjianka_info1item">
+								<span class="text1">分享描述</span><span class="select_wrap"><input type="text"
+										class="input1" name="shareContent" id="shareContents" /></span>
+							</div>
 							<div class="xinjianka_info1item" style="height:180px;">
 								<div class="youhs text1">
 									<p>活动背景图</p>
@@ -1931,7 +1949,10 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
+
+
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
@@ -1940,6 +1961,7 @@
 	<script type="text/javascript" src="easyui/datepicker.all.js"></script>
 	<script type="text/javascript" src="easyui/datepicker.en.js"></script>
 	<script type="text/javascript">
+
 		var urls = "http://test.physicalclub.com/images/";
 		//	var urls="http://crm.physicalclub.com/images/";
 
@@ -2200,6 +2222,7 @@
 			}
 
 		})
+
 		$(".wcheng").on("click", function (e) {
 			e.stopPropagation();
 			var List = JSON.stringify(selectstoreList);
@@ -2219,6 +2242,7 @@
 
 
 		})
+
 		$(".wcheng1").on("click", function (e) {
 			e.stopPropagation();
 			var List = JSON.stringify(FBselectstoreList);
@@ -2238,6 +2262,7 @@
 
 
 		})
+
 		function delectshop(em, id) {
 			$(em).parent().remove();
 			for (var i = 0; i < selectstoreList.length; i++) {
@@ -2268,6 +2293,7 @@
 			selectstoreList1 = JSON.parse(List1);
 			console.log(JSON.stringify(selectstoreList1))
 		}
+
 		function delectshop1(em, id) {
 			$(em).parent().remove();
 			for (var i = 0; i < FBselectstoreList.length; i++) {
@@ -2298,6 +2324,7 @@
 			FBselectstoreList1 = JSON.parse(List1);
 			console.log(JSON.stringify(FBselectstoreList1))
 		}
+
 		$(".selectBtn").on("click", function (e) {
 			e.stopPropagation();
 			$("#selmed").addClass("fangactive");
@@ -2324,6 +2351,7 @@
 			console.log(JSON.stringify(selectstoreList) + "****")
 			$("#store").show();
 		})
+
 		$(".selectBtn1").on("click", function (e) {
 			e.stopPropagation();
 			$("#selmd").addClass("fangactive");
@@ -2350,6 +2378,7 @@
 			console.log(JSON.stringify(FBselectstoreList) + "****")
 			$("#store1").show();
 		})
+
 		$(".storeClose").on("click", function (e) {
 			e.stopPropagation();
 			$("#store").hide();
@@ -2372,6 +2401,7 @@
 				day: '-7'
 			}]
 		});
+
 		$(document).on('click', '.radiselect', function () {
 			console.log(1)
 			$(this).addClass("fangactive");
@@ -2413,6 +2443,7 @@
 				FBmdisFlag = 1;
 			}
 		})
+
 		$('#useDate').click(function () {
 			$('#validDateEnd').val('')
 			$('#noguding').attr("checked", "checked");
@@ -2479,9 +2510,11 @@
 				}
 			});
 		});
+
 		function callChild() {
 			child.window.childFunction1();
 		}
+
 		function callChild1(type) {
 			if (type == 1) {
 				var oei = setInterval(function () {
@@ -2504,9 +2537,13 @@
 			var remain = 300 - parseInt(vallen);
 			$('#textremain').html(vallen);
 		})
+
+
 		function parentFunction(data) {
 			$("#packageDes").val(data)
 		}
+
+
 		$('#addjuesebtn').click(function () {
 			$('.xinjianka_wrap').show()
 			$('.tuancao_wrap').hide()
@@ -2537,6 +2574,7 @@
 			$('#couponColor').val('')
 			$('#couponCount').val('')
 			$('#couponExplain').val('')
+			$('#internalName').val('')
 			callChild1(2);
 			//清空海报参数
 			$("#title").val('');
@@ -2583,7 +2621,7 @@
 			}
 		})
 		$('#kajuanleixing').change(function () {
-			if ($(this).val() == 2) {
+			if ($(this).val() == 2 || $(this).val() == 1) {
 				$('#gxidflag').hide()
 				$('#gxidflag1').show()
 			} else {
@@ -2710,6 +2748,7 @@
 			});
 
 		}
+
 		//新增体验卡,保存并上架
 		function submitForm() {
 			callChild();
@@ -2766,6 +2805,10 @@
 			console.log(22)
 			console.log(validDateEnd)
 
+			if ($('#internalName').val() == '') {
+				alert('请输入对内信息')
+				return false;
+			}
 
 			if (validDateEnd == "" && getLimit == "") {
 				alert('卡有效期不能为空!')
@@ -2974,6 +3017,7 @@
 
 
 		}
+		
 		//保存按钮
 		function fsavebtn() {
 			callChild();
@@ -3021,6 +3065,10 @@
 			console.log(22)
 			console.log(validDateEnd)
 
+			if ($('#internalName').val() == '') {
+				alert('请输入对内信息')
+				return false;
+			}
 
 			if (validDateEnd == "" && getLimit == "") {
 				alert('卡有效期不能为空!')
@@ -3189,6 +3237,7 @@
 			}
 		}
 
+		//首页表格
 		function pingjialist() {
 
 			var zengjuanyuany = $('#zengjuanyuany').val();
@@ -3253,8 +3302,10 @@
 								}
 								if (item.couponType == 0) {
 									fcouponType = "体验卡"
+								} else if (item.couponType == 1) {
+									fcouponType = "线下现金券"
 								} else {
-									fcouponType = "优惠券"
+									fcouponType = "现金券"
 								}
 
 
@@ -3275,6 +3326,7 @@
 								} else {
 									zengyuany = "消费次数兑换"
 								}
+								// title = "' + tihuan(item.packageDes) + '"
 								var str = '<tr>' +
 									'<td class="item item1 ">' + intoNum + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.packageName) + '</td>' +
@@ -3283,7 +3335,7 @@
 									'<td class="item item2 ">' + youxiaodate + '</td>' +
 									'<td class="item item2 ">' + zengyuany + '</td>' +
 									'<td class="item item4 ">' + tihuan(item.couponPercent) + '</td>' +
-									'<td class="item item5 " title="' + tihuan(item.packageDes) + '"><div class="tdwrap">' + tihuan(item.packageDes) + '</div></td>' +
+									'<td class="item item5 "><div class="tdwrap">' + tihuan(item.packageDes) + '</div></td>' +
 									'<td class="item item3 ">' + status + '</td>' +
 									'<td class="item item3 ">' + ishide + '</td>' +
 									'<td class="item item2 cxbor">' + biantext + '</td>' +
@@ -3360,8 +3412,12 @@
 			alert(URL.createObjectURL($(this)[0].files[0]))
 			$(".img").attr("src", URL.createObjectURL($(this)[0].files[0]));
 		});
+
+
+
 		//编辑1
 		var bianjiflag;
+
 		function kabianji(coupid) {
 			flaged = 2;
 			kajuanid = coupid;
@@ -3382,6 +3438,7 @@
 			$('#getLimit').val('')
 			$('#useDate').val('')
 			$('#denomination').val('')
+			$('#internalName').val('')
 			// $('#couponsReason').val('')
 			$('#couponPercent').val('')
 			$('#couponColor').val('')
@@ -3478,6 +3535,10 @@
 
 					}
 
+					if (res.internalName) {
+						$('#internalName').val(res.internalName)
+					}
+
 
 					var couponExplain = res.couponExplain;
 					var fzdatale = couponExplain.length;
@@ -3572,6 +3633,10 @@
 			});
 
 		}
+
+
+
+
 		$("#uploadss").on("click", function () {
 			$("#collection").click();
 		})
