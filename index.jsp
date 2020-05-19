@@ -573,10 +573,16 @@
 								class="easyui-linkbutton"
 								data-options="plain:true,iconCls:'icon-bm',width:'150px',iconAlign:'left'">体验券管理</a>
 						</shiro:hasPermission>
+						<shiro:hasPermission name="100206">
+								<a href="#"
+										onclick="javascript:addTab('企业微信知识库','rest/knowledgebase/knowledgebasePage');"
+										class="easyui-linkbutton"
+										data-options="plain:true,iconCls:'icon-knowledge',width:'150px',iconAlign:'left'">企业微信知识库</a>
+						</shiro:hasPermission>
 						<shiro:hasPermission name="100208">
 							<a href="#" onclick="javascript:addTab('侧边栏活动推送链接','rest/activePushLink/activePushLinkListPage');"
 								class="easyui-linkbutton"
-								data-options="plain:true,iconCls:'icon-biaoqianku',width:'150px',iconAlign:'left'">侧边栏活动推送链接</a>
+								data-options="plain:true,iconCls:'icon-activitiesPush',width:'150px',iconAlign:'left'">企业微信活动推送</a>
 						</shiro:hasPermission>
 					</div>
 				</div>
@@ -675,7 +681,7 @@
 						<shiro:hasPermission name="100511">
 							<a href="#" onclick="javascript:addTab('运营规则配置','rest/bsconfig/bsconfigpage');"
 								class="easyui-linkbutton"
-								data-options="plain:true,iconCls:'icon-upSale1',width:'150px',iconAlign:'left'">运营规则配置</a>
+								data-options="plain:true,iconCls:'icon-operatingConfiguration',width:'150px',iconAlign:'left'">运营规则配置</a>
 						</shiro:hasPermission>
 					</div>
 				</div>

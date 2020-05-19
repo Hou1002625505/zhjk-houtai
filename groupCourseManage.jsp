@@ -1286,7 +1286,7 @@
         <div class="add-course-sorttwo" style="position:relative">
             <p style="font-size:16px;margin-right:90px">课程图片</p>
             <!-- <div id="demo" class="demo"></div> -->
-            <div class="andArea" style="width:240px;height:182px;margin-right:10px">
+            <div class="andArea" style="width:240px;height:182px;margin-right:10px;">
                 <div class="filePicker" style="background:#F7F7F7"><img style="margin-top:31px;border-radius:50% ;"
                         src="../image/addapicture_btn.png"></div>
                 <p style="font-size:14px;background:#F7F7F7;margin-top:6px">点击添加图片</p>

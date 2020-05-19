@@ -2093,6 +2093,7 @@
 <script type="text/javascript" src="http://test.physicalclub.com/js/common.js"></script>
 <script type="text/javascript" src="http://test.physicalclub.com/easyui/easyui-lang-zh_CN.js"></script>
 <script src="../../js/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+
 <script>
 	$('.J-datepicker-day').datePicker({
 		hasShortcut: true,

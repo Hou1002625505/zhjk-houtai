@@ -1853,11 +1853,16 @@
 								</div>
 							</div>
 							<div class="xinjianka_info1item">
-								<span class="text1 ftext">使用须知</span><span class="select_wrap"><textarea rows="" cols=""
+								<span class="text1 ftext">使用须知</span>
+								<span class="select_wrap">
+									<textarea rows="" cols=""
 										name="packageDes" id="packageDes" style="display:none"
-										maxlength="300"></textarea>
+										maxlength="300">
+									</textarea>
 									<iframe src="editor/index.html" width="620px" height="160px" name="child"
-										class="edior"></iframe></span>
+										class="edior">
+									</iframe>
+									</span>
 							</div>
 							<div class="xinjianka_info1item">
 								<span class="text1">分享标题</span><span class="select_wrap"><input type="text"
@@ -1961,6 +1966,12 @@
 	<script type="text/javascript" src="easyui/datepicker.all.js"></script>
 	<script type="text/javascript" src="easyui/datepicker.en.js"></script>
 	<script type="text/javascript">
+	
+		$('#xianshi').click(function(){
+			console.log($('#packageDes').val())
+			console.log($('.edior').html())
+			
+		})
 
 		var urls = "http://test.physicalclub.com/images/";
 		//	var urls="http://crm.physicalclub.com/images/";
@@ -2931,10 +2942,31 @@
 			//						});  
 			$('#status').val(0)
 			// flaged=1新增
-			if (flaged == 1) {
 
-				if ($('.textflag').html() == '收起') {
-					if (checkAddImgInfo()) {
+			setTimeout(() => {
+				if (flaged == 1) {
+
+					if ($('.textflag').html() == '收起') {
+						if (checkAddImgInfo()) {
+							$('#couponform').form('submit', {
+								type: "POST",
+								url: "rest/coupon/addCouponPackage",
+								onSubmit: function () {
+									return $(this).form('validate');
+								},
+								success: function (data) {
+
+
+									console.log(data)
+									var data1 = JSON.parse(data)
+									console.log(data1.message)
+									var id = data1.message;
+									addImgTemplate(id);
+
+								}
+							});
+						}
+					} else {
 						$('#couponform').form('submit', {
 							type: "POST",
 							url: "rest/coupon/addCouponPackage",
@@ -2942,38 +2974,36 @@
 								return $(this).form('validate');
 							},
 							success: function (data) {
-
-
+								$('.xinjianka_wrap').hide()
+								$('.tuancao_wrap').show()
+								pingjialist()
 								console.log(data)
-								var data1 = JSON.parse(data)
-								console.log(data1.message)
-								var id = data1.message;
-								addImgTemplate(id);
 
 							}
 						});
 					}
+
 				} else {
-					$('#couponform').form('submit', {
-						type: "POST",
-						url: "rest/coupon/addCouponPackage",
-						onSubmit: function () {
-							return $(this).form('validate');
-						},
-						success: function (data) {
-							$('.xinjianka_wrap').hide()
-							$('.tuancao_wrap').show()
-							pingjialist()
-							console.log(data)
 
+					if ($('.textflag').html() == '收起') {
+						if (checkAddImgInfo()) {
+							$('#couponform').form('submit', {
+								type: "POST",
+								url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
+								onSubmit: function () {
+									return $(this).form('validate');
+								},
+								success: function (data) {
+									$('.xinjianka_wrap').hide()
+									$('.tuancao_wrap').show()
+									pingjialist()
+									console.log(data)
+									addImgTemplate(kajuanid);
+								}
+							});
 						}
-					});
-				}
 
-			} else {
-
-				if ($('.textflag').html() == '收起') {
-					if (checkAddImgInfo()) {
+					} else {
 						$('#couponform').form('submit', {
 							type: "POST",
 							url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
@@ -2985,35 +3015,15 @@
 								$('.tuancao_wrap').show()
 								pingjialist()
 								console.log(data)
-								addImgTemplate(kajuanid);
+
 							}
 						});
 					}
 
-				} else {
-					$('#couponform').form('submit', {
-						type: "POST",
-						url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
-						onSubmit: function () {
-							return $(this).form('validate');
-						},
-						success: function (data) {
-							$('.xinjianka_wrap').hide()
-							$('.tuancao_wrap').show()
-							pingjialist()
-							console.log(data)
 
-						}
-					});
+
 				}
-
-
-
-			}
-
-
-
-
+			}, 100);
 
 
 		}
@@ -3138,16 +3148,39 @@
 				alert('请选择适合门店')
 				return false;
 			}
+
 			if (packageDes == null || packageDes == ""
 				|| packageDes == undefined || packageDes === "<p><br></p>") {
 				alert('使用须知不能为空')
 				return false;
 			}
-			$('#status').val(1);
-			if (flaged == 1) {
 
-				if ($('.textflag').html() == '收起') {
-					if (checkAddImgInfo()) {
+			$('#status').val(1);
+
+			setTimeout(() => {
+				if (flaged == 1) {
+
+					if ($('.textflag').html() == '收起') {
+						if (checkAddImgInfo()) {
+							$('#couponform').form('submit', {
+								type: "POST",
+								url: "rest/coupon/addCouponPackage",
+								onSubmit: function () {
+									return $(this).form('validate');
+								},
+								success: function (data) {
+
+
+									console.log(data)
+									var data1 = JSON.parse(data)
+									console.log(data1.message)
+									var id = data1.message;
+									addImgTemplate(id);
+
+								}
+							});
+						}
+					} else {
 						$('#couponform').form('submit', {
 							type: "POST",
 							url: "rest/coupon/addCouponPackage",
@@ -3155,38 +3188,36 @@
 								return $(this).form('validate');
 							},
 							success: function (data) {
-
-
+								$('.xinjianka_wrap').hide()
+								$('.tuancao_wrap').show()
+								pingjialist()
 								console.log(data)
-								var data1 = JSON.parse(data)
-								console.log(data1.message)
-								var id = data1.message;
-								addImgTemplate(id);
 
 							}
 						});
 					}
+
 				} else {
-					$('#couponform').form('submit', {
-						type: "POST",
-						url: "rest/coupon/addCouponPackage",
-						onSubmit: function () {
-							return $(this).form('validate');
-						},
-						success: function (data) {
-							$('.xinjianka_wrap').hide()
-							$('.tuancao_wrap').show()
-							pingjialist()
-							console.log(data)
 
+					if ($('.textflag').html() == '收起') {
+						if (checkAddImgInfo()) {
+							$('#couponform').form('submit', {
+								type: "POST",
+								url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
+								onSubmit: function () {
+									return $(this).form('validate');
+								},
+								success: function (data) {
+									$('.xinjianka_wrap').hide()
+									$('.tuancao_wrap').show()
+									pingjialist()
+									console.log(data)
+									addImgTemplate(kajuanid);
+								}
+							});
 						}
-					});
-				}
 
-			} else {
-
-				if ($('.textflag').html() == '收起') {
-					if (checkAddImgInfo()) {
+					} else {
 						$('#couponform').form('submit', {
 							type: "POST",
 							url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
@@ -3198,31 +3229,17 @@
 								$('.tuancao_wrap').show()
 								pingjialist()
 								console.log(data)
-								addImgTemplate(kajuanid);
+
 							}
 						});
 					}
 
-				} else {
-					$('#couponform').form('submit', {
-						type: "POST",
-						url: "rest/coupon/editCouponPackage?couponId=" + kajuanid,
-						onSubmit: function () {
-							return $(this).form('validate');
-						},
-						success: function (data) {
-							$('.xinjianka_wrap').hide()
-							$('.tuancao_wrap').show()
-							pingjialist()
-							console.log(data)
 
-						}
-					});
+
 				}
+			}, 100);
 
-
-
-			}
+			
 		}
 
 		function query() {
