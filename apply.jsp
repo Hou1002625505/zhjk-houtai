@@ -249,6 +249,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<th class="item item2 ">企业名称</th>
 					<th class="item item2 ">企业地址</th>
 					<th class="item item2 ">企业官网</th>
+					<th class="item item2 ">营业执照</th>
 					<th class="item item2 ">企业人数</th>
 					<th class="item item2 ">联系人姓名</th>
 					<th class="item item2 ">联系人电话</th>
@@ -291,6 +292,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
 <script>
+
+	var service_ip = "http://" + location.host.split('.')[0] + ".physicalclub.com";
+
 	function tihuan(item) {
 
 		if (item == undefined || item == null) {
@@ -350,6 +354,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									'<td class="item item2 ">' + tihuan(item.name) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.address) + '</td>' +
 									'<td class="item item2 "><a  onclick="newfang(\'' + item.officialWebsite + '\')">' + tihuan(item.officialWebsite) + '</a></td>' +
+									'<td class="item item2 " style="position:relative"><img class="showsmall" style="100%;height:100%" src="'+ service_ip + '/images/' + tihuan(item.busiLicensePicture) + '" alt=""></td>' +
 									'<td class="item item2 ">' + tihuan(item.number) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.contactName) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.contactMobile) + '</td>' +
@@ -367,6 +372,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									'<td class="item item2 ">' + tihuan(item.name) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.address) + '</td>' +
 									'<td class="item item2 "><a  onclick="newfang(\'' + item.officialWebsite + '\')">' + tihuan(item.officialWebsite) + '</a></td>' +
+									'<td class="item item2 " style="position:relative"><img class="showsmall" style="100%;height:100%" src="' + service_ip + '/images/' + tihuan(item.busiLicensePicture) + '" alt=""></td>' +
 									'<td class="item item2 ">' + tihuan(item.number) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.contactName) + '</td>' +
 									'<td class="item item2 ">' + tihuan(item.contactMobile) + '</td>' +
@@ -381,6 +387,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 							$('#fangdatalist_wrap').append(str)
+
+							// function openImg(str) {
+
+							// 	var page = window.open();
+
+							// 	var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='"+ str +"' alt=''/></div></body > "
+
+							// 	page.document.write(html);
+
+							// 	console.log(str)
+							// }
+
+							$('.showsmall').click(function(){
+								var url = $(this).attr('src')
+
+								var page = window.open();
+
+								var html = "<body style='background:black'><div style ='text-align:center'><img style='' src='" + url + "' alt=''/></div></body > "
+
+								page.document.write(html);
+							})
 						}
 					} else {
 

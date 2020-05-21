@@ -1802,10 +1802,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             的复印件，支持.jpg .jpeg .bmp .gif.png</p>
                         <p
                             style="font-size:14px;line-height:14px;float:none;width:100%;text-align:left;margin-top:8px;padding:0;color:#969799">
-                            格式照片，大小不超过5M。</p>
+                            格式照片，大小不超过1M。</p>
                     </div>
                     <p id="upload"
-                        style="float:left;width:80px;height:34px;background:#04B482;color:white;text-align:center;line-height:34px;padding:0;border-radius:4px;margin:63px 0 0 36px;cursor: pointer;font-size: 18px;">
+                        style="float:left;width:80px;height:34px;background:#71b2ef;color:white;text-align:center;line-height:34px;padding:0;border-radius:4px;margin:63px 0 0 36px;cursor: pointer;font-size: 18px;">
                         上传</p>
                     <input id="fileImage" type="file" accept=".jpg,.jpeg,.bmp,.gif,.png" size="30" onchange="imageimage()"
                         name="fileselect[]" multiple style="display:none">
@@ -1908,9 +1908,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="bussess_item"><span>*员工姓名</span><input type="text" class="input" id="yuan_name" /></div>
             <div class="bussess_item"><span>*员工工号</span><input type="number" class="input" id="yuan_num" /></div>
             <div style="position:absolute;top:50px;left:750px;clear: both;content:' ';display:table">
-                <div style="width:130px;height:160px;border:1px solid #CCCCCC;border-radius:4px;float: left;">
+                <div style="width:130px;height:160px;border:1px solid #CCCCCC;border-radius:4px;float: left;position:relative">
                     <img id="uploadurl" class="" style="width:100%;height:100%" src="" alt="">
+                    <img id="uploadurl1" class="" style="width:650px;height:800px;display:none;position:absolute;top:-130px;left:-195px" src="" alt="">
                 </div>
+                <div style="float:left;margin-left:15px">
+                    <p
+                        style="font-size:14px;line-height:14px;float:none;width:100%;text-align:left;margin-top:32px;padding:0;color:#333333">
+                        请上传最新的营业执照!</p>
+                    <p
+                        style="font-size:14px;line-height:14px;float:none;width:100%;text-align:left;margin-top:18px;padding:0;color:#969799">
+                        格式要求：原件照片、扫描件或者加盖公章</p>
+                    <p
+                        style="font-size:14px;line-height:14px;float:none;width:100%;text-align:left;margin-top:8px;padding:0;color:#969799">
+                        的复印件，支持.jpg .jpeg .bmp .gif.png</p>
+                    <p
+                        style="font-size:14px;line-height:14px;float:none;width:100%;text-align:left;margin-top:8px;padding:0;color:#969799">
+                        格式照片，大小不超过1M。</p>
+                </div>
+                <p onclick="upload()" style="float:left;width:80px;height:34px;background:#71b2ef;color:white;text-align:center;line-height:34px;padding:0;border-radius:4px;margin:63px 0 0 36px;cursor: pointer;font-size:18px">
+                    上传</p>
+                <input id="fileImage" type="file" accept=".jpg,.jpeg,.bmp,.gif,.png" size="30" onchange="imageimage()"
+                    name="fileselect[]" multiple style="display:none">
             </div>
             <div class="btn_wrap" style="padding:40px 0 80px 0;"><span class="save" id="jiqisave">保存</span><span
                     class="clear" id="jiqiclear">清除</span></div>
@@ -2477,8 +2496,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     var packageId1 = null;
     var service_ip = "http://"+location.host.split('.')[0] + ".physicalclub.com";
 
-    $('#upload').click(function(){
+    function upload(){
+        console.log(123)
         $('#fileImage').click()
+    }
+
+    // $('#upload').click(function(){
+    //     console.log(123)
+    //     $('#fileImage').click()
+    // })
+
+    $('#uploadurl').mouseenter(function(){
+        $('#uploadurl1').show()
+    })
+
+    $('#uploadurl1').mouseout(function () {
+        $('#uploadurl1').hide()
     })
 
     $('#useclub').click(function(){
@@ -2544,9 +2577,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 //return data
                 console.log(data)
                 
-                $('#uploadimage').attr('src', service_ip + '/images/' + data.rows[0].path)
+                $('#uploadurl').attr('src', service_ip + '/images/' + data.rows[0].path)
 
-                $('#uploadimage').attr('class', data.rows[0].path)
+                $('#uploadurl').attr('class', data.rows[0].path)
+
+                $('#uploadurl1').attr('src', service_ip + '/images/' + data.rows[0].path)
+
+                $('#uploadurl1').attr('class', data.rows[0].path)
             },
             error: function (data) {
                 alert("上传失败")
@@ -2594,6 +2631,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         //返回参数值
         return result ? decodeURIComponent(result[2]) : null;
     }
+
+    //从申请列表跳转
 
     var shenqingvalue = getUrlParam("shenqingflag");
     var qijiancheng = getUrlParam("qijiancheng");
@@ -2650,6 +2689,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         $('#uploadurl').attr('src', service_ip + '/images/' + busiLicensePicture)
         $('#uploadurl').attr('class', busiLicensePicture)
+
+        $('#uploadurl1').attr('src', service_ip + '/images/' + busiLicensePicture)
+        $('#uploadurl1').attr('class', busiLicensePicture)
 
         var datafg = {
             applyId: shenqingid,
@@ -3756,6 +3798,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     })
 
+
+
     //查看详情
     function chadetail(qiyeid) {
         shenqingvalue = null
@@ -3841,6 +3885,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     $('#yuan_num').val(data.reportingStaffEmp)
 
                     $('#uploadurl').attr('src', service_ip + '/images/' + data.busiLicensePicture)
+                    $('#uploadurl').attr('class', data.busiLicensePicture)
+
+                    $('#uploadurl1').attr('src', service_ip + '/images/' + data.busiLicensePicture)
+                    $('#uploadurl1').attr('class', data.busiLicensePicture)
                 }
             },
             error: function (res) {
@@ -3979,8 +4027,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     defName: $('#lian_name').val(),
                     //              defDepartment:$('#lian_bumen').val(),
                     defPost: $('#lian_job').val(),
-                    loginAccount: $('#deng_account').val()
-
+                    loginAccount: $('#deng_account').val(),
+                    busiLicensePicture: $('#uploadurl').attr('class')
                 }
             } else {
                 var data = {
@@ -4002,7 +4050,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     //              defDepartment:$('#lian_bumen').val(),
                     defPost: $('#lian_job').val(),
                     loginAccount: $('#deng_account').val(),
-                    LoginPassword: $('#deng_password').val()
+                    LoginPassword: $('#deng_password').val(),
+                    busiLicensePicture: $('#uploadurl').attr('class')
                 }
             }
 

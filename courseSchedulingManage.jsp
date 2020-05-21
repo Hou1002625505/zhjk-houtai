@@ -3609,6 +3609,9 @@
                         $('.coach-p').click(function () {
                             $(this).css('background','#71B2EF')
                             $(this).css('color','white')
+
+                            // console.log($.trim($('#coach-p').html()))
+
                             //console.log(strselect)
                             //console.log($('#select-coach').html())
 
@@ -3631,12 +3634,37 @@
                                 strselect = ''
                             }
 
-                            strselect += `
+                            // console.log($('#select-coach').children().attr('class').split(' ')[1])
+
+                            var id = $(this).attr('id')
+
+                            // console.log($('#select-coach').children('.' + id + '').length)
+
+                            if($('#select-coach').children().attr('class')){
+                                if ($('#select-coach').children('.'+ id +'').length == 0) {
+                                    strselect += `
                                             <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('id') + `">
                                                 `+ $(this).html() + `
                                                 <img src="./image/classdel_btn.png" alt=""/>
                                             </p>
                                         `
+                                } else {
+                                    strselect = strselect
+                                }
+                            }else{
+                                strselect += `
+                                        <p class="add-edit-course-header-context-two-ptwo `+ $(this).attr('id') + `">
+                                            `+ $(this).html() + `
+                                            <img src="./image/classdel_btn.png" alt=""/>
+                                        </p>
+                                    `
+                            }
+                            
+                            
+                            
+                            
+
+                            
                             //点击查询出的教练名进行渲染
                             //setTimeout(() => {
                                 $('#select-coach').html(strselect)
@@ -3659,6 +3687,9 @@
                         })
                         
                         if(result.rows.length == 1){
+
+                            $('#select-coach')
+
                             $('.coach-p').eq(0).click()
 
                             $('.coach-p').unbind()

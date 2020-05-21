@@ -1951,6 +1951,7 @@
 						<span class="saveshangjia" onclick="submitForm()">保存并上架</span><span class="save"
 							onclick="fsavebtn()">保存</span><span class="backs back" id="kaback">返回</span>
 					</div>
+					<p id="xianshi">fasdfsfasdasdasdad</p>
 				</div>
 			</div>
 		</div>
@@ -1969,7 +1970,6 @@
 	
 		$('#xianshi').click(function(){
 			console.log($('#packageDes').val())
-			console.log($('.edior').html())
 			
 		})
 
@@ -2538,6 +2538,7 @@
 			} else {
 				var quanyi = $("#packageDes").val();
 				child.window.childFunction(quanyi);
+							 
 			}
 
 		}
