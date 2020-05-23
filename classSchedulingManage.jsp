@@ -14,20 +14,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>中航健身会-课程表</title>
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo.css">
     <link rel="stylesheet" type="text/css" href="easyui/pagination.css" />
 
     <link rel="stylesheet" type="text/css" href="easyui/themes/datepicker.css" />
-
+     <link rel="stylesheet" type="text/css" href="../../css/jquery.mloading.css"/>
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
     <script src="../easyui/pagination.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="easyui/moment.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script>
-
+<script src="../../js/jquery.mloading.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery.jqprint-0.3.js" type="text/javascript" charset="utf-8"></script>
     <!-- <link rel="stylesheet" href="imgui/zyUpload.css" type="text/css"> -->
     <!-- 引用核心层插件 -->
     <!-- <script src="imgui/zyFile.js"></script> -->
@@ -129,19 +130,21 @@
 
         .liuyi .liuyi-flex .liuyi-flex-right{
             display:flex;
+                margin-bottom: 15px;
+    margin-top: 15px;
         }
 
         .liuyi-flex .liuyi-flex-right .liuyi-flex-right-p{
-            width:150px;
+            width:120px;
             height:46px;
             border-radius: 4px;
             background:#F5F5F5;
-            margin-left:10px;
-            font-size:18px;
+            margin-left:15px;
+            font-size:16px;
             display:flex;
             justify-content: center;
             align-items: center;
-            padding:0 18px 0 18px;
+            /*padding:0 18px 0 18px;*/
             box-sizing: border-box;
             cursor: pointer;
         }
@@ -240,7 +243,120 @@
         .item3{
             width:11.875%
         }
-
+        .qrcode{
+        	font-size:16px;
+        	text-align: center;
+        	margin-left: 15px;
+        	color:rgba(113,178,239,1);
+        	cursor: pointer;
+        }
+.qrcode img{
+	width: 20px;
+}
+.msk{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #F7F7F7;
+	    overflow-y: auto;
+	display: none;
+}
+.msk .back{
+	font-size:16px;
+color:rgba(113,178,239,1);
+	padding: 20px;
+	padding-bottom: 0;
+	cursor: pointer;
+}
+.msk .QRcode{
+	width:812px;
+	min-height: 1145px;
+background:rgba(255,255,255,1);
+box-shadow:0px 0px 14px 0px rgba(204,204,204,0.3);
+margin: 15px 0 0 50px;
+margin-bottom: 50px;
+float: left;
+}
+.QRcode{
+	padding-bottom: 30px;
+}
+.QRcode::-webkit-scrollbar {
+  display: none;
+}
+.QRcode {
+   scrollbar-width: none;
+}
+/* 兼容IE10+ */
+.QRcode {
+    -ms-overflow-style: none;
+}
+.shopname{
+    padding: 15px 0;
+	text-align: center;
+}
+.shopname span{
+	display: block;
+}
+.shopname .name{
+	font-size:30px;
+color:rgba(68,68,68,1);
+margin-bottom: 10px;
+}
+.shopname .time{
+	font-size:20px;
+color:rgba(68,68,68,1);
+}
+.thirdcode{
+	/*border-bottom:1px dashed rgba(213,213,215,1);*/
+	padding: 0 10px;
+	overflow: hidden;
+}
+.thirdcode .code{
+	width: 254px;
+	float: left;
+	margin-right: 15px;
+ text-align: center;
+}
+.thirdcode .code:nth-child(3n+3){
+	margin-right: 0;
+}
+.thirdcode .code .codeimg{
+	width:254px;
+height:254px;
+border:1px solid rgba(213,213,215,1);
+}
+.thirdcode .code .codeimg img{
+	width: 100%;
+	height: 100%;
+}
+.thirdcode .code .time{
+	font-size:24px;
+color:rgba(68,68,68,1);
+margin:  15px 0;
+}
+.msk .print{
+	width:120px;
+height:46px;
+line-height: 46px;
+text-align: center;
+background:rgba(113,178,239,1);
+border-radius:4px;
+font-size:24px;
+color:rgba(255,255,255,1);
+    margin-left: 25px;
+    margin-top: 15px;
+float: left;
+cursor: pointer;
+}
+.line{
+	    width: 100%;
+    float: left;
+    height: 1px;
+    border-bottom: 1px dashed rgba(213,213,215,1);
+    margin-bottom: 50px;
+}
     </style>
 </head>
 
@@ -257,6 +373,12 @@
             <div class="liuyi-flex-right"></div>
             <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p22" style="cursor: pointer;">上一周</p>
             <p class="liuyi-flex-right-p1" id="liuyi-flex-right-p11" style="cursor: pointer;">下一周</p>
+            <div class="qrcode" id="qrcode">
+            	<img src="../../images/self-helpfitnessqrcode_icon.png"/>
+            <div>
+            	生成自助健身码
+            </div>
+            </div>
         </div>
         <table style='border-collapse: collapse;width: 100%;table-layout:fixed;margin-top:20px'>
             <tbody class="table-body" id="sj-body-body1">
@@ -264,13 +386,52 @@
             </tbody>
         </table>
     </div>
+    <!--二维码生成-->
+   
+    <div class="msk">
+    		<div class="back" id="back" onclick="back()">返回上一级</div>
+    		   <!--startprint-->
+    	<div class="QRcode">
+    	 <div class="shopname">
+    	 	<span class="name" id="ername"></span>
+    	<span class="time" id="ertime"></span>
+    	 </div>
+    	 <div id="datacode">
+    	  <div class="thirdcode" id="thirdcode">
+    	   <!--<div class="code">
+    	   	<div class="codeimg">
+    	   	<img src="../../images/xcxcode.jpg"/>
+    	   	</div>
+    	   	<div class="time">10:00-11:30</div>
+    	   </div>
+    	      <div class="code">
+    	   	<div class="codeimg">
+    	   	<img src="../../images/xcxcode.jpg"/>
+    	   	</div>
+    	   	<div class="time">10:00-11:30</div>
+    	   </div>
+    	     <div class="code">
+    	   	<div class="codeimg">
+    	   	<img src="../../images/xcxcode.jpg"/>
+    	   	</div>
+    	   	<div class="time">10:00-11:30</div>
+    	   </div>-->
+    	  </div>
+    	 </div>
+    	</div>
+    	<!--endprint-->
+    	<div class="print" onclick="doPrint()">打印</div>
+    </div>
+
+
 </body>
 <script type="text/javascript" src="easyui/datepicker.all.js"></script>
 <script type="text/javascript" src="easyui/datepicker.en.js"></script>
 
 <script type="text/javascript">
     
-var weekweek = 0 
+var weekweek = 0;
+var courseData=[];
 $('#liuyi-flex-right-p11').click(function(){
     var storeId = $('#sj-body-zt').val()
 
@@ -283,19 +444,20 @@ $('#liuyi-flex-right-p11').click(function(){
         storeId: storeId,
         week: weekweek
     }
-
+$("body").mLoading(); 
     $.ajax({
         url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
         type: 'POST',
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify(list),
         success: function (result) {
-
+        	     	courseData=result.rows;
+ $(".mloading").removeClass("active")
             var liuyitime = ''
 
             $.each(result.rows, function (i, item) {
                 liuyitime += `
-                    <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                    <p class="liuyi-flex-right-p" data-time=`+ item.dateStr  +'(' + item.whatDayStr + ')'+ `>`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
                 `
             })
 
@@ -305,12 +467,13 @@ $('#liuyi-flex-right-p11').click(function(){
 
         },
         error: function (e) {
+        	 $(".mloading").removeClass("active")
             console.log(e.status)
         }
     })
 })
 
-$('#liuyi-flex-right-p22').click(function () {
+    $('#liuyi-flex-right-p22').click(function () {
         var storeId = $('#sj-body-zt').val()
 
         if (storeId == '') {
@@ -322,19 +485,20 @@ $('#liuyi-flex-right-p22').click(function () {
             storeId: storeId,
             week: weekweek
         }
-
+$("body").mLoading(); 
         $.ajax({
             url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(list),
             success: function (result) {
-
+            	courseData=result.rows;
+ $(".mloading").removeClass("active")
                 var liuyitime = ''
 
                 $.each(result.rows, function (i, item) {
                     liuyitime += `
-                    <p class="liuyi-flex-right-p">`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                    <p class="liuyi-flex-right-p"  data-time=`+ item.dateStr  +'(' + item.whatDayStr + ')' + `>`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
                 `
                 })
 
@@ -344,6 +508,7 @@ $('#liuyi-flex-right-p22').click(function () {
 
             },
             error: function (e) {
+            	 $(".mloading").removeClass("active")
                 console.log(e.status)
             }
         })
@@ -383,8 +548,12 @@ function skfjxlcd(){
 //门店时间选择渲染
 function mdsjxzxr(){
 
-    $('#sj-body-zt').click(function(){
+  
 
+    $('#sj-body-zt').change()
+}
+  $('#sj-body-zt').change(function(){
+console.log(111)
         var storeId = $('#sj-body-zt').val()
 
         if(storeId == ''){
@@ -395,19 +564,20 @@ function mdsjxzxr(){
             storeId: storeId,
             week: 0
         }
-
+$("body").mLoading();
         $.ajax({
             url: 'rest/classScheduling/selectGroupByCourseSchedulingList',
             type: 'POST',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify(list),
             success: function (result) {
-
+            	     	courseData=result.rows;
+              $(".mloading").removeClass("active")
                 var liuyitime = ''
 
                 $.each(result.rows, function (i, item) {
                     liuyitime += `
-                    <p class="liuyi-flex-right-p" >`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
+                    <p class="liuyi-flex-right-p"  data-time=`+ item.dateStr   +'(' + item.whatDayStr + ')'+ `>`+ item.monthDayStr + '(' + item.whatDayStr + ')' + `</p>
                 `
                 })
 
@@ -417,16 +587,15 @@ function mdsjxzxr(){
 
             },
             error: function (e) {
+            	           $(".mloading").removeClass("active")
                 console.log(e.status)
             }
         })
     })
-
-    $('#sj-body-zt').click()
-}
-
 //表格渲染
 function bgxr(result){
+
+    
 
     function panduan(i, j) {
         var str
@@ -454,12 +623,12 @@ function bgxr(result){
             // console.log(i.children[j].children[k].timeStr.split('-')[1])
             // console.log(data.getHours()+ ':' + data.getMinutes())
             if(Number(i.monthDayStr.split('-')[0]) < (data.getMonth() + 1) || Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) < data.getDate()){
-                return str = `<p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+                return str = `<div class="scdata" data-time=`+i.children[j].children[k].children[h].timeStr+` data-id=`+i.children[j].children[k].children[h].id+`><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p></div>`
             }
             else if(Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) == data.getDate() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[0]) < data.getHours() || Number(i.monthDayStr.split('-')[0]) == (data.getMonth() + 1) && Number(i.monthDayStr.split('-')[1]) == data.getDate() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[0]) == data.getHours() && Number(i.children[j].children[k].timeStr.split('-')[1].split(':')[1]) < data.getMinutes()){
-                return str = `<p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+                return str = `<div class="scdata" data-time=`+i.children[j].children[k].children[h].timeStr+`  data-id=`+i.children[j].children[k].children[h].id+`><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem;color:#BFBFBF">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p></div>`
             }else{
-                return str = `<p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p>`
+                return str = `<div class="scdata" data-time=`+i.children[j].children[k].children[h].timeStr+`  data-id=`+i.children[j].children[k].children[h].id+`><p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].leagueCurriculumName + `<p><br><p style="font-size:0.8rem;">` + i.children[j].children[k].children[h].timeStr + `<p><br><p style="font-size:0.8rem">` + i.children[j].children[k].children[h].courseSchedulingItemList[0].realName + `</p></div>`
             }
             
         }
@@ -756,7 +925,130 @@ function bgxr(result){
     }
 
 }
+var codeNum=1;
+$("#qrcode").on("click",function(){
+	 codeNum=1;
+	 if($(".scdata").length==0){
+	 	alert('无课程');
+	 	return;
+	 }
+	$(".msk").show();
+	$("#ername").text($("#sj-body-zt").find("option:selected").text())
+	 $(".liuyi-flex-right .liuyi-flex-right-p").each(function(){
+//	 	console.log($(this).css("color"))
+	 	if($(this).css("color")=='rgb(255, 255, 255)'){
+	 		$("#ertime").text($(this).attr("data-time"))
+	 	}
+	 })
+	   $("#thirdcode").html("");
+	   	$("body").mLoading();  
+	setTimeout(function(){
+	
+		   $(".scdata").each(function(item,index){
+	   	var that=$(this);
+	   	 $.ajax({
+            url: 'rest/wx/login/getXcxCode?sence='+$(this).attr("data-id")+"&page=pages/successfully/successfully",
+            type: 'get',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: function (res) {
+                   console.log(res)
+               
+                   var str='<div class="code">'+
+    	   	'<div class="codeimg">'+
+    	   	'<img src="data:image/png;base64,'+res.code+'"/>'+
+    	   	'</div>'+
+    	   	'<div class="time">'+that.attr("data-time")+'</div>'+
+    	   '</div>';
+    	   if(codeNum%3==0){
+    	   	str+='<div class="line"></div>';
+    	   }
+    	    
+    	   $("#thirdcode").append(str);
+    	   
+    	   if(codeNum==$(".scdata").length){
+    	   	   $(".mloading").removeClass("active")
+    	   	   console.log(3223)
+    	   	   if($(".code").length%3!=0){
+    	   		var strs='<div class="line"></div>';
+    	   		  $("#thirdcode").append(strs);
+    	   }
+    	   }
+    	      codeNum+=1;
+    	
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+	   })
+	},50)
+	
+})
+function getXcxCode(id){
+	 $.ajax({
+            url: 'rest/wx/login/getXcxCode?sence='+id+"&page=pages/successfully/successfully",
+            type: 'get',
+            contentType: 'application/json;charset=UTF-8',
+            success: function (res) {
+                   console.log(res)
+                   codeNum+=1;
+                   var str='<div class="code">'+
+    	   	'<div class="codeimg">'+
+    	   	'<img src="data:image/png;base64,'+res.code+'"/>'+
+    	   	'</div>'+
+    	   	'<div class="time">10:00-11:30</div>'+
+    	   '</div>';
+    	   $("#thirdcode").append(str)
+    	   if(codeNum<=$(".scdata").length){
+    	   	getXcxCode();
+    	   }else{
+    	   	codeNum=1;
+    	   }
+            },
+            error: function (e) {
+                console.log(e.status)
+            }
+        })
+}
+	
+  function back(){
+  	$(".msk").hide();
+  }
+  function aa(){
+	$("#ddd").jqprint();
+}
 
+    function doPrint() {
+        bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+                sprnstr = "<!--startprint-->";//设置打印开始区域
+                eprnstr = "<!--endprint-->";//设置打印结束区域
+//   document.getElementsByTagName('body')[0].style.zoom=0.8;
+                prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
+
+                prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+$("#back").hide();
+$(".print").hide();
+ $('.QRcode').css({
+		"box-shadow": "none",
+		"position": "absolute",
+			"left": "50%",
+				"margin-left": "-406px"
+	});
+//                window.document.body.innerHTML = prnhtml;
+                window.print();
+$("#back").show();
+$(".print").show()
+ $('.QRcode').css({
+		"box-shadow": "0px 0px 14px 0px rgba(204,204,204,0.3)",
+		"position": "initial",
+			"left": "initial",
+				"margin-left": "initial",
+				"margin":'15px 0 0 50px'
+	});
+//                window.document.body.innerHTML = bdhtml;;
+//   document.getElementsByTagName('body')[0].style.zoom=1
+    }
 </script>
 
 </html>

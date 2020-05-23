@@ -382,9 +382,9 @@
             margin-right: 13px;
             cursor: pointer;
         }
-		#boxpage{
+		/* #boxpage{
 			display:none;
-		}
+		} */
 
         .td-del .td-del-flex p:nth-child(3) {
             width: 62px;
@@ -1872,7 +1872,7 @@
             <div class="course-arranging-footer-ptwo" id="tiebiao-show" style="cursor:pointer;">贴标</div>
             <div class="course-arranging-footer-ptwo" id="shanchudel" style="cursor:pointer;">删除</div>
             <div class="course-arranging-footer-pthree"></div>
-            <div class="fenye" style="position:absolute;left:600px;top:3px;font-size:14px"></div>
+            <div class="fenye" style="position:absolute;left:1160px;top:5px;font-size:14px"></div>
             <div class="box" id="boxpage" style="margin:0"></div>
         </div>
         <div class="edit-course" id="edit-course1">
@@ -2250,6 +2250,7 @@
                 console.log(result.message)
                 if(result.message.substr(0,4) == '删除成功'){
                     alert(result.message)
+                    $('#course-arranging-table-checkbox-all').children().hide()
                     shoye()
                 }else{
                     alert('请勾选门店')
@@ -2886,7 +2887,7 @@
 
                     var fenye = `共`+ result.total +`条，每页100条`
 
-                    // $('.fenye').html(fenye)
+                    $('.fenye').html(fenye)
 
                 },
                 error: function (e) {

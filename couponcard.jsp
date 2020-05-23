@@ -1629,9 +1629,15 @@
 										<option value="0" selected="selected">体验卡</option>
 										<option value="1">线下现金券</option>
 										<option value="2">现金券</option>
-									</select><em class="triangle_border_down"></em></span><span id="gxidflag"><span
-										class="fgxid">广信套餐ID</span><input type="text" class="input1" name="packageIdGx"
-										id="packageIdGx" /></span>
+									</select><em class="triangle_border_down"></em></span><span id="gxidflag">
+									<span style="padding:0 10px 0 20px">套餐编码</span>
+									<input type="text" class="input1" name="packageCodeGx" id="packageCodeGx"
+										style="width:240px" autocomplete="off"/>
+									<span style="padding:0 10px 0 20px">广信套餐名</span>
+									<input type="text" class="input1" name="packageNameGx" id="packageNameGx"
+										style="width:240px" />
+									<input type="text" class="input1" name="packageIdGx" id="packageIdGx" style="width:240px;display:none" />
+								</span>
 								<span id="gxidflag1"><span class="fgxid">现金券面额</span><input type="number" class="input1"
 										name="amount" id="packageIdGx1" /></span>
 							</div>
@@ -1855,14 +1861,13 @@
 							<div class="xinjianka_info1item">
 								<span class="text1 ftext">使用须知</span>
 								<span class="select_wrap">
-									<textarea rows="" cols=""
-										name="packageDes" id="packageDes" style="display:none"
+									<textarea rows="" cols="" name="packageDes" id="packageDes" style="display:none"
 										maxlength="300">
 									</textarea>
 									<iframe src="editor/index.html" width="620px" height="160px" name="child"
 										class="edior">
 									</iframe>
-									</span>
+								</span>
 							</div>
 							<div class="xinjianka_info1item">
 								<span class="text1">分享标题</span><span class="select_wrap"><input type="text"
@@ -1951,7 +1956,7 @@
 						<span class="saveshangjia" onclick="submitForm()">保存并上架</span><span class="save"
 							onclick="fsavebtn()">保存</span><span class="backs back" id="kaback">返回</span>
 					</div>
-					<p id="xianshi">fasdfsfasdasdasdad</p>
+					<!-- <p id="xianshi">fasdfsfasdasdasdad</p> -->
 				</div>
 			</div>
 		</div>
@@ -1967,11 +1972,46 @@
 	<script type="text/javascript" src="easyui/datepicker.all.js"></script>
 	<script type="text/javascript" src="easyui/datepicker.en.js"></script>
 	<script type="text/javascript">
-	
-		$('#xianshi').click(function(){
+
+		$('#xianshi').click(function () {
 			console.log($('#packageDes').val())
-			
+
 		})
+
+		$('#packageCodeGx').blur(function () {
+			var strstr = $('#packageCodeGx').val()
+			fkjk(strstr)
+		})
+
+		//付款接口
+		function fkjk(strstr) {
+			// var str = {
+			//     packageCode = strstr
+			// }
+
+			$.ajax({
+				type: 'POST',
+				contentType: "application/json;charset=UTF-8",
+				url: "rest/business/account/getGxPackageInfo?packageCode=" + strstr,
+				success: function (result) {
+					console.log(result)
+					if(result.rows){
+						$('#packageIdGx').val(result.rows[0].packageId)
+						$('#packageNameGx').val(result.rows[0].packageNameGx)
+						
+					}else{
+						$('#packageIdGx').val('')
+						$('#packageCodeGx').val('')
+					}
+					
+					// $('#packageIdGx').attr('class', result.rows[0].packageId)
+				},
+				error: function (e) {
+					console.log(e.status);
+					console.log(e.responseText)
+				}
+			})
+		}
 
 		var urls = "http://test.physicalclub.com/images/";
 		//	var urls="http://crm.physicalclub.com/images/";
@@ -2538,7 +2578,7 @@
 			} else {
 				var quanyi = $("#packageDes").val();
 				child.window.childFunction(quanyi);
-							 
+
 			}
 
 		}
@@ -3028,7 +3068,7 @@
 
 
 		}
-		
+
 		//保存按钮
 		function fsavebtn() {
 			callChild();
@@ -3240,7 +3280,7 @@
 				}
 			}, 100);
 
-			
+
 		}
 
 		function query() {

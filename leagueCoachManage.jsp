@@ -901,7 +901,7 @@
     kclxxl()
 
     shoye()
-
+     var minimg="";
     //上传照片
     function upload() {
             if ($("#photoFile").val() == '') {
@@ -928,6 +928,7 @@
                     $("#preview_photo").attr("src", 'images/' + data.rows[0].path)
                     $('#imageimage').children('img').attr("src", 'images/' + data.rows[0].path)
                     $('#photoFile').attr('class', data.rows[0].path)
+                    minimg=data.rows[0].thumbPath;
                     alert(data.message)
                 },
                 error: function (data) {
@@ -967,6 +968,7 @@
         })
     }
 
+                     var lablesp=[],lablesp1=[];
     //首页分页渲染
     function shoye(){
 
@@ -1016,7 +1018,23 @@
                             shuzu = ' '
                         } else {
                             for (var i = 0; i < arr.length; i++) {
-                                shuzu += (arr[i].leagueCurriculumName + "、")
+                            	var labels="";
+                            	if(arr[i].leagueCurriculumState==2){
+                            		if(shuzu==""){
+                            			labels="<span style='color:#ccc;'>"+arr[i].leagueCurriculumName+"</span>";
+                            		}else{
+                            			labels="、<span style='color:#ccc;'>"+arr[i].leagueCurriculumName+"</span>";
+                            		}
+                            			
+                            	}else{
+                            		if(shuzu==""){
+                            				labels=arr[i].leagueCurriculumName;
+                            		}else{
+                            				labels="、"+arr[i].leagueCurriculumName;
+                            		}
+                            	
+                            	}
+                                shuzu += labels 
                             }
                         }
                         return shuzu
@@ -1042,16 +1060,16 @@
                             <td style="width:item3">`+ biaoqian(item.coachTagList) + `</td>
                             <td style="width:item4">`+ kecheng(item.coachSkillList) + `</td>
                             <td style="width:item4">`+ introduce(item) + `</td>
-                            <td style="width:item1"><p class="course-coach-manage-a" style="color:#71B2EF;cursor:pointer">编辑</p></td>
+                            <td style="width:item1" lables=`+ JSON.stringify(item.coachSkillList)+`><p class="course-coach-manage-a" style="color:#71B2EF;cursor:pointer">编辑</p></td>
                         </tr>
                     `
                     })
                     $('#sj-body-body1').html(str2)
-
                     //编辑按钮点击事件
                     $('.course-coach-manage-a').click(function () {
                         var jobNumber = $(this).parent().parent().children().eq(2).html()
                         jlck(jobNumber)
+                        lablesp=JSON.parse($(this).parent().attr("lables"));
                     })
 
                     var obj = {
@@ -1278,23 +1296,63 @@
     function grbqjkc1(){
 
         var straddtags2 = '';
-
-        //添加窗口第二个标签栏
-
-        for (var i = 0; i < $('.addthree-flexfour').length; i++) {
-            for (var j = 0; j < $('.addthree-flexfour').eq(i).children().length; j++) {
-                if ($('.addthree-flexfour').eq(i).children().eq(j).hasClass('active1')) {
-                    straddtags2 += `  
-                            <p class="blocktwo-pfive-p `+ $('.addthree-flexfour').eq(i).children().eq(j).attr('class').split(' ')[1] + `">
-                                `+ $('.addthree-flexfour').eq(i).children().eq(j).html() + `
+        var sdfsa=JSON.stringify(lablesp);
+        var newlablesp=JSON.parse(sdfsa);
+             if(lablesp1.length>0){ 
+             for (var i = 0; i < lablesp1.length; i++) {
+          	var item=lablesp1[i];
+             newlablesp.push(item)
+        }
+             	
+            }
+         
+//        var lablesps= deteleObject(lablesp)
+//            console.log(JSON.stringify(lablesps))
+              //删除arr中的重复对象
+var newArr= [];
+var arrId = [];
+for(var item of newlablesp){
+    if(arrId.indexOf(item['leagueCurriculumId']) == -1){
+        arrId.push(item['leagueCurriculumId']);
+        newArr.push(item);
+    }
+}
+        //添加窗口第二个标签栏lablesp
+          for (var i = 0; i < newArr.length; i++) {
+          	var item=newArr[i];
+          	if(item.leagueCurriculumState==2){
+          		 straddtags2 += `  
+                            <p class="blocktwo-pfive-p `+item.leagueCurriculumId + `" style="color:#ccc;">
+                                `+ item.leagueCurriculumName+ `
                                 <a><img src="./image/classdel_btn.png" alt=""></img></a>
                             </p>`
-                }
-            }
+          	}else{
+          		 straddtags2 += `  
+                            <p class="blocktwo-pfive-p `+item.leagueCurriculumId + `">
+                                `+ item.leagueCurriculumName+ `
+                                <a><img src="./image/classdel_btn.png" alt=""></img></a>
+                            </p>`
+          	}
+             
         }
+ 
+//console.log($('.addthree-flexfour').html())
+//      for (var i = 0; i < $('.addthree-flexfour').length; i++) {
+//          for (var j = 0; j < $('.addthree-flexfour').eq(i).children().length; j++) {
+//              if ($('.addthree-flexfour').eq(i).children().eq(j).hasClass('active1')) {
+//              	console.log( $('.addthree-flexfour').eq(i).children().eq(j).html())
+//                  straddtags2 += `  
+//                          <p class="blocktwo-pfive-p `+ $('.addthree-flexfour').eq(i).children().eq(j).attr('class').split(' ')[1] + `">
+//                              `+ $('.addthree-flexfour').eq(i).children().eq(j).html() + `
+//                              <a><img src="./image/classdel_btn.png" alt=""></img></a>
+//                          </p>`
+//              }
+//          }
+//      }
 
         $('.flexthree-blocktwo-pfive').html(straddtags2)
-
+        
+lablesp1=[];
         //第二个删除添加窗口标签
         $('.blocktwo-pfive-p').mouseover(function () {
             $(this).children('a').show()
@@ -1303,7 +1361,7 @@
             $(this).children('a').hide()
         })
         $('.blocktwo-pfive-p').children('a').click(function () {
-            $(this).parent().hide()
+            $(this).parent().remove()
             for (var i = 0; i < $('.flexthree-tags1').length; i++) {
                 if ($('.flexthree-tags1')[i].innerText == $(this).parent()[0].innerText.replace(
                     /(^\s*)|(\s*$)/g, "")) {
@@ -1312,7 +1370,28 @@
             }
         })
     }
-
+    // 数组对象中去掉重复的对象
+function deteleObject(obj) {
+    var uniques = [];
+    var stringify = {};
+    for (var i = 0; i < obj.length; i++) {
+        var keys = Object.keys(obj[i]);
+        keys.sort(function(a, b) {
+            return (Number(a) - Number(b));
+        });
+        var str = '';
+        for (var j = 0; j < keys.length; j++) {
+            str += JSON.stringify(keys[j]);
+            str += JSON.stringify(obj[i][keys[j]]);
+        }
+        if (!stringify.hasOwnProperty(str)) {
+            uniques.push(obj[i]);
+            stringify[str] = true;
+        }
+    }
+    uniques = uniques;
+    return uniques;
+}
     //添加个人标签框及课程
     function tjgrbq(){
         var straddsmall1 = `
@@ -1430,14 +1509,14 @@
             contentType: "application/json;charset=UTF-8",
             url: "rest/leagueCurriculum/getReleaseLeagueCurriculumListGroupByType",
             success: function (results) {
-                //console.log(results)
+                  console.log(JSON.stringify(results)+"***")
                 var result = results.rows
                 //console.log(list)
                 for (var i = 0; i < result.length; i++) {
                     var ad_str2 = '';
                     for (var j = 0; j < result[i].children.length; j++) {
                         ad_str2 += `
-                                    <div class="flexthree-tags1 `+ result[i].children[j].id + `">
+                                    <div class="flexthree-tags1 `+ result[i].children[j].id + `" name=`+ result[i].children[j].name + `>
                                         `+ result[i].children[j].name + `
                                     </div>
                                 `
@@ -1575,7 +1654,18 @@
         $('#flexfour-flex-pthree').click(function () {
             $('.course-coach-manage-add2').css('opacity', 0)
             $('.course-coach-manage-addthree').css('z-index', -10)
-
+            lablesp1=[];
+                 $(".flexthree-tags1").each(function(){
+                 	if($(this).hasClass('active1')){
+                 			var data={
+                 		leagueCurriculumId:$(this).attr("class").split(" ")[1],
+                 		leagueCurriculumName:$(this).attr("name")
+                 	}
+                 	lablesp1.push(data)
+                 	}
+                 
+                 })
+//               console.log(JSON.stringify(lablesp1))
             setTimeout(() => {
                 grbqjkc1()
             }, 50);
@@ -1650,7 +1740,9 @@
             pictures: $('#photoFile').attr('class')
         }
         console.log(paramcoach)
-
+           if(minimg!=""){
+           	paramcoach.picturesThumbnail=minimg;
+           }
         $.ajax({
             type: 'POST',
             url: "rest/leagueCoach/updateLeagueCoach",
@@ -1662,12 +1754,14 @@
                     alert(result.message)
                     return;
                 } else if (result.message == '修改成功!') {
+                	minimg="";
                     $('.course-coach-manage-addone').hide()
                     alert(result.message)
                     shoye()
                 }
             },
             error: function (e) {
+            	minimg="";
                 console.log(e.status);
                 console.log(e.responseText)
             }

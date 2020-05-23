@@ -2074,7 +2074,7 @@
 						style="font-size: 18px;font-weight: 500;color: rgba(29,29,29,1);font-weight: bold;">
 					</div>
 					<div class="articleTime" id="articleTime"
-						style="font-size: 14px;font-weight: 500;color: rgba(153,153,153,1);padding: 5px 0;"></div>
+						style="    font-size: 14px;font-weight: 500;color: rgba(153,153,153,1);padding: 5px 0;"></div>
 					<div id="articleContent" class="articleContent"></div>
 				</div>
 			</div>
@@ -2093,7 +2093,6 @@
 <script type="text/javascript" src="http://test.physicalclub.com/js/common.js"></script>
 <script type="text/javascript" src="http://test.physicalclub.com/easyui/easyui-lang-zh_CN.js"></script>
 <script src="../../js/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
-
 <script>
 	$('.J-datepicker-day').datePicker({
 		hasShortcut: true,
@@ -2212,7 +2211,8 @@
 					}
 					if (editorFlag) {
 						data.baseid = editorUuid;
-						data.optype = 'upd'
+						data.optype = 'upd',
+						data.optype = res.status
 					}
 					$.ajax({
 						type: 'POST',
@@ -2341,7 +2341,8 @@
 				name: $.trim($("#ygmdgonghao").val()),
 				itemName: $("#activity").val(),
 				startDate: $("#startDate").val(),
-				endDate: $("#endDate").val()
+				endDate: $("#endDate").val(),
+				statusArray : '1,2'
 			}
 
 		}
@@ -2373,6 +2374,7 @@
 								'<td class="item fitem5f ">' + item.sendCount + '</td>' +
 								'<td class="item fitem2f ">' +
 								'<span class="bianji" onclick="editors(\'' + item.baseid + '\')">编辑 ｜</span>' +
+								'<span class="bianji" onclick="'+ (item.status == 1 ? 'editorsdown(\'' + item.baseid + '\')' : item.status == 2 ? 'editorsup(\'' + item.baseid + '\')' : '') +'">'+ (item.status == 1? '下架' : item.status == 2 ?'上架' : '') +'｜</span>' +
 								'<span class="bianji" onclick="remove(this,\'' + item.baseid + '\')">删除</span>' +
 								' </td>' +
 								'</tr>';
@@ -2407,6 +2409,55 @@
 		});
 
 	}
+	
+	function editorsup(str){
+
+		var data = {
+			baseid: str,
+			optype: 'del',
+			status : 1
+		}
+
+		$.ajax({
+			type: "post",
+			url: "rest/knowledgebase/editKnowledgeBase",
+			contentType: "application/json;charset=UTF-8",
+			dataType: "json",
+			data: JSON.stringify(data),
+			success:function(res){
+				console.log(res)
+				knowledgeBaseList()
+			},
+			error:function(err){
+				console.log(err)
+			}
+		})
+	}
+	
+	function editorsdown(str) {
+
+			var data = {
+				baseid: str,
+				optype: 'del',
+				status: 2
+			}
+
+			$.ajax({
+				type: "post",
+				url: "rest/knowledgebase/editKnowledgeBase",
+				contentType: "application/json;charset=UTF-8",
+				dataType: "json",
+				data: JSON.stringify(data),
+				success: function (res) {
+					console.log(res)
+					knowledgeBaseList()
+				},
+				error: function (err) {
+					console.log(err)
+				}
+			})
+		}
+
 	$("#ygmdgonghao").on("keydown", function (event) {
 		if (event.keyCode == 13) {
 			knowledgeBaseLists();
@@ -2514,7 +2565,8 @@
 		$(em).text("加载中");
 		var data = {
 			baseid: aid,
-			optype: 'del'
+			optype: 'del',
+			status : 0
 		}
 		$.ajax({
 			type: "post",
